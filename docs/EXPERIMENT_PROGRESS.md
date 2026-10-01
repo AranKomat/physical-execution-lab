@@ -13,7 +13,7 @@ code/evidence remain archived. Xiaomi's separate RoboCasa365 track is unchanged.
 | A: native qualification | Partial | Reset/render/FK/joint ACK passed; PyTorch and seeded FLA G0.5 succeeded on the same sorting layout. Other interfaces remain unqualified |
 | B: speed/quality screen | G0.5 screen complete; pi0.5 blocked | Fixed five-case G0.5 screen: 3 successes, 2 native-limit failures; 30-sample seeded FLA timing. Exact pi0.5 unavailable; no substitute |
 | C: matched harness comparison | Started, incomplete | Flex route verified; two zero-motion native attempts failed on routing/capacity. No matched physical result or held-out freeze |
-| D: RoboCasa365 | Provisioning | Official checkpoint hashes verified; isolated environments installed; kitchen assets and native baseline still pending |
+| D: RoboCasa365 | Native baseline pilot passed; comparison pending | Official XR1-only CloseBlenderLid seed 7 succeeded at 286/900 steps, 18 policy queries, zero GPT calls. Single development case, not target50 replication |
 | E: sensing/transfer | Deferred as specified | Only after useful matched physical results; no RGB-D port claimed |
 
 ## Completed Milestones
@@ -36,7 +36,9 @@ code/evidence remain archived. Xiaomi's separate RoboCasa365 track is unchanged.
 - [x] Minimum five-case G0.5 development screen: 3/5 success, native scores
   1.0 / 1.0 / 0.4 / 1.0 / 0.0; all failures retained, zero paid calls.
 - [ ] Frozen matched hybrid and direct comparisons.
-- [ ] Official XR1 RoboCasa365 baseline and matched supervision comparison.
+- [x] Official XR1 RoboCasa365 full native development pilot: CloseBlenderLid,
+  seed 7, success at 286 steps; smoke/reset/render/inference also completed.
+- [ ] Broader preregistered XR1 subset and matched supervision comparison.
 
 Removed from active scope: Intern inference/native qualification (stock BF16
 loader exceeded 24 GB), and Xiaomi RoboDojo native EE versus donor DLS checks.

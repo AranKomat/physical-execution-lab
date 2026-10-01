@@ -57,8 +57,8 @@ model-00003-of-00003.safetensors 5859c4408351a0b894c6175cf6f7a41e5e431637517a1d4
 tokenizer.json aeb13307a71acd8fe81861d94ad54ab689df773318809eed3cbe794b4492dae4
 ```
 
-RoboCasa macros were generated; official kitchen asset acquisition started.
-Dependencies and hashes do not qualify reset/render, inference or native success.
+RoboCasa macros were generated; official kitchen asset acquisition completed.
+Dependencies and hashes alone do not qualify reset/render, inference or native success.
 The unmodified official BF16/Flash Attention server loaded on physical GPU 1
 and listened on loopback port 19611. `MIBOT_SERVER_SEED=7` was explicit, and the
 checkpoint was loaded offline. The loader logged a Flash Attention dtype
@@ -80,10 +80,47 @@ crop 0.95 and 16 actions/query. Generate the full 50-trial manifest before
 selecting a preregistered development subset. A horizon-20 smoke is not a full
 episode or benchmark replication.
 
+## First Native Baseline
+
+The unmodified official evaluator `evaluate_task` ran one explicit episode
+index 0 with `num_trials=50`, preserving the official global-index/seed formula.
+Task selection used the official target50 registry. No demonstration or task
+recipe was imported; the policy received the official RGB/proprio/instruction
+processing. This is development evidence, not an untouched held-out episode.
+Exclude this seed/case from later held-out claims.
+
+- Smoke `xr1-smoke-001`: CloseBlenderLid seed 7, 20 actual steps, no success.
+  The shortened horizon was a bring-up check, not a negative full-task result.
+- Full `xr1-native-001`: same task/seed with a fresh server/environment,
+  native horizon 900, **success at 286 steps**, 18 policy queries, zero GPT calls.
+  The official evaluator's episode-loop progress timer reports 22.98 seconds;
+  this excludes cold model loading and preceding environment creation and is
+  not directly comparable to the harness runner's complete episode wall metric.
+- Snapshot during smoke: simulator GPU 0 used 1671 MiB; policy GPU 1 used
+  10326 MiB. These are device snapshots, not isolated peak allocations.
+- Official logs retain observation-space checker warnings at reset/step,
+  missing optional robosuite-models/mink warnings and video metadata fps fallback.
+  Neither the controller nor source preprocessing was changed to suppress them.
+- Video samples render nonblank, but show substantial robot occlusion in the
+  official views. Native success is evaluator evidence, not a new independent
+  visual-clearance or physical-safety certificate.
+
+Local archives under `runs/native-evidence/` match remote SHA-256:
+
+```text
+xr1-smoke-backup.tar.gz fed25ae04d7fd21af67007eb82ab75dd10e0a635a99d957e4456a77d8d4fdfba
+xr1-native-backup.tar.gz 77f5cfcf955a0d8dc54d0150fe893d5fb0bea14019161191d5401868407ff862
+```
+
+Both worker/server pairs exited. Both GPUs were idle after the native run.
+This establishes the official XR1-only path on one development case; it does
+not qualify the harness bridge, complete Stage D, reproduce 57.28%, or establish
+that supervision improves this policy.
+
 ## Next Physical Results
 
-1. Finish official assets and reset/render plus XR1 inference qualification.
-2. Run a full native XR1-only development episode before matched supervision.
+1. Bind and qualify the harness XR1 bridge against this official configuration.
+2. Preregister a balanced development subset, retaining all successes/failures.
 3. Resume bounded G0.5 supervision when Flex capacity is available, keeping
    ancillary-bound-004 and normalization provenance identical across conditions.
 4. Freeze and run matched comparisons only after development qualification.

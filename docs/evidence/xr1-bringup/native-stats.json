@@ -1,0 +1,17 @@
+{
+  "env_name": "CloseBlenderLid",
+  "split": "pretrain",
+  "num_episodes": 1,
+  "successes": 1,
+  "success_rate": 1.0,
+  "horizon": 900,
+  "episodes": [
+    {
+      "episode": 0,
+      "global_episode_index": 0,
+      "seed": 7,
+      "success": true,
+      "steps": 286
+    }
+  ]
+}
