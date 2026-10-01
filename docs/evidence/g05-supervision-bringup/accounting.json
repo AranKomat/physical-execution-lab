@@ -1,0 +1,23 @@
+{
+  "calls": 4535,
+  "spent_plus_holds": "75.865119744300",
+  "remaining_under_85": "9.134880255700",
+  "unsettled_count": 153,
+  "new_requests": [
+    {
+      "id": "g05-sparse-sol-flex-dev-001-0",
+      "reservation": "0.0538605",
+      "actual_cost": null
+    },
+    {
+      "id": "g05-sol-flex-route-002-0",
+      "reservation": "0.0538605",
+      "actual_cost": "0.0071035"
+    },
+    {
+      "id": "g05-sparse-sol-flex-dev-002-0",
+      "reservation": "0.0538500",
+      "actual_cost": null
+    }
+  ]
+}

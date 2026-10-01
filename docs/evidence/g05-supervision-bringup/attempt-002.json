@@ -1,0 +1,118 @@
+{
+  "benchmark": "robodojo",
+  "case_id": "classify_objects__standard__g0__l1",
+  "case_sha256": "52e217db0fedbbb59291ffc489341f827a6b187db17ad1c5cb4c1feb75928029",
+  "condition": "robodojo_g05_sparse",
+  "config_sha256": "5fe3a3ffa5da39a8fc917447b5ce1c6eeb20d8b26772c709588714fd404616cf",
+  "elapsed_s": 41.95984518700061,
+  "environment_contract_sha256": "c39cbaf9b1d0eb1cb8fefbba3f83d9cb52c1df51c55f5bd537a89e96bb18a595",
+  "error": "model request failed: HTTPStatusError; inspect archive; no automatic retry",
+  "evidence_kind": "native_unqualified",
+  "group": "classify_objects",
+  "initial_observation_sha256": "29a96ea35fd61abc2d09ca6327d07f4872bd4f1ddf3e8ae5aef7d807479a3486",
+  "metrics": {
+    "corrected_steps": 0,
+    "discarded_policy_actions": 0,
+    "gripper_clips": 11,
+    "interruptions": 0,
+    "motor_steps": 0,
+    "policy_calls": 1,
+    "policy_invalidation_requests": 0,
+    "review_calls": 0,
+    "shortened_chunks": 0
+  },
+  "mode": "sparse",
+  "native_score": null,
+  "native_steps": 0,
+  "partition": "dev",
+  "planner_config": {
+    "api_key_env": "K1_RELAY_TOKEN",
+    "base_url": "http://127.0.0.1:19861",
+    "history_rounds": 4,
+    "image_max_edge": 480,
+    "max_output_tokens": 2048,
+    "max_requests": 75,
+    "max_total_output_tokens": 153600,
+    "model": "gpt-6.1-sol",
+    "reasoning_effort": "medium",
+    "service_tier": "flex",
+    "timeout_s": 900,
+    "transport": "responses"
+  },
+  "planner_model": "gpt-6.1-sol",
+  "policy_identity": "c82f8148aee2cf523a9e51df9af6ae88b6e4a6e69c7243b2971b5b10386f2cec",
+  "policy_runtime_fingerprint": {
+    "executable": "/root/physical-execution-lab/.venv-g05-fla/bin/python",
+    "gpus": [
+      "NVIDIA GeForce RTX 4090, 580.178.04, 24564 MiB",
+      "NVIDIA GeForce RTX 4090, 580.178.04, 24564 MiB"
+    ],
+    "packages": {
+      "httpx": "0.28.1",
+      "isaaclab": null,
+      "isaacsim": null,
+      "jax": null,
+      "mujoco": null,
+      "numpy": "1.26.4",
+      "robocasa": null,
+      "robosuite": null,
+      "scipy": "1.15.3",
+      "torch": "2.7.1+cu128",
+      "transformers": "4.57.1"
+    },
+    "platform": "Linux-6.8.0-59-generic-x86_64-with-glibc2.35",
+    "python": "3.10.19 (main, Feb 12 2026, 00:42:18) [Clang 21.1.4 ]"
+  },
+  "runtime_fingerprint": {
+    "executable": "/root/physical-execution-lab/.venv/bin/python",
+    "gpus": [
+      "NVIDIA GeForce RTX 4090, 580.178.04, 24564 MiB",
+      "NVIDIA GeForce RTX 4090, 580.178.04, 24564 MiB"
+    ],
+    "packages": {
+      "httpx": "0.28.1",
+      "isaaclab": null,
+      "isaacsim": null,
+      "jax": null,
+      "mujoco": null,
+      "numpy": "2.2.6",
+      "robocasa": null,
+      "robosuite": null,
+      "scipy": "1.15.3",
+      "torch": null,
+      "transformers": null
+    },
+    "platform": "Linux-6.8.0-59-generic-x86_64-with-glibc2.35",
+    "python": "3.10.12 (main, Feb  4 2025, 14:57:36) [GCC 11.4.0]"
+  },
+  "schema": "multibench.result.v1",
+  "simulated_seconds": 0.0,
+  "simulation_advances_during_model_wait": false,
+  "split": null,
+  "status": "infrastructure_or_contract_error",
+  "success": false,
+  "task": "classify_objects",
+  "task_demonstrations": false,
+  "task_memory": false,
+  "termination": "error:TransportUncertain",
+  "timing": {
+    "ack_s": 0.1339442410007905,
+    "env_s": 0.0,
+    "policy_s": 0.7106814450016827,
+    "preview_s": 0.05769727999904717,
+    "review_s": 0.0,
+    "setup_s": 23.473865567999383
+  },
+  "usage": {
+    "api_requests": 1,
+    "cached_input_tokens": null,
+    "input_tokens": null,
+    "output_tokens": null,
+    "reasoning_is_subset_of_output": true,
+    "reasoning_tokens": null,
+    "served_models": [],
+    "served_tiers": [],
+    "source": "provider-reported, missing fields remain null",
+    "unresolved_output_reservations": 2048
+  }
+}

@@ -64,6 +64,12 @@
       "revision": "0dd7aef8dc87296246aae812a1f59ccb708e5546"
     },
     {
+      "name": "robosuite",
+      "group": "robocasa",
+      "url": "https://github.com/ARISE-Initiative/robosuite.git",
+      "revision": "5ce6643f3092639d08f7b0f90ed1c6a84f50552c"
+    },
+    {
       "name": "RoboCasa",
       "group": "robocasa",
       "url": "https://github.com/robocasa/robocasa.git",

@@ -766,9 +766,9 @@
     "tests/test_policy.py": "ef0575d78558e23a05450ef01431ba23dc6bc6801705c6168de1d68b0a2a32f5",
     "tests/test_registry.py": "bace56f27055439f056cd76de2af8c784808ab0b9c89a00c0604ef66df15f0c8",
     "tests/test_runner.py": "1367ffdeaa9b9c598979e6af98b5c3f9fee3f0bee3256524ad491f3ea14944e9",
-    "upstream.lock.json": "878ffdeac6735db1defce908ad6cfd43a65b684cf799432c3d5ea09bd2d2cd15",
+    "upstream.lock.json": "553a969210291a8d72a6ae9d0dcd0b49d696e3377125ba400079762a67390a9e",
     "docs/NATIVE_PILOT_20261002.md": "3c481089ade9c7ca93bd0fe1775230966ad8a691d5c805d1751c16edb18acb10",
-    "docs/EXPERIMENT_PROGRESS.md": "e48b86c79bc3f7c14e7c2d10ff1adfea011037c9db41e8057cfd23b871ee2cef",
+    "docs/EXPERIMENT_PROGRESS.md": "775b80a274cb563165bce4c21f3d26bc8030232fac87330b259bd7451603e2da",
     "scripts/multibench/prepare_g05_bundle.py": "d976e0a3c611ab8ab660e0c735695d30ab68f310e16ce8510a52d5a593a7e332",
     "docs/evidence/g05-native-002/evaluation_outcome.json": "c9c9756f6697ae64e36d0617ba0ed4d1a36d81c2e2853ab8a7c96d57d43f6024",
     "docs/evidence/g05-native-002/fk_validation.json": "d78c3f14caf685676a9fc9e3c82c74377eb5d4e111afe64d0d7142abb1ba6fe4",
@@ -812,6 +812,13 @@
     "docs/evidence/eef-controller-probe/result.json": "f0232a0798f5c655836296aa4c4dd31c9367d79a738e683a5d670a2c6e4fb071",
     "k1lab/multibench/calibration.py": "498415b558816ba08bc20352a7ab127b4dc383bcd9ba218fa69948c9a1705ef8",
     "tests/multibench/test_calibration.py": "557f323ed4309984ce21231d61cc0cc3afc775d7b0303fe1941c3dde0640e6f1",
-    "docs/evidence/eef-controller-probe/backup_verification.json": "ac325390791c6fc67b485c13cafb7c699328b66376e9c5d4c9e0d0b45e467c99"
+    "docs/evidence/eef-controller-probe/backup_verification.json": "ac325390791c6fc67b485c13cafb7c699328b66376e9c5d4c9e0d0b45e467c99",
+    "docs/SUPERVISION_RC365_BRINGUP_20261002.md": "2100089926583495c28915e3f03d53751e0049da8b78de2a385e489e59022c6c",
+    "docs/evidence/g05-supervision-bringup/accounting.json": "80363a5f710fbb80a6afa96ee2cc4d4053350ad2823fb07aa3acd0acdd306fac",
+    "docs/evidence/g05-supervision-bringup/attempt-001.json": "2e61b33d3cce8e933bbdf7b0ba80765df1bc2ef953b0f3a5f97acdb87329b431",
+    "docs/evidence/g05-supervision-bringup/attempt-002.json": "7d12087f290879c0833633a3dd9ee5229535ae007ed65eedd02c77274cf3852e",
+    "scripts/multibench/budget_responses_relay.py": "15f5ea0f9cab5fd25e606633ffd2511036d46d91b0ebf89267f63b279c670e9a",
+    "scripts/multibench/prepare_supervision_pilot.py": "e4b1764d8b03a63f3a377bb3e54945ce031371963dd8c5cbd0ce792cd2a32684",
+    "tests/multibench/test_budget_relay.py": "6be510603e8a7362178c1521e21ccc1c11f370bd7baf12dcf878ab134b9fbf2d"
   }
 }

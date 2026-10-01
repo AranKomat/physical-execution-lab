@@ -1,7 +1,8 @@
 # Experiment Progress
 
 Updated 2026-10-02. This tracks the v0.4 handoff sequence, not synthetic success.
-Use Sol 6.1 Flex for the eventual supervisor comparisons. No paid calls yet.
+Use Sol 6.1 Flex for supervisor comparisons. One paid route check succeeded;
+two native supervised attempts stopped before motion on API errors.
 Owner scope update: RoboDojo candidates are **G0.5 and exact pi0.5 only**.
 Xiaomi R1 and Intern are removed from the active RoboDojo screen; their prior
 code/evidence remain archived. Xiaomi's separate RoboCasa365 track is unchanged.
@@ -11,8 +12,8 @@ code/evidence remain archived. Xiaomi's separate RoboCasa365 track is unchanged.
 | Pre-GPU | Complete | CPU suite, synthetic audit, source inspection and config preparation |
 | A: native qualification | Partial | Reset/render/FK/joint ACK passed; PyTorch and seeded FLA G0.5 succeeded on the same sorting layout. Other interfaces remain unqualified |
 | B: speed/quality screen | G0.5 screen complete; pi0.5 blocked | Fixed five-case G0.5 screen: 3 successes, 2 native-limit failures; 30-sample seeded FLA timing. Exact pi0.5 unavailable; no substitute |
-| C: matched harness comparison | Not started | No paid review runs, direct comparison or held-out freeze |
-| D: RoboCasa365 | Not started | Official XR1 checkpoint/environment/native baseline still needed |
+| C: matched harness comparison | Started, incomplete | Flex route verified; two zero-motion native attempts failed on routing/capacity. No matched physical result or held-out freeze |
+| D: RoboCasa365 | Provisioning | Official checkpoint hashes verified; isolated environments installed; kitchen assets and native baseline still pending |
 | E: sensing/transfer | Deferred as specified | Only after useful matched physical results; no RGB-D port claimed |
 
 ## Completed Milestones
@@ -58,5 +59,7 @@ Future formal bindings include hashes of the ancillary embodiment config files.
 The shared EEF translation/hold development probe now passes: 80 sequential
 native actions, two separate 20 mm upward targets and return, zero paid calls.
 See [the controller report](EEF_CONTROLLER_CHECK_20261002.md). This is not contact
-qualification or Stage C completion. The paid budget-enforced Responses route
-still needs binding; existing $85 shared ceiling and unresolved holds remain.
+qualification or Stage C completion. The budget-enforced Responses route is
+verified for the actual Sol 6.1 model and Flex tier. Native supervision has not
+yet executed actions. See [bring-up update](SUPERVISION_RC365_BRINGUP_20261002.md).
+The $85 shared ceiling and all unresolved holds remain.
