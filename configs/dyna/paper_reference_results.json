@@ -1,0 +1,71 @@
+{
+  "development": {
+    "A2ctrl": 592,
+    "A2seq": 510,
+    "A2static": 511,
+    "bare": 130,
+    "episodes": 800,
+    "final_archived": 594,
+    "no_contact": 133,
+    "no_groups": 126,
+    "no_recovery": 585,
+    "state_indices": [
+      21,
+      22,
+      23,
+      24,
+      25,
+      26,
+      27,
+      28,
+      29,
+      30,
+      31,
+      32,
+      33,
+      34,
+      35,
+      36,
+      37,
+      38,
+      39,
+      40
+    ]
+  },
+  "early_no_evolution": {
+    "bare_percent": 17.1,
+    "episodes": 800,
+    "harness_percent": 13.9,
+    "state_indices": [
+      1,
+      2,
+      3,
+      4,
+      5,
+      6,
+      7,
+      8,
+      9,
+      10,
+      11,
+      12,
+      13,
+      14,
+      15,
+      16,
+      17,
+      18,
+      19,
+      20
+    ]
+  },
+  "new_states_C": {
+    "bare": 140,
+    "champion": 602,
+    "comparison": "post-selection initial-state transfer, not new task families",
+    "episodes": 800
+  },
+  "origin": "SOURCE PAPER ONLY \u2014 NOT LOCAL MEASUREMENTS",
+  "paper_checkpoint": "public pi0.5 LIBERO; NOT RLinf/pi05_libero130_fullshot",
+  "slow_model": "Qwen3-VL-4B-Instruct; Appendix G describes a local 4-bit build"
+}

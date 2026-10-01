@@ -1,0 +1,19 @@
+{
+  "exact_replication_requirements": {
+    "evaluation_model_rng_and_server_settings": null,
+    "exact_evolved_capability_library_and_parameters": null,
+    "exact_motor_checkpoint_revision_and_hash": null,
+    "exact_new_state_manifest_and_generation": null,
+    "exact_slow_model_revision_prompt_and_decoding": null,
+    "full_pdf_and_appendix_review": "complete",
+    "matched_environment_asset_and_controller_revisions": null,
+    "native_adapter_qualification_and_recorded_runs": null,
+    "simulator_state_and_grounding_access_contract": "specified; separate privileged_sim paper track implemented",
+    "task_specific_budgets_and_success_polling": "implemented: 300/520, latch, 20/2/50Hz seams"
+  },
+  "local_implementation_scope": "PDF-grounded reconstruction of mechanisms; native performance not yet measured.",
+  "primary_source": "references/2609.40306v1.pdf",
+  "source_access": "All 37 PDF pages including Appendices A\u2013I reviewed. Use configs/dyna/paper_spec.json.",
+  "status": "paper_review_complete_native_qualification_pending",
+  "title": "DynaHarness PDF-reviewed reproduction v2"
+}

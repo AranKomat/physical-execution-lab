@@ -1,0 +1,16 @@
+{
+  "arm": "A2seq",
+  "backend": "synthetic",
+  "call_budget": {
+    "max_calls": 1,
+    "max_reserved_tokens": 1000
+  },
+  "fixture_steps": 300,
+  "information_profile": "synthetic",
+  "max_infrastructure_errors": 1,
+  "planner": {
+    "kind": "fixture"
+  },
+  "settings": {},
+  "track": "pdf_reproduction"
+}

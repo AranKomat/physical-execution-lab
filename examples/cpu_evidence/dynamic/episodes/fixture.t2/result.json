@@ -1,0 +1,31 @@
+{
+  "case": {
+    "case_id": "fixture.t2",
+    "fixture": "normal",
+    "policy_seed": 0,
+    "split": "dev",
+    "state_index": 0,
+    "state_sha256": "f405bd5cbce665ea6b47270fa0c17cb824e7de70a89caf3745ca46902f5fcec6",
+    "suite": "synthetic_contract",
+    "task_id": 2
+  },
+  "control_hz": 20,
+  "error_type": null,
+  "identity": "649a67f79bf56016ee65dd6bcdd56c30c4466926d12c9808705437c1bdebd425",
+  "interrupts": 0,
+  "journal_tail_sha256": "1ffedda782b2197ac4c87748c19729df1e1feac8fa48e9bd03bdd91ade38541d",
+  "native_steps": 52,
+  "native_success": true,
+  "planner_calls": 1,
+  "policy_rng_control": "deterministic_fixture",
+  "policy_seed_requested": 0,
+  "reason": "native_success",
+  "receipts": 1,
+  "refusals": 0,
+  "simulated_seconds": 2.6,
+  "source": "synthetic",
+  "status": "completed",
+  "substitutions": 0,
+  "vla_calls": 0,
+  "wall_s": 0.004165398000168352
+}

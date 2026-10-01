@@ -1,0 +1,30 @@
+[build-system]
+requires = ["setuptools>=65"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "physical-runtime-lab"
+version = "0.2.0"
+description = "PDF-grounded DynaHarness reproduction experiment with RPent policy integration"
+requires-python = ">=3.10"
+license = {text = "MIT"}
+dependencies = ["numpy>=1.24", "scipy>=1.11"]
+
+[project.optional-dependencies]
+test = ["pytest>=7", "numpy>=1.24", "Pillow>=10"]
+geometry = ["numpy>=1.24", "Pillow>=10"]
+
+[project.scripts]
+prl = "prl.cli:main"
+prl-paper = "prl.dyna.runner:main"
+
+[tool.setuptools.packages.find]
+include = ["prl*"]
+
+[tool.pytest.ini_options]
+testpaths = ["tests"]
+pythonpath = ["."]
+
+[tool.ruff]
+line-length = 100
+target-version = "py310"

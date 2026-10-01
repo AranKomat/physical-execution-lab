@@ -1,0 +1,67 @@
+<!doctype html><html lang="en"><meta charset="utf-8"><meta name="viewport" content="width=device-width">
+<title>Physical Runtime Lab — SYNTHETIC-CONTRACT-FIXTURE</title><style>
+body{font:15px system-ui,sans-serif;background:#0e1625;color:#e9edf5;max-width:1260px;margin:40px auto;padding:0 24px}
+h1{font-size:30px}h2{font-size:20px}.warning{border:1px solid #d4ad60;background:#332c1d;padding:18px;line-height:1.6}
+.metrics{display:flex;gap:16px;flex-wrap:wrap;margin:24px 0}.metric{background:#192638;padding:18px;min-width:125px}.metric b{font-size:27px;display:block}
+table{width:100%;border-collapse:collapse;background:#172235}th,td{padding:10px;text-align:left;border-bottom:1px solid #354257}td:first-child{font-family:monospace}.scroll{overflow:auto}
+pre{white-space:pre-wrap;overflow-wrap:anywhere;background:#172235;padding:20px}small{color:#bac6da}a{color:#9cccff}
+</style><h1>Physical Runtime Lab</h1><p>Frozen weights · bounded capabilities · measured execution · independent native verdict</p>
+<div class="warning"><b>SYNTHETIC CONTRACT TESTS ONLY. These are not robotics benchmark scores.</b><br>Mode: frozen. Missing episodes and infrastructure errors remain visible. This page contains no paper-reference numbers presented as measurements.</div>
+<div class="metrics"><div class="metric"><small>planned</small><b>4</b></div><div class="metric"><small>completed</small><b>4</b></div><div class="metric"><small>successes</small><b>0</b></div><div class="metric"><small>missing</small><b>0</b></div><div class="metric"><small>infrastructure_or_protocol_errors</small><b>0</b></div></div>
+<h2>Episode ledger</h2><div class="scroll"><table><thead><tr><th>Case</th><th>Run status</th><th>Native success</th><th>Termination reason</th><th>Steps</th><th>Planner calls</th><th>Policy calls</th><th>Wall s</th></tr></thead><tbody><tr><td>fixture.t0</td><td>completed</td><td>False</td><td>episode_step_budget</td><td>160</td><td>0</td><td>16</td><td>0.01</td></tr><tr><td>fixture.t1</td><td>completed</td><td>False</td><td>episode_step_budget</td><td>160</td><td>0</td><td>16</td><td>0.01</td></tr><tr><td>fixture.t2</td><td>completed</td><td>False</td><td>episode_step_budget</td><td>160</td><td>0</td><td>16</td><td>0.01</td></tr><tr><td>fixture.t3</td><td>completed</td><td>False</td><td>episode_step_budget</td><td>160</td><td>0</td><td>16</td><td>0.01</td></tr></tbody></table></div>
+<h2>Interpretation</h2><p>Capability execution is not task completion. Gripper width is not attachment. Tracking error is not contact force. Synthetic fixtures establish software behavior only.</p>
+<p>Paired comparisons should hold initial-state content, weights, sensors, capabilities, planner, budgets and native scoring fixed. Report generalization only on frozen held-out manifests.</p>
+<details><summary>Summary JSON</summary><pre>{
+  &quot;source&quot;: &quot;synthetic&quot;,
+  &quot;mode&quot;: &quot;frozen&quot;,
+  &quot;benchmark&quot;: &quot;SYNTHETIC-CONTRACT-FIXTURE&quot;,
+  &quot;claim&quot;: &quot;SYNTHETIC CONTRACT TESTS ONLY. These are not robotics benchmark scores.&quot;,
+  &quot;planned&quot;: 4,
+  &quot;started&quot;: 4,
+  &quot;completed&quot;: 4,
+  &quot;successes&quot;: 0,
+  &quot;missing&quot;: 0,
+  &quot;infrastructure_or_protocol_errors&quot;: 0,
+  &quot;fully_completed&quot;: true,
+  &quot;success_rate_completed&quot;: 0.0,
+  &quot;success_lower_bound_planned&quot;: 0.0,
+  &quot;wilson95_descriptive&quot;: [
+    0.0,
+    0.4898908364545973
+  ],
+  &quot;status_counts&quot;: {
+    &quot;completed&quot;: 4
+  },
+  &quot;reason_counts&quot;: {
+    &quot;episode_step_budget&quot;: 4
+  },
+  &quot;totals&quot;: {
+    &quot;native_steps&quot;: 640,
+    &quot;simulated_seconds&quot;: 32.0,
+    &quot;planner_calls&quot;: 0,
+    &quot;vla_calls&quot;: 64,
+    &quot;wall_s&quot;: 0.029928358999768534,
+    &quot;refusals&quot;: 0,
+    &quot;interrupts&quot;: 4,
+    &quot;substitutions&quot;: 0
+  },
+  &quot;by_suite&quot;: {
+    &quot;synthetic_contract&quot;: {
+      &quot;planned&quot;: 4,
+      &quot;completed&quot;: 4,
+      &quot;successes&quot;: 0,
+      &quot;success_rate_completed&quot;: 0.0,
+      &quot;wilson95_descriptive&quot;: [
+        0.0,
+        0.4898908364545973
+      ]
+    }
+  },
+  &quot;manifest_sha256&quot;: &quot;ce501b2e91c2fc1f848f49dcc1a704eb0641a70a6449278421951607d61c1495&quot;,
+  &quot;notes&quot;: [
+    &quot;Missing, infrastructure/protocol errors and campaign budget exhaustion are reported, never silently removed.&quot;,
+    &quot;Wilson intervals describe case success; task-cluster uncertainty is in paired comparisons.&quot;,
+    &quot;Wall time includes provider/simulator overhead and is NOT physical execution time.&quot;
+  ]
+}</pre></details>
+</html>

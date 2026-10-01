@@ -1,0 +1,23 @@
+{
+  "backend": "synthetic",
+  "call_budget": {
+    "max_calls": 100,
+    "max_reserved_tokens": 1000000
+  },
+  "control_hz": 20,
+  "governor": {
+    "check_every_steps": 10,
+    "stage_warmup_steps": 20,
+    "stall_checks": 3
+  },
+  "information_profile": "synthetic",
+  "max_decisions": 8,
+  "max_infrastructure_errors": 1,
+  "max_steps": 160,
+  "max_vla_calls": 30,
+  "max_wall_s": 60,
+  "mode": "dynamic",
+  "planner": {
+    "kind": "reference"
+  }
+}

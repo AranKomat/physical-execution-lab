@@ -1,0 +1,364 @@
+{
+  "budget": {
+    "remaining_decisions": 6,
+    "remaining_native_steps": 64
+  },
+  "capabilities": [
+    {
+      "description": "Read fresh legal observations without moving.",
+      "effect_keys": [],
+      "name": "observe",
+      "optional": [],
+      "read_only": true,
+      "required": []
+    },
+    {
+      "description": "Measure a visible RGB-D surface. Not an object center or grasp.",
+      "effect_keys": [],
+      "name": "measure_pixel",
+      "optional": [
+        "coordinate_space"
+      ],
+      "read_only": true,
+      "required": [
+        "camera",
+        "pixel",
+        "observation_id"
+      ]
+    },
+    {
+      "description": "Closed-loop Cartesian transit; NO general collision-free planner.",
+      "effect_keys": [
+        "target",
+        "offset"
+      ],
+      "name": "move_to",
+      "optional": [
+        "offset",
+        "gripper",
+        "tol",
+        "step_clip",
+        "target_yaw",
+        "target_pitch"
+      ],
+      "read_only": false,
+      "required": [
+        "target"
+      ]
+    },
+    {
+      "description": "Open/close jaws. Jaw width alone never certifies grasp.",
+      "effect_keys": [
+        "gripper"
+      ],
+      "name": "set_gripper",
+      "optional": [
+        "steps"
+      ],
+      "read_only": false,
+      "required": [
+        "gripper"
+      ]
+    },
+    {
+      "description": "Open the jaws while holding tool pose; task verdict is separate.",
+      "effect_keys": [],
+      "name": "release",
+      "optional": [
+        "steps"
+      ],
+      "read_only": false,
+      "required": []
+    },
+    {
+      "description": "Bounded world-Z yaw; not arbitrary dexterous tool use.",
+      "effect_keys": [
+        "delta_yaw"
+      ],
+      "name": "rotate_wrist",
+      "optional": [
+        "gripper"
+      ],
+      "read_only": false,
+      "required": [
+        "delta_yaw"
+      ]
+    },
+    {
+      "description": "Analytic top-down pick or frozen VLA pick. Acquisition needs evidence.",
+      "effect_keys": [
+        "target"
+      ],
+      "name": "pick",
+      "optional": [
+        "executor",
+        "instruction",
+        "clearance",
+        "grasp_offset",
+        "yaw"
+      ],
+      "read_only": false,
+      "required": [
+        "target"
+      ]
+    },
+    {
+      "description": "Move a held item above a target, descend, release and retreat.",
+      "effect_keys": [
+        "destination"
+      ],
+      "name": "place",
+      "optional": [
+        "clearance",
+        "place_offset",
+        "yaw"
+      ],
+      "read_only": false,
+      "required": [
+        "destination"
+      ]
+    },
+    {
+      "description": "Compose top-down acquisition, corridor transport and placement.",
+      "effect_keys": [
+        "target",
+        "destination"
+      ],
+      "name": "pick_place",
+      "optional": [
+        "clearance",
+        "grasp_offset",
+        "place_offset",
+        "yaw"
+      ],
+      "read_only": false,
+      "required": [
+        "target",
+        "destination"
+      ]
+    },
+    {
+      "description": "Bounded straight contact sweep; needs an explicit contact target.",
+      "effect_keys": [
+        "target",
+        "direction",
+        "distance"
+      ],
+      "name": "push",
+      "optional": [
+        "approach_offset",
+        "gripper"
+      ],
+      "read_only": false,
+      "required": [
+        "target",
+        "direction",
+        "distance"
+      ]
+    },
+    {
+      "description": "Grasp a measured handle and pull along an explicit direction.",
+      "effect_keys": [
+        "target",
+        "direction",
+        "distance"
+      ],
+      "name": "pull_handle",
+      "optional": [
+        "approach_offset",
+        "yaw"
+      ],
+      "read_only": false,
+      "required": [
+        "target",
+        "direction",
+        "distance"
+      ]
+    },
+    {
+      "description": "Grasp a handle and follow a bounded arc around a measured pivot.",
+      "effect_keys": [
+        "target",
+        "pivot",
+        "axis",
+        "angle"
+      ],
+      "name": "swing_handle",
+      "optional": [
+        "approach_offset",
+        "yaw"
+      ],
+      "read_only": false,
+      "required": [
+        "target",
+        "pivot",
+        "axis",
+        "angle"
+      ]
+    },
+    {
+      "description": "Run the frozen policy on a sub-instruction for bounded contact work.",
+      "effect_keys": [
+        "instruction"
+      ],
+      "name": "vla_contact",
+      "optional": [],
+      "read_only": false,
+      "required": [
+        "instruction"
+      ]
+    },
+    {
+      "description": "Run the frozen policy with the original task. The E0 executor.",
+      "effect_keys": [],
+      "name": "vla",
+      "optional": [],
+      "read_only": false,
+      "required": []
+    },
+    {
+      "description": "Request termination; NEVER substitutes for native success.",
+      "effect_keys": [],
+      "name": "finish",
+      "optional": [],
+      "read_only": true,
+      "required": []
+    }
+  ],
+  "observation": {
+    "images": [],
+    "information_profile": "synthetic",
+    "observation_id": "fixture.t3:96",
+    "robot": {
+      "eef_xyz_m": [
+        0.1,
+        0.0,
+        0.20999999999999994
+      ],
+      "gripper_width_m": 0.08
+    },
+    "signals": {},
+    "sim_step": 96,
+    "targets": {
+      "block": {
+        "evidence_id": "toy:96:block",
+        "frame": "world",
+        "kind": "fixture_point",
+        "observed_step": 96,
+        "source": "synthetic",
+        "target_id": "block",
+        "uncertainty_m": null,
+        "xyz": [
+          0.1,
+          0.0,
+          0.06
+        ]
+      },
+      "destination": {
+        "evidence_id": "toy:96:goal",
+        "frame": "world",
+        "kind": "fixture_point",
+        "observed_step": 96,
+        "source": "synthetic",
+        "target_id": "destination",
+        "uncertainty_m": null,
+        "xyz": [
+          0.24,
+          0.15,
+          0.06
+        ]
+      },
+      "safe_stage": {
+        "evidence_id": "",
+        "frame": "world",
+        "kind": "fixture_point",
+        "observed_step": 96,
+        "source": "synthetic",
+        "target_id": "safe_stage",
+        "uncertainty_m": null,
+        "xyz": [
+          0.0,
+          0.0,
+          0.35
+        ]
+      }
+    },
+    "task": "Pick up the block and place it at the destination, then release it."
+  },
+  "proposal_id": "fixture.t3:d2",
+  "recent_receipts": [
+    {
+      "capability": "pick_place",
+      "details": {
+        "stage_results": [
+          {
+            "eef_xyz": [
+              0.0,
+              0.0,
+              0.35
+            ],
+            "executor": "synthetic_fixture"
+          }
+        ]
+      },
+      "effect_verified": false,
+      "end_observation_id": "fixture.t3:48",
+      "events": [
+        {
+          "decision": "interrupt",
+          "kind": "stagnation",
+          "metric": "eef_position_error_m",
+          "sim_step": 48,
+          "stall_checks": 3,
+          "value": 0.029999999999999943
+        }
+      ],
+      "native_steps": 48,
+      "proposal_id": "fixture.t3:d0",
+      "reason": "stagnation",
+      "start_observation_id": "fixture.t3:0",
+      "status": "interrupted"
+    },
+    {
+      "capability": "pick_place",
+      "details": {
+        "stage_results": [
+          {
+            "eef_xyz": [
+              0.1,
+              0.0,
+              0.20999999999999994
+            ],
+            "executor": "synthetic_fixture"
+          }
+        ]
+      },
+      "effect_verified": false,
+      "end_observation_id": "fixture.t3:96",
+      "events": [
+        {
+          "decision": "interrupt",
+          "kind": "stagnation",
+          "metric": "eef_position_error_m",
+          "sim_step": 96,
+          "stall_checks": 3,
+          "value": 0.029999999999999943
+        }
+      ],
+      "native_steps": 48,
+      "proposal_id": "fixture.t3:d1",
+      "reason": "stagnation",
+      "start_observation_id": "fixture.t3:48",
+      "status": "interrupted"
+    }
+  ],
+  "response_contract": {
+    "alternatives": [],
+    "arguments": {},
+    "capability": "name from catalog",
+    "decision_summary": "brief evidence-based decision",
+    "max_steps": "integer <= remaining budget, 0 for query",
+    "objective": "physical goal for this operation"
+  },
+  "system": "You operate a simulator through bounded physical capabilities. Use only supplied\nobservations, task text and evidence. Never infer hidden task success from a tool's\nreturn value, gripper gap, or TCP arrival. A measured pixel is a visible surface,\nnot necessarily the object's center or a grasp. Choose targets and justified\nsmall offsets. Inspect before and after contact. Use analytic motion for bounded\ngeometry, a frozen VLA for appropriate contact, and request fresh evidence when\nuncertain. A long move is not collision-certified. Maintain a short observable\ndecision summary, not private chain of thought. Do not request resets, edit code,\nread evaluator files or change budgets. No arbitrary execution tools are exposed.\nNominal and dynamic conditions have the same catalog. Supply one capability per\nturn. Predeclared alternatives must preserve the original semantic effect.\nThe runtime supplies observation/proposal IDs; never replace them. The original\ntask remains authoritative. Only native environment termination establishes task\nsuccess. Finish is a request to stop, not a success claim."
+}

@@ -1,0 +1,52 @@
+{
+  "RPent_runtime": "Pinned policy transport source-inspected; model service not GPU-qualified",
+  "basis": "Complete user-uploaded DynaHarness arXiv:2609.40306v1 PDF, 37 pages including appendices",
+  "clean_unpack_validation": {
+    "fresh_fixture_run": "4 complete cases; trace audit passed",
+    "meaning": "clean copied release tree, no native runtime",
+    "package_import_verified": true,
+    "pytest_failed": 0,
+    "pytest_passed": 211
+  },
+  "commands_checked": [
+    "full pytest",
+    "compileall",
+    "paper audit",
+    "legacy protocol audit pointer",
+    "doctor",
+    "native smoke --help",
+    "policy server --help",
+    "five-arm synthetic matrix",
+    "paired A2static/A2ctrl comparison",
+    "all five trace audits"
+  ],
+  "date": "2026-10-01",
+  "exact_dynaharness_reproduction": false,
+  "learned_policy_inferences": 0,
+  "legacy_tests_included": 125,
+  "native_backend": "Direct LIBERO-PRO geometry/safety/control source-inspected; numeric and mock tests only",
+  "native_libero_episodes": 0,
+  "paid_model_calls": 0,
+  "paper_results_reproduced": false,
+  "pdf_sha256": "e07c7fd79a2e6690f64cbc07f501894bc96d07c9bc091a735a7ef403572ddd1d",
+  "platform": "Linux-6.18.44-x86_64-with-glibc2.41",
+  "pytest_failed": 0,
+  "pytest_passed": 211,
+  "python": "3.13.5",
+  "real_hardware_actions": 0,
+  "synthetic_matrix": {
+    "cases_per_condition": 4,
+    "completed_cases": 20,
+    "conditions": [
+      "bare",
+      "A2static",
+      "A2seq",
+      "A2ctrl",
+      "unlatched"
+    ],
+    "meaning": "authored kinematic software fixtures, not physics or model evaluation",
+    "nominal_dynamic_comparison": "tie; no fabricated improvement"
+  },
+  "upstream_clone": "not performed; inspected source through GitHub connector, pinned bootstrap included",
+  "version": "0.2.0"
+}

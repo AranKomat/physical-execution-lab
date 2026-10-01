@@ -1,0 +1,33 @@
+{
+  "benchmark": "SYNTHETIC-CONTRACT-FIXTURE",
+  "capability_sha256": "f067ecd09b1fd6b458a205c23a7728f8d7af56a63c7e462a8998dd1291967ed6",
+  "claim": "PDF-grounded reconstruction; native qualification and outcome reproduction not implied",
+  "code_sha256": "e725eed6405f6dc39ccdf0c1aa331fe38b90f25b29e41eba1f56d74a4e9f04a4",
+  "config": {
+    "arm": "bare",
+    "backend": "synthetic",
+    "call_budget": {
+      "max_calls": 1,
+      "max_reserved_tokens": 1000
+    },
+    "fixture_steps": 300,
+    "information_profile": "synthetic",
+    "max_infrastructure_errors": 1,
+    "planner": {
+      "kind": "fixture"
+    },
+    "settings": {},
+    "track": "pdf_reproduction"
+  },
+  "config_sha256": "b98f5c31e0c2b01eefb78f6924c4d458fe69dc78c0e31e0472da430784e5dca9",
+  "manifest_sha256": "ce501b2e91c2fc1f848f49dcc1a704eb0641a70a6449278421951607d61c1495",
+  "mode": "bare",
+  "pdf_sha256": "e07c7fd79a2e6690f64cbc07f501894bc96d07c9bc091a735a7ef403572ddd1d",
+  "planner_identity": "none",
+  "protocol_sha256": "8356f7c4e44d1cda8d206ba09135b06454eb6bb0ab519480642f38b4b6bb6a56",
+  "python": "3.13.5",
+  "source": "synthetic",
+  "split": "dev",
+  "track": "pdf_reproduction",
+  "version": 2
+}

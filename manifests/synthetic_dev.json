@@ -1,0 +1,50 @@
+{
+  "cases": [
+    {
+      "case_id": "fixture.t0",
+      "fixture": "normal",
+      "policy_seed": 0,
+      "split": "dev",
+      "state_index": 0,
+      "state_sha256": "c4dc51380e847418e147824f4dac18b1a341914c53c87bb74629680b36461686",
+      "suite": "synthetic_contract",
+      "task_id": 0
+    },
+    {
+      "case_id": "fixture.t1",
+      "fixture": "blocked",
+      "policy_seed": 0,
+      "split": "dev",
+      "state_index": 0,
+      "state_sha256": "7d90dfed28a74f0fdcb9c26f37e452d08c0d8cf946c967abf7f95e8b61f73739",
+      "suite": "synthetic_contract",
+      "task_id": 1
+    },
+    {
+      "case_id": "fixture.t2",
+      "fixture": "normal",
+      "policy_seed": 0,
+      "split": "dev",
+      "state_index": 0,
+      "state_sha256": "f405bd5cbce665ea6b47270fa0c17cb824e7de70a89caf3745ca46902f5fcec6",
+      "suite": "synthetic_contract",
+      "task_id": 2
+    },
+    {
+      "case_id": "fixture.t3",
+      "fixture": "blocked",
+      "policy_seed": 0,
+      "split": "dev",
+      "state_index": 0,
+      "state_sha256": "6e73d42e03be4a9e1da756137b347ea4ffa8c66d10fb15d6d01a1acdf87eb9fc",
+      "suite": "synthetic_contract",
+      "task_id": 3
+    }
+  ],
+  "catalog_sha256": null,
+  "notes": "Software contract fixtures only, no physics or neural model. Not LIBERO.",
+  "sha256": "ce501b2e91c2fc1f848f49dcc1a704eb0641a70a6449278421951607d61c1495",
+  "source": "synthetic",
+  "split": "dev",
+  "version": 1
+}

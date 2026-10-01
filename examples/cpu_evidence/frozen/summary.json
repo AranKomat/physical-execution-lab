@@ -1,0 +1,179 @@
+{
+  "benchmark": "SYNTHETIC-CONTRACT-FIXTURE",
+  "by_suite": {
+    "synthetic_contract": {
+      "completed": 4,
+      "planned": 4,
+      "success_rate_completed": 0.0,
+      "successes": 0,
+      "wilson95_descriptive": [
+        0.0,
+        0.4898908364545973
+      ]
+    }
+  },
+  "claim": "SYNTHETIC CONTRACT TESTS ONLY. These are not robotics benchmark scores.",
+  "completed": 4,
+  "episodes": [
+    {
+      "case": {
+        "case_id": "fixture.t0",
+        "fixture": "normal",
+        "policy_seed": 0,
+        "split": "dev",
+        "state_index": 0,
+        "state_sha256": "c4dc51380e847418e147824f4dac18b1a341914c53c87bb74629680b36461686",
+        "suite": "synthetic_contract",
+        "task_id": 0
+      },
+      "control_hz": 20,
+      "error_type": null,
+      "identity": "152db37c8c8760d83d51dbe3d85cd63e3c246661f16518807ce78639855ff392",
+      "interrupts": 1,
+      "journal_tail_sha256": "13afec158a37513e34f20c46a3d8cc17726dc40861354d6497afce1124ce6831",
+      "native_steps": 160,
+      "native_success": false,
+      "planner_calls": 0,
+      "policy_rng_control": "deterministic_fixture",
+      "policy_seed_requested": 0,
+      "reason": "episode_step_budget",
+      "receipts": 1,
+      "refusals": 0,
+      "simulated_seconds": 8.0,
+      "source": "synthetic",
+      "status": "completed",
+      "substitutions": 0,
+      "vla_calls": 16,
+      "wall_s": 0.00801521999983379
+    },
+    {
+      "case": {
+        "case_id": "fixture.t1",
+        "fixture": "blocked",
+        "policy_seed": 0,
+        "split": "dev",
+        "state_index": 0,
+        "state_sha256": "7d90dfed28a74f0fdcb9c26f37e452d08c0d8cf946c967abf7f95e8b61f73739",
+        "suite": "synthetic_contract",
+        "task_id": 1
+      },
+      "control_hz": 20,
+      "error_type": null,
+      "identity": "8c619638b770e87245717e777999c2658629d7b914789ee48574935120336411",
+      "interrupts": 1,
+      "journal_tail_sha256": "07b0ddb795e74302f3780a85da9c832ce690e9a243a2a76ffab99d55e9be2a18",
+      "native_steps": 160,
+      "native_success": false,
+      "planner_calls": 0,
+      "policy_rng_control": "deterministic_fixture",
+      "policy_seed_requested": 0,
+      "reason": "episode_step_budget",
+      "receipts": 1,
+      "refusals": 0,
+      "simulated_seconds": 8.0,
+      "source": "synthetic",
+      "status": "completed",
+      "substitutions": 0,
+      "vla_calls": 16,
+      "wall_s": 0.007117453999853751
+    },
+    {
+      "case": {
+        "case_id": "fixture.t2",
+        "fixture": "normal",
+        "policy_seed": 0,
+        "split": "dev",
+        "state_index": 0,
+        "state_sha256": "f405bd5cbce665ea6b47270fa0c17cb824e7de70a89caf3745ca46902f5fcec6",
+        "suite": "synthetic_contract",
+        "task_id": 2
+      },
+      "control_hz": 20,
+      "error_type": null,
+      "identity": "649a67f79bf56016ee65dd6bcdd56c30c4466926d12c9808705437c1bdebd425",
+      "interrupts": 1,
+      "journal_tail_sha256": "c44df7bb6dc278b4aa25310196d0fac7127f29d8ebc80f44b7952a631fb32c17",
+      "native_steps": 160,
+      "native_success": false,
+      "planner_calls": 0,
+      "policy_rng_control": "deterministic_fixture",
+      "policy_seed_requested": 0,
+      "reason": "episode_step_budget",
+      "receipts": 1,
+      "refusals": 0,
+      "simulated_seconds": 8.0,
+      "source": "synthetic",
+      "status": "completed",
+      "substitutions": 0,
+      "vla_calls": 16,
+      "wall_s": 0.007547243000317394
+    },
+    {
+      "case": {
+        "case_id": "fixture.t3",
+        "fixture": "blocked",
+        "policy_seed": 0,
+        "split": "dev",
+        "state_index": 0,
+        "state_sha256": "6e73d42e03be4a9e1da756137b347ea4ffa8c66d10fb15d6d01a1acdf87eb9fc",
+        "suite": "synthetic_contract",
+        "task_id": 3
+      },
+      "control_hz": 20,
+      "error_type": null,
+      "identity": "294809c3f4bcfe604e843f959beaff149e4c706399ba61ea307dc3f0929ffd7a",
+      "interrupts": 1,
+      "journal_tail_sha256": "2cdd3a2a64b5c21718c122fb2cf1270c83a537082e440d9ad36b1f6e1f7aa80a",
+      "native_steps": 160,
+      "native_success": false,
+      "planner_calls": 0,
+      "policy_rng_control": "deterministic_fixture",
+      "policy_seed_requested": 0,
+      "reason": "episode_step_budget",
+      "receipts": 1,
+      "refusals": 0,
+      "simulated_seconds": 8.0,
+      "source": "synthetic",
+      "status": "completed",
+      "substitutions": 0,
+      "vla_calls": 16,
+      "wall_s": 0.0072484419997636
+    }
+  ],
+  "fully_completed": true,
+  "infrastructure_or_protocol_errors": 0,
+  "manifest_sha256": "ce501b2e91c2fc1f848f49dcc1a704eb0641a70a6449278421951607d61c1495",
+  "missing": 0,
+  "mode": "frozen",
+  "notes": [
+    "Missing, infrastructure/protocol errors and campaign budget exhaustion are reported, never silently removed.",
+    "Wilson intervals describe case success; task-cluster uncertainty is in paired comparisons.",
+    "Wall time includes provider/simulator overhead and is NOT physical execution time."
+  ],
+  "planned": 4,
+  "reason_counts": {
+    "episode_step_budget": 4
+  },
+  "source": "synthetic",
+  "started": 4,
+  "status_counts": {
+    "completed": 4
+  },
+  "success_lower_bound_planned": 0.0,
+  "success_rate_completed": 0.0,
+  "successes": 0,
+  "totals": {
+    "interrupts": 4,
+    "native_steps": 640,
+    "planner_calls": 0,
+    "refusals": 0,
+    "simulated_seconds": 32.0,
+    "substitutions": 0,
+    "vla_calls": 64,
+    "wall_s": 0.029928358999768534
+  },
+  "wilson95_descriptive": [
+    0.0,
+    0.4898908364545973
+  ]
+}

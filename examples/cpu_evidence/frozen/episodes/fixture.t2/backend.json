@@ -1,0 +1,9 @@
+{
+  "backend": "synthetic-contract-fixture",
+  "control_hz": 20,
+  "information_profile": "synthetic",
+  "physics": "none",
+  "policy": "scripted_toy_not_VLA",
+  "policy_rng_control": "deterministic_fixture",
+  "state_sha256": "f405bd5cbce665ea6b47270fa0c17cb824e7de70a89caf3745ca46902f5fcec6"
+}

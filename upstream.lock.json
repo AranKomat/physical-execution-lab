@@ -1,0 +1,49 @@
+{
+  "checked_date": "2026-10-01",
+  "format": 1,
+  "note": "Pins checked through GitHub connector; no clones were downloaded in build environment. This is not a transitive Python lock.",
+  "repositories": [
+    {
+      "group": "core",
+      "license": "Apache-2.0",
+      "name": "RPent",
+      "revision": "d2595ff270c7d66dbb2effb803f5e6d4d8e08f82",
+      "url": "https://github.com/RLinf/RPent.git"
+    },
+    {
+      "group": "core",
+      "license": "upstream license",
+      "name": "RLinf",
+      "revision": "88f9867ff5b3004b482d6788a871081a43098620",
+      "url": "https://github.com/RLinf/RLinf.git"
+    },
+    {
+      "group": "core",
+      "license": "upstream license",
+      "name": "openpi",
+      "revision": "a560f4dd8205b8423ecd4c8a0fabb5f54140b8a0",
+      "url": "https://github.com/RLinf/openpi.git"
+    },
+    {
+      "group": "core",
+      "license": "upstream license",
+      "name": "LIBERO",
+      "revision": "a8323074d93a09e32bd898630a70531b1f51bc77",
+      "url": "https://github.com/RLinf/LIBERO.git"
+    },
+    {
+      "group": "core",
+      "license": "upstream license",
+      "name": "LIBERO-PRO",
+      "revision": "d1e11fb181b8544487d27742c0caa3a4d46452ad",
+      "url": "https://github.com/RLinf/LIBERO-PRO.git"
+    },
+    {
+      "group": "k1",
+      "license": "MIT",
+      "name": "k1",
+      "revision": "ee46363101fcf3ef87182fb2dbad99a92ce77fc0",
+      "url": "https://github.com/Robo-Harness/k1.git"
+    }
+  ]
+}
