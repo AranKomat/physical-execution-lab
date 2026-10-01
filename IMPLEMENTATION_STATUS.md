@@ -11,7 +11,8 @@ scores or cross-benchmark policy comparisons. One sparse XR1 episode completed
 one paid Flex review and 50 native actions, then stopped on capacity failure.
 No complete matched supervision comparison exists yet. See
 `docs/EXPERIMENT_PROGRESS.md` and `docs/XR1_DEVELOPMENT_SCREEN_20261002.md`.
-The exact RoboDojo pi0.5 checkpoint is still missing. Intern and Xiaomi
+The exact RoboDojo pi0.5 checkpoint is now provisioned and publisher-hash verified;
+its OpenPI/JAX runtime, inference and native episode remain pending. Intern and Xiaomi
 RoboDojo are outside the owner's active scope; XR1 RoboCasa365 remains active.
 
 ## Implemented and exercised on CPU
@@ -80,6 +81,6 @@ locks. Software tests cannot certify contact dynamics or hardware safety.
 Audit and qualify/freeze the retained G0.5 and official XR1 bindings, then finish
 matched supervision comparisons under the explicitly selected Flex tier when
 capacity is available. Retain capacity failures without automatic retry or tier
-fallback. Obtain exact pi0.5 access without substituting generic weights;
+fallback. Qualify the provisioned exact pi0.5 runtime and native episode;
 robot-policy-free dense/sparse experiments also remain pending. Do not expand
 baseline screens or redesign the architecture to sidestep these milestones.

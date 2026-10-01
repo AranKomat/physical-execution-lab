@@ -12,7 +12,7 @@ code/evidence remain archived. Xiaomi's separate RoboCasa365 track is unchanged.
 |---|---|---|
 | Pre-GPU | Complete | CPU suite, synthetic audit, source inspection and config preparation |
 | A: native qualification | Partial | Reset/render/FK/joint ACK passed; PyTorch and seeded FLA G0.5 succeeded on the same sorting layout. Other interfaces remain unqualified |
-| B: speed/quality screen | G0.5 screen complete; pi0.5 blocked | Fixed five-case G0.5 screen: 3 successes, 2 native-limit failures; 30-sample seeded FLA timing. Exact pi0.5 unavailable; no substitute |
+| B: speed/quality screen | G0.5 screen complete; exact pi0.5 provisioned | Fixed five-case G0.5 screen: 3 successes, 2 native-limit failures; 30-sample seeded FLA timing. Exact seed-0 pi0.5 files verified; runtime/inference/native screen pending |
 | C: matched harness comparison | Started, incomplete | Flex route verified; two zero-motion native attempts failed on routing/capacity. No matched physical result or held-out freeze |
 | D: RoboCasa365 | Motor-only bridge qualified; comparison pending | Fixed six-case harness screen: 2/6 success, no infrastructure errors. Initial official-client chunk matches exactly. Evidence-reviewed motor-only qualification recorded; supervision/corrections remain unqualified. Sparse kettle pilot reached 50 steps then Flex capacity failed |
 | E: sensing/transfer | Deferred as specified | Only after useful matched physical results; no RGB-D port claimed |
@@ -33,7 +33,8 @@ code/evidence remain archived. Xiaomi's separate RoboCasa365 track is unchanged.
 - [x] Explicit policy RNG binding and raw clipping-range diagnostics for future runs.
 - [x] Optimized seeded G0.5 full native episode: success, score 1.0, 812 actions,
   51 policy calls, zero paid calls/corrections; provisional development runtime.
-- [ ] Exact RoboDojo pi0.5 checkpoint access; currently unavailable.
+- [x] Exact RoboDojo pi0.5 checkpoint access: 18 inference files verified against
+  publisher hashes and donor previous-load identity; runtime/inference still pending.
 - [x] Minimum five-case G0.5 development screen: 3/5 success, native scores
   1.0 / 1.0 / 0.4 / 1.0 / 0.0; all failures retained, zero paid calls.
 - [ ] Frozen matched hybrid and direct comparisons.
@@ -80,3 +81,7 @@ The motor-only source/config/manifest freeze is verified on the GPU host and
 backed up locally; no held-out tasks were opened.
 See [qualification review](XR1_NATIVE_QUALIFICATION_20261002.md). Raw historical
 development results remain unchanged; Stage D and held-out comparisons are open.
+
+Latest gates: [exact pi0.5 access and direct-call feasibility](PI05_ACCESS_AND_COMPARISON_GATES_20261002.md).
+The current host lacks OpenPI/JAX, contrary to the older bring-up runtime note.
+Source updates invalidate the prior XR1 code freeze until regenerated.

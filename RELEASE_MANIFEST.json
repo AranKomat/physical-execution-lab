@@ -12,7 +12,7 @@
     ".gitignore": "18a8bc0b3690974890b205d51fb275c533070e80dfde2c879caa0e7c5e3188d2",
     "AGENTS.md": "0fdb40ada8526df213d67c97fb45952807060cf6099b774d1c446f02dee22b52",
     "HANDOFF.md": "ba24f919528d00ae16d0464c2cafad92d8941fadc1d3700d8cf10d04dd77f2de",
-    "IMPLEMENTATION_STATUS.md": "a4b311f2c7fb3299e10089a0fcb25550775d873968c4ec55679826a2896d8765",
+    "IMPLEMENTATION_STATUS.md": "b978a38c033c5f5772b0c70e411338a4946aa592ce3bfb25c25050776276b855",
     "LICENSE": "db041e48f5338b6ae6a5fee1d2aeaee23a470d019b44c2cb7f2a30ea8ba23bb8",
     "README.md": "da1c7da46707c73ad56572febd1ceca8c36ee03f6d9236725326e324e832130f",
     "TAKEOVER.md": "6d66aa671f9d7188c479be7ce9ed8e415932e5f75eec61eaafd868aef7a1a582",
@@ -745,7 +745,7 @@
     "scripts/multibench/export_observation.py": "73fcce4a4c198dc12320aaa0398ceeb43b976e9851b4c3c2a5a6447cb9ba1758",
     "scripts/multibench/fingerprint.py": "2fdf02442d43e59841592808d3165ab90338e2029ab410d9d7fa1ff8446ca35d",
     "scripts/multibench/launch_robodojo_case.py": "d049b7a4825d098bdf51f53a578a3304530110d04f3ef5f8ff1eff92ab3440fb",
-    "scripts/multibench/plan_matrix.py": "f8a1bda827f7a63c92f72ef86b676c5b8b82e40ba1e3311497dd3dd98fe60f36",
+    "scripts/multibench/plan_matrix.py": "93a7948d2a6603317a901565b88d1a013b09ed110dfe39e44ebde8952060cd1b",
     "scripts/multibench/plot_results.py": "48b284ba42aefbebd0ee2dcddda8206e96547defe218d2e85795bb74b6e35b38",
     "scripts/multibench/qualification_template.py": "34781271d4d5f2bf09c23351bc777860cf1b73a517c1f230773ee89c1753360b",
     "scripts/native_smoke.py": "70f501240dbe745deb38fdd2439942d807d2df3e6b703e070ba21e5ee8a41547",
@@ -768,7 +768,7 @@
     "tests/test_runner.py": "1367ffdeaa9b9c598979e6af98b5c3f9fee3f0bee3256524ad491f3ea14944e9",
     "upstream.lock.json": "553a969210291a8d72a6ae9d0dcd0b49d696e3377125ba400079762a67390a9e",
     "docs/NATIVE_PILOT_20261002.md": "3c481089ade9c7ca93bd0fe1775230966ad8a691d5c805d1751c16edb18acb10",
-    "docs/EXPERIMENT_PROGRESS.md": "81990449d5b19e709bd08b31035b776f71d3c30faa72489d0d339574c0f8fcc2",
+    "docs/EXPERIMENT_PROGRESS.md": "c0b16d03e1b1cfae4769c3bdbfb1bbdacacae04d8f8a49e57f45e0b6f8ed6db7",
     "scripts/multibench/prepare_g05_bundle.py": "d976e0a3c611ab8ab660e0c735695d30ab68f310e16ce8510a52d5a593a7e332",
     "docs/evidence/g05-native-002/evaluation_outcome.json": "c9c9756f6697ae64e36d0617ba0ed4d1a36d81c2e2853ab8a7c96d57d43f6024",
     "docs/evidence/g05-native-002/fk_validation.json": "d78c3f14caf685676a9fc9e3c82c74377eb5d4e111afe64d0d7142abb1ba6fe4",
@@ -838,6 +838,10 @@
     "tests/multibench/test_supervision_preparation.py": "5c0b853c27d9a40bcabd47073c151f219883098269ebcfc28ad3c63816f08267",
     "docs/XR1_NATIVE_QUALIFICATION_20261002.md": "dea8c58c1ff4f7c524fcfb2faa26377cd9a99a3dcf48be4fdfbc803bb175e8bd",
     "docs/evidence/xr1-development-screen/motor-qualification.json": "501078c59523233f5e8c0af8ece85349764fe5b3a162e588391b119568c0f2f5",
-    "docs/evidence/xr1-development-screen/motor-freeze.json": "ff0daa296b64b46507464842d46b73e28bbbe89ee339e0e789ce57d413c28748"
+    "docs/evidence/xr1-development-screen/motor-freeze.json": "ff0daa296b64b46507464842d46b73e28bbbe89ee339e0e789ce57d413c28748",
+    "docs/PI05_ACCESS_AND_COMPARISON_GATES_20261002.md": "f04608561b581c44dbe665704b2d48a8c5951319e9c53ed9f120521ae308af50",
+    "docs/evidence/pi05-provision-001.json": "46b44354abaad65552465d3989b073998bc24f72ff10c9c296cfad50074ae221",
+    "scripts/multibench/provision_exact_pi05.py": "b512246536414bf734fc005611aaeebd835c3a67f8218181e42c9595049692ec",
+    "tests/multibench/test_matrix_budget.py": "d218b5db960b0d729bd3413b032ba79c8742ddcc72f3395c02bfae6ff9465914"
   }
 }
