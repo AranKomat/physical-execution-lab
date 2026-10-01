@@ -1,0 +1,6 @@
+{
+  "files_checked": 265,
+  "mismatches": [],
+  "method": "SHA-256 of every source file after simulator exit",
+  "scope": "backup byte integrity, not automatic physical safety proof"
+}

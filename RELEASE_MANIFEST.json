@@ -811,6 +811,7 @@
     "docs/EEF_CONTROLLER_CHECK_20261002.md": "64b82c12f2406bbac06c6986007d89c635bc7dd981c77e62ac9a28674209ae0d",
     "docs/evidence/eef-controller-probe/result.json": "f0232a0798f5c655836296aa4c4dd31c9367d79a738e683a5d670a2c6e4fb071",
     "k1lab/multibench/calibration.py": "498415b558816ba08bc20352a7ab127b4dc383bcd9ba218fa69948c9a1705ef8",
-    "tests/multibench/test_calibration.py": "557f323ed4309984ce21231d61cc0cc3afc775d7b0303fe1941c3dde0640e6f1"
+    "tests/multibench/test_calibration.py": "557f323ed4309984ce21231d61cc0cc3afc775d7b0303fe1941c3dde0640e6f1",
+    "docs/evidence/eef-controller-probe/backup_verification.json": "ac325390791c6fc67b485c13cafb7c699328b66376e9c5d4c9e0d0b45e467c99"
   }
 }
