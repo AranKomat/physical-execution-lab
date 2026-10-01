@@ -1,0 +1,35 @@
+[
+  {
+    "category_success": {
+      "atomic_seen": 0.5,
+      "composite_seen": 0.0,
+      "composite_unseen": 0.5
+    },
+    "condition": "robocasa365_xiaomi_motor_only",
+    "interpretation": "Missing runs remain unsuccessful in success denominator; wall/score coverage is shown separately.",
+    "mean_control_steps_available": 1307.5,
+    "mean_episode_wall_s_available": 108.27494184483355,
+    "missing": 0,
+    "policy_calls": 494,
+    "results_present": 6,
+    "review_calls": 0,
+    "scheduled": 6,
+    "score_coverage": 0,
+    "score_mean_available_only": null,
+    "success_rate_full_denominator": 0.3333333333333333,
+    "successes": 2,
+    "task_weighted_success": 0.3333333333333333,
+    "token_totals": {
+      "cached_input_tokens": 0,
+      "input_tokens": 0,
+      "output_tokens": 0,
+      "reasoning_tokens": 0
+    },
+    "total_control_steps": 7845,
+    "total_steps_per_success": 3922.5,
+    "wilson95": [
+      0.09677141110578041,
+      0.700006684861608
+    ]
+  }
+]

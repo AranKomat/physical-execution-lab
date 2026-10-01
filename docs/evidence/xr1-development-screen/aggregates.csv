@@ -1,0 +1,2 @@
+condition,scheduled,successes,missing,success_rate_full_denominator,mean_episode_wall_s_available,total_steps_per_success,review_calls,policy_calls
+robocasa365_xiaomi_motor_only,6,2,0,0.3333333333333333,108.27494184483355,3922.5,0,494

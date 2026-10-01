@@ -2,7 +2,8 @@
 
 Updated 2026-10-02. This tracks the v0.4 handoff sequence, not synthetic success.
 Use Sol 6.1 Flex for supervisor comparisons. One paid route check succeeded;
-two native supervised attempts stopped before motion on API errors.
+two G0.5 attempts stopped before motion. XR1's first sparse attempt completed
+one review and 50 steps, then stopped on Flex capacity at request two.
 Owner scope update: RoboDojo candidates are **G0.5 and exact pi0.5 only**.
 Xiaomi R1 and Intern are removed from the active RoboDojo screen; their prior
 code/evidence remain archived. Xiaomi's separate RoboCasa365 track is unchanged.
@@ -13,7 +14,7 @@ code/evidence remain archived. Xiaomi's separate RoboCasa365 track is unchanged.
 | A: native qualification | Partial | Reset/render/FK/joint ACK passed; PyTorch and seeded FLA G0.5 succeeded on the same sorting layout. Other interfaces remain unqualified |
 | B: speed/quality screen | G0.5 screen complete; pi0.5 blocked | Fixed five-case G0.5 screen: 3 successes, 2 native-limit failures; 30-sample seeded FLA timing. Exact pi0.5 unavailable; no substitute |
 | C: matched harness comparison | Started, incomplete | Flex route verified; two zero-motion native attempts failed on routing/capacity. No matched physical result or held-out freeze |
-| D: RoboCasa365 | Native baseline pilot passed; comparison pending | Official XR1-only CloseBlenderLid seed 7 succeeded at 286/900 steps, 18 policy queries, zero GPT calls. Single development case, not target50 replication |
+| D: RoboCasa365 | Baseline development screen complete; comparison pending | Fixed six-case harness screen: 2/6 success, no infrastructure errors. Initial official-client chunk matches exactly. Sparse kettle pilot reached 50 steps then Flex capacity failed |
 | E: sensing/transfer | Deferred as specified | Only after useful matched physical results; no RGB-D port claimed |
 
 ## Completed Milestones
@@ -38,7 +39,11 @@ code/evidence remain archived. Xiaomi's separate RoboCasa365 track is unchanged.
 - [ ] Frozen matched hybrid and direct comparisons.
 - [x] Official XR1 RoboCasa365 full native development pilot: CloseBlenderLid,
   seed 7, success at 286 steps; smoke/reset/render/inference also completed.
-- [ ] Broader preregistered XR1 subset and matched supervision comparison.
+- [x] Fixed balanced XR1 subset: 2/6 successful, 7845 native actions, 494 policy
+  queries, zero GPT calls. All four native-limit failures retained.
+- [x] Initial legal-observation official-client parity: all 16 actions match exactly.
+- [ ] Matched XR1 supervision comparison: one sparse pilot executed 50 steps after
+  a successful Flex review, then stopped on capacity failure at request two.
 
 Removed from active scope: Intern inference/native qualification (stock BF16
 loader exceeded 24 GB), and Xiaomi RoboDojo native EE versus donor DLS checks.
@@ -64,4 +69,6 @@ See [the controller report](EEF_CONTROLLER_CHECK_20261002.md). This is not conta
 qualification or Stage C completion. The budget-enforced Responses route is
 verified for the actual Sol 6.1 model and Flex tier. Native supervision has not
 yet executed actions. See [bring-up update](SUPERVISION_RC365_BRINGUP_20261002.md).
-The $85 shared ceiling and all unresolved holds remain.
+The $85 shared ceiling and all unresolved holds remain. Latest snapshot:
+$75.934460744300 spent plus holds, 154 unsettled reservations; no automatic
+retry or Standard fallback. See [XR1 screen and next gate](XR1_DEVELOPMENT_SCREEN_20261002.md).

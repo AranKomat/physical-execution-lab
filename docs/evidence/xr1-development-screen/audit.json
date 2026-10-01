@@ -1,0 +1,77 @@
+{
+  "episodes": [
+    {
+      "contiguous_ack_verified": true,
+      "journal": {
+        "events": 1464,
+        "head_sha256": "eb73f6b6867937e264a6698b3358f8e3d46472a7c2e2041df1ff49358b81aa90"
+      },
+      "proposal_disposition_verified": true,
+      "result_sha256": "1b8e04153a83c0f88befb5325eeae79510c07b4d94db72f4ee521e3d6e90700f",
+      "steps": 1297,
+      "success": true,
+      "task": "CategorizeCondiments"
+    },
+    {
+      "contiguous_ack_verified": true,
+      "journal": {
+        "events": 847,
+        "head_sha256": "3693e865ce5ff7a80cc93124a5e944a1dfe44296befa8227c91fb004225060ce"
+      },
+      "proposal_disposition_verified": true,
+      "result_sha256": "85818dc343eaf928f6a5bf17a712da9dfaa2e5e2074acdb102acc665df14a7c6",
+      "steps": 750,
+      "success": false,
+      "task": "OpenDrawer"
+    },
+    {
+      "contiguous_ack_verified": true,
+      "journal": {
+        "events": 2029,
+        "head_sha256": "5ca7906ce5adba629d1eed10d62e6b713a7f7ff67a5fdc59aeeda3997ccdf0c0"
+      },
+      "proposal_disposition_verified": true,
+      "result_sha256": "5f599710d4788e901bdc6224669b6233717b0c61734ab364d0aff7eb2d960c41",
+      "steps": 1800,
+      "success": false,
+      "task": "PanTransfer"
+    },
+    {
+      "contiguous_ack_verified": true,
+      "journal": {
+        "events": 1523,
+        "head_sha256": "4b82f1abba7fb0ac5dad0681472b5f72d4bddd09e7c6b4d67758d23dd018d3e3"
+      },
+      "proposal_disposition_verified": true,
+      "result_sha256": "b24f5d6804d661593093f7db95dd4804a4142c90582ba8d7420bacd06995fb1c",
+      "steps": 1350,
+      "success": false,
+      "task": "RinseSinkBasin"
+    },
+    {
+      "contiguous_ack_verified": true,
+      "journal": {
+        "events": 2873,
+        "head_sha256": "91f40d5a4ddff237008a0c59b8551abd2a7b25b9e9f4ff7a4ac4c6c6fa02922c"
+      },
+      "proposal_disposition_verified": true,
+      "result_sha256": "69929f7d17bea5b3cfef9a345987d64b2129dbb91780435504a964e99b73861f",
+      "steps": 2550,
+      "success": false,
+      "task": "StoreLeftoversInBowl"
+    },
+    {
+      "contiguous_ack_verified": true,
+      "journal": {
+        "events": 115,
+        "head_sha256": "8fce44379aecb81ae324edb78b355cf099ff1760071f4eefb3bbe7baddc0ff1f"
+      },
+      "proposal_disposition_verified": true,
+      "result_sha256": "5abe932f8b57d91dd3e56196c81d5ea1b29482871e72fad5ab50289a69a937ff",
+      "steps": 98,
+      "success": true,
+      "task": "TurnOnElectricKettle"
+    }
+  ],
+  "scope": "offline bookkeeping and integrity, not physical safety or score independence"
+}

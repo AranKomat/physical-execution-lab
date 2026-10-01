@@ -1,5 +1,10 @@
 # Supervision And RoboCasa365 Bring-Up
 
+This is the earlier bring-up snapshot. For the completed six-case baseline,
+initial bridge parity and incomplete native supervision, see
+[XR1 development screen](XR1_DEVELOPMENT_SCREEN_20261002.md). Its next actions
+supersede the preparation-only items below; do not repeat the baseline screen.
+
 ## Stage C: API Evidence, Not Physical Success
 
 The G0.5 motor-only development screen remains 3/5 successful. Two fresh sparse

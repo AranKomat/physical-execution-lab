@@ -117,7 +117,7 @@ def main():
         ledger.append({'event':'operator_robodojo_supervision_scope','time':time.time(),
             'name':a.name,'max_calls':ledger.max_calls,'local_cap_usd':str(a.cap_usd),
             'shared_cap_usd':'85','model':MODEL,'provider':'openai/flex',
-            'authorization':'standing low-budget approval; owner selected Sol 6.1 Flex'})
+            'authorization':'standing low-budget physical-lab approval; owner selected Sol 6.1 Flex'})
         relay=Relay(ledger,load_key(a.key_file),token,out,a.name,a.max_calls,a.cap_usd,http)
         if a.offline_request:
             if a.max_calls!=1:raise ValueError('offline qualification requires exactly one call')

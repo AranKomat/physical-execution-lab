@@ -30,7 +30,8 @@ def run_episode(env, policy, reviewer, case, config, output, *, clock=time.monot
     if mode!='motor_only' and reviewer is None:raise ContractError('reviewer required')
     governor=SparseGovernor(MonitorConfig(**config.get('monitor',{})))
     started=clock(); times={'policy_s':0.,'review_s':0.,'env_s':0.,'ack_s':0.,'setup_s':0.,'preview_s':0.}
-    metrics={'policy_calls':0,'review_calls':0,'corrected_steps':0,'motor_steps':0,
+    metrics={'policy_calls':0,'proposed_policy_actions':0,'unresolved_policy_actions':0,
+             'review_calls':0,'corrected_steps':0,'motor_steps':0,
              'gripper_clips':0,
              'discarded_policy_actions':0,'interruptions':0,'policy_invalidation_requests':0,'shortened_chunks':0}
     status='incomplete';reason=None;native_success=False;score=None;obs=None;last=None;error=None
@@ -81,6 +82,7 @@ def run_episode(env, policy, reviewer, case, config, output, *, clock=time.monot
             start_step=obs.step;proposal=None;reviewed=False
             if not direct:
                 t=clock();proposal=policy.propose(obs);times['policy_s']+=clock()-t;metrics['policy_calls']+=1
+                metrics['proposed_policy_actions']+=len(proposal.actions)
                 proposal.validate(obs,policy.identity)
                 metrics['gripper_clips']+=int(proposal.diagnostics.get('gripper_clips',0))
                 log('policy_proposal',{'step':obs.step,'policy_identity':proposal.policy_identity,
@@ -93,8 +95,10 @@ def run_episode(env, policy, reviewer, case, config, output, *, clock=time.monot
                 if metrics['review_calls']>=max_reviews:reason='review_budget';break
                 if proposal is not None and config.get('robot_preview',True):
                     t=clock();proposal.diagnostics['robot_preview']=env.preview(proposal);times['preview_s']+=clock()-t
-                t=clock();decision=reviewer.review(obs,proposal,reasons,last_receipt,contract,direct=direct)
-                times['review_s']+=clock()-t;metrics['review_calls']+=1;reviewed=True
+                t=clock()
+                try:decision=reviewer.review(obs,proposal,reasons,last_receipt,contract,direct=direct)
+                finally:times['review_s']+=clock()-t
+                metrics['review_calls']+=1;reviewed=True
                 # Revalidate at the execution boundary, including external/scripted actors.
                 from .actor import decode
                 payload=asdict(decision);payload['actions']=[a.values.tolist() for a in decision.actions]
@@ -181,6 +185,9 @@ def run_episode(env, policy, reviewer, case, config, output, *, clock=time.monot
         if reviewer:
             try:reviewer.close()
             except Exception:pass
+    # Pending at any stop; a lost ACK may have executed, so this is not a discard.
+    metrics['unresolved_policy_actions']=max(0,metrics['proposed_policy_actions']-
+        metrics['motor_steps']-metrics['discarded_policy_actions'])
     elapsed=clock()-started
     result={'schema':'multibench.result.v1','case_id':case['case_id'],'task':case['task'],
             'benchmark':case['benchmark'],'condition':config['name'],'mode':mode,
@@ -213,15 +220,25 @@ def usage_summary(reviewer):
     c=getattr(reviewer,'client',None)
     if c is None:return {'source':'scripted/externally controlled actor; tokens unmeasured'}
     rows=getattr(c,'usages',[])
-    def total(fn):
+    attempts=getattr(c,'n',None)
+    complete=type(attempts) is int and len(rows)==attempts
+    fields={
+        'input_tokens':lambda r:r.get('prompt_tokens'),
+        'cached_input_tokens':lambda r:(r.get('prompt_tokens_details') or {}).get('cached_tokens'),
+        'output_tokens':lambda r:r.get('completion_tokens'),
+        'reasoning_tokens':lambda r:(r.get('completion_tokens_details') or {}).get('reasoning_tokens')}
+    def total(fn,known_only=False):
         vals=[fn(r) for r in rows]
-        return sum(vals) if vals and all(type(v) is int for v in vals) else None
+        if known_only:
+            vals=[v for v in vals if type(v) is int]
+            return sum(vals) if vals else None
+        return sum(vals) if complete and vals and all(type(v) is int for v in vals) else None
     return {'source':'provider-reported, missing fields remain null',
-        'api_requests':getattr(c,'n',None),
-        'input_tokens':total(lambda r:r.get('prompt_tokens')),
-        'cached_input_tokens':total(lambda r:(r.get('prompt_tokens_details') or {}).get('cached_tokens')),
-        'output_tokens':total(lambda r:r.get('completion_tokens')),
-        'reasoning_tokens':total(lambda r:(r.get('completion_tokens_details') or {}).get('reasoning_tokens')),
+        'api_requests':attempts,
+        'usage_rows':len(rows),'all_request_usage_rows_present':complete,
+        'unreported_requests':attempts-len(rows) if type(attempts) is int else None,
+        **{name:total(fn) for name,fn in fields.items()},
+        'known_usage_subtotals':{name:total(fn,known_only=True) for name,fn in fields.items()},
         'reasoning_is_subset_of_output':True,
         'served_models':sorted(set(str(x) for x in getattr(c,'served_models',[]))),
         'served_tiers':sorted(set(str(x) for x in getattr(c,'served_tiers',[]))),

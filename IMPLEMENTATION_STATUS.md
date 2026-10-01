@@ -4,12 +4,15 @@
 
 The build-host statements below describe the original release, not the current
 GPU-host state. Native RoboDojo capture, robot FK and one actual joint-action ACK
-now pass; see `docs/NATIVE_BRINGUP_20261002.md`. One complete G0.5 motor-only
-development episode succeeded (score 1.0, 919 native actions); see
-`docs/NATIVE_PILOT_20261002.md` and `docs/EXPERIMENT_PROGRESS.md`. No paid
-supervisor call has been completed. The exact RoboDojo pi0.5 checkpoint
-is still missing. G0.5 fallback provisioning and its separate inference issues
-are documented in `docs/G05_BRINGUP_20261002.md`.
+now pass; see `docs/NATIVE_BRINGUP_20261002.md`. G0.5's fixed development
+screen completed with 3/5 successes; official XR1's balanced RoboCasa365
+screen completed with 2/6 successes. These are development results, not held-out
+scores or cross-benchmark policy comparisons. One sparse XR1 episode completed
+one paid Flex review and 50 native actions, then stopped on capacity failure.
+No complete matched supervision comparison exists yet. See
+`docs/EXPERIMENT_PROGRESS.md` and `docs/XR1_DEVELOPMENT_SCREEN_20261002.md`.
+The exact RoboDojo pi0.5 checkpoint is still missing. Intern and Xiaomi
+RoboDojo are outside the owner's active scope; XR1 RoboCasa365 remains active.
 
 ## Implemented and exercised on CPU
 
@@ -49,8 +52,9 @@ locks. Software tests cannot certify contact dynamics or hardware safety.
 
 ## Important incomplete items
 
-1. **Native results:** zero real benchmark episodes, zero live LLM requests,
-   zero GPU policy inferences. No speed/accuracy/leaderboard gain is claimed.
+1. **Native comparisons:** development motor-only screens exist, but complete
+   matched supervision and robot-policy-free dense/sparse comparisons remain
+   pending. No harness gain or leaderboard result is established.
 2. **Xiaomi RoboDojo original controller parity:** its EEF actions currently go
    through donor DLS. That is a labeled variant requiring a source-path comparison.
 3. **K1 depth tools on RoboDojo/RoboCasa:** not ported. RoboDojo source RPC is RGB
@@ -73,7 +77,9 @@ locks. Software tests cannot certify contact dynamics or hardware safety.
 
 ## Primary next milestone
 
-One valid native π0.5 RoboDojo episode plus one real warmed policy latency trace,
-then the same interface tests for other candidates. In parallel qualify native
-Xiaomi RoboCasa365. After those pass, freeze and run matched supervision ablations.
-Do not rewrite the architecture before those measurements.
+Audit and qualify/freeze the retained G0.5 and official XR1 bindings, then finish
+matched supervision comparisons under the explicitly selected Flex tier when
+capacity is available. Retain capacity failures without automatic retry or tier
+fallback. Obtain exact pi0.5 access without substituting generic weights;
+robot-policy-free dense/sparse experiments also remain pending. Do not expand
+baseline screens or redesign the architecture to sidestep these milestones.

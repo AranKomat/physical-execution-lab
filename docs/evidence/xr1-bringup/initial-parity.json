@@ -1,0 +1,19 @@
+{
+  "actual_source_horizon": 16,
+  "atol": 1e-06,
+  "compared_prefix": 16,
+  "episode_root": "runs/xr1-development-001/OpenDrawer",
+  "initial_observation_sha256": "f7d8725c02d2ecfdf37a47ad47f53e16a1169131dafc5b8b6ef613257b9c1a4c",
+  "journal": {
+    "events": 847,
+    "head_sha256": "3693e865ce5ff7a80cc93124a5e944a1dfe44296befa8227c91fb004225060ce"
+  },
+  "max_abs_error": 0.0,
+  "paid_calls": 0,
+  "passed": true,
+  "physical_actions": 0,
+  "required_fresh_server_seed": 7,
+  "rtol": 0,
+  "scope": "initial legal-observation client/preprocessing/prefix parity only",
+  "sensor_sha256": "144272b2253dc7f6e09f3c959f651063866a1a2ba46d139eafc7a3c69761550f"
+}

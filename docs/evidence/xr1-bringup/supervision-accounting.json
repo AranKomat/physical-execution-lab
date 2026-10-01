@@ -1,0 +1,28 @@
+{
+  "calls": 4537,
+  "spent_plus_holds": "75.934460744300",
+  "remaining_under_85": "9.065539255700",
+  "unsettled_count": 154,
+  "new_requests": [
+    {"id": "xr1-supervision-kettle-001-0", "reservation": "0.0447990", "actual_cost": "0.003701"},
+    {"id": "xr1-supervision-kettle-001-1", "reservation": "0.0656400", "actual_cost": null}
+  ],
+  "all_existing_holds_retained": true,
+  "automatic_retry": false,
+  "standard_fallback": false,
+  "historical_result_clarification": {
+    "full_input_tokens": null,
+    "full_output_tokens": null,
+    "full_reasoning_tokens": null,
+    "known_input_tokens": 2314,
+    "known_output_tokens": 168,
+    "known_reasoning_tokens": 26,
+    "failed_review_wait_in_original_review_timer": false,
+    "proposed_policy_actions_from_journal": 80,
+    "acknowledged_motor_actions": 50,
+    "explicitly_discarded_actions": 14,
+    "pending_actions_at_api_failure": 16,
+    "initial_legal_sensor_arrays_match_motor_baseline": true,
+    "raw_historical_result_unchanged": true
+  }
+}

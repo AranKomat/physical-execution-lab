@@ -181,3 +181,45 @@ def test_usage_reasoning_subset_not_double_count():
     class R:client=C()
     r=usage_summary(R());assert r['output_tokens']==10 and r['reasoning_tokens']==7
     assert usage_summary(None)['api_requests']==0
+
+
+def test_usage_total_unknown_when_a_request_failed_without_usage():
+    class C:
+        usages=[{'prompt_tokens':100,'completion_tokens':10,
+                 'completion_tokens_details':{'reasoning_tokens':7}}]
+        n=2
+    class R:client=C()
+    result=usage_summary(R())
+    assert result['api_requests']==2 and result['unreported_requests']==1
+    assert not result['all_request_usage_rows_present']
+    assert result['input_tokens'] is result['output_tokens'] is result['reasoning_tokens'] is None
+    assert result['known_usage_subtotals']['input_tokens']==100
+    assert result['known_usage_subtotals']['output_tokens']==10
+
+
+def test_failed_review_wait_is_counted_without_retry(tmp_path):
+    class Clock:
+        now=0.
+        def __call__(self):return self.now
+    clock=Clock()
+    class Reviewer(ToyReviewer):
+        calls=0
+        def review(self,*args,**kwargs):
+            self.calls+=1
+            clock.now+=2.5
+            raise TimeoutError('provider unavailable')
+    reviewer=Reviewer()
+    result=run_episode(ToyEnv(),ToyPolicy(),reviewer,case(),config(),tmp_path/'r',clock=clock)
+    assert reviewer.calls==1 and result['native_steps']==0
+    assert result['status']=='infrastructure_or_contract_error'
+    assert result['timing']['review_s']==result['elapsed_s']==2.5
+    assert result['metrics']['proposed_policy_actions']==6
+    assert result['metrics']['unresolved_policy_actions']==6
+    assert result['metrics']['discarded_policy_actions']==0
+
+
+def test_successful_proposal_accounting_has_no_unresolved_actions(tmp_path):
+    result=run_episode(ToyEnv(13),ToyPolicy(),None,case(),config('motor_only'),tmp_path/'r')
+    metrics=result['metrics']
+    assert result['success'] and metrics['unresolved_policy_actions']==0
+    assert metrics['proposed_policy_actions']==metrics['motor_steps']+metrics['discarded_policy_actions']
