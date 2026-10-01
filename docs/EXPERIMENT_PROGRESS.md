@@ -12,7 +12,7 @@ code/evidence remain archived. Xiaomi's separate RoboCasa365 track is unchanged.
 |---|---|---|
 | Pre-GPU | Complete | CPU suite, synthetic audit, source inspection and config preparation |
 | A: native qualification | Native pilots passed; formal records partial | Reset/render/FK/joint ACK passed; G0.5 and exact pi0.5 both completed sorting layout 0. Pi0.5's formal qualification remains pending |
-| B: speed/quality screen | G0.5 screen complete; pi0.5 pilot passed | Fixed five-case G0.5 screen: 3 successes, 2 native-limit failures; 30-sample seeded FLA timing. Exact pi0.5: score 1.0 at 994 actions/67 calls on sorting layout 0; remaining four cases and matched warm timing pending |
+| B: speed/quality screen | Complete for active RoboDojo policies | Same fixed five-case roster: G0.5 3/5, exact pi0.5 4/5; all native-limit failures retained. Same-input 30-sample warm timing: G0.5 p50 801 ms, pi0.5 p50 454 ms. Development evidence only; qualification/freeze and matched supervision remain separate |
 | C: matched harness comparison | Started, incomplete | Flex route verified; two zero-motion native attempts failed on routing/capacity. No matched physical result or held-out freeze |
 | D: RoboCasa365 | Motor-only bridge qualified; comparison pending | Fixed six-case harness screen: 2/6 success, no infrastructure errors. Initial official-client chunk matches exactly. Evidence-reviewed motor-only qualification recorded; supervision/corrections remain unqualified. Sparse kettle pilot reached 50 steps then Flex capacity failed |
 | E: sensing/transfer | Deferred as specified | Only after useful matched physical results; no RGB-D port claimed |
@@ -39,6 +39,10 @@ code/evidence remain archived. Xiaomi's separate RoboCasa365 track is unchanged.
   development episode: score 1.0, 994 actions, 67 policy calls, zero GPT calls.
 - [x] Minimum five-case G0.5 development screen: 3/5 success, native scores
   1.0 / 1.0 / 0.4 / 1.0 / 0.0; all failures retained, zero paid calls.
+- [x] Same fixed five-case exact pi0.5 screen: 4/5 success, 4,292 actions,
+  289 policy calls, zero GPT/corrections; sorting layout 2 fails at full limit.
+- [x] Pi0.5 matched saved-input warm timing: 30 samples after three warmups,
+  p50/p90/p99 454/488/523 ms, same input corpus as G0.5, no simulator running.
 - [ ] Frozen matched hybrid and direct comparisons.
 - [x] Official XR1 RoboCasa365 full native development pilot: CloseBlenderLid,
   seed 7, success at 286 steps; smoke/reset/render/inference also completed.
@@ -88,3 +92,11 @@ Latest gates: [exact pi0.5 access and direct-call feasibility](PI05_ACCESS_AND_C
 OpenPI/JAX has now been installed and tested in an isolated environment; see
 [the complete pi0.5 pilot](PI05_NATIVE_PILOT_20261002.md).
 Source updates invalidate the prior XR1 code freeze until regenerated.
+
+Latest: [complete pi0.5 screen](PI05_DEVELOPMENT_SCREEN_20261002.md).
+Stage B is now complete for the active RoboDojo scope. Four new pi0.5 cases
+ran on two isolated colocated workers; observed usage was about 15-16 GB per
+GPU. This is not evidence that Intern fits across both GPUs. Formal source
+qualification/freeze and complete matched supervision/direct comparisons
+remain unfinished. Preserve the paid holds and Flex-only route while resolving
+the paid-lane gate; do not substitute more baseline screens for Stage C.

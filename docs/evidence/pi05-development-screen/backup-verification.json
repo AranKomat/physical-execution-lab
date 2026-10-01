@@ -1,0 +1,27 @@
+{
+  "archived_file_entries": 8170,
+  "archives": {
+    "pi05-bindings-latency": {
+      "archive_sha256": "37ca84930e015953e4fd753417305281d1b98c643efe2f9bb288ce0c641c3256",
+      "changed": [],
+      "files_archived": 210,
+      "files_expected": 210,
+      "missing": []
+    },
+    "pi05-screen-first-pair": {
+      "archive_sha256": "0a59021414fa3178722a15a5f05fe98b20578c85ade9f2d8445f27b546a9acb2",
+      "changed": [],
+      "files_archived": 3495,
+      "files_expected": 3495,
+      "missing": []
+    },
+    "pi05-screen-second-pair": {
+      "archive_sha256": "8bb8444a03d7cdd7cfa98f0d6e768a77aec9cde62e07efc952361ada424ed987",
+      "changed": [],
+      "files_archived": 4465,
+      "files_expected": 4465,
+      "missing": []
+    }
+  },
+  "scope": "Per-file SHA-256 verification of local streamed archives against terminal remote files; original pilot backup separately verified"
+}

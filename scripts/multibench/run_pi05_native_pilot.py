@@ -33,6 +33,9 @@ def main():
     for name in ('bound-root', 'manifest', 'case-id', 'source-panel', 'sim-python', 'output'):
         parser.add_argument('--' + name, required=True)
     parser.add_argument('--execute', action='store_true')
+    parser.add_argument('--model-gpu', type=int, choices=(0, 1), default=1)
+    parser.add_argument('--simulator-gpu', type=int, choices=(0, 1), default=0)
+    parser.add_argument('--sim-port', type=int, default=19117)
     args = parser.parse_args()
     if not args.execute:
         parser.error('explicit --execute required; development only, no paid API')
@@ -40,12 +43,14 @@ def main():
     bound = Path(args.bound_root).resolve()
     config = load_json(bound / 'robodojo_pi05_motor_only.json')
     provider = load_json(bound / 'provider.json')
+    if not 1 <= args.sim_port <= 65535:
+        raise ValueError('invalid simulator port')
     if config['mode'] != 'motor_only' or provider['backend'] != 'pi05':
         raise ValueError('requires exact pi0.5 motor-only bundle')
     out = Path(args.output).resolve()
     out.mkdir(parents=True, exist_ok=False)
     policy_python = str(root / '.venv-pi05/bin/python')
-    env = dict(os.environ, CUDA_VISIBLE_DEVICES='1', XLA_PYTHON_CLIENT_PREALLOCATE='false',
+    env = dict(os.environ, CUDA_VISIBLE_DEVICES=str(args.model_gpu), XLA_PYTHON_CLIENT_PREALLOCATE='false',
                PYTHONPATH=str(root / 'external/GPT-as-Policy'))
     source = [policy_python, '-u', '-m', 'hybrid_rollout.robodojo.pi05_server.server',
               '--checkpoint', provider['checkpoint_path'], '--port', str(provider['port']),
@@ -59,10 +64,11 @@ def main():
                '--manifest', str(Path(args.manifest).resolve()), '--case-id', args.case_id,
                '--source-panel', str(Path(args.source_panel).resolve()),
                '--sim-python', args.sim_python, '--robodojo-root', str(root / 'external/RoboDojo'),
-               '--sim-port', '19117', '--output', str(out / 'episode'),
+               '--sim-port', str(args.sim_port), '--output', str(out / 'episode'),
                '--development', '--allow-policy', '--execute']
     atomic_json(out / 'plan.json', {'source': source, 'bridge': bridge, 'episode': episode,
-                                  'model_gpu': 1, 'simulator_gpu': 0, 'paid_calls': 0}, exclusive=True)
+                                  'model_gpu': args.model_gpu, 'simulator_gpu': args.simulator_gpu,
+                                  'paid_calls': 0}, exclusive=True)
     children = []
     try:
         with (out / 'source.log').open('x') as source_log, (out / 'bridge.log').open('x') as bridge_log:
@@ -75,7 +81,7 @@ def main():
             children.append(child)
             wait_ready(child, out / 'bridge.log', lambda row: row.get('ready') is True)
             print(json.dumps({'event': 'native_episode_start', 'case_id': args.case_id}), flush=True)
-            native_env = dict(os.environ, CUDA_VISIBLE_DEVICES='0', OMNI_KIT_ACCEPT_EULA='YES')
+            native_env = dict(os.environ, CUDA_VISIBLE_DEVICES=str(args.simulator_gpu), OMNI_KIT_ACCEPT_EULA='YES')
             with (out / 'launch.log').open('x') as launch_log:
                 child = subprocess.Popen(episode, cwd=root, env=native_env, stdout=launch_log,
                                          stderr=subprocess.STDOUT, start_new_session=True)

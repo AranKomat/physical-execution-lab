@@ -72,6 +72,10 @@ cannot rank overall motor quality or demonstrate a harness improvement.
 
 ## Remaining Sequence
 
+Update: the fixed five-case roster and matched warm timing are now complete;
+see [the screen report](PI05_DEVELOPMENT_SCREEN_20261002.md). The sequence below
+describes the next steps at the time of this first pilot.
+
 Retain pi0.5 as viable. Run the same fixed five-case development roster used
 for G0.5: sorting layouts 0, 1, 2 and tower layouts 0, 1. This successful pilot
 supplies sorting layout 0; do not replace any later failure. Also complete the

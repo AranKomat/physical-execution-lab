@@ -52,3 +52,27 @@ def test_audit_rejects_result_score_disagreement(tmp_path):
     path=tmp_path/'controller/result.json';data=load_json(path);data['native_score']=.5
     atomic_json(path,data)
     with pytest.raises(ContractError,match='score'):audit(tmp_path)
+
+
+@pytest.mark.parametrize('index,seed,checkpoint,match',[
+    (0,0,'bound',None),(1,0,'bound','indices'),
+    (0,1,'bound','seed'),(0,0,'wrong','checkpoint')])
+def test_pi05_source_provenance(tmp_path,index,seed,checkpoint,match):
+    episode(tmp_path)
+    (tmp_path/'controller/events.jsonl').unlink()
+    with Journal(tmp_path/'controller/events.jsonl') as journal:
+        journal.append('policy_proposal',{'actions':[{}, {}, {}],
+            'diagnostics':{'inference_index':index}})
+        journal.append('control_ack',{'step':1})
+    identity=tmp_path/'source.json';provider=tmp_path/'provider.json'
+    atomic_json(identity,{'backend':'OpenPI/JAX','policy_rng_seed':seed,
+        'checkpoint_sha256':checkpoint})
+    atomic_json(provider,{'backend':'pi05','native_checkpoint_sha256':'bound',
+        'identity':{'prediction_horizon':3}})
+    if match:
+        with pytest.raises(ContractError,match=match):
+            audit(tmp_path,source_identity=identity,provider=provider)
+    else:
+        result=audit(tmp_path,source_identity=identity,provider=provider)
+        assert result['raw_gripper_min'] is None
+        assert result['policy_rng_seed']==0

@@ -1,0 +1,103 @@
+{
+  "benchmark": "robodojo",
+  "case_id": "build_tower__standard__g0__l1",
+  "case_sha256": "34df7dd5063624ec47d798b0ea2f9c4178df28743a161aada7afbb5077e3af9d",
+  "condition": "robodojo_pi05_motor_only",
+  "config_sha256": "af24908a77cde16230bd25e26e46ef37d17742ec53ff806a0b8cdfb0d7b112f8",
+  "elapsed_s": 412.49835560800057,
+  "environment_contract_sha256": "6938b0d889a3456094819adc8df299f42c507fb70034c75f2132b485b360491f",
+  "error": null,
+  "evidence_kind": "native_unqualified",
+  "group": "build_tower",
+  "initial_observation_sha256": "73ef3eafc5116e5c3fac01fe785b45a715b9de4441005e1027a9df600b4cf670",
+  "metrics": {
+    "corrected_steps": 0,
+    "discarded_policy_actions": 1721,
+    "gripper_clips": 0,
+    "interruptions": 0,
+    "motor_steps": 729,
+    "policy_calls": 49,
+    "policy_invalidation_requests": 49,
+    "proposed_policy_actions": 2450,
+    "review_calls": 0,
+    "shortened_chunks": 49,
+    "unresolved_policy_actions": 0
+  },
+  "mode": "motor_only",
+  "native_score": 1.0,
+  "native_steps": 729,
+  "partition": "dev",
+  "planner_config": null,
+  "planner_model": null,
+  "policy_identity": "78de83adc06eae60af453f72fd026f40de9c3eef3a214bf528770f51abd321c2",
+  "policy_runtime_fingerprint": {
+    "executable": "/root/physical-execution-lab/.venv-pi05/bin/python",
+    "gpus": [
+      "NVIDIA GeForce RTX 4090, 580.178.04, 24564 MiB",
+      "NVIDIA GeForce RTX 4090, 580.178.04, 24564 MiB"
+    ],
+    "packages": {
+      "httpx": "0.28.1",
+      "isaaclab": null,
+      "isaacsim": null,
+      "jax": "0.5.3",
+      "mujoco": null,
+      "numpy": "1.26.4",
+      "robocasa": null,
+      "robosuite": null,
+      "scipy": "1.15.3",
+      "torch": "2.10.0",
+      "transformers": "4.53.2"
+    },
+    "platform": "Linux-6.8.0-59-generic-x86_64-with-glibc2.35",
+    "python": "3.11.16 (main, Aug 27 2026, 14:44:21) [GCC 14.3.0]"
+  },
+  "runtime_fingerprint": {
+    "executable": "/root/physical-execution-lab/.venv/bin/python",
+    "gpus": [
+      "NVIDIA GeForce RTX 4090, 580.178.04, 24564 MiB",
+      "NVIDIA GeForce RTX 4090, 580.178.04, 24564 MiB"
+    ],
+    "packages": {
+      "httpx": "0.28.1",
+      "isaaclab": null,
+      "isaacsim": null,
+      "jax": null,
+      "mujoco": null,
+      "numpy": "2.2.6",
+      "robocasa": null,
+      "robosuite": null,
+      "scipy": "1.15.3",
+      "torch": null,
+      "transformers": null
+    },
+    "platform": "Linux-6.8.0-59-generic-x86_64-with-glibc2.35",
+    "python": "3.10.12 (main, Feb  4 2025, 14:57:36) [GCC 11.4.0]"
+  },
+  "schema": "multibench.result.v1",
+  "simulated_seconds": 29.16,
+  "simulation_advances_during_model_wait": false,
+  "split": null,
+  "status": "native_completed",
+  "success": true,
+  "task": "build_tower",
+  "task_demonstrations": false,
+  "task_memory": false,
+  "termination": "native_terminal",
+  "timing": {
+    "ack_s": 70.27656617405228,
+    "env_s": 278.4864651280186,
+    "policy_s": 33.1357358269961,
+    "preview_s": 0.0,
+    "review_s": 0.0,
+    "setup_s": 24.51039194000259
+  },
+  "usage": {
+    "api_requests": 0,
+    "cached_input_tokens": 0,
+    "input_tokens": 0,
+    "output_tokens": 0,
+    "reasoning_tokens": 0,
+    "source": "no model used"
+  }
+}

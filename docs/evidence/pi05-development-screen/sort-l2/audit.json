@@ -1,0 +1,16 @@
+{
+  "controller_evaluator_agree": true,
+  "events": 1324,
+  "head_sha256": "02cd95842b18ac42ddab2e8c27767b69998a7d7cbb23dfe59c3ea730fa0b5e40",
+  "max_gripper_clip_delta": null,
+  "native_completion_nonvacuous": true,
+  "policy_rng_seed": 0,
+  "raw_gripper_max": null,
+  "raw_gripper_min": null,
+  "scope": "offline bookkeeping/provenance audit, not automatic sensor legality or safety proof",
+  "seed_provenance_scope": "fresh pi05 source identity and contiguous inference indices",
+  "seeded_proposals": 74,
+  "sequential_acks": 1100,
+  "source_declared_policy_rng_seed": 0,
+  "success": false
+}
