@@ -1,0 +1,32 @@
+[
+  {
+    "end_step": 12,
+    "executed_steps": 12,
+    "executor": "correction",
+    "object_effect": "not_certified_by_robot_motion",
+    "reviewed": true,
+    "serial": 0,
+    "start_step": 0,
+    "stop_reason": "prefix_completed"
+  },
+  {
+    "end_step": 24,
+    "executed_steps": 12,
+    "executor": "correction",
+    "object_effect": "not_certified_by_robot_motion",
+    "reviewed": true,
+    "serial": 1,
+    "start_step": 12,
+    "stop_reason": "prefix_completed"
+  },
+  {
+    "end_step": 36,
+    "executed_steps": 12,
+    "executor": "correction",
+    "object_effect": "not_certified_by_robot_motion",
+    "reviewed": true,
+    "serial": 2,
+    "start_step": 24,
+    "stop_reason": "native_terminal"
+  }
+]

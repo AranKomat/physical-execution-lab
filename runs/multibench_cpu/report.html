@@ -1,0 +1,11 @@
+<!doctype html><html lang="en"><meta charset="utf-8"><title>Physical Execution Lab</title>
+<style>body{font:16px system-ui;margin:40px auto;max-width:1200px;padding:0 20px;line-height:1.5}table{border-collapse:collapse;width:100%}td,th{padding:12px;border-bottom:1px solid #ddd;text-align:left}code{white-space:pre-wrap}</style>
+<h1>Physical Execution Lab</h1><h2>SYNTHETIC CPU CONTRACT TESTS — NOT ROBOT BENCHMARK RESULTS</h2>
+<p>Conditions include failures and missing runs. No historical paper score is counted as an experiment here. Token fields remain blank when unmeasured.</p>
+<table><tr><th>Condition</th><th>Success / scheduled</th><th>Missing</th><th>Mean wall s</th><th>Review calls</th><th>Policy calls</th></tr>
+<tr><td>direct_dense</td><td>2/3</td><td>0</td><td>0.061</td><td>24</td><td>0</td></tr>
+<tr><td>direct_sparse</td><td>2/3</td><td>0</td><td>0.025</td><td>9</td><td>0</td></tr>
+<tr><td>motor_only</td><td>2/3</td><td>0</td><td>0.049</td><td>0</td><td>18</td></tr>
+<tr><td>review_every_chunk</td><td>2/3</td><td>0</td><td>0.05</td><td>18</td><td>18</td></tr>
+<tr><td>sparse</td><td>2/3</td><td>0</td><td>0.046</td><td>7</td><td>20</td></tr>
+</table><h2>Interpretation</h2><p>Model-only vs hybrid tests the additional supervisor. Every-chunk vs sparse tests invocation scheduling with the same motor and language model. Native and synthetic rows must never be combined.</p></html>

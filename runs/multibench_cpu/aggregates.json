@@ -1,0 +1,157 @@
+[
+  {
+    "category_success": {
+      "unmapped": 0.6666666666666666
+    },
+    "condition": "direct_dense",
+    "interpretation": "Missing runs remain unsuccessful in success denominator; wall/score coverage is shown separately.",
+    "mean_control_steps_available": 36.0,
+    "mean_episode_wall_s_available": 0.06139821500012962,
+    "missing": 0,
+    "policy_calls": 0,
+    "results_present": 3,
+    "review_calls": 24,
+    "scheduled": 3,
+    "score_coverage": 3,
+    "score_mean_available_only": 0.6666666666666666,
+    "success_rate_full_denominator": 0.6666666666666666,
+    "successes": 2,
+    "task_weighted_success": 0.6666666666666666,
+    "token_totals": {
+      "cached_input_tokens": null,
+      "input_tokens": null,
+      "output_tokens": null,
+      "reasoning_tokens": null
+    },
+    "total_control_steps": 108,
+    "total_steps_per_success": 54.0,
+    "wilson95": [
+      0.2076596008020477,
+      0.9385080552796037
+    ]
+  },
+  {
+    "category_success": {
+      "unmapped": 0.6666666666666666
+    },
+    "condition": "direct_sparse",
+    "interpretation": "Missing runs remain unsuccessful in success denominator; wall/score coverage is shown separately.",
+    "mean_control_steps_available": 36.0,
+    "mean_episode_wall_s_available": 0.025485491333256505,
+    "missing": 0,
+    "policy_calls": 0,
+    "results_present": 3,
+    "review_calls": 9,
+    "scheduled": 3,
+    "score_coverage": 3,
+    "score_mean_available_only": 0.6666666666666666,
+    "success_rate_full_denominator": 0.6666666666666666,
+    "successes": 2,
+    "task_weighted_success": 0.6666666666666666,
+    "token_totals": {
+      "cached_input_tokens": null,
+      "input_tokens": null,
+      "output_tokens": null,
+      "reasoning_tokens": null
+    },
+    "total_control_steps": 108,
+    "total_steps_per_success": 54.0,
+    "wilson95": [
+      0.2076596008020477,
+      0.9385080552796037
+    ]
+  },
+  {
+    "category_success": {
+      "unmapped": 0.6666666666666666
+    },
+    "condition": "motor_only",
+    "interpretation": "Missing runs remain unsuccessful in success denominator; wall/score coverage is shown separately.",
+    "mean_control_steps_available": 36.0,
+    "mean_episode_wall_s_available": 0.049158770666660224,
+    "missing": 0,
+    "policy_calls": 18,
+    "results_present": 3,
+    "review_calls": 0,
+    "scheduled": 3,
+    "score_coverage": 3,
+    "score_mean_available_only": 0.6666666666666666,
+    "success_rate_full_denominator": 0.6666666666666666,
+    "successes": 2,
+    "task_weighted_success": 0.6666666666666666,
+    "token_totals": {
+      "cached_input_tokens": 0,
+      "input_tokens": 0,
+      "output_tokens": 0,
+      "reasoning_tokens": 0
+    },
+    "total_control_steps": 108,
+    "total_steps_per_success": 54.0,
+    "wilson95": [
+      0.2076596008020477,
+      0.9385080552796037
+    ]
+  },
+  {
+    "category_success": {
+      "unmapped": 0.6666666666666666
+    },
+    "condition": "review_every_chunk",
+    "interpretation": "Missing runs remain unsuccessful in success denominator; wall/score coverage is shown separately.",
+    "mean_control_steps_available": 36.0,
+    "mean_episode_wall_s_available": 0.050284516333401065,
+    "missing": 0,
+    "policy_calls": 18,
+    "results_present": 3,
+    "review_calls": 18,
+    "scheduled": 3,
+    "score_coverage": 3,
+    "score_mean_available_only": 0.6666666666666666,
+    "success_rate_full_denominator": 0.6666666666666666,
+    "successes": 2,
+    "task_weighted_success": 0.6666666666666666,
+    "token_totals": {
+      "cached_input_tokens": null,
+      "input_tokens": null,
+      "output_tokens": null,
+      "reasoning_tokens": null
+    },
+    "total_control_steps": 108,
+    "total_steps_per_success": 54.0,
+    "wilson95": [
+      0.2076596008020477,
+      0.9385080552796037
+    ]
+  },
+  {
+    "category_success": {
+      "unmapped": 0.6666666666666666
+    },
+    "condition": "sparse",
+    "interpretation": "Missing runs remain unsuccessful in success denominator; wall/score coverage is shown separately.",
+    "mean_control_steps_available": 36.0,
+    "mean_episode_wall_s_available": 0.04618524266667615,
+    "missing": 0,
+    "policy_calls": 20,
+    "results_present": 3,
+    "review_calls": 7,
+    "scheduled": 3,
+    "score_coverage": 3,
+    "score_mean_available_only": 0.6666666666666666,
+    "success_rate_full_denominator": 0.6666666666666666,
+    "successes": 2,
+    "task_weighted_success": 0.6666666666666666,
+    "token_totals": {
+      "cached_input_tokens": null,
+      "input_tokens": null,
+      "output_tokens": null,
+      "reasoning_tokens": null
+    },
+    "total_control_steps": 108,
+    "total_steps_per_success": 54.0,
+    "wilson95": [
+      0.2076596008020477,
+      0.9385080552796037
+    ]
+  }
+]

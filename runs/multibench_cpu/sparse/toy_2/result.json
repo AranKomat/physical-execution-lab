@@ -1,0 +1,57 @@
+{
+  "benchmark": "synthetic",
+  "case_id": "toy_2",
+  "case_sha256": "c89d0da1ec2dc371aa44997694938a1966f0696339c248b8cf6216b8a7c91788",
+  "condition": "sparse",
+  "config_sha256": "a3299f1e537c9a590b0e68c1e030bee7c63f695895d1831630627b945efc3a95",
+  "elapsed_s": 0.05325353099988206,
+  "environment_contract_sha256": "df0a816b91afb9ef83ac23c25123c773a61a5dfcd8e188f8d76c6d22d09d7b83",
+  "error": null,
+  "evidence_kind": "synthetic",
+  "group": "toy_task_2",
+  "initial_observation_sha256": "9b2ec3559b4a7b610c5188423ac2be4096592bccfa29060a611600f94cdc7b62",
+  "metrics": {
+    "corrected_steps": 0,
+    "discarded_policy_actions": 12,
+    "interruptions": 2,
+    "motor_steps": 36,
+    "policy_calls": 8,
+    "policy_invalidation_requests": 3,
+    "review_calls": 3,
+    "shortened_chunks": 0
+  },
+  "mode": "sparse",
+  "native_score": 0.0,
+  "native_steps": 36,
+  "partition": "dev",
+  "planner_config": {
+    "model": "SCRIPTED_NOT_LLM"
+  },
+  "planner_model": "SCRIPTED_NOT_LLM",
+  "policy_identity": "e015d5231fbe1582530cb70cd2b38d14fafd08b15f89e1ec464e748193d4f875",
+  "policy_runtime_fingerprint": null,
+  "runtime_fingerprint": {
+    "backend": "toy_cpu_no_physics"
+  },
+  "schema": "multibench.result.v1",
+  "simulated_seconds": 1.44,
+  "simulation_advances_during_model_wait": false,
+  "split": null,
+  "status": "native_completed",
+  "success": false,
+  "task": "toy_task_2",
+  "task_demonstrations": false,
+  "task_memory": false,
+  "termination": "native_terminal",
+  "timing": {
+    "ack_s": 0.00805600400099138,
+    "env_s": 0.003964555000038672,
+    "policy_s": 0.0039927589996295865,
+    "preview_s": 2.995000158989569e-06,
+    "review_s": 1.611300012882566e-05,
+    "setup_s": 0.00010192100035055773
+  },
+  "usage": {
+    "source": "scripted/externally controlled actor; tokens unmeasured"
+  }
+}

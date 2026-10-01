@@ -1,0 +1,82 @@
+[
+  {
+    "end_step": 6,
+    "executed_steps": 6,
+    "executor": "motor",
+    "object_effect": "not_certified_by_robot_motion",
+    "reviewed": true,
+    "serial": 0,
+    "start_step": 0,
+    "stop_reason": "prefix_completed"
+  },
+  {
+    "end_step": 12,
+    "executed_steps": 6,
+    "executor": "motor",
+    "object_effect": "not_certified_by_robot_motion",
+    "reviewed": false,
+    "serial": 1,
+    "start_step": 6,
+    "stop_reason": "prefix_completed"
+  },
+  {
+    "end_step": 13,
+    "executed_steps": 1,
+    "executor": "motor",
+    "object_effect": "not_certified_by_robot_motion",
+    "reviewed": false,
+    "serial": 2,
+    "start_step": 12,
+    "stop_reason": "monitor_event"
+  },
+  {
+    "end_step": 19,
+    "executed_steps": 6,
+    "executor": "motor",
+    "object_effect": "not_certified_by_robot_motion",
+    "reviewed": true,
+    "serial": 3,
+    "start_step": 13,
+    "stop_reason": "prefix_completed"
+  },
+  {
+    "end_step": 25,
+    "executed_steps": 6,
+    "executor": "motor",
+    "object_effect": "not_certified_by_robot_motion",
+    "reviewed": false,
+    "serial": 4,
+    "start_step": 19,
+    "stop_reason": "prefix_completed"
+  },
+  {
+    "end_step": 26,
+    "executed_steps": 1,
+    "executor": "motor",
+    "object_effect": "not_certified_by_robot_motion",
+    "reviewed": false,
+    "serial": 5,
+    "start_step": 25,
+    "stop_reason": "monitor_event"
+  },
+  {
+    "end_step": 32,
+    "executed_steps": 6,
+    "executor": "motor",
+    "object_effect": "not_certified_by_robot_motion",
+    "reviewed": true,
+    "serial": 6,
+    "start_step": 26,
+    "stop_reason": "prefix_completed"
+  },
+  {
+    "end_step": 36,
+    "executed_steps": 4,
+    "executor": "motor",
+    "object_effect": "not_certified_by_robot_motion",
+    "reviewed": false,
+    "serial": 7,
+    "start_step": 32,
+    "stop_reason": "native_terminal"
+  }
+]

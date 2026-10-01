@@ -1,0 +1,866 @@
+[
+  {
+    "benchmark": "synthetic",
+    "case_id": "toy_0",
+    "case_sha256": "934d1d108712c3f08358df625d167f667e0692a621315ec0d40e318f64ea0138",
+    "condition": "motor_only",
+    "config_sha256": "bad9c6589308f407bc7aa1ebf8a31dd7e1de28c13b57160aec617179dd6462cd",
+    "elapsed_s": 0.05594516300016039,
+    "environment_contract_sha256": "df0a816b91afb9ef83ac23c25123c773a61a5dfcd8e188f8d76c6d22d09d7b83",
+    "error": null,
+    "evidence_kind": "synthetic",
+    "group": "toy_task_0",
+    "initial_observation_sha256": "e9bccd161c4860923c361a9aef7162abbaf856316f4f946ab8d3d278a0a84e41",
+    "metrics": {
+      "corrected_steps": 0,
+      "discarded_policy_actions": 0,
+      "interruptions": 0,
+      "motor_steps": 36,
+      "policy_calls": 6,
+      "policy_invalidation_requests": 0,
+      "review_calls": 0,
+      "shortened_chunks": 0
+    },
+    "mode": "motor_only",
+    "native_score": 1.0,
+    "native_steps": 36,
+    "partition": "dev",
+    "planner_config": null,
+    "planner_model": null,
+    "policy_identity": "e015d5231fbe1582530cb70cd2b38d14fafd08b15f89e1ec464e748193d4f875",
+    "policy_runtime_fingerprint": null,
+    "runtime_fingerprint": {
+      "backend": "toy_cpu_no_physics"
+    },
+    "schema": "multibench.result.v1",
+    "simulated_seconds": 1.44,
+    "simulation_advances_during_model_wait": false,
+    "split": null,
+    "status": "native_completed",
+    "success": true,
+    "task": "toy_task_0",
+    "task_demonstrations": false,
+    "task_memory": false,
+    "termination": "native_terminal",
+    "timing": {
+      "ack_s": 0.008166679000169097,
+      "env_s": 0.0037962500000503496,
+      "policy_s": 0.005201117000069644,
+      "preview_s": 0.0,
+      "review_s": 0.0,
+      "setup_s": 0.00021762199958175188
+    },
+    "usage": {
+      "api_requests": 0,
+      "cached_input_tokens": 0,
+      "input_tokens": 0,
+      "output_tokens": 0,
+      "reasoning_tokens": 0,
+      "source": "no model used"
+    }
+  },
+  {
+    "benchmark": "synthetic",
+    "case_id": "toy_1",
+    "case_sha256": "a1cc4d2d729f0b1e6f65cca4fe475e0d435d049c5783e9e8d68f829e6bf36b15",
+    "condition": "motor_only",
+    "config_sha256": "bad9c6589308f407bc7aa1ebf8a31dd7e1de28c13b57160aec617179dd6462cd",
+    "elapsed_s": 0.04547625099985453,
+    "environment_contract_sha256": "df0a816b91afb9ef83ac23c25123c773a61a5dfcd8e188f8d76c6d22d09d7b83",
+    "error": null,
+    "evidence_kind": "synthetic",
+    "group": "toy_task_1",
+    "initial_observation_sha256": "250f91dcc5ce09d986d90834ae603db8c8db2aa7cd0b775640357d8f05397559",
+    "metrics": {
+      "corrected_steps": 0,
+      "discarded_policy_actions": 0,
+      "interruptions": 0,
+      "motor_steps": 36,
+      "policy_calls": 6,
+      "policy_invalidation_requests": 0,
+      "review_calls": 0,
+      "shortened_chunks": 0
+    },
+    "mode": "motor_only",
+    "native_score": 1.0,
+    "native_steps": 36,
+    "partition": "dev",
+    "planner_config": null,
+    "planner_model": null,
+    "policy_identity": "e015d5231fbe1582530cb70cd2b38d14fafd08b15f89e1ec464e748193d4f875",
+    "policy_runtime_fingerprint": null,
+    "runtime_fingerprint": {
+      "backend": "toy_cpu_no_physics"
+    },
+    "schema": "multibench.result.v1",
+    "simulated_seconds": 1.44,
+    "simulation_advances_during_model_wait": false,
+    "split": null,
+    "status": "native_completed",
+    "success": true,
+    "task": "toy_task_1",
+    "task_demonstrations": false,
+    "task_memory": false,
+    "termination": "native_terminal",
+    "timing": {
+      "ack_s": 0.00784982400273293,
+      "env_s": 0.003226410000024771,
+      "policy_s": 0.00490392800020345,
+      "preview_s": 0.0,
+      "review_s": 0.0,
+      "setup_s": 9.702399984234944e-05
+    },
+    "usage": {
+      "api_requests": 0,
+      "cached_input_tokens": 0,
+      "input_tokens": 0,
+      "output_tokens": 0,
+      "reasoning_tokens": 0,
+      "source": "no model used"
+    }
+  },
+  {
+    "benchmark": "synthetic",
+    "case_id": "toy_2",
+    "case_sha256": "c89d0da1ec2dc371aa44997694938a1966f0696339c248b8cf6216b8a7c91788",
+    "condition": "motor_only",
+    "config_sha256": "bad9c6589308f407bc7aa1ebf8a31dd7e1de28c13b57160aec617179dd6462cd",
+    "elapsed_s": 0.04605489799996576,
+    "environment_contract_sha256": "df0a816b91afb9ef83ac23c25123c773a61a5dfcd8e188f8d76c6d22d09d7b83",
+    "error": null,
+    "evidence_kind": "synthetic",
+    "group": "toy_task_2",
+    "initial_observation_sha256": "9b2ec3559b4a7b610c5188423ac2be4096592bccfa29060a611600f94cdc7b62",
+    "metrics": {
+      "corrected_steps": 0,
+      "discarded_policy_actions": 0,
+      "interruptions": 0,
+      "motor_steps": 36,
+      "policy_calls": 6,
+      "policy_invalidation_requests": 0,
+      "review_calls": 0,
+      "shortened_chunks": 0
+    },
+    "mode": "motor_only",
+    "native_score": 0.0,
+    "native_steps": 36,
+    "partition": "dev",
+    "planner_config": null,
+    "planner_model": null,
+    "policy_identity": "e015d5231fbe1582530cb70cd2b38d14fafd08b15f89e1ec464e748193d4f875",
+    "policy_runtime_fingerprint": null,
+    "runtime_fingerprint": {
+      "backend": "toy_cpu_no_physics"
+    },
+    "schema": "multibench.result.v1",
+    "simulated_seconds": 1.44,
+    "simulation_advances_during_model_wait": false,
+    "split": null,
+    "status": "native_completed",
+    "success": false,
+    "task": "toy_task_2",
+    "task_demonstrations": false,
+    "task_memory": false,
+    "termination": "native_terminal",
+    "timing": {
+      "ack_s": 0.005269593999400968,
+      "env_s": 0.006098865998865222,
+      "policy_s": 0.005514419000064663,
+      "preview_s": 0.0,
+      "review_s": 0.0,
+      "setup_s": 0.00016894000009415322
+    },
+    "usage": {
+      "api_requests": 0,
+      "cached_input_tokens": 0,
+      "input_tokens": 0,
+      "output_tokens": 0,
+      "reasoning_tokens": 0,
+      "source": "no model used"
+    }
+  },
+  {
+    "benchmark": "synthetic",
+    "case_id": "toy_0",
+    "case_sha256": "934d1d108712c3f08358df625d167f667e0692a621315ec0d40e318f64ea0138",
+    "condition": "review_every_chunk",
+    "config_sha256": "301ed051236a590fc465e709de877d2a509eacd8f0cbc38a3097fbeb57dcaba9",
+    "elapsed_s": 0.038751911999952426,
+    "environment_contract_sha256": "df0a816b91afb9ef83ac23c25123c773a61a5dfcd8e188f8d76c6d22d09d7b83",
+    "error": null,
+    "evidence_kind": "synthetic",
+    "group": "toy_task_0",
+    "initial_observation_sha256": "e9bccd161c4860923c361a9aef7162abbaf856316f4f946ab8d3d278a0a84e41",
+    "metrics": {
+      "corrected_steps": 0,
+      "discarded_policy_actions": 0,
+      "interruptions": 0,
+      "motor_steps": 36,
+      "policy_calls": 6,
+      "policy_invalidation_requests": 0,
+      "review_calls": 6,
+      "shortened_chunks": 0
+    },
+    "mode": "review_every_chunk",
+    "native_score": 1.0,
+    "native_steps": 36,
+    "partition": "dev",
+    "planner_config": {
+      "model": "SCRIPTED_NOT_LLM"
+    },
+    "planner_model": "SCRIPTED_NOT_LLM",
+    "policy_identity": "e015d5231fbe1582530cb70cd2b38d14fafd08b15f89e1ec464e748193d4f875",
+    "policy_runtime_fingerprint": null,
+    "runtime_fingerprint": {
+      "backend": "toy_cpu_no_physics"
+    },
+    "schema": "multibench.result.v1",
+    "simulated_seconds": 1.44,
+    "simulation_advances_during_model_wait": false,
+    "split": null,
+    "status": "native_completed",
+    "success": true,
+    "task": "toy_task_0",
+    "task_demonstrations": false,
+    "task_memory": false,
+    "termination": "native_terminal",
+    "timing": {
+      "ack_s": 0.00761338899974362,
+      "env_s": 0.0030326479986797494,
+      "policy_s": 0.0032128939997164707,
+      "preview_s": 8.702999821252888e-06,
+      "review_s": 3.402099946470116e-05,
+      "setup_s": 7.2036999881675e-05
+    },
+    "usage": {
+      "source": "scripted/externally controlled actor; tokens unmeasured"
+    }
+  },
+  {
+    "benchmark": "synthetic",
+    "case_id": "toy_1",
+    "case_sha256": "a1cc4d2d729f0b1e6f65cca4fe475e0d435d049c5783e9e8d68f829e6bf36b15",
+    "condition": "review_every_chunk",
+    "config_sha256": "301ed051236a590fc465e709de877d2a509eacd8f0cbc38a3097fbeb57dcaba9",
+    "elapsed_s": 0.054494105000230775,
+    "environment_contract_sha256": "df0a816b91afb9ef83ac23c25123c773a61a5dfcd8e188f8d76c6d22d09d7b83",
+    "error": null,
+    "evidence_kind": "synthetic",
+    "group": "toy_task_1",
+    "initial_observation_sha256": "250f91dcc5ce09d986d90834ae603db8c8db2aa7cd0b775640357d8f05397559",
+    "metrics": {
+      "corrected_steps": 0,
+      "discarded_policy_actions": 0,
+      "interruptions": 0,
+      "motor_steps": 36,
+      "policy_calls": 6,
+      "policy_invalidation_requests": 0,
+      "review_calls": 6,
+      "shortened_chunks": 0
+    },
+    "mode": "review_every_chunk",
+    "native_score": 1.0,
+    "native_steps": 36,
+    "partition": "dev",
+    "planner_config": {
+      "model": "SCRIPTED_NOT_LLM"
+    },
+    "planner_model": "SCRIPTED_NOT_LLM",
+    "policy_identity": "e015d5231fbe1582530cb70cd2b38d14fafd08b15f89e1ec464e748193d4f875",
+    "policy_runtime_fingerprint": null,
+    "runtime_fingerprint": {
+      "backend": "toy_cpu_no_physics"
+    },
+    "schema": "multibench.result.v1",
+    "simulated_seconds": 1.44,
+    "simulation_advances_during_model_wait": false,
+    "split": null,
+    "status": "native_completed",
+    "success": true,
+    "task": "toy_task_1",
+    "task_demonstrations": false,
+    "task_memory": false,
+    "termination": "native_terminal",
+    "timing": {
+      "ack_s": 0.0078091650007081626,
+      "env_s": 0.002483324999047909,
+      "policy_s": 0.009546171000692993,
+      "preview_s": 7.099999493220821e-06,
+      "review_s": 3.090600012001232e-05,
+      "setup_s": 0.0003179400000590249
+    },
+    "usage": {
+      "source": "scripted/externally controlled actor; tokens unmeasured"
+    }
+  },
+  {
+    "benchmark": "synthetic",
+    "case_id": "toy_2",
+    "case_sha256": "c89d0da1ec2dc371aa44997694938a1966f0696339c248b8cf6216b8a7c91788",
+    "condition": "review_every_chunk",
+    "config_sha256": "301ed051236a590fc465e709de877d2a509eacd8f0cbc38a3097fbeb57dcaba9",
+    "elapsed_s": 0.05760753200002,
+    "environment_contract_sha256": "df0a816b91afb9ef83ac23c25123c773a61a5dfcd8e188f8d76c6d22d09d7b83",
+    "error": null,
+    "evidence_kind": "synthetic",
+    "group": "toy_task_2",
+    "initial_observation_sha256": "9b2ec3559b4a7b610c5188423ac2be4096592bccfa29060a611600f94cdc7b62",
+    "metrics": {
+      "corrected_steps": 0,
+      "discarded_policy_actions": 0,
+      "interruptions": 0,
+      "motor_steps": 36,
+      "policy_calls": 6,
+      "policy_invalidation_requests": 0,
+      "review_calls": 6,
+      "shortened_chunks": 0
+    },
+    "mode": "review_every_chunk",
+    "native_score": 0.0,
+    "native_steps": 36,
+    "partition": "dev",
+    "planner_config": {
+      "model": "SCRIPTED_NOT_LLM"
+    },
+    "planner_model": "SCRIPTED_NOT_LLM",
+    "policy_identity": "e015d5231fbe1582530cb70cd2b38d14fafd08b15f89e1ec464e748193d4f875",
+    "policy_runtime_fingerprint": null,
+    "runtime_fingerprint": {
+      "backend": "toy_cpu_no_physics"
+    },
+    "schema": "multibench.result.v1",
+    "simulated_seconds": 1.44,
+    "simulation_advances_during_model_wait": false,
+    "split": null,
+    "status": "native_completed",
+    "success": false,
+    "task": "toy_task_2",
+    "task_demonstrations": false,
+    "task_memory": false,
+    "termination": "native_terminal",
+    "timing": {
+      "ack_s": 0.009365268999317777,
+      "env_s": 0.0036002460005875037,
+      "policy_s": 0.003086517000610911,
+      "preview_s": 6.508999831567053e-06,
+      "review_s": 3.61420006811386e-05,
+      "setup_s": 9.167500002149609e-05
+    },
+    "usage": {
+      "source": "scripted/externally controlled actor; tokens unmeasured"
+    }
+  },
+  {
+    "benchmark": "synthetic",
+    "case_id": "toy_0",
+    "case_sha256": "934d1d108712c3f08358df625d167f667e0692a621315ec0d40e318f64ea0138",
+    "condition": "sparse",
+    "config_sha256": "a3299f1e537c9a590b0e68c1e030bee7c63f695895d1831630627b945efc3a95",
+    "elapsed_s": 0.03287325300016164,
+    "environment_contract_sha256": "df0a816b91afb9ef83ac23c25123c773a61a5dfcd8e188f8d76c6d22d09d7b83",
+    "error": null,
+    "evidence_kind": "synthetic",
+    "group": "toy_task_0",
+    "initial_observation_sha256": "e9bccd161c4860923c361a9aef7162abbaf856316f4f946ab8d3d278a0a84e41",
+    "metrics": {
+      "corrected_steps": 0,
+      "discarded_policy_actions": 0,
+      "interruptions": 0,
+      "motor_steps": 36,
+      "policy_calls": 6,
+      "policy_invalidation_requests": 0,
+      "review_calls": 2,
+      "shortened_chunks": 0
+    },
+    "mode": "sparse",
+    "native_score": 1.0,
+    "native_steps": 36,
+    "partition": "dev",
+    "planner_config": {
+      "model": "SCRIPTED_NOT_LLM"
+    },
+    "planner_model": "SCRIPTED_NOT_LLM",
+    "policy_identity": "e015d5231fbe1582530cb70cd2b38d14fafd08b15f89e1ec464e748193d4f875",
+    "policy_runtime_fingerprint": null,
+    "runtime_fingerprint": {
+      "backend": "toy_cpu_no_physics"
+    },
+    "schema": "multibench.result.v1",
+    "simulated_seconds": 1.44,
+    "simulation_advances_during_model_wait": false,
+    "split": null,
+    "status": "native_completed",
+    "success": true,
+    "task": "toy_task_0",
+    "task_demonstrations": false,
+    "task_memory": false,
+    "termination": "native_terminal",
+    "timing": {
+      "ack_s": 0.005686828000762034,
+      "env_s": 0.0030388870000024326,
+      "policy_s": 0.001879010999800812,
+      "preview_s": 2.5950002964236774e-06,
+      "review_s": 1.0494999969523633e-05,
+      "setup_s": 0.0001836120000007213
+    },
+    "usage": {
+      "source": "scripted/externally controlled actor; tokens unmeasured"
+    }
+  },
+  {
+    "benchmark": "synthetic",
+    "case_id": "toy_1",
+    "case_sha256": "a1cc4d2d729f0b1e6f65cca4fe475e0d435d049c5783e9e8d68f829e6bf36b15",
+    "condition": "sparse",
+    "config_sha256": "a3299f1e537c9a590b0e68c1e030bee7c63f695895d1831630627b945efc3a95",
+    "elapsed_s": 0.05242894399998477,
+    "environment_contract_sha256": "df0a816b91afb9ef83ac23c25123c773a61a5dfcd8e188f8d76c6d22d09d7b83",
+    "error": null,
+    "evidence_kind": "synthetic",
+    "group": "toy_task_1",
+    "initial_observation_sha256": "250f91dcc5ce09d986d90834ae603db8c8db2aa7cd0b775640357d8f05397559",
+    "metrics": {
+      "corrected_steps": 0,
+      "discarded_policy_actions": 0,
+      "interruptions": 0,
+      "motor_steps": 36,
+      "policy_calls": 6,
+      "policy_invalidation_requests": 0,
+      "review_calls": 2,
+      "shortened_chunks": 0
+    },
+    "mode": "sparse",
+    "native_score": 1.0,
+    "native_steps": 36,
+    "partition": "dev",
+    "planner_config": {
+      "model": "SCRIPTED_NOT_LLM"
+    },
+    "planner_model": "SCRIPTED_NOT_LLM",
+    "policy_identity": "e015d5231fbe1582530cb70cd2b38d14fafd08b15f89e1ec464e748193d4f875",
+    "policy_runtime_fingerprint": null,
+    "runtime_fingerprint": {
+      "backend": "toy_cpu_no_physics"
+    },
+    "schema": "multibench.result.v1",
+    "simulated_seconds": 1.44,
+    "simulation_advances_during_model_wait": false,
+    "split": null,
+    "status": "native_completed",
+    "success": true,
+    "task": "toy_task_1",
+    "task_demonstrations": false,
+    "task_memory": false,
+    "termination": "native_terminal",
+    "timing": {
+      "ack_s": 0.0071236799999496725,
+      "env_s": 0.0026399900011710997,
+      "policy_s": 0.0033252720004384173,
+      "preview_s": 2.5049998839676846e-06,
+      "review_s": 1.2218999927426921e-05,
+      "setup_s": 0.0005649860004268703
+    },
+    "usage": {
+      "source": "scripted/externally controlled actor; tokens unmeasured"
+    }
+  },
+  {
+    "benchmark": "synthetic",
+    "case_id": "toy_2",
+    "case_sha256": "c89d0da1ec2dc371aa44997694938a1966f0696339c248b8cf6216b8a7c91788",
+    "condition": "sparse",
+    "config_sha256": "a3299f1e537c9a590b0e68c1e030bee7c63f695895d1831630627b945efc3a95",
+    "elapsed_s": 0.05325353099988206,
+    "environment_contract_sha256": "df0a816b91afb9ef83ac23c25123c773a61a5dfcd8e188f8d76c6d22d09d7b83",
+    "error": null,
+    "evidence_kind": "synthetic",
+    "group": "toy_task_2",
+    "initial_observation_sha256": "9b2ec3559b4a7b610c5188423ac2be4096592bccfa29060a611600f94cdc7b62",
+    "metrics": {
+      "corrected_steps": 0,
+      "discarded_policy_actions": 12,
+      "interruptions": 2,
+      "motor_steps": 36,
+      "policy_calls": 8,
+      "policy_invalidation_requests": 3,
+      "review_calls": 3,
+      "shortened_chunks": 0
+    },
+    "mode": "sparse",
+    "native_score": 0.0,
+    "native_steps": 36,
+    "partition": "dev",
+    "planner_config": {
+      "model": "SCRIPTED_NOT_LLM"
+    },
+    "planner_model": "SCRIPTED_NOT_LLM",
+    "policy_identity": "e015d5231fbe1582530cb70cd2b38d14fafd08b15f89e1ec464e748193d4f875",
+    "policy_runtime_fingerprint": null,
+    "runtime_fingerprint": {
+      "backend": "toy_cpu_no_physics"
+    },
+    "schema": "multibench.result.v1",
+    "simulated_seconds": 1.44,
+    "simulation_advances_during_model_wait": false,
+    "split": null,
+    "status": "native_completed",
+    "success": false,
+    "task": "toy_task_2",
+    "task_demonstrations": false,
+    "task_memory": false,
+    "termination": "native_terminal",
+    "timing": {
+      "ack_s": 0.00805600400099138,
+      "env_s": 0.003964555000038672,
+      "policy_s": 0.0039927589996295865,
+      "preview_s": 2.995000158989569e-06,
+      "review_s": 1.611300012882566e-05,
+      "setup_s": 0.00010192100035055773
+    },
+    "usage": {
+      "source": "scripted/externally controlled actor; tokens unmeasured"
+    }
+  },
+  {
+    "benchmark": "synthetic",
+    "case_id": "toy_0",
+    "case_sha256": "934d1d108712c3f08358df625d167f667e0692a621315ec0d40e318f64ea0138",
+    "condition": "direct_dense",
+    "config_sha256": "aaccfb0b47d057c9c4f5d2c6c0f2138ef99a4a05908685acfcbd194655da698e",
+    "elapsed_s": 0.04996617500000866,
+    "environment_contract_sha256": "df0a816b91afb9ef83ac23c25123c773a61a5dfcd8e188f8d76c6d22d09d7b83",
+    "error": null,
+    "evidence_kind": "synthetic",
+    "group": "toy_task_0",
+    "initial_observation_sha256": "e9bccd161c4860923c361a9aef7162abbaf856316f4f946ab8d3d278a0a84e41",
+    "metrics": {
+      "corrected_steps": 36,
+      "discarded_policy_actions": 0,
+      "interruptions": 0,
+      "motor_steps": 0,
+      "policy_calls": 0,
+      "policy_invalidation_requests": 0,
+      "review_calls": 8,
+      "shortened_chunks": 0
+    },
+    "mode": "direct_dense",
+    "native_score": 1.0,
+    "native_steps": 36,
+    "partition": "dev",
+    "planner_config": {
+      "model": "SCRIPTED_NOT_LLM"
+    },
+    "planner_model": "SCRIPTED_NOT_LLM",
+    "policy_identity": null,
+    "policy_runtime_fingerprint": null,
+    "runtime_fingerprint": {
+      "backend": "toy_cpu_no_physics"
+    },
+    "schema": "multibench.result.v1",
+    "simulated_seconds": 1.44,
+    "simulation_advances_during_model_wait": false,
+    "split": null,
+    "status": "native_completed",
+    "success": true,
+    "task": "toy_task_0",
+    "task_demonstrations": false,
+    "task_memory": false,
+    "termination": "native_terminal",
+    "timing": {
+      "ack_s": 0.0,
+      "env_s": 0.002497508000487869,
+      "policy_s": 0.0,
+      "preview_s": 0.0,
+      "review_s": 0.002800954999656824,
+      "setup_s": 8.859100034896983e-05
+    },
+    "usage": {
+      "source": "scripted/externally controlled actor; tokens unmeasured"
+    }
+  },
+  {
+    "benchmark": "synthetic",
+    "case_id": "toy_1",
+    "case_sha256": "a1cc4d2d729f0b1e6f65cca4fe475e0d435d049c5783e9e8d68f829e6bf36b15",
+    "condition": "direct_dense",
+    "config_sha256": "aaccfb0b47d057c9c4f5d2c6c0f2138ef99a4a05908685acfcbd194655da698e",
+    "elapsed_s": 0.07623258300009184,
+    "environment_contract_sha256": "df0a816b91afb9ef83ac23c25123c773a61a5dfcd8e188f8d76c6d22d09d7b83",
+    "error": null,
+    "evidence_kind": "synthetic",
+    "group": "toy_task_1",
+    "initial_observation_sha256": "250f91dcc5ce09d986d90834ae603db8c8db2aa7cd0b775640357d8f05397559",
+    "metrics": {
+      "corrected_steps": 36,
+      "discarded_policy_actions": 0,
+      "interruptions": 0,
+      "motor_steps": 0,
+      "policy_calls": 0,
+      "policy_invalidation_requests": 0,
+      "review_calls": 8,
+      "shortened_chunks": 0
+    },
+    "mode": "direct_dense",
+    "native_score": 1.0,
+    "native_steps": 36,
+    "partition": "dev",
+    "planner_config": {
+      "model": "SCRIPTED_NOT_LLM"
+    },
+    "planner_model": "SCRIPTED_NOT_LLM",
+    "policy_identity": null,
+    "policy_runtime_fingerprint": null,
+    "runtime_fingerprint": {
+      "backend": "toy_cpu_no_physics"
+    },
+    "schema": "multibench.result.v1",
+    "simulated_seconds": 1.44,
+    "simulation_advances_during_model_wait": false,
+    "split": null,
+    "status": "native_completed",
+    "success": true,
+    "task": "toy_task_1",
+    "task_demonstrations": false,
+    "task_memory": false,
+    "termination": "native_terminal",
+    "timing": {
+      "ack_s": 0.0,
+      "env_s": 0.006786914001168043,
+      "policy_s": 0.0,
+      "preview_s": 0.0,
+      "review_s": 0.0016068770000856603,
+      "setup_s": 0.0001000379998004064
+    },
+    "usage": {
+      "source": "scripted/externally controlled actor; tokens unmeasured"
+    }
+  },
+  {
+    "benchmark": "synthetic",
+    "case_id": "toy_2",
+    "case_sha256": "c89d0da1ec2dc371aa44997694938a1966f0696339c248b8cf6216b8a7c91788",
+    "condition": "direct_dense",
+    "config_sha256": "aaccfb0b47d057c9c4f5d2c6c0f2138ef99a4a05908685acfcbd194655da698e",
+    "elapsed_s": 0.05799588700028835,
+    "environment_contract_sha256": "df0a816b91afb9ef83ac23c25123c773a61a5dfcd8e188f8d76c6d22d09d7b83",
+    "error": null,
+    "evidence_kind": "synthetic",
+    "group": "toy_task_2",
+    "initial_observation_sha256": "9b2ec3559b4a7b610c5188423ac2be4096592bccfa29060a611600f94cdc7b62",
+    "metrics": {
+      "corrected_steps": 36,
+      "discarded_policy_actions": 0,
+      "interruptions": 0,
+      "motor_steps": 0,
+      "policy_calls": 0,
+      "policy_invalidation_requests": 0,
+      "review_calls": 8,
+      "shortened_chunks": 0
+    },
+    "mode": "direct_dense",
+    "native_score": 0.0,
+    "native_steps": 36,
+    "partition": "dev",
+    "planner_config": {
+      "model": "SCRIPTED_NOT_LLM"
+    },
+    "planner_model": "SCRIPTED_NOT_LLM",
+    "policy_identity": null,
+    "policy_runtime_fingerprint": null,
+    "runtime_fingerprint": {
+      "backend": "toy_cpu_no_physics"
+    },
+    "schema": "multibench.result.v1",
+    "simulated_seconds": 1.44,
+    "simulation_advances_during_model_wait": false,
+    "split": null,
+    "status": "native_completed",
+    "success": false,
+    "task": "toy_task_2",
+    "task_demonstrations": false,
+    "task_memory": false,
+    "termination": "native_terminal",
+    "timing": {
+      "ack_s": 0.0,
+      "env_s": 0.005920065999362123,
+      "policy_s": 0.0,
+      "preview_s": 0.0,
+      "review_s": 0.0014797079998061236,
+      "setup_s": 7.741499985058908e-05
+    },
+    "usage": {
+      "source": "scripted/externally controlled actor; tokens unmeasured"
+    }
+  },
+  {
+    "benchmark": "synthetic",
+    "case_id": "toy_0",
+    "case_sha256": "934d1d108712c3f08358df625d167f667e0692a621315ec0d40e318f64ea0138",
+    "condition": "direct_sparse",
+    "config_sha256": "e25cab741128784c0aacba25cf4bd8191f3eed5d9f8f3f9abcf6ff6b4ff8bb02",
+    "elapsed_s": 0.032753597000009904,
+    "environment_contract_sha256": "df0a816b91afb9ef83ac23c25123c773a61a5dfcd8e188f8d76c6d22d09d7b83",
+    "error": null,
+    "evidence_kind": "synthetic",
+    "group": "toy_task_0",
+    "initial_observation_sha256": "e9bccd161c4860923c361a9aef7162abbaf856316f4f946ab8d3d278a0a84e41",
+    "metrics": {
+      "corrected_steps": 36,
+      "discarded_policy_actions": 0,
+      "interruptions": 0,
+      "motor_steps": 0,
+      "policy_calls": 0,
+      "policy_invalidation_requests": 0,
+      "review_calls": 3,
+      "shortened_chunks": 0
+    },
+    "mode": "direct_sparse",
+    "native_score": 1.0,
+    "native_steps": 36,
+    "partition": "dev",
+    "planner_config": {
+      "model": "SCRIPTED_NOT_LLM"
+    },
+    "planner_model": "SCRIPTED_NOT_LLM",
+    "policy_identity": null,
+    "policy_runtime_fingerprint": null,
+    "runtime_fingerprint": {
+      "backend": "toy_cpu_no_physics"
+    },
+    "schema": "multibench.result.v1",
+    "simulated_seconds": 1.44,
+    "simulation_advances_during_model_wait": false,
+    "split": null,
+    "status": "native_completed",
+    "success": true,
+    "task": "toy_task_0",
+    "task_demonstrations": false,
+    "task_memory": false,
+    "termination": "native_terminal",
+    "timing": {
+      "ack_s": 0.0,
+      "env_s": 0.0037194010005805467,
+      "policy_s": 0.0,
+      "preview_s": 0.0,
+      "review_s": 0.0005700539995814324,
+      "setup_s": 0.002722824000102264
+    },
+    "usage": {
+      "source": "scripted/externally controlled actor; tokens unmeasured"
+    }
+  },
+  {
+    "benchmark": "synthetic",
+    "case_id": "toy_1",
+    "case_sha256": "a1cc4d2d729f0b1e6f65cca4fe475e0d435d049c5783e9e8d68f829e6bf36b15",
+    "condition": "direct_sparse",
+    "config_sha256": "e25cab741128784c0aacba25cf4bd8191f3eed5d9f8f3f9abcf6ff6b4ff8bb02",
+    "elapsed_s": 0.02165100699994582,
+    "environment_contract_sha256": "df0a816b91afb9ef83ac23c25123c773a61a5dfcd8e188f8d76c6d22d09d7b83",
+    "error": null,
+    "evidence_kind": "synthetic",
+    "group": "toy_task_1",
+    "initial_observation_sha256": "250f91dcc5ce09d986d90834ae603db8c8db2aa7cd0b775640357d8f05397559",
+    "metrics": {
+      "corrected_steps": 36,
+      "discarded_policy_actions": 0,
+      "interruptions": 0,
+      "motor_steps": 0,
+      "policy_calls": 0,
+      "policy_invalidation_requests": 0,
+      "review_calls": 3,
+      "shortened_chunks": 0
+    },
+    "mode": "direct_sparse",
+    "native_score": 1.0,
+    "native_steps": 36,
+    "partition": "dev",
+    "planner_config": {
+      "model": "SCRIPTED_NOT_LLM"
+    },
+    "planner_model": "SCRIPTED_NOT_LLM",
+    "policy_identity": null,
+    "policy_runtime_fingerprint": null,
+    "runtime_fingerprint": {
+      "backend": "toy_cpu_no_physics"
+    },
+    "schema": "multibench.result.v1",
+    "simulated_seconds": 1.44,
+    "simulation_advances_during_model_wait": false,
+    "split": null,
+    "status": "native_completed",
+    "success": true,
+    "task": "toy_task_1",
+    "task_demonstrations": false,
+    "task_memory": false,
+    "termination": "native_terminal",
+    "timing": {
+      "ack_s": 0.0,
+      "env_s": 0.0023500869992858497,
+      "policy_s": 0.0,
+      "preview_s": 0.0,
+      "review_s": 0.00029429500000333064,
+      "setup_s": 0.0001802970000426285
+    },
+    "usage": {
+      "source": "scripted/externally controlled actor; tokens unmeasured"
+    }
+  },
+  {
+    "benchmark": "synthetic",
+    "case_id": "toy_2",
+    "case_sha256": "c89d0da1ec2dc371aa44997694938a1966f0696339c248b8cf6216b8a7c91788",
+    "condition": "direct_sparse",
+    "config_sha256": "e25cab741128784c0aacba25cf4bd8191f3eed5d9f8f3f9abcf6ff6b4ff8bb02",
+    "elapsed_s": 0.02205186999981379,
+    "environment_contract_sha256": "df0a816b91afb9ef83ac23c25123c773a61a5dfcd8e188f8d76c6d22d09d7b83",
+    "error": null,
+    "evidence_kind": "synthetic",
+    "group": "toy_task_2",
+    "initial_observation_sha256": "9b2ec3559b4a7b610c5188423ac2be4096592bccfa29060a611600f94cdc7b62",
+    "metrics": {
+      "corrected_steps": 36,
+      "discarded_policy_actions": 0,
+      "interruptions": 0,
+      "motor_steps": 0,
+      "policy_calls": 0,
+      "policy_invalidation_requests": 0,
+      "review_calls": 3,
+      "shortened_chunks": 0
+    },
+    "mode": "direct_sparse",
+    "native_score": 0.0,
+    "native_steps": 36,
+    "partition": "dev",
+    "planner_config": {
+      "model": "SCRIPTED_NOT_LLM"
+    },
+    "planner_model": "SCRIPTED_NOT_LLM",
+    "policy_identity": null,
+    "policy_runtime_fingerprint": null,
+    "runtime_fingerprint": {
+      "backend": "toy_cpu_no_physics"
+    },
+    "schema": "multibench.result.v1",
+    "simulated_seconds": 1.44,
+    "simulation_advances_during_model_wait": false,
+    "split": null,
+    "status": "native_completed",
+    "success": false,
+    "task": "toy_task_2",
+    "task_demonstrations": false,
+    "task_memory": false,
+    "termination": "native_terminal",
+    "timing": {
+      "ack_s": 0.0,
+      "env_s": 0.00312455700168357,
+      "policy_s": 0.0,
+      "preview_s": 0.0,
+      "review_s": 0.0007398150005428761,
+      "setup_s": 8.42049998937e-05
+    },
+    "usage": {
+      "source": "scripted/externally controlled actor; tokens unmeasured"
+    }
+  }
+]

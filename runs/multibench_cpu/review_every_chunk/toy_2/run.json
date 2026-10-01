@@ -1,0 +1,46 @@
+{
+  "case": {
+    "benchmark": "synthetic",
+    "case_id": "toy_2",
+    "partition": "dev",
+    "stall": true,
+    "task": "toy_task_2",
+    "task_group": "toy_task_2"
+  },
+  "config": {
+    "max_correction_steps": 12,
+    "max_decision_steps": 6,
+    "max_reviews": 100,
+    "mode": "review_every_chunk",
+    "model": {
+      "model": "SCRIPTED_NOT_LLM"
+    },
+    "monitor": {
+      "max_unreviewed_chunks": 3,
+      "max_unreviewed_steps": 18,
+      "stall_window": 12
+    },
+    "name": "review_every_chunk",
+    "wall_limit_s": 60
+  },
+  "environment": {
+    "benchmark": "synthetic",
+    "control_hz": 25.0,
+    "horizon": 36,
+    "physics": false
+  },
+  "initial_observation_sha256": "9b2ec3559b4a7b610c5188423ac2be4096592bccfa29060a611600f94cdc7b62",
+  "policy": {
+    "action_space": "x5_joint14",
+    "adapter_config_sha256": null,
+    "benchmark_training": "none; scripted fixture",
+    "checkpoint_sha256": "0000000000000000000000000000000000000000000000000000000000000000",
+    "execute_steps": 6,
+    "name": "toy",
+    "native_hz": 25.0,
+    "prediction_horizon": 6,
+    "preprocessing_id": "toy-no-sensors",
+    "revision": "toy-v1",
+    "stateful": true
+  }
+}

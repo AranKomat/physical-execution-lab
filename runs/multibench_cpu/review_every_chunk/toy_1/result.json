@@ -1,0 +1,57 @@
+{
+  "benchmark": "synthetic",
+  "case_id": "toy_1",
+  "case_sha256": "a1cc4d2d729f0b1e6f65cca4fe475e0d435d049c5783e9e8d68f829e6bf36b15",
+  "condition": "review_every_chunk",
+  "config_sha256": "301ed051236a590fc465e709de877d2a509eacd8f0cbc38a3097fbeb57dcaba9",
+  "elapsed_s": 0.054494105000230775,
+  "environment_contract_sha256": "df0a816b91afb9ef83ac23c25123c773a61a5dfcd8e188f8d76c6d22d09d7b83",
+  "error": null,
+  "evidence_kind": "synthetic",
+  "group": "toy_task_1",
+  "initial_observation_sha256": "250f91dcc5ce09d986d90834ae603db8c8db2aa7cd0b775640357d8f05397559",
+  "metrics": {
+    "corrected_steps": 0,
+    "discarded_policy_actions": 0,
+    "interruptions": 0,
+    "motor_steps": 36,
+    "policy_calls": 6,
+    "policy_invalidation_requests": 0,
+    "review_calls": 6,
+    "shortened_chunks": 0
+  },
+  "mode": "review_every_chunk",
+  "native_score": 1.0,
+  "native_steps": 36,
+  "partition": "dev",
+  "planner_config": {
+    "model": "SCRIPTED_NOT_LLM"
+  },
+  "planner_model": "SCRIPTED_NOT_LLM",
+  "policy_identity": "e015d5231fbe1582530cb70cd2b38d14fafd08b15f89e1ec464e748193d4f875",
+  "policy_runtime_fingerprint": null,
+  "runtime_fingerprint": {
+    "backend": "toy_cpu_no_physics"
+  },
+  "schema": "multibench.result.v1",
+  "simulated_seconds": 1.44,
+  "simulation_advances_during_model_wait": false,
+  "split": null,
+  "status": "native_completed",
+  "success": true,
+  "task": "toy_task_1",
+  "task_demonstrations": false,
+  "task_memory": false,
+  "termination": "native_terminal",
+  "timing": {
+    "ack_s": 0.0078091650007081626,
+    "env_s": 0.002483324999047909,
+    "policy_s": 0.009546171000692993,
+    "preview_s": 7.099999493220821e-06,
+    "review_s": 3.090600012001232e-05,
+    "setup_s": 0.0003179400000590249
+  },
+  "usage": {
+    "source": "scripted/externally controlled actor; tokens unmeasured"
+  }
+}

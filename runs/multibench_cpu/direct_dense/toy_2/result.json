@@ -1,0 +1,57 @@
+{
+  "benchmark": "synthetic",
+  "case_id": "toy_2",
+  "case_sha256": "c89d0da1ec2dc371aa44997694938a1966f0696339c248b8cf6216b8a7c91788",
+  "condition": "direct_dense",
+  "config_sha256": "aaccfb0b47d057c9c4f5d2c6c0f2138ef99a4a05908685acfcbd194655da698e",
+  "elapsed_s": 0.05799588700028835,
+  "environment_contract_sha256": "df0a816b91afb9ef83ac23c25123c773a61a5dfcd8e188f8d76c6d22d09d7b83",
+  "error": null,
+  "evidence_kind": "synthetic",
+  "group": "toy_task_2",
+  "initial_observation_sha256": "9b2ec3559b4a7b610c5188423ac2be4096592bccfa29060a611600f94cdc7b62",
+  "metrics": {
+    "corrected_steps": 36,
+    "discarded_policy_actions": 0,
+    "interruptions": 0,
+    "motor_steps": 0,
+    "policy_calls": 0,
+    "policy_invalidation_requests": 0,
+    "review_calls": 8,
+    "shortened_chunks": 0
+  },
+  "mode": "direct_dense",
+  "native_score": 0.0,
+  "native_steps": 36,
+  "partition": "dev",
+  "planner_config": {
+    "model": "SCRIPTED_NOT_LLM"
+  },
+  "planner_model": "SCRIPTED_NOT_LLM",
+  "policy_identity": null,
+  "policy_runtime_fingerprint": null,
+  "runtime_fingerprint": {
+    "backend": "toy_cpu_no_physics"
+  },
+  "schema": "multibench.result.v1",
+  "simulated_seconds": 1.44,
+  "simulation_advances_during_model_wait": false,
+  "split": null,
+  "status": "native_completed",
+  "success": false,
+  "task": "toy_task_2",
+  "task_demonstrations": false,
+  "task_memory": false,
+  "termination": "native_terminal",
+  "timing": {
+    "ack_s": 0.0,
+    "env_s": 0.005920065999362123,
+    "policy_s": 0.0,
+    "preview_s": 0.0,
+    "review_s": 0.0014797079998061236,
+    "setup_s": 7.741499985058908e-05
+  },
+  "usage": {
+    "source": "scripted/externally controlled actor; tokens unmeasured"
+  }
+}

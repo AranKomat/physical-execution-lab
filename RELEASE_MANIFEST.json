@@ -9,7 +9,7 @@
     "tests/multibench/test_inference_export.py": "cd9782aa5b7b758d607f224b209034ea21f33b99709f89d1dc054f91e36dd98c",
     ".env.example": "412427c9fe9f68cc7fa7cd2c6ca8332ffd5e9340ee69c2b1e8aace35e11a06a7",
     ".github/workflows/cpu-tests.yml": "9b230c1079e4f8c7ffdaf07920f8cf38239452edaaf744653e8a075193760faf",
-    ".gitignore": "4cf5ba87204a26003199a4855647a179df596d69d4c23f98f96201eaecc7150a",
+    ".gitignore": "416216db60a99302cfdb6cd860025852c6c367421d4f4d3db0b02eb56bda6c4c",
     "AGENTS.md": "0fdb40ada8526df213d67c97fb45952807060cf6099b774d1c446f02dee22b52",
     "HANDOFF.md": "ba24f919528d00ae16d0464c2cafad92d8941fadc1d3700d8cf10d04dd77f2de",
     "IMPLEMENTATION_STATUS.md": "d220ded67088e636202183a6ba8f00dfd06ecd69be6da18d6d1946840d355388",

@@ -1,0 +1,26 @@
+[
+  {
+    "benchmark": "synthetic",
+    "case_id": "toy_0",
+    "partition": "dev",
+    "stall": false,
+    "task": "toy_task_0",
+    "task_group": "toy_task_0"
+  },
+  {
+    "benchmark": "synthetic",
+    "case_id": "toy_1",
+    "partition": "dev",
+    "stall": false,
+    "task": "toy_task_1",
+    "task_group": "toy_task_1"
+  },
+  {
+    "benchmark": "synthetic",
+    "case_id": "toy_2",
+    "partition": "dev",
+    "stall": true,
+    "task": "toy_task_2",
+    "task_group": "toy_task_2"
+  }
+]

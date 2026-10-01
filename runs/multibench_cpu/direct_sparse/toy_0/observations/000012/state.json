@@ -1,0 +1,54 @@
+{
+  "control_hz": 25.0,
+  "eef": {
+    "left": {
+      "gripper_opening_command": 1.0,
+      "quaternion_xyzw": [
+        0,
+        0,
+        0,
+        1
+      ],
+      "xyz": [
+        0.072,
+        0.0,
+        0.3
+      ]
+    },
+    "right": {
+      "gripper_opening_command": 1.0,
+      "quaternion_xyzw": [
+        0,
+        0,
+        0,
+        1
+      ],
+      "xyz": [
+        0.072,
+        0.0,
+        0.3
+      ]
+    }
+  },
+  "episode": "toy_0",
+  "instruction": "Move the synthetic robot. This is not a benchmark task.",
+  "observation_sha256": "5294514a83b37b35db3e35c286e6e583a5757f4a586bcb5338f7d999b6b0c353",
+  "robot_state": [
+    0.07199999690055847,
+    0.0,
+    0.0,
+    0.0,
+    0.0,
+    0.0,
+    1.0,
+    0.0,
+    0.0,
+    0.0,
+    0.0,
+    0.0,
+    0.0,
+    1.0
+  ],
+  "sensor_signals": {},
+  "step": 12
+}

@@ -11,6 +11,8 @@ build/
 runs/*
 !runs/cpu-example/
 !runs/cpu-example/**
+!runs/multibench_cpu/
+!runs/multibench_cpu/**
 configs/libero.local/
 configs/local/
 model-artifacts/

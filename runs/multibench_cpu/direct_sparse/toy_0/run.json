@@ -1,0 +1,34 @@
+{
+  "case": {
+    "benchmark": "synthetic",
+    "case_id": "toy_0",
+    "partition": "dev",
+    "stall": false,
+    "task": "toy_task_0",
+    "task_group": "toy_task_0"
+  },
+  "config": {
+    "max_correction_steps": 12,
+    "max_decision_steps": 12,
+    "max_reviews": 100,
+    "mode": "direct_sparse",
+    "model": {
+      "model": "SCRIPTED_NOT_LLM"
+    },
+    "monitor": {
+      "max_unreviewed_chunks": 3,
+      "max_unreviewed_steps": 18,
+      "stall_window": 12
+    },
+    "name": "direct_sparse",
+    "wall_limit_s": 60
+  },
+  "environment": {
+    "benchmark": "synthetic",
+    "control_hz": 25.0,
+    "horizon": 36,
+    "physics": false
+  },
+  "initial_observation_sha256": "e9bccd161c4860923c361a9aef7162abbaf856316f4f946ab8d3d278a0a84e41",
+  "policy": null
+}

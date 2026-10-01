@@ -1,0 +1,6 @@
+condition,scheduled,successes,missing,success_rate_full_denominator,mean_episode_wall_s_available,total_steps_per_success,review_calls,policy_calls
+direct_dense,3,2,0,0.6666666666666666,0.06139821500012962,54.0,24,0
+direct_sparse,3,2,0,0.6666666666666666,0.025485491333256505,54.0,9,0
+motor_only,3,2,0,0.6666666666666666,0.049158770666660224,54.0,0,18
+review_every_chunk,3,2,0,0.6666666666666666,0.050284516333401065,54.0,18,18
+sparse,3,2,0,0.6666666666666666,0.04618524266667615,54.0,7,20

@@ -1,0 +1,82 @@
+[
+  {
+    "end_step": 5,
+    "executed_steps": 5,
+    "executor": "correction",
+    "object_effect": "not_certified_by_robot_motion",
+    "reviewed": true,
+    "serial": 0,
+    "start_step": 0,
+    "stop_reason": "prefix_completed"
+  },
+  {
+    "end_step": 10,
+    "executed_steps": 5,
+    "executor": "correction",
+    "object_effect": "not_certified_by_robot_motion",
+    "reviewed": true,
+    "serial": 1,
+    "start_step": 5,
+    "stop_reason": "prefix_completed"
+  },
+  {
+    "end_step": 15,
+    "executed_steps": 5,
+    "executor": "correction",
+    "object_effect": "not_certified_by_robot_motion",
+    "reviewed": true,
+    "serial": 2,
+    "start_step": 10,
+    "stop_reason": "prefix_completed"
+  },
+  {
+    "end_step": 20,
+    "executed_steps": 5,
+    "executor": "correction",
+    "object_effect": "not_certified_by_robot_motion",
+    "reviewed": true,
+    "serial": 3,
+    "start_step": 15,
+    "stop_reason": "prefix_completed"
+  },
+  {
+    "end_step": 25,
+    "executed_steps": 5,
+    "executor": "correction",
+    "object_effect": "not_certified_by_robot_motion",
+    "reviewed": true,
+    "serial": 4,
+    "start_step": 20,
+    "stop_reason": "prefix_completed"
+  },
+  {
+    "end_step": 30,
+    "executed_steps": 5,
+    "executor": "correction",
+    "object_effect": "not_certified_by_robot_motion",
+    "reviewed": true,
+    "serial": 5,
+    "start_step": 25,
+    "stop_reason": "prefix_completed"
+  },
+  {
+    "end_step": 35,
+    "executed_steps": 5,
+    "executor": "correction",
+    "object_effect": "not_certified_by_robot_motion",
+    "reviewed": true,
+    "serial": 6,
+    "start_step": 30,
+    "stop_reason": "prefix_completed"
+  },
+  {
+    "end_step": 36,
+    "executed_steps": 1,
+    "executor": "correction",
+    "object_effect": "not_certified_by_robot_motion",
+    "reviewed": true,
+    "serial": 7,
+    "start_step": 35,
+    "stop_reason": "native_terminal"
+  }
+]
