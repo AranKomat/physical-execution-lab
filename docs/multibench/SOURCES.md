@@ -69,7 +69,8 @@ correction and depth-tool porting are not claimed.
 requires Responses for tool calls; none/minimal reasoning are unsupported.
 [Flex](https://developers.openai.com/api/docs/guides/flex-processing) is an
 explicit service tier with latency/capacity trade-offs. Standard (`default`) and
-Flex are not different model architectures. Actual served-model/tier fields are
+Flex is the active default; Standard (`default`) is an explicit comparison.
+They are not different model architectures. Actual served-model/tier fields are
 archived. No silent fallback or automatic retry is implemented.
 
 ## Novel vs reused

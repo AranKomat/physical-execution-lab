@@ -1,7 +1,7 @@
 {
   "model_default": "gpt-6.1-sol",
   "model_transport": "responses",
-  "service_tiers": "default or explicit flex; no silent fallback",
+  "service_tiers": "flex default; explicit default comparison; no silent fallback",
   "native_experiments_run_on_build_host": 0,
   "gpu_policy_inferences_on_build_host": 0,
   "benchmarks": [

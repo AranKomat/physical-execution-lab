@@ -146,7 +146,7 @@ def test_native_synthetic_never_mixed(tmp_path):
 def test_paired_detects_model_difference():
     c=cases()['cases'];rows=[]
     for v in c:
-        x=row(v);y=row(v,'b');y['planner_config']=MODEL|{'service_tier':'flex'};rows.extend([x,y])
+        x=row(v);y=row(v,'b');y['planner_config']=MODEL|{'service_tier':'default'};rows.extend([x,y])
     p=paired(c,rows,'a','b');assert not p['matched_contract'] and 'planner model/tier/config differs' in p['warnings']
 
 
@@ -177,7 +177,7 @@ def test_sol_responses_tier_and_usage_accounting(tmp_path,monkeypatch):
           'usage':{'input_tokens':100,'input_tokens_details':{'cached_tokens':90},'output_tokens':10,'output_tokens_details':{'reasoning_tokens':5}}})
     with Client(MODEL,tmp_path,allow_api=True,http_client=httpx.Client(transport=httpx.MockTransport(f))) as c:
         c.post('',headers={},json=req());assert c.served_tiers==['default'] and c.output_spent==10
-    assert sent[0]['service_tier']=='default' and sent[0]['reasoning']['effort']=='medium'
+        assert sent[0]['service_tier']=='flex' and sent[0]['reasoning']['effort']=='medium'
 
 
 @pytest.mark.parametrize('cfg',[{'transport':'chat'},{'reasoning_effort':'none'},{'reasoning_effort':'minimal'}])

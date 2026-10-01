@@ -10,7 +10,7 @@ Test whether a **generic execution harness** improves useful physical behavior a
 
 Use strong frozen models, calibrated controls where available, and a small reusable action interface. Invoke the high-level language model at meaningful boundaries instead of every native control tick. Preserve actual execution feedback, bounded commands, source/observation identity, and within-episode progress. The intended result is a measured success/latency/cost trade-off, not a predetermined leaderboard win.
 
-The current supervisor is **`gpt-6.1-sol` through Responses**, with medium reasoning in the provided profiles. `service_tier="default"` is the latency-comparison default; `flex` is a separate cost-oriented profile. Flex changes serving behavior, not model weights. The code does not automatically change models, reasoning level, tier or provider after a timeout or capacity error. Access to the model/account must be verified on the external host.
+The current supervisor is **`gpt-6.1-sol` through Responses**, with medium reasoning. **Flex is the default service tier** for active experiments, matching the project operating preference; Standard (`default`) remains an explicit comparison profile. Flex changes serving behavior, not model weights. The code does not automatically change models, reasoning level, tier or provider after a timeout or capacity error. Access to the model/account must be verified on the external host.
 
 ### Three research tracks
 

@@ -34,8 +34,9 @@ review scheduling, budget handling, archival and full-denominator reporting.
 | RoboCasa365 | Xiaomi R1 only, every-chunk Sol, sparse Sol | Official XR1 preprocessing and action conversion; native qualification required |
 | Original K1/LIBERO | Existing `run.py` experiments | Retained regression and future cross-environment transfer path |
 
-The supervisor is `gpt-6.1-sol` through **Responses**. Standard (`default`) and
-Flex are separate configurations; there is no implicit model/tier fallback.
+The supervisor is `gpt-6.1-sol` through **Responses**, using Flex by default.
+Standard (`default`) remains an explicit comparison configuration; there is no
+implicit model/tier fallback.
 No task recipe retrieval, extra target-task demonstrations, privileged object
 poses, online weight updates, or newly generated task scripts are used.
 

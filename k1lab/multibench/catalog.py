@@ -6,7 +6,7 @@ from k1lab.util import atomic_json
 
 MODEL={'transport':'responses','base_url':'https://api.openai.com/v1',
        'api_key_env':'OPENAI_API_KEY','model':'gpt-6.1-sol','reasoning_effort':'medium',
-       'service_tier':'default','timeout_s':300,'max_requests':180,'max_output_tokens':2048,
+       'service_tier':'flex','timeout_s':900,'max_requests':180,'max_output_tokens':2048,
        'max_total_output_tokens':368640,'history_rounds':4,'image_max_edge':480}
 
 POLICIES={
@@ -94,5 +94,5 @@ def write_configs(root):
     for cfg in configs():atomic_json(root/(cfg['name']+'.json'),cfg)
     for name,policy in POLICIES.items():
         atomic_json(root/'policies'/(name+'.json'),policy|{'artifact_manifest':'/ABSOLUTE/PATH/policy-artifacts.json'})
-    flex=deepcopy(MODEL);flex['service_tier']='flex';flex['timeout_s']=900
-    atomic_json(root/'model_standard.json',MODEL);atomic_json(root/'model_flex.json',flex)
+    standard=deepcopy(MODEL);standard['service_tier']='default';standard['timeout_s']=300
+    atomic_json(root/'model_standard.json',standard);atomic_json(root/'model_flex.json',MODEL)

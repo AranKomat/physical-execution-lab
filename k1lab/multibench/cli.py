@@ -28,7 +28,7 @@ def main(argv=None):
     q=sp.add_parser('report');q.add_argument('--manifest',required=True);q.add_argument('--runs',required=True);q.add_argument('--output',required=True);q.add_argument('--baseline');q.add_argument('--candidate');q.add_argument('--conditions',nargs='+');q.add_argument('--partition',choices=['dev','test','all'],default='test')
     a=p.parse_args(argv);root=Path(__file__).resolve().parents[2]
     if a.command=='doctor':
-        print(json.dumps({'model_default':'gpt-6.1-sol','model_transport':'responses','service_tiers':'default or explicit flex; no silent fallback',
+        print(json.dumps({'model_default':'gpt-6.1-sol','model_transport':'responses','service_tiers':'flex default; explicit default comparison; no silent fallback',
             'native_experiments_run_on_build_host':0,'gpu_policy_inferences_on_build_host':0,
             'benchmarks':['robodojo','robocasa365','legacy K1/LIBERO via run.py'],
             'Xiaomi_RoboDojo_caveat':'current RPC port uses bounded-DLS controller variant; qualify separately',

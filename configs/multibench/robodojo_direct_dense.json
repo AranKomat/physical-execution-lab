@@ -21,8 +21,8 @@
     "max_total_output_tokens": 368640,
     "model": "gpt-6.1-sol",
     "reasoning_effort": "medium",
-    "service_tier": "default",
-    "timeout_s": 300,
+    "service_tier": "flex",
+    "timeout_s": 900,
     "transport": "responses"
   },
   "name": "robodojo_direct_dense",

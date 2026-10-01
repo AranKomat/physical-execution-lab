@@ -9,8 +9,9 @@ training in this phase. Current-episode memory is allowed. General robot control
 robot-only FK and classical local controllers are allowed.
 
 **Models/benchmarks:**
-- Supervisor: `gpt-6.1-sol`, Responses API. Standard/default for matched latency
-  runs; explicit Flex condition for cost sweeps. No automatic downgrade/fallback.
+- Supervisor: `gpt-6.1-sol`, Responses API. **Flex is the active default**;
+  Standard/default remains an explicit latency comparison. No automatic
+  downgrade/fallback.
 - RoboDojo: π0.5, Xiaomi R1, G0.5, InternW0-Δ. First measure policy-only latency
   and native competence, then retain useful speed/quality candidates. For each:
   motor-only, every-chunk review, sparse review. Also direct dense vs direct sparse

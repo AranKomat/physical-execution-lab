@@ -10,7 +10,8 @@
 - Official Xiaomi RoboCasa365 preprocessing/client wrapper and native Gym adapter.
 - Separate loopback policy service, ownership/sequence validation, no retries,
   stateful policy ACK handling and explicit interruption reset.
-- Sol Responses configuration, separate Standard/Flex profiles, compact
+- Sol Responses configuration, Flex as the active default plus a separate
+  Standard comparison profile, compact
   within-episode state, current/previous execution images, usage/tier archives.
 -17 experiment configs, five provider templates, provider/artifact identity
   binding, grouped dev/test manifests, freeze and manual qualification records.
