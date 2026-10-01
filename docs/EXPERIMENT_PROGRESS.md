@@ -2,6 +2,9 @@
 
 Updated 2026-10-02. This tracks the v0.4 handoff sequence, not synthetic success.
 Use Sol 6.1 Flex for the eventual supervisor comparisons. No paid calls yet.
+Owner scope update: RoboDojo candidates are **G0.5 and exact pi0.5 only**.
+Xiaomi R1 and Intern are removed from the active RoboDojo screen; their prior
+code/evidence remain archived. Xiaomi's separate RoboCasa365 track is unchanged.
 
 | Stage | Status | Actual evidence / remaining gate |
 |---|---|---|
@@ -28,13 +31,14 @@ Use Sol 6.1 Flex for the eventual supervisor comparisons. No paid calls yet.
 - [x] Explicit policy RNG binding and raw clipping-range diagnostics for future runs.
 - [x] Optimized seeded G0.5 full native episode: success, score 1.0, 812 actions,
   51 policy calls, zero paid calls/corrections; provisional development runtime.
-- [ ] Intern inference/native qualification: stock BF16 loader exhausted an idle
-  24 GB 4090 before inference; offload/sharding or larger VRAM remains untested.
 - [ ] Exact RoboDojo pi0.5 checkpoint access; currently unavailable.
-- [ ] Xiaomi RoboDojo native EE versus donor DLS qualification.
 - [ ] 5–10 development cases per viable candidate; retain all failures.
 - [ ] Frozen matched hybrid and direct comparisons.
 - [ ] Official XR1 RoboCasa365 baseline and matched supervision comparison.
+
+Removed from active scope: Intern inference/native qualification (stock BF16
+loader exceeded 24 GB), and Xiaomi RoboDojo native EE versus donor DLS checks.
+No further provisioning or experiments for these RoboDojo candidates are planned.
 
 See [the first pilot report](NATIVE_PILOT_20261002.md) for methods, limitations,
 timing, exact identities and evidence pointers. Large native traces/video are

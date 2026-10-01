@@ -768,17 +768,18 @@
     "tests/test_runner.py": "1367ffdeaa9b9c598979e6af98b5c3f9fee3f0bee3256524ad491f3ea14944e9",
     "upstream.lock.json": "878ffdeac6735db1defce908ad6cfd43a65b684cf799432c3d5ea09bd2d2cd15",
     "docs/NATIVE_PILOT_20261002.md": "3c481089ade9c7ca93bd0fe1775230966ad8a691d5c805d1751c16edb18acb10",
-    "docs/EXPERIMENT_PROGRESS.md": "5c6738e026a1cfee54e585a7cc5c10e75ab02ea6568faaf605b8d942e140fa7f",
+    "docs/EXPERIMENT_PROGRESS.md": "f90caa560b3026c6bbf92ddc491bcfbc961022b738ce5cc8f2707eb21c4d4421",
     "scripts/multibench/prepare_g05_bundle.py": "d976e0a3c611ab8ab660e0c735695d30ab68f310e16ce8510a52d5a593a7e332",
     "docs/evidence/g05-native-002/evaluation_outcome.json": "c9c9756f6697ae64e36d0617ba0ed4d1a36d81c2e2853ab8a7c96d57d43f6024",
     "docs/evidence/g05-native-002/fk_validation.json": "d78c3f14caf685676a9fc9e3c82c74377eb5d4e111afe64d0d7142abb1ba6fe4",
     "docs/evidence/g05-native-002/native_evaluation.json": "4eaed87fe3637bf93cc175c5a2daf682a15231855082bf3df1858bcd7fd97bdf",
     "docs/evidence/g05-native-002/result.json": "277764f4956175ce0fa621a118345bb450bf7edca4da523be09e70d7ad75e067",
-    "docs/DEVELOPMENT_UPDATE_20261002.md": "13ef686833b2d1ab8885c503d40712fb78a220e69d54bdb814e3cd096d892c17",
+    "docs/DEVELOPMENT_UPDATE_20261002.md": "55b24917798738740304f01fbad70367003f0af85628e8adb3d15e668fffb74f",
     "docs/PARALLEL_EXECUTION.md": "2b0a59489f48b2ccfdd0a64dbef839e39c9e1bc3d15ebfc1acd1df105e1aaee9",
     "docs/evidence/g05-fla-native-001/audit.json": "afacdcd51ab42d22ad5082d429f808542af4d640c9728accd6a1015caa751739",
     "docs/evidence/g05-fla-native-001/evaluation_outcome.json": "f38c3e064a5b46de5cf3f304ecab88f29652a4a4ecc8b8b18e71ae62b5b2f706",
     "docs/evidence/g05-fla-native-001/result.json": "abb8988739483b64d7ce0395757047d07d4efbf3550bb6a48f3b5195cd7941af",
-    "scripts/multibench/prepare_development_provider.py": "0a93c372495c2ce3def246ae37fc94807d0a08a91f9eec113e0868c46f1ff84f"
+    "scripts/multibench/prepare_development_provider.py": "0a93c372495c2ce3def246ae37fc94807d0a08a91f9eec113e0868c46f1ff84f",
+    "docs/evidence/g05-fla-native-001/backup_verification.json": "0ca175db61b38bfd0ef4aff84b743fa33fe193dc054c0c5e97a737236abb1919"
   }
 }

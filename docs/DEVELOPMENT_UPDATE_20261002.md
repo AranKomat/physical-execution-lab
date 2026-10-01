@@ -27,6 +27,8 @@ the earlier PyTorch evidence.
 
 Native video and complete trace: `runs/native-evidence/g05-fla-native-001/`.
 Small public evidence: `docs/evidence/g05-fla-native-001/`.
+The complete local backup was verified against all **1,904** remote file hashes,
+with zero mismatches. Its journal also passes local hash-chain verification.
 
 ## InternW0-Delta Memory Gate
 
@@ -55,10 +57,11 @@ Prepared configuration copies are retained locally with the experiment evidence.
 Neither this setup fix nor artifact acquisition qualifies Intern's policy.
 
 **Decision:** Intern is not currently viable under the stock single-4090 loader.
-Do not repeatedly retry it. A documented offload/sharding variant or a larger
-VRAM device requires a separately identified runtime test. Two GPUs do not
-automatically pool their memory. Continue native development qualification of
-the already working G0.5 candidate.
+Do not repeatedly retry it. The owner subsequently narrowed RoboDojo to G0.5
+and exact pi0.5 only, so Intern and Xiaomi RoboDojo are now out of active scope.
+No offload/sharding experiment is planned. Two GPUs do not automatically pool
+their memory. Continue the working G0.5 candidate's development qualification;
+retain the exact pi0.5 access blocker without substituting a generic checkpoint.
 
 ## Reproducibility And Parallelism
 
