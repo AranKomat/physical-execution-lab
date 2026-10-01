@@ -92,7 +92,14 @@ def main(argv=None):
         source=next(c for c in panel['cases'] if c['case_id']==a.case_id)
         atomic_json(out/'source_case.json',{'case':source,'identity':case_identity(panel,source)},exclusive=True)
     env=dict(os.environ)
-    env['PYTHONPATH']=os.pathsep.join([str(donor),str(Path(a.robodojo_root).resolve()),env.get('PYTHONPATH','')])
+    # RoboDojo's donor server imports the pinned XPolicyLab RPC package
+    # (`client_server`) even for capture-only episodes. Keep that checkout
+    # explicit and discoverable when the standard bootstrap layout is used.
+    source_paths=[str(donor),str(Path(a.robodojo_root).resolve())]
+    xpolicy=Path(__file__).resolve().parents[2]/'external'/'XPolicyLab'
+    if xpolicy.is_dir():source_paths.append(str(xpolicy))
+    source_paths.append(env.get('PYTHONPATH',''))
+    env['PYTHONPATH']=os.pathsep.join(source_paths)
     env.update(v['locator_overrides']);server=controller=None
     try:
         with (out/'server.log').open('w') as log:
