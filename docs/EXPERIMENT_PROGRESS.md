@@ -11,10 +11,10 @@ code/evidence remain archived. Xiaomi's separate RoboCasa365 track is unchanged.
 | Stage | Status | Actual evidence / remaining gate |
 |---|---|---|
 | Pre-GPU | Complete | CPU suite, synthetic audit, source inspection and config preparation |
-| A: native qualification | Native pilots passed; formal records partial | Reset/render/FK/joint ACK passed; G0.5 and exact pi0.5 both completed sorting layout 0. Pi0.5's formal qualification remains pending |
+| A: native qualification | Complete for active motor-only RoboDojo scope | Reset/render/FK/conventions/ACK and complete episodes verified; exact G0.5/pi0.5 motor-only qualification and full-manifest freezes verify. GPT correction/contact integration remains a separate Stage C gate |
 | B: speed/quality screen | Complete for active RoboDojo policies | Same fixed five-case roster: G0.5 3/5, exact pi0.5 4/5; all native-limit failures retained. Same-input 30-sample warm timing: G0.5 p50 801 ms, pi0.5 p50 454 ms. Development evidence only; qualification/freeze and matched supervision remain separate |
-| C: matched harness comparison | Started, incomplete | Flex route verified; two zero-motion native attempts failed on routing/capacity. No matched physical result or held-out freeze |
-| D: RoboCasa365 | Motor-only bridge qualified; comparison pending | Fixed six-case harness screen: 2/6 success, no infrastructure errors. Initial official-client chunk matches exactly. Evidence-reviewed motor-only qualification recorded; supervision/corrections remain unqualified. Sparse kettle pilot reached 50 steps then Flex capacity failed |
+| C: matched harness comparison | First full sparse development result; overall incomplete | Pi0.5 tower0 sparse fails at full 1050-action limit, score 0.0, 27 settled Flex reviews/$0.258; nominal motor-only case succeeded at 714 actions. No API/infrastructure error. Every-chunk, held-out matched conditions and direct comparisons remain open |
+| D: RoboCasa365 | Motor-only qualified/freeze refreshed; comparison pending | Fixed six-case screen: 2/6 success, no infrastructure errors. Initial official-client chunk matches exactly. Current-source motor freeze verifies; supervision/corrections remain unqualified. Sparse kettle pilot reached 50 steps then Flex capacity failed |
 | E: sensing/transfer | Deferred as specified | Only after useful matched physical results; no RGB-D port claimed |
 
 ## Completed Milestones
@@ -44,6 +44,9 @@ code/evidence remain archived. Xiaomi's separate RoboCasa365 track is unchanged.
 - [x] Pi0.5 matched saved-input warm timing: 30 samples after three warmups,
   p50/p90/p99 454/488/523 ms, same input corpus as G0.5, no simulator running.
 - [ ] Frozen matched hybrid and direct comparisons.
+- [x] First complete supervised development episode: pi0.5 sparse tower0,
+  full native-limit failure, score 0.0; 21 shorten decisions and five one-action
+  corrections. Retained as negative evidence, not successful recovery.
 - [x] Official XR1 RoboCasa365 full native development pilot: CloseBlenderLid,
   seed 7, success at 286 steps; smoke/reset/render/inference also completed.
 - [x] Fixed balanced XR1 subset: 2/6 successful, 7845 native actions, 494 policy
@@ -91,12 +94,17 @@ development results remain unchanged; Stage D and held-out comparisons are open.
 Latest gates: [exact pi0.5 access and direct-call feasibility](PI05_ACCESS_AND_COMPARISON_GATES_20261002.md).
 OpenPI/JAX has now been installed and tested in an isolated environment; see
 [the complete pi0.5 pilot](PI05_NATIVE_PILOT_20261002.md).
-Source updates invalidate the prior XR1 code freeze until regenerated.
+The prior XR1 code freeze was invalidated by source updates and is now refreshed.
 
 Latest: [complete pi0.5 screen](PI05_DEVELOPMENT_SCREEN_20261002.md).
 Stage B is now complete for the active RoboDojo scope. Four new pi0.5 cases
 ran on two isolated colocated workers; observed usage was about 15-16 GB per
-GPU. This is not evidence that Intern fits across both GPUs. Formal source
-qualification/freeze and complete matched supervision/direct comparisons
+GPU. This is not evidence that Intern fits across both GPUs. Exact motor-only
+qualifications/freezes now verify; complete matched supervision/direct comparisons
 remain unfinished. Preserve the paid holds and Flex-only route while resolving
 the paid-lane gate; do not substitute more baseline screens for Stage C.
+
+See [current qualification and freeze update](NATIVE_FREEZE_UPDATE_20261002.md).
+The new [complete sparse result](PI05_SPARSE_SUPERVISION_20261002.md) establishes
+physical execution of supervision, not its benefit. All 27 paid requests settled;
+the earlier holds remain charged. Latest shared remaining budget: $8.807538505700.

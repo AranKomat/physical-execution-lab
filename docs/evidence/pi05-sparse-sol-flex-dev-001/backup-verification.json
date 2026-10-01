@@ -1,0 +1,8 @@
+{
+  "archive_sha256": "3e4be910d1530dc50905e5aa93d58131ed020045a5d1e8918adcb43a0f3a9fce",
+  "files_expected": 2812,
+  "files_archived": 2812,
+  "missing": [],
+  "changed": [],
+  "tar_directory_warning": "root directory changed while optional initial-observation report was generated; payload completeness checked against per-file hashes"
+}

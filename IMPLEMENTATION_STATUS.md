@@ -9,7 +9,10 @@ screen completed with 3/5 successes; official XR1's balanced RoboCasa365
 screen completed with 2/6 successes. These are development results, not held-out
 scores or cross-benchmark policy comparisons. One sparse XR1 episode completed
 one paid Flex review and 50 native actions, then stopped on capacity failure.
-No complete matched supervision comparison exists yet. See
+No complete held-out three-condition comparison exists yet. One complete pi0.5
+sparse development episode now fails at its full 1050-action horizon, score 0.0,
+27 settled Flex reviews/$0.258, versus the nominal motor-only case's success.
+See `docs/PI05_SPARSE_SUPERVISION_20261002.md` and
 `docs/EXPERIMENT_PROGRESS.md` and `docs/XR1_DEVELOPMENT_SCREEN_20261002.md`.
 The exact RoboDojo pi0.5 checkpoint is now provisioned and publisher-hash verified;
 its isolated OpenPI/JAX runtime and native sorting pilot now pass (score 1.0,
@@ -18,6 +21,11 @@ GPT calls, matched saved-input warm p50 454 ms versus G0.5's 801 ms. See
 `docs/PI05_DEVELOPMENT_SCREEN_20261002.md`.
 Intern and Xiaomi
 RoboDojo are outside the owner's active scope; XR1 RoboCasa365 remains active.
+
+Exact motor-only G0.5/pi0.5 native qualifications are now evidence-reviewed;
+fresh G0.5/pi0.5/XR1 motor freezes verify against current source and full grouped
+manifests. See `docs/NATIVE_FREEZE_UPDATE_20261002.md`. These records do not
+qualify GPT corrections/contact or relabel historical development results.
 
 ## Implemented and exercised on CPU
 
@@ -82,8 +90,8 @@ locks. Software tests cannot certify contact dynamics or hardware safety.
 
 ## Primary next milestone
 
-Audit and qualify/freeze the retained G0.5 and official XR1 bindings, then finish
-matched supervision comparisons under the explicitly selected Flex tier when
+Retained motor-only bindings are now qualified/frozen. Finish native supervision
+integration and matched comparisons under the explicitly selected Flex tier when
 capacity is available. Retain capacity failures without automatic retry or tier
 fallback. The fixed pi0.5 development screen and matched warm timing are complete;
 robot-policy-free dense/sparse experiments remain pending. Do not expand

@@ -1,0 +1,12 @@
+{
+  "remaining_under_85_usd": "8.807538505700",
+  "reservations": 4564,
+  "spent_plus_holds_usd": "76.192461494300",
+  "trial_actual_cost_usd": "0.25800075",
+  "trial_attempts": 27,
+  "unresolved_sol": [
+    "g05-sparse-sol-flex-dev-001-0",
+    "g05-sparse-sol-flex-dev-002-0",
+    "xr1-supervision-kettle-001-1"
+  ]
+}

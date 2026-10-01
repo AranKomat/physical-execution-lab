@@ -1,0 +1,31 @@
+{
+  "all_93_source_npz_actions_match_journal": true,
+  "correction_leases": [
+    {
+      "requested_steps": 1,
+      "step": 926
+    },
+    {
+      "requested_steps": 1,
+      "step": 939
+    },
+    {
+      "requested_steps": 1,
+      "step": 985
+    },
+    {
+      "requested_steps": 1,
+      "step": 1004
+    },
+    {
+      "requested_steps": 1,
+      "step": 1038
+    }
+  ],
+  "proposal_directory": "configs/local/pi05-exact-bound-001/policy-proposals/session-v1wevskd",
+  "review_modes": {
+    "accept": 1,
+    "correct": 5,
+    "shorten": 21
+  }
+}

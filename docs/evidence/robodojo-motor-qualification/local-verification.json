@@ -1,0 +1,26 @@
+{
+  "checks": [
+    {
+      "config_bound": true,
+      "freeze_sha256": "3218e098b5b8b4903b00aa2d818a85c81d38d88223f82ea1d589ef9c8e4b1d77",
+      "freeze_source_config_manifest_verified": true,
+      "hashed_qualification_evidence_verified": true,
+      "policy": "g05"
+    },
+    {
+      "config_bound": true,
+      "freeze_sha256": "bd638857c1b8730a787fedf9e9d47e5b56218c067b821d87c089b595ec3051e5",
+      "freeze_source_config_manifest_verified": true,
+      "hashed_qualification_evidence_verified": true,
+      "policy": "pi05"
+    },
+    {
+      "config_bound": true,
+      "freeze_sha256": "131dec321fc576cda86a9e0bb3384e076df1801b6b1f2d6cba67d75261c898a5",
+      "freeze_source_config_manifest_verified": true,
+      "hashed_qualification_evidence_verified": true,
+      "policy": "xr1"
+    }
+  ],
+  "scope": "local qualification/freeze integrity; actual artifact bytes were rehashed separately on GPU host"
+}

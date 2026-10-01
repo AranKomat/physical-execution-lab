@@ -1,0 +1,14 @@
+{
+  "initial_arrays_equal": {
+    "cam_high": false,
+    "cam_left_wrist": false,
+    "cam_right_wrist": false,
+    "state": true
+  },
+  "mean_absolute_rgb_difference": {
+    "cam_high": 0.3843229166666667,
+    "cam_left_wrist": 0.293115234375,
+    "cam_right_wrist": 0.3068967013888889
+  },
+  "scope": "initial recorded legal observations, not full physics-state identity"
+}
