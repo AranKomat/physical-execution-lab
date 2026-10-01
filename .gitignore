@@ -12,3 +12,5 @@ runs/*
 !runs/cpu-example/
 !runs/cpu-example/**
 configs/libero.local/
+configs/local/
+model-artifacts/

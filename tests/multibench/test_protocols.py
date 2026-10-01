@@ -211,6 +211,14 @@ def test_native_ready_from_json_logs_not_connection(tmp_path):
 def test_new_protocol_rejects_task_solution_or_oracle(field):
     with pytest.raises(ContractError):mf.resolved_config({'name':'x',field:'enabled'})
 
+def test_launcher_keeps_virtualenv_interpreter_symlink(tmp_path):
+    m=script_module('launch_robodojo_case.py')
+    target=tmp_path/'system-python';target.touch()
+    python=tmp_path/'venv'/'bin'/'python';python.parent.mkdir(parents=True)
+    python.symlink_to(target)
+    assert m.interpreter_path(python)==str(python)
+    assert m.interpreter_path(python)!=str(target)
+
 
 def test_new_protocol_rejects_ambiguous_memory_label():
     with pytest.raises(ContractError):mf.resolved_config({'no_task_memory':False})

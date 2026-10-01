@@ -38,6 +38,11 @@ def stop_child(child):
         child.wait(timeout=10)
 
 
+def interpreter_path(path):
+    # Resolving a venv's python symlink bypasses its pyvenv.cfg and dependencies.
+    return str(Path(path).expanduser().absolute())
+
+
 def plan(a):
     root=Path(__file__).resolve().parents[2]
     manifest=check(load_json(a.manifest));case=next((c for c in manifest['cases'] if c['case_id']==a.case_id),None)
@@ -49,14 +54,14 @@ def plan(a):
     if out.exists():raise FileExistsError('fresh output root required')
     donor=Path(a.gpt_as_policy_root or cfg['environment']['gpt_as_policy_root']).resolve()
     sim=Path(a.robodojo_root).resolve()
-    server=[str(Path(a.sim_python).resolve()),'-u','-m','hybrid_rollout.robodojo.robodojo_server.server',
+    server=[interpreter_path(a.sim_python),'-u','-m','hybrid_rollout.robodojo.robodojo_server.server',
        '--task',case.get('runtime_task',case['task']),'--eval-seed',str(case['eval_seed']),
        '--port',str(a.sim_port),'--output',str(out/'native')]
     if case.get('layout_sha256'):
         if not a.source_panel or file_sha(a.source_panel)!=manifest['source_panel_sha256']:
             raise ContractError('exact source-panel file used during import is required')
         server+=['--eval-manifest',str(Path(a.source_panel).resolve()),'--case-file',str(out/'source_case.json')]
-    controller=[str(Path(a.controller_python).resolve()),str(root/'run_bench.py'),'run-case',
+    controller=[interpreter_path(a.controller_python),str(root/'run_bench.py'),'run-case',
         '--config',str(Path(a.config).resolve()),'--manifest',str(Path(a.manifest).resolve()),
         '--case-id',a.case_id,'--output',str(out/'controller'),'--allow-native']
     if a.development:controller+=['--development']

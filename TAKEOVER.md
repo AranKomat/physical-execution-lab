@@ -1,5 +1,10 @@
 # Codex takeover — Physical Execution Lab v0.4
 
+2026-10-02 update: one G0.5 motor-only native development case succeeded; other
+policy qualifications and all paid supervision comparisons remain pending. Read
+`docs/EXPERIMENT_PROGRESS.md` and `docs/NATIVE_PILOT_20261002.md` before repeating
+bring-up work. This is not a completed benchmark comparison.
+
 You are continuing a CPU-built research repo, not consuming a completed robotics
 result. Read `HANDOFF.md`, `IMPLEMENTATION_STATUS.md`, and `AGENTS.md` first.
 

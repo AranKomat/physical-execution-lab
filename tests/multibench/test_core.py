@@ -130,6 +130,15 @@ def test_sparse_not_automatic_every_boundary(tmp_path):
     assert a['metrics']['review_calls']>b['metrics']['review_calls']
     assert a['native_steps']==b['native_steps']
 
+def test_explicit_policy_clipping_is_counted(tmp_path):
+    class ClippedPolicy(ToyPolicy):
+        def propose(self,obs):
+            proposal=super().propose(obs)
+            proposal.diagnostics['gripper_clips']=2
+            return proposal
+    r=run_episode(ToyEnv(12),ClippedPolicy(),None,case(),config('motor_only'),tmp_path/'r')
+    assert r['metrics']['gripper_clips']==2*r['metrics']['policy_calls']
+
 def test_model_stop_is_not_success(tmp_path):
     class Reviewer(ToyReviewer):
         def review(self,*args,**kw):return Decision('stop',0,[],evidence='Not enough evidence.',progress=progress())

@@ -1,0 +1,24 @@
+{
+  "evaluation_case": {
+    "case_id": "classify_objects__standard__g0__l0",
+    "eval_seed": 0,
+    "layout_id": 0,
+    "layout_sha256": "5ceb9e18e6d8490a7db85dd001462d63265c297ea6fad0d7438364deb2de3ece",
+    "panel_id": "robodojo_panel60_v1",
+    "panel_sha256": "9641fa252856c5ffc07b269c9fef4fed7f5bbc91b45ea0e93fe2a39fa73944b7",
+    "policy_rng_seed": 0,
+    "reset_seed": 0,
+    "runtime_task": "classify_objects",
+    "simulator_initial_seed": 0,
+    "task": "classify_objects",
+    "variant": "standard"
+  },
+  "complete": true,
+  "valid_for_success_rate": true,
+  "native_success": true,
+  "native_score": 1.0,
+  "status": "native_completed",
+  "reason": "native_terminal",
+  "native_control_steps": 919,
+  "native_step_limit": 1100
+}

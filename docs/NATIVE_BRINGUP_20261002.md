@@ -1,5 +1,9 @@
 # Native RoboDojo Bring-Up
 
+Subsequent update: one G0.5 motor-only development episode succeeded. See
+[the pilot report](NATIVE_PILOT_20261002.md). The exact pi0.5 artifact is still
+blocked; no checkpoint substitution was used to obtain that G0.5 result.
+
 **Host:** 2x RTX 4090, NVIDIA driver 580.178.04 after reboot
 **RoboDojo:** pinned checkout at `ee67a1468510da7624a089164402359f2afc72c8`
 **Case:** `classify_objects__standard__g0__l0` (development partition)

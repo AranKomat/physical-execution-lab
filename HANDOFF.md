@@ -1,5 +1,9 @@
 # Physical Execution Lab v0.4 — self-contained research handoff
 
+Live execution status: see [EXPERIMENT_PROGRESS.md](docs/EXPERIMENT_PROGRESS.md)
+and [the first native pilot report](docs/NATIVE_PILOT_20261002.md). The original
+build-host limitations below are historical, not a statement of current results.
+
 **Prepared:** 2026-10-01. **Audience:** an external Codex/research agent with authorized GPU, simulator, model-weight and language-model access. **Status:** implemented and CPU-tested; native integrations remain unqualified.
 
 This handoff supersedes the experiment priorities in K1 Execution Lab v0.3. The old implementation is preserved under `k1lab/` and `run.py`; its documents are archived under `docs/legacy_k1_v3/`. The new multi-benchmark implementation is `k1lab/multibench/` and `run_bench.py`. This is not the earlier privileged-state DynaHarness reproduction and does not reopen the closed EmbodiedSWE GPU-assembly branch.

@@ -4,8 +4,10 @@
 
 The build-host statements below describe the original release, not the current
 GPU-host state. Native RoboDojo capture, robot FK and one actual joint-action ACK
-now pass; see `docs/NATIVE_BRINGUP_20261002.md`. No complete native policy episode
-or paid supervisor call has been completed. The exact RoboDojo pi0.5 checkpoint
+now pass; see `docs/NATIVE_BRINGUP_20261002.md`. One complete G0.5 motor-only
+development episode succeeded (score 1.0, 919 native actions); see
+`docs/NATIVE_PILOT_20261002.md` and `docs/EXPERIMENT_PROGRESS.md`. No paid
+supervisor call has been completed. The exact RoboDojo pi0.5 checkpoint
 is still missing. G0.5 fallback provisioning and its separate inference issues
 are documented in `docs/G05_BRINGUP_20261002.md`.
 

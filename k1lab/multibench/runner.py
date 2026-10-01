@@ -31,6 +31,7 @@ def run_episode(env, policy, reviewer, case, config, output, *, clock=time.monot
     governor=SparseGovernor(MonitorConfig(**config.get('monitor',{})))
     started=clock(); times={'policy_s':0.,'review_s':0.,'env_s':0.,'ack_s':0.,'setup_s':0.,'preview_s':0.}
     metrics={'policy_calls':0,'review_calls':0,'corrected_steps':0,'motor_steps':0,
+             'gripper_clips':0,
              'discarded_policy_actions':0,'interruptions':0,'policy_invalidation_requests':0,'shortened_chunks':0}
     status='incomplete';reason=None;native_success=False;score=None;obs=None;last=None;error=None
     receipts=[];last_receipt=None;serial=0;proposal=None
@@ -81,7 +82,9 @@ def run_episode(env, policy, reviewer, case, config, output, *, clock=time.monot
             if not direct:
                 t=clock();proposal=policy.propose(obs);times['policy_s']+=clock()-t;metrics['policy_calls']+=1
                 proposal.validate(obs,policy.identity)
+                metrics['gripper_clips']+=int(proposal.diagnostics.get('gripper_clips',0))
                 log('policy_proposal',{'step':obs.step,'policy_identity':proposal.policy_identity,
+                                      'diagnostics':proposal.diagnostics,
                                       'actions':[a.json() for a in proposal.actions],
                                       'observation_sha256':proposal.observation_sha256})
                 reasons=governor.review_reasons(mode,obs.step,proposal,obs)

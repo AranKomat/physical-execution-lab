@@ -81,9 +81,14 @@ class XPolicyModel:
         self.observe(obs)
         rows=self.model.get_action()
         actions,clipped=decode_xpl(rows,self.identity.action_space,self.config.get('gripper_clip',False))
+        grippers=np.concatenate([np.asarray(row[f'{arm}_ee_joint_state']).reshape(-1)
+                                 for row in rows for arm in ('left','right')])
+        clip_delta=np.abs(grippers-np.clip(grippers,0,1))
         self.pending=len(actions)
         return Proposal(obs.stamp,obs.step,self.identity.identity,actions,
-                        {'gripper_clips':clipped,'native_returned_actions':len(actions)})
+                        {'gripper_clips':clipped,'native_returned_actions':len(actions),
+                         'raw_gripper_min':float(grippers.min()),'raw_gripper_max':float(grippers.max()),
+                         'max_gripper_clip_delta':float(clip_delta.max())})
 
     def invalidate(self,reason):
         # A source-defined generic cancel is not available. Reset and truthfully label

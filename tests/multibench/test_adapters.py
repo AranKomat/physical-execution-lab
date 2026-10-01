@@ -167,6 +167,15 @@ class XModel:
 def xpolicy():
     model=XModel();return XPolicyModel({'policy':'internw0_delta','identity':ident()},model=model),model
 
+def test_clipped_provider_retains_raw_gripper_diagnostics():
+    model=XModel();rows=native_rows();rows[0]['left_ee_joint_state']=np.array([1.1])
+    model.get_action=lambda:rows
+    policy=XPolicyModel({'policy':'g05','identity':ident(),'gripper_clip':True},model=model)
+    proposal=policy.propose(observation())
+    assert proposal.diagnostics['gripper_clips']==1
+    assert proposal.diagnostics['raw_gripper_max']==pytest.approx(1.1)
+    assert proposal.diagnostics['max_gripper_clip_delta']==pytest.approx(.1)
+
 
 def test_xpl_ack_exactly_once_no_dedup_drift():
     p,m=xpolicy();p.reset();o=observation();p.observe(o);p.propose(o)
