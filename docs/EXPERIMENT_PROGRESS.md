@@ -76,5 +76,7 @@ retry or Standard fallback. See [XR1 screen and next gate](XR1_DEVELOPMENT_SCREE
 
 Motor-only native bridge qualification is now evidence-reviewed and bound to
 the exact resolved configuration, not applied to supervision by inference.
+The motor-only source/config/manifest freeze is verified on the GPU host and
+backed up locally; no held-out tasks were opened.
 See [qualification review](XR1_NATIVE_QUALIFICATION_20261002.md). Raw historical
 development results remain unchanged; Stage D and held-out comparisons are open.

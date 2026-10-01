@@ -39,3 +39,16 @@ The incomplete Flex-capacity trial is not a qualification for GPT corrections.
 Freeze the reviewed motor-only configuration/source before opening untouched
 held-out tasks; changes to either invalidate that freeze. Do not run an expanded
 motor-only evaluation without the matched comparison and budget plan.
+
+## Verified Freeze
+
+The live host rehashed the bound model artifacts, resolved the unchanged
+motor-only configuration and verified the qualification record. It generated
+and verified `configs/local/xr1-development-001/motor-freeze-001.json`, backed
+up locally and published as `docs/evidence/xr1-development-screen/motor-freeze.json`.
+The freeze identity is
+`2b615eef6e0b569a48d235fbf646c6fc3b0afb91d9683d2b51256c8831570505`;
+source identity is
+`5160b5cd48cb6dfa1de27cd356e23987ebf65de38278b1c1e62259e43ed583d6`.
+This binds only motor-only, not sparse/every-chunk configurations. No held-out
+task, robot action or paid request was executed during this review/freeze.

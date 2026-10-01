@@ -768,7 +768,7 @@
     "tests/test_runner.py": "1367ffdeaa9b9c598979e6af98b5c3f9fee3f0bee3256524ad491f3ea14944e9",
     "upstream.lock.json": "553a969210291a8d72a6ae9d0dcd0b49d696e3377125ba400079762a67390a9e",
     "docs/NATIVE_PILOT_20261002.md": "3c481089ade9c7ca93bd0fe1775230966ad8a691d5c805d1751c16edb18acb10",
-    "docs/EXPERIMENT_PROGRESS.md": "2bdc808e7c5155e15987c0627cab3d5285013bc166928b8044151fe1a75a2cf1",
+    "docs/EXPERIMENT_PROGRESS.md": "81990449d5b19e709bd08b31035b776f71d3c30faa72489d0d339574c0f8fcc2",
     "scripts/multibench/prepare_g05_bundle.py": "d976e0a3c611ab8ab660e0c735695d30ab68f310e16ce8510a52d5a593a7e332",
     "docs/evidence/g05-native-002/evaluation_outcome.json": "c9c9756f6697ae64e36d0617ba0ed4d1a36d81c2e2853ab8a7c96d57d43f6024",
     "docs/evidence/g05-native-002/fk_validation.json": "d78c3f14caf685676a9fc9e3c82c74377eb5d4e111afe64d0d7142abb1ba6fe4",
@@ -836,7 +836,8 @@
     "scripts/multibench/verify_xr1_initial_chunk.py": "88b53adce06c6e9e25a4b89458e5efef0ef6eb3a0d306fdeaa67cdd9db6f9505",
     "tests/multibench/test_robocasa_development.py": "d5ad8516411385f89b863768676e54953f10aa7a46196c53e8f3c5b42e6cc1a3",
     "tests/multibench/test_supervision_preparation.py": "5c0b853c27d9a40bcabd47073c151f219883098269ebcfc28ad3c63816f08267",
-    "docs/XR1_NATIVE_QUALIFICATION_20261002.md": "3372c5f2b96139d39e7e684a2d288d5efd3984ecc41ce43227b746aeb5ac62b0",
-    "docs/evidence/xr1-development-screen/motor-qualification.json": "501078c59523233f5e8c0af8ece85349764fe5b3a162e588391b119568c0f2f5"
+    "docs/XR1_NATIVE_QUALIFICATION_20261002.md": "dea8c58c1ff4f7c524fcfb2faa26377cd9a99a3dcf48be4fdfbc803bb175e8bd",
+    "docs/evidence/xr1-development-screen/motor-qualification.json": "501078c59523233f5e8c0af8ece85349764fe5b3a162e588391b119568c0f2f5",
+    "docs/evidence/xr1-development-screen/motor-freeze.json": "ff0daa296b64b46507464842d46b73e28bbbe89ee339e0e789ce57d413c28748"
   }
 }

@@ -1,0 +1,11 @@
+{
+  "code_sha256": "5160b5cd48cb6dfa1de27cd356e23987ebf65de38278b1c1e62259e43ed583d6",
+  "configs": {
+    "robocasa365_xiaomi_motor_only": "368fbcda158133fe2c57f881ff739c9b36c787da0f79f5759ac597218848eb30"
+  },
+  "evidence": "Freeze is preregistration/integrity, NOT proof of real-world safety or generalization.",
+  "manifest_sha256": "ef7f282617dcbd12855f2dd82f434bbefa942fa10b1ac34111a355a2fd224ff7",
+  "protocol": "No target-task solutions/demonstrations; current-episode context allowed.",
+  "schema": "multibench.freeze.v1",
+  "sha256": "2b615eef6e0b569a48d235fbf646c6fc3b0afb91d9683d2b51256c8831570505"
+}
