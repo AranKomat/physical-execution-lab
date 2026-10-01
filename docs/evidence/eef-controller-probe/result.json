@@ -1,0 +1,212 @@
+{
+  "actual_actions": 80,
+  "episode": "83706e3dfab349a08933de64504ded0d",
+  "external_clearance": "unknown; simulator-only exploratory motion",
+  "max_actions": 80,
+  "paid_calls": 0,
+  "passed": true,
+  "phases": [
+    {
+      "after": {
+        "left": {
+          "opening_command_error": 0.0,
+          "rotation_rad": 4.956271946507513e-07,
+          "translation_m": 1.2644054553268208e-07
+        },
+        "right": {
+          "opening_command_error": 0.0,
+          "rotation_rad": 4.956271946507513e-07,
+          "translation_m": 1.2644054553268208e-07
+        }
+      },
+      "before": {
+        "left": {
+          "opening_command_error": 0.0,
+          "rotation_rad": 0.0,
+          "translation_m": 0.0
+        },
+        "right": {
+          "opening_command_error": 0.0,
+          "rotation_rad": 0.0,
+          "translation_m": 0.0
+        }
+      },
+      "name": "hold",
+      "reached": true,
+      "steps": 5,
+      "target": {
+        "space": "x5_eef16_wxyz",
+        "values": [
+          -0.2995290756225586,
+          -0.35229986906051636,
+          0.921500027179718,
+          0.7069999575614929,
+          -4.327419134142474e-08,
+          -6.000607299938565e-08,
+          0.7072135210037231,
+          1.0,
+          0.3004709482192993,
+          -0.35229986906051636,
+          0.921500027179718,
+          0.7069999575614929,
+          -4.327419134142474e-08,
+          -6.000607299938565e-08,
+          0.7072135210037231,
+          1.0
+        ]
+      }
+    },
+    {
+      "after": {
+        "left": {
+          "opening_command_error": 0.0,
+          "rotation_rad": 2.3946402287608266e-07,
+          "translation_m": 2.9802322387695312e-08
+        },
+        "right": {
+          "opening_command_error": 0.0,
+          "rotation_rad": 3.608431889783046e-07,
+          "translation_m": 1.228781230931777e-07
+        }
+      },
+      "before": {
+        "left": {
+          "opening_command_error": 0.0,
+          "rotation_rad": 4.956271946507513e-07,
+          "translation_m": 0.02000010013584763
+        },
+        "right": {
+          "opening_command_error": 0.0,
+          "rotation_rad": 4.956271946507513e-07,
+          "translation_m": 1.2644054553268208e-07
+        }
+      },
+      "name": "left_up",
+      "reached": true,
+      "steps": 25,
+      "target": {
+        "space": "x5_eef16_wxyz",
+        "values": [
+          -0.2995290756225586,
+          -0.35229986906051636,
+          0.9415000081062317,
+          0.7069999575614929,
+          -4.327419134142474e-08,
+          -6.000607299938565e-08,
+          0.7072135210037231,
+          1.0,
+          0.3004709482192993,
+          -0.35229986906051636,
+          0.921500027179718,
+          0.7069999575614929,
+          -4.327419134142474e-08,
+          -6.000607299938565e-08,
+          0.7072135210037231,
+          1.0
+        ]
+      }
+    },
+    {
+      "after": {
+        "left": {
+          "opening_command_error": 0.0,
+          "rotation_rad": 2.3946402287608266e-07,
+          "translation_m": 2.9802322387695312e-08
+        },
+        "right": {
+          "opening_command_error": 0.0,
+          "rotation_rad": 2.3946402287608266e-07,
+          "translation_m": 2.9802322387695312e-08
+        }
+      },
+      "before": {
+        "left": {
+          "opening_command_error": 0.0,
+          "rotation_rad": 2.3946402287608266e-07,
+          "translation_m": 2.9802322387695312e-08
+        },
+        "right": {
+          "opening_command_error": 0.0,
+          "rotation_rad": 3.608431889783046e-07,
+          "translation_m": 0.020000100135825427
+        }
+      },
+      "name": "right_up",
+      "reached": true,
+      "steps": 25,
+      "target": {
+        "space": "x5_eef16_wxyz",
+        "values": [
+          -0.2995290756225586,
+          -0.35229986906051636,
+          0.9415000081062317,
+          0.7069999575614929,
+          -4.327419134142474e-08,
+          -6.000607299938565e-08,
+          0.7072135210037231,
+          1.0,
+          0.3004709482192993,
+          -0.35229986906051636,
+          0.9415000081062317,
+          0.7069999575614929,
+          -4.327419134142474e-08,
+          -6.000607299938565e-08,
+          0.7072135210037231,
+          1.0
+        ]
+      }
+    },
+    {
+      "after": {
+        "left": {
+          "opening_command_error": 0.0,
+          "rotation_rad": 1.6054110215147557e-07,
+          "translation_m": 2.9802322387695312e-08
+        },
+        "right": {
+          "opening_command_error": 0.0,
+          "rotation_rad": 1.6054110215147557e-07,
+          "translation_m": 2.9802322387695312e-08
+        }
+      },
+      "before": {
+        "left": {
+          "opening_command_error": 0.0,
+          "rotation_rad": 2.3946402287608266e-07,
+          "translation_m": 0.019999980926535876
+        },
+        "right": {
+          "opening_command_error": 0.0,
+          "rotation_rad": 2.3946402287608266e-07,
+          "translation_m": 0.019999980926535876
+        }
+      },
+      "name": "return",
+      "reached": true,
+      "steps": 25,
+      "target": {
+        "space": "x5_eef16_wxyz",
+        "values": [
+          -0.2995290756225586,
+          -0.35229986906051636,
+          0.921500027179718,
+          0.7069999575614929,
+          -4.327419134142474e-08,
+          -6.000607299938565e-08,
+          0.7072135210037231,
+          1.0,
+          0.3004709482192993,
+          -0.35229986906051636,
+          0.921500027179718,
+          0.7069999575614929,
+          -4.327419134142474e-08,
+          -6.000607299938565e-08,
+          0.7072135210037231,
+          1.0
+        ]
+      }
+    }
+  ],
+  "schema": "multibench.eef_probe.v1",
+  "scope": "development robot-only translation/hold check; not task success or contact qualification"
+}

@@ -744,7 +744,7 @@
     "scripts/multibench/bind_policy.py": "0250d6103a73c1a9bb0714603439f88feaf5e6e9e3621ac276bbd51a68fe3cb8",
     "scripts/multibench/export_observation.py": "73fcce4a4c198dc12320aaa0398ceeb43b976e9851b4c3c2a5a6447cb9ba1758",
     "scripts/multibench/fingerprint.py": "2fdf02442d43e59841592808d3165ab90338e2029ab410d9d7fa1ff8446ca35d",
-    "scripts/multibench/launch_robodojo_case.py": "58c43f306717e32a4f470c489fc65a858d0280511a8aacc61a3c87553774b0bb",
+    "scripts/multibench/launch_robodojo_case.py": "d049b7a4825d098bdf51f53a578a3304530110d04f3ef5f8ff1eff92ab3440fb",
     "scripts/multibench/plan_matrix.py": "f8a1bda827f7a63c92f72ef86b676c5b8b82e40ba1e3311497dd3dd98fe60f36",
     "scripts/multibench/plot_results.py": "48b284ba42aefbebd0ee2dcddda8206e96547defe218d2e85795bb74b6e35b38",
     "scripts/multibench/qualification_template.py": "34781271d4d5f2bf09c23351bc777860cf1b73a517c1f230773ee89c1753360b",
@@ -768,7 +768,7 @@
     "tests/test_runner.py": "1367ffdeaa9b9c598979e6af98b5c3f9fee3f0bee3256524ad491f3ea14944e9",
     "upstream.lock.json": "878ffdeac6735db1defce908ad6cfd43a65b684cf799432c3d5ea09bd2d2cd15",
     "docs/NATIVE_PILOT_20261002.md": "3c481089ade9c7ca93bd0fe1775230966ad8a691d5c805d1751c16edb18acb10",
-    "docs/EXPERIMENT_PROGRESS.md": "b5cbb4e6b3db3f439965ef8ddaf08ea095ac0dd56e950643c7b64e91a06b6afe",
+    "docs/EXPERIMENT_PROGRESS.md": "e48b86c79bc3f7c14e7c2d10ff1adfea011037c9db41e8057cfd23b871ee2cef",
     "scripts/multibench/prepare_g05_bundle.py": "d976e0a3c611ab8ab660e0c735695d30ab68f310e16ce8510a52d5a593a7e332",
     "docs/evidence/g05-native-002/evaluation_outcome.json": "c9c9756f6697ae64e36d0617ba0ed4d1a36d81c2e2853ab8a7c96d57d43f6024",
     "docs/evidence/g05-native-002/fk_validation.json": "d78c3f14caf685676a9fc9e3c82c74377eb5d4e111afe64d0d7142abb1ba6fe4",
@@ -807,6 +807,10 @@
     "docs/evidence/g05-development-screen/tower-l1/g05-screen-tower-l1-audit.json": "81f9dc914076dd453e8fd2cc8e8bd23325e70d5a52f8c0f5ea969fa904295b97",
     "docs/evidence/g05-development-screen/tower-l1/result.json": "860329cc23c49e7fe69c8a4f1d77dd9bc5d056e1890e02db39fc9da8b135ab3b",
     "scripts/multibench/audit_native_episode.py": "5a598c7010cecfeb3db537fe15d62c886abe154a072977f7588b98508feae69a",
-    "tests/multibench/test_native_audit.py": "7bf00ef9aa0982cf0cb49aabbf481e2a0ca13a4bbe833c04a9bce518133461f5"
+    "tests/multibench/test_native_audit.py": "7bf00ef9aa0982cf0cb49aabbf481e2a0ca13a4bbe833c04a9bce518133461f5",
+    "docs/EEF_CONTROLLER_CHECK_20261002.md": "64b82c12f2406bbac06c6986007d89c635bc7dd981c77e62ac9a28674209ae0d",
+    "docs/evidence/eef-controller-probe/result.json": "f0232a0798f5c655836296aa4c4dd31c9367d79a738e683a5d670a2c6e4fb071",
+    "k1lab/multibench/calibration.py": "498415b558816ba08bc20352a7ab127b4dc383bcd9ba218fa69948c9a1705ef8",
+    "tests/multibench/test_calibration.py": "557f323ed4309984ce21231d61cc0cc3afc775d7b0303fe1941c3dde0640e6f1"
   }
 }

@@ -54,3 +54,9 @@ replace cases after observing their outcomes. It supplies sufficient development
 evidence to retain G0.5; move next to matched supervision rather than more of the
 same screen. See [the full screen report](G05_DEVELOPMENT_SCREEN_20261002.md).
 Future formal bindings include hashes of the ancillary embodiment config files.
+
+The shared EEF translation/hold development probe now passes: 80 sequential
+native actions, two separate 20 mm upward targets and return, zero paid calls.
+See [the controller report](EEF_CONTROLLER_CHECK_20261002.md). This is not contact
+qualification or Stage C completion. The paid budget-enforced Responses route
+still needs binding; existing $85 shared ceiling and unresolved holds remain.

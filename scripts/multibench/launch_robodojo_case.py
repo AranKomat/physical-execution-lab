@@ -50,6 +50,8 @@ def plan(a):
     cfg=load_json(a.config)
     if cfg['benchmark']!='robodojo':raise ContractError('wrong benchmark configuration')
     if a.capture_only and case['partition']!='dev':raise ContractError('capture-only is development, not held-out exploration')
+    if a.probe_eef_correction and (not a.capture_only or a.probe_one_step):
+        raise ContractError('EEF probe needs capture-only and cannot combine with joint probe')
     out=Path(a.output).resolve()
     if out.exists():raise FileExistsError('fresh output root required')
     donor=Path(a.gpt_as_policy_root or cfg['environment']['gpt_as_policy_root']).resolve()
@@ -73,6 +75,10 @@ def plan(a):
     if a.allow_api:controller+=['--allow-api']
     return {'server_argv':server,'controller_argv':controller,'server_cwd':str(sim),'controller_cwd':str(root),
         'donor_root':str(donor),'output':str(out),'case':case,'capture_only':a.capture_only,
+        'probe_eef_correction':a.probe_eef_correction,
+        'probe_max_actions':80 if a.probe_eef_correction else (1 if a.probe_one_step else 0),
+        'runtime_environment':{key:os.environ.get(key) for key in
+            ('CUDA_VISIBLE_DEVICES','OMNI_KIT_ACCEPT_EULA')},
         'locator_overrides':{'K1LAB_SIM_PORT':str(a.sim_port),'K1LAB_NATIVE_OUTCOME_PATH':str(out/'native/evaluation_outcome.json')},
         'network':'no paid model requests until controller explicitly starts with --allow-api'}
 
@@ -83,7 +89,7 @@ def main(argv=None):
     p.add_argument('--controller-python',default=sys.executable);p.add_argument('--gpt-as-policy-root')
     p.add_argument('--source-panel');p.add_argument('--sim-port',type=int,default=19113)
     p.add_argument('--startup-timeout',type=float,default=600)
-    for name in ('development','allow-policy','allow-api','execute','capture-only','probe-one-step'):p.add_argument('--'+name,action='store_true')
+    for name in ('development','allow-policy','allow-api','execute','capture-only','probe-one-step','probe-eef-correction'):p.add_argument('--'+name,action='store_true')
     p.add_argument('--freeze');p.add_argument('--qualification');a=p.parse_args(argv)
     v=plan(a);print(json.dumps(v,indent=2),flush=True)
     if not a.execute:return
@@ -121,7 +127,11 @@ def main(argv=None):
                 native=RoboDojoRPC(cfg)
                 try:
                     obs=native.reset(v['case']);atomic_json(out/'observation.wire.json',encode_obs(obs),exclusive=True)
-                    if a.probe_one_step:
+                    if a.probe_eef_correction:
+                        from k1lab.multibench.calibration import probe_eef
+                        probe_eef(native,obs,out/'eef-probe')
+                        native.finish('eef_controller_probe_not_task_attempt')
+                    elif a.probe_one_step:
                         native.step(Action('x5_joint14',obs.state.copy()))
                         native.finish('one_step_native_probe')
                     else:
