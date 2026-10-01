@@ -768,7 +768,7 @@
     "tests/test_runner.py": "1367ffdeaa9b9c598979e6af98b5c3f9fee3f0bee3256524ad491f3ea14944e9",
     "upstream.lock.json": "553a969210291a8d72a6ae9d0dcd0b49d696e3377125ba400079762a67390a9e",
     "docs/NATIVE_PILOT_20261002.md": "3c481089ade9c7ca93bd0fe1775230966ad8a691d5c805d1751c16edb18acb10",
-    "docs/EXPERIMENT_PROGRESS.md": "f94796443d3bd039e7f065d581d75660dc17074afaabbce5c153b5064424065f",
+    "docs/EXPERIMENT_PROGRESS.md": "65261514ccc74456a3059b38155451c9a606f06d1c79cc310e653ccb28d6e6e2",
     "scripts/multibench/prepare_g05_bundle.py": "d976e0a3c611ab8ab660e0c735695d30ab68f310e16ce8510a52d5a593a7e332",
     "docs/evidence/g05-native-002/evaluation_outcome.json": "c9c9756f6697ae64e36d0617ba0ed4d1a36d81c2e2853ab8a7c96d57d43f6024",
     "docs/evidence/g05-native-002/fk_validation.json": "d78c3f14caf685676a9fc9e3c82c74377eb5d4e111afe64d0d7142abb1ba6fe4",
@@ -882,6 +882,7 @@
     "docs/evidence/robodojo-motor-qualification/local-verification.json": "f3c6e29480c22dde202ad6e7ede2fedc62e6ff757520472af237705454a6c1ff",
     "docs/evidence/robodojo-motor-qualification/pi05-freeze.json": "c5906d1f4e6c51ca101fc0cc15fc82dae2ea69ab56b7920f9fac41354dc3e441",
     "docs/evidence/robodojo-motor-qualification/pi05.json": "144bebdb5c7c0665daa11b9d2989ef1bd9966808d54d015f6cbfbcbc4f48fc5e",
-    "docs/evidence/robodojo-motor-qualification/xr1-freeze.json": "e77f0d4c29791d2d6ea59038ec423540eedee9cd75f10be7163edd7efe1c5eee"
+    "docs/evidence/robodojo-motor-qualification/xr1-freeze.json": "e77f0d4c29791d2d6ea59038ec423540eedee9cd75f10be7163edd7efe1c5eee",
+    "docs/RESEARCH_PROGRESS_HANDOFF_20261002.md": "e3270c1e3f9930f1a68bca03c43ffdeda5af5a88e25b95ab71bca667399b347b"
   }
 }

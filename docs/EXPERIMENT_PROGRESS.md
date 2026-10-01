@@ -77,10 +77,11 @@ The shared EEF translation/hold development probe now passes: 80 sequential
 native actions, two separate 20 mm upward targets and return, zero paid calls.
 See [the controller report](EEF_CONTROLLER_CHECK_20261002.md). This is not contact
 qualification or Stage C completion. The budget-enforced Responses route is
-verified for the actual Sol 6.1 model and Flex tier. Native supervision has not
-yet completed an episode; XR1's incomplete sparse trial executed 50 actions.
+verified for the actual Sol 6.1 model and Flex tier. Pi0.5 sparse supervision has
+now completed a full native episode with failure; XR1's incomplete sparse trial
+executed 50 actions.
 See [bring-up update](SUPERVISION_RC365_BRINGUP_20261002.md).
-The $85 shared ceiling and all unresolved holds remain. Latest snapshot:
+The $85 shared ceiling and all unresolved holds remain. Historical pre-pi0.5 snapshot:
 $75.934460744300 spent plus holds, 154 unsettled reservations; no automatic
 retry or Standard fallback. See [XR1 screen and next gate](XR1_DEVELOPMENT_SCREEN_20261002.md).
 
