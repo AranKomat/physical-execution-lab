@@ -1,5 +1,14 @@
 # Implementation status — v0.4
 
+## Live bring-up update — 2026-10-02
+
+The build-host statements below describe the original release, not the current
+GPU-host state. Native RoboDojo capture, robot FK and one actual joint-action ACK
+now pass; see `docs/NATIVE_BRINGUP_20261002.md`. No complete native policy episode
+or paid supervisor call has been completed. The exact RoboDojo pi0.5 checkpoint
+is still missing. G0.5 fallback provisioning and its separate inference issues
+are documented in `docs/G05_BRINGUP_20261002.md`.
+
 ## Implemented and exercised on CPU
 
 - Original K1/LIBERO implementation retained, with original127 tests.

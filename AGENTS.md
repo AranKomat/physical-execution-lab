@@ -44,3 +44,10 @@ Do not edit or operate the user's unrelated BEHAVIOR or closed GPU-assembly
 workers. No GPU instance, paid API call, remote deployment or account action is
 authorized merely by opening this archive; use the owner's explicit budget and
 environment permissions.
+
+## Execution efficiency
+
+Overlap independent setup, downloads, validation and analysis whenever useful.
+Keep simulator episodes, mutable policy sessions and GPU memory reservations
+isolated; do not parallelize dependent actions within one episode. Preserve this
+practice for subsequent runs, not just initial provisioning.
