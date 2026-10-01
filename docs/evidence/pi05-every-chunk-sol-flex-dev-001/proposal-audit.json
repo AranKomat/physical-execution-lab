@@ -1,0 +1,16 @@
+{
+  "correction_leases": [
+    {
+      "requested_steps": 1,
+      "step": 625
+    }
+  ],
+  "count": 69,
+  "proposal_directory": "configs/local/pi05-exact-bound-001/policy-proposals/session-mu0z9pfh",
+  "review_modes": {
+    "accept": 3,
+    "correct": 1,
+    "shorten": 64
+  },
+  "source_npz_actions_match_journal": true
+}

@@ -13,7 +13,7 @@ code/evidence remain archived. Xiaomi's separate RoboCasa365 track is unchanged.
 | Pre-GPU | Complete | CPU suite, synthetic audit, source inspection and config preparation |
 | A: native qualification | Complete for active motor-only RoboDojo scope | Reset/render/FK/conventions/ACK and complete episodes verified; exact G0.5/pi0.5 motor-only qualification and full-manifest freezes verify. GPT correction/contact integration remains a separate Stage C gate |
 | B: speed/quality screen | Complete for active RoboDojo policies | Same fixed five-case roster: G0.5 3/5, exact pi0.5 4/5; all native-limit failures retained. Same-input 30-sample warm timing: G0.5 p50 801 ms, pi0.5 p50 454 ms. Development evidence only; qualification/freeze and matched supervision remain separate |
-| C: matched harness comparison | First full sparse development result; overall incomplete | Pi0.5 tower0 sparse fails at full 1050-action limit, score 0.0, 27 settled Flex reviews/$0.258; nominal motor-only case succeeded at 714 actions. No API/infrastructure error. Every-chunk, held-out matched conditions and direct comparisons remain open |
+| C: matched harness comparison | First full sparse development result; overall incomplete | Pi0.5 tower0 sparse fails at full 1050-action limit, score 0.0, 27 settled Flex reviews/$0.258; nominal motor-only succeeded at 714 actions. Every-chunk stops at 626 actions on an invalid-quaternion correction; 69 settled API calls/$0.656, native score null. Held-out matched conditions and direct comparisons remain open |
 | D: RoboCasa365 | Motor-only qualified/freeze refreshed; comparison pending | Fixed six-case screen: 2/6 success, no infrastructure errors. Initial official-client chunk matches exactly. Current-source motor freeze verifies; supervision/corrections remain unqualified. Sparse kettle pilot reached 50 steps then Flex capacity failed |
 | E: sensing/transfer | Deferred as specified | Only after useful matched physical results; no RGB-D port claimed |
 
@@ -109,3 +109,11 @@ See [current qualification and freeze update](NATIVE_FREEZE_UPDATE_20261002.md).
 The new [complete sparse result](PI05_SPARSE_SUPERVISION_20261002.md) establishes
 physical execution of supervision, not its benefit. All 27 paid requests settled;
 the earlier holds remain charged. Latest shared remaining budget: $8.807538505700.
+
+Latest: [self-contained research handoff](RESEARCH_PROGRESS_HANDOFF_20261002.md).
+Every-chunk tower0 stopped at 626 actions with `infrastructure_or_contract_error`:
+`EEF quaternions are unit wxyz`. All 69 API calls settled ($0.65624150);
+68 reviews were valid. This is neither full-horizon failure nor a completed
+matched comparison. Preserve the rejected response and investigate correction
+validation before another named trial; no automatic retry. Shared ledger now
+has 4633 reservations/$76.848702994300 spent plus holds, $8.151297005700 remaining.

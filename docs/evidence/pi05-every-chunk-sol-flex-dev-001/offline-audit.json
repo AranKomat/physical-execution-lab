@@ -1,0 +1,7 @@
+{
+  "events": 902,
+  "head_sha256": "b3c7633df393627cbe2a2b25745ea4d1e6cad2f31d977222ce2cb8011438f161",
+  "scope": "resource/infrastructure terminal audit; not native completion",
+  "sequential_acks": 626,
+  "status": "infrastructure_or_contract_error"
+}

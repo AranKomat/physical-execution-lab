@@ -1,0 +1,18 @@
+{
+  "attempts": 69,
+  "cost_usd": "0.65624150",
+  "no_automatic_retry": true,
+  "requested_model": "openai/gpt-6.1-sol",
+  "provider": {
+    "only": [
+      "openai/flex"
+    ],
+    "allow_fallbacks": false,
+    "require_parameters": true,
+    "max_price": {
+      "prompt": 1.5,
+      "completion": 6
+    }
+  },
+  "service_tier": "flex"
+}

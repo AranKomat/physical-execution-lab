@@ -1,9 +1,9 @@
 # Physical Execution Lab: Research Progress Handoff
 
-Snapshot: 2026-10-02 Japan time / 2026-10-01 23:28 UTC. This is a
+Snapshot: 2026-10-02 Japan time, updated after the every-chunk trial stopped. This is a
 self-contained account of the current project, not the earlier BEHAVIOR,
-EmbodiedSWE assembly, or FLUX branches. An every-chunk episode is still running;
-its numbers below are a live snapshot, not a final result.
+EmbodiedSWE assembly, or FLUX branches. The every-chunk trial is now terminal
+with a correction-contract error, not native task completion.
 
 ## Objective And Scope
 
@@ -25,7 +25,8 @@ retry, provider/model fallback, or Standard-tier substitution.
 - Local checkout: `/Users/macbookpro/Developer/random/gpu/physical-execution-lab`.
 - GPU host: `ssh -p 53210 root@92.180.27.84`; two 24 GB RTX 4090s.
 - Remote checkout: `/root/physical-execution-lab`.
-- Latest pushed evidence commit at this snapshot: `8ba161d`; GPU checkout matches.
+- Motor qualification/sparse evidence commit: `8ba161d`; this handoff was first
+  published in `6196940`, with terminal every-chunk evidence added afterward.
 - Current code fingerprint:
   `8304dc48a8d6d1ddc46983de0c9aa107a09420e556a8b0362d01b9decdaeb233`.
 - Experiment sequence/checklist:
@@ -140,7 +141,7 @@ Full local archive verified 2,812 payloads with no mismatches. Tar's directory
 mtime warning is recorded, not concealed. Report:
 `docs/PI05_SPARSE_SUPERVISION_20261002.md`.
 
-## Currently Running: Every-Chunk Review
+## Every-Chunk Review: Incomplete Contract-Error Result
 
 Run `runs/pi05-every-chunk-sol-flex-dev-001` on the same tower development case,
 using the same prepared pi0.5 provider, sensors, native controller, and action
@@ -148,10 +149,34 @@ bounds. Native horizon 1,050; at most 75 reviews; $3 local cap under $85 shared.
 Model GPU 1, simulator GPU 0. Source, bridge and simulator are owned processes;
 account credentials remain on the Mac behind the budget-enforced relay.
 
-At approximately 23:28 UTC: **532 actual actions, 55 completed reviews**,
-three accept and 52 shorten decisions, no corrections yet. API cost at that
-snapshot: **$0.51819500**; no terminal result existed. Do not cite this as success,
-failure, or a completed episode. The live journal and final result are authoritative.
+The trial stopped after **626 actual actions**, 625 motor actions and one
+correction action, with 69 policy proposals. All **69 API requests settled**,
+actually serving Sol 6.1/Flex, for **$0.65624150**. The journal contains 68 valid
+reviews; the final response was rejected before a review could be accepted.
+Valid decisions: three accept, 64 shorten, one one-action correction at step 625.
+Error: **`EEF quaternions are unit wxyz`**. No malformed final action was
+executed. There are 50 unresolved policy actions recorded at abort; do not
+fabricate ACKs or relabel them as executed/discarded.
+The rejected correction's left/right quaternion norms were 1.000056 and
+1.013110. This is a specific normalization/validation failure, not a demonstrated
+physical impossibility. No threshold was relaxed and no corrected response retried.
+
+Runner wall time: **909.28 s**, including review waiting 532.92 s, environment
+238.11 s, ACK transport 62.37 s, policy inference 40.53 s, setup 24.52 s.
+Input/output tokens: 458,956 / 16,944, including 2,129 reasoning tokens;
+cached input zero. No paid request remains unresolved from this trial.
+Result status is `infrastructure_or_contract_error`, native score is null.
+This is **not** a full-horizon failure, a native success, or a completed
+three-condition physical comparison. It did not exhaust the 75-call limit.
+Inspect the rejected correction and validation ordering before a new named
+trial; never retry the uncertain episode or relax invalid-action checks merely
+to finish it. All owned simulator/model/relay/tunnel processes are stopped;
+both GPUs report zero memory usage. The terminal journal audit verifies all
+626 contiguous ACKs, and all 69 source NPZ action arrays match their proposals.
+Small terminal evidence is under `docs/evidence/pi05-every-chunk-sol-flex-dev-001/`;
+the full local archive is `runs/native-evidence/pi05-every-chunk-sol-flex-dev-001-backup.tar.gz`.
+All **1,975 archived payloads** match the terminal remote manifest; no missing
+or changed files. This verifies evidence retention, not task completion.
 
 Shortening can exhaust 75 calls before the native horizon. If so, report a
 resource-limited result separately from full-horizon failure. Do not silently
@@ -202,13 +227,13 @@ Qualification reports: `docs/ROBODOJO_MOTOR_QUALIFICATION_20261002.md`,
 | Pre-GPU | Complete; CPU evidence only |
 | A, native execution | Active RoboDojo motor-only interfaces qualified; supervision/contact remains separate |
 | B, speed/quality screen | Complete for G0.5/pi0.5 on the fixed five-case development roster |
-| C, matched harness | Partial: complete negative sparse result; every-chunk running; broader matched and robot-policy-free direct comparisons unfinished |
+| C, matched harness | Partial: complete negative sparse result; every-chunk stopped on correction-contract error; broader matched and robot-policy-free direct comparisons unfinished |
 | D, RoboCasa365 | Motor-only qualification/six-case screen complete; matched supervision unfinished |
 | E, sensing/transfer | Deferred until useful matched physical results |
 
 No held-out task episode has been opened. Eight untouched RoboDojo task groups
-remain test; sorting and tower families are development. Next finish/audit/back
-up every-chunk, then use predefined matched conditions/subsets rather than more
+remain test; sorting and tower families are development. Next audit/back up
+every-chunk and address its correction-contract issue, then use predefined matched conditions/subsets rather than more
 baseline screens, component tests, new models, or task-specific fixes. Complete
 robot-policy-free direct dense/sparse and XR1 matched supervision separately.
 
@@ -220,10 +245,11 @@ and interpreting that comparison; do not silently alter budgets.
 
 ## Operational Boundaries
 
-Shared ceiling is **$85**. Before the running trial: 4,564 reservations,
-$76.192461494300 spent plus holds, $8.807538505700 remaining. The current trial's
-settled cost/any in-flight reserve reduces that headroom; query the authoritative
-local ledger before new work. Three prior Sol holds remain charged:
+Shared ceiling is **$85**. Before the every-chunk trial: 4,564 reservations,
+$76.192461494300 spent plus holds, $8.807538505700 remaining. Every-chunk added
+69 settled requests/$0.65624150. Authoritative post-trial ledger: **4,633
+reservations, $76.848702994300 spent plus holds, $8.151297005700 remaining**,
+154 unsettled reservations. Query the ledger before new work. Three prior Sol holds remain charged:
 `g05-sparse-sol-flex-dev-001-0`, `g05-sparse-sol-flex-dev-002-0`, and
 `xr1-supervision-kettle-001-1`. Acknowledgement enabled a new named trial, not a
 retry or release of those holds.

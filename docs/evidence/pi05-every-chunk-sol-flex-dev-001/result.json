@@ -1,0 +1,133 @@
+{
+  "benchmark": "robodojo",
+  "case_id": "build_tower__standard__g0__l0",
+  "case_sha256": "19318e11c8da38274b61f6a8404d4b913a5b7b3e0d79bc473c3e254c82be4236",
+  "condition": "robodojo_pi05_review_every_chunk",
+  "config_sha256": "763b028828efcd620fb4ae6dbc202285e00daa2ba7d11b43ab3037c716e47e84",
+  "elapsed_s": 909.2815019359987,
+  "environment_contract_sha256": "6938b0d889a3456094819adc8df299f42c507fb70034c75f2132b485b360491f",
+  "error": "EEF quaternions are unit wxyz",
+  "evidence_kind": "native_unqualified",
+  "group": "build_tower",
+  "initial_observation_sha256": "e9de96b03ad81bfb3276a8c01768de24432f628b26a381f78b76f96044f25396",
+  "metrics": {
+    "corrected_steps": 1,
+    "discarded_policy_actions": 2775,
+    "gripper_clips": 0,
+    "interruptions": 0,
+    "motor_steps": 625,
+    "policy_calls": 69,
+    "policy_invalidation_requests": 68,
+    "proposed_policy_actions": 3450,
+    "review_calls": 68,
+    "shortened_chunks": 67,
+    "unresolved_policy_actions": 50
+  },
+  "mode": "review_every_chunk",
+  "native_score": null,
+  "native_steps": 626,
+  "partition": "dev",
+  "planner_config": {
+    "api_key_env": "K1_RELAY_TOKEN",
+    "base_url": "http://127.0.0.1:19861",
+    "history_rounds": 4,
+    "image_max_edge": 480,
+    "max_output_tokens": 2048,
+    "max_requests": 75,
+    "max_total_output_tokens": 153600,
+    "model": "gpt-6.1-sol",
+    "reasoning_effort": "medium",
+    "service_tier": "flex",
+    "timeout_s": 900,
+    "transport": "responses"
+  },
+  "planner_model": "gpt-6.1-sol",
+  "policy_identity": "78de83adc06eae60af453f72fd026f40de9c3eef3a214bf528770f51abd321c2",
+  "policy_runtime_fingerprint": {
+    "executable": "/root/physical-execution-lab/.venv-pi05/bin/python",
+    "gpus": [
+      "NVIDIA GeForce RTX 4090, 580.178.04, 24564 MiB",
+      "NVIDIA GeForce RTX 4090, 580.178.04, 24564 MiB"
+    ],
+    "packages": {
+      "httpx": "0.28.1",
+      "isaaclab": null,
+      "isaacsim": null,
+      "jax": "0.5.3",
+      "mujoco": null,
+      "numpy": "1.26.4",
+      "robocasa": null,
+      "robosuite": null,
+      "scipy": "1.15.3",
+      "torch": "2.10.0",
+      "transformers": "4.53.2"
+    },
+    "platform": "Linux-6.8.0-59-generic-x86_64-with-glibc2.35",
+    "python": "3.11.16 (main, Aug 27 2026, 14:44:21) [GCC 14.3.0]"
+  },
+  "runtime_fingerprint": {
+    "executable": "/root/physical-execution-lab/.venv/bin/python",
+    "gpus": [
+      "NVIDIA GeForce RTX 4090, 580.178.04, 24564 MiB",
+      "NVIDIA GeForce RTX 4090, 580.178.04, 24564 MiB"
+    ],
+    "packages": {
+      "httpx": "0.28.1",
+      "isaaclab": null,
+      "isaacsim": null,
+      "jax": null,
+      "mujoco": null,
+      "numpy": "2.2.6",
+      "robocasa": null,
+      "robosuite": null,
+      "scipy": "1.15.3",
+      "torch": null,
+      "transformers": null
+    },
+    "platform": "Linux-6.8.0-59-generic-x86_64-with-glibc2.35",
+    "python": "3.10.12 (main, Feb  4 2025, 14:57:36) [GCC 11.4.0]"
+  },
+  "schema": "multibench.result.v1",
+  "simulated_seconds": 25.04,
+  "simulation_advances_during_model_wait": false,
+  "split": null,
+  "status": "infrastructure_or_contract_error",
+  "success": false,
+  "task": "build_tower",
+  "task_demonstrations": false,
+  "task_memory": false,
+  "termination": "error:ContractError",
+  "timing": {
+    "ack_s": 62.370313212974,
+    "env_s": 238.1116676109741,
+    "policy_s": 40.53327400001217,
+    "preview_s": 2.5255432129961264,
+    "review_s": 532.9193232459766,
+    "setup_s": 24.523375955002848
+  },
+  "usage": {
+    "all_request_usage_rows_present": true,
+    "api_requests": 69,
+    "cached_input_tokens": 0,
+    "input_tokens": 458956,
+    "known_usage_subtotals": {
+      "cached_input_tokens": 0,
+      "input_tokens": 458956,
+      "output_tokens": 16944,
+      "reasoning_tokens": 2129
+    },
+    "output_tokens": 16944,
+    "reasoning_is_subset_of_output": true,
+    "reasoning_tokens": 2129,
+    "served_models": [
+      "openai/gpt-6.1-sol"
+    ],
+    "served_tiers": [
+      "flex"
+    ],
+    "source": "provider-reported, missing fields remain null",
+    "unreported_requests": 0,
+    "unresolved_output_reservations": 0,
+    "usage_rows": 69
+  }
+}

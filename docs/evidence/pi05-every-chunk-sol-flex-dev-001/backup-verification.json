@@ -1,0 +1,7 @@
+{
+  "files_verified": 1975,
+  "mismatches": [],
+  "missing": [],
+  "archive_sha256": "917a89b1af06b83df01322573025eb59835a1d34bfdceeb507d8dfb2bdb6571b",
+  "scope": "Local archive payload hashes match terminal remote file manifest; not physical success or safety"
+}
