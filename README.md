@@ -1,50 +1,83 @@
-# Physical Runtime Lab · paper-grounded revision 2
+# Physical Execution Lab — v0.4
 
-**A separate DynaHarness reproduction experiment, now grounded in the complete attached paper.**
+**Frozen models, generic controls, sparse supervision.** This repository extends
+K1 Execution Lab without replacing its original LIBERO/K1 runner.
 
-Read **[START_HERE.md](START_HERE.md)** and **[HANDOFF.md](HANDOFF.md)**. The main implementation is `prl/dyna/`; the main CLI is `paper_run.py`. The old `run.py run` path is retained for legacy sensor-grounded experiments, not the new reproduction.
+> Build status: CPU-tested research implementation. **No native RoboDojo,
+> RoboCasa365, GPU policy inference, or paid language-model evaluation has been
+> run on the build host. No accuracy, leaderboard, or speed gain is claimed.**
 
-## What changed after reading the paper
+## Start here
 
-- **Simulator-state geometry** for the LIBERO reproduction, exactly as the paper discloses in Appendix A. K1/RGB-D-only grounding becomes a separately measured extension.
-- **Symbolic Qwen planning**, with numeric geometry resolved by the execution interface.
-- **Analytic capability competence**, including staged pick/place, contact/lift verification, object-to-TCP transport, explicit corridor climb, support/cavity distinction, receptacle slots, and articulated mechanisms.
-- **A2static / A2seq / A2ctrl** with distinct retry, planning and substitution semantics, instead of relabeling arbitrary nominal/dynamic controllers.
-- **Official per-suite step budgets**, separate control/governor/safety clocks, completion latching, command affordability and leases.
-- **Ten-action pi0.5 chunks** via an explicit RPent server wrapper, not its default five.
-- **Cell-level paired admission plus broader regression**, not v1's per-seed preservation rule.
-
-The PDF and a source-to-implementation fidelity matrix are included. Missing source details are listed explicitly: this is **not the authors' released code**, and no native success rate has yet been reproduced here.
-
-## Run offline
+Read **[HANDOFF.md](HANDOFF.md)** for the self-contained implementation and
+experiment plan, **[IMPLEMENTATION_STATUS.md](IMPLEMENTATION_STATUS.md)** for
+qualification boundaries, and **[TAKEOVER.md](TAKEOVER.md)** for external Codex.
 
 ```bash
-python -m pip install -e '.[test]'
+python -m pip install -e '.[test,multibench]'
 python -m pytest -q
-python paper_run.py audit
-
-python scripts/run_paper_matrix.py \
-  --configs configs/dyna/fixture_bare.json configs/dyna/fixture_A2static.json \
-            configs/dyna/fixture_A2seq.json configs/dyna/fixture_A2ctrl.json \
-  --manifest manifests/synthetic_dev.json --output runs/first-check --execute
+python run_bench.py doctor
+python run_bench.py synthetic --output runs/my-multibench-check
+# Open runs/my-multibench-check/report.html
 ```
 
-Open `runs/first-check/A2ctrl/report.html`. **This is a synthetic software fixture**, not a simulation benchmark. Its authored planner and kinematics cannot establish the paper's gains.
+The included `runs/multibench_cpu/` is a synthetic, authored contract fixture,
+not a simulator evaluation. Its purpose is to exercise action acknowledgements,
+review scheduling, budget handling, archival and full-denominator reporting.
 
-## External GPU continuation
+## Experiments
 
-Use Linux/Python 3.10–3.12 and the pinned RPent/RLinf/LIBERO stack. The handoff gives bootstrap commands, checkpoint fingerprinting, the ten-action policy server, Qwen connection settings, native smoke checks, state manifests and the evaluation sequence.
+| Track | Conditions | Scientific interpretation |
+|---|---|---|
+| RoboDojo direct | Sol dense vs Sol sparse local execution | No robot-policy training or external demonstrations; current-episode context allowed |
+| RoboDojo hybrid | π0.5 / Xiaomi R1 / G0.5 / InternW0-Δ, each motor-only, every-chunk Sol, sparse Sol | Benchmark-trained motor policies; compare the same policy across harness conditions |
+| RoboCasa365 | Xiaomi R1 only, every-chunk Sol, sparse Sol | Official XR1 preprocessing and action conversion; native qualification required |
+| Original K1/LIBERO | Existing `run.py` experiments | Retained regression and future cross-environment transfer path |
 
-Start with one real analytic skill and a bare-policy episode under the correct budget. Then freeze a library and compare **the same library** under nominal and dynamic execution. Do not start by polishing reports or adding more framework layers.
+The supervisor is `gpt-6.1-sol` through **Responses**. Standard (`default`) and
+Flex are separate configurations; there is no implicit model/tier fallback.
+No task recipe retrieval, extra target-task demonstrations, privileged object
+poses, online weight updates, or newly generated task scripts are used.
 
-| Resource | Purpose |
-|---|---|
-| [HANDOFF.md](HANDOFF.md) | Self-contained external-agent instructions, source links and commands |
-| [IMPLEMENTATION_STATUS.md](IMPLEMENTATION_STATUS.md) | Implemented / tested / native-unqualified boundaries |
-| [docs/PAPER_FIDELITY.md](docs/PAPER_FIDELITY.md) | Exact source statements versus reconstruction decisions |
-| [docs/EXPERIMENTS.md](docs/EXPERIMENTS.md) | Ordered experiments and stopping rules |
-| [configs/dyna/paper_spec.json](configs/dyna/paper_spec.json) | Machine-readable source specification |
-| [references/2609.40306v1.pdf](references/2609.40306v1.pdf) | Complete paper supplied by the user |
-| [TAKEOVER_PROMPT.md](TAKEOVER_PROMPT.md) | Initial prompt for external Codex |
+## Architecture
 
-Original MIT code; external dependencies retain their own licenses. No model weights or upstream repositories are bundled. No real-hardware backend is enabled.
+```text
+Actual sensor/robot observation
+  → frozen motor policy (optional)
+  → current-observation-bound proposal
+  → local numerical/event monitors + periodic semantic review
+  → accept / shorten / bounded local correction
+  → one actual native action ACK
+  → policy history update and compact execution receipt
+```
+
+A kinematic monitor is **not** a semantic success checker. Periodic GPT review
+remains necessary even when motions look smooth. Robot-only FK is not contact
+simulation. Gripper commands are not measured attachment.
+
+## Important compatibility limits
+
+* RoboDojo uses dual ARX-X5. FLUX DROID is not retargeted here.
+* The donor RoboDojo RPC is RGB-only. K1 depth/geometry tools have **not** been
+  silently enabled in this benchmark.
+* Xiaomi RoboDojo EEF output currently uses a clearly labeled DLS controller
+  variant. It is not an identical reproduction of its upstream native EE run.
+* InternW0-Δ receives one observation acknowledgement per executed action.
+  Interruptions discard pending actions and reset its source session; that
+  temporal-context loss is an explicit cost of the current adapter.
+* RoboCasa365 uses its own XR1 checkpoint, four observations sampled every two
+  steps, 16 actions per query and 0.95 crop. `target50` is a task set, **not** the
+  `target` kitchen split. The pinned XR1 reference uses `split=pretrain`.
+
+## Files
+
+`k1lab/multibench/` contains the new runner, scheduler, policy interfaces,
+source-backed adapters, manifest/freeze tools and reporting. `configs/multibench/`
+contains 17 experiment configurations and five provider templates.
+`scripts/multibench/` contains launch planning, artifact binding, timing, plots
+and qualification helpers. Upstream source pins are in `upstream.lock.json`.
+
+Dependencies, simulator assets, model weights, licensed fonts and credentials
+are not redistributed. Source bootstrap requires explicit network permission;
+model and native execution require separate opt-ins. These contracts are research
+controls, not certified hardware-safety mechanisms.

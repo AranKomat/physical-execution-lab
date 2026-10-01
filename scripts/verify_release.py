@@ -1,15 +1,32 @@
 #!/usr/bin/env python3
-"""Verify packaged source/evidence bytes against SOURCE_MANIFEST.json."""
-import hashlib,json
+"""Verify distributed bytes against RELEASE_MANIFEST.json (not a signature)."""
+import argparse
+import hashlib
+import json
 from pathlib import Path
-ROOT=Path(__file__).resolve().parents[1]
+
 
 def main():
-    m=json.loads((ROOT/'SOURCE_MANIFEST.json').read_text());bad=[]
-    for entry in m['files']:
-        p=ROOT/entry['path']
-        if not p.is_file() or hashlib.sha256(p.read_bytes()).hexdigest()!=entry['sha256']:
-            bad.append(entry['path'])
-    print(json.dumps({'verified':not bad,'files':len(m['files']),'mismatches':bad},indent=2))
-    return 1 if bad else 0
-if __name__=='__main__':raise SystemExit(main())
+    parser = argparse.ArgumentParser()
+    parser.add_argument('--root', default=str(Path(__file__).resolve().parents[1]))
+    args = parser.parse_args()
+    root = Path(args.root).resolve()
+    manifest = json.loads((root / 'RELEASE_MANIFEST.json').read_text())
+    missing, changed = [], []
+    for name, expected in manifest['files'].items():
+        path = (root / name).resolve()
+        if not path.is_relative_to(root):
+            raise SystemExit('invalid relative path in release manifest')
+        if not path.is_file():
+            missing.append(name)
+        elif hashlib.sha256(path.read_bytes()).hexdigest() != expected:
+            changed.append(name)
+    result = {'checked_files': len(manifest['files']), 'missing': missing, 'changed': changed,
+              'scope': 'packaged-byte integrity only; not authorship or native qualification'}
+    print(json.dumps(result, indent=2))
+    if missing or changed:
+        raise SystemExit(1)
+
+
+if __name__ == '__main__':
+    main()

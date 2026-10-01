@@ -1,0 +1,15 @@
+[
+  {
+    "automatic_retry": false,
+    "command_id": "cmd0",
+    "end_frame_id": 5,
+    "meaning": "Completed robot commands are not verified object attachment or task success.",
+    "motion_plan_completed": false,
+    "native_steps": 5,
+    "native_success": false,
+    "request_sha256": "fe3973ad7de278af6459de083cc1119778f0da1884e8db712a41ec8d8e4139de",
+    "stages": [],
+    "start_frame_id": 0,
+    "stop_reason": "watched_feature_lost"
+  }
+]

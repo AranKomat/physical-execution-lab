@@ -1,0 +1,14 @@
+{
+  "case_id": "fixture_2",
+  "comparison_signature": "490f30c6cae624afbc4e709b9b4708a30074fd33a4e1a75d809a627c63ab396d",
+  "domain": "synthetic",
+  "elapsed_seconds": null,
+  "llm_calls": 0,
+  "native_steps": 7,
+  "native_success": true,
+  "note": "authored scripts and kinematics; no K1, LLM, VLA or real physics executed",
+  "policy_calls": 0,
+  "script_decisions": 1,
+  "state_sha256": "d56e40de4b9b75f873b2844e4a1ddfbcbe5770e14e6eec98d6ab8c5847bf736a",
+  "termination": "synthetic_completed"
+}

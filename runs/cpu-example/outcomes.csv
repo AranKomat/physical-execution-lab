@@ -1,0 +1,9 @@
+condition,case_id,task_key,native_success,native_steps,horizon,elapsed_seconds,llm_calls,policy_calls,termination
+scripted_bundled,fixture_0,software_fixture:0,True,40,220,,0,0,synthetic_completed
+scripted_bundled,fixture_1,software_fixture:1,False,24,220,,0,0,synthetic_failed
+scripted_bundled,fixture_2,software_fixture:2,True,7,220,,0,0,synthetic_completed
+scripted_bundled,fixture_3,software_fixture:3,False,5,220,,0,0,synthetic_failed
+scripted_unbundled,fixture_0,software_fixture:0,True,40,220,,0,0,synthetic_completed
+scripted_unbundled,fixture_1,software_fixture:1,False,24,220,,0,0,synthetic_failed
+scripted_unbundled,fixture_2,software_fixture:2,True,7,220,,0,0,synthetic_completed
+scripted_unbundled,fixture_3,software_fixture:3,False,5,220,,0,0,synthetic_failed

@@ -1,0 +1,15 @@
+{
+  "python": "3.13.5 (main, Jul 15 2026, 20:25:40) [GCC 14.2.0]",
+  "native_tested_here": false,
+  "modules": {
+    "numpy": true,
+    "scipy": true,
+    "httpx": true,
+    "mujoco": false,
+    "robosuite": false,
+    "robo_harness": false
+  },
+  "network_defaults": "off",
+  "memory": "current_episode_only",
+  "real_hardware_backend": false
+}

@@ -1,41 +1,67 @@
-# Implementation status — PDF-grounded revision 2
+# Implementation status — v0.4
 
-## Evidence boundary
+## Implemented and exercised on CPU
 
-The complete 37-page DynaHarness PDF was reviewed. All new code below is implemented and CPU-tested where noted. **Native LIBERO episodes: 0. Learned-policy inference: 0. Paid LLM requests: 0. Real-robot actions: 0.** A native result comparable to the paper has not been measured.
+- Original K1/LIBERO implementation retained, with original127 tests.
+- New multi-benchmark runner, five condition modes, action/observation/policy
+  contracts, periodic and event-triggered review, bounded correction and ACK loop.
+- Source-backed RoboDojo RPC client and pure robot-FK H50 compatibility shim.
+- Source-interface adapters for π0.5, Xiaomi R1, G0.5 and InternW0-Δ.
+- Official Xiaomi RoboCasa365 preprocessing/client wrapper and native Gym adapter.
+- Separate loopback policy service, ownership/sequence validation, no retries,
+  stateful policy ACK handling and explicit interruption reset.
+- Sol Responses configuration, separate Standard/Flex profiles, compact
+  within-episode state, current/previous execution images, usage/tier archives.
+-17 experiment configs, five provider templates, provider/artifact identity
+  binding, grouped dev/test manifests, freeze and manual qualification records.
+- Policy-only latency tool, native single-case launch/capture planning,
+  lossless observation export, matrix planning, runtime fingerprints, reports/plots.
+- Full-denominator and paired reporting; native scores distinct from success.
 
-The source-audit findings and native requirements are not replaced by an “exact reproduction” badge. The current deliverable is a substantially closer mechanism/protocol reconstruction for the external GPU agent to qualify.
+## Validation on build host
 
-| Area | Implemented | Validation / remaining work |
-|---|---|---|
-| PDF protocol | Per-suite budgets, 20/2/50 Hz declarations, model family, temperature/token/timeout/validity settings, source result blocks | CPU assertions; exact original sampler/versions/prompt absent |
-| Symbolic planning | Single-step/sequence output schemas; no numeric poses; one serialization repair; snapshot/epoch/age checks | CPU/mock transport tests; actual Qwen output not exercised |
-| Privileged geometry | Direct MuJoCo object/region/articulation/contact extraction, with provenance | Math/mock seam tests; native asset/site/joint mappings unqualified |
-| Analytic pick/place | Approach/descent/jaw/lift; actual-contact + object-motion verification; object-to-TCP transport; climb/corridor; slots; release/local check | Kinematic fixture only; native grasping/clearance/tolerances need testing |
-| Articulated skills | Drawer slide, knob/handle rotation, door arc; explicit shift/ramp/reseat hook | CPU geometry tests; original full controllers and thresholds not supplied |
-| Insertion | Staged cavity placement with height/slot validation | Not a qualified connector/contact-search controller |
-| Executed controls | A2static fixed retries; A2seq frozen plan; A2ctrl refusal/substitution/replan/reseat | CPU decision/counter tests and trace audits; exact original scheduler remains partly reconstructed |
-| Completion and budgets | Per-action native Boolean sampling; independent latch; leases; affordability; one total action budget | Synthetic pulse and interruption tests; native callback timing still to qualify |
-| Native policy service | RPent ten-action chunk override; model byte-manifest and live attestation checks | Manifest tests; no GPU model load |
-| Safety seam | 50 Hz physics-substep hook; measured qdot; partial-action uncertainty handling | Mock callback cadence; not native- or hardware-qualified |
-| Evaluation | Paired manifests, full denominator, failure/missing rows, cell bootstrap, exact discordant test, protocol/source hashes | CPU regression and example pipeline; no source-paper benchmark result |
-| Evolution | Cell-count Eq5 gate, targeted + broader admission, explicit reconstructed diagnostic labels | CPU gates; no autonomous skill-evolution campaign |
-| K1 | Legacy selected geometry bridge remains | Deliberately not part of the privileged reproduction; full sensor replacement later |
-| Failure replay | Physics-only archive with missing-state warning | Complete controller/RNG/governor resume not implemented |
+The final validation report under `docs/multibench/` records the exact test count,
+synthetic journal verification and fresh-archive check. The final source and a fresh extracted archive both passed
+234 CPU tests. None of those tests is a GPU policy or real simulator test.
+The example matrix has15 authored synthetic episodes across five conditions.
+Its success labels are fixture behavior, not evidence of a harness gain.
 
-## Tested during this build
+## Source-inspected and mock-tested, but NOT native-qualified
 
-See `validation.json` and `docs/CPU_TEST_OUTPUT.txt` for the final exact count. The suite contains the original 125 tests plus paper-protocol, analytic-geometry, executor, admission, native-math/mock and policy-manifest tests.
+All new RoboDojo, XPolicyLab and RoboCasa native adapters. No native reset,
+render, action, inference or completion result was obtained on this build host.
+The external agent must prove action conventions, timing, state-history updates,
+calibration where applicable, nonvacuous completion and representative task
+behavior before a scored experiment. Source pins are not full binary dependency
+locks. Software tests cannot certify contact dynamics or hardware safety.
 
-The packaged examples process four synthetic fixtures under five arms. They show accounting and execution differences; they are not a claimed robotics gain. A2static/A2ctrl can tie. This is intentional: no toy success margin was engineered to resemble the paper.
+## Important incomplete items
 
-## Native-critical work remaining
+1. **Native results:** zero real benchmark episodes, zero live LLM requests,
+   zero GPU policy inferences. No speed/accuracy/leaderboard gain is claimed.
+2. **Xiaomi RoboDojo original controller parity:** its EEF actions currently go
+   through donor DLS. That is a labeled variant requiring a source-path comparison.
+3. **K1 depth tools on RoboDojo/RoboCasa:** not ported. RoboDojo source RPC is RGB
+   only. New signals/geometry must have a real sensor source and matched ablation.
+4. **Intern cancellation without memory loss:** source reset currently discards
+   temporal context on interventions. A future safe cancel hook requires source
+   investigation and explicit policy-history tests; no fake ACK workaround.
+5. **General semantic monitors:** local stagnation/validity is not enough. Periodic
+   model review stays enabled. Sensor flags are not fabricated by the runner.
+6. **Learned failure/grasp classifiers, universal grasp macros, active external
+   cameras, arbitrary task skill synthesis, post-training and distillation:** not
+   added to these new benchmark lanes.
+7. **Additional policies:** DM0.5/OpenWAM/RoboDawn/RoboICL remain references, not
+   silently substituted backends. FLUX DROID remains a separate unretargeted path.
+8. **Cluster execution/global paid budget enforcement:** launcher owns one case;
+   matrix script produces a plan. No remote job submission, purchased compute,
+   account management or automatic long-running fleet scheduler is included.
+9. **Leaderboard submission:** official split/asset/rule compliance must be
+   independently checked; a report generated by this package is not a submission.
 
-1. Fetch/install the pinned ecosystem; verify checkpoint identity, normalization, ten-action chunks and Qwen serving.
-2. Inspect current physical geometry, handle/site bindings, joint endpoints, camera conventions and OSC scaling. Validate the substep hook.
-3. Make the first actual analytic grasp/lift/place complete; then qualify two-object slots, relational placement and articulated skills.
-4. Freeze and run matched bare/nominal/dynamic conditions on balanced predeclared states. Do not substitute an API success message for native completion.
-5. Extend the library from concrete failed states; obtain the authors' supplement or release where possible.
-6. Only afterward add K1 sensor grounding, stronger planners, harder benchmarks and self-evolution.
+## Primary next milestone
 
-No full upstream clone or model asset is included. The GitHub connector supplied selected source reads; direct network checkout/download was unavailable. The authoritative study source is the PDF included in `references/`.
+One valid native π0.5 RoboDojo episode plus one real warmed policy latency trace,
+then the same interface tests for other candidates. In parallel qualify native
+Xiaomi RoboCasa365. After those pass, freeze and run matched supervision ablations.
+Do not rewrite the architecture before those measurements.

@@ -1,0 +1,29 @@
+{
+  "artifact_manifest": "/ABSOLUTE/PATH/policy-artifacts.json",
+  "backend": "xpolicylab",
+  "gripper_clip": false,
+  "identity": {
+    "action_space": "x5_joint14",
+    "benchmark_training": "RoboDojo task/embodiment post-trained",
+    "checkpoint_sha256": null,
+    "execute_steps": 16,
+    "name": "g05_robodojo_fm",
+    "native_hz": 25.0,
+    "prediction_horizon": null,
+    "preprocessing_id": "xpl_g05_fm_source_frequency30_native25_to_qualify",
+    "revision": "408b99d959a7b2207f5f785528fefcc019d7b131",
+    "stateful": true
+  },
+  "model_config": {
+    "action_source": "fm",
+    "action_steps": 16,
+    "action_type": "joint",
+    "bench_name": "RoboDojo",
+    "ckpt_path": "/ABSOLUTE/PATH/checkpoint",
+    "env_cfg_type": "arx_x5",
+    "eval_embodiment": "robodojo",
+    "frequency": 30
+  },
+  "policy": "g05",
+  "xpolicylab_root": "external/XPolicyLab"
+}

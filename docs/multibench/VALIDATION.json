@@ -1,0 +1,16 @@
+{
+  "cpu_tests_passed": 234,
+  "date": "2026-10-01",
+  "fresh_archive_cpu_tests_passed": 234,
+  "fresh_synthetic_episodes": 15,
+  "fresh_synthetic_journals_verified": 15,
+  "gpu_policy_inferences": 0,
+  "native_benchmark_episodes": 0,
+  "new_multibench_tests": 107,
+  "original_k1_tests_retained": 127,
+  "paid_model_requests": 0,
+  "performance_claim": "none",
+  "plots": "matplotlib CLI smoke generated two labeled synthetic plots; not robot performance",
+  "release_scope": "source files, configs, tests, documentation and synthetic fixtures; no upstream assets/weights/fonts/credentials",
+  "report_browser_validation": "Exact HTML loaded with Chromium set_content; zero page errors/external requests. Host blocks file navigation."
+}

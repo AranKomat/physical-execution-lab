@@ -1,0 +1,68 @@
+[
+  {
+    "automatic_retry": false,
+    "command_id": "cmd0",
+    "end_frame_id": 15,
+    "meaning": "Completed robot commands are not verified object attachment or task success.",
+    "motion_plan_completed": true,
+    "native_steps": 15,
+    "native_success": false,
+    "request_sha256": "9119daed898fdd9baff0d3ef357e4a6fd9d403942204c3f7718d1d7c97b0ac90",
+    "stages": [
+      {
+        "index": 0,
+        "kind": "pose",
+        "remaining_angle_deg": 0.0,
+        "remaining_distance_m": 0.0,
+        "status": "target_reached",
+        "steps": 15
+      }
+    ],
+    "start_frame_id": 0,
+    "stop_reason": "completed"
+  },
+  {
+    "automatic_retry": false,
+    "command_id": "cmd1",
+    "end_frame_id": 25,
+    "meaning": "Completed robot commands are not verified object attachment or task success.",
+    "motion_plan_completed": true,
+    "native_steps": 10,
+    "native_success": false,
+    "request_sha256": "6b2e266f5d604cd6cfb4e54f3d3e34330d5b48133dc619efacab51652e808fb0",
+    "stages": [
+      {
+        "attachment_verified": false,
+        "index": 0,
+        "kind": "gripper",
+        "opening_command": 0.0,
+        "status": "gripper_command_completed",
+        "steps": 10
+      }
+    ],
+    "start_frame_id": 15,
+    "stop_reason": "completed"
+  },
+  {
+    "automatic_retry": false,
+    "command_id": "cmd2",
+    "end_frame_id": 40,
+    "meaning": "Completed robot commands are not verified object attachment or task success.",
+    "motion_plan_completed": true,
+    "native_steps": 15,
+    "native_success": false,
+    "request_sha256": "7f67a70863763575a52ea5fff13174940599be7dd3f19247abb46dc3a0f60379",
+    "stages": [
+      {
+        "index": 0,
+        "kind": "pose",
+        "remaining_angle_deg": 0.0,
+        "remaining_distance_m": 0.0012500000000004174,
+        "status": "target_reached",
+        "steps": 15
+      }
+    ],
+    "start_frame_id": 25,
+    "stop_reason": "completed"
+  }
+]

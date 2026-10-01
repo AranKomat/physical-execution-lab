@@ -1,0 +1,95 @@
+<!doctype html><html lang="en"><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1">
+<title>K1 Execution Lab — evidence report</title><style>body{font:16px system-ui;max-width:1200px;margin:36px auto;padding:0 24px;color:#172234;background:#f6f8fb}
+header,section{background:white;padding:24px;border:1px solid #dce1ea;border-radius:12px;margin:16px 0}.grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(340px,1fr));gap:16px}
+strong{display:block;padding:14px;background:#fff2c7}table{width:100%;font-size:13px;border-collapse:collapse}td{border-bottom:1px solid #e4e8ef;padding:8px;word-break:break-word}pre{white-space:pre-wrap}h1{margin-bottom:8px}</style>
+<header><strong>SYNTHETIC SOFTWARE CHECK — NOT A ROBOTICS BENCHMARK</strong><h1>K1 Execution Lab</h1><p>Generic execution, current-episode evidence, no task-solution memory.</p>
+<p>Completion alone is insufficient. Compare full-denominator success, physical steps, model requests, wall time and frozen model identities. No missing episode is removed.</p></header>
+<div class="grid"><section><h2>scripted_unbundled</h2><p>2/4 completed</p><svg viewBox="0 0 450 42" role="img" aria-label="Completion fraction"><rect x="0" y="4" width="420" height="24" fill="#e4e8ef"/><rect x="0" y="4" width="210" height="24" fill="#435875"/></svg><table><tr><td>episodes</td><td>4</td></tr><tr><td>successes</td><td>2</td></tr><tr><td>success_rate</td><td>0.5</td></tr><tr><td>wilson_95</td><td>[0.15003898915214947, 0.8499610108478506]</td></tr><tr><td>measured_total_steps</td><td>76</td></tr><tr><td>failure_penalized_steps_per_case</td><td>121.75</td></tr><tr><td>measured_steps_per_success</td><td>38.0</td></tr><tr><td>success_only_median_steps</td><td>23.5</td></tr><tr><td>all_attempt_mean_wall_s</td><td>None</td></tr><tr><td>wall_measurement_coverage</td><td>0</td></tr><tr><td>llm_calls</td><td>0</td></tr><tr><td>policy_calls</td><td>0</td></tr><tr><td>provider_reported_input_tokens</td><td>0</td></tr><tr><td>provider_reported_output_tokens</td><td>0</td></tr><tr><td>model_calls_with_known_usage</td><td>0</td></tr><tr><td>measured_model_wait_s</td><td>0</td></tr><tr><td>measured_policy_wait_s</td><td>0</td></tr><tr><td>outcome_row_coverage</td><td>4</td></tr><tr><td>missing</td><td>0</td></tr><tr><td>infrastructure_failures</td><td>0</td></tr></table></section><section><h2>scripted_bundled</h2><p>2/4 completed</p><svg viewBox="0 0 450 42" role="img" aria-label="Completion fraction"><rect x="0" y="4" width="420" height="24" fill="#e4e8ef"/><rect x="0" y="4" width="210" height="24" fill="#435875"/></svg><table><tr><td>episodes</td><td>4</td></tr><tr><td>successes</td><td>2</td></tr><tr><td>success_rate</td><td>0.5</td></tr><tr><td>wilson_95</td><td>[0.15003898915214947, 0.8499610108478506]</td></tr><tr><td>measured_total_steps</td><td>76</td></tr><tr><td>failure_penalized_steps_per_case</td><td>121.75</td></tr><tr><td>measured_steps_per_success</td><td>38.0</td></tr><tr><td>success_only_median_steps</td><td>23.5</td></tr><tr><td>all_attempt_mean_wall_s</td><td>None</td></tr><tr><td>wall_measurement_coverage</td><td>0</td></tr><tr><td>llm_calls</td><td>0</td></tr><tr><td>policy_calls</td><td>0</td></tr><tr><td>provider_reported_input_tokens</td><td>0</td></tr><tr><td>provider_reported_output_tokens</td><td>0</td></tr><tr><td>model_calls_with_known_usage</td><td>0</td></tr><tr><td>measured_model_wait_s</td><td>0</td></tr><tr><td>measured_policy_wait_s</td><td>0</td></tr><tr><td>outcome_row_coverage</td><td>4</td></tr><tr><td>missing</td><td>0</td></tr><tr><td>infrastructure_failures</td><td>0</td></tr></table></section></div><details><summary>Machine-readable metric values</summary><pre>{
+  &quot;scripted_unbundled&quot;: {
+    &quot;episodes&quot;: 4,
+    &quot;successes&quot;: 2,
+    &quot;success_rate&quot;: 0.5,
+    &quot;wilson_95&quot;: [
+      0.15003898915214947,
+      0.8499610108478506
+    ],
+    &quot;measured_total_steps&quot;: 76,
+    &quot;failure_penalized_steps_per_case&quot;: 121.75,
+    &quot;measured_steps_per_success&quot;: 38.0,
+    &quot;success_only_median_steps&quot;: 23.5,
+    &quot;all_attempt_mean_wall_s&quot;: null,
+    &quot;wall_measurement_coverage&quot;: 0,
+    &quot;llm_calls&quot;: 0,
+    &quot;policy_calls&quot;: 0,
+    &quot;provider_reported_input_tokens&quot;: 0,
+    &quot;provider_reported_output_tokens&quot;: 0,
+    &quot;model_calls_with_known_usage&quot;: 0,
+    &quot;measured_model_wait_s&quot;: 0,
+    &quot;measured_policy_wait_s&quot;: 0,
+    &quot;outcome_row_coverage&quot;: 4,
+    &quot;missing&quot;: 0,
+    &quot;infrastructure_failures&quot;: 0,
+    &quot;success_by_budget_fraction&quot;: [
+      {
+        &quot;fraction&quot;: 0.25,
+        &quot;rate&quot;: 0.5
+      },
+      {
+        &quot;fraction&quot;: 0.5,
+        &quot;rate&quot;: 0.5
+      },
+      {
+        &quot;fraction&quot;: 0.75,
+        &quot;rate&quot;: 0.5
+      },
+      {
+        &quot;fraction&quot;: 1.0,
+        &quot;rate&quot;: 0.5
+      }
+    ]
+  },
+  &quot;scripted_bundled&quot;: {
+    &quot;episodes&quot;: 4,
+    &quot;successes&quot;: 2,
+    &quot;success_rate&quot;: 0.5,
+    &quot;wilson_95&quot;: [
+      0.15003898915214947,
+      0.8499610108478506
+    ],
+    &quot;measured_total_steps&quot;: 76,
+    &quot;failure_penalized_steps_per_case&quot;: 121.75,
+    &quot;measured_steps_per_success&quot;: 38.0,
+    &quot;success_only_median_steps&quot;: 23.5,
+    &quot;all_attempt_mean_wall_s&quot;: null,
+    &quot;wall_measurement_coverage&quot;: 0,
+    &quot;llm_calls&quot;: 0,
+    &quot;policy_calls&quot;: 0,
+    &quot;provider_reported_input_tokens&quot;: 0,
+    &quot;provider_reported_output_tokens&quot;: 0,
+    &quot;model_calls_with_known_usage&quot;: 0,
+    &quot;measured_model_wait_s&quot;: 0,
+    &quot;measured_policy_wait_s&quot;: 0,
+    &quot;outcome_row_coverage&quot;: 4,
+    &quot;missing&quot;: 0,
+    &quot;infrastructure_failures&quot;: 0,
+    &quot;success_by_budget_fraction&quot;: [
+      {
+        &quot;fraction&quot;: 0.25,
+        &quot;rate&quot;: 0.5
+      },
+      {
+        &quot;fraction&quot;: 0.5,
+        &quot;rate&quot;: 0.5
+      },
+      {
+        &quot;fraction&quot;: 0.75,
+        &quot;rate&quot;: 0.5
+      },
+      {
+        &quot;fraction&quot;: 1.0,
+        &quot;rate&quot;: 0.5
+      }
+    ]
+  }
+}</pre></details>
+<p>Success-only durations are conditional diagnostics. Failure-penalized steps are a declared accounting metric, not measured motion. Model wait and simulator/render time must be distinguished.</p></html>

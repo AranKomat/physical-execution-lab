@@ -1,9 +1,0 @@
-{
-  "arguments": {
-    "destination": "destination",
-    "target": "block"
-  },
-  "capability": "pick_place",
-  "decision_summary": "Authored fixture action, not model inference.",
-  "max_steps": 160
-}

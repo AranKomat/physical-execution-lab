@@ -1,6 +1,0 @@
-{
-  "backend": "deterministic_contract_fixture",
-  "information_profile": "synthetic",
-  "learned_policy": false,
-  "native_physics": false
-}

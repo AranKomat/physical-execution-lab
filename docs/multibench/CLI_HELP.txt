@@ -1,0 +1,10 @@
+usage: run_bench.py [-h]
+                    {doctor,make-configs,synthetic,hash-artifacts,import-robodojo,robocasa-manifest,freeze,run-case,serve-policy,latency,report} ...
+
+Physical execution lab: no task recipe memory, explicit native opt-in
+
+positional arguments:
+  {doctor,make-configs,synthetic,hash-artifacts,import-robodojo,robocasa-manifest,freeze,run-case,serve-policy,latency,report}
+
+options:
+  -h, --help            show this help message and exit

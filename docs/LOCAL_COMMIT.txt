@@ -1,0 +1,2 @@
+Historical K1 v0.3 local source reference, not this v0.4 release identity.
+ad46b4fb053bd9668e57b60ea9549e319e7c621c

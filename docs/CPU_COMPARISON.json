@@ -1,0 +1,99 @@
+{
+  "left": {
+    "episodes": 4,
+    "successes": 2,
+    "success_rate": 0.5,
+    "wilson_95": [
+      0.15003898915214947,
+      0.8499610108478506
+    ],
+    "measured_total_steps": 76,
+    "failure_penalized_steps_per_case": 121.75,
+    "measured_steps_per_success": 38.0,
+    "success_only_median_steps": 23.5,
+    "all_attempt_mean_wall_s": null,
+    "wall_measurement_coverage": 0,
+    "llm_calls": 0,
+    "policy_calls": 0,
+    "provider_reported_input_tokens": 0,
+    "provider_reported_output_tokens": 0,
+    "model_calls_with_known_usage": 0,
+    "measured_model_wait_s": 0,
+    "measured_policy_wait_s": 0,
+    "outcome_row_coverage": 4,
+    "missing": 0,
+    "infrastructure_failures": 0,
+    "success_by_budget_fraction": [
+      {
+        "fraction": 0.25,
+        "rate": 0.5
+      },
+      {
+        "fraction": 0.5,
+        "rate": 0.5
+      },
+      {
+        "fraction": 0.75,
+        "rate": 0.5
+      },
+      {
+        "fraction": 1.0,
+        "rate": 0.5
+      }
+    ]
+  },
+  "right": {
+    "episodes": 4,
+    "successes": 2,
+    "success_rate": 0.5,
+    "wilson_95": [
+      0.15003898915214947,
+      0.8499610108478506
+    ],
+    "measured_total_steps": 76,
+    "failure_penalized_steps_per_case": 121.75,
+    "measured_steps_per_success": 38.0,
+    "success_only_median_steps": 23.5,
+    "all_attempt_mean_wall_s": null,
+    "wall_measurement_coverage": 0,
+    "llm_calls": 0,
+    "policy_calls": 0,
+    "provider_reported_input_tokens": 0,
+    "provider_reported_output_tokens": 0,
+    "model_calls_with_known_usage": 0,
+    "measured_model_wait_s": 0,
+    "measured_policy_wait_s": 0,
+    "outcome_row_coverage": 4,
+    "missing": 0,
+    "infrastructure_failures": 0,
+    "success_by_budget_fraction": [
+      {
+        "fraction": 0.25,
+        "rate": 0.5
+      },
+      {
+        "fraction": 0.5,
+        "rate": 0.5
+      },
+      {
+        "fraction": 0.75,
+        "rate": 0.5
+      },
+      {
+        "fraction": 1.0,
+        "rate": 0.5
+      }
+    ]
+  },
+  "right_only_wins": 0,
+  "left_only_wins": 0,
+  "difference_pp": 0.0,
+  "cell_bootstrap_95_pp": [
+    0.0,
+    0.0
+  ],
+  "exact_discordant_p": 1.0,
+  "task_clusters": 4,
+  "domain": "synthetic",
+  "claim_scope": "synthetic software test only"
+}

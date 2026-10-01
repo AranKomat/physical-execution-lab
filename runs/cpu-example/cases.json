@@ -1,0 +1,30 @@
+[
+  {
+    "horizon": 220,
+    "id": "fixture_0",
+    "state_sha256": "30a0924a3360be687d1df9fcbbfdff62c01bc0fd14036ab9076cf7f451568666",
+    "suite": "software_fixture",
+    "task_id": 0
+  },
+  {
+    "horizon": 220,
+    "id": "fixture_1",
+    "state_sha256": "7b92de7d08814ff2863dbd0239cdcb3cd107364ebf588b5d95693527f066f106",
+    "suite": "software_fixture",
+    "task_id": 1
+  },
+  {
+    "horizon": 220,
+    "id": "fixture_2",
+    "state_sha256": "d56e40de4b9b75f873b2844e4a1ddfbcbe5770e14e6eec98d6ab8c5847bf736a",
+    "suite": "software_fixture",
+    "task_id": 2
+  },
+  {
+    "horizon": 220,
+    "id": "fixture_3",
+    "state_sha256": "0be37966b94d0ed288a91ed7b4c01c3392643da9eb44f7ce33f37aa2136b9a0f",
+    "suite": "software_fixture",
+    "task_id": 3
+  }
+]

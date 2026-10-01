@@ -1,0 +1,6 @@
+{
+  "report": "runs/cpu-example/report.html",
+  "cases": 4,
+  "episodes": 8,
+  "status": "synthetic_software_test_only"
+}

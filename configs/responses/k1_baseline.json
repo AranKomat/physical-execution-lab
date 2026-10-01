@@ -1,0 +1,34 @@
+{
+  "model": null,
+  "memory_scope": "current_episode_only",
+  "max_model_calls": 100,
+  "resolution": 384,
+  "delta_axis": 0.03,
+  "native": {
+    "k1_root": "external/k1",
+    "libero_root": "external/LIBERO-PRO",
+    "libero_config": "configs/libero.local",
+    "trust_local_state_archives": true
+  },
+  "registry_options": {
+    "history_rounds": 8,
+    "history_image_rounds": 1,
+    "region_tools": true,
+    "interaction_feedback": true,
+    "completion_feedback": false,
+    "tracking_backend": "lk",
+    "tracking_device": "cpu"
+  },
+  "limits": {},
+  "planner": {
+    "transport": "responses",
+    "timeout_s": 180,
+    "max_requests": 100,
+    "max_output_tokens": 2048,
+    "max_total_output_tokens": 204800,
+    "base_url": "https://api.openai.com/v1",
+    "api_key_env": "OPENAI_API_KEY",
+    "reasoning_effort": "medium"
+  },
+  "condition": "k1_baseline"
+}

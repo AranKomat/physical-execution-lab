@@ -1,0 +1,12 @@
+{
+  "spec_sha256": "REPLACE_WITH_ACTUAL_POLICY_SPEC_IDENTITY",
+  "checks": {
+    "pixel_orientation": false,
+    "proprioception_units": false,
+    "action_sign_scale": false,
+    "reset_queue_isolation": false,
+    "one_policy_chunk": false
+  },
+  "artifacts": [],
+  "notes": "NOT QUALIFIED. Fill from measured native evidence; hash actual files. A contract test or provider health check is insufficient. This is a research gate, not a safety certification."
+}

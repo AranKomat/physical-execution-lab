@@ -1,0 +1,14 @@
+{
+  "api_key_env": "OPENAI_API_KEY",
+  "base_url": "https://api.openai.com/v1",
+  "history_rounds": 4,
+  "image_max_edge": 480,
+  "max_output_tokens": 2048,
+  "max_requests": 180,
+  "max_total_output_tokens": 368640,
+  "model": "gpt-6.1-sol",
+  "reasoning_effort": "medium",
+  "service_tier": "default",
+  "timeout_s": 300,
+  "transport": "responses"
+}

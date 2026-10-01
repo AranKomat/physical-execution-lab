@@ -1,0 +1,39 @@
+usage: launch_robodojo_case.py [-h] --config CONFIG --manifest MANIFEST
+                               --case-id CASE_ID --output OUTPUT
+                               --sim-python SIM_PYTHON
+                               --robodojo-root ROBODOJO_ROOT
+                               [--controller-python CONTROLLER_PYTHON]
+                               [--gpt-as-policy-root GPT_AS_POLICY_ROOT]
+                               [--source-panel SOURCE_PANEL]
+                               [--sim-port SIM_PORT]
+                               [--startup-timeout STARTUP_TIMEOUT]
+                               [--development] [--allow-policy] [--allow-api]
+                               [--execute] [--capture-only] [--freeze FREEZE]
+                               [--qualification QUALIFICATION]
+
+Launch ONE pinned RoboDojo server and ONE controller; print-only unless
+--execute. Readiness comes from the server's JSON stdout. Do not open a
+readiness socket: upstream accepts only one controller connection. Only our
+own child processes are terminated. No cluster, credentials, shared workers,
+or drivers are changed.
+
+options:
+  -h, --help            show this help message and exit
+  --config CONFIG
+  --manifest MANIFEST
+  --case-id CASE_ID
+  --output OUTPUT
+  --sim-python SIM_PYTHON
+  --robodojo-root ROBODOJO_ROOT
+  --controller-python CONTROLLER_PYTHON
+  --gpt-as-policy-root GPT_AS_POLICY_ROOT
+  --source-panel SOURCE_PANEL
+  --sim-port SIM_PORT
+  --startup-timeout STARTUP_TIMEOUT
+  --development
+  --allow-policy
+  --allow-api
+  --execute
+  --capture-only
+  --freeze FREEZE
+  --qualification QUALIFICATION

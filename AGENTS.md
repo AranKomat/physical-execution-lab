@@ -1,48 +1,46 @@
-# Agent instructions — paper-grounded revision 2
+# External implementation agent instructions
 
-## Work on the user's current objective
+Read HANDOFF.md and IMPLEMENTATION_STATUS.md before editing. This v0.4 scope
+supersedes earlier benchmark prioritization; original K1/LIBERO code remains.
 
-The user wants a faithful-enough implementation to reproduce comparable **DynaHarness** gains, not a generic harness demo. Read `HANDOFF.md`, `docs/PAPER_FIDELITY.md` and the attached 37-page PDF. Main work belongs in `prl/dyna/` through `paper_run.py`. The old sensor-first `run.py run` is a separate legacy path.
+## Objective
+Obtain honest native comparisons of frozen-policy-only, every-chunk GPT review,
+and sparse GPT review on RoboDojo, then Xiaomi-only vs Xiaomi+GPT on RoboCasa365.
+Separately compare robot-policy-free dense vs sparse direct control. Use
+`gpt-6.1-sol` with explicit Responses service tier, not an implicit Astra fallback.
 
-Do not rewrite the architecture, merge into BEHAVIOR, reopen GPU assembly, train unrelated models, or polish a factory animation. Native analytic competence is the critical next milestone.
+## Boundaries
+- Never report synthetic CPU success/call counts as robot performance.
+- No benchmark solution recipes, added task-specific skills, or offline target
+  demonstrations. Current-episode memory and native task instruction streams are
+  allowed. Benchmark-trained policies are labeled as such.
+- Do not send evaluator score, hidden object state, success geometry, future
+  contact simulation, or another episode's trace to the actor.
+- Keep benchmark/controller/policy normalization, action conventions, native
+  frequencies and source revisions explicit. Do not silently turn EEF outputs
+  into joints or duplicate a missing camera.
+- Policy queues are acknowledged ONLY after actual native steps. Reset/cancel
+  on a shortened prefix/intervention; never fake acknowledgements.
+- Respect episode/task budgets. Unknown RPC outcomes poison the attempt; do not
+  retry uncertain physical writes or reset the same scored episode.
+- Same-model/same-policy comparisons need matched sensors, data, budgets and
+  service tiers. New models and new sensors are separate experimental factors.
+- Development and test task groups stay separate. Freeze after native development
+  qualification, before opening held-out results. Keep failures and missing runs.
+- A generic motion monitor cannot detect every wrong semantic intent. Preserve
+  periodic reviews; do not disable all reasoning because trajectories are finite.
+- Do not redesign the framework. First make one native case and one real policy
+  chunk run correctly. Fix actual source-contract mismatches before broad sweeps.
 
-## Source and evidence rules
+## First actions
+1. Run the CPU suite and synthetic matrix.
+2. Read source contracts in docs/multibench/SOURCES.md; bootstrap only needed repos.
+3. Capture a development RoboDojo observation with zero API calls.
+4. Qualify π0.5, then Xiaomi/G0.5/Intern interfaces and latency on the same hardware.
+5. Run one complete native episode per proposed backend before paid wide evaluation.
+6. Bind artifact/provider settings, record qualification, freeze, then compare.
 
-1. Appendix A explicitly permits simulator-state geometry in the evaluated LIBERO implementation. Use `privileged_sim` and label it honestly. Do not call it sensor-only or silently mix it with K1 results.
-2. The slow brain proposes symbolic capabilities/relations, not metric poses. Never parse native goal clauses into a pre-solved action plan. No task-ID/seed special cases.
-3. The large headline gain depends on the evolved analytic library. A successful runtime unit test is not evidence of comparable task gains.
-4. Keep archived development, concurrent ablation, and new-state results separate. No supplied paper numbers belong in local result rows.
-5. The PDF does not enumerate every skill/controller constant, exact removal roster or thirteen diagnostic checks. Preserve reconstruction labels; replace missing details with author source when available.
-6. Qwen3-VL-4B-Instruct and public PI pi0.5 LIBERO are the main reproduction models. Stronger reasoners, piRLinf/fullshot weights, K1, and different libraries are separate conditions.
-
-## Native bring-up
-
-Use a fresh Python 3.10–3.12 environment. Bootstrap only reviewed pins. Dependencies are source-inspected, not yet native-qualified. Verify setup before starting hundreds of episodes.
-
-Inspect geometry/frames/contact and controller scaling; perform one small native move; inspect a ten-action policy chunk; then execute real analytic and policy smoke cases. Qualify the physics-substep watchdog. Do not call repeated stale reads or a 20 Hz per-action check a 50 Hz physical loop.
-
-The current direct environment seam uses pinned LIBERO-PRO and RPent's policy client. Its object/site/joint mappings, approach conventions, cavity handling and local effects need native testing. Prioritize these over more infrastructure.
-
-## Evaluation rules
-
-- Goal 300 / Long 520 physical actions. No resetting the budget on retry. Record settling separately.
-- Native task predicate is distinct from local completion and model claims. Same sampling/latching contract across matched controls.
-- A2static replans after nominal success only; A2seq plans once; no dynamic substitution or failure replan in either. Audit their actual traces.
-- Match state hashes, model bytes, observation contract, settings, prompts, capability library and environment. Log server attestation and unseeded stochasticity.
-- Hold out states only after freezing. Full denominator includes infrastructure failures. Incomplete runs remain visibly incomplete.
-- On host faults, predeclare symmetric rerun/replacement rules and retain originals. Never retry only the failed benchmark episodes for a better score.
-- No test-set memory, oracle branch table, or direct contact geometry in a sensor-only condition.
-
-## Safety and resource boundaries
-
-No real robot is supported. Native simulation and model/API use are explicit opt-ins. Respect configured call/time/token ceilings. Do not invent a guaranteed dollar cap from token estimates. Never print keys or silently download weights. Do not attach to unrelated held simulator episodes or stop shared services.
-
-If a native write may have partially executed, stop and reconcile; do not retry it. Never bypass a guard merely to achieve a success score. A simulation watchdog is not a hardware safety certification.
-
-## Regression / revision
-
-Use the actual failed state for diagnosis when possible, but the current physics-only snapshot is not a complete controller/RNG/agent resume. Attribute failures with evidence, treating labels as hypotheses. Local thirteen-layer names are reconstructed.
-
-Revise reusable physical mechanisms, not individual task IDs. Paired targeted admission is necessary but insufficient: run broader checks on the same candidate hash. Preserve cell success counts in policy-winning cells per Eq.5, rather than imposing the old per-seed rule. Record any human-written versus agent-generated change honestly.
-
-Before handing off: run CPU tests, compile, source audit, native checks actually available, and keep `IMPLEMENTATION_STATUS.md` and `validation.json` accurate. Report native gains only when measured.
+Do not edit or operate the user's unrelated BEHAVIOR or closed GPU-assembly
+workers. No GPU instance, paid API call, remote deployment or account action is
+authorized merely by opening this archive; use the owner's explicit budget and
+environment permissions.

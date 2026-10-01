@@ -1,49 +1,73 @@
 {
   "checked_date": "2026-10-01",
-  "format": 1,
-  "note": "Pins checked through GitHub connector; no clones were downloaded in build environment. This is not a transitive Python lock.",
+  "note": "Pinned source contracts, not a transitive Python/CUDA lock. Direct git network unavailable on build host; sources inspected through GitHub connector.",
   "repositories": [
     {
-      "group": "core",
-      "license": "Apache-2.0",
-      "name": "RPent",
-      "revision": "d2595ff270c7d66dbb2effb803f5e6d4d8e08f82",
-      "url": "https://github.com/RLinf/RPent.git"
-    },
-    {
-      "group": "core",
-      "license": "upstream license",
-      "name": "RLinf",
-      "revision": "88f9867ff5b3004b482d6788a871081a43098620",
-      "url": "https://github.com/RLinf/RLinf.git"
-    },
-    {
-      "group": "core",
-      "license": "upstream license",
-      "name": "openpi",
-      "revision": "a560f4dd8205b8423ecd4c8a0fabb5f54140b8a0",
-      "url": "https://github.com/RLinf/openpi.git"
-    },
-    {
-      "group": "core",
-      "license": "upstream license",
-      "name": "LIBERO",
-      "revision": "a8323074d93a09e32bd898630a70531b1f51bc77",
-      "url": "https://github.com/RLinf/LIBERO.git"
-    },
-    {
-      "group": "core",
-      "license": "upstream license",
-      "name": "LIBERO-PRO",
-      "revision": "d1e11fb181b8544487d27742c0caa3a4d46452ad",
-      "url": "https://github.com/RLinf/LIBERO-PRO.git"
-    },
-    {
-      "group": "k1",
-      "license": "MIT",
       "name": "k1",
-      "revision": "ee46363101fcf3ef87182fb2dbad99a92ce77fc0",
-      "url": "https://github.com/Robo-Harness/k1.git"
+      "group": "core",
+      "url": "https://github.com/Robo-Harness/k1.git",
+      "revision": "ee46363101fcf3ef87182fb2dbad99a92ce77fc0"
+    },
+    {
+      "name": "LIBERO-PRO",
+      "group": "core",
+      "url": "https://github.com/Zxy-MLlab/LIBERO-PRO.git",
+      "revision": "eafdb809426b13153aa1e4c42d6601844217dfec"
+    },
+    {
+      "name": "RPent",
+      "group": "policy",
+      "url": "https://github.com/RLinf/RPent.git",
+      "revision": "d2595ff270c7d66dbb2effb803f5e6d4d8e08f82"
+    },
+    {
+      "name": "RLinf",
+      "group": "policy",
+      "url": "https://github.com/RLinf/RLinf.git",
+      "revision": "88f9867ff5b3004b482d6788a871081a43098620"
+    },
+    {
+      "name": "openpi",
+      "group": "policy",
+      "url": "https://github.com/RLinf/openpi.git",
+      "revision": "a560f4dd8205b8423ecd4c8a0fabb5f54140b8a0"
+    },
+    {
+      "name": "RATs",
+      "group": "transfer",
+      "url": "https://github.com/Playful-RATs/RATs.git",
+      "revision": "1df65a180562e91911214fa1caba7c7ed9407b3d"
+    },
+    {
+      "name": "GPT-as-Policy",
+      "group": "robodojo",
+      "url": "https://github.com/anonymous-report-421/GPT-as-Policy.git",
+      "revision": "8f3d362b077d8efb77e2a7274d5b2c20e2243846"
+    },
+    {
+      "name": "XPolicyLab",
+      "group": "robodojo",
+      "url": "https://github.com/XPolicyLab/XPolicyLab.git",
+      "revision": "408b99d959a7b2207f5f785528fefcc019d7b131"
+    },
+    {
+      "name": "RoboDojo",
+      "group": "robodojo",
+      "url": "https://github.com/RoboDojo-Benchmark/RoboDojo.git",
+      "revision": "ee67a1468510da7624a089164402359f2afc72c8",
+      "note": "Pin recorded by GPT-as-Policy; external machine must fetch assets and required submodules separately."
+    },
+    {
+      "name": "Xiaomi-Robotics-1",
+      "group": "robocasa",
+      "url": "https://github.com/XiaomiRobotics/Xiaomi-Robotics-1.git",
+      "revision": "0dd7aef8dc87296246aae812a1f59ccb708e5546"
+    },
+    {
+      "name": "RoboCasa",
+      "group": "robocasa",
+      "url": "https://github.com/robocasa/robocasa.git",
+      "revision": "456174f62b89b8fca99eaaf33949c29fec9cfc2a"
     }
   ]
 }

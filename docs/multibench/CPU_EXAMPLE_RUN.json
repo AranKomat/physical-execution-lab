@@ -1,0 +1,5 @@
+{
+  "episodes": 15,
+  "evidence_kind": "synthetic",
+  "report": "runs/multibench_cpu/report.html"
+}

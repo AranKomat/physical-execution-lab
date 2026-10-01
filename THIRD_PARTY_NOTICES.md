@@ -1,28 +1,24 @@
-# Third-party sources and notices
+# Third-party sources and attribution
 
-This archive contains independently authored runtime, adapter, experiment,
-evaluation and test code. It does not redistribute RPent, K1, DynaHarness source,
-model weights, simulator assets or private project data.
+This distribution contains original extension code and documentation. It does not bundle K1, RPent, LIBERO assets, datasets, model weights, closed-source agent implementations or provider credentials.
 
-- RPent / Harness VLA: https://github.com/RLinf/RPent — Apache-2.0 upstream.
-- Robo-Harness K1: https://github.com/Robo-Harness/k1 — MIT upstream.
-- DynaHarness: https://arxiv.org/abs/2609.40306 — methodological reference;
-  results cited only as attributed source findings, not reproduced results.
-- RLinf, its OpenPI and LIBERO/LIBERO-Pro forks, NumPy, Pillow, imageio, MuJoCo
-  and their transitive dependencies retain their respective licenses.
+- **Robo-Harness K1** — https://github.com/Robo-Harness/k1, expected revision `ee46363101fcf3ef87182fb2dbad99a92ce77fc0`. Upstream MIT license. Our extension calls its registry, sensor tools, native adapters and `run_agent` entry point. We inspected public source to align the interface; these are not our inventions.
+- **LIBERO-PRO / Zxy-MLlab** — https://github.com/Zxy-MLlab/LIBERO-PRO, revision `eafdb809426b13153aa1e4c42d6601844217dfec`. Source, simulator, data and asset rights remain upstream. Read the exact release licenses before use/distribution.
+- **RPent / RLinf / openpi** — https://github.com/RLinf/RPent, https://github.com/RLinf/RLinf, https://github.com/RLinf/openpi. The inspected RPent client/server source is Apache-2.0. Related model, simulator, dependency and checkpoint terms remain separate. No task-memory corpus is downloaded.
+- **FLUX 3 Action** — https://github.com/black-forest-labs/flux-action. Only a documented recorded-observation CLI invocation is provided. No FLUX source/weights or implicit license grant is included; check each checkpoint's terms.
+- **SAM3, TAPNext++, GraspGen, RATs/CaP-X** — optional or future upstream dependencies used by K1. They are not installed or redistributed by this package.
+- **DynaHarness, Harness VLA and Robo-Harness K1 papers** — methodological references in the handoff. Our code does not claim to be their official implementation or to reproduce their published numbers.
 
-Installation fetches source under the original license at the reviewed revision.
-A permissive wrapper does not relicense datasets, weights or assets. Retain each
-upstream license if copying source later; record modifications and provenance.
+Model/API services are user-selected and subject to their own terms. GitHub links and model names are attribution, not affiliation or endorsement.
 
-External agents should cite RPent, K1, DynaHarness, LIBERO-Pro, the policy author
-and checkpoint provenance in any research release. Verify the exact author lists
-and current BibTeX from the primary papers rather than inventing them here.
 
-Native actions have no real-hardware qualification. Neither the licenses nor the
-software guards establish machinery safety or industrial compliance.
+## v0.4 source-interface additions
 
-The user-provided research PDF at `references/2609.40306v1.pdf` is included as the
-requested source material. Its authors retain copyright; the MIT software license
-does not apply to that paper. SciPy and all other installed libraries retain their
-own licenses. No new wholesale copying of upstream runtime source was performed.
+This package adds independent wrappers against pinned GPT-as-Policy, XPolicyLab,
+Xiaomi-Robotics-1 and RoboCasa interfaces. Their source repositories, models and
+assets are not bundled. Source contract findings and exact revisions are listed
+in `docs/multibench/SOURCES.md`. Upstream code retains its own license; model
+weights and benchmark assets require separate access/license review.
+
+No fonts or paid credentials are included. Synthetic fixture data and our new
+wrappers are not official benchmark datasets or author model outputs.

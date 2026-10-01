@@ -1,30 +1,29 @@
 [build-system]
-requires = ["setuptools>=65"]
+requires = ["setuptools>=68"]
 build-backend = "setuptools.build_meta"
 
 [project]
-name = "physical-runtime-lab"
-version = "0.2.0"
-description = "PDF-grounded DynaHarness reproduction experiment with RPent policy integration"
+name = "k1-execution-lab"
+version = "0.4.0"
+description = "Sparse physical-agent execution experiments across RoboDojo, RoboCasa365 and K1; no claimed native gains"
 requires-python = ">=3.10"
 license = {text = "MIT"}
-dependencies = ["numpy>=1.24", "scipy>=1.11"]
+dependencies = ["numpy>=1.24", "scipy>=1.11", "httpx>=0.27"]
 
 [project.optional-dependencies]
-test = ["pytest>=7", "numpy>=1.24", "Pillow>=10"]
-geometry = ["numpy>=1.24", "Pillow>=10"]
+multibench = ["Pillow>=10"]
+plots = ["matplotlib>=3.7"]
+test = ["pytest>=8", "Pillow>=10"]
+native = ["numpy>=1.26,<2", "opencv-python-headless>=4.8,<4.12", "Pillow>=10", "PyYAML>=6"]
 
 [project.scripts]
-prl = "prl.cli:main"
-prl-paper = "prl.dyna.runner:main"
+k1-exec = "k1lab.cli:main"
+physical-exec = "k1lab.multibench.cli:main"
 
 [tool.setuptools.packages.find]
-include = ["prl*"]
+include = ["k1lab*"]
 
 [tool.pytest.ini_options]
 testpaths = ["tests"]
 pythonpath = ["."]
-
-[tool.ruff]
-line-length = 100
-target-version = "py310"
+addopts = "-p no:cacheprovider"

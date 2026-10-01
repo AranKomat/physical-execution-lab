@@ -1,291 +1,345 @@
-# Physical Runtime Lab — PDF-grounded DynaHarness reproduction, revision 2
+# Physical Execution Lab v0.4 — self-contained research handoff
 
-**Date:** October 1, 2026. **Entry point:** `START_HERE.md`, then this document and `AGENTS.md`.
+**Prepared:** 2026-10-01. **Audience:** an external Codex/research agent with authorized GPU, simulator, model-weight and language-model access. **Status:** implemented and CPU-tested; native integrations remain unqualified.
 
-## 1. Objective and what changed
+This handoff supersedes the experiment priorities in K1 Execution Lab v0.3. The old implementation is preserved under `k1lab/` and `run.py`; its documents are archived under `docs/legacy_k1_v3/`. The new multi-benchmark implementation is `k1lab/multibench/` and `run_bench.py`. This is not the earlier privileged-state DynaHarness reproduction and does not reopen the closed EmbodiedSWE GPU-assembly branch.
 
-Build a separate, narrow LIBERO-Pro experiment repository that reproduces the important mechanisms and aims to reproduce the substantial gains of **DynaHarness: A Dynamic Physical Harness for Self-Evolving Robot Agents**, arXiv:2609.40306v1. Do not merge this experiment into the earlier BEHAVIOR harness, reopen GPU assembly, or spend time on industrial animations. Those are separate projects.
+## 1. Converged objective
 
-The user explicitly rejected treating a loosely inspired wrapper as an adequate reproduction. The uploaded **complete 37-page PDF** has now been read, including Appendices A–I. It is included at `references/2609.40306v1.pdf`, SHA-256 `e07c7fd79a2e6690f64cbc07f501894bc96d07c9bc091a735a7ef403572ddd1d`. This version materially changes the implementation, not just its name or documentation.
+Test whether a **generic execution harness** improves useful physical behavior and reduces expensive model calls, without adding task-specific robot scripts, benchmark solution memories or new training.
 
-The build host has Python 3.13, NumPy/SciPy and CPU test tools, but no working LIBERO installation, NVIDIA GPU, model weights or LLM credentials. **No native robotics success rate is claimed.** Our objective remains comparable gains, but those gains must be established by running and improving the actual skills on the external GPU host. An implementation checklist cannot establish them.
+Use strong frozen models, calibrated controls where available, and a small reusable action interface. Invoke the high-level language model at meaningful boundaries instead of every native control tick. Preserve actual execution feedback, bounded commands, source/observation identity, and within-episode progress. The intended result is a measured success/latency/cost trade-off, not a predetermined leaderboard win.
 
-The most consequential correction is Appendix A, page 14: **the paper's LIBERO grounding uses simulator state**. Hardware uses images. The old package emphasized RGB-D-only geometry and therefore did not implement the same experimental problem. The new main track deliberately uses disclosed simulator geometry behind a symbolic planner. The old sensor/K1 track is retained for a later, separately reported extension.
+The current supervisor is **`gpt-6.1-sol` through Responses**, with medium reasoning in the provided profiles. `service_tier="default"` is the latency-comparison default; `flex` is a separate cost-oriented profile. Flex changes serving behavior, not model weights. The code does not automatically change models, reasoning level, tier or provider after a timeout or capacity error. Access to the model/account must be verified on the external host.
 
-A second correction is the source of competence. On page 9 and Table 16, removing the analytic contact skills reduces success from 592/800 to 133/800. Bare policy scores 130/800. In contrast, changing the executor while retaining the library gives 592/800 versus 511/800. The initial harness without evolution was worse than the policy on its own early seed block (page 8). **A good governor around a weak analytic library is not expected to reproduce the headline. Native analytic competence is the next engineering priority.**
+### Three research tracks
 
-## 2. Precise claims to reproduce
+| Track | Conditions | What the experiment can establish |
+|---|---|---|
+| RoboDojo, robot-policy-free | Sol direct dense vs Sol direct sparse | Effect of local execution granularity with the same general VLM; no motor-policy training or added demonstrations |
+| RoboDojo, practical hybrid | π0.5, Xiaomi R1, G0.5, InternW0-Δ, each motor-only / every-chunk review / sparse review | Whether the same supervision architecture helps benchmark-trained motor policies; policy speed/quality comparisons are a separate factor |
+| RoboCasa365 | Xiaomi R1 only vs sparse Sol; every-chunk Sol as control | Incremental benefit of supervision over the same strong XR1 checkpoint and native evaluation configuration |
 
-Keep these experiments separate; all numbers in this section are the authors' results, not local measurements.
+K1/LIBERO remains a useful low-cost regression and later transfer track. No FLUX DROID retargeter was added: single-Franka/DROID camera and joint conventions do not match dual ARX-X5, and they do not automatically match RoboCasa365's mobile action space either.
 
-| Source condition | Evaluation | Source result |
-|---|---|---:|
-| Final archived development build | Four Goal/10 task/swap suites, indices 21–40 | 594/800, 74.25% |
-| Separate development remeasurement | Same block, separate run | 593/800, 74.125% |
-| A2ctrl concurrent executor control | Development block | 592/800, 74.0% |
-| A2static nominal one-step replanning | Same library/block | 511/800, 63.875% |
-| A2seq initial frozen sequence | Same library/block; changed planning schema | 510/800, 63.75% |
-| Bare public pi0.5 LIBERO | Development block | 130/800, 16.25% |
-| No analytic contact capabilities | Concurrent ablation | 133/800, 16.625% |
-| No recovery/intervention | Concurrent ablation | 585/800, 73.125% |
-| Champion, new-state block C | 800 states generated after freezing | 602/800, 75.25%, shown as 75.2% |
-| Bare policy, block C | Same new states | 140/800, 17.5% |
+## 2. Scientific contract
 
-References: Sections 4.2–4.7, Tables 2, 12, 14–17, and Appendices C.1/D.1. The 75.2/17.5 comparison is not the same state bank as the 74.0/63.9 executor comparison. Block C measures **new initial states of the same task families**, not previously unseen task families. Its exact state bank/generation procedure is not supplied in the PDF. Do not rename a new local index slice “the authors' block C.”
+**Allowed:** current RGB, robot proprioception, robot-only FK, actual controller receipts, original task instructions/public task requirements, current-episode history, bounded local motion, and the explicitly named frozen motor policy. The OpenAI supervisor is a general model; its pretraining contents are not audited by this package.
 
-The most useful first result is a strong analytic library plus a matched frozen-policy control. The clean executor experiment follows: A2static versus A2ctrl with the **same** geometry, library, model, weights, environment, and budgets. K1 and a stronger planner are subsequent interventions, not changes silently folded into that comparison.
+**Not allowed for the main claim:** cross-episode solution traces, target-task exploration memories, demonstrations added as few-shot examples, hidden simulator object transforms, target coordinates extracted from scoring code, reward/partial-score queries to guide the actor, hypothetical future contact rollouts, or task-specific code written after viewing held-out failures. No weights are updated here.
 
-## 3. What the PDF specifies, and what it does not
+Native tasks whose instruction inherently includes an in-scene demonstration are a distinct case: their original sensor stream remains part of the task. “No added demonstrations” does not mean deleting the observation required by an imitation task.
 
-### Explicit source settings
+Benchmark-specific motor post-training is **not automatically cheating**, but it must be labeled. RoboDojo π0.5/Xiaomi/G0.5/Intern checkpoints are not evidence that the motor model transfers cold to every task. Report the robot-policy-free and trained-motor tracks separately.
 
-- Slow model: **Qwen3-VL-4B-Instruct**; Appendix G describes a local 4-bit build. The slow brain returns capability names and symbolic arguments, **not numeric poses** (page 4).
-- Motor policy: public frozen **pi0.5 LIBERO** checkpoint. This is not the RLinf `pi05_libero130_fullshot` checkpoint used by some cited baselines (pages 5/17).
-- Controller: 20 Hz. Deterministic fast governor: 2 Hz. Safety/envelope check: 50 Hz. Velocity envelope: 2 rad/s (pages 4/14/27).
-- Policy execution: ten-action chunks; one illustrated `vla_act` call executes two chunks, twenty steps (page 28).
-- Environment steps: Spatial 220, Object 280, Goal 300, LIBERO-10 520. Main reproduction covers Goal-task, Goal-swap, 10-task, 10-swap (pages 5/16).
-- Shared executor settings: temperature 0.1, 2,048 output tokens, 90-second request timeout, 180-second plan validity, one serialization-repair allowance, 600 orchestration ticks (page 25).
-- A2seq: initial complete sequence; one same-step retry, one replay of that single-step plan, then one further retry; twelve blocked-precondition ticks; no online branching or replanning (page 26).
-- A2static: replanning after nominal local success only. No failure-triggered replan, substitution, reordering, inserted recovery, or verifier-triggered branch. It retains fixed retries/reexecution (page 24).
-- Native success predicate, not model self-report, supplies LIBERO task completion. Completion sampling and the 2 Hz decision clock are separate; latching retains detected events (pages 4/14).
-- Drawer revisions: 20 mm along-handle grasp shift, a widened closure limit, reseating after misaligned contact, and waiting for two consecutive stalled pulls (pages 31–32).
-- Eq. (5): nondecreasing aggregate cell successes, nonincreasing harness-attributed failures, nondecreasing successes in policy-winning cells, zero contamination, **then broader regression checks** (pages 5/15/32/37).
+The new direct baseline is an independently implemented, matched Sol baseline. It is **not** an identical re-run of GPT-as-Policy's Astra/xhigh/Codex workflow. Its published 26%/48% and partial-score numbers are historical references, not measurements generated here. A switch to Sol, a different camera contract, a new motor policy, or a new controller is not a harness-only improvement.
 
-### Not fully specified in the PDF
+## 3. Architecture and actual implementation
 
-Exact skill source, all seven analytic-removal IDs, all six recovery-removal IDs, the original prompt, every geometry heuristic, gains/tolerances, precise closure threshold, command lease, full scheduler thresholds, the ordered thirteen diagnostic checks, exact weight revision/hash, normalization/sampler settings, quantization implementation, exact camera configuration, and block-C state bytes are not provided in sufficient detail for bit-identical reproduction.
-
-The paper says an anonymized supplementary implementation/configuration/records package exists (page 11). The uploaded PDF has no embedded package or direct supplementary download link. The linked public implementation repository returned 404 during this revision's check. **Check for the release again or obtain the supplement from the authors; do not wait idly for it.** Replace uncertain local reconstructions with source code when it becomes available, preserving a reviewed provenance/diff.
-
-`docs/PAPER_FIDELITY.md` maps source requirements to files and remaining gaps. Every unsupported default is a reconstruction choice, not a newly discovered paper constant.
-
-## 4. Actual implementation
-
-The new namespace is `prl/dyna/`; the new command is `python paper_run.py ...`.
-
-### Protocol and semantic planning
-
-`protocol.py` encodes the rates, suite budgets, source reference blocks, and explicit reconstruction settings. `planner.py` uses the same one-step prompt/catalog for A2static/A2ctrl and a full-sequence schema for A2seq. It rejects numeric/nested action arguments and invented output fields, permits one serialization-only repair, checks snapshot identity/epochs, and checks plan age.
-
-The planner sees the actual language instruction, two current images, symbolic scene entities/mechanisms, robot state, and within-episode history. It does not receive object metric geometry or parsed benchmark goal clauses. The original source prompt is unavailable; this prompt is reconstructed. Observation IDs/paths remain experiment metadata, not a hardened adversarial information boundary.
-
-Existing API/file/command transports are reused through decoder injection. The API transport supports an explicit OpenAI-compatible endpoint; no model ID or paid endpoint is silently selected. A file queue lets external Codex act as a planner, but that is a **different planner/scaffold experiment**, not the Qwen reproduction.
-
-### Simulator grounding and physical skills
-
-`scene.py` defines objects, regions, mechanisms, contact observations, geometry provenance and within-episode execution memory. `native.py` obtains current poses, collision-geometry bounds, sites, joint axes/limits, and actual finger/object contact pairs from the native simulator.
-
-`capabilities.py` reconstructs the documented families: pick-and-place, insertion/placement, push, drawer slide, knob turn, hinged door, handle turn, keyframe return, release/retreat, regrasp/reseat, perception and frozen policy execution. Capabilities have local completion evidence distinct from native task success.
-
-Concrete improvements over v1 include:
-
-- Geometric approach, descent, jaw closure, lift, overhead transport, lowering, release and retreat stages.
-- Grasp verification using both finger contacts plus object lift, rather than treating gripper closure as attachment.
-- Measured object-to-TCP transform after lifting; transport targets are converted accordingly.
-- Separate cavity/receptacle versus support handling. A flat thin hob must not be treated as an insertion cavity—the exact class of regression discussed on page 32.
-- Distinct placement-slot selection for multiple objects, and a conservative object-level overhead corridor.
-- Push-span refusal with pick/place substitution only where the instruction permits achieving the same final relation; no substitution when a push-only method constraint is present.
-- Joint-axis-grounded drawer/door/knob trajectories, a four-step wrist ramp, the documented 20 mm drawer shift, and a bounded reseat route.
-- Keyframe recovery scoped to the current episode and physical state.
-- Preflight refusal when the remaining budget cannot afford the capability.
-
-**Important limitations:** the insertion implementation is presently staged cavity placement, not a qualified general connector insertion controller. The corridor is not full-arm collision planning. Grasp features, jaw axis, mechanism endpoint meaning and cavity entrances require actual simulator qualification. Four recovery families are implemented; this is not a claim to have recovered the original six-entry ablation roster. Drawer reseating is not the exact unpublished two-stalled-pull mechanism.
-
-Table 4 lists approximate stage costs whose midpoint values sum to 211, while it reports approximately 230 for the whole pick/place command. The implementation reserves at least 230 before starting an unheld-object pick/place but counts only actual actions. It does not fabricate nineteen actions to force agreement. These source costs are useful budget anchors, not validated local trajectory durations.
-
-### Runtime / controlled executors
-
-`engine.py` separates per-action control, periodic governor decisions and physics-substep safety callbacks. Every executed action consumes the same episode budget. Native completion is sampled every completed action and latched until read; `unlatched` changes retention, not the sampling period. Receipt status and benchmark verdict remain distinct.
-
-A2static replans after local nominal success, not failure. A2seq freezes the initial plan. Both have bounded fixed retries. A2ctrl additionally permits refusal/substitution, failure replanning and a bounded drawer reseat. All share the same capability implementation and basic safety/budget rules. A policy segment ending without a trustworthy intermediate effect is not silently declared a completed task.
-
-There are explicit differences from the original implementation: unknown scheduler thresholds use recorded defaults; precondition-block counters are bounded scheduler events rather than a native recreation of every original wait; A2static's four-attempt count is reconstructed from its prose and the explicit A2seq schedule. Native runs must characterize these differences.
-
-`native.py` uses **a direct LIBERO-PRO environment seam plus RPent's frozen-policy client**, not the old complete RPent episode wrapper. The latter strips some geometry and terminates immediately on native success, complicating the independent latching experiment. It is still the pinned RPent/RLinf/LIBERO ecosystem, not an unrelated simulator.
-
-The source-inspected policy server defaults to **five-action chunks**. `scripts/serve_paper_policy.py` explicitly overrides both relevant preset fields to ten, hashes requested model bytes, loads the model and serves a live attestation. The backend checks that live attestation against the file and expected checkpoint hash. It does not claim that a local hash establishes equality with the authors' undisclosed model revision.
-
-### Evaluation and evolution
-
-`runner.py` retains all planned cases in the denominator, labels missing/infrastructure rows, and records config/source/PDF/manifest fingerprints. Its comparison reports paired wins/losses, exact discordant-pair tests and task-cell bootstrap intervals. The default bootstrap is 20,000 resamples with seed 20260926, following Table 17. Avoid interpreting a tiny pilot's p value as a broad capability result.
-
-`admission.py` implements the **cell-count** interpretation of Eq. (5), replacing v1's stricter per-seed winning-episode preservation. The thirteen-label diagnostic is explicitly reconstructed and produces reviewable hypotheses. Unmatched diagnostics stay unresolved. Admission requires attribution review and broader coverage; it does not edit a production library or authorize hardware.
-
-Failed-state archives currently save physics state and metadata, not controller integrators, RNG, action-chunk cursor and full agent state. They are useful diagnostic probes, **not exact branch-resume checkpoints**. Complete this if undertaking matched failure-state interventions.
-
-## 5. Run the CPU version first
-
-From the repository root:
-
-```bash
-python -m pip install -e '.[test]'
-python -m pytest -q
-python paper_run.py audit
-python scripts/verify_release.py
-
-python scripts/run_paper_matrix.py \
-  --configs configs/dyna/fixture_bare.json \
-            configs/dyna/fixture_A2static.json \
-            configs/dyna/fixture_A2seq.json \
-            configs/dyna/fixture_A2ctrl.json \
-            configs/dyna/fixture_unlatched.json \
-  --manifest manifests/synthetic_dev.json \
-  --output runs/paper-cpu --execute
-
-python paper_run.py compare \
-  runs/paper-cpu/A2static runs/paper-cpu/A2ctrl \
-  --output runs/paper-cpu/paired.json
-python scripts/audit_paper_run.py runs/paper-cpu/A2static
-python scripts/audit_paper_run.py runs/paper-cpu/A2seq
+```text
+native observed state + original instruction
+                ↓
+optional frozen policy → observation-bound action proposal
+                ↓
+local validity/event monitor + periodic semantic review
+                ↓
+accept / shorten / bounded correction / unsuccessful stop
+                ↓
+one actual native control acknowledgement at a time
+                ↓
+update motor-policy observation history → compact receipt
+                ↓
+review again at a deadline, stage/event boundary or failure
 ```
 
-The included synthetic fixture is a kinematic test double with authored decisions and no learned policy. It tests implementation behavior; it is not LIBERO. The nominal/dynamic controllers can tie on these simple fixtures. No artificial large improvement is inserted into the report.
+`types.py` keeps `x5_joint14`, `x5_eef16_wxyz` and `robocasa12` distinct. Proposals bind the observation stamp, native step, policy identity and declared native frequency. The stamp hashes actual RGB, instruction and robot measurements; it is **not** a full physics-state checkpoint or an across-episode identity.
 
-## 6. External native setup
+`runner.py` owns a single fresh episode, sends native actions one at a time, processes terminal acknowledgements, discards unused actions, and updates a stateful policy only after an actual step. It archives full policy proposals, controller receipts and decision-boundary RGB/proprio captures. Sensor NPZs are lossless; JPEGs are review previews. No unknown physical write is retried. Native termination, model stop, wall/model budget exhaustion, and infrastructure/contract failures remain distinct.
 
-Use a fresh Linux Python **3.10–3.12** environment; the build host's Python 3.13 is unsuitable for pinned RPent. Keep Qwen serving and robot policy dependencies isolated if their Transformers/CUDA requirements conflict. Start with one simulator and one policy service. Do not saturate the host before measuring latency and failures.
+`governor.py` handles numerical validity, repeated low robot motion, gripper-command changes, optional sensor flags and periodic review. Defaults cap unreviewed execution at 50 native steps or four chunks. These are **new experiment defaults**, not a claim to reproduce a paper's thresholds. Gripper command changes are review events, not attachment evidence.
 
-```bash
-python3.11 -m venv .venv-native
-source .venv-native/bin/activate
-python -m pip install --upgrade pip
-python scripts/bootstrap.py --group core       # inspect pins/paths
-python scripts/bootstrap.py --group core --execute
-python scripts/install_native.py               # inspect installation plan
-python scripts/install_native.py --execute
-python -m pip install -e '.[test]'
-python -m pip check
-python scripts/freeze_environment.py --output runs/native-environment.json
+**A cheap monitor cannot reliably detect semantic mistakes.** Smooth valid movement may be aimed at the wrong object. Therefore periodic GPT review is retained even when no numerical fault appears. Whitelisted tracking/contact flags have no magical source: the current RoboDojo adapter does not generate a general object-state or grasp-success estimator.
+
+`actor.py` gives Sol current images, a previous-segment image set, recent compact review records, retractable progress claims, robot measurements and sampled proposal/FK information. The gate separately evaluates the previous execution outcome and the next proposed intent. Hybrid correction requires reported failure or misaligned intent; uncertainty alone can shorten observation intervals but does not justify an arbitrary takeover. Evidence text is a model claim, not a verified certificate.
+
+The supervisor emits bounded **action parameters**, not just a choice of tool. RoboDojo corrections are dual-arm absolute EEF targets; RoboCasa corrections are arm-only normalized controller commands. Direct sparse can hold a target for a longer local execution horizon or submit a bounded sequence. This is not a new task-specific manipulation library.
+
+`transport.py` supplies a separate loopback policy process, single-owner/sequence checking, request/response hashes, no implicit mutation retry, explicit reset/invalidate, and exact observation acknowledgements. This is a research interface for trusted hosts, not an Internet-facing authenticated service or adversarial sandbox.
+
+## 4. Source-backed native interfaces
+
+### RoboDojo environment
+
+The adapter uses GPT-as-Policy's existing single-owner native RPC and its real RoboDojo task setup. It does not implement replacement toy tasks. The source simulator must register native completion conditions before the episode: empty condition lists can otherwise produce vacuous success.
+
+The source exports three RGB cameras, measured arm joints and EEF poses. X5 gripper values are **commands**, not measured finger gaps. There is no exported depth/calibration bundle in this donor interface. K1-style RGB-D localization, surface fitting, active perception and grasp hypotheses have **not been ported to RoboDojo in v0.4**. The first experiment isolates execution scheduling under RGB; adding depth later changes the sensing condition and requires its own comparison.
+
+X5 joint action order: left six joints, left opening, right six joints, right opening. Opening is continuous 0=closed, 1=open. EEF poses are each arm's link6 in shared environment-origin coordinates, metres and **wxyz** quaternion. Do not use DROID pad offsets or confuse these poses with K1's xyzw convention.
+
+The native donor's DLS recomputes after every real ACK. Its internal incremental caps remain unchanged. Our EEF boundary normalizes a supplied near-unit quaternion and includes both the source-required boolean closure flag and the continuous opening value. This normalization is coordinate hygiene, not learned control.
+
+The donor FK API requires exactly 50 joint targets. For G0.5/Intern or other exposed horizons, the adapter evaluates blocks through that pure robot-FK API and pads only its input with repetitions of the final existing target. It drops padded outputs. **No padded action is executed, counted as a policy prediction, used as a recurrent ACK, or presented as a predicted physical future.** Preview timing is separately recorded.
+
+### Four RoboDojo motor candidates
+
+| Provider | Actual interface used | Source defaults retained | Qualification issue |
+|---|---|---|---|
+| π0.5 | Donor OpenPI/JAX client | H50 joint14; execute at most15 | Exact checkpoint/normalizer and source-server identity must match |
+| Xiaomi R1 | XPolicyLab Model; source decodes relative predictions to absolute dual EEF | Leading30 actions, processor/image config from source | Current bridge executes EEF via donor DLS: a controller variant, not the original native EE evaluator |
+| G0.5 | XPolicyLab Model, FM path | `action_steps=16`, model config frequency30 | Native donor currently25Hz; the model's frequency setting is not measured inference speed. Qualify timing contract explicitly |
+| InternW0-Δ | XPolicyLab stateful WAM adapter | H32 model, exposed10 actions, 10 denoise steps,25Hz | Must acknowledge every actual action; interrupted queue reset loses temporal context |
+
+π0.5 source identity:
+
+```text
+configuration: pi05_base_aloha_full_sim_arx-x5_seed_0
+normalizer: arx_x5_sim
+checkpoint: RoboDojo-sim-arx_x5-joint-0/59999
 ```
 
-These bootstrap/install recipes were source-inspected, not installed end-to-end here. The installer avoids blindly requesting moving-branch RPent extras, but it is not a fully solved transitive CUDA environment lock. Review the installed packages and archive an exact environment snapshot. MuJoCo is deliberately pinned to **3.3.0**, as required by the inspected RPent configuration. This is the chosen upstream stack, not proof of the authors' exact simulator version.
+The complete artifact manifest hash and the π0.5 server's native checkpoint hash have different scopes. Keep both; do not declare them equal. The source Pi05Client also expects a fresh identified server when first constructed. Its inference sequence persists during that client lifetime.
 
-The pinned revisions are:
+Xiaomi's source RoboDojo adapter already handles MiBot-to-simulator frames and restores absolute EEF targets. Do not apply the conversion a second time. The DLS bridge is useful for a matched internal Xiaomi-only/every-chunk/sparse experiment, but original XPolicyLab native EE qualification is needed before claiming source-score reproduction. This limitation is prominent because controller choice can change apparent motor competence.
 
-| Checkout | Commit |
+Intern's source `.update_obs()` consumes pending execution acknowledgements. The wrapper delivers each native frame once, deduplicates the same observation before a new proposal, rejects missing ACKs, and resets the source session when a prefix is abandoned. G0.5's temporal buffers reset on intervention too. `policy_invalidation_requests` counts calls to this boundary; it does not assert that every provider physically reloads weights. Stateless π0.5 and RoboCasa history-backed inference do not need the same reset behavior.
+
+Do not choose the “fastest” policy from model size, denoising count, the frequency YAML key, or historical leaderboard scores. Measure it. DM0.5, OpenWAM, RoboDawn and RoboICL remain possible later reference conditions, not implemented additional policy backends.
+
+### RoboCasa365 and Xiaomi
+
+Use **`XiaomiRobotics/Xiaomi-Robotics-1-RoboCasa365`**, not its RoboDojo or original RoboCasa checkpoint. The integration imports Xiaomi's actual `eval_robocasa365/entry.py` helpers and `EvalClient`, preserving input processing and official action conversion.
+
+Pinned source reference: `split=pretrain`, `task_set=target50`, 50 trials/task, base seed7, observation history4 sampled at interval2, crop0.95, execute16 actions/query. The released reproduction guide reports 1432/2500 (57.28%), distinct from the commonly quoted 57.4%. This package makes no attempt to reconcile that difference or invent a new official score.
+
+`target50` names the task set. It is **not** the `target` kitchen/object split. Composite-unseen task categories and kitchen splits are also different axes. Changing either is a new condition. Category labels remain `unmapped` until obtained from the actual task registry; they are not guessed from task names.
+
+The state helper builds EE-first14 dimensions, which the official client pads to60. The output is12 controller values: arm translation/rotation, gripper, base/torso and control mode. They are not absolute world XYZ positions. Current teacher corrections keep base motion zero and use fixed arm mode with bounded normalized arm inputs. General mobile-base recovery is not implemented.
+
+History receives every actual observation, including after teacher corrections. Source16-action replanning and queue discards are retained; source processing is not replaced with a “similar” custom encoding. Native termination uses the official environment success signal. No fabricated RoboDojo-style partial score is assigned to RoboCasa.
+
+## 5. Repository map
+
+| Path | Purpose |
 |---|---|
-| RLinf/RPent | `d2595ff270c7d66dbb2effb803f5e6d4d8e08f82` |
-| RLinf/RLinf | `88f9867ff5b3004b482d6788a871081a43098620` |
-| RLinf/openpi | `a560f4dd8205b8423ecd4c8a0fabb5f54140b8a0` |
-| RLinf/LIBERO | `a8323074d93a09e32bd898630a70531b1f51bc77` |
-| RLinf/LIBERO-PRO | `d1e11fb181b8544487d27742c0caa3a4d46452ad` |
-| Robo-Harness/k1, optional later | `ee46363101fcf3ef87182fb2dbad99a92ce77fc0` |
+| `run_bench.py`, `k1lab/multibench/cli.py` | New experiment commands |
+| `types.py`, `runner.py`, `governor.py`, `actor.py` | Bound actions, sparse loop, review gate and model interface |
+| `adapters/robodojo.py` | Source native RPC, joint actions, local DLS and FK preview |
+| `adapters/xpolicylab.py`, `adapters/pi05.py` | Three newer policy wrappers plus source π0.5 client |
+| `adapters/robocasa.py` | Native RoboCasa and official Xiaomi preprocessing/client |
+| `transport.py`, `latency.py` | Separate model service and recorded-input latency tests |
+| `manifest.py`, `report.py` | Identity, held-out splits, freezes, qualification, reporting |
+| `configs/multibench/` | 17 conditions, five provider templates, Standard/Flex profiles |
+| `scripts/multibench/` | Launch/capture, bind policies, plan matrix, export inputs, fingerprint, plots |
+| `tests/multibench/` | New CPU protocol, adapter-double and reporting tests |
+| `run.py`, other `k1lab/` files | Preserved K1/LIBERO experiments |
 
-The bootstrap refuses to overwrite modified checkouts. No upstream implementation is vendored; obtain dependencies and assets under their licenses. An explicit reviewed new pin is preferable to silently changing installed upstream code.
-
-### Model serving
-
-Obtain the **public Physical Intelligence pi0.5 LIBERO** weights using the official provider instructions and verify their model/configuration provenance. Archive the download revision, normalization and model configuration. Do not use an SFT/RLinf fullshot model merely because a default path points to it.
-
-```bash
-python scripts/fingerprint_checkpoint.py /absolute/path/to/pi05_libero \
-  --output runs/pi05-libero-weights.json
-
-python scripts/serve_paper_policy.py \
-  --rpent-root external/RPent \
-  --model-path /absolute/path/to/pi05_libero \
-  --checkpoint-manifest runs/pi05-libero-weights.json \
-  --checkpoint-id YOUR_VERIFIED_PUBLIC_PI_CHECKPOINT_ID_AND_REVISION \
-  --attestation-out runs/policy-attestation.json \
-  --cuda-device 0 --port 8911
-```
-
-Serve Qwen3-VL-4B-Instruct at an explicit OpenAI-compatible endpoint. Configure its actual served model name, tokenizer/chat template, quantization and image support. The PDF's “local 4-bit” description does not establish a particular AWQ/GPTQ/BitsAndBytes implementation; record your choice as a difference unless source code confirms it. The client imposes source temperature/output/timeout settings and JSON validation; decoder-constrained output support varies by server and needs testing.
-
-### State catalog and manifests
+## 6. CPU bring-up
 
 ```bash
-python run.py catalog --rpent-root external/RPent --output manifests/native_catalog.json
-python run.py manifest --catalog manifests/native_catalog.json \
-  --split smoke --states 21 --tasks 0 1 --output manifests/native_smoke.json
-python run.py manifest --catalog manifests/native_catalog.json \
-  --split dev --states $(seq 21 40) --output manifests/paper_dev_800.json
+cd physical-execution-lab
+python -m venv .venv
+source .venv/bin/activate
+python -m pip install -e '.[test,multibench]'
+python -m pytest -q
+python run_bench.py doctor
+python run_bench.py synthetic --output runs/cpu-check
+python scripts/verify_release.py
 ```
 
-The default catalog selects the four paper suites. State indices refer to entries in stored initial-state archives; the hash of each state is checked on reset. No modulo wrapping is allowed. Verify actual task order, BDDL hashes and bank sizes. The eight-case smoke selection is for integration, not a result to pitch.
-
-For your own held-out confirmation, select a disjoint bank, freeze code/prompts/settings first, then verify it using `run.py check-splits`. Calling it “independent held-out initial states” is accurate; claiming the authors' block C is not.
-
-### Configuring and qualifying native execution
-
-Copy the desired `configs/dyna/*.template.json` files to local configs. Set `checkpoint_id`, `checkpoint_sha256` from the weights manifest, live attestation path, endpoints, RPent path and model name. Freeze the same geometry overrides and settings across conditions. The example call ceiling of 150 is a **pilot ceiling**, not a sufficient budget for an 800-episode campaign; explicitly review any increase. Token reservations are not a guaranteed dollar cap.
+Open `runs/cpu-check/report.html`. Its 15 authored toy episodes exercise five conditions on three fixture cases. There are no learned models or contact dynamics. Success is part of the fixture, not a result about robotics. The plotting helper uses actual aggregate files and visibly labels synthetic plots:
 
 ```bash
-python scripts/native_paper_smoke.py \
-  --config configs/dyna/A2ctrl.local.json --manifest manifests/native_smoke.json \
-  --output runs/native-inspect --allow-native
-
-python scripts/native_paper_smoke.py \
-  --config configs/dyna/A2ctrl.local.json --manifest manifests/native_smoke.json \
-  --output runs/native-motion --allow-native --move-up-1cm
-
-python scripts/native_paper_smoke.py \
-  --config configs/dyna/A2ctrl.local.json --manifest manifests/native_smoke.json \
-  --output runs/native-policy-inspect --allow-native --policy-probe
+python -m pip install -e '.[plots]'
+python scripts/multibench/plot_results.py --report runs/cpu-check --output runs/cpu-plots
 ```
 
-These create new simulation episodes, not connections to real robots. The policy probe checks a `[10,7]` chunk but does **not** execute it. Next run a bare-policy smoke episode to test the entire actual policy path.
+Do not include those plots in a performance pitch.
 
-Inspect physical object bounds, sites, handle identity, joint axes/open-versus-closed direction, camera orientation and OSC scales before a full run. The library currently uses named physical-asset heuristics for region type and range endpoints for joint state. Freeze corrected **asset/mechanism** annotations; never add branches keyed by task ID, seed or success label. The simulator geometry is intentional, but native goal clauses must not be fed into the planner as an answer.
+## 7. Install sources and prepare real artifacts
 
-The 50 Hz watchdog hooks native simulation substeps. It verifies that callbacks actually fire. If the MuJoCo binding bypasses or forbids the hook, fix the adapter rather than calling a per-action 20 Hz check “50 Hz.” An exception after partial native stepping is marked uncertain and is not retried automatically. No hardware safety certification is implied.
-
-## 7. Experiment sequence and stopping rules
-
-**Stage 0 — parity audit and native bring-up.** Read the PDF, compare the fidelity matrix, check the supplemental code again, qualify state/geometry/controller/policy seams. Stop after repeated setup errors. Preserve complete failures rather than launching more workers.
-
-**Stage 1 — analytic competence.** Use a small disclosed development set covering surface placement, two-object receptacle placement, relational placement, a knob, a drawer, and a hinged door. Exercise the actual skills and inspect physical traces. This is development, not a held-out score. The first objective is useful physical behavior inside 300/520 steps. Fix gripping/presentation/corridor/entry geometry rather than adding more agent abstractions.
-
-**Stage 2 — matched systems and executor comparisons.** Freeze a candidate library and run `bare`, `A2static`, `A2seq`, `A2ctrl` on the same predeclared states. Start with a modest balanced pilot, then expand. Use the weak source reasoner first to avoid changing the central hypothesis.
+Source bootstrap is explicit and downloads no model weights or task assets:
 
 ```bash
-python scripts/run_paper_matrix.py \
-  --configs configs/dyna/bare.local.json configs/dyna/A2static.local.json \
-            configs/dyna/A2seq.local.json configs/dyna/A2ctrl.local.json \
-  --manifest manifests/paper_dev_800.json --output runs/paper-development \
-  --execute --allow-native --allow-api
-
-python paper_run.py compare runs/paper-development/A2static \
-  runs/paper-development/A2ctrl --contrast executor --output runs/paper-development/executor.json
-python paper_run.py compare runs/paper-development/bare \
-  runs/paper-development/A2ctrl --contrast system --output runs/paper-development/system.json
+python scripts/bootstrap.py --group robodojo --allow-network
+python scripts/bootstrap.py --group robocasa --allow-network
+# Only when working on the retained K1 path:
+python scripts/bootstrap.py --group core --allow-network
 ```
 
-The matrix runs sequentially in isolated processes and stops on incomplete/infrastructure-error arms. Parallelization should come only after a one-worker baseline is stable. Measure host load and make infrastructure replacement rules independent of which episodes succeed.
+Pins identify expected interfaces, **not** a universal Python/CUDA/Isaac lock. Use separate environments for Isaac/RoboDojo, each motor policy, RoboCasa's simulator/client, and Xiaomi's server. Follow upstream installation guides; do not install incompatible simulator/model pins into one environment. Native environments can install this package with `pip install -e . --no-deps` after their own dependencies are qualified. Read the source README before initializing submodules or downloading licensed assets.
 
-**Stage 3 — mechanism checks.** Audit actual traces for no forbidden A2static/A2seq branching; verify disabled capabilities are never dispatched. Run contact removal, recovery removal, no-policy and unlatched conditions as separate contrasts. Because the original exact rosters are absent, label our removals by their implemented names. Removing the policy can also affect routing; do not call that a pure causal estimate of VLA usefulness.
+Configure copies of the templates under `configs/local/` with absolute source/model locations. The provider templates contain intentionally invalid `/ABSOLUTE/PATH/...` placeholders and null weight identities. Do not replace them with invented hashes.
 
-**Stage 4 — failure-directed revision.** Cluster failed physical effects. Inspect the failed current state, not just a fresh reset. Change one reusable physical mechanism at a time, in physical quantities. Evaluate a paired targeted gate and then the broader set with the same candidate hash. Do not promote solely because one task improves. Keep diagnostic labels distinct from causal proof and record human/agent involvement in proposing the patch.
+For each provider, include weights, processors, normalizers and relevant model configurations under a clearly scoped artifact root:
 
-**Stage 5 — post-selection initial-state transfer.** Freeze everything before selecting/generating the new bank. Rerun the frozen-policy control on exactly the same bank. Report local counts, intervals, per-task breakdown, failure types, calls, environment steps and wall time. An improvement on known development cases is not proof of unseen-state generalization.
+```bash
+python run_bench.py hash-artifacts --root /path/to/provider-artifacts \
+  --output /path/to/provider-artifacts-manifest.json
+```
 
-**Stage 6 — K1 and stronger planners.** Replace privileged grounding with measured RGB-D plus K1, keeping execution constant where possible. This is the valuable harder extension, not the fastest route to reproducing the paper. Separately test a stronger planner and measure cost/latency. Neither intervention should be inserted silently into the source-matched row. Broader benchmarks come after the first result, not before.
+Store the manifest **outside** the hashed directory. Point `artifact_manifest` in the provider and experiment configs to it. Model files must stay fixed. Hash all ancillary assets, not merely the small final checkpoint.
 
-## 8. Acceptance criteria and interpretation
+For remote RoboDojo policies, bind the actual provider configuration to the experiment identities:
 
-There is no target percentage hard-coded into control or scoring. Aim to recover the source's qualitative pattern and competitive scale of gains through actual testing: competent analytic execution materially above the bare policy, and dynamic execution improving the same-library nominal comparator. Diagnose non-reproduction rather than extending budgets or changing a checkpoint under the same label.
+```bash
+python scripts/multibench/bind_policy.py \
+  --provider-config configs/local/pi05-provider.json \
+  --experiments configs/local/robodojo_pi05_motor_only.json \
+                configs/local/robodojo_pi05_review_every_chunk.json \
+                configs/local/robodojo_pi05_sparse.json \
+  --output configs/local/pi05-bound
+```
 
-A credible result bundle contains frozen code/config/checkpoint/environment hashes; a complete manifest; native videos for representative successes **and failures**; per-action evidence; full-denominator outcomes; actual A2static/A2seq audits; paired statistics; and a clearly listed source-parity gap table. Report sampling uncertainty and task-level distribution. Do not claim general industrial reliability from LIBERO-Pro.
+This writes new files, including `provider.json`. Its identity covers actual artifact contents and provider settings, so changed denoising/preprocessing settings cannot silently masquerade as the same policy server. For XPolicyLab providers, initialize from the corresponding five-provider template and use a separate bound directory.
 
-Synthetic tests verify software contracts, not grasping or a 75% task success rate. Comparable gains have **not** been measured on this host. The repository is materially closer to the paper's experiment, but native calibration, capability quality and complete evaluation remain the external agent's work.
+Start one provider in its own prepared policy environment:
 
-## 9. Source links and donor boundaries
+```bash
+python run_bench.py serve-policy --config configs/local/pi05-bound/provider.json \
+  --port 19600 --allow-policy
+```
 
-- Main paper: https://arxiv.org/abs/2609.40306 and https://arxiv.org/pdf/2609.40306v1
-- Project: https://denghaoyuan123.github.io/Dynaharness_page/
-- Linked implementation, unavailable when checked: https://github.com/Denghaoyuan123/DynaHarness
-- Project-page source (not runtime source): https://github.com/Denghaoyuan123/Dynaharness_page
-- RPent: https://github.com/RLinf/RPent
-- RPent docs: https://rpent.readthedocs.io/
-- RPent policy server: https://github.com/RLinf/RPent/blob/d2595ff270c7d66dbb2effb803f5e6d4d8e08f82/rpent/robots/components/pi05_vla_server.py
-- RLinf: https://github.com/RLinf/RLinf
-- Policy loader fork: https://github.com/RLinf/openpi
-- Official Physical Intelligence source/model documentation: https://github.com/Physical-Intelligence/openpi
-- LIBERO-PRO fork: https://github.com/RLinf/LIBERO-PRO
-- Original LIBERO-PRO: https://github.com/Zxy-MLlab/LIBERO-PRO
-- K1: https://github.com/Robo-Harness/k1 and https://arxiv.org/abs/2609.29389
-- K1 geometry: https://github.com/Robo-Harness/k1/blob/ee46363101fcf3ef87182fb2dbad99a92ce77fc0/src/robo_harness/geometry.py
+π0.5 additionally needs the donor's OpenPI server listening on its configured port; inspect `python -m hybrid_rollout.robodojo.pi05_server.server --help` in the correct JAX environment and follow the upstream launch guide. Intern/G0.5/Xiaomi load through their source Model implementations in their own interpreter. G0.5 changes working directory internally; use absolute paths. Do not concurrently share one mutable policy session between episodes. The local service only accepts one owner.
 
-RPent is a dependency donor, not evidence its published Harness VLA score uses our checkpoint/protocol. K1 is a later sensor-grounding donor. Intrinsic, Botrail, NVIDIA warehouse, industrial presentation, model training and BEHAVIOR integration are deliberately out of this reproduction's critical path.
+## 8. Select cases without importing solutions
 
-**First action for external Codex:** run the CPU tests, inspect the source/fidelity documents, provision one native environment, and make the first actual analytic pick/place complete under the official step budget. Then establish a matched baseline. Do not spend the next session rewriting the architecture or polishing a synthetic scorecard.
+RoboDojo import reads the donor's `public_results/evaluation_cases.json`, retaining only task/scene/seed identities, limits and timing. It discards reference successes, scores, token totals and solution histories. A source panel supplies actual layout hashes. The donor panel has60 source entries; the published comparison selects50 of them. Use the panel file that actually contains those selected cases and matches your assets, not a guessed filename.
+
+```bash
+python run_bench.py import-robodojo \
+  --source-results external/GPT-as-Policy/public_results/evaluation_cases.json \
+  --source-panel /path/to/verified-source-panel60.json \
+  --output configs/local/robodojo-cases.json
+```
+
+The importer groups variants/layouts of the same task together before assigning development/test. This prevents calling new seeds of an already optimized task “held-out tasks.” A formal source panel can be generated and checked using the donor `hybrid_rollout.robodojo.evaluation` module against your real assets. Its native-source file hashes must also match. The scripts never manufacture missing layout files.
+
+For RoboCasa, run in the configured simulator/client environment:
+
+```bash
+python run_bench.py robocasa-manifest --trials 50 --seed 7 --split pretrain \
+  --output configs/local/robocasa365-cases.json
+```
+
+This obtains task order and horizons from the installed registry. Episode seed is `7 + task_index * trials_per_task + trial_index`. Generating a one-trial manifest changes this sequence; do not present it as the first trial of the50-trial official matrix. For a small matched pilot, retain the full manifest and select a fixed number of its cases.
+
+## 9. Native bring-up before any expensive sweep
+
+Prepare the RoboDojo source/assets and its IsaacSim5.1/IsaacLab runtime. The launcher below starts a single donor server and the matching controller; it prints the plan by default. It does not reserve GPUs, acquire credentials or deploy to a cluster.
+
+```bash
+python scripts/multibench/launch_robodojo_case.py \
+  --config configs/local/pi05-bound/robodojo_pi05_motor_only.json \
+  --manifest configs/local/robodojo-cases.json --case-id YOUR_DEV_CASE \
+  --source-panel /path/to/verified-source-panel60.json \
+  --sim-python /path/to/isaac-env/bin/python \
+  --robodojo-root "$PWD/external/RoboDojo" \
+  --output runs/capture-001 --development --capture-only
+# Review the plan, then repeat the command with --execute.
+```
+
+Capture-only uses no motor inference, no paid API, and no robot action. It writes a lossless `observation.wire.json` for the speed bakeoff. It is limited to development cases. A capture does not become a successful benchmark episode.
+
+Readiness is taken from the server's stdout `event=ready` message. **Do not connect a TCP probe to test readiness:** the source accepts one controller connection. For a complete development motor episode, omit `--capture-only`, add `--allow-policy --execute`, and use a fresh output directory. For hybrid runs add `--allow-api`, after configuring authorized credentials. `K1LAB_SIM_PORT` and `K1LAB_NATIVE_OUTCOME_PATH` are per-episode operational locators, not algorithm changes.
+
+The launcher cleans up only its own process groups. Native assets, source revisions, renderer/driver availability, JAX/Torch inference and real controller tracking have not been tested here. Startup failures must be fixed before evaluation, not hidden by resetting until a case works.
+
+For RoboCasa, first run Xiaomi's native smoke command from its evaluation README. Then our runner is direct:
+
+```bash
+python run_bench.py run-case --config configs/local/robocasa365_xiaomi_motor_only.json \
+  --manifest configs/local/robocasa365-cases.json --case-id YOUR_DEV_CASE \
+  --output runs/rc-pilot --development --allow-native --allow-policy
+```
+
+The official Xiaomi server must already be running; its checkpoint path must be readable by the official client. Do not change the kitchen split, camera crop/history or normalization merely to make the pilot easier.
+
+## 10. Experiment sequence and stopping rules
+
+**Stage A — qualify execution.** Reset/render one development case with native conditions installed. Verify robot FK against proprioception, camera order, quaternion convention, gripper semantics, native step accounting and actual motor action. Test one complete episode. For Xiaomi RoboDojo, explicitly compare DLS execution with the source EE path. Stop a broken adapter rather than spending GPT tokens to compensate for it.
+
+**Stage B — policy speed/quality screen.** Test all four RoboDojo candidates on the same hardware and recorded observations, with warmup separated from timed calls:
+
+```bash
+python run_bench.py latency --config configs/local/pi05-bound/policy-remote.json \
+  --observations runs/capture-001/observation.wire.json \
+  --warmup 3 --repeats 30 --output runs/pi05-latency.json --allow-policy
+```
+
+For this command the config is the **policy object alone** from a bound experiment, not its full experiment JSON. `bind_policy.py` writes this policy-only file automatically. The independent-observation timing resets temporal memory and labels that fact. It is not a measurement of steady-state WAM execution. Warm p50/p90/p99, load time when available, VRAM and nominal milliseconds per exposed action are diagnostics; complete native episodes determine the actual trade-off.
+
+Replay observations may also be exported from a runner capture:
+
+```bash
+python scripts/multibench/export_observation.py \
+  runs/episode/controller/observations/000000 --output runs/input.wire.json
+```
+
+Run5–10 native development cases per candidate after interface checks. Keep failures. Select one or two useful policies based on complete-episode success and measured time, not a speculative architecture ranking. There is no requirement that a heavier policy lose: fewer failed grasps or fewer supervisor interventions can outweigh inference latency.
+
+**Stage C — matched harness comparison.** For each retained policy run motor-only, every-chunk review and sparse review. Keep weights, policy-source preprocessing, sensors, native controller, action horizons, task cases and model tier fixed. Also compare Sol direct dense vs direct sparse without a motor model. Changes to reasoning effort or serving tier are their own factor.
+
+**Stage D — RoboCasa365.** Qualify the official XR1-only baseline, then compare sparse Sol, optionally every-chunk Sol. Begin with a preregistered balanced subset. Full target50/2500 evaluation is downstream of native bring-up and budget review. Re-check live submission rules before any leaderboard claim; they are not automatically validated by this repository.
+
+**Stage E — sensing/transfer extensions.** Only after useful physical results: port K1 calibrated RGB-D/geometry into RoboDojo, add generic observation-driven sensing, or transfer across benchmark/embodiment. Additional depth is a sensor/tool intervention, not an unchanged-input runtime result. Distillation, training, task-specific skill synthesis and FLUX retargeting are out of scope today.
+
+## 11. Freeze and qualification
+
+Generate an initially **unapproved** qualification record:
+
+```bash
+python scripts/multibench/qualification_template.py \
+  --config configs/local/experiment.json --output configs/local/qualification.json
+```
+
+Fill it only after real tests, attaching actual evidence paths and SHA256s. It checks source/config binding, reset/render, action conventions, nonvacuous native completion, legal actor input, policy ACK semantics and native timing. It is an operator-reviewed evidence gate, not automatic proof of robot safety.
+
+After development, freeze source, manifests and resolved configurations:
+
+```bash
+python run_bench.py freeze --manifest configs/local/robodojo-cases.json \
+  --configs configs/local/pi05-bound/robodojo_pi05_review_every_chunk.json \
+            configs/local/pi05-bound/robodojo_pi05_sparse.json \
+  --output configs/local/freeze.json
+```
+
+A scored `run-case` requires `--freeze` and the corresponding `--qualification`, and does not use `--development`. Any source or resolved configuration edit requires a new experiment/freeze. `plan_matrix.py` writes deterministic jobs and maximum model-call/output-token reservations without executing them. Those reservations are **not a dollar budget**. Review total account/compute limits before handing a matrix to a scheduler.
+
+## 12. Metrics and truthful comparisons
+
+Record native success, separately available partial score, task-weighted and episode-weighted rates, missing/error/censored counts, native control steps and simulated seconds, wall time, model requests, cached/uncached input, output/reasoning tokens, policy calls, corrections, interruptions and invalidations.
+
+Timings separate environment stepping, policy blocking calls, ACK transport, robot-FK preview and supervisor waiting. Warm episode elapsed time excludes initial model-server loading and initial server startup; those have separate records. Simulation is paused while the model is thinking in these interfaces. This is **not** evidence of real-time performance with moving real-world objects.
+
+Cached tokens are not free computational work, but neither are they priced like uncached input. Reasoning tokens are a subset of output tokens and must not be added twice. Missing usage fields remain null. Unknown API responses retain output reservations and are not silently retried. Token caps and request-byte caps do not provide a complete dollar guarantee.
+
+```bash
+python run_bench.py report --manifest configs/local/robodojo-cases.json \
+  --runs runs/eval --partition test --output reports/robodojo \
+  --conditions robodojo_pi05_review_every_chunk robodojo_pi05_sparse \
+  --baseline robodojo_pi05_review_every_chunk --candidate robodojo_pi05_sparse
+```
+
+Missing runs stay in the success denominator. Partial-score means show coverage instead of replacing unavailable scores with zero. Timing means disclose available-run coverage. Paired comparisons detect differing policy/model/environment identities and bootstrap by task group. Hardware/runtime and actual served-model records must be checked by the external agent as well; hashes cannot prove a methodology is fair.
+
+Choose a success-vs-wall-time plot and a success-vs-model-calls plot from actual runs. A speed gain with many more failed or early-abandoned episodes is not automatically an improvement. Sparse execution may reduce calls but hurt recovery; negative results should remain visible.
+
+## 13. Sources and pinned revisions
+
+Full source pointers are also in `docs/multibench/SOURCES.md` and `upstream.lock.json`.
+
+- [GPT-as-Policy](https://github.com/anonymous-report-421/GPT-as-Policy/tree/8f3d362b077d8efb77e2a7274d5b2c20e2243846): native RoboDojo server/session, robot FK/DLS, π0.5 client, paired case identity, outcome/intent gate.
+- [XPolicyLab](https://github.com/XPolicyLab/XPolicyLab/tree/408b99d959a7b2207f5f785528fefcc019d7b131): `policy/G05`, `policy/Xiaomi_Robotics_1`, `policy/InternW0_delta` source contracts and model loaders.
+- [Xiaomi R1](https://github.com/XiaomiRobotics/Xiaomi-Robotics-1/tree/0dd7aef8dc87296246aae812a1f59ccb708e5546): `eval_robocasa365/README.md`, `entry.py`, official client/server setup.
+- [RoboCasa](https://github.com/robocasa/robocasa/tree/456174f62b89b8fca99eaaf33949c29fec9cfc2a): native registry, Gym wrapper and `convert_action`.
+- [RoboDojo](https://github.com/RoboDojo-Benchmark/RoboDojo): donor records `ee67a1468510da7624a089164402359f2afc72c8`; assets/submodules must be obtained separately.
+- [RoboDojo data/checkpoints](https://huggingface.co/datasets/RoboDojo-Benchmark/RoboDojo), [G0.5 RoboDojo](https://huggingface.co/OpenGalaxea/g05-robodojo), [InternW0-Delta RoboDojo](https://huggingface.co/InternRobotics/InternW0-Delta-RoboDojo), [XR1 RoboCasa365](https://huggingface.co/XiaomiRobotics/Xiaomi-Robotics-1-RoboCasa365).
+- [K1](https://github.com/Robo-Harness/k1/tree/ee46363101fcf3ef87182fb2dbad99a92ce77fc0), [RPent](https://github.com/RLinf/RPent/tree/d2595ff270c7d66dbb2effb803f5e6d4d8e08f82): retained prior integration/reference.
+- [GPT-6.1 Sol documentation](https://developers.openai.com/api/docs/models/gpt-6.1-sol), [Flex processing](https://developers.openai.com/api/docs/guides/flex-processing).
+- [RoboCasa live rules/results](https://robocasa.ai/leaderboard.html), [RoboDojo](https://robodojo-benchmark.com/), [RoboICL](https://github.com/Mosi-AI/RoboICL), [RoboDawn](https://github.com/Hugo-AGI/RoboDawn): reference/discovery, not rerun results in this archive.
+
+## 14. Build-host limits and next deliverable
+
+Source interfaces were inspected through the GitHub connector; direct upstream clones/downloads were not possible on the build host. No GPU model or simulator was available. Unit tests use explicit doubles, not silently mocked native runs. The release includes code, source pins, configuration templates, CPU evidence and tests, but not external assets, weights, credentials or fonts.
+
+The next deliverable should be **one auditable native pilot per viable interface**, a small speed screen, and then a frozen paired result. Do not write another broad platform before obtaining those physical observations. Preserve the original K1/BEHAVIOR work and unrelated remote processes.

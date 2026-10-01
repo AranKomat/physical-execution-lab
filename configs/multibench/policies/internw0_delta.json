@@ -1,0 +1,36 @@
+{
+  "artifact_manifest": "/ABSOLUTE/PATH/policy-artifacts.json",
+  "backend": "xpolicylab",
+  "gripper_clip": false,
+  "identity": {
+    "action_space": "x5_joint14",
+    "benchmark_training": "RoboDojo task/embodiment post-trained",
+    "checkpoint_sha256": null,
+    "execute_steps": 10,
+    "name": "internw0_delta_robodojo",
+    "native_hz": 25.0,
+    "prediction_horizon": 32,
+    "preprocessing_id": "xpl_wam_three_view_canvas_actual_ack",
+    "revision": "408b99d959a7b2207f5f785528fefcc019d7b131",
+    "stateful": true
+  },
+  "model_config": {
+    "action_horizon": 32,
+    "action_hz": 25.0,
+    "action_type": "joint",
+    "allow_dummy_policy": false,
+    "checkpoint_path": "/ABSOLUTE/PATH/robodojo.pt",
+    "device": "cuda",
+    "env_cfg_type": "arx_x5",
+    "mixed_precision": "bf16",
+    "negative_prompt": "",
+    "num_inference_steps": 10,
+    "rand_device": "cpu",
+    "replan_steps": 10,
+    "text_cfg_scale": 1.0,
+    "tiled": false,
+    "timing_enabled": true
+  },
+  "policy": "internw0_delta",
+  "xpolicylab_root": "external/XPolicyLab"
+}

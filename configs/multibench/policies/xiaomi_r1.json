@@ -1,0 +1,29 @@
+{
+  "artifact_manifest": "/ABSOLUTE/PATH/policy-artifacts.json",
+  "backend": "xpolicylab",
+  "gripper_clip": false,
+  "identity": {
+    "action_space": "x5_eef16_wxyz",
+    "benchmark_training": "RoboDojo task/embodiment post-trained",
+    "checkpoint_sha256": null,
+    "execute_steps": 30,
+    "name": "xiaomi_r1_robodojo",
+    "native_hz": 25.0,
+    "prediction_horizon": null,
+    "preprocessing_id": "xpl_xr1_mibot_to_env_absolute_ee",
+    "revision": "408b99d959a7b2207f5f785528fefcc019d7b131",
+    "stateful": false
+  },
+  "model_config": {
+    "action_length": 30,
+    "action_type": "ee",
+    "bench_name": "RoboDojo",
+    "env_cfg_type": "arx_x5",
+    "image_factor": 32,
+    "image_max_pixels": 160000,
+    "model_dir": "/ABSOLUTE/PATH/Xiaomi_Robotics_1",
+    "vlm_processor_path": "Qwen/Qwen3-VL-4B-Instruct"
+  },
+  "policy": "xiaomi_r1",
+  "xpolicylab_root": "external/XPolicyLab"
+}

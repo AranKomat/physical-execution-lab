@@ -1,0 +1,62 @@
+{
+  "runs/multibench_cpu/direct_dense/toy_0/events.jsonl": {
+    "events": 54,
+    "head_sha256": "24eb5971ab5e4ee3ae0dcedb747ef5c78df4cba6a26cddf24a82cab1c695c86b"
+  },
+  "runs/multibench_cpu/direct_dense/toy_1/events.jsonl": {
+    "events": 54,
+    "head_sha256": "d67bae63867218b99272a92034e7448edd6f6f21c4e6af60bb423b15ecd86d46"
+  },
+  "runs/multibench_cpu/direct_dense/toy_2/events.jsonl": {
+    "events": 54,
+    "head_sha256": "9bed30c2ff5dd8ec9b6dcc96329d470c222eccc7881d1424d60df3b55efa6987"
+  },
+  "runs/multibench_cpu/direct_sparse/toy_0/events.jsonl": {
+    "events": 44,
+    "head_sha256": "d39742a6ed09ae48b389d573380040da8f35e354b46aa2b6c6f2464f2f24c16d"
+  },
+  "runs/multibench_cpu/direct_sparse/toy_1/events.jsonl": {
+    "events": 44,
+    "head_sha256": "766e3af9f2526359f18860f44d30b0141f76a9bd9ada929aba5ed0ba592cabe8"
+  },
+  "runs/multibench_cpu/direct_sparse/toy_2/events.jsonl": {
+    "events": 44,
+    "head_sha256": "bd437b14d00860dc9d0dfb98a2a65dc1230a6fefdf846c8d429f6c13195b9b01"
+  },
+  "runs/multibench_cpu/motor_only/toy_0/events.jsonl": {
+    "events": 50,
+    "head_sha256": "f820bb50c52a059e264aae6b62ebe177945ebc5ebcfb5146a6b14b80d38fb098"
+  },
+  "runs/multibench_cpu/motor_only/toy_1/events.jsonl": {
+    "events": 50,
+    "head_sha256": "47a6888d7472b790403be4712beb9e0c4aa40694fdc8b738d572733085954c7c"
+  },
+  "runs/multibench_cpu/motor_only/toy_2/events.jsonl": {
+    "events": 50,
+    "head_sha256": "1e90f59f73674916050fff97bb41f1d94e895781ace32cdad84585d61c365312"
+  },
+  "runs/multibench_cpu/review_every_chunk/toy_0/events.jsonl": {
+    "events": 56,
+    "head_sha256": "0d52660fed2b7294246d80308a014a5177d7572969e6db738ad88175417a1812"
+  },
+  "runs/multibench_cpu/review_every_chunk/toy_1/events.jsonl": {
+    "events": 56,
+    "head_sha256": "a2c82f6001446ef25202c063ecddacf186f9ba197cd699c6f15d04659352a5e7"
+  },
+  "runs/multibench_cpu/review_every_chunk/toy_2/events.jsonl": {
+    "events": 56,
+    "head_sha256": "bb6d940e2c02215914aaf20ec12e3f0959b82f9be3cba0c6d8ea9a76f51a3d0c"
+  },
+  "runs/multibench_cpu/sparse/toy_0/events.jsonl": {
+    "events": 52,
+    "head_sha256": "4605c61af4edc866c488fcdc3ecc81fdc4acd5e5c4c4046ffbeece3803eb8c11"
+  },
+  "runs/multibench_cpu/sparse/toy_1/events.jsonl": {
+    "events": 52,
+    "head_sha256": "e099121700b7550d8b0e8d05ac5b3c733c9ab733f4d75f6cf2a1258b13872e6e"
+  },
+  "runs/multibench_cpu/sparse/toy_2/events.jsonl": {
+    "events": 60,
+    "head_sha256": "bdd33eee38f32061fbc2693a59f8407692d2bac9ae7dee34e58157a2c0948559"
+  }
+}

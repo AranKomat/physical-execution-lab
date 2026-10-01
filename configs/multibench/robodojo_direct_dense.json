@@ -1,0 +1,35 @@
+{
+  "benchmark": "robodojo",
+  "classification": "no_robot_policy_training",
+  "controller_qualification_required": true,
+  "environment": {
+    "backend": "robodojo_rpc",
+    "gpt_as_policy_root": "external/GPT-as-Policy",
+    "sim_port": 19113
+  },
+  "max_correction_steps": 5,
+  "max_decision_steps": 5,
+  "max_reviews": 180,
+  "mode": "direct_dense",
+  "model": {
+    "api_key_env": "OPENAI_API_KEY",
+    "base_url": "https://api.openai.com/v1",
+    "history_rounds": 4,
+    "image_max_edge": 480,
+    "max_output_tokens": 2048,
+    "max_requests": 180,
+    "max_total_output_tokens": 368640,
+    "model": "gpt-6.1-sol",
+    "reasoning_effort": "medium",
+    "service_tier": "default",
+    "timeout_s": 300,
+    "transport": "responses"
+  },
+  "name": "robodojo_direct_dense",
+  "no_task_demonstrations": true,
+  "no_task_memory": true,
+  "policy": null,
+  "robot_preview": false,
+  "translation_limit_m": 0.05,
+  "wall_limit_s": 3600
+}

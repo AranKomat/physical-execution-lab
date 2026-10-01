@@ -1,0 +1,22 @@
+{
+  "artifact_dir": "/ABSOLUTE/PATH/NEW_POLICY_ARTIFACTS",
+  "artifact_manifest": "/ABSOLUTE/PATH/policy-artifacts.json",
+  "backend": "pi05",
+  "checkpoint_path": "/ABSOLUTE/PATH/RoboDojo-sim-arx_x5-joint-0/59999",
+  "gpt_as_policy_root": "external/GPT-as-Policy",
+  "identity": {
+    "action_space": "x5_joint14",
+    "benchmark_training": "RoboDojo task/embodiment post-trained",
+    "checkpoint_sha256": null,
+    "execute_steps": 15,
+    "name": "pi05_robodojo",
+    "native_hz": 25.0,
+    "prediction_horizon": 50,
+    "preprocessing_id": "gpt_as_policy_openpi_jax_cam3_joint14",
+    "revision": "8f3d362b077d8efb77e2a7274d5b2c20e2243846",
+    "stateful": false
+  },
+  "native_checkpoint_sha256": null,
+  "policy": "pi05",
+  "port": 19114
+}

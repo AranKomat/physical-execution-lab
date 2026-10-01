@@ -1,9 +1,0 @@
-{
-  "arm": "unlatched",
-  "trace_count": 4,
-  "planned": 4,
-  "valid": true,
-  "errors": [],
-  "source": "synthetic",
-  "note": "Passing checks does not establish paper performance or native physical correctness."
-}

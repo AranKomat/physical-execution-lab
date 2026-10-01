@@ -1,0 +1,7 @@
+{
+  "chromium_set_content_render": true,
+  "synthetic_label_present": true,
+  "network_requests": 0,
+  "javascript_errors": [],
+  "scope": "Generated report DOM rendering only; file navigation blocked by browser environment, no robot simulation"
+}
