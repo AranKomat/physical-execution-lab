@@ -14,7 +14,7 @@ code/evidence remain archived. Xiaomi's separate RoboCasa365 track is unchanged.
 | A: native qualification | Partial | Reset/render/FK/joint ACK passed; PyTorch and seeded FLA G0.5 succeeded on the same sorting layout. Other interfaces remain unqualified |
 | B: speed/quality screen | G0.5 screen complete; pi0.5 blocked | Fixed five-case G0.5 screen: 3 successes, 2 native-limit failures; 30-sample seeded FLA timing. Exact pi0.5 unavailable; no substitute |
 | C: matched harness comparison | Started, incomplete | Flex route verified; two zero-motion native attempts failed on routing/capacity. No matched physical result or held-out freeze |
-| D: RoboCasa365 | Baseline development screen complete; comparison pending | Fixed six-case harness screen: 2/6 success, no infrastructure errors. Initial official-client chunk matches exactly. Sparse kettle pilot reached 50 steps then Flex capacity failed |
+| D: RoboCasa365 | Motor-only bridge qualified; comparison pending | Fixed six-case harness screen: 2/6 success, no infrastructure errors. Initial official-client chunk matches exactly. Evidence-reviewed motor-only qualification recorded; supervision/corrections remain unqualified. Sparse kettle pilot reached 50 steps then Flex capacity failed |
 | E: sensing/transfer | Deferred as specified | Only after useful matched physical results; no RGB-D port claimed |
 
 ## Completed Milestones
@@ -68,7 +68,13 @@ native actions, two separate 20 mm upward targets and return, zero paid calls.
 See [the controller report](EEF_CONTROLLER_CHECK_20261002.md). This is not contact
 qualification or Stage C completion. The budget-enforced Responses route is
 verified for the actual Sol 6.1 model and Flex tier. Native supervision has not
-yet executed actions. See [bring-up update](SUPERVISION_RC365_BRINGUP_20261002.md).
+yet completed an episode; XR1's incomplete sparse trial executed 50 actions.
+See [bring-up update](SUPERVISION_RC365_BRINGUP_20261002.md).
 The $85 shared ceiling and all unresolved holds remain. Latest snapshot:
 $75.934460744300 spent plus holds, 154 unsettled reservations; no automatic
 retry or Standard fallback. See [XR1 screen and next gate](XR1_DEVELOPMENT_SCREEN_20261002.md).
+
+Motor-only native bridge qualification is now evidence-reviewed and bound to
+the exact resolved configuration, not applied to supervision by inference.
+See [qualification review](XR1_NATIVE_QUALIFICATION_20261002.md). Raw historical
+development results remain unchanged; Stage D and held-out comparisons are open.

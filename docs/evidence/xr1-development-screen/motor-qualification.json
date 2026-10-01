@@ -1,0 +1,31 @@
+{
+  "schema": "multibench.qualification.v1",
+  "config_sha256": "368fbcda158133fe2c57f881ff739c9b36c787da0f79f5759ac597218848eb30",
+  "checks": {
+    "native_reset_render": true,
+    "action_space_verified": true,
+    "native_completion_not_vacuous": true,
+    "current_sensor_only_actor": true,
+    "policy_observation_ack_verified": true,
+    "controller_timing_verified": true
+  },
+  "evidence": [
+    {
+      "path": "docs/evidence/xr1-bringup/initial-parity.json",
+      "sha256": "33af8810dca8b47070e6c823348e93678f63d60b570914f454e81f59499c76bf"
+    },
+    {
+      "path": "docs/evidence/xr1-development-screen/audit.json",
+      "sha256": "19b246e397d0e6eb66b62521c0e18da74d0285441887224e47d8a551b5a4e405"
+    },
+    {
+      "path": "docs/evidence/xr1-development-screen/outcomes.json",
+      "sha256": "434423799ae47785ca43911ccb5eb99c262897b8cb9b4ed4ced3c93f69889cb5"
+    },
+    {
+      "path": "k1lab/multibench/adapters/robocasa.py",
+      "sha256": "4640172e77ae02dd4692b0b7105dd6ac76f4b30bfcc888bbe3d416b885544b2e"
+    }
+  ],
+  "operator_notes": "Evidence-reviewed 2026-10-02 by Codex. Motor-only resolved configuration ONLY; no GPT correction qualification or supervision benefit established. Paths resolve from repository root. Six full development episodes, initial official-client prefix parity and source review support these software-contract checks. Native timing means 20 Hz action semantics and exactly-once step accounting, not real-time wall performance. Original result evidence_kind remains native_unqualified: this retrospective record does not rewrite history or convert development results into held-out results. See docs/XR1_NATIVE_QUALIFICATION_20261002.md."
+}
