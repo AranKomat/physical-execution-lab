@@ -1,5 +1,9 @@
 # Exact Pi0.5 Access And Comparison Gates
 
+This is the provisioning snapshot. The runtime and first complete native episode
+now pass; see [the pi0.5 native pilot](PI05_NATIVE_PILOT_20261002.md). Remaining
+screen/timing work and the paid-lane limitations are not closed by provisioning.
+
 ## Checkpoint Provisioned
 
 The exact RoboDojo pi0.5 access blocker is resolved. The public dataset

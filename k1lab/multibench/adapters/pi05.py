@@ -2,6 +2,7 @@
 from __future__ import annotations
 from pathlib import Path
 import sys
+import tempfile
 import numpy as np
 from k1lab.errors import ContractError
 from ..types import Action,Proposal,PolicyIdentity
@@ -22,6 +23,8 @@ class Pi05Policy:
         expected=config.get('native_checkpoint_sha256')
         if expected is not None and client.metadata.get('checkpoint_sha256')!=expected:
             raise ContractError('source-server checkpoint hash differs')
+        # Fresh bridges share one bound recording root without overwriting prior episodes.
+        self.output=Path(tempfile.mkdtemp(prefix='session-',dir=self.output))
     def reset(self):pass # stateless action generation; server index persists by contract
     def observe(self,obs):pass
     def invalidate(self,reason):pass # suffix held by caller only, never by source client

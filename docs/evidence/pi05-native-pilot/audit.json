@@ -1,0 +1,26 @@
+{
+  "scope": "Offline integrity and execution accounting; not physical safety or independent visual scoring",
+  "result_sha256": "ff4b547b4e7f255f4b7cfa279d16810c600da1ba189489a71723286d51107cc3",
+  "journal": {
+    "events": 1197,
+    "head_sha256": "34272351c9ac2759d91bc135d9d57448db14cfdfa66201da9ba3a172e45cf396"
+  },
+  "contiguous_ack_verified": true,
+  "actual_steps": 994,
+  "source_inference_indices_verified": "0 through 66 inclusive",
+  "all_prediction_horizons_50": true,
+  "proposed_actions": 3350,
+  "executed_actions": 994,
+  "discarded_actions": 2356,
+  "unresolved_actions": 0,
+  "native_evaluator_success": true,
+  "native_evaluator_score": 1.0,
+  "native_limit": 1100,
+  "initial_proprio_equal_to_g05_same_case": true,
+  "initial_rgb_byte_identical_to_g05": false,
+  "initial_rgb_mean_absolute_difference_0_to_255": {
+    "cam_high": 0.4154047309027778,
+    "cam_left_wrist": 0.33867947048611113,
+    "cam_right_wrist": 0.31994466145833333
+  }
+}

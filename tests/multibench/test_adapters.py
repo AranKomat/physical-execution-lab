@@ -330,7 +330,18 @@ class PiClient:
 
 def test_pi05_keeps_h50_and_artifacts(tmp_path):
     p=Pi05Policy({'identity':ident(execute=15),'artifact_dir':str(tmp_path),'native_checkpoint_sha256':'b'*64},PiClient())
-    q=p.propose(observation());assert len(q.actions)==50 and (tmp_path/'proposal_000000.npz').exists()
+    q=p.propose(observation());assert len(q.actions)==50 and (p.output/'proposal_000000.npz').exists()
+
+
+def test_pi05_fresh_bridges_do_not_overwrite_proposals(tmp_path):
+    cfg={'identity':ident(execute=15),'artifact_dir':str(tmp_path),
+         'native_checkpoint_sha256':'b'*64}
+    first=Pi05Policy(cfg,PiClient());first.propose(observation())
+    second=Pi05Policy(cfg,PiClient());second.propose(observation())
+    assert first.output!=second.output
+    assert first.output.parent==second.output.parent==tmp_path
+    assert (first.output/'proposal_000000.npz').exists()
+    assert (second.output/'proposal_000000.npz').exists()
 
 
 def test_pi05_source_hash_independent_manifest(tmp_path):
