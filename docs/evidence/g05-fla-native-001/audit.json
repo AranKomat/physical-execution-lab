@@ -1,0 +1,10 @@
+{
+  "events": 917,
+  "head_sha256": "ec43948a7cbdc4ac0e20b540e873eb4523564cbd2b84a102a1266df88fa9c8a4",
+  "max_gripper_clip_delta": 0.003450155258178711,
+  "policy_rng_seed": 0,
+  "raw_gripper_max": 1.0034501552581787,
+  "raw_gripper_min": 0.07987779378890991,
+  "seeded_proposals": 51,
+  "sequential_acks": 812
+}

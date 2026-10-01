@@ -6,6 +6,7 @@ replay hypothetical policy steps to advance the model's internal state.
 """
 from __future__ import annotations
 import importlib
+import random
 from pathlib import Path
 import sys
 import numpy as np
@@ -15,6 +16,14 @@ from .robodojo import check_checkout
 
 REV='408b99d959a7b2207f5f785528fefcc019d7b131'
 MODULES={'g05':'G05','xiaomi_r1':'Xiaomi_Robotics_1','internw0_delta':'InternW0_delta'}
+
+
+def seed_policy(seed):
+    if isinstance(seed,bool) or not isinstance(seed,int) or not 0<=seed<2**32:
+        raise ContractError('policy_rng_seed must be a uint32 integer')
+    import torch
+    random.seed(seed);np.random.seed(seed);torch.manual_seed(seed)
+    if torch.cuda.is_available():torch.cuda.manual_seed_all(seed)
 
 
 def to_xpl(obs):
@@ -52,6 +61,8 @@ def decode_xpl(rows, space, gripper_clip=False):
 class XPolicyModel:
     def __init__(self,config,model=None):
         self.config=dict(config);self.identity=PolicyIdentity(**config['identity'])
+        self.rng_seed=config.get('policy_rng_seed')
+        if self.rng_seed is not None:seed_policy(self.rng_seed)
         name=config['policy']
         if name not in MODULES:raise ContractError('unsupported XPolicyLab policy')
         cfg=dict(config.get('model_config',{}))
@@ -65,6 +76,7 @@ class XPolicyModel:
         self.pending=0;self.last_diag={}
 
     def reset(self):
+        if self.rng_seed is not None:seed_policy(self.rng_seed)
         self.model.reset();self.last_stamp=None;self.last_step=None;self.episode=None;self.pending=0
 
     def observe(self,obs):
@@ -87,6 +99,7 @@ class XPolicyModel:
         self.pending=len(actions)
         return Proposal(obs.stamp,obs.step,self.identity.identity,actions,
                         {'gripper_clips':clipped,'native_returned_actions':len(actions),
+                         'policy_rng_seed':self.rng_seed,
                          'raw_gripper_min':float(grippers.min()),'raw_gripper_max':float(grippers.max()),
                          'max_gripper_clip_delta':float(clip_delta.max())})
 

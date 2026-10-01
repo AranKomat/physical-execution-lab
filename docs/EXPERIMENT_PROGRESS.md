@@ -6,8 +6,8 @@ Use Sol 6.1 Flex for the eventual supervisor comparisons. No paid calls yet.
 | Stage | Status | Actual evidence / remaining gate |
 |---|---|---|
 | Pre-GPU | Complete | CPU suite, synthetic audit, source inspection and config preparation |
-| A: native qualification | Partial | Reset/render/FK/joint ACK passed; G0.5 motor-only completed and succeeded once. Other providers, RNG binding and timing variants remain |
-| B: speed/quality screen | Partial | G0.5 bound 30-sample replay latency and one native case; optimized FLA raw probe. Need other candidates and 5–10 development cases per viable policy |
+| A: native qualification | Partial | Reset/render/FK/joint ACK passed; PyTorch and seeded FLA G0.5 succeeded on the same sorting layout. Other interfaces remain unqualified |
+| B: speed/quality screen | Partial | G0.5 replay latency and two same-layout runtime pilots; Intern stock BF16 loading exceeds 24 GB. Need 5–10 development cases per viable policy and isolated timing |
 | C: matched harness comparison | Not started | No paid review runs, direct comparison or held-out freeze |
 | D: RoboCasa365 | Not started | Official XR1 checkpoint/environment/native baseline still needed |
 | E: sensing/transfer | Deferred as specified | Only after useful matched physical results; no RGB-D port claimed |
@@ -25,9 +25,11 @@ Use Sol 6.1 Flex for the eventual supervisor comparisons. No paid calls yet.
 
 ## Remaining Milestones
 
-- [ ] Explicit policy RNG binding and raw clipping-range audit for future runs.
-- [ ] Full native episode for optimized G0.5 before adopting that variant.
-- [ ] Intern real inference, memory fit, native episode and temporal-ACK checks.
+- [x] Explicit policy RNG binding and raw clipping-range diagnostics for future runs.
+- [x] Optimized seeded G0.5 full native episode: success, score 1.0, 812 actions,
+  51 policy calls, zero paid calls/corrections; provisional development runtime.
+- [ ] Intern inference/native qualification: stock BF16 loader exhausted an idle
+  24 GB 4090 before inference; offload/sharding or larger VRAM remains untested.
 - [ ] Exact RoboDojo pi0.5 checkpoint access; currently unavailable.
 - [ ] Xiaomi RoboDojo native EE versus donor DLS qualification.
 - [ ] 5–10 development cases per viable candidate; retain all failures.
@@ -37,3 +39,11 @@ Use Sol 6.1 Flex for the eventual supervisor comparisons. No paid calls yet.
 See [the first pilot report](NATIVE_PILOT_20261002.md) for methods, limitations,
 timing, exact identities and evidence pointers. Large native traces/video are
 local under `runs/native-evidence/g05-native-002/`, not actor memory or Git weights.
+
+See [the seeded development update](DEVELOPMENT_UPDATE_20261002.md) for the Intern
+memory failure and [parallel execution rules](PARALLEL_EXECUTION.md) for scheduling.
+The next five-case motor development roster is fixed as sorting layout 0,
+tower-building layout 0, sorting layout 1, tower-building layout 1, sorting
+layout 2 (all source seed 0, all development partition). Retain failures; do not
+replace cases after observing their outcomes. Expand to the remaining five
+development entries if needed before freezing matched supervision comparisons.

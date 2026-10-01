@@ -167,6 +167,22 @@ class XModel:
 def xpolicy():
     model=XModel();return XPolicyModel({'policy':'internw0_delta','identity':ident()},model=model),model
 
+
+def test_policy_seed_applied_before_load_and_each_episode(monkeypatch):
+    import k1lab.multibench.adapters.xpolicylab as bridge
+    calls=[];monkeypatch.setattr(bridge,'seed_policy',calls.append)
+    policy=XPolicyModel({'policy':'g05','identity':ident(),'policy_rng_seed':7},model=XModel())
+    assert calls==[7]
+    policy.reset();policy.reset()
+    assert calls==[7,7,7]
+    assert policy.propose(observation()).diagnostics['policy_rng_seed']==7
+
+
+@pytest.mark.parametrize('seed',[-1,2**32,True,1.5,'0'])
+def test_invalid_policy_seed_rejected(seed):
+    from k1lab.multibench.adapters.xpolicylab import seed_policy
+    with pytest.raises(ContractError):seed_policy(seed)
+
 def test_clipped_provider_retains_raw_gripper_diagnostics():
     model=XModel();rows=native_rows();rows[0]['left_ee_joint_state']=np.array([1.1])
     model.get_action=lambda:rows
