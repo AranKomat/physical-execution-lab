@@ -57,7 +57,10 @@ code/evidence remain archived. Xiaomi's separate RoboCasa365 track is unchanged.
 
 Removed from active scope: Intern inference/native qualification (stock BF16
 loader exceeded 24 GB), and Xiaomi RoboDojo native EE versus donor DLS checks.
-No further provisioning or experiments for these RoboDojo candidates are planned.
+Owner subsequently reopened Intern feasibility. Its two-GPU probe now loads and
+completes four action inferences, warm median 820 ms/10 exposed actions;
+native qualification remains pending. Xiaomi RoboDojo remains deferred. See
+[two-GPU Intern probe](INTERN_TWO_GPU_PROBE_20261002.md).
 
 See [the first pilot report](NATIVE_PILOT_20261002.md) for methods, limitations,
 timing, exact identities and evidence pointers. Large native traces/video are

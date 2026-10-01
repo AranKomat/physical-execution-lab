@@ -768,7 +768,7 @@
     "tests/test_runner.py": "1367ffdeaa9b9c598979e6af98b5c3f9fee3f0bee3256524ad491f3ea14944e9",
     "upstream.lock.json": "553a969210291a8d72a6ae9d0dcd0b49d696e3377125ba400079762a67390a9e",
     "docs/NATIVE_PILOT_20261002.md": "3c481089ade9c7ca93bd0fe1775230966ad8a691d5c805d1751c16edb18acb10",
-    "docs/EXPERIMENT_PROGRESS.md": "e20e8f8748f713927fd80aaba106027e55530671072c0aaed91945a3e0a88552",
+    "docs/EXPERIMENT_PROGRESS.md": "07bee56d3badc86745c94148bd4a382e056b54f3d6144f879f20ad4a81750eb9",
     "scripts/multibench/prepare_g05_bundle.py": "d976e0a3c611ab8ab660e0c735695d30ab68f310e16ce8510a52d5a593a7e332",
     "docs/evidence/g05-native-002/evaluation_outcome.json": "c9c9756f6697ae64e36d0617ba0ed4d1a36d81c2e2853ab8a7c96d57d43f6024",
     "docs/evidence/g05-native-002/fk_validation.json": "d78c3f14caf685676a9fc9e3c82c74377eb5d4e111afe64d0d7142abb1ba6fe4",
@@ -883,11 +883,16 @@
     "docs/evidence/robodojo-motor-qualification/pi05-freeze.json": "c5906d1f4e6c51ca101fc0cc15fc82dae2ea69ab56b7920f9fac41354dc3e441",
     "docs/evidence/robodojo-motor-qualification/pi05.json": "144bebdb5c7c0665daa11b9d2989ef1bd9966808d54d015f6cbfbcbc4f48fc5e",
     "docs/evidence/robodojo-motor-qualification/xr1-freeze.json": "e77f0d4c29791d2d6ea59038ec423540eedee9cd75f10be7163edd7efe1c5eee",
-    "docs/RESEARCH_PROGRESS_HANDOFF_20261002.md": "426b94f784992836886a026ed2ac53e66ca919f18fe2a3c0e68a1fa2966d43e9",
+    "docs/RESEARCH_PROGRESS_HANDOFF_20261002.md": "de97464d9721d1465a0d8573c44c73ad0d6f45bdb5734d9d75f2b17abf6d7cfc",
     "docs/evidence/pi05-every-chunk-sol-flex-dev-001/api-summary.json": "78467ebecadb5247bbe9d8363125ba1e42cfbc9fa16f055b386876ea2aaaf54a",
     "docs/evidence/pi05-every-chunk-sol-flex-dev-001/backup-verification.json": "1ffa223d9a84f110e627f76f45a15321ffbf939f06883ec1c22bbf765145828b",
     "docs/evidence/pi05-every-chunk-sol-flex-dev-001/offline-audit.json": "f1cbac3889e0be0c3e46db86cfcddb40b05606d32396dabb23840782505fd29e",
     "docs/evidence/pi05-every-chunk-sol-flex-dev-001/proposal-audit.json": "9f5264671a4e07b32bb16caddecb0a9612cd572f9101d474af4d5d92751b4c73",
-    "docs/evidence/pi05-every-chunk-sol-flex-dev-001/result.json": "183c88ae20c9b9b68142cefec21ff249060c4675eee103ec7a1903e6d98f1089"
+    "docs/evidence/pi05-every-chunk-sol-flex-dev-001/result.json": "183c88ae20c9b9b68142cefec21ff249060c4675eee103ec7a1903e6d98f1089",
+    "docs/INTERN_TWO_GPU_PROBE_20261002.md": "45c633bb1fe2755e3fd828852c4a46eb6b293528bf4b8281f777a7247d7d40fe",
+    "docs/evidence/intern-two-gpu-probe/attempt001.json": "fc42860f74196cc39f45679f3a7fd53d71eec027d9fb451624e5435682d8358c",
+    "docs/evidence/intern-two-gpu-probe/attempt002.json": "5906d49bb17bf4bed610b24c64e5d87b3813144b3ab048be73341b7a6e237ab5",
+    "docs/evidence/intern-two-gpu-probe/captured-timings.json": "20cece9c13f842a093408b9289aa5c7560ec2d21777f706cea3c9976509d0b62",
+    "docs/evidence/intern-two-gpu-probe/probe-attempt002.py": "10fa4d8008b0ef66497e721fd71639e28e4acebe87bd4ec09fde4213059e7814"
   }
 }

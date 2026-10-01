@@ -1,0 +1,64 @@
+{
+  "error": "'Proposal' object has no attribute 'json'",
+  "error_type": "AttributeError",
+  "load_seconds": 158.54070658599812,
+  "loaded_memory": {
+    "0": {
+      "allocated_bytes": 15789376000,
+      "peak_allocated_bytes": 15789376000,
+      "peak_reserved_bytes": 15892217856
+    },
+    "1": {
+      "allocated_bytes": 13855692800,
+      "peak_allocated_bytes": 13855693312,
+      "peak_reserved_bytes": 14065598464
+    }
+  },
+  "model_config": {
+    "action_horizon": 32,
+    "action_hz": 25.0,
+    "action_type": "joint",
+    "allow_dummy_policy": false,
+    "checkpoint_path": "/root/physical-execution-lab/external/XPolicyLab/policy/InternW0_delta/checkpoints/robodojo.pt",
+    "device": "cuda:1",
+    "env_cfg_type": "arx_x5",
+    "mixed_precision": "bf16",
+    "negative_prompt": "",
+    "num_inference_steps": 10,
+    "rand_device": "cpu",
+    "replan_steps": 10,
+    "seed": 0,
+    "text_cfg_scale": 1.0,
+    "tiled": false,
+    "timing_enabled": true
+  },
+  "native_actions_executed": 0,
+  "observation_stamp": "e8319f0ff49f3ea480bfe0f42fe7e1b6615bfcd2cba2d447e78e0abfabf49608",
+  "paid_calls": 0,
+  "peak_memory": {
+    "0": {
+      "allocated_bytes": 15798977024,
+      "peak_allocated_bytes": 16096710656,
+      "peak_reserved_bytes": 16204693504
+    },
+    "1": {
+      "allocated_bytes": 13865261056,
+      "peak_allocated_bytes": 14091668480,
+      "peak_reserved_bytes": 14373879808
+    }
+  },
+  "placement": {
+    "main_parameter_bytes": 13832481112,
+    "text_parameter_bytes": 11361820672,
+    "vlm_parameter_bytes": 4426483328
+  },
+  "placement_variant": true,
+  "probe_sha256": "10fa4d8008b0ef66497e721fd71639e28e4acebe87bd4ec09fde4213059e7814",
+  "qualification": "load/inference probe only; no native competence or steady-state timing claim",
+  "schema": "multibench.intern_two_gpu_probe.v1",
+  "source_revision": "408b99d959a7b2207f5f785528fefcc019d7b131",
+  "stage": "inference",
+  "status": "failed",
+  "temporal_mode": "reset per independent saved observation",
+  "traceback": "Traceback (most recent call last):\n  File \"/root/physical-execution-lab/runs/probe_intern_two_gpu002.py\", line 124, in <module>\n    peak_memory=memory(), last_proposal=proposal.json())\n                                        ^^^^^^^^^^^^^\nAttributeError: 'Proposal' object has no attribute 'json'\n"
+}

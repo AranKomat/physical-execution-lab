@@ -1,0 +1,15 @@
+{
+  "source": "Exact inference_completed JSON records returned by the owned SSH process for probe_intern_two_gpu002.py",
+  "loaded_and_completed_inferences": true,
+  "report_export_failed_after_all_four_inferences": true,
+  "cold_inference_seconds": 35.089777843000775,
+  "warm_inference_seconds": [0.8217905269993935, 0.820281773001625, 0.8179160500003491],
+  "returned_action_lengths": [10, 10, 10, 10],
+  "peak_memory": {
+    "0": {"peak_allocated_bytes": 16096710656, "peak_reserved_bytes": 16204693504},
+    "1": {"peak_allocated_bytes": 14091668480, "peak_reserved_bytes": 14373879808}
+  },
+  "native_actions_executed": 0,
+  "paid_calls": 0,
+  "scope": "Three measured repeats on one retained legal observation; not a native episode, steady-state WAM timing, or a percentile benchmark"
+}

@@ -1,0 +1,50 @@
+{
+  "error": "cannot assign to field 'device'",
+  "error_type": "FrozenInstanceError",
+  "model_config": {
+    "action_horizon": 32,
+    "action_hz": 25.0,
+    "action_type": "joint",
+    "allow_dummy_policy": false,
+    "checkpoint_path": "/root/physical-execution-lab/external/XPolicyLab/policy/InternW0_delta/checkpoints/robodojo.pt",
+    "device": "cuda:1",
+    "env_cfg_type": "arx_x5",
+    "mixed_precision": "bf16",
+    "negative_prompt": "",
+    "num_inference_steps": 10,
+    "rand_device": "cpu",
+    "replan_steps": 10,
+    "seed": 0,
+    "text_cfg_scale": 1.0,
+    "tiled": false,
+    "timing_enabled": true
+  },
+  "native_actions_executed": 0,
+  "paid_calls": 0,
+  "peak_memory": {
+    "0": {
+      "allocated_bytes": 0,
+      "peak_allocated_bytes": 0,
+      "peak_reserved_bytes": 0
+    },
+    "1": {
+      "allocated_bytes": 13855691264,
+      "peak_allocated_bytes": 13855691264,
+      "peak_reserved_bytes": 14065598464
+    }
+  },
+  "placement": {
+    "main_parameter_bytes": 13832481112,
+    "text_parameter_bytes": 11361820672,
+    "vlm_parameter_bytes": 4426483328
+  },
+  "placement_variant": true,
+  "probe_sha256": "76321363c22ddfc55e92ffe9b895f3b3e5423a9a8fd3dcce665b69c329ac65d3",
+  "qualification": "load/inference probe only; no native competence or steady-state timing claim",
+  "schema": "multibench.intern_two_gpu_probe.v1",
+  "source_revision": "408b99d959a7b2207f5f785528fefcc019d7b131",
+  "stage": "construction",
+  "status": "failed",
+  "temporal_mode": "reset per independent saved observation",
+  "traceback": "Traceback (most recent call last):\n  File \"/root/physical-execution-lab/runs/probe_intern_two_gpu001.py\", line 99, in <module>\n    policy = XPolicyModel(cfg)\n             ^^^^^^^^^^^^^^^^^\n  File \"/root/physical-execution-lab/k1lab/multibench/adapters/xpolicylab.py\", line 78, in __init__\n    model=module.Model(cfg)\n          ^^^^^^^^^^^^^^^^^\n  File \"/root/physical-execution-lab/external/XPolicyLab/policy/InternW0_delta/_adapter_base.py\", line 116, in __init__\n    self._load_real_policy()\n  File \"/root/physical-execution-lab/external/XPolicyLab/policy/InternW0_delta/model.py\", line 199, in _load_real_policy\n    self.runtime = build_robotwin_shared_runtime(\n                   ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n  File \"/root/physical-execution-lab/runs/probe_intern_two_gpu001.py\", line 57, in split_build\n    shared.device = 'cuda:1'\n    ^^^^^^^^^^^^^\n  File \"<string>\", line 4, in __setattr__\ndataclasses.FrozenInstanceError: cannot assign to field 'device'\n"
+}

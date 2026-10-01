@@ -14,7 +14,9 @@ every-chunk semantic review and sparse semantic review. Separately compare
 robot-policy-free direct dense versus direct sparse control.
 
 Active RoboDojo policies are **G0.5 and the exact released pi0.5 checkpoint**.
-Xiaomi/Intern RoboDojo experiments are deferred by owner direction. The separate
+Xiaomi RoboDojo is deferred. Intern was subsequently reopened for feasibility:
+the two-GPU probe now loads and infers at about 820 ms/10-action chunk, with
+native qualification pending (see `docs/INTERN_TWO_GPU_PROBE_20261002.md`). The separate
 official Xiaomi Robotics-1 RoboCasa365 track remains active.
 Supervisor: **GPT-6.1 Sol, medium reasoning, Flex-only**. No automatic request
 retry, provider/model fallback, or Standard-tier substitution.
@@ -214,8 +216,11 @@ task failure or a supervision benefit. Report:
 - Reviewed **motor-only** qualification records and full-manifest freezes exist
   for G0.5/pi0.5; XR1 motor freeze refreshed. Historical development labels remain.
 - Intern stock BF16 startup exceeded an idle 24 GB GPU at 22.95 GiB allocated
-  before model load completed. Two-GPU sharding/offload was **not tested**;
-  two GPUs do not automatically pool memory. Intern stays deferred.
+  before model load completed. A subsequent explicit two-GPU component-placement
+  probe now loads and completes inference; warm median 820 ms in three repeats,
+  peak reserved 15.09/13.39 GiB. Intern's native competence remains untested.
+  The successful inference probe's report export failed afterward; original
+  error and exact completed-inference timings are preserved, not rerun/hidden.
 
 Qualification reports: `docs/ROBODOJO_MOTOR_QUALIFICATION_20261002.md`,
 `docs/NATIVE_FREEZE_UPDATE_20261002.md`, `docs/XR1_NATIVE_QUALIFICATION_20261002.md`.
