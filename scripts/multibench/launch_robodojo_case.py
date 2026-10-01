@@ -14,6 +14,7 @@ from k1lab.errors import ContractError
 from k1lab.multibench.manifest import check
 from k1lab.multibench.adapters.robodojo import check_checkout,REV,RoboDojoRPC
 from k1lab.multibench.transport import encode_obs
+from k1lab.multibench.types import Action
 
 
 def source_ready(log):
@@ -77,7 +78,7 @@ def main(argv=None):
     p.add_argument('--controller-python',default=sys.executable);p.add_argument('--gpt-as-policy-root')
     p.add_argument('--source-panel');p.add_argument('--sim-port',type=int,default=19113)
     p.add_argument('--startup-timeout',type=float,default=600)
-    for name in ('development','allow-policy','allow-api','execute','capture-only'):p.add_argument('--'+name,action='store_true')
+    for name in ('development','allow-policy','allow-api','execute','capture-only','probe-one-step'):p.add_argument('--'+name,action='store_true')
     p.add_argument('--freeze');p.add_argument('--qualification');a=p.parse_args(argv)
     v=plan(a);print(json.dumps(v,indent=2),flush=True)
     if not a.execute:return
@@ -115,7 +116,11 @@ def main(argv=None):
                 native=RoboDojoRPC(cfg)
                 try:
                     obs=native.reset(v['case']);atomic_json(out/'observation.wire.json',encode_obs(obs),exclusive=True)
-                    native.finish('capture_only_no_actions')
+                    if a.probe_one_step:
+                        native.step(Action('x5_joint14',obs.state.copy()))
+                        native.finish('one_step_native_probe')
+                    else:
+                        native.finish('capture_only_no_actions')
                 finally:native.close()
             else:
                 with (out/'controller.log').open('w') as control_log:
