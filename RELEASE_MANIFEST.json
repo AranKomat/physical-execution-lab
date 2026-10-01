@@ -9,7 +9,7 @@
     "tests/multibench/test_inference_export.py": "cd9782aa5b7b758d607f224b209034ea21f33b99709f89d1dc054f91e36dd98c",
     ".env.example": "412427c9fe9f68cc7fa7cd2c6ca8332ffd5e9340ee69c2b1e8aace35e11a06a7",
     ".github/workflows/cpu-tests.yml": "9b230c1079e4f8c7ffdaf07920f8cf38239452edaaf744653e8a075193760faf",
-    ".gitignore": "416216db60a99302cfdb6cd860025852c6c367421d4f4d3db0b02eb56bda6c4c",
+    ".gitignore": "18a8bc0b3690974890b205d51fb275c533070e80dfde2c879caa0e7c5e3188d2",
     "AGENTS.md": "0fdb40ada8526df213d67c97fb45952807060cf6099b774d1c446f02dee22b52",
     "HANDOFF.md": "ba24f919528d00ae16d0464c2cafad92d8941fadc1d3700d8cf10d04dd77f2de",
     "IMPLEMENTATION_STATUS.md": "d220ded67088e636202183a6ba8f00dfd06ecd69be6da18d6d1946840d355388",
@@ -813,12 +813,13 @@
     "k1lab/multibench/calibration.py": "498415b558816ba08bc20352a7ab127b4dc383bcd9ba218fa69948c9a1705ef8",
     "tests/multibench/test_calibration.py": "557f323ed4309984ce21231d61cc0cc3afc775d7b0303fe1941c3dde0640e6f1",
     "docs/evidence/eef-controller-probe/backup_verification.json": "ac325390791c6fc67b485c13cafb7c699328b66376e9c5d4c9e0d0b45e467c99",
-    "docs/SUPERVISION_RC365_BRINGUP_20261002.md": "2100089926583495c28915e3f03d53751e0049da8b78de2a385e489e59022c6c",
+    "docs/SUPERVISION_RC365_BRINGUP_20261002.md": "a4aa17120ae92cc67522a4332478d61704a1ae426f22628e41acf062ebcd4d2e",
     "docs/evidence/g05-supervision-bringup/accounting.json": "80363a5f710fbb80a6afa96ee2cc4d4053350ad2823fb07aa3acd0acdd306fac",
     "docs/evidence/g05-supervision-bringup/attempt-001.json": "2e61b33d3cce8e933bbdf7b0ba80765df1bc2ef953b0f3a5f97acdb87329b431",
     "docs/evidence/g05-supervision-bringup/attempt-002.json": "7d12087f290879c0833633a3dd9ee5229535ae007ed65eedd02c77274cf3852e",
     "scripts/multibench/budget_responses_relay.py": "15f5ea0f9cab5fd25e606633ffd2511036d46d91b0ebf89267f63b279c670e9a",
     "scripts/multibench/prepare_supervision_pilot.py": "e4b1764d8b03a63f3a377bb3e54945ce031371963dd8c5cbd0ce792cd2a32684",
-    "tests/multibench/test_budget_relay.py": "6be510603e8a7362178c1521e21ccc1c11f370bd7baf12dcf878ab134b9fbf2d"
+    "tests/multibench/test_budget_relay.py": "6be510603e8a7362178c1521e21ccc1c11f370bd7baf12dcf878ab134b9fbf2d",
+    "docs/evidence/xr1-bringup/preparation.json": "2fa5c9e21c41510a0dede757e62e37316ef81a96d25e747bd42be8c6edd7ef5f"
   }
 }

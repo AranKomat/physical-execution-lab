@@ -69,6 +69,10 @@ Its log is backed up at `runs/native-evidence/xr1-server-load-001.log`.
 The official scheduler generated the full 2500-job manifest for target50,
 50 trials/task, seed 7. It is backed up under
 `configs/local/xr1-target50-reference-manifest-001.json`; no jobs executed.
+The harness also generated `configs/local/xr1-target50-cases-001.json`. All 2500
+task names, global indices and episode seeds match the official manifest.
+These initial manifests retain test partitions; any case used in bring-up must
+be excluded from subsequent held-out claims, not silently reused as a test.
 Server loading and subsequent native bring-up remain separate gates.
 Use one policy server on GPU 1 and simulator on GPU 0, not eight workers.
 Retain split pretrain, task set target50, seed 7, history 4 / interval 2,

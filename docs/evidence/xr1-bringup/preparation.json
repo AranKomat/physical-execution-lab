@@ -1,0 +1,30 @@
+{
+  "stage": "D",
+  "scope": "model loading and manifest preparation, not physical qualification",
+  "checkpoint_repository": "XiaomiRobotics/Xiaomi-Robotics-1-RoboCasa365",
+  "checkpoint_revision": "3a6d0293bfa90759d34a7fc48c2c62413cd7bcf4",
+  "publisher_hashes_matched": ["model-00001-of-00003.safetensors", "model-00002-of-00003.safetensors", "model-00003-of-00003.safetensors", "tokenizer.json"],
+  "server": {
+    "source": "unmodified official deploy/server.py",
+    "physical_gpu": 1,
+    "seed": 7,
+    "offline_checkpoint": true,
+    "model_loaded": true,
+    "listening": true,
+    "inference_completed": false,
+    "termination": "explicit load-only timeout, exit 124",
+    "log_sha256": "15cd5e5735f09495deddb84963a7db21d902920b9eba8d7855b27aa7b075f71c"
+  },
+  "manifest": {
+    "jobs": 2500,
+    "tasks": 50,
+    "trials_per_task": 50,
+    "split": "pretrain",
+    "task_set": "target50",
+    "seed": 7,
+    "official_sha256": "fd8f35ca8b413a401c1b0d1634a9c1752134edcec3c99df2125d4eeddca4703e",
+    "harness_sha256": "857c9469566c10a29ef18e960f210e3390b29a921fc52d125b17620249ff19d1",
+    "all_task_index_seed_bindings_match": true,
+    "executed_jobs": 0
+  }
+}
