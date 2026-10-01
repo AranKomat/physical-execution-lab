@@ -21,6 +21,10 @@ def main():
         cfg['identity']['preprocessing_id']='g05_qwen35_fm_bf16_fla051_clip_frequency30_native25_seed0'
         cfg['model_config']['hydra_overrides']=['model.model_weights_to_bf16=true',
                                                'model.model_arch.vlm.linear_attn_backend=fla']
+        env=root/'external/env_cfg'
+        # Bind the live lookup aliases, not only their current symlink targets.
+        cfg['ancillary_config_files']={str(path.absolute()):file_sha(path) for path in
+            (env/'arx_x5.yml',env/'robot/_robot_info.json',env/'sim/sim_config.yml')}
     else:
         cfg=load_json(root/'configs/multibench/policies/internw0_delta.json')
         base=root/'external/XPolicyLab/policy/InternW0_delta'

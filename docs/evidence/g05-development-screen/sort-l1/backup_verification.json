@@ -1,0 +1,9 @@
+{
+  "backup": "complete local native episode",
+  "journal": {
+    "events": 1241,
+    "head_sha256": "052c429292e402fd92af8c67cba4c0de7fe53a68104f7e2737efe6da58bfb21f"
+  },
+  "mismatches": [],
+  "verified_files": 2570
+}

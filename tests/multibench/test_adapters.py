@@ -183,6 +183,28 @@ def test_invalid_policy_seed_rejected(seed):
     from k1lab.multibench.adapters.xpolicylab import seed_policy
     with pytest.raises(ContractError):seed_policy(seed)
 
+
+def test_ancillary_model_configuration_is_checked_before_loading(tmp_path):
+    from k1lab.util import file_sha
+    path=tmp_path/'robot.json';path.write_text('{"arm_dim":[6,6]}')
+    cfg={'policy':'g05','identity':ident(),'ancillary_config_files':{str(path):file_sha(path)}}
+    XPolicyModel(cfg,model=XModel())
+    path.write_text('{"arm_dim":[7,7]}')
+    with pytest.raises(ContractError,match='ancillary'):XPolicyModel(cfg,model=XModel())
+    path.unlink()
+    with pytest.raises(ContractError,match='ancillary'):XPolicyModel(cfg,model=XModel())
+
+
+def test_ancillary_lookup_alias_retargeting_is_rejected(tmp_path):
+    from k1lab.util import file_sha
+    first=tmp_path/'first.json';first.write_text('{"arm_dim":[6,6]}')
+    second=tmp_path/'second.json';second.write_text('{"arm_dim":[7,7]}')
+    alias=tmp_path/'current.json';alias.symlink_to(first)
+    cfg={'policy':'g05','identity':ident(),'ancillary_config_files':{str(alias):file_sha(alias)}}
+    XPolicyModel(cfg,model=XModel())
+    alias.unlink();alias.symlink_to(second)
+    with pytest.raises(ContractError,match='ancillary'):XPolicyModel(cfg,model=XModel())
+
 def test_clipped_provider_retains_raw_gripper_diagnostics():
     model=XModel();rows=native_rows();rows[0]['left_ee_joint_state']=np.array([1.1])
     model.get_action=lambda:rows

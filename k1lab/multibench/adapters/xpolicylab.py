@@ -11,6 +11,7 @@ from pathlib import Path
 import sys
 import numpy as np
 from k1lab.errors import ContractError,Unavailable
+from k1lab.util import file_sha
 from ..types import Action,Proposal,PolicyIdentity
 from .robodojo import check_checkout
 
@@ -61,6 +62,9 @@ def decode_xpl(rows, space, gripper_clip=False):
 class XPolicyModel:
     def __init__(self,config,model=None):
         self.config=dict(config);self.identity=PolicyIdentity(**config['identity'])
+        for path,expected in config.get('ancillary_config_files',{}).items():
+            if not Path(path).is_file() or file_sha(path)!=expected:
+                raise ContractError('ancillary model configuration changed: '+path)
         self.rng_seed=config.get('policy_rng_seed')
         if self.rng_seed is not None:seed_policy(self.rng_seed)
         name=config['policy']

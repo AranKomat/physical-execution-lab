@@ -10,7 +10,7 @@ code/evidence remain archived. Xiaomi's separate RoboCasa365 track is unchanged.
 |---|---|---|
 | Pre-GPU | Complete | CPU suite, synthetic audit, source inspection and config preparation |
 | A: native qualification | Partial | Reset/render/FK/joint ACK passed; PyTorch and seeded FLA G0.5 succeeded on the same sorting layout. Other interfaces remain unqualified |
-| B: speed/quality screen | Partial | G0.5 replay latency and two same-layout runtime pilots; Intern stock BF16 loading exceeds 24 GB. Need 5–10 development cases per viable policy and isolated timing |
+| B: speed/quality screen | G0.5 screen complete; pi0.5 blocked | Fixed five-case G0.5 screen: 3 successes, 2 native-limit failures; 30-sample seeded FLA timing. Exact pi0.5 unavailable; no substitute |
 | C: matched harness comparison | Not started | No paid review runs, direct comparison or held-out freeze |
 | D: RoboCasa365 | Not started | Official XR1 checkpoint/environment/native baseline still needed |
 | E: sensing/transfer | Deferred as specified | Only after useful matched physical results; no RGB-D port claimed |
@@ -32,7 +32,8 @@ code/evidence remain archived. Xiaomi's separate RoboCasa365 track is unchanged.
 - [x] Optimized seeded G0.5 full native episode: success, score 1.0, 812 actions,
   51 policy calls, zero paid calls/corrections; provisional development runtime.
 - [ ] Exact RoboDojo pi0.5 checkpoint access; currently unavailable.
-- [ ] 5–10 development cases per viable candidate; retain all failures.
+- [x] Minimum five-case G0.5 development screen: 3/5 success, native scores
+  1.0 / 1.0 / 0.4 / 1.0 / 0.0; all failures retained, zero paid calls.
 - [ ] Frozen matched hybrid and direct comparisons.
 - [ ] Official XR1 RoboCasa365 baseline and matched supervision comparison.
 
@@ -46,8 +47,10 @@ local under `runs/native-evidence/g05-native-002/`, not actor memory or Git weig
 
 See [the seeded development update](DEVELOPMENT_UPDATE_20261002.md) for the Intern
 memory failure and [parallel execution rules](PARALLEL_EXECUTION.md) for scheduling.
-The next five-case motor development roster is fixed as sorting layout 0,
+The completed five-case motor development roster was fixed as sorting layout 0,
 tower-building layout 0, sorting layout 1, tower-building layout 1, sorting
 layout 2 (all source seed 0, all development partition). Retain failures; do not
-replace cases after observing their outcomes. Expand to the remaining five
-development entries if needed before freezing matched supervision comparisons.
+replace cases after observing their outcomes. It supplies sufficient development
+evidence to retain G0.5; move next to matched supervision rather than more of the
+same screen. See [the full screen report](G05_DEVELOPMENT_SCREEN_20261002.md).
+Future formal bindings include hashes of the ancillary embodiment config files.

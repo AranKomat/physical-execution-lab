@@ -1,0 +1,24 @@
+{
+  "evaluation_case": {
+    "case_id": "build_tower__standard__g0__l1",
+    "eval_seed": 0,
+    "layout_id": 1,
+    "layout_sha256": "c4c67f1c1c2abe8ae32d2686048e61eb6e4396c79025b30779091f14705db18c",
+    "panel_id": "robodojo_panel60_v1",
+    "panel_sha256": "9641fa252856c5ffc07b269c9fef4fed7f5bbc91b45ea0e93fe2a39fa73944b7",
+    "policy_rng_seed": 0,
+    "reset_seed": 1,
+    "runtime_task": "build_tower",
+    "simulator_initial_seed": 0,
+    "task": "build_tower",
+    "variant": "standard"
+  },
+  "complete": true,
+  "valid_for_success_rate": true,
+  "native_success": true,
+  "native_score": 1.0,
+  "status": "native_completed",
+  "reason": "native_terminal",
+  "native_control_steps": 729,
+  "native_step_limit": 1050
+}

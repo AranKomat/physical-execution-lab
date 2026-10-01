@@ -1,0 +1,33 @@
+[
+  {
+    "category_success": {
+      "unmapped": 0.6
+    },
+    "condition": "robodojo_g05_motor_only",
+    "interpretation": "Missing runs remain unsuccessful in success denominator; wall/score coverage is shown separately.",
+    "mean_control_steps_available": 891.8,
+    "mean_episode_wall_s_available": 522.4653576655999,
+    "missing": 0,
+    "policy_calls": 280,
+    "results_present": 5,
+    "review_calls": 0,
+    "scheduled": 5,
+    "score_coverage": 5,
+    "score_mean_available_only": 0.6799999999999999,
+    "success_rate_full_denominator": 0.6,
+    "successes": 3,
+    "task_weighted_success": 0.6666666666666666,
+    "token_totals": {
+      "cached_input_tokens": 0,
+      "input_tokens": 0,
+      "output_tokens": 0,
+      "reasoning_tokens": 0
+    },
+    "total_control_steps": 4459,
+    "total_steps_per_success": 1486.3333333333333,
+    "wilson95": [
+      0.2307242812760128,
+      0.882379225767352
+    ]
+  }
+]
