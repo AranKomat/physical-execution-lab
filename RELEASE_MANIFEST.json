@@ -1265,9 +1265,10 @@
     "docs/evidence/reference-arrange-random-motor001-20261002/pre-action-binding.json": "9fe417d674b889960e9e1506cd035395e870f9682221f387a3bb9b82bdab2a54",
     "docs/evidence/reference-arrange-random-motor001-20261002/report.json": "ba97e10083c661ed659129c273bbea8711ccfee303f3f2cc2a2eecd1cae4e8c3",
     "docs/evidence/reference-arrange-random-motor001-20261002/worker-ready.json": "56dadeb81657a51acc8abb235c1cf2135e71616db48fb83476f23ca504557d33",
-    "docs/semantic/REFERENCE_EXECUTOR_ADMISSION_20261002.md": "17f4908ae5b91a0c5ccea50d3f999fe33eeae608a9a3d08b5e86211dc3cede7f",
+    "docs/semantic/REFERENCE_EXECUTOR_ADMISSION_20261002.md": "662054a48715982c2dadf041f9be0022d12087d303d78201601d82252d93dd35",
     "scripts/semantic/freeze_executor.py": "e82628d4112407eb2ff3ce5184179d31b5d1af1e7d7c6224640afaf51af1a535",
     "docs/evidence/reference-execution-binding001-20261002/freeze.json": "2b9f20fe1ff739a467a769e9b2ecd67bb603045d77d36ed07c2fb2ef8205b327",
-    "docs/evidence/reference-execution-binding001-20261002/operator_reference_rollout001.py": "ef28b8c8e8b64878d9918295d729e3509449b80ff37d4dcd190320a71ccafa36"
+    "docs/evidence/reference-execution-binding001-20261002/operator_reference_rollout001.py": "ef28b8c8e8b64878d9918295d729e3509449b80ff37d4dcd190320a71ccafa36",
+    "docs/evidence/reference-execution-binding001-20261002/freeze003.json": "8e545eb5665414e598f4bf9b4ea6dddeeb4c77f608d531324ab4742cb35762ca"
   }
 }

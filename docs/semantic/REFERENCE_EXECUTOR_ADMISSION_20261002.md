@@ -147,3 +147,41 @@ admission or a comparison phase.401 CPU tests pass. Reuse the retained native
 prediction/cadence/RNG/prompt/tokenizer audits to document each qualification
 check's tested scope before producing a new qualification record. Do not simply
 copy the older development qualification's true flags onto a new executor.
+
+### Deployed Gate Verification
+
+At revision `70dd9c7`, deployment first checked that the existing remote
+prototype matched its earlier recorded hash, then copied the archived patched
+operator. No externally changed file was overwritten. Fresh host preparation
+produced `runs/reference-execution-freeze003.json`; the retained copy is
+`../evidence/reference-execution-binding001-20261002/freeze003.json`.
+Its execution-source SHA256 is
+`57366bd5c4ab0d3de5e581633faa46bac5aead23e341bdf88addc72de8693e3c`.
+On the host, `verify_binding` rejected freeze002 and accepted freeze003 with
+the exact existing motor configuration. No worker, simulator or paid call was
+started for this verification.
+
+### Retained Evidence Review
+
+The two-case arrange semantic audit covers2100 actual controls,70 predictions
+per case, normal prefix cadence, source-proposal/request-prompt equality and
+separate native RNG streams. Its tokenizer replay contains140 request/env rows;
+all complete cleaned prompts survive, with at most115 active tokens out of200.
+These are execution/plumbing results, not semantic obedience results.
+
+Comparing the motor trial's pre-action source hashes against the current host
+shows five unchanged files: native callbacks, coordinator, reference binding,
+planner and report. The sixth file, the rollout operator, differs only by the
+new freeze argument, two verification calls and binding-report fields; its
+worker inference/control/reset code is unchanged in the reviewed diff.
+The tokenizer report hashes the policy factory **function source**, not the
+entire module file; comparisons must use the same hash scope.
+
+The retained evidence supports cadence, ACK/context routing, model-boundary
+prompt delivery and token survival for the tested source paths and prompts.
+It does not prove future prompt retention or runtime support behavior for the
+seven unopened groups. No broader native qualification has been issued or
+historical result relabeled. The remaining work is a scoped qualification
+record with per-check evidence, future-prompt retention enforcement, native
+variant admission and the matched approach panel; no new capacity sweep is
+needed.
