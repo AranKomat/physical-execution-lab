@@ -1,0 +1,34 @@
+{
+  "0": {
+    "arms": {
+      "left": {
+        "position_error_m": 6.354012350785402e-08,
+        "rotation_error_rad": 1.7029852924588948e-07,
+        "passed": true
+      },
+      "right": {
+        "position_error_m": 6.354012350785402e-08,
+        "rotation_error_rad": 1.7029852924588948e-07,
+        "passed": true
+      }
+    },
+    "passed": true,
+    "physical_steps": 0
+  },
+  "1": {
+    "arms": {
+      "left": {
+        "position_error_m": 6.354012350785402e-08,
+        "rotation_error_rad": 1.7029852924588948e-07,
+        "passed": true
+      },
+      "right": {
+        "position_error_m": 6.354012350785402e-08,
+        "rotation_error_rad": 1.7029852924588948e-07,
+        "passed": true
+      }
+    },
+    "passed": true,
+    "physical_steps": 0
+  }
+}

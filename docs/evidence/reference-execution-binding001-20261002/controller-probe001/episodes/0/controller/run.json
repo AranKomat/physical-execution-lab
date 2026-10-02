@@ -1,0 +1,63 @@
+{
+  "case": {
+    "benchmark": "robodojo",
+    "capacity_repeat_not_independent_case": false,
+    "case_id": "classify_objects__standard__g0__l0",
+    "eval_seed": 0,
+    "historical_task_already_opened": true,
+    "horizon": 1100,
+    "layout_id": 0,
+    "layout_path": "Assets/Eval_Layout/RoboDojo/arx_x5/0/classify_objects_0.json",
+    "layout_sha256": "5ceb9e18e6d8490a7db85dd001462d63265c297ea6fad0d7438364deb2de3ece",
+    "native_hz": 25.0,
+    "partition": "dev",
+    "runtime_task": "classify_objects",
+    "source_case": {
+      "case_id": "classify_objects__standard__g0__l0",
+      "eval_seed": 0,
+      "layout": {
+        "path": "Assets/Eval_Layout/RoboDojo/arx_x5/0/classify_objects_0.json",
+        "sha256": "5ceb9e18e6d8490a7db85dd001462d63265c297ea6fad0d7438364deb2de3ece"
+      },
+      "layout_id": 0,
+      "native_support_trajectories": [],
+      "policy_rng_seed": 0,
+      "replica_id": 5,
+      "reset_seed": 0,
+      "rollout_index": 0,
+      "runtime_task": "classify_objects",
+      "simulator_initial_seed": 0,
+      "task": "classify_objects",
+      "variant": "standard"
+    },
+    "task": "classify_objects",
+    "task_group": "classify_objects",
+    "variant": "standard"
+  },
+  "config": {
+    "controller_probe": true,
+    "max_correction_steps": 15,
+    "max_decision_steps": 15,
+    "max_reviews": 2,
+    "mode": "direct_sparse",
+    "name": "reference_controller_probe001",
+    "robot_preview": false,
+    "scope": "simulator-only robot-proprioception calibration; unknown external clearance; no task-performance claim",
+    "translation_limit_m": 0.01,
+    "wall_limit_s": 600
+  },
+  "environment": {
+    "cameras": [
+      "cam_high",
+      "cam_left_wrist",
+      "cam_right_wrist"
+    ],
+    "env_idx": 0,
+    "retired_env_physics": "continues globally; terminal score frozen",
+    "robot": "dual_arx_x5",
+    "shared_physics": true,
+    "simulator": "RoboDojo"
+  },
+  "initial_observation_sha256": "676d76d8634ae1e505032e5e0824d1055983d91e2a29e647fefef70579b50576",
+  "policy": null
+}

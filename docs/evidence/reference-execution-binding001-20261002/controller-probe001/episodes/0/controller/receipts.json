@@ -1,0 +1,22 @@
+[
+  {
+    "end_step": 5,
+    "executed_steps": 5,
+    "executor": "correction",
+    "object_effect": "not_certified_by_robot_motion",
+    "reviewed": true,
+    "serial": 0,
+    "start_step": 0,
+    "stop_reason": "robot_target_reached_not_task_success"
+  },
+  {
+    "end_step": 10,
+    "executed_steps": 5,
+    "executor": "correction",
+    "object_effect": "not_certified_by_robot_motion",
+    "reviewed": true,
+    "serial": 1,
+    "start_step": 5,
+    "stop_reason": "robot_target_reached_not_task_success"
+  }
+]

@@ -108,14 +108,23 @@ The prepared `reference-controller-probe001.json` is a separate no-API,
 30-action calibration: 15 actions toward a 5mm left-EEF offset then 15 toward
 the initial robot pose, with unchanged orientation/grippers. It has no task
 recipe and explicitly records unknown external clearance. Native execution
-and qualification are still pending; 422 passing CPU tests do not replace them.
+completed on the two opened sorting layouts: ten actual actions per environment,
+two five-action segments stopped by the existing arrival check, zero motor
+predictions and zero paid calls. Initial robot-only FK error was approximately
+0.000064mm; measured left-arm endpoint error was 0.043mm outbound and 0.048mm
+on return. Both journals and emitted joint commands passed the retained audit;
+all 45 backup files matched remote hashes. This is bounded calibration, not
+task performance or full executor qualification. Both initial robot postures
+were identical, so native isolation under divergent robot states is unproven.
+Preview/correction interleaving and task-variant admission remain pending.
+See `../evidence/reference-execution-binding001-20261002/controller-probe-audit001.json`.
 
 The source `DualKinematics` reads robot queries and limits at local index0.
 Native robot queries return dictionaries keyed by global environment index.
 `SingleEnvironmentRobotManager` requests only its selected native index,
 rekeys that robot-only reply to0, and slices that environment's joint limits.
 It exposes no generic scene/object forwarding. Missing robot values fail rather
-than falling back to environment0. Native FK/DLS qualification remains pending.
+than falling back to environment0. General native FK/DLS qualification remains pending.
 
 CPU integration uses authored synthetic controls, not policies/LLMs or collision
 physics. It demonstrates differing inference/action barriers, policy-free direct

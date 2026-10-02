@@ -1,0 +1,102 @@
+{
+  "report": {
+    "status": "started",
+    "scope": "reference-bound historical-opened task execution; not untouched held-out qualification",
+    "paid_calls": 0,
+    "resets": 1,
+    "task": "classify_objects",
+    "requested_envs": 2,
+    "budget_steps_per_env": 30,
+    "physics_of_completed_envs": "continues globally; terminal score frozen",
+    "rng_parity": false,
+    "inference_mode": "native_singleton",
+    "scored_benchmark_qualified": false,
+    "policy": null,
+    "execute_steps": null,
+    "returned_action_steps": null,
+    "native_prediction_horizon": null,
+    "robot_profile": "pi05-compatible ARX X5",
+    "shared_worker_root": null,
+    "execution_freeze_sha256": "7bc99112c21a05d39004a51d4f876004c156bd8938b28303db986291bb7bc687",
+    "execution_sources_sha256": "0abf58e136e0fd182944ff61ebff88b023f0be782b424fc929dd56f7531ca4d8",
+    "execution_binding_is_native_qualification": false,
+    "reference_cases": [
+      {
+        "benchmark": "robodojo",
+        "case_id": "classify_objects__standard__g0__l0",
+        "eval_seed": 0,
+        "horizon": 1100,
+        "layout_id": 0,
+        "layout_path": "Assets/Eval_Layout/RoboDojo/arx_x5/0/classify_objects_0.json",
+        "layout_sha256": "5ceb9e18e6d8490a7db85dd001462d63265c297ea6fad0d7438364deb2de3ece",
+        "native_hz": 25.0,
+        "partition": "dev",
+        "runtime_task": "classify_objects",
+        "source_case": {
+          "case_id": "classify_objects__standard__g0__l0",
+          "eval_seed": 0,
+          "layout": {
+            "path": "Assets/Eval_Layout/RoboDojo/arx_x5/0/classify_objects_0.json",
+            "sha256": "5ceb9e18e6d8490a7db85dd001462d63265c297ea6fad0d7438364deb2de3ece"
+          },
+          "layout_id": 0,
+          "native_support_trajectories": [],
+          "policy_rng_seed": 0,
+          "replica_id": 5,
+          "reset_seed": 0,
+          "rollout_index": 0,
+          "runtime_task": "classify_objects",
+          "simulator_initial_seed": 0,
+          "task": "classify_objects",
+          "variant": "standard"
+        },
+        "task": "classify_objects",
+        "task_group": "classify_objects",
+        "variant": "standard"
+      },
+      {
+        "benchmark": "robodojo",
+        "case_id": "classify_objects__standard__g0__l1",
+        "eval_seed": 0,
+        "horizon": 1100,
+        "layout_id": 1,
+        "layout_path": "Assets/Eval_Layout/RoboDojo/arx_x5/0/classify_objects_1.json",
+        "layout_sha256": "013d7141ffc9865d7cccf650301f642e6b83b3eb59f78cf5b1d0caf47158e17a",
+        "native_hz": 25.0,
+        "partition": "dev",
+        "runtime_task": "classify_objects",
+        "source_case": {
+          "case_id": "classify_objects__standard__g0__l1",
+          "eval_seed": 0,
+          "layout": {
+            "path": "Assets/Eval_Layout/RoboDojo/arx_x5/0/classify_objects_1.json",
+            "sha256": "013d7141ffc9865d7cccf650301f642e6b83b3eb59f78cf5b1d0caf47158e17a"
+          },
+          "layout_id": 1,
+          "native_support_trajectories": [],
+          "policy_rng_seed": 0,
+          "replica_id": 5,
+          "reset_seed": 1,
+          "rollout_index": 1,
+          "runtime_task": "classify_objects",
+          "simulator_initial_seed": 0,
+          "task": "classify_objects",
+          "variant": "standard"
+        },
+        "task": "classify_objects",
+        "task_group": "classify_objects",
+        "variant": "standard"
+      }
+    ],
+    "reference_manifest_file_sha256": "9c335b72fae984e05eda9d56f9465c1afe1c5d4accf29e9d703cf06898cb2fde"
+  },
+  "semantic_config_file_sha256": "42fed946887d996b924c66355756abf07550145abdd8a5892f8dc524f47fe150",
+  "sources": {
+    "runs/operator_reference_rollout001.py": "61f99087a831e1479699b46f889d3fcaecaf090fcb358eb61f487a7d41f82f2d",
+    "runs/operator_reference_native001.py": "3569202b02d43315214f4b71d3ef4b864439c3d63bb749c7a91f05da06e81793",
+    "runs/operator_semantic_vector_coordinator001.py": "a70246b7a63b672b9209946876a1ce68e9abcddef475b154299f919ada513f9b",
+    "semantic_lab/reference.py": "1d5d0a5e70b6a8575bb87be1cf00a978a8482071b78d937ff5dcb06e6d34868c",
+    "semantic_lab/planner.py": "188e8073c9e6edf3c6febda28b168ab4326e0688594666b84fa3715e7c057869",
+    "semantic_lab/report.py": "fc04d0dd93c6f44ea3cf4ed79e141fc226e9dc6d9c01606bc185627bec7d4354"
+  }
+}
