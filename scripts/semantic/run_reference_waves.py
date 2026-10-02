@@ -23,7 +23,11 @@ def main():
     parser.add_argument('--case-ids', nargs='+', required=True)
     parser.add_argument('--output', type=Path, required=True)
     parser.add_argument('--tag-base', type=int, required=True)
+    parser.add_argument('--development-subset', action='store_true',
+                        help='Historical subset utility; not the full-task comparison runner')
     args = parser.parse_args()
+    if not args.development_subset:
+        raise ContractError('subset runner is not the owner-requested full-task concurrent comparison; do not launch it as that campaign')
     panel = load_json(args.prepared/'cases.json')
     plan = load_json(args.prepared/'plan.json')
     config_path = args.prepared/'original_only.json'

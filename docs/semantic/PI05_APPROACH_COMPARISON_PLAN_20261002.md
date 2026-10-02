@@ -2,6 +2,40 @@
 
 ## Scope And Status
 
+### Owner Scheduling Correction
+
+The owner requires method-major execution over the entire fixed task set:
+run original-only on all ten distinct tasks concurrently, then direct on the
+same ten, then numeric hybrid, then semantic hybrid. Do not substitute a
+two-task pilot or serial task-by-task execution as the initial comparison.
+All tasks should share batched inference within each motor-based method.
+
+The previously launched tower/sorting baseline pair was stopped at the owner's
+direction. Retain its partial records as owner-interrupted, not task failures
+or completed comparison slots. No paid calls were made. It must not be imported
+into the planned 40-slot comparison.
+
+The missing prerequisite is now explicitly full-task concurrent execution,
+not more standalone controller tests. Current native vector scenes instantiate
+one task class per scene; previous ten-environment capacity evidence used two
+task types with several layouts each. It does not prove ten distinct task
+scenes share simulator memory. Independent single-environment processes used
+about 6.7GiB each in the prior capacity check; ten such processes cannot simply
+be placed on the existing two 24GiB GPUs alongside the motor runtime.
+The shared pi0.5 worker currently performs isolated singleton inference, not
+fused tensor batching. Earlier fused predictions differed from source singleton
+predictions, as recorded in `../SIMULATOR_BATCH_CAPACITY_20261002.md`.
+
+- [ ] Enable concurrent distinct-task scenes with bounded simulator memory.
+- [ ] Use a consistently defined batched pi0.5 executor across all motor-based
+  conditions, retaining per-task prompts, RNG, ACKs and native scoring.
+- [ ] Combine exact-task native reset/support/scoring admission with that runner,
+  rather than another serial preflight sequence.
+- [ ] Execute one complete method across the full task set before the next.
+
+Do not claim full-task batching is already implemented or silently replace it
+with two-family singleton dispatch. The 40-slot roster remains unchanged.
+
 Compare approaches first, motor models afterward. This is the next experiment
 priority, not a completed comparison or a substitute for the wider V5 scope.
 Roster selection below is fixed before new outcomes. Exact resolved treatment

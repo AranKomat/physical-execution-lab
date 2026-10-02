@@ -1275,7 +1275,7 @@
     "semantic_lab/token_retention.py": "2755a9a4fae843749a0d1b8e3fe0c48ed703a5cbee1336da655e39f580f1ab7d",
     "tests/semantic/test_token_retention.py": "2096d5dc6d533b691a47015e257a375ee165526fdbd0cab6014d7ef24d99f22b",
     "docs/evidence/reference-execution-binding001-20261002/live-token-guard-probe001.json": "31d762f668e6795fcfb081776aa559e3a62811663fa4acba41071ea4756ca872",
-    "docs/semantic/PI05_APPROACH_COMPARISON_PLAN_20261002.md": "9efa6f76a8519ebb9557c244e453fff5020e70614b6d8199fd18996b03134627",
+    "docs/semantic/PI05_APPROACH_COMPARISON_PLAN_20261002.md": "17ec75593fec484e6d5ad36d5fff5b6242d25703b447ad52600eb59481361feb",
     "docs/evidence/reference-execution-binding001-20261002/operator_reference_native001.py": "dfb385557ab8be0b01eb6e6728c852b87816f108a16512c9c87f59173e605f56",
     "semantic_lab/robot_view.py": "4c178b451a1f07d0fcbf1e648e17c9cfef05aee61ba48c2d3207ca3514c7e3a0",
     "semantic_lab/vector.py": "b5d9a28abb87fcbacd5ac32f1b2ad53651ae6c09d92fd0bf3f4aa0a3323f58b2",
@@ -1351,6 +1351,6 @@
     "scripts/semantic/prepare_approach_comparison.py": "3c074b31e4b96dce6675b8c9d51e4f1557e8601bff01563ce49a53dbd245d0e4",
     "semantic_lab/comparison.py": "a814696645690f44f174324d1df943bb75f27bc8fa56e1b5fde02a4fcbe46bc3",
     "tests/semantic/test_comparison.py": "7fae94b4b86bf737a913da6f213cbf03d7bb5d4cadb913bbaa4bcf058c702258",
-    "scripts/semantic/run_reference_waves.py": "c993895efa1e560988166473789555597cdb3a3b51a577b0353dbea31dee55d4"
+    "scripts/semantic/run_reference_waves.py": "4f4ee91e564cb6c86ddcc74d77fff771879db9e0a735a014812e71cfa5c0c022"
   }
 }
