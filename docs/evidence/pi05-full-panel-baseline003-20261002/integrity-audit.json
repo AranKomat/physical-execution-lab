@@ -1,0 +1,107 @@
+{
+  "scope": "retained baseline routing/prefix/ACK integrity only; not native-equivalence admission",
+  "integrity_passed": true,
+  "benchmark_qualified": false,
+  "native_admission_pending": true,
+  "distinct_cases": 10,
+  "native_actions": 8497,
+  "group_prediction_requests": 214,
+  "fused_batches": 87,
+  "policy_calls": 569,
+  "successes": 3,
+  "paid_calls": 0,
+  "wall_including_startup_s": 751.4461265819991,
+  "warm_b10_median_s": 1.231161825999152,
+  "rows": [
+    {
+      "case_id": "arrange_largest_number__standard__g0__l0",
+      "task": "arrange_largest_number",
+      "partition": "test",
+      "success": false,
+      "native_score": 0.3,
+      "native_steps": 1050,
+      "status": "native_completed"
+    },
+    {
+      "case_id": "build_tower__standard__g0__l0",
+      "task": "build_tower",
+      "partition": "dev",
+      "success": false,
+      "native_score": 0.1,
+      "native_steps": 1050,
+      "status": "native_completed"
+    },
+    {
+      "case_id": "classify_objects_by_language__standard__g0__l0",
+      "task": "classify_objects_by_language",
+      "partition": "test",
+      "success": false,
+      "native_score": 0.0,
+      "native_steps": 1100,
+      "status": "native_completed"
+    },
+    {
+      "case_id": "fold_clothes__standard__g0__l0",
+      "task": "fold_clothes",
+      "partition": "test",
+      "success": true,
+      "native_score": 1.0,
+      "native_steps": 300,
+      "status": "native_completed"
+    },
+    {
+      "case_id": "imitate_sorting_sequence__standard__g0__l0",
+      "task": "imitate_sorting_sequence",
+      "partition": "test",
+      "success": false,
+      "native_score": 0.0,
+      "native_steps": 782,
+      "status": "native_completed"
+    },
+    {
+      "case_id": "make_kong__standard__g0__l0",
+      "task": "make_kong",
+      "partition": "test",
+      "success": false,
+      "native_score": 0.0,
+      "native_steps": 600,
+      "status": "native_completed"
+    },
+    {
+      "case_id": "classify_objects__standard__g0__l0",
+      "task": "classify_objects",
+      "partition": "dev",
+      "success": true,
+      "native_score": 1.0,
+      "native_steps": 824,
+      "status": "native_completed"
+    },
+    {
+      "case_id": "organize_table__standard__g0__l0",
+      "task": "organize_table",
+      "partition": "test",
+      "success": false,
+      "native_score": 0.5,
+      "native_steps": 1000,
+      "status": "native_completed"
+    },
+    {
+      "case_id": "pack_objects_into_box__standard__g0__l0",
+      "task": "pack_objects_into_box",
+      "partition": "test",
+      "success": false,
+      "native_score": 0.5,
+      "native_steps": 1300,
+      "status": "native_completed"
+    },
+    {
+      "case_id": "put_bottles_into_dustbin__standard__g0__l0",
+      "task": "put_bottles_into_dustbin",
+      "partition": "test",
+      "success": true,
+      "native_score": 1.0,
+      "native_steps": 491,
+      "status": "native_completed"
+    }
+  ]
+}

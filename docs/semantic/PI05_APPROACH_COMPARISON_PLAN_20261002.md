@@ -26,12 +26,14 @@ The historical shared pi0.5 worker performed isolated singleton inference.
 The new cohort service uses fused vmap inference. Earlier fused predictions differed from source singleton
 predictions, as recorded in `../SIMULATOR_BATCH_CAPACITY_20261002.md`.
 
-- [ ] Enable concurrent distinct-task scenes with bounded simulator memory.
+- [x] Enable concurrent distinct-task scenes with bounded simulator memory.
 - [ ] Use a consistently defined batched pi0.5 executor across all motor-based
   conditions, retaining per-task prompts, RNG, ACKs and native scoring.
 - [ ] Combine exact-task native reset/support/scoring admission with that runner,
   rather than another serial preflight sequence.
-- [ ] Execute one complete method across the full task set before the next.
+- [x] Execute original-only across the full task set before the next method.
+- [ ] Execute direct, numeric and semantic conditions, each across the same full
+  set, after executor admission/binding.
 
 Do not claim full-task batching is already implemented or silently replace it
 with two-family singleton dispatch. The 40-slot roster remains unchanged.
@@ -85,9 +87,9 @@ after tasks terminate; padded rows never receive simulator actions or scores.
 
 - [x] Implement task-row routing, compatible-scene factory, fused cohort worker,
   and full-panel baseline launcher.
-- [ ] Verify actual full-panel startup, support trajectories, native scoring,
+- [x] Verify actual full-panel startup, support trajectories, native scoring,
   memory and actions on the GPU host.
-- [ ] Complete all ten original-only episodes and inspect their evidence.
+- [x] Complete all ten original-only episodes and inspect their evidence.
 - [ ] Admit the native-equivalent executor and bind all four matched conditions.
 
 429 CPU tests pass, including index isolation, cooperative native lifecycle,
@@ -128,14 +130,86 @@ The previous all-simulation-on-GPU0 allocation reached roughly22.4GiB with only
 resource routing, not changed task physics, sensing or horizons. Native PhysX
 monitoring is now enabled, and the parent also watches fatal simulation logs
 so a live process can no longer masquerade as a progressing simulator.
-The rebalanced full cohort has not yet been verified; do not mark batching or
-the baseline complete from the earlier nonblank captures and component tests.
+At that point the rebalanced cohort had not been verified. Its completed
+outcome is recorded below, separately from the failed starts.
+
+### Rebalanced Full Baseline Completed
+
+`pi05-full-panel-baseline003` (executor commitd9299d0) completed all ten fixed
+cases concurrently under original-only, with one fused pi0.5 runtime. It used
+8,497 native actions, 569 per-episode policy predictions coalesced into87 fused
+batches, zero GPT/API requests, and751.45s wall time including startup
+(12.52minutes). Warm batches with all ten rows had median1.231s. Padding after
+termination preserved the B10 compiled shape without issuing padded actions.
+All three groups report native terminal outcomes, no controller/contract
+errors, and no unstable samples. Both GPUs returned to zero usage afterward.
+
+| Task | Native Success | Partial Score | ACKed Actions |
+|---|---|---:|---:|
+| arrange_largest_number | no |0.30|1050|
+| build_tower | no |0.10|1050|
+| classify_objects_by_language | no |0.00|1100|
+| fold_clothes | yes |1.00|300|
+| imitate_sorting_sequence | no |0.00|782|
+| make_kong | no |0.00|600|
+| classify_objects | yes |1.00|824|
+| organize_table | no |0.50|1000|
+| pack_objects_into_box | no |0.50|1300|
+| put_bottles_into_dustbin | yes |1.00|491|
+
+The descriptive outcome is3/10 for this fixed one-layout-per-task screen, not
+full RoboDojo SR or a statistically reliable approach ranking. The earlier
+five-case development result must not be substituted as its matched baseline.
+The imitation task ended under a native failure rule before its1600 horizon,
+not under a planner budget/controller stop; neither support task was flagged
+unstable. Original-only used native instructions and no semantic/numeric review.
+
+Full-cohort source hashes and per-case results are retained in
+`../evidence/pi05-full-panel-baseline003-20261002/cohort-report.json`.
+`audit_full_panel_baseline.py` checks retained request hashes, task routing,
+source H50 predictions, exact15-action prefixes, contiguous ACKs and native
+terminal/result agreement. The audit passed for all8,497 actions; its result is
+`../evidence/pi05-full-panel-baseline003-20261002/integrity-audit.json`.
+This audit is execution integrity, not an automatic
+native-equivalence qualification. Results remain `native_unqualified` until
+that admission is attached. Direct/numeric/semantic are not yet run on this
+panel; the broader V5 hierarchy/recovery/generalization phases remain open.
 
 Compare approaches first, motor models afterward. This is the next experiment
 priority, not a completed comparison or a substitute for the wider V5 scope.
 Roster selection below is fixed before new outcomes. Exact resolved treatment
 configs, source freeze, executor admission and paid relay bindings are still
 pending; this document alone is not an executable campaign freeze.
+
+### Staged Replication And Metrics
+
+The [GPT-as-Policy report](https://anonymous-report-421.github.io/public-website/?lang=en&view=1)
+(sections2.2 and3, checked2026-10-02) evaluates direct and hybrid on five
+matched episodes per task, fifty per method. Three generalization tasks use
+two standard and three randomized episodes; other tasks use five standard
+layouts. Official motor-policy columns are recomputed from public per-task
+aggregates, not five matched reruns. Their decimal percentages therefore do
+not establish the denominator of our planned matched comparison.
+
+First complete all four methods on the fixed ten distinct cases above. Report
+native binary success and native partial score together, plus per-task paired
+differences, wall time and paid usage. The baseline currently has3/10 successes
+and mean normalized score0.44 (44/100), descriptive one-layout evidence only.
+Scores indicate partial progress, not probability of success; native binary-only
+tasks remain binary. A single episode per task is a screening design, not a
+reliable per-task success-rate estimate or faithful paper reproduction.
+
+Then extend the promising methods, including their matched baseline, across
+preselected additional layouts over the entire roster. Do not select only
+successful tasks, or repeat identical deterministic conditions as independent
+evidence. If claiming a paper-matched result, use its full five-episode scene
+mix and matched seeds. Even five trials give only coarse per-task estimates.
+The earlier two-task/five-layout run was capacity qualification, not a reporting
+requirement or a preference over distinct-task coverage.
+
+One full original-only wave took12.52minutes including startup, not per task.
+Five waves cost roughly five times one method's runtime; GPT latency and cost
+must be measured rather than assumed equal to original-only throughput.
 
 ## Fixed Diverse Roster
 

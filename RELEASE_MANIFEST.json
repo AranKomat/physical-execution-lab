@@ -1275,7 +1275,7 @@
     "semantic_lab/token_retention.py": "2755a9a4fae843749a0d1b8e3fe0c48ed703a5cbee1336da655e39f580f1ab7d",
     "tests/semantic/test_token_retention.py": "2096d5dc6d533b691a47015e257a375ee165526fdbd0cab6014d7ef24d99f22b",
     "docs/evidence/reference-execution-binding001-20261002/live-token-guard-probe001.json": "31d762f668e6795fcfb081776aa559e3a62811663fa4acba41071ea4756ca872",
-    "docs/semantic/PI05_APPROACH_COMPARISON_PLAN_20261002.md": "60f75180274a13966e00d176b597a6f800afb68775a0602e3eab68fc856fca81",
+    "docs/semantic/PI05_APPROACH_COMPARISON_PLAN_20261002.md": "a7174ddce293876c966498684200ee4a18004707ac7e154a9eb32a4306736e72",
     "docs/evidence/reference-execution-binding001-20261002/operator_reference_native001.py": "dfb385557ab8be0b01eb6e6728c852b87816f108a16512c9c87f59173e605f56",
     "semantic_lab/robot_view.py": "4c178b451a1f07d0fcbf1e648e17c9cfef05aee61ba48c2d3207ca3514c7e3a0",
     "semantic_lab/vector.py": "b5d9a28abb87fcbacd5ac32f1b2ad53651ae6c09d92fd0bf3f4aa0a3323f58b2",
@@ -1361,6 +1361,9 @@
     "semantic_lab/native_execution.py": "1fe3231a78df48017a82d3f4a6b0b29d64705079ef782018922c5f1ab4339456",
     "semantic_lab/native_io.py": "c8ee14dcb9785b4c5e3e6714a32d579d51d5e56e32bb33c323144104b45e8872",
     "semantic_lab/task_rows.py": "48f7692fb5116fbad655922ed09e32dbc811fc520d792140dbaaf334971ba11d",
-    "tests/test_semantic_task_rows.py": "b9aac40f9a5f8176fcef38964306c16753bb7cc744bfd7ff5c429aeff793fc73"
+    "tests/test_semantic_task_rows.py": "b9aac40f9a5f8176fcef38964306c16753bb7cc744bfd7ff5c429aeff793fc73",
+    "docs/evidence/pi05-full-panel-baseline003-20261002/cohort-report.json": "71451a95e84f616f6c750755a8a430db75aefdc06647d5863a8177b52d8fea26",
+    "docs/evidence/pi05-full-panel-baseline003-20261002/integrity-audit.json": "ca6f11dcfc991bcd090324bc01a3b84d34debeb35e57ea015c44ab8e442c40a8",
+    "scripts/semantic/audit_full_panel_baseline.py": "09a3288ddcbf83b681dd6f61ebe7573ccaf0eada000cd3d527a1e4b05efad56a"
   }
 }
