@@ -1,0 +1,14 @@
+{
+  "scope": "recorded reset RGB/proprio/EEF fields, not complete physics state",
+  "field_fingerprints_equal": {
+    "cam_high": false,
+    "cam_left_wrist": false,
+    "cam_right_wrist": false,
+    "states": true,
+    "eef_positions": true,
+    "eef_quaternions_wxyz": true,
+    "instruction": true,
+    "remaining_steps": true
+  },
+  "episode_dependent_observation_stamps_not_compared": true
+}

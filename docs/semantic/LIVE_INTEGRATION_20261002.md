@@ -16,7 +16,7 @@ evidence remains unmodified.
 Repository integration adds package discovery/CLI entry point for `semantic_lab`
 and updates the active documentation. Old qualifications do not qualify V5.
 
-## Local Verification
+## Initial Integration Verification
 
 - Full CPU suite: 369 passed, including after integration changes.
 - Doctor: all four reviewed adapter blobs match; asynchronous native runner false.
@@ -29,6 +29,11 @@ and updates the active documentation. Old qualifications do not qualify V5.
 - Native config preparation on the Mac is blocked by missing remote artifact
   paths, as expected. Do not strip artifact checks; prepare on the GPU host.
 - No new paid calls, model downloads, remote deployment or native V5 episodes.
+
+That list describes the initial integration only. Subsequent native evidence is
+recorded in `NATIVE_QUALIFICATION_PROGRESS_20261002.md` and
+`MATCHED_HIERARCHY_PROGRESS_20261002.md`; the latter now includes an active
+task-plus-subtask tower success. It is not yet a full-roster hierarchy gain.
 
 ## Carry-Forward Evidence
 

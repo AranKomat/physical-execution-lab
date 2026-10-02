@@ -1,0 +1,21 @@
+{
+  "cases": [
+    "classify_objects__standard__g0__l0",
+    "build_tower__standard__g0__l0",
+    "classify_objects__standard__g0__l1",
+    "build_tower__standard__g0__l1",
+    "classify_objects__standard__g0__l2"
+  ],
+  "comparison": "fresh original-only versus task-plus-subtask; subtask-only separate controlled variant",
+  "conditions": [
+    "robodojo_pi05_robodojo_semantic_v5_motor_matched_dev_001",
+    "robodojo_pi05_robodojo_semantic_v5_task_plus_subtask_matched_dev_001",
+    "robodojo_pi05_robodojo_semantic_v5_subtask_only_matched_dev_001"
+  ],
+  "existing_baseline_is_qualification_not_fresh_matched_result": true,
+  "first_case": "build_tower__standard__g0__l0",
+  "keep_all_stops_and_missing_cases": true,
+  "no_case_replacement_or_retry": true,
+  "qualification_excludes_stateful_backends": true,
+  "source_sha256": "fba009076ad08a155b0631d293ce60a99677264d9b76bf7c2359ffc8c712abc7"
+}

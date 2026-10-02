@@ -1,0 +1,16 @@
+{
+  "registered": true,
+  "source": "native EvalEnv.run_eval preamble",
+  "condition_group_counts": {
+    "check_list": [
+      1
+    ],
+    "final_check_list": [
+      0
+    ],
+    "trigger_check_list": [
+      0
+    ]
+  },
+  "initial_support_arm_query_envs": []
+}

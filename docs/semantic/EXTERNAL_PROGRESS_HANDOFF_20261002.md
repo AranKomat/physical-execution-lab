@@ -64,6 +64,13 @@ payloads. Only redundant remote native observation payloads were retired.
 
 ## Conditioning And Qualification
 
+Update: the first fresh frozen hierarchy pair is now terminal. Task-plus-subtask
+tower0 succeeded at 717 actions, score 1.0, 48 policy calls, seven GPT calls
+($0.04122325), 515.64 s wall. Fresh original-only failed at 1050 actions, score
+0.10, 70 policy calls, zero GPT calls, 603.61 s wall. See
+`MATCHED_HIERARCHY_PROGRESS_20261002.md` for audits, frozen records and coverage.
+This is positive development evidence, not a full-roster or causal gain.
+
 1. Fixed-input, fixed-noise real-GPU tokenizer probe: original 67/200 tokens,
    task-plus-subtask 80/200, subtask-only 61/200. Complete manual subtask
    `Keep both hands still.` survives. RMS numeric action differences from
@@ -96,27 +103,28 @@ Additional repairs: explicit semantic_goal relay mode; payment window clamped
 to inherited 2400-second maximum; stale V4 paid-route metadata omitted from
 future configs; exact continuation handling; shadow-fault isolation and tests.
 Native audit evidence supports synchronous pi0.5 cadence/prompt no-interference
-and actual context plumbing. Formal source/config-bound qualification and freeze
-records still need completion. Stateful backends are not qualified by pi0.5.
+and actual context plumbing. Development source/config-bound qualification and
+freeze records exist and the fresh control verified their bindings before
+launch. Stateful backends and held-out evaluation are not qualified by this.
 
 ## Live State And Limits
 
-Fresh host check: both 4090s report 0 MiB used; no matching robotics runner,
-OpenPI or launcher process detected. No native episode is currently running.
+The first frozen development pair is terminal; no robot episode remains live.
+Both episodes are backed up and SHA-verified (1586 candidate, 2216 control files).
 SSH: `ssh -p 53210 root@92.180.27.84`; repo `/root/physical-execution-lab`.
 Preserve unrelated CPU work, remote untracked launcher/reports, and old evidence.
 Do not reboot, alter global GPU packages or stop the rental as part of this work.
 
-Last verified shared budget snapshot: $85 ceiling, $77.629232494300 spent plus
-holds, $7.370767505700 remaining, 4720 reservations, 154 old unresolved holds.
-All 12 new shadow calls settled. This is a snapshot, not fresh authorization
+Latest experiment accounting: $85 ceiling, $77.670455744300 spent plus holds,
+$7.329544255700 remaining, 4727 reservations, 154 old unresolved holds.
+All 19 new shadow/hierarchy calls settled. This is a snapshot, not fresh authorization
 accounting: reread the authoritative ledger before making calls.
 
 ## Next Experiments And Stopping Rules
 
-1. Finish evidence-bound qualification/freeze records for tested pi0.5 source.
-2. Freeze the existing five-case development roster and compare original-only
-   versus task-plus-subtask first; subtask-only is a controlled variant. Keep
+1. Preserve the source/config-bound pi0.5 qualification/freeze and audit records.
+2. Continue the frozen five-case roster: four original-only versus
+   task-plus-subtask pairs and five subtask-only episodes remain. Keep
    checkpoint, native H50/15 cadence, sensors, horizon and planner route fixed.
 3. Retain failures, abstentions, API/resource/contract stops and missing cases
    in the scheduled denominator. No case replacement or retry-until-success.
@@ -125,9 +133,10 @@ accounting: reread the authoritative ledger before making calls.
 5. Freeze development choices before untouched held-out groups and a second
    motor backend. Do not tune on opened arrange_largest_number.
 
-No native hierarchy benefit, recovery success, broad generalization or
-uninterrupted real-time planning has been demonstrated. Move to the matched
-hierarchy experiment; do not extend kernel diagnostics or add more platforms.
+One native hierarchy success versus a failed fresh control is demonstrated;
+reliable causal benefit, recovery success, broad generalization and
+uninterrupted real-time planning are not. Continue the matched hierarchy
+experiment; do not extend kernel diagnostics or add more platforms.
 
 ## Evidence Locations
 

@@ -185,7 +185,12 @@ probes retain both added prompts; source outputs respond to changed language
 but task obedience is not established. Repaired shadow completed with failure,
 score 0.10, unchanged motor prompts/cadence and passing audits. A 30-action
 actual-source context/ACK/tokenizer probe passed. Formal qualification/freeze
-and matched hierarchy remain pending. See [latest external handoff](semantic/EXTERNAL_PROGRESS_HANDOFF_20261002.md)
+records now exist. The first frozen hierarchy pair is terminal: task-plus-subtask
+tower0 succeeded at 717 actions/score 1.0 (seven GPT calls/$0.04122325); fresh
+original-only failed at 1050 actions/score 0.10. Four primary pairs and all five
+subtask-only variants remain. This is not a reliable causal gain. See
+[matched hierarchy progress](semantic/MATCHED_HIERARCHY_PROGRESS_20261002.md)
+and [latest external handoff](semantic/EXTERNAL_PROGRESS_HANDOFF_20261002.md)
 and [native V5 progress](semantic/NATIVE_QUALIFICATION_PROGRESS_20261002.md).
 
 The owner supplied a new semantic-subtask overlay on 2026-10-02. The active

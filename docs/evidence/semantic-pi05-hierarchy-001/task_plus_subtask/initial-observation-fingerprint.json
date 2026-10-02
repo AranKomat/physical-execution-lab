@@ -1,0 +1,80 @@
+{
+  "evaluation_case": {
+    "case_id": "build_tower__standard__g0__l0",
+    "eval_seed": 0,
+    "layout_id": 0,
+    "layout_sha256": "afcf896086392357a8826f84bebe4910dcb7a5f1b84e7be435e16e3d5c3607a4",
+    "panel_id": "robodojo_panel60_v1",
+    "panel_sha256": "9641fa252856c5ffc07b269c9fef4fed7f5bbc91b45ea0e93fe2a39fa73944b7",
+    "policy_rng_seed": 0,
+    "reset_seed": 0,
+    "runtime_task": "build_tower",
+    "simulator_initial_seed": 0,
+    "task": "build_tower",
+    "variant": "standard"
+  },
+  "fields": {
+    "cam_high": {
+      "shape": [
+        480,
+        640,
+        3
+      ],
+      "dtype": "uint8",
+      "sha256": "1aa99162433e2052aa4181fb3c9ee884a4cf1887c5c864f6793407e95abd2573"
+    },
+    "cam_left_wrist": {
+      "shape": [
+        480,
+        640,
+        3
+      ],
+      "dtype": "uint8",
+      "sha256": "c7469350cdf05ceae08c51c66e798a0cfb4ea70f2081c9ecaeb65794aff49cb6"
+    },
+    "cam_right_wrist": {
+      "shape": [
+        480,
+        640,
+        3
+      ],
+      "dtype": "uint8",
+      "sha256": "e9b6c3ec551b1854329090d06ae0bb9e27cc931abc287b8d79fe0c528ac5ff4a"
+    },
+    "states": {
+      "shape": [
+        14
+      ],
+      "dtype": "float32",
+      "sha256": "1a64a7ab1894d492080eda4c5ba8b7f9d1b36eea918d9f11eff7bb88f37ced4c"
+    },
+    "eef_positions": {
+      "shape": [
+        2,
+        3
+      ],
+      "dtype": "float32",
+      "sha256": "e7cbb986a51583043ceef3b4b433963b4498034a810cd3d945e0eefcb7cc4943"
+    },
+    "eef_quaternions_wxyz": {
+      "shape": [
+        2,
+        4
+      ],
+      "dtype": "float32",
+      "sha256": "c78e14918de620c6778cdbafdaad89e6febea9b29a5357e8ce34431b4102635a"
+    },
+    "instruction": {
+      "shape": [],
+      "dtype": "<U56",
+      "sha256": "df8dfa036825bfb69b4b14187b112318477f1a105e9f45013105be43837c7eae"
+    },
+    "remaining_steps": {
+      "shape": [],
+      "dtype": "int64",
+      "sha256": "ea4bd339537c75e50631c1f2658b200ca5c1f5f089114fef8d6eb687c00468a3"
+    }
+  },
+  "scope": "Recorded RGB, proprio, robot EEF and instruction; not a complete physics state",
+  "bitwise_physics_reproducibility_guaranteed": false
+}

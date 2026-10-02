@@ -2,6 +2,14 @@
 
 ## Active V5 Update
 
+Latest: the first frozen development pair is terminal. Task-plus-subtask tower0
+succeeded at 717 actions, score 1.0, seven GPT calls/$0.04122325; fresh
+original-only failed at 1050 actions, score 0.10, zero GPT calls. Both native
+source/ACK/cadence/evaluator audits pass. Read
+`docs/semantic/MATCHED_HIERARCHY_PROGRESS_20261002.md` and
+`docs/semantic/EXTERNAL_PROGRESS_HANDOFF_20261002.md` for current coverage.
+This is one positive pair, not a reliable causal or full-benchmark gain.
+
 The owner changed direction to semantic language hierarchy. Read
 `HANDOFF_V5.md` and `docs/semantic/NATIVE_QUALIFICATION_PROGRESS_20261002.md`
 before the historical V4 discussion below. The wrapped original-only tower0
@@ -18,7 +26,8 @@ ending motor execution. Repaired native shadow completed with failure/score
 0.10, 1050 actions, 70 policy calls and ten GPT calls ($0.059665), with unchanged
 motor prompts/cadence and passing source/ACK audits. A 30-action actual-source
 context/tokenizer probe also passed; these establish plumbing, not obedience.
-Formal qualification/freeze and matched hierarchy remain pending. Read
+Development qualification/freeze records exist; four primary pairs and five
+subtask-only variants remain. Read
 `docs/semantic/EXTERNAL_PROGRESS_HANDOFF_20261002.md` for the latest snapshot. The $85 shared
 cap and all old unresolved holds are unchanged. V4 outcomes remain evidence,
 not renamed V5 results or a full RoboDojo policy ranking.

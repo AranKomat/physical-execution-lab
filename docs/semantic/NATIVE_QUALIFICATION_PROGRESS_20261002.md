@@ -118,5 +118,9 @@ operator's 16 calls/$1, not inherited 180 calls/$3. Full CPU suite: 374 passed.
 - Matched development hierarchy and separate recovery condition.
 - Freeze choices before unopened held-out task groups.
 
-No native V5 hierarchy gain, formal source/config-bound qualification freeze,
+Development source/config-bound qualification and freeze records now exist for
+the fixed roster; the fresh control verifies their bindings before launch.
+The first active task-plus-subtask tower0 succeeded at 717 actions/score 1.0,
+with seven GPT calls costing $0.04122325. See
+`MATCHED_HIERARCHY_PROGRESS_20261002.md`. No causal hierarchy gain,
 asynchronous planning or full-benchmark replication is established yet.

@@ -1,0 +1,34 @@
+{
+  "configs": {
+    "robodojo_pi05_robodojo_semantic_v5_motor_matched_dev_001": "5225b88e69eb4a03cf297b2719287a83e167a2e85f64774cfcdc1a8ec988c979",
+    "robodojo_pi05_robodojo_semantic_v5_subtask_only_matched_dev_001": "8abf029b17f89deb4e10b912d22b7cbbb15d9ca666c567d1e6b3a458f3b14381",
+    "robodojo_pi05_robodojo_semantic_v5_task_plus_subtask_matched_dev_001": "5556d7309eecf419f70b06234f3606083aed080bb4ac17561155553ce1f58ea4"
+  },
+  "manifest_sha256": "38d25c3c416151db417794c64d87a4c7a4884a2961dca4a88ae1a125c5c3cb50",
+  "native_review": {
+    "files": {
+      "k1lab/multibench/adapters/pi05.py": {
+        "actual": "f8363f8b9bd2676779e0b24bd74c1f0c09119f16",
+        "expected": "f8363f8b9bd2676779e0b24bd74c1f0c09119f16"
+      },
+      "k1lab/multibench/adapters/robocasa.py": {
+        "actual": "3ccadc36b31a6a387eaf27cda7ab9557f58bd51c",
+        "expected": "3ccadc36b31a6a387eaf27cda7ab9557f58bd51c"
+      },
+      "k1lab/multibench/adapters/robodojo.py": {
+        "actual": "5486b2e975508d8ea90776db5b42824b65d173ce",
+        "expected": "5486b2e975508d8ea90776db5b42824b65d173ce"
+      },
+      "k1lab/multibench/adapters/xpolicylab.py": {
+        "actual": "68a334ba1a80fb756f45ac9dee80ff1b5aa5ace9",
+        "expected": "68a334ba1a80fb756f45ac9dee80ff1b5aa5ace9"
+      }
+    },
+    "matches_reviewed_base": true,
+    "reviewed_commit": "dc2e704064bc8e997f64d7978bb9714e995e65f2"
+  },
+  "qualifies_hardware_or_models": false,
+  "schema": "semantic.freeze.v1",
+  "sha256": "c5b0cf43c4d883e8e9b6b49a3925f8c4d23923a9fba30abff5588e9cefbd1061",
+  "source_sha256": "fba009076ad08a155b0631d293ce60a99677264d9b76bf7c2359ffc8c712abc7"
+}

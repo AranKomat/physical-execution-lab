@@ -1,0 +1,248 @@
+{
+  "scope": "planner claims, not independent success truth",
+  "decisions": [
+    {
+      "step": 0,
+      "reasons": [
+        "initial_semantic_goal"
+      ],
+      "decision": {
+        "episode": "0c536f55bc1f4c0a96e1bd3e516f0a69",
+        "based_on_step": 0,
+        "based_on_stamp": "af8f092cb5e53ef397a01ca1076ac09a6cfb83d0a09bdde29a805096d186835d",
+        "expected_epoch": 0,
+        "operation": "set_subtask",
+        "subtask": "Grasp the white wooden block immediately to the left of the long wooden board with the left gripper.",
+        "assessment": "not_started",
+        "evidence": "At step 0, the blocks and two boards are separate on the tabletop. The front-left white block is beside the left end of the long board; neither gripper visibly holds an object.",
+        "completed_claims": [],
+        "uncertain_or_invalidated": []
+      },
+      "effect": {
+        "changed": true,
+        "stop": false,
+        "age_steps": 0,
+        "shadow_only": false
+      },
+      "native_evaluator_information_supplied": false
+    },
+    {
+      "step": 105,
+      "reasons": [
+        "periodic_semantic_check_at_native_boundary"
+      ],
+      "decision": {
+        "episode": "0c536f55bc1f4c0a96e1bd3e516f0a69",
+        "based_on_step": 105,
+        "based_on_stamp": "cba54bcbdcf48318c180661559e2972ee649be99c7da78961e0c939fa85819fc",
+        "expected_epoch": 1,
+        "operation": "continue",
+        "subtask": "",
+        "assessment": "not_started",
+        "evidence": "At step 105, the target white block remains on the tabletop immediately left of the long board. The left wrist view shows the block outside the open fingers, with no visible grasp or lift. Retain the current grasp goal; robot motion alone does not establish object progress.",
+        "completed_claims": [],
+        "uncertain_or_invalidated": []
+      },
+      "effect": {
+        "changed": false,
+        "stop": false,
+        "age_steps": 0,
+        "shadow_only": false
+      },
+      "native_evaluator_information_supplied": false
+    },
+    {
+      "step": 210,
+      "reasons": [
+        "periodic_semantic_check_at_native_boundary"
+      ],
+      "decision": {
+        "episode": "0c536f55bc1f4c0a96e1bd3e516f0a69",
+        "based_on_step": 210,
+        "based_on_stamp": "a1ef8b4c562f83fb7695abe27a360a697365a6014f08a637e9111310ba71d547",
+        "expected_epoch": 1,
+        "operation": "continue",
+        "subtask": "",
+        "assessment": "uncertain",
+        "evidence": "At step 210, the grippers are near the ends of the long board, and both wrist images are dominated by the board. The target white block beside its left end is obscured by the left gripper in the overhead view; no secure grasp or lift of that block is visible. Step 105 showed it still on the tabletop. Retain the current grasp goal without claiming completion.",
+        "completed_claims": [],
+        "uncertain_or_invalidated": [
+          "At step 210, occlusion prevents verification of whether the left gripper holds the target white block."
+        ]
+      },
+      "effect": {
+        "changed": false,
+        "stop": false,
+        "age_steps": 0,
+        "shadow_only": false
+      },
+      "native_evaluator_information_supplied": false
+    },
+    {
+      "step": 315,
+      "reasons": [
+        "periodic_semantic_check_at_native_boundary"
+      ],
+      "decision": {
+        "episode": "0c536f55bc1f4c0a96e1bd3e516f0a69",
+        "based_on_step": 315,
+        "based_on_stamp": "fd0208164b4f33beacfafef8b502a13be6b8b53b4e8dfadc7f02f330a0af1b66",
+        "expected_epoch": 1,
+        "operation": "set_subtask",
+        "subtask": "Place the white wooden block held by the left gripper onto the top of the long wooden board.",
+        "assessment": "complete",
+        "evidence": "At step 315, the left wrist view clearly shows the white block between the gripper fingers, and the overhead view shows the left gripper raised beside the long board. This supports completion of the grasp goal. The long board is visible with white blocks beneath its ends; its top is available for the held block.",
+        "completed_claims": [
+          {
+            "text": "The left gripper has grasped the target white wooden block.",
+            "evidence_steps": [
+              315
+            ]
+          }
+        ],
+        "uncertain_or_invalidated": [
+          "The grasp was obscured at step 210; the current left wrist view at step 315 resolves that uncertainty."
+        ]
+      },
+      "effect": {
+        "changed": true,
+        "stop": false,
+        "age_steps": 0,
+        "shadow_only": false
+      },
+      "native_evaluator_information_supplied": false
+    },
+    {
+      "step": 420,
+      "reasons": [
+        "periodic_semantic_check_at_native_boundary"
+      ],
+      "decision": {
+        "episode": "0c536f55bc1f4c0a96e1bd3e516f0a69",
+        "based_on_step": 420,
+        "based_on_stamp": "4d4eb41c57245c5a3f0e631ecbd1d3be0b0e1084027719ab9d414d1bb1d6ef19",
+        "expected_epoch": 2,
+        "operation": "set_subtask",
+        "subtask": "Grasp the short wooden board lying in front of the tower with the left gripper.",
+        "assessment": "complete",
+        "evidence": "At step 420, the overhead view shows a white block resting on top of the left end of the long board, while the left gripper is empty and withdrawn. This supports completion of the placement goal. The short wooden board remains separate on the tabletop in front of the structure. The right wrist view shows another white block over the long board, but its release is not verified.",
+        "completed_claims": [
+          {
+            "text": "The left gripper grasped the target white wooden block.",
+            "evidence_steps": [
+              315
+            ]
+          },
+          {
+            "text": "The target white wooden block has been placed on top of the left end of the long wooden board.",
+            "evidence_steps": [
+              420
+            ]
+          }
+        ],
+        "uncertain_or_invalidated": [
+          "At step 420, the right-side white block is visible over the long board, but its release and stable support are not verified."
+        ]
+      },
+      "effect": {
+        "changed": true,
+        "stop": false,
+        "age_steps": 0,
+        "shadow_only": false
+      },
+      "native_evaluator_information_supplied": false
+    },
+    {
+      "step": 525,
+      "reasons": [
+        "periodic_semantic_check_at_native_boundary"
+      ],
+      "decision": {
+        "episode": "0c536f55bc1f4c0a96e1bd3e516f0a69",
+        "based_on_step": 525,
+        "based_on_stamp": "7bfafe8ac8e70c2056de6281f744a623f8bcef9ef79c944aefc70159554f8efe",
+        "expected_epoch": 3,
+        "operation": "set_subtask",
+        "subtask": "Grasp the loose wooden block on the tabletop to the right of the tower with the right gripper.",
+        "assessment": "complete",
+        "evidence": "At step 525, the short board previously lying in front of the tower at step 420 is now visible across the upper white blocks. Both grippers are withdrawn and visibly empty; the grasp itself was not observed, but the board has already been transferred onto the structure. A loose tan wooden block remains on the tabletop to the right.",
+        "completed_claims": [
+          {
+            "text": "The target white wooden block was placed on top of the left end of the long board.",
+            "evidence_steps": [
+              420,
+              525
+            ]
+          },
+          {
+            "text": "The short wooden board is now resting across the upper white blocks of the tower.",
+            "evidence_steps": [
+              525
+            ]
+          }
+        ],
+        "uncertain_or_invalidated": [
+          "The left-gripper grasp of the short board was not directly observed.",
+          "Long-term stability of the newly placed upper board is not verified."
+        ]
+      },
+      "effect": {
+        "changed": true,
+        "stop": false,
+        "age_steps": 0,
+        "shadow_only": false
+      },
+      "native_evaluator_information_supplied": false
+    },
+    {
+      "step": 630,
+      "reasons": [
+        "periodic_semantic_check_at_native_boundary"
+      ],
+      "decision": {
+        "episode": "0c536f55bc1f4c0a96e1bd3e516f0a69",
+        "based_on_step": 630,
+        "based_on_stamp": "d3c249f6d6f7ecc6b8485c39a17467b9fd499a27aa43dfae61e68bd1d6d95ece",
+        "expected_epoch": 4,
+        "operation": "set_subtask",
+        "subtask": "Grasp the loose green block on the tabletop to the left of the tower with the left gripper.",
+        "assessment": "complete",
+        "evidence": "At step 630, the tan block previously on the tabletop to the right at step 525 is visible resting on the upper board of the tower. The right gripper is withdrawn and empty; the grasp itself was not observed, but the block has already been transferred. The green block remains on the tabletop to the left and is clearly visible in the left wrist view.",
+        "completed_claims": [
+          {
+            "text": "The target white wooden block was placed on top of the left end of the long board.",
+            "evidence_steps": [
+              420,
+              525
+            ]
+          },
+          {
+            "text": "The short wooden board rests across the upper white blocks of the tower.",
+            "evidence_steps": [
+              525,
+              630
+            ]
+          },
+          {
+            "text": "The loose tan wooden block has been transferred from the right tabletop onto the upper board of the tower.",
+            "evidence_steps": [
+              525,
+              630
+            ]
+          }
+        ],
+        "uncertain_or_invalidated": [
+          "The right-gripper grasp of the tan block was not directly observed.",
+          "Long-term stability of the tower is not verified."
+        ]
+      },
+      "effect": {
+        "changed": true,
+        "stop": false,
+        "age_steps": 0,
+        "shadow_only": false
+      },
+      "native_evaluator_information_supplied": false
+    }
+  ]
+}
