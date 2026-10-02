@@ -1,0 +1,12 @@
+{
+  "name": "reference_controller_probe001",
+  "mode": "direct_sparse",
+  "controller_probe": true,
+  "max_decision_steps": 15,
+  "max_correction_steps": 15,
+  "max_reviews": 2,
+  "translation_limit_m": 0.01,
+  "wall_limit_s": 600,
+  "robot_preview": false,
+  "scope": "simulator-only robot-proprioception calibration; unknown external clearance; no task-performance claim"
+}

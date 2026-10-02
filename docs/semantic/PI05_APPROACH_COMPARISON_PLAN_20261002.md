@@ -101,6 +101,15 @@ would stop valid numeric/direct experiments rather than batch them.
   the shared ledger, reservations and no-retry contract.
 - [ ] Freeze resolved conditions/source/cases, then run the matched task waves.
 
+Native wiring now uses the pinned source DLS through the indexed robot view.
+Direct mode skips policy-worker launch/registration and reports a null motor
+policy. Paid-call accounting reads client attempts, not validated decisions.
+The prepared `reference-controller-probe001.json` is a separate no-API,
+30-action calibration: 15 actions toward a 5mm left-EEF offset then 15 toward
+the initial robot pose, with unchanged orientation/grippers. It has no task
+recipe and explicitly records unknown external clearance. Native execution
+and qualification are still pending; 422 passing CPU tests do not replace them.
+
 The source `DualKinematics` reads robot queries and limits at local index0.
 Native robot queries return dictionaries keyed by global environment index.
 `SingleEnvironmentRobotManager` requests only its selected native index,
