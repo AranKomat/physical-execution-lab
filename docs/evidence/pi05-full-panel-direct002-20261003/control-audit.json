@@ -1,0 +1,105 @@
+{
+  "benchmark_qualified": false,
+  "client_http_attempts": 111,
+  "distinct_cases": 10,
+  "integrity_passed": true,
+  "motor_policy_loaded": false,
+  "native_actions": 468,
+  "raw_parent_report_sha256": "a95641973283bdacd80f9315058cdceb4ed55f200e3fa99943ad7e0488fb0985",
+  "rows": [
+    {
+      "case_id": "arrange_largest_number__standard__g0__l0",
+      "error": "correction target outside translation bound",
+      "native_score": null,
+      "native_steps": 0,
+      "status": "infrastructure_or_contract_error",
+      "success": false
+    },
+    {
+      "case_id": "build_tower__standard__g0__l0",
+      "error": null,
+      "native_score": null,
+      "native_steps": 161,
+      "status": "incomplete",
+      "success": false
+    },
+    {
+      "case_id": "classify_objects_by_language__standard__g0__l0",
+      "error": "correction target outside translation bound",
+      "native_score": null,
+      "native_steps": 0,
+      "status": "infrastructure_or_contract_error",
+      "success": false
+    },
+    {
+      "case_id": "fold_clothes__standard__g0__l0",
+      "error": "correction target outside translation bound",
+      "native_score": null,
+      "native_steps": 0,
+      "status": "infrastructure_or_contract_error",
+      "success": false
+    },
+    {
+      "case_id": "imitate_sorting_sequence__standard__g0__l0",
+      "error": "correction: expected finite (16,), got (8,)",
+      "native_score": null,
+      "native_steps": 35,
+      "status": "infrastructure_or_contract_error",
+      "success": false
+    },
+    {
+      "case_id": "make_kong__standard__g0__l0",
+      "error": "correction: expected finite (16,), got (8,)",
+      "native_score": null,
+      "native_steps": 70,
+      "status": "infrastructure_or_contract_error",
+      "success": false
+    },
+    {
+      "case_id": "classify_objects__standard__g0__l0",
+      "error": "model request failed: HTTPStatusError; inspect archive; no automatic retry",
+      "native_score": null,
+      "native_steps": 69,
+      "status": "infrastructure_or_contract_error",
+      "success": false
+    },
+    {
+      "case_id": "organize_table__standard__g0__l0",
+      "error": "model request failed: HTTPStatusError; inspect archive; no automatic retry",
+      "native_score": null,
+      "native_steps": 66,
+      "status": "infrastructure_or_contract_error",
+      "success": false
+    },
+    {
+      "case_id": "pack_objects_into_box__standard__g0__l0",
+      "error": "correction target outside translation bound",
+      "native_score": null,
+      "native_steps": 0,
+      "status": "infrastructure_or_contract_error",
+      "success": false
+    },
+    {
+      "case_id": "put_bottles_into_dustbin__standard__g0__l0",
+      "error": "model request failed: HTTPStatusError; inspect archive; no automatic retry",
+      "native_score": null,
+      "native_steps": 67,
+      "status": "infrastructure_or_contract_error",
+      "success": false
+    }
+  ],
+  "scope": "retained full-panel routing, admission and control ACK integrity",
+  "summary": {
+    "all_rows_native_terminal": false,
+    "censored_or_invalid_cases": 10,
+    "controller_status_counts": {
+      "incomplete": 1,
+      "infrastructure_or_contract_error": 9
+    },
+    "native_task_failures": 0,
+    "native_terminal_cases": 0,
+    "paid_calls_count_scope": "client HTTP attempts, including local relay rejections; not provider reservations or charges",
+    "results_present": 10,
+    "successes": 0
+  }
+}

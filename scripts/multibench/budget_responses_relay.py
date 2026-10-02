@@ -147,7 +147,11 @@ class Relay:
                 raise RuntimeError('served model mismatch; no further requests')
             self.unresolved=False
             (self.output/'summary.json').write_text(json.dumps({
-                'attempts':self.attempts,'cost_usd':str(self.spent),'no_automatic_retry':True,
+                'attempts':self.attempts,'cost_usd':str(self.spent),
+                'no_automatic_retry':not self.allow_standard_fallback,
+                'generic_retry_enabled':False,
+                'authorized_retry_exception':('same_model_standard_after_explicit_flex_capacity'
+                    if self.allow_standard_fallback else None),
                 'requested_model':MODEL,'provider':provider,'service_tier':tier,
                 'allow_standard_fallback':self.allow_standard_fallback,
                 'standard_active':self.standard_active,'flex_capacity_holds':self.capacity_holds,

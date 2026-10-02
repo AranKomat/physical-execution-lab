@@ -129,6 +129,10 @@ def test_authorized_capacity_fallback_retains_hold_and_pins_same_model(tmp_path)
     assert ledger.reserved[1][2] == ledger.reserved[0][2] * 2
     assert r.held == ledger.reserved[0][2] and not r.unresolved
     assert 'trial-0' in ledger.acknowledged_unknown_ids and r.standard_active
+    summary = json.loads((tmp_path/'summary.json').read_text())
+    assert summary['no_automatic_retry'] is False
+    assert summary['generic_retry_enabled'] is False
+    assert summary['authorized_retry_exception'] == 'same_model_standard_after_explicit_flex_capacity'
 
 
 def test_fallback_hold_counts_against_local_cap(tmp_path):

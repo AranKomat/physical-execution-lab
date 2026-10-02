@@ -96,6 +96,18 @@ after tasks terminate; padded rows never receive simulator actions or scores.
 
 ### Scoped Admission And Interrupted Direct Trial (2026-10-03 JST)
 
+Latest continuation: `pi05-full-panel-direct002` has ended and its evidence is
+backed up and audited. Standard fallback worked, but all ten outcomes remain
+censored/invalid: four translation-contract rejections, two action-shape
+rejections, one model-issued incomplete stop, and three HTTP-error stops after
+an OpenRouter admission-control429. No native terminal outcomes or task scores
+exist. Do not report0/10 physical SR. See
+`../evidence/pi05-full-panel-direct002-20261003/REPORT.md` for accounting,
+interface diagnostics and the next full-panel conditions. Numeric and semantic
+remain unrun. The unresolved standard429 hold is retained; it is not covered by
+the narrow Flex-capacity fallback authorization. New executor source changes
+require a fresh freeze before the next method.
+
 `cohort_admission.py` verifies the completed baseline's retained integrity audit,
 unchanged task/control/inference core,2,941 native source/config files from the
 controller reference freeze, and all87 native interleaving-evidence files.
