@@ -95,7 +95,7 @@ would stop valid numeric/direct experiments rather than batch them.
 - [x] Resolve read-only preview/inference subsets before native action dispatch;
   retain separate per-episode inference cadence and contiguous ACK streams.
 - [x] Prepare a robot-only environment-index view for the pinned source DLS.
-- [ ] Wire native indexed source DLS/previews and audit emitted joint commands.
+- [x] Wire native indexed source DLS/previews and audit emitted joint commands.
 - [ ] Qualify the native correction path and task variants before paid trials.
 - [ ] Bind `robot_decision` paid review separately from `semantic_goal`, preserving
   the shared ledger, reservations and no-retry contract.
@@ -118,6 +118,29 @@ task performance or full executor qualification. Both initial robot postures
 were identical, so native isolation under divergent robot states is unproven.
 Preview/correction interleaving and task-variant admission remain pending.
 See `../evidence/reference-execution-binding001-20261002/controller-probe-audit001.json`.
+
+The separate `reference-interleaving-probe001.json` check then completed on
+the same two opened layouts: 45 native actions each (40 exact source-policy
+actions plus five forced calibration corrections), four H50 predictions and
+four native source FK previews each. Environment0 corrected its left arm;
+environment1 corrected its right arm. Both resumed fresh policy predictions
+after correction, without controller errors, unstable flags or paid calls.
+Rollout wall time was 28.39s, excluding startup. Contiguous journals, source
+proposal equality, motor command equality and bounded DLS updates passed the
+retained audit; all 87 backup files matched the host. This calibration fixture
+does not establish learned recovery, task success or unseen-variant admission.
+No more native controller/capacity sweep is planned before the approach screen.
+See `../evidence/reference-execution-binding001-20261002/interleaving-audit001.json`.
+
+The fixed panel and all four complete native-runner condition configs are now
+prepared in `../evidence/pi05-approach-preparation001-20261002/`. The preparer
+uses the existing sealed reference manifest and bound pi0.5 provider identity,
+selects standard group0/layout0 in the ten fixed groups, and retains all 40
+condition/case slots as missing. No task outcome was consulted. Numeric periodic
+leases are 105 steps (seven H15 prefixes); semantic review remains target100
+at the next prefix boundary. Event-triggered scheduling differences are explicit.
+Fresh executor source binding, scoped native admission and actual paid relay
+reservation remain required before those prepared configs can be launched.
 
 The source `DualKinematics` reads robot queries and limits at local index0.
 Native robot queries return dictionaries keyed by global environment index.

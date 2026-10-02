@@ -1,0 +1,277 @@
+{
+  "budget": "existing shared $85 reservation ledger; unresolved holds retained; no retry/fallback",
+  "cadence": "numeric periodic lease105; semantic target100 at next H15 boundary; event reviews differ explicitly",
+  "censoring": "budget/wall/contract/resource stops remain separate from physical horizon failures",
+  "configs": {
+    "direct": "8fe58d995741c86c78e31a0ca4e1fa17e4cfc2ca29cad89f020be0101e99d841",
+    "numeric": "66857db56f1d562f4824b707aa3209ae354b7c36d30e11fe74207773a19e5321",
+    "original_only": "dcb11d7d3dd61d555b83ecd00c09b9cd10ce384b7b23181372518fd813bbf079",
+    "semantic": "564c31faac4cf1199239d8723854bb9a1e3d3292781df259a6e0988aa6165550"
+  },
+  "direct_has_motor_policy": false,
+  "executed": false,
+  "initial_case_order_fixed_before_new_outcomes": true,
+  "manifest_sha256": "ece23adee28fcf427e25bba45563645cea0d444a04f91f0e36fecbd2f8c501bd",
+  "motor_identity": {
+    "action_space": "x5_joint14",
+    "adapter_config_sha256": "6a172d9cb0c9528f3fa6f50d472dac6948b34a9827e6a71816d47adc224d8edf",
+    "benchmark_training": "RoboDojo task/embodiment post-trained",
+    "checkpoint_sha256": "c70c9a59e650d484c8b921d8e17181cacd8e24b20c4cbae8277a1dffe9b69ee9",
+    "execute_steps": 15,
+    "name": "pi05_robodojo",
+    "native_hz": 25.0,
+    "prediction_horizon": 50,
+    "preprocessing_id": "gpt_as_policy_openpi_jax_cam3_joint14",
+    "revision": "8f3d362b077d8efb77e2a7274d5b2c20e2243846",
+    "stateful": false
+  },
+  "numeric_is_adapted_not_paper_reproduction": true,
+  "parent_manifest_sha256": "38d25c3c416151db417794c64d87a4c7a4884a2961dca4a88ae1a125c5c3cb50",
+  "provider_sha256": "0ca1dfff4fbbb733c0be92b2fe95e0b443e9564d442d6fe11ae822e2146de1f6",
+  "qualified": false,
+  "schema": "semantic.approach_screen.v1",
+  "sha256": "bbf693e504c69f81e0c57f023cb90964c1df64100de54b275d32ae0cb257e39c",
+  "slots": [
+    {
+      "approach": "original_only",
+      "case_id": "arrange_largest_number__standard__g0__l0",
+      "condition": "pi05_approach_screen001_original_only",
+      "status": "missing"
+    },
+    {
+      "approach": "original_only",
+      "case_id": "build_tower__standard__g0__l0",
+      "condition": "pi05_approach_screen001_original_only",
+      "status": "missing"
+    },
+    {
+      "approach": "original_only",
+      "case_id": "classify_objects__standard__g0__l0",
+      "condition": "pi05_approach_screen001_original_only",
+      "status": "missing"
+    },
+    {
+      "approach": "original_only",
+      "case_id": "classify_objects_by_language__standard__g0__l0",
+      "condition": "pi05_approach_screen001_original_only",
+      "status": "missing"
+    },
+    {
+      "approach": "original_only",
+      "case_id": "fold_clothes__standard__g0__l0",
+      "condition": "pi05_approach_screen001_original_only",
+      "status": "missing"
+    },
+    {
+      "approach": "original_only",
+      "case_id": "imitate_sorting_sequence__standard__g0__l0",
+      "condition": "pi05_approach_screen001_original_only",
+      "status": "missing"
+    },
+    {
+      "approach": "original_only",
+      "case_id": "make_kong__standard__g0__l0",
+      "condition": "pi05_approach_screen001_original_only",
+      "status": "missing"
+    },
+    {
+      "approach": "original_only",
+      "case_id": "organize_table__standard__g0__l0",
+      "condition": "pi05_approach_screen001_original_only",
+      "status": "missing"
+    },
+    {
+      "approach": "original_only",
+      "case_id": "pack_objects_into_box__standard__g0__l0",
+      "condition": "pi05_approach_screen001_original_only",
+      "status": "missing"
+    },
+    {
+      "approach": "original_only",
+      "case_id": "put_bottles_into_dustbin__standard__g0__l0",
+      "condition": "pi05_approach_screen001_original_only",
+      "status": "missing"
+    },
+    {
+      "approach": "direct",
+      "case_id": "arrange_largest_number__standard__g0__l0",
+      "condition": "pi05_approach_screen001_direct",
+      "status": "missing"
+    },
+    {
+      "approach": "direct",
+      "case_id": "build_tower__standard__g0__l0",
+      "condition": "pi05_approach_screen001_direct",
+      "status": "missing"
+    },
+    {
+      "approach": "direct",
+      "case_id": "classify_objects__standard__g0__l0",
+      "condition": "pi05_approach_screen001_direct",
+      "status": "missing"
+    },
+    {
+      "approach": "direct",
+      "case_id": "classify_objects_by_language__standard__g0__l0",
+      "condition": "pi05_approach_screen001_direct",
+      "status": "missing"
+    },
+    {
+      "approach": "direct",
+      "case_id": "fold_clothes__standard__g0__l0",
+      "condition": "pi05_approach_screen001_direct",
+      "status": "missing"
+    },
+    {
+      "approach": "direct",
+      "case_id": "imitate_sorting_sequence__standard__g0__l0",
+      "condition": "pi05_approach_screen001_direct",
+      "status": "missing"
+    },
+    {
+      "approach": "direct",
+      "case_id": "make_kong__standard__g0__l0",
+      "condition": "pi05_approach_screen001_direct",
+      "status": "missing"
+    },
+    {
+      "approach": "direct",
+      "case_id": "organize_table__standard__g0__l0",
+      "condition": "pi05_approach_screen001_direct",
+      "status": "missing"
+    },
+    {
+      "approach": "direct",
+      "case_id": "pack_objects_into_box__standard__g0__l0",
+      "condition": "pi05_approach_screen001_direct",
+      "status": "missing"
+    },
+    {
+      "approach": "direct",
+      "case_id": "put_bottles_into_dustbin__standard__g0__l0",
+      "condition": "pi05_approach_screen001_direct",
+      "status": "missing"
+    },
+    {
+      "approach": "numeric",
+      "case_id": "arrange_largest_number__standard__g0__l0",
+      "condition": "pi05_approach_screen001_numeric",
+      "status": "missing"
+    },
+    {
+      "approach": "numeric",
+      "case_id": "build_tower__standard__g0__l0",
+      "condition": "pi05_approach_screen001_numeric",
+      "status": "missing"
+    },
+    {
+      "approach": "numeric",
+      "case_id": "classify_objects__standard__g0__l0",
+      "condition": "pi05_approach_screen001_numeric",
+      "status": "missing"
+    },
+    {
+      "approach": "numeric",
+      "case_id": "classify_objects_by_language__standard__g0__l0",
+      "condition": "pi05_approach_screen001_numeric",
+      "status": "missing"
+    },
+    {
+      "approach": "numeric",
+      "case_id": "fold_clothes__standard__g0__l0",
+      "condition": "pi05_approach_screen001_numeric",
+      "status": "missing"
+    },
+    {
+      "approach": "numeric",
+      "case_id": "imitate_sorting_sequence__standard__g0__l0",
+      "condition": "pi05_approach_screen001_numeric",
+      "status": "missing"
+    },
+    {
+      "approach": "numeric",
+      "case_id": "make_kong__standard__g0__l0",
+      "condition": "pi05_approach_screen001_numeric",
+      "status": "missing"
+    },
+    {
+      "approach": "numeric",
+      "case_id": "organize_table__standard__g0__l0",
+      "condition": "pi05_approach_screen001_numeric",
+      "status": "missing"
+    },
+    {
+      "approach": "numeric",
+      "case_id": "pack_objects_into_box__standard__g0__l0",
+      "condition": "pi05_approach_screen001_numeric",
+      "status": "missing"
+    },
+    {
+      "approach": "numeric",
+      "case_id": "put_bottles_into_dustbin__standard__g0__l0",
+      "condition": "pi05_approach_screen001_numeric",
+      "status": "missing"
+    },
+    {
+      "approach": "semantic",
+      "case_id": "arrange_largest_number__standard__g0__l0",
+      "condition": "pi05_approach_screen001_semantic",
+      "status": "missing"
+    },
+    {
+      "approach": "semantic",
+      "case_id": "build_tower__standard__g0__l0",
+      "condition": "pi05_approach_screen001_semantic",
+      "status": "missing"
+    },
+    {
+      "approach": "semantic",
+      "case_id": "classify_objects__standard__g0__l0",
+      "condition": "pi05_approach_screen001_semantic",
+      "status": "missing"
+    },
+    {
+      "approach": "semantic",
+      "case_id": "classify_objects_by_language__standard__g0__l0",
+      "condition": "pi05_approach_screen001_semantic",
+      "status": "missing"
+    },
+    {
+      "approach": "semantic",
+      "case_id": "fold_clothes__standard__g0__l0",
+      "condition": "pi05_approach_screen001_semantic",
+      "status": "missing"
+    },
+    {
+      "approach": "semantic",
+      "case_id": "imitate_sorting_sequence__standard__g0__l0",
+      "condition": "pi05_approach_screen001_semantic",
+      "status": "missing"
+    },
+    {
+      "approach": "semantic",
+      "case_id": "make_kong__standard__g0__l0",
+      "condition": "pi05_approach_screen001_semantic",
+      "status": "missing"
+    },
+    {
+      "approach": "semantic",
+      "case_id": "organize_table__standard__g0__l0",
+      "condition": "pi05_approach_screen001_semantic",
+      "status": "missing"
+    },
+    {
+      "approach": "semantic",
+      "case_id": "pack_objects_into_box__standard__g0__l0",
+      "condition": "pi05_approach_screen001_semantic",
+      "status": "missing"
+    },
+    {
+      "approach": "semantic",
+      "case_id": "put_bottles_into_dustbin__standard__g0__l0",
+      "condition": "pi05_approach_screen001_semantic",
+      "status": "missing"
+    }
+  ],
+  "source_freeze_pending": true
+}

@@ -1275,7 +1275,7 @@
     "semantic_lab/token_retention.py": "2755a9a4fae843749a0d1b8e3fe0c48ed703a5cbee1336da655e39f580f1ab7d",
     "tests/semantic/test_token_retention.py": "2096d5dc6d533b691a47015e257a375ee165526fdbd0cab6014d7ef24d99f22b",
     "docs/evidence/reference-execution-binding001-20261002/live-token-guard-probe001.json": "31d762f668e6795fcfb081776aa559e3a62811663fa4acba41071ea4756ca872",
-    "docs/semantic/PI05_APPROACH_COMPARISON_PLAN_20261002.md": "6873f44143e175507989371a33dfa91491be28b3ac88f110459350fb1873a458",
+    "docs/semantic/PI05_APPROACH_COMPARISON_PLAN_20261002.md": "9efa6f76a8519ebb9557c244e453fff5020e70614b6d8199fd18996b03134627",
     "docs/evidence/reference-execution-binding001-20261002/operator_reference_native001.py": "dfb385557ab8be0b01eb6e6728c852b87816f108a16512c9c87f59173e605f56",
     "semantic_lab/robot_view.py": "4c178b451a1f07d0fcbf1e648e17c9cfef05aee61ba48c2d3207ca3514c7e3a0",
     "semantic_lab/vector.py": "b5d9a28abb87fcbacd5ac32f1b2ad53651ae6c09d92fd0bf3f4aa0a3323f58b2",
@@ -1337,6 +1337,19 @@
     "scripts/semantic/audit_controller_probe.py": "fd38239900d1ab9611512d5077c304dc10b6ca60d1b57649469f26980b3f43fb",
     "configs/semantic/reference-interleaving-probe001.json": "d4aea8000881057139d998f00a00d2366697c455e83b023d68facffd0b62edeb",
     "docs/evidence/reference-execution-binding001-20261002/operator_reference_native005.py": "c612308a34bd93644955e1942125645f0c76ca5150be79e9bd822c498211d503",
-    "docs/evidence/reference-execution-binding001-20261002/operator_reference_rollout005.py": "2bd6761caeab47e08ed0a710fe8402fd9be6f1976385bbc4ec9e5d846ef58d26"
+    "docs/evidence/reference-execution-binding001-20261002/operator_reference_rollout005.py": "2bd6761caeab47e08ed0a710fe8402fd9be6f1976385bbc4ec9e5d846ef58d26",
+    "docs/evidence/pi05-approach-preparation001-20261002/cases.json": "b7108d3b7ad6e0c99962cf7eea608aba7e5c8c772ef3daf7eca113660ee3ceba",
+    "docs/evidence/pi05-approach-preparation001-20261002/direct.json": "8b311c6119c1cb5efe2c35d13baf9dcd57690e719828aee761555221dac65429",
+    "docs/evidence/pi05-approach-preparation001-20261002/numeric.json": "cfeb4d0a4522e1158c67bc094d94c617ff3db984a9d88122502d664dd4d92088",
+    "docs/evidence/pi05-approach-preparation001-20261002/original_only.json": "2ca6af4a7f166ba866e1f0e11bd07b010d337c652410119eeab69d19c9fa7ba0",
+    "docs/evidence/pi05-approach-preparation001-20261002/plan.json": "1b9c1a9953bad9f32dd1b5b36c6d1381615eb307e3730329163f62362b5a608a",
+    "docs/evidence/pi05-approach-preparation001-20261002/semantic.json": "fa9eb73c04f161d5628ca7df02cd2524e9e116ac2a0426f53da4856a8efe30ff",
+    "docs/evidence/reference-execution-binding001-20261002/interleaving-actions001.jsonl": "861fd6116179e90c774572270c789e77584515b3df78ff83a96f9c87916f253d",
+    "docs/evidence/reference-execution-binding001-20261002/interleaving-audit001.json": "a5e2085b0ddb08dd360b9d0d9bd138ee797138fbc70099ebfeceb3fd42891d46",
+    "docs/evidence/reference-execution-binding001-20261002/interleaving-report001.json": "09eafc59e6648dd57a3f0a611f6146fa8ab3dd9e3ddb33e47907377d80b3b488",
+    "scripts/semantic/audit_interleaving_probe.py": "80189453e5b37039175dec436097909cd29981cbbd5b1a75f783880a431a86e1",
+    "scripts/semantic/prepare_approach_comparison.py": "3c074b31e4b96dce6675b8c9d51e4f1557e8601bff01563ce49a53dbd245d0e4",
+    "semantic_lab/comparison.py": "a814696645690f44f174324d1df943bb75f27bc8fa56e1b5fde02a4fcbe46bc3",
+    "tests/semantic/test_comparison.py": "7fae94b4b86bf737a913da6f213cbf03d7bb5d4cadb913bbaa4bcf058c702258"
   }
 }

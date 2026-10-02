@@ -1,0 +1,633 @@
+{
+  "status": "native_control_wave",
+  "scope": "bounded controller calibration, not task performance",
+  "paid_calls": 0,
+  "resets": 1,
+  "task": "classify_objects",
+  "requested_envs": 2,
+  "budget_steps_per_env": 45,
+  "physics_of_completed_envs": "continues globally; terminal score frozen",
+  "rng_parity": false,
+  "inference_mode": "native_singleton",
+  "scored_benchmark_qualified": false,
+  "policy": "pi05",
+  "execute_steps": 15,
+  "returned_action_steps": 50,
+  "native_prediction_horizon": 50,
+  "shared_worker_root": null,
+  "execution_freeze_sha256": "fc4047859b31aab8adea03a704b554b1a09e606b053f39f57b03c392c795d710",
+  "execution_sources_sha256": "aa470323aff6e9db28ca2b241e1b56a67ea10355de810bfc968807b4a757096c",
+  "execution_binding_is_native_qualification": false,
+  "reference_cases": [
+    {
+      "benchmark": "robodojo",
+      "case_id": "classify_objects__standard__g0__l0",
+      "eval_seed": 0,
+      "horizon": 1100,
+      "layout_id": 0,
+      "layout_path": "Assets/Eval_Layout/RoboDojo/arx_x5/0/classify_objects_0.json",
+      "layout_sha256": "5ceb9e18e6d8490a7db85dd001462d63265c297ea6fad0d7438364deb2de3ece",
+      "native_hz": 25.0,
+      "partition": "dev",
+      "runtime_task": "classify_objects",
+      "source_case": {
+        "case_id": "classify_objects__standard__g0__l0",
+        "eval_seed": 0,
+        "layout": {
+          "path": "Assets/Eval_Layout/RoboDojo/arx_x5/0/classify_objects_0.json",
+          "sha256": "5ceb9e18e6d8490a7db85dd001462d63265c297ea6fad0d7438364deb2de3ece"
+        },
+        "layout_id": 0,
+        "native_support_trajectories": [],
+        "policy_rng_seed": 0,
+        "replica_id": 5,
+        "reset_seed": 0,
+        "rollout_index": 0,
+        "runtime_task": "classify_objects",
+        "simulator_initial_seed": 0,
+        "task": "classify_objects",
+        "variant": "standard"
+      },
+      "task": "classify_objects",
+      "task_group": "classify_objects",
+      "variant": "standard"
+    },
+    {
+      "benchmark": "robodojo",
+      "case_id": "classify_objects__standard__g0__l1",
+      "eval_seed": 0,
+      "horizon": 1100,
+      "layout_id": 1,
+      "layout_path": "Assets/Eval_Layout/RoboDojo/arx_x5/0/classify_objects_1.json",
+      "layout_sha256": "013d7141ffc9865d7cccf650301f642e6b83b3eb59f78cf5b1d0caf47158e17a",
+      "native_hz": 25.0,
+      "partition": "dev",
+      "runtime_task": "classify_objects",
+      "source_case": {
+        "case_id": "classify_objects__standard__g0__l1",
+        "eval_seed": 0,
+        "layout": {
+          "path": "Assets/Eval_Layout/RoboDojo/arx_x5/0/classify_objects_1.json",
+          "sha256": "013d7141ffc9865d7cccf650301f642e6b83b3eb59f78cf5b1d0caf47158e17a"
+        },
+        "layout_id": 1,
+        "native_support_trajectories": [],
+        "policy_rng_seed": 0,
+        "replica_id": 5,
+        "reset_seed": 1,
+        "rollout_index": 1,
+        "runtime_task": "classify_objects",
+        "simulator_initial_seed": 0,
+        "task": "classify_objects",
+        "variant": "standard"
+      },
+      "task": "classify_objects",
+      "task_group": "classify_objects",
+      "variant": "standard"
+    }
+  ],
+  "reference_manifest_file_sha256": "9c335b72fae984e05eda9d56f9465c1afe1c5d4accf29e9d703cf06898cb2fde",
+  "native_registration": {
+    "registered": true,
+    "source": "native EvalEnv.run_eval preamble",
+    "condition_group_counts": {
+      "check_list": [
+        1,
+        1
+      ],
+      "final_check_list": [
+        0,
+        0
+      ],
+      "trigger_check_list": [
+        0,
+        0
+      ]
+    },
+    "initial_support_arm_query_envs": []
+  },
+  "reset_seeds": [
+    0,
+    1
+  ],
+  "layout_bindings": [
+    {
+      "env_idx": 0,
+      "layout_id": 0,
+      "path": "/root/physical-execution-lab/external/RoboDojo/env/../Assets/Eval_Layout/RoboDojo/arx_x5/0/classify_objects_0.json",
+      "sha256": "5ceb9e18e6d8490a7db85dd001462d63265c297ea6fad0d7438364deb2de3ece"
+    },
+    {
+      "env_idx": 1,
+      "layout_id": 1,
+      "path": "/root/physical-execution-lab/external/RoboDojo/env/../Assets/Eval_Layout/RoboDojo/arx_x5/0/classify_objects_1.json",
+      "sha256": "013d7141ffc9865d7cccf650301f642e6b83b3eb59f78cf5b1d0caf47158e17a"
+    }
+  ],
+  "controller_statuses": {
+    "0": "budget_exhausted",
+    "1": "budget_exhausted"
+  },
+  "controller_probe": true,
+  "policy_free_direct": false,
+  "action_counts": [
+    45,
+    45
+  ],
+  "predictions": 4,
+  "semantic_config_sha256": "cd3aa59d2c53fbb602739401979b4cd21494b54d004a22f1472bfd47e7670647",
+  "controller_results": {
+    "0": {
+      "schema": "multibench.result.v1",
+      "case_id": "classify_objects__standard__g0__l0",
+      "task": "classify_objects",
+      "benchmark": "robodojo",
+      "condition": "reference_interleaving_probe001",
+      "mode": "review_every_chunk",
+      "split": null,
+      "partition": "dev",
+      "group": "classify_objects",
+      "success": false,
+      "native_score": null,
+      "status": "budget_exhausted",
+      "termination": "native_step_budget",
+      "error": null,
+      "native_steps": 45,
+      "simulated_seconds": 1.8,
+      "elapsed_s": 28.38297759499983,
+      "timing": {
+        "policy_s": 17.126834645983763,
+        "review_s": 0.0003154520090902224,
+        "env_s": 10.410435669997241,
+        "ack_s": 0.0009945150231942534,
+        "setup_s": 3.939989255741239e-06,
+        "preview_s": 0.2500945780047914
+      },
+      "metrics": {
+        "policy_calls": 4,
+        "proposed_policy_actions": 200,
+        "unresolved_policy_actions": 0,
+        "review_calls": 4,
+        "corrected_steps": 5,
+        "motor_steps": 40,
+        "gripper_clips": 0,
+        "discarded_policy_actions": 160,
+        "interruptions": 0,
+        "policy_invalidation_requests": 4,
+        "shortened_chunks": 3
+      },
+      "config_sha256": "cd3aa59d2c53fbb602739401979b4cd21494b54d004a22f1472bfd47e7670647",
+      "case_sha256": "b8943b464cd04de7cd684af6c951b1aa6501cc709ca0c42e6e8ed7840d58d7fc",
+      "initial_observation_sha256": "03723286ad8b71a5e381b84230f91e6c6b23c1c8c8a7655d769c4431b75f9c92",
+      "simulation_advances_during_model_wait": false,
+      "evidence_kind": "native_unqualified",
+      "runtime_fingerprint": {},
+      "policy_identity": "78de83adc06eae60af453f72fd026f40de9c3eef3a214bf528770f51abd321c2",
+      "policy_runtime_fingerprint": null,
+      "planner_model": null,
+      "environment_contract_sha256": "7e4741dc96dc08f174f3e567d65ac68d8dedfedef7712851d3c8fe45907d8284",
+      "planner_config": null,
+      "usage": {
+        "source": "scripted/externally controlled actor; tokens unmeasured"
+      },
+      "task_memory": false,
+      "task_demonstrations": false
+    },
+    "1": {
+      "schema": "multibench.result.v1",
+      "case_id": "classify_objects__standard__g0__l1",
+      "task": "classify_objects",
+      "benchmark": "robodojo",
+      "condition": "reference_interleaving_probe001",
+      "mode": "review_every_chunk",
+      "split": null,
+      "partition": "dev",
+      "group": "classify_objects",
+      "success": false,
+      "native_score": null,
+      "status": "budget_exhausted",
+      "termination": "native_step_budget",
+      "error": null,
+      "native_steps": 45,
+      "simulated_seconds": 1.8,
+      "elapsed_s": 28.38931252300972,
+      "timing": {
+        "policy_s": 17.072274596997886,
+        "review_s": 0.0006027109920978546,
+        "env_s": 10.410490289985319,
+        "ack_s": 0.0010442099592182785,
+        "setup_s": 2.529995981603861e-06,
+        "preview_s": 0.2461772879905766
+      },
+      "metrics": {
+        "policy_calls": 4,
+        "proposed_policy_actions": 200,
+        "unresolved_policy_actions": 0,
+        "review_calls": 4,
+        "corrected_steps": 5,
+        "motor_steps": 40,
+        "gripper_clips": 0,
+        "discarded_policy_actions": 160,
+        "interruptions": 0,
+        "policy_invalidation_requests": 4,
+        "shortened_chunks": 3
+      },
+      "config_sha256": "cd3aa59d2c53fbb602739401979b4cd21494b54d004a22f1472bfd47e7670647",
+      "case_sha256": "d388a36c5bcd9932373e91592f6e8d7051c386d503483ae38ace7208f9388092",
+      "initial_observation_sha256": "2cd2d520d5f42f7866a5a235acbd92a4d2052a04f891cc35c8c602d18456034d",
+      "simulation_advances_during_model_wait": false,
+      "evidence_kind": "native_unqualified",
+      "runtime_fingerprint": {},
+      "policy_identity": "78de83adc06eae60af453f72fd026f40de9c3eef3a214bf528770f51abd321c2",
+      "policy_runtime_fingerprint": null,
+      "planner_model": null,
+      "environment_contract_sha256": "1b49537161288e9098b310e32ec3703b31c1b52665f80cff8d38086a66643c3f",
+      "planner_config": null,
+      "usage": {
+        "source": "scripted/externally controlled actor; tokens unmeasured"
+      },
+      "task_memory": false,
+      "task_demonstrations": false
+    }
+  },
+  "dispatches": [
+    {
+      "operation": "infer",
+      "env_ids": [
+        0,
+        1
+      ]
+    },
+    {
+      "operation": "preview",
+      "env_ids": [
+        0,
+        1
+      ]
+    },
+    {
+      "operation": "action",
+      "env_ids": [
+        0,
+        1
+      ]
+    },
+    {
+      "operation": "action",
+      "env_ids": [
+        0,
+        1
+      ]
+    },
+    {
+      "operation": "action",
+      "env_ids": [
+        0,
+        1
+      ]
+    },
+    {
+      "operation": "action",
+      "env_ids": [
+        0,
+        1
+      ]
+    },
+    {
+      "operation": "action",
+      "env_ids": [
+        0,
+        1
+      ]
+    },
+    {
+      "operation": "action",
+      "env_ids": [
+        0,
+        1
+      ]
+    },
+    {
+      "operation": "action",
+      "env_ids": [
+        0,
+        1
+      ]
+    },
+    {
+      "operation": "action",
+      "env_ids": [
+        0,
+        1
+      ]
+    },
+    {
+      "operation": "action",
+      "env_ids": [
+        0,
+        1
+      ]
+    },
+    {
+      "operation": "action",
+      "env_ids": [
+        0,
+        1
+      ]
+    },
+    {
+      "operation": "action",
+      "env_ids": [
+        0,
+        1
+      ]
+    },
+    {
+      "operation": "action",
+      "env_ids": [
+        0,
+        1
+      ]
+    },
+    {
+      "operation": "action",
+      "env_ids": [
+        0,
+        1
+      ]
+    },
+    {
+      "operation": "action",
+      "env_ids": [
+        0,
+        1
+      ]
+    },
+    {
+      "operation": "action",
+      "env_ids": [
+        0,
+        1
+      ]
+    },
+    {
+      "operation": "infer",
+      "env_ids": [
+        0,
+        1
+      ]
+    },
+    {
+      "operation": "preview",
+      "env_ids": [
+        0,
+        1
+      ]
+    },
+    {
+      "operation": "action",
+      "env_ids": [
+        0,
+        1
+      ]
+    },
+    {
+      "operation": "action",
+      "env_ids": [
+        0,
+        1
+      ]
+    },
+    {
+      "operation": "action",
+      "env_ids": [
+        0,
+        1
+      ]
+    },
+    {
+      "operation": "action",
+      "env_ids": [
+        0,
+        1
+      ]
+    },
+    {
+      "operation": "action",
+      "env_ids": [
+        0,
+        1
+      ]
+    },
+    {
+      "operation": "infer",
+      "env_ids": [
+        0,
+        1
+      ]
+    },
+    {
+      "operation": "preview",
+      "env_ids": [
+        0,
+        1
+      ]
+    },
+    {
+      "operation": "action",
+      "env_ids": [
+        0,
+        1
+      ]
+    },
+    {
+      "operation": "action",
+      "env_ids": [
+        0,
+        1
+      ]
+    },
+    {
+      "operation": "action",
+      "env_ids": [
+        0,
+        1
+      ]
+    },
+    {
+      "operation": "action",
+      "env_ids": [
+        0,
+        1
+      ]
+    },
+    {
+      "operation": "action",
+      "env_ids": [
+        0,
+        1
+      ]
+    },
+    {
+      "operation": "action",
+      "env_ids": [
+        0,
+        1
+      ]
+    },
+    {
+      "operation": "action",
+      "env_ids": [
+        0,
+        1
+      ]
+    },
+    {
+      "operation": "action",
+      "env_ids": [
+        0,
+        1
+      ]
+    },
+    {
+      "operation": "action",
+      "env_ids": [
+        0,
+        1
+      ]
+    },
+    {
+      "operation": "action",
+      "env_ids": [
+        0,
+        1
+      ]
+    },
+    {
+      "operation": "action",
+      "env_ids": [
+        0,
+        1
+      ]
+    },
+    {
+      "operation": "action",
+      "env_ids": [
+        0,
+        1
+      ]
+    },
+    {
+      "operation": "action",
+      "env_ids": [
+        0,
+        1
+      ]
+    },
+    {
+      "operation": "action",
+      "env_ids": [
+        0,
+        1
+      ]
+    },
+    {
+      "operation": "action",
+      "env_ids": [
+        0,
+        1
+      ]
+    },
+    {
+      "operation": "infer",
+      "env_ids": [
+        0,
+        1
+      ]
+    },
+    {
+      "operation": "preview",
+      "env_ids": [
+        0,
+        1
+      ]
+    },
+    {
+      "operation": "action",
+      "env_ids": [
+        0,
+        1
+      ]
+    },
+    {
+      "operation": "action",
+      "env_ids": [
+        0,
+        1
+      ]
+    },
+    {
+      "operation": "action",
+      "env_ids": [
+        0,
+        1
+      ]
+    },
+    {
+      "operation": "action",
+      "env_ids": [
+        0,
+        1
+      ]
+    },
+    {
+      "operation": "action",
+      "env_ids": [
+        0,
+        1
+      ]
+    },
+    {
+      "operation": "action",
+      "env_ids": [
+        0,
+        1
+      ]
+    },
+    {
+      "operation": "action",
+      "env_ids": [
+        0,
+        1
+      ]
+    },
+    {
+      "operation": "action",
+      "env_ids": [
+        0,
+        1
+      ]
+    },
+    {
+      "operation": "action",
+      "env_ids": [
+        0,
+        1
+      ]
+    },
+    {
+      "operation": "action",
+      "env_ids": [
+        0,
+        1
+      ]
+    }
+  ],
+  "native_calls_per_env": {
+    "0": 4,
+    "1": 4
+  },
+  "wall_s": 28.39421339800174,
+  "memory": "0, 7234, 16848\n1, 8690, 15392\n",
+  "unstable_envs": []
+}

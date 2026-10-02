@@ -1,0 +1,28 @@
+{
+  "comparison_scope": "ten distinct tasks, one layout each; not full RoboDojo SR",
+  "controller_probe": false,
+  "max_correction_steps": 40,
+  "max_decision_steps": 40,
+  "max_reviews": 180,
+  "mode": "direct_sparse",
+  "model": {
+    "api_key_env": "K1_RELAY_TOKEN",
+    "base_url": "http://127.0.0.1:19861",
+    "history_rounds": 4,
+    "image_max_edge": 480,
+    "max_output_tokens": 2048,
+    "max_requests": 180,
+    "max_total_output_tokens": 368640,
+    "model": "gpt-6.1-sol",
+    "reasoning_effort": "medium",
+    "service_tier": "flex",
+    "timeout_s": 900,
+    "transport": "responses"
+  },
+  "name": "pi05_approach_screen001_direct",
+  "no_task_demonstrations": true,
+  "no_task_memory": true,
+  "robot_preview": false,
+  "translation_limit_m": 0.05,
+  "wall_limit_s": 3600
+}

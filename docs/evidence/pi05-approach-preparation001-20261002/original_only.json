@@ -1,0 +1,9 @@
+{
+  "comparison_scope": "ten distinct tasks, one layout each; not full RoboDojo SR",
+  "controller_probe": false,
+  "mode": "motor_only",
+  "name": "pi05_approach_screen001_original_only",
+  "no_task_demonstrations": true,
+  "no_task_memory": true,
+  "wall_limit_s": 3600
+}
