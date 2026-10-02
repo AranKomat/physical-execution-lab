@@ -4,7 +4,7 @@ import pytest
 from k1lab.errors import ContractError
 from k1lab.multibench.types import Action
 from semantic_lab.robot_controls import SourceRobotControls
-from semantic_lab.control_review import CalibrationReviewer, SerializedReviewer
+from semantic_lab.control_review import CalibrationReviewer, InterleavingReviewer, SerializedReviewer
 
 
 def controls():
@@ -69,3 +69,18 @@ def test_serialized_reviewer_preserves_client_and_execution_history(tmp_path):
     assert wrapped.review('obs', direct=True) == (('obs',), {'direct': True})
     wrapped.reset(); wrapped.note_execution_start('obs'); wrapped.close()
     assert calls == ['reset', 'obs', 'close']
+
+
+def test_interleaving_fixture_changes_only_selected_arm_and_requires_preview():
+    eef = dict(xyz=[0, 0, .5], quaternion_xyzw=[0, 0, 0, 1], gripper_opening_command=1)
+    obs = SimpleNamespace(eef={'left': eef, 'right': eef})
+    proposal = SimpleNamespace(diagnostics={'robot_preview': {'not_contact_simulation': True}})
+    contract = dict(correction_space='x5_eef16_wxyz')
+    reviewer = InterleavingReviewer('right')
+    assert reviewer.review(obs, proposal, [], None, contract).mode == 'accept'
+    correction = reviewer.review(obs, proposal, [], None, contract)
+    assert correction.actions[0].values[2] == .5
+    assert correction.actions[0].values[10] == pytest.approx(.505)
+    assert reviewer.review(obs, proposal, [], None, contract).mode == 'accept'
+    proposal.diagnostics.clear()
+    with pytest.raises(ContractError): reviewer.review(obs, proposal, [], None, contract)

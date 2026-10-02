@@ -63,3 +63,43 @@ class CalibrationReviewer:
         return Decision('correct', 15, [Action('x5_eef16_wxyz', target)],
                         evidence='Hold initial orientation/grippers; 5mm left EEF offset then return.',
                         progress=progress)
+
+
+class InterleavingReviewer:
+    """Accept, robot-only offset, accept; never a task-solving actor."""
+    def __init__(self, arm):
+        if arm not in ('left', 'right'):
+            raise ContractError('explicit calibration arm required')
+        self.arm = arm
+        self.reset()
+
+    def reset(self):
+        self.phase = 0
+
+    def close(self):
+        pass
+
+    def review(self, obs, proposal, reasons, receipt, contract, direct=False):
+        if direct or proposal is None or contract['correction_space'] != 'x5_eef16_wxyz':
+            raise ContractError('interleaving check requires native joint policy and EEF corrections')
+        if 'robot_preview' not in proposal.diagnostics:
+            raise ContractError('native source FK preview required before scripted review')
+        progress = dict(completed_claims=[], currently_attempting='execution-path integration check',
+                        uncertain_or_invalidated=['unknown external clearance; not a task-performance trial'])
+        phase = self.phase
+        self.phase += 1
+        if phase != 1:
+            return Decision('accept', 15, evidence='Unmodified source policy prefix for integration check.',
+                            progress=progress)
+        target = []
+        for arm in ('left', 'right'):
+            eef = obs.eef[arm]
+            xyz = list(eef['xyz'])
+            if arm == self.arm:
+                xyz[2] += .005
+            q = eef['quaternion_xyzw']
+            target.extend([*xyz, q[3], *q[:3], eef['gripper_opening_command']])
+        # This forced correction is a calibration fixture, not an LLM failure diagnosis.
+        return Decision('correct', 15, [Action('x5_eef16_wxyz', target)],
+                        execution='failed', evidence='Forced calibration fixture; no observed task failure claimed.',
+                        progress=progress)

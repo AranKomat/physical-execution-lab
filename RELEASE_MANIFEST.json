@@ -1284,9 +1284,9 @@
     "configs/semantic/reference-controller-probe001.json": "42fed946887d996b924c66355756abf07550145abdd8a5892f8dc524f47fe150",
     "docs/evidence/reference-execution-binding001-20261002/operator_reference_native004.py": "3569202b02d43315214f4b71d3ef4b864439c3d63bb749c7a91f05da06e81793",
     "docs/evidence/reference-execution-binding001-20261002/operator_reference_rollout004.py": "61f99087a831e1479699b46f889d3fcaecaf090fcb358eb61f487a7d41f82f2d",
-    "semantic_lab/control_review.py": "ea82ac7c2239ee543cbec063c9e1f6f7ffd0770185cfcec48078fa4576d1a78f",
+    "semantic_lab/control_review.py": "0e23b3a01ee3e9cfda034e140aadcbb2a490a96dfef05c808ba6973a137b2614",
     "semantic_lab/robot_controls.py": "bf4178346bf7e3bc6f66d1a3b7856c5e1f014cd6472fe9b12fffe6c042c45c6b",
-    "tests/semantic/test_robot_controls.py": "69f0bbbf441f84b445c2d02e45cc3749535ccec88a60e3ceb9217ce1767a940b",
+    "tests/semantic/test_robot_controls.py": "a506a8ddf2ee94bf169c573f6ffd6324e365e49f4098121a7a10af01c0f132ce",
     "docs/evidence/reference-execution-binding001-20261002/controller-probe-audit001.json": "67ead08b7bd7e88977ee2509e7b6c0a4fd7df323a1c7abb393757d571c4bcb48",
     "docs/evidence/reference-execution-binding001-20261002/controller-probe-freeze001.json": "e5ae62bb6c916a91e59e953112c6e3d8f0edbd5af1d02e419aca4ef20b684b33",
     "docs/evidence/reference-execution-binding001-20261002/controller-probe001/actions.jsonl": "604b67dd321b6de207334fd178253bb752804b26cb54716d13fc4546d7f85a92",
@@ -1334,6 +1334,9 @@
     "docs/evidence/reference-execution-binding001-20261002/controller-probe001/resolved-config.json": "01cb8014be2f1ea6c1eb78694ec6bebcf26eb7286622d8b1659d0b3c623eb215",
     "docs/evidence/reference-execution-binding001-20261002/controller-probe001/stop-worker": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
     "docs/evidence/reference-execution-binding001-20261002/controller-probe001/worker.log": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
-    "scripts/semantic/audit_controller_probe.py": "fd38239900d1ab9611512d5077c304dc10b6ca60d1b57649469f26980b3f43fb"
+    "scripts/semantic/audit_controller_probe.py": "fd38239900d1ab9611512d5077c304dc10b6ca60d1b57649469f26980b3f43fb",
+    "configs/semantic/reference-interleaving-probe001.json": "d4aea8000881057139d998f00a00d2366697c455e83b023d68facffd0b62edeb",
+    "docs/evidence/reference-execution-binding001-20261002/operator_reference_native005.py": "c612308a34bd93644955e1942125645f0c76ca5150be79e9bd822c498211d503",
+    "docs/evidence/reference-execution-binding001-20261002/operator_reference_rollout005.py": "2bd6761caeab47e08ed0a710fe8402fd9be6f1976385bbc4ec9e5d846ef58d26"
   }
 }
