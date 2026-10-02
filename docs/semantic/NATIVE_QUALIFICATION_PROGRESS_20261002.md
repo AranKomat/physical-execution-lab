@@ -71,6 +71,27 @@ not complete native qualification.
 
 ## Remaining Gates
 
+First shadow trial stopped at 105 actions/7 policy calls after two settled
+Sol/medium/Flex calls ($0.0084995), with a contract error and no native score.
+The second response used `continue` with a byte-for-byte echo of the active
+goal. The original validator rejected any nonempty continuation, despite the
+goal being unchanged. This is a harness contract mismatch, not evidence of
+poor semantic reasoning or task failure. Preserve the incomplete trial.
+
+The revised contract accepts an empty continuation or an exact current-goal
+echo; rephrasing still fails. Offline replay of that retained response passes
+without changing the goal/epoch and without motion or a new API request.
+Shadow planner/parse errors now disable further planner calls and are logged
+separately, rather than stopping the original motor rollout. Active hierarchy
+errors still stop fail-closed. Native verification of these repairs is pending.
+
+The first relay setup error occurred before API/motion: the inherited payment
+ledger rejects a 3600-second window. Actual paid operation used 2400 seconds;
+the relay now explicitly clamps and records this stricter payment window.
+Old reviewer `paid_route` metadata is removed from future generated configs.
+The historical pair retains its original metadata; effective limits were the
+operator's 16 calls/$1, not inherited 180 calls/$3. Full CPU suite: 374 passed.
+
 - Native shadow comparison with the same GPU runtime/source and prepared
   condition roster. GPT must not change prompts, prefixes, resets or cadence.
 - Full model-boundary/context-switch/ACK qualification; current pi0.5 is

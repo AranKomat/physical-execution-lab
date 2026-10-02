@@ -10,7 +10,9 @@ reviewed `dc2e704` base. The intervening runtime changes are the explicit
 comparison180 budget/preparation profile; they do not alter those adapter seams.
 
 All 37 overlay files were added without overwriting legacy runtime files.
-The supplied overlay manifest and build-host evidence are preserved unmodified.
+The supplied manifest is preserved as `docs/semantic/ORIGINAL_OVERLAY_V5.json`;
+the root overlay manifest tracks reviewed local code repairs. Build-host
+evidence remains unmodified.
 Repository integration adds package discovery/CLI entry point for `semantic_lab`
 and updates the active documentation. Old qualifications do not qualify V5.
 

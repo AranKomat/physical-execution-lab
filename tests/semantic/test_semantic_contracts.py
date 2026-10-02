@@ -48,7 +48,9 @@ def test_wire_roundtrip_and_forbidden_action_fields():
 
 @pytest.mark.parametrize('op', ['continue', 'stop'])
 def test_continue_cannot_rewrite_goal(op):
-    with pytest.raises(ContractError): decision(ToyEnvironment().obs(), operation=op)
+    obs = ToyEnvironment().obs()
+    with pytest.raises(ContractError):
+        check_decision(decision(obs, operation=op), obs, SemanticContext(obs.instruction))
 
 def test_future_evidence_rejected():
     with pytest.raises(ContractError): decision(ToyEnvironment().obs(), completed_claims=(Claim('done', (1,)),))
@@ -66,6 +68,10 @@ def test_continue_is_identity_no_goal_rephrase():
     ctx = state.context
     state.apply(decision(obs, epoch=1, operation='continue', subtask=''), obs)
     assert state.context is ctx
+    state.apply(decision(obs, epoch=1, operation='continue', subtask=ctx.subtask), obs)
+    assert state.context is ctx
+    with pytest.raises(ContractError):
+        state.apply(decision(obs, epoch=1, operation='continue', subtask=ctx.subtask+' '), obs)
 
 
 def test_goal_minimum_dwell_and_recovery():

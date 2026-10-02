@@ -32,7 +32,7 @@ def run_episode(env, policy, planner, case, config, output, *, clock=time.monoto
     journal = Journal(root / 'events.jsonl')
     timing = dict(setup_s=0., policy_s=0., ack_s=0., review_s=0., env_s=0., evidence_io_s=0.)
     metrics = dict(policy_calls=0, policy_requests=0, semantic_calls=0, semantic_changes=0, motor_prompt_changes=0,
-                   semantic_recoveries=0, controller_faults=0, native_steps=0,
+                   semantic_recoveries=0, shadow_planner_failures=0, controller_faults=0, native_steps=0,
                    predicted_policy_actions=0, natural_suffix_discards=0, abort_prefix_discards=0,
                    unresolved_policy_actions=0, natural_prefixes=0, completed_prefixes=0,
                    gpt_induced_motor_resamples=0, gpt_induced_policy_resets=0,
@@ -61,6 +61,7 @@ def run_episode(env, policy, planner, case, config, output, *, clock=time.monoto
     receipts = []
     exposures = []
     captured = set()
+    shadow_planner_disabled = False
 
     def log(name, data):
         journal.append(name, data)
@@ -109,7 +110,7 @@ def run_episode(env, policy, planner, case, config, output, *, clock=time.monoto
                 metrics['controller_faults'] += 1
                 result_status, termination = 'controller_fault', 'native_controller_fault'
                 break
-            reasons = state.due(obs) if planner is not None else []
+            reasons = state.due(obs) if planner is not None and not shadow_planner_disabled else []
             if reasons:
                 if metrics['semantic_calls'] >= max_reviews:
                     result_status, termination = 'resource_limited', 'semantic_call_budget'
@@ -117,18 +118,29 @@ def run_episode(env, policy, planner, case, config, output, *, clock=time.monoto
                 capture(obs)
                 t = clock()
                 metrics['semantic_calls'] += 1  # Attempts count even if response fails.
+                old = state.context
+                shadow = mode == 'semantic_shadow'
+                effect = {}
                 try:
                     decision = planner.decide(obs, state, reasons, receipt)
+                    # Shadow progress remains private to the planner, not the motor.
+                    effect = state.apply(decision, obs, shadow=False)
+                except Exception as exc:
+                    if not shadow:
+                        raise
+                    shadow_planner_disabled = True
+                    metrics['shadow_planner_failures'] += 1
+                    log('shadow_planner_error', {'step': obs.step,
+                        'type': type(exc).__name__, 'detail': str(exc)[:1000],
+                        'automatic_retry': False, 'further_planner_calls_disabled': True,
+                        'motor_prompt_and_cadence_unchanged': True})
                 finally:
                     timing['review_s'] += clock() - t
-                old = state.context
-                # Planner state may evolve in shadow, while motor context remains original.
-                effect = state.apply(decision, obs, shadow=False)
-                shadow = mode == 'semantic_shadow'
                 effect['shadow_only'] = shadow
-                log('semantic_decision', {'step': obs.step, 'reasons': reasons,
-                    'decision': decision.wire(), 'effect': effect,
-                    'native_evaluator_information_supplied': False})
+                if not shadow_planner_disabled:
+                    log('semantic_decision', {'step': obs.step, 'reasons': reasons,
+                        'decision': decision.wire(), 'effect': effect,
+                        'native_evaluator_information_supplied': False})
                 if effect.get('changed'):
                     metrics['semantic_changes'] += 1
                     if decision.operation == 'recover':
@@ -263,6 +275,7 @@ def run_episode(env, policy, planner, case, config, output, *, clock=time.monoto
               'native_steps': metrics['native_steps'], 'elapsed_s': clock() - before, 'timing': timing,
               'simulated_seconds': metrics['native_steps'] / obs.control_hz if obs else 0.,
               'metrics': metrics, 'usage': usage_summary(planner),
+              'shadow_planner_disabled_after_failure': shadow_planner_disabled,
               'config_sha256': digest(config), 'case_sha256': digest(case),
               'policy_identity': policy.identity.identity,
               'initial_observation_sha256': initial_stamp,

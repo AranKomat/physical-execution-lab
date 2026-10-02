@@ -42,13 +42,15 @@ def test_new_qualification_requires_tokenizer_evidence(tmp_path):
 def test_prepare_preserves_provider_and_route_no_old_shortening():
     c={'name':'old','benchmark':'robodojo','policy':{'identity':{'name':'pi05'},'endpoint':'http://127.0.0.1:1'},
        'model':{'model':'user-model','service_tier':'flex','base_url':'http://127.0.0.1:9999'},
-       'monitor':{'max_unreviewed_steps':50},'max_decision_steps':15}
+       'monitor':{'max_unreviewed_steps':50},'max_decision_steps':15,
+       'paid_route':{'trial_call_limit':180,'local_cap_usd':'3','trial_profile':'comparison180'}}
     rows=configurations(c,11)
     assert len(rows)==4 and len({r['name'] for r in rows})==4
     for r in rows:
         assert r['policy']==c['policy'] and r['model']['model']=='user-model'
         assert r['model']['base_url']==c['model']['base_url']
         assert r['model']['max_requests']==11 and 'monitor' not in r and 'max_decision_steps' not in r
+        assert 'paid_route' not in r  # old reviewer budgets are not semantic authorizations
     assert c['monitor']  # no mutation of source
 
 

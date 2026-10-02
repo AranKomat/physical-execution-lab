@@ -20,7 +20,7 @@ def configurations(source, max_calls=32):
     # New conditions do not inherit the old horizon-reducing governor/correction contract.
     base = deepcopy(source)
     for key in ('monitor', 'max_decision_steps', 'max_correction_steps', 'max_reviews',
-                'translation_limit_m', 'robot_preview'):
+                'translation_limit_m', 'robot_preview', 'paid_route'):
         base.pop(key, None)
     base['no_task_memory'] = base['no_task_demonstrations'] = True
     base['max_semantic_calls'] = max_calls

@@ -86,8 +86,8 @@ class SemanticDecision:
         bounded_text(self.subtask, 'subtask', 600, empty=True)
         if self.operation in ('set_subtask', 'recover') and not self.subtask.strip():
             raise ContractError('a semantic goal is required')
-        if self.operation in ('continue', 'stop') and self.subtask:
-            raise ContractError('continue/stop cannot silently change the goal')
+        if self.operation == 'stop' and self.subtask:
+            raise ContractError('stop cannot silently change the goal')
         if len(self.completed_claims) > 12 or any(not isinstance(c, Claim) for c in self.completed_claims):
             raise ContractError('invalid completed claims')
         if len(self.uncertain_or_invalidated) > 12:
@@ -145,4 +145,6 @@ def check_decision(d, obs, context, *, max_age_steps=0):
         raise ContractError('stale/future semantic decision')
     if age == 0 and d.based_on_stamp != obs.stamp:
         raise ContractError('decision is bound to different current evidence')
+    if d.operation == 'continue' and d.subtask not in ('', context.subtask):
+        raise ContractError('continue cannot silently change the goal')
     return age

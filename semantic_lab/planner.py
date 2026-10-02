@@ -18,7 +18,8 @@ EEF waypoints, executable code, a task recipe, or a list of low-level motions.
 Examples of granularity (not solutions): grasp a handle; open an appliance; put an object
 in a receptacle. Prefer one useful physical state change, not an entire long task.
 CONTINUE means exactly retain the current goal; it does not shorten, reset or resample the
-motor policy. Do not rephrase an unchanged goal. SET_SUBTASK updates language at a normal
+motor policy. For CONTINUE, subtask must be empty or an exact copy of the current goal;
+for STOP it must be empty. Do not rephrase an unchanged goal. SET_SUBTASK updates language at a normal
 motor boundary. RECOVER is an evidence-backed replacement semantic goal after a failed
 subtask and is allowed only if the run enables it. STOP means incomplete/abstention, never
 benchmark success. A closed gripper is not proof of holding anything. Revoke progress

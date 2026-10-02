@@ -128,7 +128,7 @@ def main():
     with (RUN/'runner.lock').open('a') as lock,httpx.Client(timeout=900,trust_env=False) as http:
         fcntl.flock(lock,fcntl.LOCK_EX|fcntl.LOCK_NB)
         ledger=Ledger(RUN/'budget.jsonl',max_calls=4209,limit_usd=Decimal(85),
-            resumed_at=time.time(),wall_limit_seconds=a.wall_limit_s,
+            resumed_at=time.time(),wall_limit_seconds=min(a.wall_limit_s,2400),
             acknowledged_unknown_ids=a.acknowledge_failed_request)
         count=sum(e['event']=='reserved' for e in ledger.read())
         if count!=a.expected_calls:raise ValueError('shared call count changed; inspect ledger')
@@ -136,6 +136,7 @@ def main():
         ledger.append({'event':'operator_robodojo_supervision_scope','time':time.time(),
             'name':a.name,'max_calls':ledger.max_calls,'local_cap_usd':str(a.cap_usd),
             'trial_profile':a.profile,'trial_call_limit':a.max_calls,'wall_limit_s':a.wall_limit_s,
+            'paid_ledger_window_s':min(a.wall_limit_s,2400),
             'shared_cap_usd':'85','model':MODEL,'provider':'openai/flex','tool_name':a.tool_name,
             'authorization':'standing low-budget physical-lab approval; owner selected Sol 6.1 Flex'})
         relay=Relay(ledger,load_key(a.key_file),token,out,a.name,a.max_calls,a.cap_usd,http,a.tool_name)
@@ -169,6 +170,7 @@ def main():
 
         print(json.dumps({'event':'relay_ready','port':a.port,'max_calls':a.max_calls,
             'profile':a.profile,'wall_limit_s':a.wall_limit_s,
+            'paid_ledger_window_s':min(a.wall_limit_s,2400),
             'local_cap_usd':str(a.cap_usd),'shared_cap_usd':'85'}),flush=True)
         HTTPServer(('127.0.0.1',a.port),Handler).serve_forever()
 

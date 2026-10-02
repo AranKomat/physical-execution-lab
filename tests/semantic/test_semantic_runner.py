@@ -91,6 +91,24 @@ def test_shadow_stop_does_not_stop_motor(tmp_path):
     assert r['success'] and r['native_steps'] == 24
 
 
+@pytest.mark.parametrize('failure', ['transport', 'contract'])
+def test_shadow_planner_failure_preserves_motor_without_retry(tmp_path, failure):
+    class Bad(ToyPlanner):
+        def decide(self, obs, state, reasons, receipt):
+            self.calls.append(obs.step)
+            if failure == 'transport':
+                raise TimeoutError('uncertain model response')
+            return SemanticDecision(obs.episode, obs.step, obs.stamp, state.context.epoch,
+                'continue', 'A different goal.', 'uncertain', 'Invalid continuation.')
+    _, ae, ap = run(tmp_path / 'motor', config('motor_only'))
+    planner = Bad()
+    r, be, bp = run(tmp_path / 'shadow', config('semantic_shadow'), planner)
+    assert ae.actions == be.actions and ap.steps == bp.steps and ap.acks == bp.acks
+    assert r['status'] == 'native_completed' and r['shadow_planner_disabled_after_failure']
+    assert r['metrics']['shadow_planner_failures'] == 1 and planner.calls == [0]
+    assert not bp.invalidations and audit(tmp_path / 'shadow')['prefix_cadence_verified']
+
+
 def test_controller_fault_stops_without_gpt_recovery(tmp_path):
     class Fault(ToyEnvironment):
         def obs(self):

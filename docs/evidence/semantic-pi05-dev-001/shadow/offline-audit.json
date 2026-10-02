@@ -1,0 +1,27 @@
+{
+  "actual_control_acks": 105,
+  "complete_native_result": false,
+  "controller_evaluator_agree": null,
+  "distinct_effective_prompts": 1,
+  "evidence_kind": "native_unqualified",
+  "fresh_inference_indices": true,
+  "journal": {
+    "events": 123,
+    "head_sha256": "871c900d176406924d2f745e38e711632277540dc1e65955852ff7e0d25bc7ee"
+  },
+  "native_completion_nonvacuous": null,
+  "native_prefix": 15,
+  "original_prompt_exact": true,
+  "policy_proposals": 7,
+  "prediction_horizon": 50,
+  "prefix_cadence_verified": true,
+  "robot_competence_claim": false,
+  "seed": 0,
+  "semantic_calls": 2,
+  "semantic_epochs_seen_by_motor": [
+    0
+  ],
+  "source_npz_proposals_match_journal": true,
+  "source_proposals": 7,
+  "terminal_status": "infrastructure_or_contract_error"
+}

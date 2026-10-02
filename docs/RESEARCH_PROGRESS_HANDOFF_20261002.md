@@ -1,5 +1,24 @@
 # Physical Execution Lab: Research Progress Handoff
 
+## Active V5 Update
+
+The owner changed direction to semantic language hierarchy. Read
+`HANDOFF_V5.md` and `docs/semantic/NATIVE_QUALIFICATION_PROGRESS_20261002.md`
+before the historical V4 discussion below. The wrapped original-only tower0
+trial failed at the full 1050-action horizon, score 0.10; all 70 H50/15 prefixes,
+source proposals, ACKs and native scoring audit correctly. Its 2,212 payload
+files are locally backed up and verified. Both conditioned prompts survive
+actual pi0.5 tokenization and change outputs, but obedience is unproven.
+
+The first shadow trial is incomplete at 105 actions due to a harness contract
+error: `continue` with an exact existing-goal echo was incorrectly rejected.
+Two settled Flex calls cost $0.0084995. The correction admits exact echoes as
+no-ops, keeps changed goals invalid, and prevents shadow planner errors from
+ending motor execution. CPU/offline validation is not native qualification;
+the repaired native trial and matched hierarchy remain pending. The $85 shared
+cap and all old unresolved holds are unchanged. V4 outcomes remain evidence,
+not renamed V5 results or a full RoboDojo policy ranking.
+
 Snapshot: 2026-10-02 Japan time, updated after Intern's fixed-roster screen. This is a
 self-contained account of the current project, not the earlier BEHAVIOR,
 EmbodiedSWE assembly, or FLUX branches. Every-chunk 001 ended with a correction
