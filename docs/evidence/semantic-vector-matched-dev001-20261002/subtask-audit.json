@@ -1,0 +1,133 @@
+{
+  "status": "concurrent_semantic_families_audited",
+  "families": {
+    "classify_objects": {
+      "status": "native_semantic_planner_vector_audit_passed",
+      "actual_controls": 2563,
+      "episodes": {
+        "0": {
+          "journal": {
+            "events": 835,
+            "head_sha256": "2a9ee74cdcd8b0d40cd23c635c864dad1ad885f0c444da2cc34429a39961ac3f"
+          },
+          "actual_control_acks": 728,
+          "policy_proposals": 49,
+          "semantic_epochs_seen_by_motor": [
+            1,
+            2,
+            3,
+            4,
+            5
+          ],
+          "distinct_effective_prompts": 5,
+          "prefix_cadence_verified": true,
+          "complete_native_result": true,
+          "evidence_kind": "native_unqualified",
+          "robot_competence_claim": false,
+          "source_H50_predictions_and_effective_request_prompts_equal": true,
+          "planner_episode_bindings_verified": 7,
+          "status": "native_completed"
+        },
+        "1": {
+          "journal": {
+            "events": 843,
+            "head_sha256": "effb7769bb696b4b2b7b86144e8f7775e4ab53c568844dceca662a0db8ce83a4"
+          },
+          "actual_control_acks": 735,
+          "policy_proposals": 49,
+          "semantic_epochs_seen_by_motor": [
+            1,
+            2,
+            3
+          ],
+          "distinct_effective_prompts": 3,
+          "prefix_cadence_verified": true,
+          "complete_native_result": false,
+          "evidence_kind": "native_unqualified",
+          "robot_competence_claim": false,
+          "source_H50_predictions_and_effective_request_prompts_equal": true,
+          "planner_episode_bindings_verified": 8,
+          "status": "planner_stop_incomplete"
+        },
+        "2": {
+          "journal": {
+            "events": 1261,
+            "head_sha256": "5531d31f2982ee5b24dc23fe8944881c77026000f36396ec3c217d011d524750"
+          },
+          "actual_control_acks": 1100,
+          "policy_proposals": 74,
+          "semantic_epochs_seen_by_motor": [
+            1,
+            2,
+            3
+          ],
+          "distinct_effective_prompts": 3,
+          "prefix_cadence_verified": true,
+          "complete_native_result": true,
+          "evidence_kind": "native_unqualified",
+          "robot_competence_claim": false,
+          "source_H50_predictions_and_effective_request_prompts_equal": true,
+          "planner_episode_bindings_verified": 11,
+          "status": "native_completed"
+        }
+      },
+      "paid_calls": 26,
+      "scope": "bounded native planner integration, not hierarchy benefit or full-horizon qualification"
+    },
+    "build_tower": {
+      "status": "native_semantic_planner_vector_audit_passed",
+      "actual_controls": 1680,
+      "episodes": {
+        "0": {
+          "journal": {
+            "events": 723,
+            "head_sha256": "0661468044c5cc6ae334a478128e264431e47106179b883f48fcd73270f74be3"
+          },
+          "actual_control_acks": 630,
+          "policy_proposals": 42,
+          "semantic_epochs_seen_by_motor": [
+            1,
+            2
+          ],
+          "distinct_effective_prompts": 2,
+          "prefix_cadence_verified": true,
+          "complete_native_result": false,
+          "evidence_kind": "native_unqualified",
+          "robot_competence_claim": false,
+          "source_H50_predictions_and_effective_request_prompts_equal": true,
+          "planner_episode_bindings_verified": 7,
+          "status": "planner_stop_incomplete"
+        },
+        "1": {
+          "journal": {
+            "events": 1202,
+            "head_sha256": "4320322ab814f626d4234400f1d504e1f7d01a1e71f289cb93c203e552b883a6"
+          },
+          "actual_control_acks": 1050,
+          "policy_proposals": 70,
+          "semantic_epochs_seen_by_motor": [
+            1,
+            2,
+            3,
+            4,
+            5
+          ],
+          "distinct_effective_prompts": 5,
+          "prefix_cadence_verified": true,
+          "complete_native_result": true,
+          "evidence_kind": "native_unqualified",
+          "robot_competence_claim": false,
+          "source_H50_predictions_and_effective_request_prompts_equal": true,
+          "planner_episode_bindings_verified": 10,
+          "status": "native_completed"
+        }
+      },
+      "paid_calls": 17,
+      "scope": "bounded native planner integration, not hierarchy benefit or full-horizon qualification"
+    }
+  },
+  "actual_controls": 4243,
+  "paid_calls": 43,
+  "source_rng_and_membership_counts_verified": true,
+  "scope": "fresh vector development cohort; not bitwise serial parity or hierarchy benefit"
+}

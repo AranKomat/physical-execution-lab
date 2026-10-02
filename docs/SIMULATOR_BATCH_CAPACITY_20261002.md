@@ -368,3 +368,28 @@ test also covers isolated prompt changes and retiring an abstaining episode;
 that portion remains synthetic. Per-episode paid planners are still untested
 on the native parallel executor. Prototype sources and both audits are in
 [semantic coordinator evidence](evidence/semantic-vector-coordinator-20261002/).
+
+## Intern Short Coexistence Check
+
+The timeboxed Intern check passed two native sorting environments on the
+existing two-4090 host, with one shared model runtime (encoders on GPU0,
+video/action model and VAE on GPU1) and the simulator on GPU0. Each row executed
+20 controls through two source ten-action prefixes; the source horizon is 32.
+Rollout time after initialization was 17.54 s. No API calls were made.
+
+The audit verified all 40 source predictions against the action journal,
+contiguous control counters, nonblank legal cameras, actual state equality,
+20 recurrent observation ACKs per row, separate source session keys and zero
+pending model actions at completion. Each row also has isolated source RNG
+state. This is shared-runtime singleton dispatch, not fused model batching.
+
+Observed device usage was 22,905 MiB on GPU0 and 14,186 MiB on GPU1, leaving
+1,177 and 9,896 MiB free. This is a snapshot, not a peak guarantee; the tight
+GPU0 margin does not justify promising five Intern environments. Long-history
+memory growth, full-horizon outcomes and semantic integration remain untested.
+No driver changes, reboot, downloads or unrelated-workload interruption.
+
+The existing G0.5 five-env/800-control audit and this Intern two-env audit
+complete the requested quick capacity checks. Stop capacity-only sweeps and
+return to semantic recovery and later second-backend research qualification.
+Exact operators and reports: [Intern evidence](evidence/vector-intern-colocation-20261002/).

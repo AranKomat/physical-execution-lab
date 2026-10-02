@@ -1,0 +1,17 @@
+{
+  "status": "bounded_native_intern_vector_audit_passed",
+  "actual_controls": 40,
+  "per_env_actions": [
+    20,
+    20
+  ],
+  "source_recurrent_acks_per_env": [
+    20,
+    20
+  ],
+  "source_predictions_equal_journal": true,
+  "separate_session_keys": true,
+  "no_pending_actions": true,
+  "paid_calls": 0,
+  "scope": "two-env/two-prefix coexistence; not full horizon, long history or hierarchy qualification"
+}

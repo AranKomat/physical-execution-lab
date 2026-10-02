@@ -1031,7 +1031,7 @@
     "docs/evidence/semantic-pi05-hierarchy-001/task_plus_subtask/result.json": "8a7e7f9cf62099e7585bc0b5c42c1c5e1952cdb7d059fe24cb9277702b82bbbe",
     "docs/evidence/semantic-pi05-hierarchy-001/task_plus_subtask/semantic-decisions.json": "205a4088ac95da694957d08a6a1b81b4c69193bf25c20b423e7430a319efa818",
     "docs/evidence/semantic-pi05-hierarchy-001/task_plus_subtask/source-identity.json": "f5d791db6665ccc59a510b4a75db73a35f4d72da9623cc611336b6c5cd0a3986",
-    "docs/semantic/MATCHED_HIERARCHY_PROGRESS_20261002.md": "3f0b6c4ef133965726257ea197122b8bcb48a0547ce11c7b1a2dfde8dbca2435",
+    "docs/semantic/MATCHED_HIERARCHY_PROGRESS_20261002.md": "9d0968b48a00d215f23af92bcc5e3ce8207979b459335f080548aab6cd6e5a86",
     "docs/evidence/semantic-pi05-hierarchy-001/task_plus_subtask/sort-l2/api-summary.json": "1ed5662dbd32e2bd4ace231d7b559e90c3c61a8e1eb10dac34b03f7aa291a33d",
     "docs/evidence/semantic-pi05-hierarchy-001/task_plus_subtask/sort-l2/initial-observation-fingerprint.json": "e017a3df0bea46e6b9c0d3efd451acd4ba5446062bfa45367a85d5d2276832c8",
     "docs/evidence/semantic-pi05-hierarchy-001/task_plus_subtask/sort-l2/offline-audit.json": "7681ffe88b171ac9093111f0695308f6c85835b11d905cd70d805b34fa951924",
@@ -1068,7 +1068,7 @@
     "docs/evidence/semantic-pi05-hierarchy-parallel-001/motor_only/sort-l1/worker-binding/config.json": "fe06660321d74d95fee73d7011cde6e64ec9578f4a04aedbae1e6879061787d1",
     "docs/evidence/semantic-pi05-hierarchy-parallel-001/motor_only/sort-l1/worker-binding/freeze.json": "499dd72a2bf1edc9c62c19bf91fbd8b40386395fa6106a61d684f45d401d2bce",
     "docs/evidence/semantic-pi05-hierarchy-parallel-001/motor_only/sort-l1/worker-binding/qualification.json": "316566ce15cac55fdce35e31cdeeab8c2c4811f9e3053cf762740d8866b1c64d",
-    "docs/SIMULATOR_BATCH_CAPACITY_20261002.md": "f82258c48b9faf03b5fdc1042e30623420a866bef572ad63532e883574d476e9",
+    "docs/SIMULATOR_BATCH_CAPACITY_20261002.md": "20b073b9e6167b4d1663b07e8a342cbbac99080afe94387f798ee93ecc4ba738",
     "docs/evidence/batch-capacity-20261002/g05-b1-8.json": "65421dfb6ea6e76dfc4e716237cad6517abb397fd21871c0678736e1d7e6c639",
     "docs/evidence/batch-capacity-20261002/g05-b16-32.json": "8d1f713eab5262bbb5d8c539d04b6dc480f6974f863eef8bd79e9cd8955f9ae0",
     "docs/evidence/batch-capacity-20261002/intern-sessions1-4.json": "25e977aa3b8f09d6e7c6499698ff818cf72a1dda5b55dbf2c14549a11fbd3005",
@@ -1193,6 +1193,17 @@
     "docs/evidence/semantic-vector-matched-dev001-20261002/operator_summarize_semantic_vector001.py": "8a8875c9cca84eda823daed6e8cd6cfb2533b9b5df041ec3309bcccda0db513d",
     "docs/evidence/semantic-vector-matched-dev001-20261002/task-plus-audit.json": "5cb914881ad2e5500297d2afb4355d9860f51400a4a7a47bdc2bede09cadd240",
     "docs/evidence/semantic-vector-matched-dev001-20261002/task-plus-report.json": "b46f87d95e3f8f9a94ef6ffd78beaa72ab5fd68784bb7a9c75d3c068c19b512f",
-    "docs/evidence/semantic-vector-matched-dev001-20261002/task_plus_subtask/planner-decisions.json": "7feda9333c189b349d621adc62951c1621be35c05a91fa93019a519d2b6e5974"
+    "docs/evidence/semantic-vector-matched-dev001-20261002/task_plus_subtask/planner-decisions.json": "7feda9333c189b349d621adc62951c1621be35c05a91fa93019a519d2b6e5974",
+    "docs/evidence/semantic-vector-matched-dev001-20261002/subtask-audit.json": "433a4441e6495d734e619a4d90c63f29866a4ce94848e0719b4acc0d5787bf0d",
+    "docs/evidence/semantic-vector-matched-dev001-20261002/subtask-report.json": "d48606e6f292f60d34002496f619dea272cd6b8c821225658894e5eeea3aef32",
+    "docs/evidence/semantic-vector-matched-dev001-20261002/subtask_only/planner-decisions.json": "1a3ca55e742e5d32da74320caefc2976b49e44ce2179fb5d009c7bd8523ef673",
+    "docs/evidence/semantic-vector-matched-dev001-20261002/three-condition-summary.json": "8a4a82d10b51f407fd7503b77c85feaa5b23d83470c4abb169fda2c28db5df64",
+    "docs/evidence/vector-intern-colocation-20261002/actions.jsonl": "23293462a7820bdb2d67a601fe649ffab0f06aeb06861e47bfd0364c85ff0ba7",
+    "docs/evidence/vector-intern-colocation-20261002/intern-worker-result.json": "4260da3260ee8ba770030f07072aa4a905f26ec954b82d5a0bc2041865516355",
+    "docs/evidence/vector-intern-colocation-20261002/offline-audit.json": "0832c8d93ca8cb6913823fcb81922dfae21b411db0a08b4945e9a72f92a2fc51",
+    "docs/evidence/vector-intern-colocation-20261002/operator_audit_vector_intern001.py": "c52928c3a90b929167d5f808324152e9779eddd976e0878e568a408abeef31cd",
+    "docs/evidence/vector-intern-colocation-20261002/operator_vector_intern_rollout001.py": "153e023583afe6ed708d1b148beac4482f681d941521d1eef84a620085f0c888",
+    "docs/evidence/vector-intern-colocation-20261002/operator_vector_intern_worker001.py": "a1c85256b13219b122d64aea506190e4faa0916b7572935c657f90eaa057496c",
+    "docs/evidence/vector-intern-colocation-20261002/report.json": "13796248f2e2e05cbbd2cf644aeffe64941674c066cfb973f2766b82c59efdfb"
   }
 }

@@ -15,7 +15,7 @@ are competing explanations, not established diagnoses.
 |---|---|
 | A: no-interference | Passed native cadence/prompt audit for synchronous stateless pi0.5; not bitwise trajectory parity |
 | B: conditioning | Actual source tokenizer/context/ACK plumbing and responsiveness passed; obedience not established |
-| C: matched hierarchy | 4/5 primary pairs terminal and audited; sorting1 separately rebound GPU1 pair terminal, not merged into primary cohort; subtask-only 3/5 audited (sorting2/tower0 abstentions, tower1 native failure); sorting0/sorting1 unrun |
+| C: matched hierarchy | Fresh vector cohort: all three conditions across all five cases executed and audited; original-only 3 successes, task-plus-subtask 1, subtask-only 1. Historical serial cohort remains separate and incomplete |
 | D: semantic recovery | Not run; disabled in current conditions |
 | E: held-out/second backend | Not run under V5; opened historical task cannot serve as untouched held-out evidence |
 
@@ -458,3 +458,49 @@ panel is Phase C research, not a prerequisite batching test. G0.5/Intern
 integration belongs to the later second-backend factor, not a reason to hold
 the pi0.5 main path. Async planner wait optimization is useful later but is
 not required to complete this synchronous comparison.
+
+## Completed Three-Condition Vector Panel
+
+Subtask-only completed 4,243 controls in 771.56 s including startup/shutdown,
+with 43 settled Sol 6.1 medium/Flex calls costing $0.26262925. All source,
+prompt, episode, actual ACK, RNG and semantic audits pass. Recovery remained
+disabled; no GPT-induced resets, resampling or prefix shortening occurred.
+
+| Task/Layout | Original-Only | Task-Plus-Subtask | Subtask-Only |
+|---|---|---|---|
+| Sorting0 | Success, 867 actions | Success, 721 | Success, 728 |
+| Sorting1 | Success, 758 | Abstention, 735 | Abstention, 735 |
+| Sorting2 | Failure, score 0.0 | Failure, 0.15 | Failure, 0.15 |
+| Tower0 | Success, 733 | Failure, 0.0 | Abstention, 630 |
+| Tower1 | Failure, 0.1 | Failure, 0.0 | Failure, 0.1 |
+
+Abstentions have null native scores, not zero or native horizon failures.
+All five cases are accounted for in each condition. This is one execution per
+case/condition across two development task types, not benchmark SR or causal
+proof. Neither prompt format rescued the lost baseline successes. Subtask-only
+does not establish a general policy training mismatch; perception, stopping,
+conditioning and trajectory variation remain possible explanations.
+
+The final `three-condition-summary.json`, subtask report, passing audit and
+structured planner decisions are in the existing cohort evidence directory.
+Earlier two-condition summaries remain historical snapshots. Full unique
+semantic sensor payloads still require verified backup before remote retirement.
+Next freeze a separate bounded semantic-recovery condition; do not retune the
+completed panel or inspect untouched held-out families to choose prompts.
+
+## Timeboxed Second-Backend Capacity Checks
+
+G0.5 already passed native five-env execution: 800 controls, 160 per row,
+114.38 s rollout, original 16-action prefixes and separate source RNG/history.
+Intern now passed a separate two-env check: 20 controls per row, two ten-action
+prefixes, separate recurrent sessions and every actual post-action observation
+ingested once. Its rollout took 17.54 s after startup; device snapshots were
+22,905/14,186 MiB used with 1,177/9,896 MiB free. The audit verified all 40
+actions against source predictions and zero pending actions at the bound.
+
+These share one model runtime while dispatching source singleton inference;
+they do not demonstrate fused tensor batching. Neither bounded run establishes
+full-horizon success, long-history Intern memory stability or native semantic
+qualification. No additional maximum-capacity sweep is needed now. Evidence:
+`../evidence/vector-intern-colocation-20261002/` and the existing G0.5 capacity
+record. Phase E remains unrun; return to the main research sequence.
