@@ -79,3 +79,64 @@ def test_overlay_rejects_legacy_and_path_escape(tmp_path):
 
 def test_native_refuses_bundled_baseline_without_false_qualification(tmp_path):
     with pytest.raises(ContractError): protocol.require_live_base(tmp_path)
+
+
+def qualified(tmp_path, doc, cfg):
+    artifact = tmp_path / 'native-evidence.json'; artifact.write_text('{}')
+    return {'schema': 'semantic.qualification.v1', 'source_sha256': doc['source_sha256'],
+            'config_sha256': digest(cfg), 'execution_sources_sha256': doc.get('execution_sources', {}).get('sha256'),
+            'checks': {key: True for key in ('native_motor_only_parity', 'effective_prompt_seen_at_model_boundary',
+                'continue_preserves_cadence', 'context_switch_preserves_ack_history',
+                'native_terminal_scoring_separate', 'source_bound_model_identity', 'tokenizer_subtask_not_truncated')},
+            'evidence': [{'path': str(artifact), 'sha256': file_sha(artifact)}]}
+
+
+def test_verify_rechecks_manifest_contents(tmp_path):
+    cfg = {'name': 'cfg'}; data = manifest()
+    doc = protocol.freeze(tmp_path, data, [cfg]); q = qualified(tmp_path, doc, cfg)
+    data['cases'][0]['task'] = 'substituted'
+    with pytest.raises(ContractError, match='manifest hash mismatch'):
+        protocol.verify(tmp_path, doc, data, cfg, q)
+
+
+@pytest.mark.parametrize('change', ['edit', 'add', 'delete'])
+def test_execution_freeze_binds_native_bytes_and_membership(tmp_path, change):
+    native = tmp_path / 'external/native'; native.mkdir(parents=True)
+    source = native / 'controller.py'; source.write_text('x=1')
+    cfg = {'name': 'cfg'}
+    doc = protocol.freeze(tmp_path, manifest(), [cfg], execution_sources=['external/native'])
+    q = qualified(tmp_path, doc, cfg)
+    assert protocol.verify(tmp_path, doc, manifest(), cfg, q)
+    if change == 'edit': source.write_text('x=2')
+    elif change == 'add': (native / 'new.py').write_text('x=3')
+    else: source.unlink()
+    with pytest.raises(ContractError): protocol.verify(tmp_path, doc, manifest(), cfg, q)
+
+
+def test_execution_qualification_cannot_reuse_unbound_record(tmp_path):
+    (tmp_path / 'operator.py').write_text('x=1')
+    cfg = {'name': 'cfg'}
+    doc = protocol.freeze(tmp_path, manifest(), [cfg], execution_sources=['operator.py'])
+    q = qualified(tmp_path, doc, cfg); q.pop('execution_sources_sha256')
+    with pytest.raises(ContractError, match='does not bind frozen execution sources'):
+        protocol.verify(tmp_path, doc, manifest(), cfg, q)
+
+
+@pytest.mark.parametrize('selectors', [[], ['missing'], ['../escape.py'], ['/tmp/source.py'], ['.'],
+                                     'source.py', [None], ['same', 'same']])
+def test_execution_snapshot_refuses_missing_or_escaping_selections(tmp_path, selectors):
+    with pytest.raises(ContractError): protocol.execution_snapshot(tmp_path, selectors)
+
+
+def test_execution_snapshot_refuses_source_symlink(tmp_path):
+    (tmp_path / 'source.py').write_text('x=1')
+    (tmp_path / 'alias.py').symlink_to(tmp_path / 'source.py')
+    with pytest.raises(ContractError, match='unsafe execution source'):
+        protocol.execution_snapshot(tmp_path, ['alias.py'])
+
+
+def test_execution_snapshot_refuses_symlink_parent(tmp_path):
+    (tmp_path / 'native').mkdir(); (tmp_path / 'native/source.py').write_text('x=1')
+    (tmp_path / 'alias').symlink_to(tmp_path / 'native', target_is_directory=True)
+    with pytest.raises(ContractError, match='unsafe execution source'):
+        protocol.execution_snapshot(tmp_path, ['alias/source.py'])

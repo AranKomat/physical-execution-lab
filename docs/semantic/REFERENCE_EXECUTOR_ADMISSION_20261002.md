@@ -43,9 +43,15 @@ numerical trajectory parity. Actual prediction/ACK/RNG audits remain required.
 
 ## Required Next Work
 
-1. Freeze the full executor dependency graph, source adapters and installed
-   native sources with the exact manifest/config/checkpoint identity. The
-   existing prototype's narrow pre-action binding alone is not full admission.
+1. Prepare an execution-source freeze using
+   `scripts/semantic/freeze_executor.py`. The optional snapshot in
+   `semantic_lab.protocol.freeze` binds explicitly selected operator/native
+   source files and config trees, including directory membership. Verification
+   rechecks manifest contents, the snapshot and qualification's
+   `execution_sources_sha256`. Missing, changed, newly added or unsafe linked
+   sources fail closed. This mechanism is implemented; its selected graph,
+   native review, qualification and pre-action enforcement are not automatically
+   complete. The prototype's old narrow pre-action binding is not full admission.
 2. Review the unchanged source prediction/cadence/RNG/prompt/ACK evidence against
    that freeze. Establish all seven checks in `semantic_lab.protocol.verify`;
    document that parity means source motor contracts, not bitwise scene replay.
@@ -67,3 +73,20 @@ missing random arrange cases completed as real original-only motor baselines:
 all horizon failures, score0.0. All five selected reference motor cases of that
 already-opened family are now executed, not untouched evaluation or capacity
 rows. No new semantic prompt tuning or paid requests were involved.
+
+## Binding Scope
+
+The new preparation command requires explicit `--execution-source` selections
+and refuses to overwrite its output. It does not create qualification records,
+download checkpoints, run physics or authorize motion. Source snapshots cover
+selected project/native source and config bytes, not installed binary integrity.
+The reviewed graph must include the executor callbacks/coordinator, source
+policy/client/transform code, native environment/task/config/layout sources and
+resolved provider/checkpoint metadata. Existing model-load identity checks still
+need to verify checkpoint bytes. A caller selecting an incomplete graph does
+not acquire qualification simply because its snapshot verifies.
+
+Legacy freezes without the optional snapshot remain readable; they do not gain
+new execution-source coverage. Future reference-executor qualification must
+require the snapshot and its exact hash rather than reuse an old qualification.
+Historical results/qualification artifacts remain unchanged.

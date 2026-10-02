@@ -2,6 +2,32 @@
 
 ## Frozen Design
 
+## Current Comparison Priority
+
+The owner now requests a pi0.5-first comparison of original-policy-only,
+robot-policy-free direct GPT, numeric GPT-as-Policy-style supervision, and
+semantic subtask hierarchy. Other motor models follow only after the approach
+comparison; the wider V5 task/backend requirements remain outstanding.
+
+- [x] Complete the five-case vector semantic development panel and recovery panel.
+- [x] Demonstrate concurrent native task waves with shared pi0.5 inference.
+- [ ] Finish reference executor admission and enforce its source binding before actions.
+- [ ] Freeze one diverse fixed case panel and all four conditions before new outcomes.
+- [ ] Run matched pi0.5 policy-only, direct GPT, numeric hybrid and semantic hybrid waves.
+- [ ] Report success/partial score, actual actions, wall time, planner wait, calls/cost,
+  and missing/contract/budget-censored outcomes without merging cohorts.
+- [ ] Compare other motor models afterward, then complete held-out/second-backend work.
+
+No matched direct-versus-hybrid ranking is established. The development panel
+has only two task families; do not treat five layouts as five diverse tasks.
+Historical numeric variants are adapted/censored experiments, not a faithful
+donor-method reproduction. Direct budgets must cover the native horizon: the
+dense five-action/180-call profile cannot cover1050 or1100 actions. Sparse
+capacity is only an upper bound because commands can terminate early.
+Keep native sensors, layout/seed, controller conventions and termination
+rules matched; bind method-specific cadence/authority differences explicitly.
+No new maximum-batch search or serial prompt sweep is required.
+
 **Priority update:** the user requested working multi-task parallel execution
 before further serial hierarchy comparisons. Finish and retain the already
 owned tower1 subtask-only episode (now terminal); do not launch more serial paid variants.
@@ -727,3 +753,20 @@ Retirement evidence: `../evidence/g05-screen-storage-retirement001-20261002/`.
 All384 CPU tests pass. This advances coverage/preparation, not completion of
 Phase E. Next freeze and source-qualify the reference executor, then expand
 matched task diversity without tuning on untouched outcomes.
+
+## Execution-Source Binding Gate
+
+Admission review found that the general freeze omitted external native sources
+and experimental operator files; verification also trusted the manifest's
+stored hash rather than rechecking its contents. The gate now revalidates the
+manifest and optionally snapshots explicitly selected operator/native source
+and config trees, including file membership. Qualifications for such a freeze
+must bind its exact execution-source snapshot. Added/removed/changed files,
+escaping paths, symlinked sources and stale unbound qualifications are rejected.
+
+`scripts/semantic/freeze_executor.py` prepares this binding with explicit source
+selectors and refuses overwrite. It does not issue qualification or execute
+physics/model calls. Legacy records remain unchanged and gain no new coverage.
+This corrects an admission mechanism, not a new native experiment or completion
+of Phase E. The selected dependency graph, evidence review and pre-action
+enforcement still need to be completed before admitting untouched task groups.

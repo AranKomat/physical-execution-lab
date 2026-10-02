@@ -44,16 +44,54 @@ def code_fingerprint(root):
     return digest({p.relative_to(root).as_posix(): file_sha(p) for p in sorted(set(paths)) if p.is_file()})
 
 
-def freeze(root, manifest, configs):
+def execution_snapshot(root, selectors):
+    """Bind explicitly selected executor/native source trees, including membership."""
+    root = Path(root).resolve()
+    if (not isinstance(selectors, (list, tuple)) or not selectors
+            or not all(isinstance(selector, str) and selector for selector in selectors)
+            or len(set(selectors)) != len(selectors)):
+        raise ContractError('nonempty unique execution source selectors required')
+    files = {}
+    suffixes = {'.py', '.json', '.yaml', '.yml', '.toml'}
+    for selector in sorted(selectors):
+        relative = Path(selector)
+        if relative.is_absolute() or '..' in relative.parts or str(relative) == '.':
+            raise ContractError('execution source selector must stay inside repository')
+        path = root / relative
+        linked = any(root.joinpath(*relative.parts[:index]).is_symlink()
+                     for index in range(1, len(relative.parts) + 1))
+        if linked or not path.resolve().is_relative_to(root) or not path.exists():
+            raise ContractError('missing or unsafe execution source: ' + selector)
+        candidates = [path] if path.is_file() else list(path.rglob('*'))
+        selected = 0
+        for candidate in sorted(candidates):
+            if candidate.is_symlink():
+                raise ContractError('execution source symlink: ' + str(candidate))
+            if not candidate.is_file() or candidate.suffix not in suffixes:
+                continue
+            name = candidate.relative_to(root).as_posix()
+            files[name] = file_sha(candidate)
+            selected += 1
+        if not selected:
+            raise ContractError('execution source selector contains no source/config files: ' + selector)
+    return mf.seal({'schema': 'semantic.execution_sources.v1', 'selectors': sorted(selectors),
+                    'files': files, 'scope': 'selected project/native source and config bytes; not installed binary integrity'})
+
+
+def freeze(root, manifest, configs, *, execution_sources=None):
     mf.check(manifest)
     if not configs or len({c['name'] for c in configs}) != len(configs):
         raise ContractError('unique nonempty conditions required')
-    return mf.seal({'schema': 'semantic.freeze.v1', 'source_sha256': code_fingerprint(root),
-                   'manifest_sha256': manifest['sha256'], 'configs': {c['name']: digest(c) for c in configs},
-                   'native_review': compatibility(root), 'qualifies_hardware_or_models': False})
+    document = {'schema': 'semantic.freeze.v1', 'source_sha256': code_fingerprint(root),
+                'manifest_sha256': manifest['sha256'], 'configs': {c['name']: digest(c) for c in configs},
+                'native_review': compatibility(root), 'qualifies_hardware_or_models': False}
+    if execution_sources is not None:
+        document['execution_sources'] = execution_snapshot(root, execution_sources)
+    return mf.seal(document)
 
 
 def verify(root, frozen, manifest, config, qualification):
+    mf.check(manifest)
     if frozen.get('schema') != 'semantic.freeze.v1' or frozen.get('sha256') != mf.seal(frozen)['sha256']:
         raise ContractError('invalid semantic freeze')
     if frozen['source_sha256'] != code_fingerprint(root) or frozen['manifest_sha256'] != manifest['sha256']:
@@ -64,6 +102,12 @@ def verify(root, frozen, manifest, config, qualification):
         raise ContractError('new semantic qualification required; old motor-only approval does not transfer')
     if qualification.get('config_sha256') != digest(config):
         raise ContractError('qualification configuration changed')
+    if 'execution_sources' in frozen:
+        snapshot = frozen['execution_sources']
+        if execution_snapshot(root, snapshot['selectors']) != snapshot:
+            raise ContractError('execution source bytes or membership changed after freeze')
+        if qualification.get('execution_sources_sha256') != snapshot['sha256']:
+            raise ContractError('qualification does not bind frozen execution sources')
     required = ['native_motor_only_parity', 'effective_prompt_seen_at_model_boundary',
                 'continue_preserves_cadence', 'context_switch_preserves_ack_history',
                 'native_terminal_scoring_separate', 'source_bound_model_identity', 'tokenizer_subtask_not_truncated']
