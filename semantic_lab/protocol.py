@@ -90,7 +90,8 @@ def freeze(root, manifest, configs, *, execution_sources=None):
     return mf.seal(document)
 
 
-def verify(root, frozen, manifest, config, qualification):
+def verify_binding(root, frozen, manifest, config, *, require_execution_sources=False):
+    """Validate frozen bytes/config only; never confer native qualification."""
     mf.check(manifest)
     if frozen.get('schema') != 'semantic.freeze.v1' or frozen.get('sha256') != mf.seal(frozen)['sha256']:
         raise ContractError('invalid semantic freeze')
@@ -98,14 +99,23 @@ def verify(root, frozen, manifest, config, qualification):
         raise ContractError('source/manifest changed after semantic freeze')
     if frozen['configs'].get(config['name']) != digest(config):
         raise ContractError('semantic configuration is not frozen')
+    if require_execution_sources and 'execution_sources' not in frozen:
+        raise ContractError('reference executor requires frozen execution sources')
+    if 'execution_sources' in frozen:
+        snapshot = frozen['execution_sources']
+        if execution_snapshot(root, snapshot['selectors']) != snapshot:
+            raise ContractError('execution source bytes or membership changed after freeze')
+    return True
+
+
+def verify(root, frozen, manifest, config, qualification):
+    verify_binding(root, frozen, manifest, config)
     if qualification.get('schema') != 'semantic.qualification.v1' or qualification.get('source_sha256') != frozen['source_sha256']:
         raise ContractError('new semantic qualification required; old motor-only approval does not transfer')
     if qualification.get('config_sha256') != digest(config):
         raise ContractError('qualification configuration changed')
     if 'execution_sources' in frozen:
         snapshot = frozen['execution_sources']
-        if execution_snapshot(root, snapshot['selectors']) != snapshot:
-            raise ContractError('execution source bytes or membership changed after freeze')
         if qualification.get('execution_sources_sha256') != snapshot['sha256']:
             raise ContractError('qualification does not bind frozen execution sources')
     required = ['native_motor_only_parity', 'effective_prompt_seen_at_model_boundary',

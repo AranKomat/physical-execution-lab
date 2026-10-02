@@ -122,3 +122,28 @@ the separately frozen pi0.5-first matched panel. Both GPUs were idle; the host
 had5.5GiB free. New sensor-heavy waves need a storage plan first. Unrelated
 CPU work and untracked remote files were preserved. No model weights were
 downloaded to the Mac.
+
+## Pre-Action Source Enforcement
+
+The retained prototype operator now requires `--execution-freeze` for reference
+episodes. It calls `protocol.verify_binding(..., require_execution_sources=True)`
+before creating an output/worker/simulator and again after reset/model readiness,
+before dispatching any controls. The second check rereads manifest/config bytes
+from disk rather than trusting the earlier objects. It records both freeze and
+execution-source hashes, and explicitly sets
+`execution_binding_is_native_qualification=false`.
+
+The archived deployed operator is in
+`../evidence/reference-execution-binding001-20261002/operator_reference_rollout001.py`.
+The worker-only entry point still loads no simulator; the reference driver
+validates its worker source in the snapshot. Any changed code or config needs a
+fresh binding; neither earlier preparation snapshot can authorize this changed
+executor. The original full `protocol.verify` continues to require all seven
+native checks and hashed evidence. Source binding alone cannot admit untouched
+task groups; the prototype's unopened-group guard is deliberately retained.
+
+This completes implementation of the two pre-action source checks, not runtime
+admission or a comparison phase.401 CPU tests pass. Reuse the retained native
+prediction/cadence/RNG/prompt/tokenizer audits to document each qualification
+check's tested scope before producing a new qualification record. Do not simply
+copy the older development qualification's true flags onto a new executor.

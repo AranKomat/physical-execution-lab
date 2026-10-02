@@ -770,3 +770,10 @@ physics/model calls. Legacy records remain unchanged and gain no new coverage.
 This corrects an admission mechanism, not a new native experiment or completion
 of Phase E. The selected dependency graph, evidence review and pre-action
 enforcement still need to be completed before admitting untouched task groups.
+
+The prototype now requires a source snapshot and checks it before worker launch
+and again immediately before control dispatch, rereading config/manifest bytes.
+These checks preserve its unopened-task restriction and unqualified result
+labels. Implementation is complete; a fresh host binding and native evidence
+review remain necessary.401 passing CPU tests are not a new robot outcome or
+completion of Phase E. See `REFERENCE_EXECUTOR_ADMISSION_20261002.md`.

@@ -122,6 +122,27 @@ def test_execution_qualification_cannot_reuse_unbound_record(tmp_path):
         protocol.verify(tmp_path, doc, manifest(), cfg, q)
 
 
+def test_reference_binding_requires_snapshot_without_issuing_qualification(tmp_path):
+    cfg = {'name': 'cfg'}
+    doc = protocol.freeze(tmp_path, manifest(), [cfg])
+    with pytest.raises(ContractError, match='requires frozen execution sources'):
+        protocol.verify_binding(tmp_path, doc, manifest(), cfg, require_execution_sources=True)
+    (tmp_path / 'executor.py').write_text('x=1')
+    doc = protocol.freeze(tmp_path, manifest(), [cfg], execution_sources=['executor.py'])
+    assert protocol.verify_binding(tmp_path, doc, manifest(), cfg, require_execution_sources=True)
+    with pytest.raises(ContractError, match='qualification required'):
+        protocol.verify(tmp_path, doc, manifest(), cfg, {})
+
+
+def test_reference_pre_action_binding_detects_changes_after_initial_check(tmp_path):
+    cfg = {'name': 'cfg'}; source = tmp_path / 'executor.py'; source.write_text('x=1')
+    doc = protocol.freeze(tmp_path, manifest(), [cfg], execution_sources=['executor.py'])
+    assert protocol.verify_binding(tmp_path, doc, manifest(), cfg, require_execution_sources=True)
+    source.write_text('x=2')
+    with pytest.raises(ContractError, match='execution source bytes'):
+        protocol.verify_binding(tmp_path, doc, manifest(), cfg, require_execution_sources=True)
+
+
 @pytest.mark.parametrize('selectors', [[], ['missing'], ['../escape.py'], ['/tmp/source.py'], ['.'],
                                      'source.py', [None], ['same', 'same']])
 def test_execution_snapshot_refuses_missing_or_escaping_selections(tmp_path, selectors):
