@@ -65,6 +65,7 @@ def main():
     source_hashes = {path: hashlib.sha256((ROOT / path).read_bytes()).hexdigest() for path in source_paths}
     report = dict(status='starting', method='original_only', paid_calls=0, policy_runtimes=1,
                   simulator_processes=3, distinct_tasks=10, source_hashes=source_hashes,
+                  simulator_gpu_affinity=[0, 1, 0], policy_gpu=1, jax_memory_fraction=.5,
                   comparison_plan_sha256=plan['sha256'], cases=[case['case_id'] for case in panel['cases']],
                   native_equivalence_admission_pending=True, automatic_retry=False)
     children, streams = [], []
@@ -76,22 +77,27 @@ def main():
             str(ROOT / 'scripts/semantic/serve_pi05_batch.py'), '--cohort', str(out / 'cohort.json'),
             '--output', str(out / 'worker'), '--capacity', '10'], cwd=ROOT,
             env=dict(os.environ, CUDA_VISIBLE_DEVICES='1', XLA_PYTHON_CLIENT_PREALLOCATE='false',
+                     XLA_PYTHON_CLIENT_MEM_FRACTION='.5',
                      OMP_NUM_THREADS='4', MKL_NUM_THREADS='4'), stdout=stream, stderr=subprocess.STDOUT,
             start_new_session=True)
         children.append(service)
         simulators = []
         for idx, wave in enumerate(waves):
+            gpu = 1 if idx == 1 else 0
             stream = (out / f'group{idx}.log').open('x'); streams.append(stream)
             child = subprocess.Popen(['/root/miniconda3/envs/RoboDojo/bin/python3.11', '-u',
                 str(ROOT / 'scripts/semantic/run_distinct_task_group.py'),
                 '--cases', str(out / f'group{idx}-cases.json'), '--config', str(config_path),
-                '--output', str(wave)], cwd=ROOT,
-                env=dict(os.environ, CUDA_VISIBLE_DEVICES='0', OMNI_KIT_ACCEPT_EULA='YES',
+                '--output', str(wave),
+                '--kit_args', f'--/renderer/activeGpu={gpu} --/renderer/multiGpu/enabled=false'], cwd=ROOT,
+                env=dict(os.environ, CUDA_VISIBLE_DEVICES=str(gpu), OMNI_KIT_ACCEPT_EULA='YES',
                          OMP_NUM_THREADS='4', MKL_NUM_THREADS='4'),
                 stdout=stream, stderr=subprocess.STDOUT, start_new_session=True)
             children.append(child); simulators.append(child)
         atomic_json(out / 'report.json', report)
         deadline = time.monotonic() + treatment['wall_limit_s'] + 900
+        log_offsets = [0] * len(waves)
+        log_tails = [''] * len(waves)
         while any(child.poll() is None for child in simulators):
             if service.poll() not in (None, 0):
                 raise RuntimeError('fused model worker failed; no retry')
@@ -101,6 +107,15 @@ def main():
                 path = wave / 'report.json'
                 if path.exists() and load_json(path)['status'] == 'error_stop_no_retry':
                     raise RuntimeError('native group reported failure, regardless of process exit code')
+            for idx in range(len(waves)):
+                with (out / f'group{idx}.log').open(errors='replace') as stream:
+                    stream.seek(log_offsets[idx])
+                    recent = log_tails[idx] + stream.read()
+                    log_offsets[idx] = stream.tell()
+                log_tails[idx] = recent[-512:]
+                if any(marker in recent for marker in ('Scene state is corrupted',
+                    'Simulation cannot continue', 'aborting simulation')):
+                    raise RuntimeError(f'native PhysX fatal error in group{idx}; cohort censored')
             if time.monotonic() > deadline:
                 raise TimeoutError('full cohort wall limit')
             if shutil.disk_usage(ROOT).free < 1024**3:

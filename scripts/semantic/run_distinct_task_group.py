@@ -62,7 +62,7 @@ def main():
             evaluation = load_yaml(str(config_root / 'arx_x5.yml'))
             evaluation.update(task_name=case['runtime_task'], num_envs=len(cases), device_id=0,
                 eval_batch=True, policy_name='Pi_05', additional_info='distinct_task_cohort',
-                seed=case['eval_seed'], physx_monitor_enabled=False)
+                seed=case['eval_seed'], physx_monitor_enabled=True)
             values = {key: load_yaml(str(config_root / key / (evaluation['config'][key] + '.yml')))
                       for key in ('sim', 'scene', 'camera', 'robot')}
             values.update(eval_cfg=evaluation, deploy_cfg=dict(port=1, policy_name='Pi_05'),

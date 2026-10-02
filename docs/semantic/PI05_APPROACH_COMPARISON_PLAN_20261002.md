@@ -111,6 +111,26 @@ The parent and fused service also reject an explicit group failure regardless
 of its process exit code: Isaac application shutdown can mask a Python error
 with exit0. No automatic retry or smaller-task substitution is permitted.
 
+The corrected full cohort (`pi05-full-panel-baseline002`) reached real fused
+B10 inference and native controls on all ten tasks. All initial head-camera
+views were visually inspected and showed the expected distinct scenes; retained
+requests also preserve task-specific native prompts. The support group then
+hit a real PhysX GPU-memory allocation failure at action62 (61 ACKed actions per
+support environment). The other groups had75 ACKed actions per environment.
+PhysX logged `Scene state is corrupted` and stopped simulation; its Python
+process remained live. The entire cohort was explicitly stopped and excluded
+from performance scoring. This is not evidence of a policy/task failure.
+
+The next full attempt moves the two support tasks to GPU1 alongside the policy,
+keeps the other eight tasks on GPU0, and caps the JAX allocator fraction at0.5.
+The previous all-simulation-on-GPU0 allocation reached roughly22.4GiB with only
+1.1GiB spare, while GPU1 retained roughly7.1GiB spare. GPU affinity changes are
+resource routing, not changed task physics, sensing or horizons. Native PhysX
+monitoring is now enabled, and the parent also watches fatal simulation logs
+so a live process can no longer masquerade as a progressing simulator.
+The rebalanced full cohort has not yet been verified; do not mark batching or
+the baseline complete from the earlier nonblank captures and component tests.
+
 Compare approaches first, motor models afterward. This is the next experiment
 priority, not a completed comparison or a substitute for the wider V5 scope.
 Roster selection below is fixed before new outcomes. Exact resolved treatment
