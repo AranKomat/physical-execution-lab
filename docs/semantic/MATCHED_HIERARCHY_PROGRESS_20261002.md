@@ -28,6 +28,12 @@ Keep native sensors, layout/seed, controller conventions and termination
 rules matched; bind method-specific cadence/authority differences explicitly.
 No new maximum-batch search or serial prompt sweep is required.
 
+The concrete next roster/design is in
+`PI05_APPROACH_COMPARISON_PLAN_20261002.md`: standard group0/layout0 in all ten
+reference task groups, four primary conditions, followed by layout expansion.
+This fixes selection without pretending the resolved campaign configs or
+numeric/direct vector integration are already complete.
+
 **Priority update:** the user requested working multi-task parallel execution
 before further serial hierarchy comparisons. Finish and retain the already
 owned tower1 subtask-only episode (now terminal); do not launch more serial paid variants.
@@ -777,3 +783,11 @@ These checks preserve its unopened-task restriction and unqualified result
 labels. Implementation is complete; a fresh host binding and native evidence
 review remain necessary.401 passing CPU tests are not a new robot outcome or
 completion of Phase E. See `REFERENCE_EXECUTOR_ADMISSION_20261002.md`.
+
+Live token-retention enforcement is now implemented in both reference pi0.5
+worker paths. One same-input/source-RNG GPU replay found identical guarded and
+original50x14 predictions and identical RNG advancement; the complete prompt
+survived101/200 tokens. This is not a new simulator task result or obedience
+proof. No additional guard/capacity sweep is planned. Source-bound qualification,
+native variant admission and numeric/direct comparison integration remain the
+next substantive items, followed by the fixed ten-task approach screen.

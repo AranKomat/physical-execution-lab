@@ -202,3 +202,12 @@ truncation rejection and invalid masks. A separate bounded source-model replay
 is prepared to compare guarded versus original inference on one retained input
 with identical source RNG. No successful robot result or completed phase is
 implied by these checks; results remain pending until the replay actually runs.
+
+The replay subsequently completed on GPU1 at revision `6f5ecc6`, without
+simulator actions or paid requests. Original and guarded source inference on
+the same retained input/source seed0 produced identical50x14 predictions
+(maximum absolute difference0.0) and identical post-inference RNG. The guarded
+prompt retained101 active tokens out of200. The retained report is
+`../evidence/reference-execution-binding001-20261002/live-token-guard-probe001.json`.
+This is one input on one runtime, not full task/trajectory parity, obedience,
+native variant admission or a completed benchmark phase.406 CPU tests pass.

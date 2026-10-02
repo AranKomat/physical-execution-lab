@@ -1031,7 +1031,7 @@
     "docs/evidence/semantic-pi05-hierarchy-001/task_plus_subtask/result.json": "8a7e7f9cf62099e7585bc0b5c42c1c5e1952cdb7d059fe24cb9277702b82bbbe",
     "docs/evidence/semantic-pi05-hierarchy-001/task_plus_subtask/semantic-decisions.json": "205a4088ac95da694957d08a6a1b81b4c69193bf25c20b423e7430a319efa818",
     "docs/evidence/semantic-pi05-hierarchy-001/task_plus_subtask/source-identity.json": "f5d791db6665ccc59a510b4a75db73a35f4d72da9623cc611336b6c5cd0a3986",
-    "docs/semantic/MATCHED_HIERARCHY_PROGRESS_20261002.md": "c606d840fc97381f1cf469be99ccb59432511a91acca5e71fc0ae07099e53c75",
+    "docs/semantic/MATCHED_HIERARCHY_PROGRESS_20261002.md": "c196ac88389b0cb857d667b5f2eeb3c7b2ce486ee26dc1365b8df80710a917c2",
     "docs/evidence/semantic-pi05-hierarchy-001/task_plus_subtask/sort-l2/api-summary.json": "1ed5662dbd32e2bd4ace231d7b559e90c3c61a8e1eb10dac34b03f7aa291a33d",
     "docs/evidence/semantic-pi05-hierarchy-001/task_plus_subtask/sort-l2/initial-observation-fingerprint.json": "e017a3df0bea46e6b9c0d3efd451acd4ba5446062bfa45367a85d5d2276832c8",
     "docs/evidence/semantic-pi05-hierarchy-001/task_plus_subtask/sort-l2/offline-audit.json": "7681ffe88b171ac9093111f0695308f6c85835b11d905cd70d805b34fa951924",
@@ -1265,7 +1265,7 @@
     "docs/evidence/reference-arrange-random-motor001-20261002/pre-action-binding.json": "9fe417d674b889960e9e1506cd035395e870f9682221f387a3bb9b82bdab2a54",
     "docs/evidence/reference-arrange-random-motor001-20261002/report.json": "ba97e10083c661ed659129c273bbea8711ccfee303f3f2cc2a2eecd1cae4e8c3",
     "docs/evidence/reference-arrange-random-motor001-20261002/worker-ready.json": "56dadeb81657a51acc8abb235c1cf2135e71616db48fb83476f23ca504557d33",
-    "docs/semantic/REFERENCE_EXECUTOR_ADMISSION_20261002.md": "d5814a7eda4cb72e3869d21c621c35c99f91fc69173bcb0393dc26c0ac81ddb1",
+    "docs/semantic/REFERENCE_EXECUTOR_ADMISSION_20261002.md": "17fbf047faa4de254002f8cdb4fa4586c3b82a5bc288992264873a819bae2632",
     "scripts/semantic/freeze_executor.py": "e82628d4112407eb2ff3ce5184179d31b5d1af1e7d7c6224640afaf51af1a535",
     "docs/evidence/reference-execution-binding001-20261002/freeze.json": "2b9f20fe1ff739a467a769e9b2ecd67bb603045d77d36ed07c2fb2ef8205b327",
     "docs/evidence/reference-execution-binding001-20261002/operator_reference_rollout001.py": "e544310a30eb40b9a5e42363cc9ae5d968838387ac87bea12b4d195c4c00ccab",
@@ -1273,6 +1273,8 @@
     "docs/evidence/reference-execution-binding001-20261002/operator_live_token_guard_probe001.py": "a69909f30870f0200b0b8e795d3610c3fdfc8ed2083522d1fbad9dc82a0bce34",
     "docs/evidence/reference-execution-binding001-20261002/operator_pi05_multifamily_worker001.py": "941633354d74dad719eaf5d8331c870703b031a27865337f4188123327150f60",
     "semantic_lab/token_retention.py": "2755a9a4fae843749a0d1b8e3fe0c48ed703a5cbee1336da655e39f580f1ab7d",
-    "tests/semantic/test_token_retention.py": "2096d5dc6d533b691a47015e257a375ee165526fdbd0cab6014d7ef24d99f22b"
+    "tests/semantic/test_token_retention.py": "2096d5dc6d533b691a47015e257a375ee165526fdbd0cab6014d7ef24d99f22b",
+    "docs/evidence/reference-execution-binding001-20261002/live-token-guard-probe001.json": "31d762f668e6795fcfb081776aa559e3a62811663fa4acba41071ea4756ca872",
+    "docs/semantic/PI05_APPROACH_COMPARISON_PLAN_20261002.md": "39866ee30d8d507fb36c150468ff2a01e7871c85d7e6705f1217c16da4b4a8a7"
   }
 }
