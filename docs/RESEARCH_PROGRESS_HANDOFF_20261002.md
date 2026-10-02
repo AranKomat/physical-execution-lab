@@ -1,6 +1,6 @@
 # Physical Execution Lab: Research Progress Handoff
 
-Snapshot: 2026-10-02 Japan time, updated after fresh every-chunk trial 002 stopped. This is a
+Snapshot: 2026-10-02 Japan time, updated during Intern's final fixed-roster case. This is a
 self-contained account of the current project, not the earlier BEHAVIOR,
 EmbodiedSWE assembly, or FLUX branches. Every-chunk 001 ended with a correction
 contract error; fresh 002 ended at review budget without a contract/API error.
@@ -14,7 +14,7 @@ or cross-episode solution memory. Compare frozen motor-only execution with
 every-chunk semantic review and sparse semantic review. Separately compare
 robot-policy-free direct dense versus direct sparse control.
 
-Active RoboDojo policies are **G0.5 and the exact released pi0.5 checkpoint**.
+Active RoboDojo policies are **G0.5, the exact released pi0.5 checkpoint, and InternW0-Delta**.
 Xiaomi RoboDojo is deferred. Intern was subsequently reopened for feasibility:
 the two-GPU probe now loads and infers at about 820 ms/10-action chunk, with
 native qualification pending (see `docs/INTERN_TWO_GPU_PROBE_20261002.md`).
@@ -23,7 +23,10 @@ The first fresh Intern tower0 motor-only episode completed successfully as
 489.11 s, zero paid calls. Executed code was commit `a3d4421`; its terminal
 audit verifies all ACKs and native outcome. Both owned GPU workers exited.
 An exact motor-only qualification now verifies; a current-source freeze and
-four remaining fixed-roster cases are pending.
+the final fixed-roster case remains live. Sorting0 and tower1 succeeded;
+sorting1 failed at the full native horizon, score 0.15. Intern is 3/4 on
+completed cases, not yet a complete five-case result. Their full local backups
+verify 2071/1844/2777 payloads respectively.
 See `docs/INTERN_NATIVE_PILOT_20261002.md`. The separate
 official Xiaomi Robotics-1 RoboCasa365 track remains active.
 Supervisor: **GPT-6.1 Sol, medium reasoning, Flex-only**. No automatic request
@@ -50,7 +53,7 @@ scale errors without changing translation/rotation/takeover gates; the original
 every-chunk abort remains preserved. A fresh episode was run with this code,
 but requested no correction, so live normalization was not exercised.
 See `docs/CORRECTION_QUATERNION_FIX_20261002.md`.
-Release verification at `8ba161d` checked 880 files with no missing/changed bytes.
+Release verification at `a1a73e9` checked 914 files with no missing/changed bytes.
 These checks do not establish robot competence or phase completion. Source
 changes since the retained motor freezes require a fresh freeze before scored
 comparisons; old records remain historical evidence, not current-source approval.
@@ -106,12 +109,20 @@ three warmups and 30 measured samples, with no simulator running:
 |---|---:|---:|---:|
 | G0.5 | 801 | 841 | 889 |
 | Pi0.5 | 454 | 488 | 523 |
+| InternW0-Delta, final task case pending | 1114 | 1160 | 1188 |
 
 These are blocking replay-inference measurements, not steady-state trajectory
 timings. Pi0.5's reported 0.2134-second client construction is **not** model
 startup time. Pi0.5/model and simulator colocated screening workers used about
 15-16 GB per GPU. The screen supports retaining both policies, not a broad
 claim that one is universally superior.
+
+Intern's matched loopback timing uses the same input and 3/30 protocol. Its
+earlier approximately 820 ms direct probe excluded part of this path. Intern
+loads in 156.53 s and exposes ten actions per query; different exposed horizons
+prevent interpreting inference ratios as total task-throughput ratios. The
+two-GPU BF16 component placement coexists with a simulator on GPU0 at observed
+approximately 22.2/14.2 GB. No quantization or upstream model edits were used.
 
 Reports: `docs/G05_DEVELOPMENT_SCREEN_20261002.md` and
 `docs/PI05_DEVELOPMENT_SCREEN_20261002.md`.

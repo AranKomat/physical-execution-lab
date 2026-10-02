@@ -768,7 +768,7 @@
     "tests/test_runner.py": "1367ffdeaa9b9c598979e6af98b5c3f9fee3f0bee3256524ad491f3ea14944e9",
     "upstream.lock.json": "553a969210291a8d72a6ae9d0dcd0b49d696e3377125ba400079762a67390a9e",
     "docs/NATIVE_PILOT_20261002.md": "3c481089ade9c7ca93bd0fe1775230966ad8a691d5c805d1751c16edb18acb10",
-    "docs/EXPERIMENT_PROGRESS.md": "6fc9362c297fc5478d4671a01d770f175a4c7d1ea3a84d322b0c53a2e7b2e6d3",
+    "docs/EXPERIMENT_PROGRESS.md": "790a0f63106aee371dba801b4c4c097a2771b1f4e78c3ae69c5ba524c9d66cdc",
     "scripts/multibench/prepare_g05_bundle.py": "d976e0a3c611ab8ab660e0c735695d30ab68f310e16ce8510a52d5a593a7e332",
     "docs/evidence/g05-native-002/evaluation_outcome.json": "c9c9756f6697ae64e36d0617ba0ed4d1a36d81c2e2853ab8a7c96d57d43f6024",
     "docs/evidence/g05-native-002/fk_validation.json": "d78c3f14caf685676a9fc9e3c82c74377eb5d4e111afe64d0d7142abb1ba6fe4",
@@ -883,7 +883,7 @@
     "docs/evidence/robodojo-motor-qualification/pi05-freeze.json": "c5906d1f4e6c51ca101fc0cc15fc82dae2ea69ab56b7920f9fac41354dc3e441",
     "docs/evidence/robodojo-motor-qualification/pi05.json": "144bebdb5c7c0665daa11b9d2989ef1bd9966808d54d015f6cbfbcbc4f48fc5e",
     "docs/evidence/robodojo-motor-qualification/xr1-freeze.json": "e77f0d4c29791d2d6ea59038ec423540eedee9cd75f10be7163edd7efe1c5eee",
-    "docs/RESEARCH_PROGRESS_HANDOFF_20261002.md": "d57f2f5274c8e36acd51722651375c66c32f37b725480db410c8a6ab675ef374",
+    "docs/RESEARCH_PROGRESS_HANDOFF_20261002.md": "fced2cfda62a5f0d75899ed28f92125b6c7734c9b3294a814c2a20c6b8e5cae6",
     "docs/evidence/pi05-every-chunk-sol-flex-dev-001/api-summary.json": "78467ebecadb5247bbe9d8363125ba1e42cfbc9fa16f055b386876ea2aaaf54a",
     "docs/evidence/pi05-every-chunk-sol-flex-dev-001/backup-verification.json": "1ffa223d9a84f110e627f76f45a15321ffbf939f06883ec1c22bbf765145828b",
     "docs/evidence/pi05-every-chunk-sol-flex-dev-001/offline-audit.json": "f1cbac3889e0be0c3e46db86cfcddb40b05606d32396dabb23840782505fd29e",
@@ -916,6 +916,7 @@
     "docs/evidence/pi05-every-chunk-sol-flex-dev-002/plan.json": "4b7eee2f2d3bc47c79eb476d4ae46c3fa0dbd012422513a112731ce8701d49ed",
     "docs/evidence/pi05-every-chunk-sol-flex-dev-002/proposal-audit.json": "39deff26ace9c43b195d1dfac302bf5dabc04935da4f426cb4d849beb27c7059",
     "docs/evidence/pi05-every-chunk-sol-flex-dev-002/result.json": "606fa2384fdea1eafe46a3874403e5e3ae8bdc32ade68a58a6ada6b5e777195b",
-    "docs/evidence/pi05-every-chunk-sol-flex-dev-002/source-identity.json": "f5d791db6665ccc59a510b4a75db73a35f4d72da9623cc611336b6c5cd0a3986"
+    "docs/evidence/pi05-every-chunk-sol-flex-dev-002/source-identity.json": "f5d791db6665ccc59a510b4a75db73a35f4d72da9623cc611336b6c5cd0a3986",
+    "docs/MOTOR_SOURCE_CHANGE_REVIEW_20261002.md": "728abf134ffcb6cceeaa55b025984d732b544247039985a472cc0806dec2d08a"
   }
 }
