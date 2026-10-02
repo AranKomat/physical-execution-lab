@@ -1,0 +1,445 @@
+{
+  "summary": {
+    "attempts": 10,
+    "cost_usd": "0.05797625",
+    "no_automatic_retry": true,
+    "requested_model": "openai/gpt-6.1-sol",
+    "provider": {
+      "only": [
+        "openai/flex"
+      ],
+      "allow_fallbacks": false,
+      "require_parameters": true,
+      "max_price": {
+        "prompt": 1.5,
+        "completion": 6
+      }
+    },
+    "service_tier": "flex",
+    "tool_name": "semantic_goal"
+  },
+  "decisions": [
+    {
+      "index": 0,
+      "decision": {
+        "episode": "8a81cd45f6254a13abbc276f29120502",
+        "based_on_step": 0,
+        "based_on_stamp": "0806b3cd6f1b321afc81c140394d0d72968d76a7d90861e156ba75de248df706",
+        "expected_epoch": 0,
+        "operation": "set_subtask",
+        "subtask": "Grasp the nearer white wooden block on the left side of the table with the left arm.",
+        "assessment": "not_started",
+        "evidence": "At step 0, two white blocks are visible on the left side and two wooden boards lie flat at the center. The nearer left block is unobstructed in the left wrist view. Neither gripper is visibly holding an object.",
+        "completed_claims": [],
+        "uncertain_or_invalidated": []
+      },
+      "served_model": "openai/gpt-6.1-sol",
+      "served_tier": "flex",
+      "usage": {
+        "input_tokens": 2002,
+        "input_tokens_details": {
+          "cached_tokens": 0,
+          "cache_write_tokens": 1876
+        },
+        "output_tokens": 181,
+        "output_tokens_details": {
+          "reasoning_tokens": 0
+        },
+        "total_tokens": 2183,
+        "cost": 0.003376,
+        "is_byok": false,
+        "cost_details": {
+          "upstream_inference_cost": 0.003376,
+          "upstream_inference_input_cost": 0.002471,
+          "upstream_inference_output_cost": 0.000905
+        }
+      }
+    },
+    {
+      "index": 1,
+      "decision": {
+        "episode": "8a81cd45f6254a13abbc276f29120502",
+        "based_on_step": 105,
+        "based_on_stamp": "9ad394aee5e005d1b3e4504269a8b120048a9fe01d8d18ea462086e3cf989acc",
+        "expected_epoch": 1,
+        "operation": "continue",
+        "subtask": "",
+        "assessment": "not_started",
+        "evidence": "At step 105, the nearer left white block remains on the tabletop beside the small wooden board, visible between the open left gripper fingers in the wrist view. No grasp or lift of that block is visible. The boards remain flat on the table; robot motion alone does not establish task progress.",
+        "completed_claims": [],
+        "uncertain_or_invalidated": []
+      },
+      "served_model": "openai/gpt-6.1-sol",
+      "served_tier": "flex",
+      "usage": {
+        "input_tokens": 3087,
+        "input_tokens_details": {
+          "cached_tokens": 0,
+          "cache_write_tokens": 2961
+        },
+        "output_tokens": 174,
+        "output_tokens_details": {
+          "reasoning_tokens": 0
+        },
+        "total_tokens": 3261,
+        "cost": 0.00469725,
+        "is_byok": false,
+        "cost_details": {
+          "upstream_inference_cost": 0.00469725,
+          "upstream_inference_input_cost": 0.00382725,
+          "upstream_inference_output_cost": 0.00087
+        }
+      }
+    },
+    {
+      "index": 2,
+      "decision": {
+        "episode": "8a81cd45f6254a13abbc276f29120502",
+        "based_on_step": 210,
+        "based_on_stamp": "e5c3d47572a2150b39f3dd0c0bc8b0118b6347d5d3c09e18d61b5a747f3a9fc0",
+        "expected_epoch": 1,
+        "operation": "continue",
+        "subtask": "",
+        "assessment": "uncertain",
+        "evidence": "At step 210, both wrist views are dominated by a wooden board rather than the target white block. The high view shows white blocks on the tabletop, with the left gripper obscuring the target region. A grasp or lift of the nearer left white block is not verified. The changed arm positions do not establish completion of the current goal.",
+        "completed_claims": [],
+        "uncertain_or_invalidated": [
+          "The nearer left white block's grasp status is obscured at step 210; no completed grasp is claimed."
+        ]
+      },
+      "served_model": "openai/gpt-6.1-sol",
+      "served_tier": "flex",
+      "usage": {
+        "input_tokens": 3291,
+        "input_tokens_details": {
+          "cached_tokens": 0,
+          "cache_write_tokens": 3165
+        },
+        "output_tokens": 242,
+        "output_tokens_details": {
+          "reasoning_tokens": 25
+        },
+        "total_tokens": 3533,
+        "cost": 0.00529225,
+        "is_byok": false,
+        "cost_details": {
+          "upstream_inference_cost": 0.00529225,
+          "upstream_inference_input_cost": 0.00408225,
+          "upstream_inference_output_cost": 0.00121
+        }
+      }
+    },
+    {
+      "index": 3,
+      "decision": {
+        "episode": "8a81cd45f6254a13abbc276f29120502",
+        "based_on_step": 315,
+        "based_on_stamp": "7e2069251b71bf0410c477d93ef5c890ae788d05f26790136bbcfab924d2c600",
+        "expected_epoch": 1,
+        "operation": "set_subtask",
+        "subtask": "Place the white wooden block held by the left arm on top of the long central wooden board.",
+        "assessment": "complete",
+        "evidence": "At step 315, the left wrist view shows a white block between the gripper fingers, and the high view shows the left gripper raised away from the tabletop with the block. The long central board is visibly resting across two white supports, providing a surface for the next tower layer.",
+        "completed_claims": [
+          {
+            "text": "The left arm has grasped and lifted the nearer left white wooden block.",
+            "evidence_steps": [
+              315
+            ]
+          }
+        ],
+        "uncertain_or_invalidated": [
+          "The grasp uncertainty at step 210 is resolved by the visible held block at step 315."
+        ]
+      },
+      "served_model": "openai/gpt-6.1-sol",
+      "served_tier": "flex",
+      "usage": {
+        "input_tokens": 3508,
+        "input_tokens_details": {
+          "cached_tokens": 0,
+          "cache_write_tokens": 3382
+        },
+        "output_tokens": 312,
+        "output_tokens_details": {
+          "reasoning_tokens": 77
+        },
+        "total_tokens": 3820,
+        "cost": 0.0059135,
+        "is_byok": false,
+        "cost_details": {
+          "upstream_inference_cost": 0.0059135,
+          "upstream_inference_input_cost": 0.0043535,
+          "upstream_inference_output_cost": 0.00156
+        }
+      }
+    },
+    {
+      "index": 4,
+      "decision": {
+        "episode": "8a81cd45f6254a13abbc276f29120502",
+        "based_on_step": 420,
+        "based_on_stamp": "239401c71d054ea373976a4ecd43b51a3983bb14c8dabed72488a1b31d4d7fc7",
+        "expected_epoch": 2,
+        "operation": "set_subtask",
+        "subtask": "Place the white wooden block held by the right arm on top of the long central wooden board.",
+        "assessment": "complete",
+        "evidence": "At step 420, the high view shows a white block standing on the left portion of the long central board, and the left wrist view shows an empty gripper. These support completion of the left block placement. The right wrist view shows another white block between the fingers over the board; its release and stable placement are not yet verified.",
+        "completed_claims": [
+          {
+            "text": "The left arm grasped and lifted the nearer left white wooden block.",
+            "evidence_steps": [
+              315
+            ]
+          },
+          {
+            "text": "The left-held white block has been placed on top of the long central wooden board.",
+            "evidence_steps": [
+              420
+            ]
+          }
+        ],
+        "uncertain_or_invalidated": [
+          "The right-held block's stable placement on the board is not yet verified at step 420."
+        ]
+      },
+      "served_model": "openai/gpt-6.1-sol",
+      "served_tier": "flex",
+      "usage": {
+        "input_tokens": 3789,
+        "input_tokens_details": {
+          "cached_tokens": 0,
+          "cache_write_tokens": 3663
+        },
+        "output_tokens": 319,
+        "output_tokens_details": {
+          "reasoning_tokens": 47
+        },
+        "total_tokens": 4108,
+        "cost": 0.00629975,
+        "is_byok": false,
+        "cost_details": {
+          "upstream_inference_cost": 0.00629975,
+          "upstream_inference_input_cost": 0.00470475,
+          "upstream_inference_output_cost": 0.001595
+        }
+      }
+    },
+    {
+      "index": 5,
+      "decision": {
+        "episode": "8a81cd45f6254a13abbc276f29120502",
+        "based_on_step": 525,
+        "based_on_stamp": "5658b35ee3f7a3f1c7ba9bc81971ec87e2c1f37306523ef57c711f84aaf74c71",
+        "expected_epoch": 3,
+        "operation": "set_subtask",
+        "subtask": "Grasp the wooden board lying diagonally across the central structure.",
+        "assessment": "complete",
+        "evidence": "At step 525, the right wrist view shows the white block resting on the long central board, separated from the empty right gripper. The high view also shows this upright block on the board. A second wooden board now lies diagonally across the structure and partly obscures the previously placed left block.",
+        "completed_claims": [
+          {
+            "text": "The left arm grasped and lifted the nearer left white wooden block.",
+            "evidence_steps": [
+              315
+            ]
+          },
+          {
+            "text": "The left-held white block was placed on top of the long central wooden board.",
+            "evidence_steps": [
+              420
+            ]
+          },
+          {
+            "text": "The right-held white wooden block has been released onto the long central wooden board.",
+            "evidence_steps": [
+              525
+            ]
+          }
+        ],
+        "uncertain_or_invalidated": [
+          "The previously placed left block's current position is partly obscured by the diagonal board at step 525."
+        ]
+      },
+      "served_model": "openai/gpt-6.1-sol",
+      "served_tier": "flex",
+      "usage": {
+        "input_tokens": 3928,
+        "input_tokens_details": {
+          "cached_tokens": 0,
+          "cache_write_tokens": 3802
+        },
+        "output_tokens": 401,
+        "output_tokens_details": {
+          "reasoning_tokens": 112
+        },
+        "total_tokens": 4329,
+        "cost": 0.0068835,
+        "is_byok": false,
+        "cost_details": {
+          "upstream_inference_cost": 0.0068835,
+          "upstream_inference_input_cost": 0.0048785,
+          "upstream_inference_output_cost": 0.002005
+        }
+      }
+    },
+    {
+      "index": 6,
+      "decision": {
+        "episode": "8a81cd45f6254a13abbc276f29120502",
+        "based_on_step": 630,
+        "based_on_stamp": "010b98fa77064f32592a42e21368fc33de3a86c2725f8e5f37478fdce36a002f",
+        "expected_epoch": 4,
+        "operation": "continue",
+        "subtask": "",
+        "assessment": "uncertain",
+        "evidence": "At step 630, the right wrist view shows the wooden board closely between the fingers, and the high view shows the right gripper over the diagonal board. The board remains close to the central structure and tabletop; secure holding or a clear lift is not visible. Continue the existing grasp goal rather than claiming completion.",
+        "completed_claims": [],
+        "uncertain_or_invalidated": [
+          "A secure grasp of the diagonal board is not yet verified at step 630.",
+          "The previously placed left block's current position remains partly obscured at step 630."
+        ]
+      },
+      "served_model": "openai/gpt-6.1-sol",
+      "served_tier": "flex",
+      "usage": {
+        "input_tokens": 4065,
+        "input_tokens_details": {
+          "cached_tokens": 0,
+          "cache_write_tokens": 3939
+        },
+        "output_tokens": 280,
+        "output_tokens_details": {
+          "reasoning_tokens": 68
+        },
+        "total_tokens": 4345,
+        "cost": 0.00644975,
+        "is_byok": false,
+        "cost_details": {
+          "upstream_inference_cost": 0.00644975,
+          "upstream_inference_input_cost": 0.00504975,
+          "upstream_inference_output_cost": 0.0014
+        }
+      }
+    },
+    {
+      "index": 7,
+      "decision": {
+        "episode": "8a81cd45f6254a13abbc276f29120502",
+        "based_on_step": 735,
+        "based_on_stamp": "301a9f84078e872e09d65d35f323f770c50d8b3a6f1bc0b9ef721b74055468ee",
+        "expected_epoch": 4,
+        "operation": "continue",
+        "subtask": "",
+        "assessment": "uncertain",
+        "evidence": "At step 735, the high view shows the diagonal wooden board still across the central structure, separate from the right gripper. The right wrist view shows a white block between the fingers rather than the target board; this does not establish a successful board grasp. Retain the current goal without claiming completion.",
+        "completed_claims": [],
+        "uncertain_or_invalidated": [
+          "The apparent proximity of the right fingers to the board at step 630 did not establish a secure grasp; at step 735 the board remains on the structure.",
+          "The right gripper's contact with a white block does not verify holding the target board.",
+          "The previously placed left block's current position remains partly obscured at step 735."
+        ]
+      },
+      "served_model": "openai/gpt-6.1-sol",
+      "served_tier": "flex",
+      "usage": {
+        "input_tokens": 3996,
+        "input_tokens_details": {
+          "cached_tokens": 0,
+          "cache_write_tokens": 3870
+        },
+        "output_tokens": 352,
+        "output_tokens_details": {
+          "reasoning_tokens": 105
+        },
+        "total_tokens": 4348,
+        "cost": 0.0067235,
+        "is_byok": false,
+        "cost_details": {
+          "upstream_inference_cost": 0.0067235,
+          "upstream_inference_input_cost": 0.0049635,
+          "upstream_inference_output_cost": 0.00176
+        }
+      }
+    },
+    {
+      "index": 8,
+      "decision": {
+        "episode": "8a81cd45f6254a13abbc276f29120502",
+        "based_on_step": 840,
+        "based_on_stamp": "d7b2dab259a60f709061d38ffb2194275cbdb1b621af135e486abfdab75d637b",
+        "expected_epoch": 4,
+        "operation": "continue",
+        "subtask": "",
+        "assessment": "uncertain",
+        "evidence": "At step 840, the high view shows the target diagonal wooden board still resting across the central structure, with both grippers away from it. Neither wrist view establishes a board grasp. A white block is visible on the right portion of the horizontal board; this does not demonstrate progress on the current grasp goal. Retain the existing goal without claiming completion.",
+        "completed_claims": [],
+        "uncertain_or_invalidated": [
+          "The target board has not been visibly secured or lifted at step 840.",
+          "The white block seen near the right fingers at step 735 is not evidence of grasping the target board.",
+          "The previously placed left block's current position remains partly obscured at step 840."
+        ]
+      },
+      "served_model": "openai/gpt-6.1-sol",
+      "served_tier": "flex",
+      "usage": {
+        "input_tokens": 4026,
+        "input_tokens_details": {
+          "cached_tokens": 0,
+          "cache_write_tokens": 3900
+        },
+        "output_tokens": 237,
+        "output_tokens_details": {
+          "reasoning_tokens": 0
+        },
+        "total_tokens": 4263,
+        "cost": 0.006186,
+        "is_byok": false,
+        "cost_details": {
+          "upstream_inference_cost": 0.006186,
+          "upstream_inference_input_cost": 0.005001,
+          "upstream_inference_output_cost": 0.001185
+        }
+      }
+    },
+    {
+      "index": 9,
+      "decision": {
+        "episode": "8a81cd45f6254a13abbc276f29120502",
+        "based_on_step": 945,
+        "based_on_stamp": "301d65d221fc2ceb69214c2013fbb3ba40d4bed2e4c930701ee21efb1c12f4ae",
+        "expected_epoch": 4,
+        "operation": "continue",
+        "subtask": "",
+        "assessment": "uncertain",
+        "evidence": "At step 945, the high view shows the diagonal wooden board still resting across the central horizontal board, separate from both grippers. The right wrist view also shows the board on the structure rather than held between the fingers. No secure grasp or lift is visible; retain the current goal without claiming completion.",
+        "completed_claims": [],
+        "uncertain_or_invalidated": [
+          "The target board has not been visibly secured or lifted at step 945.",
+          "The white block previously visible atop the right portion of the horizontal board at step 840 is no longer visibly in that position at step 945; its placement is not maintained.",
+          "The previously placed left block's current position remains partly obscured at step 945."
+        ]
+      },
+      "served_model": "openai/gpt-6.1-sol",
+      "served_tier": "flex",
+      "usage": {
+        "input_tokens": 3977,
+        "input_tokens_details": {
+          "cached_tokens": 0,
+          "cache_write_tokens": 3851
+        },
+        "output_tokens": 243,
+        "output_tokens_details": {
+          "reasoning_tokens": 0
+        },
+        "total_tokens": 4220,
+        "cost": 0.00615475,
+        "is_byok": false,
+        "cost_details": {
+          "upstream_inference_cost": 0.00615475,
+          "upstream_inference_input_cost": 0.00493975,
+          "upstream_inference_output_cost": 0.001215
+        }
+      }
+    }
+  ]
+}

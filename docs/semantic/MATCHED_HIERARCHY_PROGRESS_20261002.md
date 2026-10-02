@@ -2,11 +2,20 @@
 
 ## Frozen Design
 
+**Priority update:** the user requested working multi-task parallel execution
+before further serial hierarchy comparisons. Finish and retain the already
+owned tower1 subtask-only episode (now terminal); do not launch more serial paid variants.
+First integrate multiple same-family layouts and concurrent task-family waves
+with shared inference, then bind semantic conditions to that executor as a
+new explicit cohort. The original missing cases remain missing, not replaced
+by infrastructure rollouts. Training mismatch and premature planner stopping
+are competing explanations, not established diagnoses.
+
 | V5 Phase | Current Status |
 |---|---|
 | A: no-interference | Passed native cadence/prompt audit for synchronous stateless pi0.5; not bitwise trajectory parity |
 | B: conditioning | Actual source tokenizer/context/ACK plumbing and responsiveness passed; obedience not established |
-| C: matched hierarchy | 4/5 primary pairs terminal and audited; sorting1 separately rebound GPU1 pair terminal, not merged into primary cohort; subtask-only sorting2 and tower0 audited (2/5), both abstentions; three other subtask-only variants unrun |
+| C: matched hierarchy | 4/5 primary pairs terminal and audited; sorting1 separately rebound GPU1 pair terminal, not merged into primary cohort; subtask-only 3/5 audited (sorting2/tower0 abstentions, tower1 native failure); sorting0/sorting1 unrun |
 | D: semantic recovery | Not run; disabled in current conditions |
 | E: held-out/second backend | Not run under V5; opened historical task cannot serve as untouched held-out evidence |
 
@@ -303,3 +312,31 @@ Subtask-only coverage is now **2/5**. Tower1, sorting0 and sorting1 remain
 unrun; sorting1 must retain its explicit rebound transport cohort. Recovery,
 held-out and V5 second-backend evaluation remain unrun. G0.5's concurrently
 completed five-env bounded motor rollout advances infrastructure, not Phase E.
+
+## Tower1 Result And Parallel-Execution Priority
+
+The already-owned tower1 subtask-only trial finished at the native 1050-action
+horizon: **failure, score 0.10**, 70 policy calls, ten Sol 6.1 medium/Flex
+calls/$0.05797625, 696.41 s wall and 88.29 s review wait. Four prompt changes,
+zero faults, resets, resampling, prefix shortening, recovery or unresolved
+actions. Source proposals, actual contiguous ACKs, H50/15 cadence, checkpoint
+identity and independent native scoring all passed audit. Unlike the first
+two subtask-only runs, this was not planner abstention. It is a negative
+descriptive comparison with the retained same-binding motor success at 729,
+not proof of a general training mismatch from one layout.
+
+Coverage is now 3/5 subtask-only cases; sorting0 and sorting1 remain missing.
+Further serial paid comparisons are deferred at the user's request. A new
+motor-only executor completed two concurrent five-env task-family waves with
+one shared pi0.5 runtime, 1,500 audited controls and zero paid calls. This is
+bounded infrastructure evidence, not a new hierarchy result or Phase E
+completion. Next qualify full-horizon concurrent terminal handling and
+per-episode semantic integration, bind the evaluation cohort/roster, then
+resume comparisons through that executor. Retain the serial frozen cohort
+separately rather than silently substituting vector execution.
+
+Storage note: full tower0/tower1 subtask-only sensor payloads remain on the
+GPU host; only their small audited results/structured decisions are local and
+published so far. Do not retire those unique sensors or stop/destroy the host
+before completing backups. Sorting2's full local archive is hash-verified;
+its remote native sensor duplicates were retired against that verification.

@@ -290,3 +290,45 @@ sharing or pooled VRAM. Each device still has an independent 24 GiB limit.
 
 Prioritize simulator sharing in either topology. Do not lower camera quality,
 change action cadence or merge episode histories to make a capacity test pass.
+
+## Concurrent Task Families With Shared Inference
+
+Two independent native family simulators now share one source pi0.5 runtime:
+sorting runs layouts [0,1,2,0,1], tower-building [0,1,0,1,0]. Each simulator
+uses native five-env batching on GPU0; model weights load once on GPU1 and
+native single-row inference retains separate RNG streams keyed by wave/env.
+This is not arbitrary mixed-family scenes inside a single Isaac process.
+
+Both waves completed their explicit 150-action/env bounds: **1,500 controls
+total**, twenty vector request boundaries and 100 native singleton policy
+calls. Sorting rollout wall was 88.75 s and tower 94.21 s. Concurrent wave
+wall including simulator startup was 161.18 s; total including shared model
+startup and shutdown was 196.09 s. These timers differ from previous rollout
+timers; no matched serial speedup or completed-episodes/hour claim is made.
+All rows were still active at the bound; no native success/horizon outcome.
+
+Both source/routing/actual-counter/cadence/post-state/camera audits passed.
+The shared service recorded ten calls per env per wave; RNG advances matched
+source seed0 streams independently, and original family instructions stayed
+unchanged and distinct across waves. No environment was flagged unstable.
+Live placement showed two simulator processes on GPU0 and one policy process
+on GPU1. A concurrent boundary recorded 18,922 MiB on GPU0 and 8,706 MiB on
+GPU1, leaving 5,160/15,376 MiB free. These are observations, not worst-case
+peak guarantees. Full trace copies were downloaded and both local action
+audits passed. Remote source evidence remains.
+
+Evidence and exact operators: [multi-family execution](evidence/multifamily-pi05-20261002/).
+The initial supervisor dispatch used an older copy and failed its busy-GPU
+preflight before creating a run or executing any action. The revised owned
+supervisor waited for idle GPUs; it did not interrupt the active paid trial.
+After terminal reports, completed audits and absence of the remote supervisor
+were confirmed, its lingering local SSH transport was closed. No episode was
+restarted or replaced due to the transport issue.
+
+**Next:** full-horizon concurrent termination/membership handling, then
+per-episode semantic state/planner integration with the campaign's serialized
+budget relay. Bind the roster and explicit new execution cohort before
+comparisons; do not open held-out families to debug the runner or count
+repeated layouts as independent task coverage. Stop further serial paid
+comparisons while this parallel path is being finished. This bounded test is
+working native execution, not completion of the research phases.

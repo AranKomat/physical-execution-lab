@@ -1,0 +1,19 @@
+{
+  "scope": "live observation during overlapping native family waves, not peak allocation",
+  "simulator_gpu": 0,
+  "simulator_gpu_uuid": "GPU-f24392d6-92fd-17ff-69e9-ef080446022f",
+  "simulator_processes": [
+    {"pid": 346261, "used_mib": 8972},
+    {"pid": 346260, "used_mib": 9411}
+  ],
+  "policy_gpu": 1,
+  "policy_gpu_uuid": "GPU-6168297f-de0b-f86b-ac29-1b449834c40d",
+  "policy_process": {"pid": 345894, "used_mib": 8692},
+  "device_snapshot_from_sorting_boundary_30": {
+    "gpu0_used_mib": 18474,
+    "gpu0_free_mib": 5608,
+    "gpu1_used_mib": 8706,
+    "gpu1_free_mib": 15376
+  },
+  "pids_are_historical_not_process_control_targets": true
+}

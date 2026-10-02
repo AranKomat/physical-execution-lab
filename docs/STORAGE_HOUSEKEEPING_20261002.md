@@ -49,3 +49,11 @@ Archive SHA256: `7e683059561226a2f1f95ad51ee123048a982c01694eaf85ab5dba68b584ca2
 The verified archive, metadata and remote source were retained. The local
 per-file directory is intentionally incomplete; use the verified archive
 when retrieving full evidence. No unique historical payload was deleted.
+
+The sorting2 subtask-only full archive was also verified locally: all 1,853
+files and archive digest `2ed3205a2d6c326dd3fcf11ded7fbd1422ce9698b9f706d8d2af51f7c0ed7e5b`.
+Only 841 checksum-matching remote native sensor NPZ duplicates were then
+retired, reclaiming 1,323,182,609 bytes. Remote controller captures, action
+journals, model proposals, results and bindings remain. The exact retirement
+manifest is published with that episode's evidence; full historical sensors
+are recoverable from the local archive, not the retired remote directory.

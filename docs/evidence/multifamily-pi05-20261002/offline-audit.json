@@ -1,0 +1,59 @@
+{
+  "actual_controls": 1500,
+  "task_families": [
+    "build_tower",
+    "classify_objects"
+  ],
+  "native_wave_audits": {
+    "classify_objects": {
+      "audited_actions": 750,
+      "per_env_actions": [
+        150,
+        150,
+        150,
+        150,
+        150
+      ],
+      "prediction_and_request_env_routing": true,
+      "source_actions_match_journal": true,
+      "contiguous_native_counter_acks": true,
+      "prefix_cadence_verified": true,
+      "execute_steps": 15,
+      "returned_action_steps": 50,
+      "post_action_state_matches_ack_payload": true,
+      "nonempty_native_completion_conditions": true,
+      "all_policy_cameras_nonblank": true,
+      "scope": "native vector rollout trace, not isolated-trajectory parity or held-out qualification",
+      "terminal_snapshots_match_last_ack": true,
+      "H50_15_prefix_cadence": true,
+      "native_singleton_call_counts_verified": true
+    },
+    "build_tower": {
+      "audited_actions": 750,
+      "per_env_actions": [
+        150,
+        150,
+        150,
+        150,
+        150
+      ],
+      "prediction_and_request_env_routing": true,
+      "source_actions_match_journal": true,
+      "contiguous_native_counter_acks": true,
+      "prefix_cadence_verified": true,
+      "execute_steps": 15,
+      "returned_action_steps": 50,
+      "post_action_state_matches_ack_payload": true,
+      "nonempty_native_completion_conditions": true,
+      "all_policy_cameras_nonblank": true,
+      "scope": "native vector rollout trace, not isolated-trajectory parity or held-out qualification",
+      "terminal_snapshots_match_last_ack": true,
+      "H50_15_prefix_cadence": true,
+      "native_singleton_call_counts_verified": true
+    }
+  },
+  "shared_worker_call_and_rng_accounting_verified": true,
+  "original_family_instructions_preserved": true,
+  "paid_calls": 0,
+  "scope": "bounded concurrent native execution; not trajectory equivalence, hierarchy or held-out qualification"
+}
