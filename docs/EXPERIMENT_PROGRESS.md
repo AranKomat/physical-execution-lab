@@ -178,6 +178,13 @@ Seven other test groups remain unopened. See
 `docs/evidence/pi05-matched-heldout-001-configuration/`.
 # Active Direction Update: V5 Semantic Hierarchy
 
+V5 native progress: wrapped original-only tower0 completed unsuccessfully at
+1050 actions, score 0.10, 70 policy calls and zero GPT calls. Native prefix,
+source proposal, ACK and evaluator audits pass. Independent real-GPU tokenizer
+probes retain both added prompts; source outputs respond to changed language
+but task obedience is not established. Shadow/full conditioning qualification
+remains pending. See [native V5 progress](semantic/NATIVE_QUALIFICATION_PROGRESS_20261002.md).
+
 The owner supplied a new semantic-subtask overlay on 2026-10-02. The active
 sequence is now native no-interference/shadow qualification, prompt and tokenizer
 responsiveness, matched development language hierarchy, separate semantic

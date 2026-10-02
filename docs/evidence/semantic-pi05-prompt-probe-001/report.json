@@ -1,0 +1,72 @@
+{
+  "checkpoint_identity": {
+    "action_space": "x5_joint14",
+    "adapter_config_sha256": "6a172d9cb0c9528f3fa6f50d472dac6948b34a9827e6a71816d47adc224d8edf",
+    "benchmark_training": "RoboDojo task/embodiment post-trained",
+    "checkpoint_sha256": "c70c9a59e650d484c8b921d8e17181cacd8e24b20c4cbae8277a1dffe9b69ee9",
+    "execute_steps": 15,
+    "name": "pi05_robodojo",
+    "native_hz": 25.0,
+    "prediction_horizon": 50,
+    "preprocessing_id": "gpt_as_policy_openpi_jax_cam3_joint14",
+    "revision": "8f3d362b077d8efb77e2a7274d5b2c20e2243846",
+    "stateful": false
+  },
+  "fixed_noise_and_rng": true,
+  "independent_gpu": 1,
+  "input_sensor_sha256": "ec7b6b613fa8f2380d4351a6cc036d6f558aa2080328f6d18310ea1f3519c2c3",
+  "manual_non_goal_probe": true,
+  "native_wrapper_endpoint_probe": false,
+  "observation_sha256": "5a6fbb66f75075691c47198542f8067ff2823562e68e12a5c51a762ec252e9fd",
+  "original_task": "Build a tower using the wooden blocks and wooden boards.",
+  "paid_calls": 0,
+  "proof_of_task_improvement": false,
+  "rows": [
+    {
+      "actions_shape": [
+        50,
+        14
+      ],
+      "active_tokens": 67,
+      "decoded_active_tokens": "Task: Build a tower using the wooden blocks and wooden boards., State: 168 0 0 140 86 122 255 77 0 0 147 182 139 255;\nAction: ",
+      "elapsed_s": 13.568283703003544,
+      "max_action_difference_from_original": 0.0,
+      "max_token_len": 200,
+      "mode": "original_only",
+      "model_boundary_prompt": "Build a tower using the wooden blocks and wooden boards.",
+      "rms_action_difference_from_original": 0.0,
+      "subtask_present": false
+    },
+    {
+      "actions_shape": [
+        50,
+        14
+      ],
+      "active_tokens": 80,
+      "decoded_active_tokens": "Task: Overall task: Build a tower using the wooden blocks and wooden boards.  Current subtask: Keep both hands still., State: 168 0 0 140 86 122 255 77 0 0 147 182 139 255;\nAction: ",
+      "elapsed_s": 0.09248995300004026,
+      "max_action_difference_from_original": 0.04106874434767693,
+      "max_token_len": 200,
+      "mode": "task_plus_subtask",
+      "model_boundary_prompt": "Overall task:\nBuild a tower using the wooden blocks and wooden boards.\n\nCurrent subtask:\nKeep both hands still.",
+      "rms_action_difference_from_original": 0.011015621717793552,
+      "subtask_present": true
+    },
+    {
+      "actions_shape": [
+        50,
+        14
+      ],
+      "active_tokens": 61,
+      "decoded_active_tokens": "Task: Keep both hands still., State: 168 0 0 140 86 122 255 77 0 0 147 182 139 255;\nAction: ",
+      "elapsed_s": 0.09345104899693979,
+      "max_action_difference_from_original": 0.6078917076058908,
+      "max_token_len": 200,
+      "mode": "subtask_only",
+      "model_boundary_prompt": "Keep both hands still.",
+      "rms_action_difference_from_original": 0.14436035208984052,
+      "subtask_present": true
+    }
+  ],
+  "simulator_actions": 0
+}

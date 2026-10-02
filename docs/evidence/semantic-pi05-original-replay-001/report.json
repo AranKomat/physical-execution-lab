@@ -1,0 +1,12 @@
+{
+  "exposed_actions_exact_equal": false,
+  "max_absolute_action_difference": 0.003831148147583008,
+  "native_first_proposal_sha256": "ff5cce9be96694804bbec4e59460bdbc114daeebaeb9bb23e1d94f3ed8a27be1",
+  "native_fresh_seed": 0,
+  "observation_sha256": "5a6fbb66f75075691c47198542f8067ff2823562e68e12a5c51a762ec252e9fd",
+  "original_prompt": "Build a tower using the wooden blocks and wooden boards.",
+  "paid_calls": 0,
+  "raw_actions_exact_equal": false,
+  "scope": "recorded-input first-source-proposal parity only; not full-episode replay",
+  "simulator_actions": 0
+}

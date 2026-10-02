@@ -28,15 +28,18 @@ def trial_limits(profile,max_calls,cap,wall_limit_s):
         raise ValueError('invalid trial wall limit')
 
 
-def request_bound(body):
+def request_bound(body, tool_name='robot_decision'):
+    if tool_name not in ('robot_decision', 'semantic_goal'):
+        raise ValueError('unreviewed function contract')
     if body.get('model')!='gpt-6.1-sol' or body.get('service_tier')!='flex':
         raise ValueError('only explicitly selected Sol 6.1 Flex is allowed')
     if body.get('reasoning')!={'effort':'medium'} or body.get('store') is not False:
         raise ValueError('medium reasoning and store=false required')
     if body.get('max_output_tokens')!=2048 or body.get('parallel_tool_calls') is not False:
         raise ValueError('unexpected output/tool budget')
-    if len(body.get('tools',[]))!=1 or body['tools'][0].get('name')!='robot_decision':
-        raise ValueError('only the local robot_decision function is allowed')
+    if (len(body.get('tools',[]))!=1 or body['tools'][0].get('type')!='function'
+            or body['tools'][0].get('name')!=tool_name):
+        raise ValueError('only the explicitly selected '+tool_name+' function is allowed')
     copy=json.loads(json.dumps(body));images=0
     for message in copy['input']:
         content=message.get('content')
@@ -60,13 +63,16 @@ def request_bound(body):
 
 
 class Relay:
-    def __init__(self,ledger,key,token,output,name,max_calls,cap,http):
+    def __init__(self,ledger,key,token,output,name,max_calls,cap,http,tool_name='robot_decision'):
         self.ledger=ledger;self.key=key;self.token=token;self.output=output
         self.name=name;self.max_calls=max_calls;self.cap=cap;self.http=http
         self.attempts=0;self.spent=Decimal(0);self.unresolved=False
+        if tool_name not in ('robot_decision','semantic_goal'):
+            raise ValueError('unreviewed function contract')
+        self.tool_name=tool_name
 
     def forward(self,body):
-        reserve=request_bound(body)
+        reserve=request_bound(body,self.tool_name)
         if self.unresolved or self.attempts>=self.max_calls or self.spent+reserve>self.cap:
             raise ValueError('trial budget exhausted or unresolved request; no retry')
         ident=f'{self.name}-{self.attempts}'
@@ -74,7 +80,7 @@ class Relay:
         self.attempts+=1;self.unresolved=True
         wire=dict(body,model=MODEL,provider=PROVIDER)
         # This provider does not advertise parallel_tool_calls. The recipient
-        # still rejects anything except one robot_decision function call.
+        # still rejects anything except one explicitly selected function call.
         wire.pop('parallel_tool_calls')
         root=self.output/ident;root.mkdir()
         (root/'request.json').write_text(json.dumps(wire))
@@ -96,7 +102,8 @@ class Relay:
             self.unresolved=False
             (self.output/'summary.json').write_text(json.dumps({
                 'attempts':self.attempts,'cost_usd':str(self.spent),'no_automatic_retry':True,
-                'requested_model':MODEL,'provider':PROVIDER,'service_tier':'flex'},indent=2))
+                'requested_model':MODEL,'provider':PROVIDER,'service_tier':'flex',
+                'tool_name':self.tool_name},indent=2))
             return raw
         finally:self.ledger.finish_attempt(ident)
 
@@ -107,6 +114,7 @@ def main():
     p.add_argument('--port',type=int,default=19861);p.add_argument('--expected-calls',type=int,required=True)
     p.add_argument('--max-calls',type=int,default=75);p.add_argument('--cap-usd',type=Decimal,default=Decimal(3))
     p.add_argument('--profile',choices=('pilot75','comparison180'),default='pilot75')
+    p.add_argument('--tool-name',choices=('robot_decision','semantic_goal'),default='robot_decision')
     p.add_argument('--wall-limit-s',type=int,default=2400)
     p.add_argument('--acknowledge-failed-request',action='append',default=[])
     p.add_argument('--offline-request',help='One retained legal request for route qualification only; no motion')
@@ -128,9 +136,9 @@ def main():
         ledger.append({'event':'operator_robodojo_supervision_scope','time':time.time(),
             'name':a.name,'max_calls':ledger.max_calls,'local_cap_usd':str(a.cap_usd),
             'trial_profile':a.profile,'trial_call_limit':a.max_calls,'wall_limit_s':a.wall_limit_s,
-            'shared_cap_usd':'85','model':MODEL,'provider':'openai/flex',
+            'shared_cap_usd':'85','model':MODEL,'provider':'openai/flex','tool_name':a.tool_name,
             'authorization':'standing low-budget physical-lab approval; owner selected Sol 6.1 Flex'})
-        relay=Relay(ledger,load_key(a.key_file),token,out,a.name,a.max_calls,a.cap_usd,http)
+        relay=Relay(ledger,load_key(a.key_file),token,out,a.name,a.max_calls,a.cap_usd,http,a.tool_name)
         if a.offline_request:
             if a.max_calls!=1:raise ValueError('offline qualification requires exactly one call')
             body=json.loads(Path(a.offline_request).read_text())

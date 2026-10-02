@@ -58,6 +58,34 @@ def test_relay_rejects_tier_fallback_before_reserving(tmp_path):
     with pytest.raises(ValueError):relay.request_bound(b)
 
 
+def test_semantic_tool_requires_explicit_selection():
+    b=body();b['tools'][0]['name']='semantic_goal'
+    with pytest.raises(ValueError):relay.request_bound(b)
+    assert relay.request_bound(b,'semantic_goal')>0
+    with pytest.raises(ValueError):relay.request_bound(body(),'semantic_goal')
+    with pytest.raises(ValueError):relay.request_bound(b,'arbitrary_tool')
+
+
+def test_actual_semantic_schema_fits_existing_responses_bounds():
+    from semantic_lab.planner import tool_schema
+    from k1lab.model_client import chat_to_responses
+    b=chat_to_responses({'model':'gpt-6.1-sol',
+        'messages':[{'role':'user','content':'current observation'}],
+        'tools':[tool_schema()]}, {'service_tier':'flex','reasoning_effort':'medium',
+        'max_output_tokens':2048})
+    assert relay.request_bound(b,'semantic_goal')>0
+    assert b['tools'][0]['parameters']['additionalProperties'] is False
+
+
+def test_semantic_route_rejects_wrong_tool_before_reservation(tmp_path):
+    ledger=Ledger()
+    def forbidden(*args,**kwargs):raise AssertionError('must not call provider')
+    r=relay.Relay(ledger,'key','token',tmp_path,'semantic',2,Decimal(1),
+        SimpleNamespace(post=forbidden),tool_name='semantic_goal')
+    with pytest.raises(ValueError):r.forward(body())
+    assert not ledger.reserved
+
+
 def test_extended_comparison_limits_require_explicit_profile():
     relay.trial_limits('pilot75',75,Decimal(3),2400)
     relay.trial_limits('comparison180',180,Decimal(3),3600)

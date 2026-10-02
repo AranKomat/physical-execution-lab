@@ -768,7 +768,7 @@
     "tests/test_runner.py": "1367ffdeaa9b9c598979e6af98b5c3f9fee3f0bee3256524ad491f3ea14944e9",
     "upstream.lock.json": "553a969210291a8d72a6ae9d0dcd0b49d696e3377125ba400079762a67390a9e",
     "docs/NATIVE_PILOT_20261002.md": "3c481089ade9c7ca93bd0fe1775230966ad8a691d5c805d1751c16edb18acb10",
-    "docs/EXPERIMENT_PROGRESS.md": "15f9dbd0dc8b0b2de5678422731545d7b516fe61e4f4a5ee925e19f1fad58832",
+    "docs/EXPERIMENT_PROGRESS.md": "21a45cab2cb7e1b93e0841e62d0e51c43c5a06d9ec98305063bfef15afef3b03",
     "scripts/multibench/prepare_g05_bundle.py": "d976e0a3c611ab8ab660e0c735695d30ab68f310e16ce8510a52d5a593a7e332",
     "docs/evidence/g05-native-002/evaluation_outcome.json": "c9c9756f6697ae64e36d0617ba0ed4d1a36d81c2e2853ab8a7c96d57d43f6024",
     "docs/evidence/g05-native-002/fk_validation.json": "d78c3f14caf685676a9fc9e3c82c74377eb5d4e111afe64d0d7142abb1ba6fe4",
@@ -817,9 +817,9 @@
     "docs/evidence/g05-supervision-bringup/accounting.json": "80363a5f710fbb80a6afa96ee2cc4d4053350ad2823fb07aa3acd0acdd306fac",
     "docs/evidence/g05-supervision-bringup/attempt-001.json": "2e61b33d3cce8e933bbdf7b0ba80765df1bc2ef953b0f3a5f97acdb87329b431",
     "docs/evidence/g05-supervision-bringup/attempt-002.json": "7d12087f290879c0833633a3dd9ee5229535ae007ed65eedd02c77274cf3852e",
-    "scripts/multibench/budget_responses_relay.py": "e5af4386d4ad477cc10f6df11e916078e0269c0c1fc59ea4a701540a569ed988",
+    "scripts/multibench/budget_responses_relay.py": "52ac887ed9535ae99d549a8833bbd7b0ac80bd379db413d608c9a4eb3a2d02ad",
     "scripts/multibench/prepare_supervision_pilot.py": "ae10321073c7bb1ec7b49670a996f775fa57543f597d3fed1e44458fbba8c103",
-    "tests/multibench/test_budget_relay.py": "23a8cadbee9535bd8c00e0aeaf35c7da111510950a567646990f45bf07ee8956",
+    "tests/multibench/test_budget_relay.py": "e4d506a41b7558edd3b007fb1786f72246c7fb04bdb8cdc0f4ab019037fb28d5",
     "docs/evidence/xr1-bringup/preparation.json": "2fa5c9e21c41510a0dede757e62e37316ef81a96d25e747bd42be8c6edd7ef5f",
     "docs/evidence/xr1-bringup/native-stats.json": "5057e2f0cce2c3c4bf129db6c88c55794194ade9d87a38ca61685bdff0cf6088",
     "docs/XR1_DEVELOPMENT_SCREEN_20261002.md": "4cb4136286943942b325e26bafe403a4abc859dd2a61cdd84594fad62ff38c8c",
@@ -990,6 +990,11 @@
     "tests/semantic/test_semantic_planner_transport.py": "886d2f5b03275e8ad65c1ef9e7901f494358fbd7b2333f1bab63dea078264f45",
     "tests/semantic/test_semantic_policy.py": "467e6c546cd717f544469b767a20091c7063444962567af47c849c58459b91e6",
     "tests/semantic/test_semantic_protocol.py": "fba0110f58a80acf81476f8886d5561510cdc02c4bc1c96ef333c6a6992559be",
-    "tests/semantic/test_semantic_runner.py": "9427d1a17279ecc0f4f52cb71bf9b06df9a9ea11c602626b42e411ca25ae9227"
+    "tests/semantic/test_semantic_runner.py": "9427d1a17279ecc0f4f52cb71bf9b06df9a9ea11c602626b42e411ca25ae9227",
+    "docs/evidence/semantic-pi05-dev-001/motor_only/offline-audit.json": "f7fb23d0b128b220b5663c25c796096d4702f2485c140577d7e6f173e9b32ef2",
+    "docs/evidence/semantic-pi05-dev-001/motor_only/result.json": "79399e4da91c90c4e8489ad02f1a1e3766ce7ce64add5721246fc52d91c89909",
+    "docs/evidence/semantic-pi05-original-replay-001/report.json": "f73a80ef376e31393ce535b358bc1076762e2a8aaefb8c590cac1a5a1704585d",
+    "docs/evidence/semantic-pi05-prompt-probe-001/report.json": "ffafb9b0922a7ee54093bd529ad9453a3305ebb11c656b2dec2bb91b4126432b",
+    "docs/semantic/NATIVE_QUALIFICATION_PROGRESS_20261002.md": "79254222e8e42f8300a1a8dcfd95a86330d651d9b1b992e7eeff3c86eb53d974"
   }
 }
