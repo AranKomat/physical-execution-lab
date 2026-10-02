@@ -1,0 +1,8 @@
+{
+  "control_actions": 0,
+  "paid_calls": 0,
+  "scope": "retained legal inputs; native-singleton worker under changing membership/order",
+  "rounds": [],
+  "status": "error_stop_no_retry",
+  "error": "AssertionError: 0.00635412335395813"
+}

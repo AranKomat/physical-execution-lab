@@ -1,0 +1,8 @@
+{
+  "archive_sha256": "9d2a7fcd297994765c48bdf04bae9d00fd158d0eb7bd20930cc6fd04294e3345",
+  "verified_files": 2079,
+  "compressed_bytes": 1638969180,
+  "verification": "archive digest and every original per-file hash, no extraction",
+  "source": "/root/physical-execution-lab/runs/semantic-pi05-hierarchy-001/task_plus_subtask/classify_objects__standard__g0__l0",
+  "no_source_retirement": true
+}

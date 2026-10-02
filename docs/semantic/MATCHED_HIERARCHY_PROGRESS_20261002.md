@@ -6,7 +6,7 @@
 |---|---|
 | A: no-interference | Passed native cadence/prompt audit for synchronous stateless pi0.5; not bitwise trajectory parity |
 | B: conditioning | Actual source tokenizer/context/ACK plumbing and responsiveness passed; obedience not established |
-| C: matched hierarchy | 3/5 primary pairs terminal and audited; sorting0 control succeeded/candidate pending; sorting1 separately rebound GPU1 pair terminal (control failure/candidate success), not merged into primary cohort; all five subtask-only variants unrun |
+| C: matched hierarchy | 4/5 primary pairs terminal and audited; sorting0 is negative (control success/candidate abstention); sorting1 separately rebound GPU1 pair terminal (control failure/candidate success), not merged into primary cohort; all five subtask-only variants unrun |
 | D: semantic recovery | Not run; disabled in current conditions |
 | E: held-out/second backend | Not run under V5; opened historical task cannot serve as untouched held-out evidence |
 
@@ -213,3 +213,54 @@ neither wave reached a native terminal outcome. Per-env sampling parity,
 scene/sensor isolation, terminal handling and fixed-panel binding remain
 required before broader scored evaluation. No new hierarchy result or phase
 completion is inferred from this throughput work.
+
+## Sorting0 Hierarchy Result
+
+The sorting0 task-plus-subtask candidate **abstained at 945 actions**, native
+score null, after 63 policy calls and ten Sol 6.1 medium/Flex calls costing
+**$0.06428375**. Wall time was 661.69 s; planner wait was 93.77 s. Three prompt
+changes, zero controller faults, resets, resampling, shortening, recovery or
+unresolved actions. Source NPZ/prefix/actual ACK audit passed. Abstention is
+incomplete, not native horizon failure and not native success.
+
+The same-binding fresh motor-only control succeeded at 800 actions/score 1.0.
+Thus sorting0 is a negative descriptive pair, not a benefit from hierarchy.
+The planner's final decision reports empty grippers, unresolved identification
+of a circular accessory, and unverified wristband placement, then stops because
+recovery is disabled. This is the planner's assessment, not independently
+verified object truth. All ten structured decisions and provider usage are
+published under `../evidence/semantic-pi05-hierarchy-001/task_plus_subtask/classify_objects__standard__g0__l0/`.
+
+Current primary evidence is four audited pairs: tower0 positive, tower1
+negative, sorting0 negative and sorting2 unsuccessful in both conditions. The
+separate GPU1 sorting1 pair is positive. All five development layouts now have
+paired evidence across the two explicitly separate transport cohorts; the
+original-binding five-case condition still lacks sorting1. Do not silently
+merge the conditions or infer a reliable overall benefit. The next semantic
+variant is the already-frozen subtask-only condition, not changing successful
+case definitions or retrospectively improving the task-plus-subtask prompts.
+Operators now accept that condition and preserve the same frozen config,
+qualification, source/prefix audit and singleton paid-relay lock. No
+subtask-only episode has been executed yet.
+
+The latest simulator-throughput item is a full-horizon five-env motor wave
+using native single-row pi0.5 inference and separate per-env RNG state. It is
+not another semantic condition and does not replace missing primary evidence.
+Fused model inference showed numerical differences from isolated inference;
+the native-singleton stream worker preserves source RNG/call accounting even
+when rows are removed or reordered. See `../SIMULATOR_BATCH_CAPACITY_20261002.md`
+for the comparison and qualification limits. Runtime fingerprint is unchanged.
+
+The full-horizon shared-simulator motor wave subsequently completed five
+episodes (layouts [0,1,2,0,1]) in 574.35 s: three successes and two native
+horizon failures, 4,790 controls total. Its source/routing/cadence/ACK/terminal
+and singleton-call-count audits passed. This is useful integrated throughput
+evidence, not five independent new task cases, a hierarchy comparison, or
+completion of Phases C-E. Full results remain in a separate execution cohort.
+
+Sorting0's complete compressed hierarchy backup was downloaded and all 2,079
+original file hashes verified without extraction. Archive SHA256:
+`9d2a7fcd297994765c48bdf04bae9d00fd158d0eb7bd20930cc6fd04294e3345`.
+No remote source retirement occurred. The next semantic work is the frozen
+subtask-only variant; the next throughput work is integrating that existing
+protocol with the shared native batch executor and an explicitly bound roster.

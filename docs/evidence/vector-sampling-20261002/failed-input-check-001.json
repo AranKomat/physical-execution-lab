@@ -1,0 +1,11 @@
+{
+  "scope": "retained legal observations; no simulator controls or paid calls",
+  "paid_calls": 0,
+  "control_actions": 0,
+  "rounds": [],
+  "checkpoint_path": "/root/physical-execution-lab/model-artifacts/pi05-exact/ckpt/RoboDojo/Pi_05/RoboDojo-sim-arx_x5-joint-0/59999",
+  "comparison_atol": 0.0001,
+  "comparison_rtol": 0,
+  "status": "error_stop_no_retry",
+  "error": "AssertionError: "
+}

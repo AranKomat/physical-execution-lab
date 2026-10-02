@@ -1,0 +1,87 @@
+{
+  "scope": "retained legal observations; no simulator controls or paid calls",
+  "paid_calls": 0,
+  "control_actions": 0,
+  "rounds": [
+    {
+      "boundary": 0,
+      "request_sha256": "9cfcee030348ab47719fde70e2915355a93fdce9240c5c45d2b3b42235512aae",
+      "transformed_inputs_exact": true,
+      "source_rng_advance_exact": true,
+      "explicit_noise_shape": [
+        5,
+        50,
+        32
+      ],
+      "fused_model_s": 15.12578487200517,
+      "raw_max_abs_delta": 0.9634443521499634,
+      "raw_per_env_max_abs_delta": [
+        0.011516854166984558,
+        0.009531192481517792,
+        0.9634443521499634,
+        0.013502518646419048,
+        0.009324073791503906
+      ],
+      "raw_per_dimension_max_abs_delta": [
+        0.03888857364654541,
+        0.024902701377868652,
+        0.008229255676269531,
+        0.03210872411727905,
+        0.0980970710515976,
+        0.9634443521499634,
+        0.053181588649749756,
+        0.0035876668989658356,
+        0.004694405011832714,
+        0.004746235907077789,
+        0.007317204028367996,
+        0.0023012859746813774,
+        0.006163140758872032,
+        0.0021967291831970215
+      ],
+      "raw_allclose_1e4": false,
+      "raw_bitwise_equal": false
+    },
+    {
+      "boundary": 1,
+      "request_sha256": "1b0b919c681325d6b4a717ba2726fd7902f78a6b90edb06430673d30d4f1ccb5",
+      "transformed_inputs_exact": true,
+      "source_rng_advance_exact": true,
+      "explicit_noise_shape": [
+        5,
+        50,
+        32
+      ],
+      "fused_model_s": 0.24241857699962566,
+      "raw_max_abs_delta": 0.007662415504455566,
+      "raw_per_env_max_abs_delta": [
+        0.006163140758872032,
+        0.007511047646403313,
+        0.007662296295166016,
+        0.004765599966049194,
+        0.007662415504455566
+      ],
+      "raw_per_dimension_max_abs_delta": [
+        0.00388886034488678,
+        0.007662415504455566,
+        0.004937529563903809,
+        0.0053514838218688965,
+        0.003108028322458267,
+        0.005956977605819702,
+        0.007414281368255615,
+        0.0017938335658982396,
+        0.007511047646403313,
+        0.003164157271385193,
+        0.002660801401361823,
+        0.0013424167409539223,
+        0.006163140758872032,
+        0.001464545726776123
+      ],
+      "raw_allclose_1e4": false,
+      "raw_bitwise_equal": false
+    }
+  ],
+  "checkpoint_path": "/root/physical-execution-lab/model-artifacts/pi05-exact/ckpt/RoboDojo/Pi_05/RoboDojo-sim-arx_x5-joint-0/59999",
+  "comparison_atol": 0.0001,
+  "comparison_rtol": 0,
+  "status": "comparison_completed"
+}

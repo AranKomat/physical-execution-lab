@@ -123,3 +123,90 @@ local runs/native-evidence/vector-rollout-20261002 after completed download.
 These gates are the next runner work, not reasons to revisit maximum batch
 sizes or install additional models. The two GPUs have enough measured headroom
 for the tested five-env pi0.5 configuration.
+
+## Sampling Check And Revised Execution Choice
+
+On two retained legal five-env observation batches, per-row transforms after
+the native JAX cast and per-env seed0 RNG advances matched the isolated path.
+Nevertheless fused model outputs were not equivalent: maximum raw action
+differences were 0.96344 and 0.00766 over the full H50 predictions. Within the
+executed 15-action prefixes, maxima were 0.21286 and 0.00487. The largest full
+prediction difference was a joint coordinate, not merely gripper clipping.
+This screen does not identify the numerical cause; do not attribute it solely
+to BF16 or assume it is harmless.
+
+Default experimental pi0.5 execution now shares simulator runtime and model
+weights but calls the source Policy.infer on one row at a time, restoring each
+env's separate JAX RNG state. This avoids changing the native sampling shape.
+The source gripper conversion remains explicit and raw predictions retained.
+The old fused B1/B5 timing evidence still describes the old execution mode; it
+is not relabeled as the new runner's throughput result.
+
+A retained-input stream check exercised five rows, followed by reordered rows
+[2,0,4]. Per-env call counts and source RNG-key advances passed. Its repaired
+attempt also matched both native reference batches bitwise. An earlier fresh
+worker differed by 0.00635 and failed the strict numerical assertion; retain
+that evidence rather than treating the subsequent exact match as proof of
+universal fresh-load reproducibility. The second check explicitly separates
+RNG/accounting assertions from measured numerical agreement.
+
+An initial input-comparison probe also stopped because it compared pre-cast
+NumPy values against converted JAX tensors. Native inference performs that
+same cast. The corrected comparison uses the native cast on both paths.
+Both failed probes are retained. All sampling checks made zero paid calls and
+executed zero controls.
+
+Small evidence and scripts: [sampling checks](evidence/vector-sampling-20261002/).
+A fresh native-singleton full-horizon simulator wave is now testing terminal
+handling on the existing layouts [0,1,2,0,1], without opening held-out layouts.
+Repeated layouts are not independent task coverage. Its results must be
+recorded separately from the fused bounded waves and frozen hierarchy pairs.
+
+## Full Native-Singleton Wave
+
+The full wave subsequently completed all five episodes in **574.35 s** of
+rollout time, executing **4,790 native controls** through 74 vector request
+boundaries. It made no GPT/API calls and used one shared model runtime with
+separate native single-row inference streams. Memory snapshots remained
+9,907 MiB on the simulation GPU and 8,654 MiB on the policy GPU.
+
+| Env | Layout | Actual Controls | Native Success | Native Score |
+|---|---:|---:|---|---:|
+| 0 | 0 | 1018 | yes | 1.0 |
+| 1 | 1 | 813 | yes | 1.0 |
+| 2 | 2 | 1100 | no, native horizon | 0.0 |
+| 3 | 0 | 759 | yes | 1.0 |
+| 4 | 1 | 1100 | no, native horizon | 0.4 |
+
+Source proposal equality, row routing, actual contiguous native counter ACKs,
+H50/15 prefix cadence, post-action state payloads, per-env singleton call
+counts and terminal snapshots matching the final ACK all passed offline audit.
+Completed rows received no more policy calls/actions and were not replaced or
+reset. Their physics still advanced globally; native score snapshots were
+frozen at first terminal. No environment was flagged unstable.
+
+This is an integrated development rollout, not merely reset/render capacity.
+It demonstrates working five-env completion/horizon handling with shared
+simulation and weights. Aggregate throughput was 8.34 controls/s. It does
+not establish a production speedup: there is no matched full-horizon serial
+wave with identical evidence IO, and an archive/backup ran concurrently for
+part of this wave. Setup is outside the rollout timer. It also does not
+establish policy success rate across RoboDojo: only three previously opened
+layouts were used, including repeats. Layout1's two different outcomes are
+retained, not selected away.
+
+Evidence and the revised native-singleton operators:
+[full wave](evidence/vector-full-wave-20261002/). This is explicitly a separate
+execution cohort with scored_benchmark_qualified=false. Layout-file hashes are
+recorded, but complete isolated-reset/scene/sensor parity is still unproven.
+The next step is a fixed broader development roster and semantic batch
+integration, not more maximum-batch-size sweeps. Frozen single-env hierarchy
+variants still need their own results and are not replaced by this wave.
+
+For parallel model evaluation, the next small resource check should be
+co-location: this native-singleton wave used about 18.13 GiB across its two
+separate devices, so five environments plus one pi0.5 runtime on a single
+4090 is plausible. It is not yet measured as a co-resident configuration;
+load/compile peaks and combined allocator behavior must be checked. If it
+works, the other 4090 can run a second model/task-family wave. This is more
+useful than renting additional GPUs or chasing the largest inference batch.

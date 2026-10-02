@@ -13,6 +13,7 @@ p = argparse.ArgumentParser()
 p.add_argument('--case-id', required=True)
 p.add_argument('--name', required=True)
 p.add_argument('--worker-gpu', type=int, choices=(0, 1), default=0)
+p.add_argument('--condition', choices=('task_plus_subtask', 'subtask_only'), default='task_plus_subtask')
 a = p.parse_args()
 name = a.name
 out = root / 'runs' / (name + '_api')
@@ -26,6 +27,7 @@ relay = [str(root / '.venv/bin/python'), '-u', str(root / 'scripts/multibench/bu
 for ident in ('g05-sparse-sol-flex-dev-001-0', 'g05-sparse-sol-flex-dev-002-0', 'xr1-supervision-kettle-001-1'):
     relay.extend(['--acknowledge-failed-request', ident])
 ssh = ['ssh', '-p', '53210', '-o', 'ConnectTimeout=15', 'root@92.180.27.84']
+ssh[1:1] = ['-o', 'ServerAliveInterval=10', '-o', 'ServerAliveCountMax=3']
 remote = '/root/physical-execution-lab'
 children = []
 try:
@@ -43,7 +45,7 @@ try:
         if tunnel.poll() is not None:
             raise RuntimeError('owned tunnel exited before episode')
         child = subprocess.Popen(ssh + [remote + '/.venv/bin/python -u ' + remote +
-            '/runs/operator_semantic_matched_baseline001.py --condition task_plus_subtask --case-id ' +
+            '/runs/operator_semantic_matched_baseline001.py --condition ' + a.condition + ' --case-id ' +
             a.case_id + ' --worker-gpu ' + str(a.worker_gpu)], start_new_session=True)
         children.append(child)
         if child.wait(timeout=6000):

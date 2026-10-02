@@ -1,0 +1,20 @@
+{
+  "audited_actions": 4790,
+  "per_env_actions": [
+    1018,
+    813,
+    1100,
+    759,
+    1100
+  ],
+  "prediction_and_request_env_routing": true,
+  "source_actions_match_journal": true,
+  "contiguous_native_counter_acks": true,
+  "H50_15_prefix_cadence": true,
+  "post_action_state_matches_ack_payload": true,
+  "nonempty_native_completion_conditions": true,
+  "all_policy_cameras_nonblank": true,
+  "scope": "native vector rollout trace, not isolated-trajectory parity or held-out qualification",
+  "terminal_snapshots_match_last_ack": true,
+  "native_singleton_call_counts_verified": true
+}

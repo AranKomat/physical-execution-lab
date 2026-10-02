@@ -16,12 +16,12 @@ from scripts.multibench.launch_robodojo_case import stop_child
 
 bound = root / 'configs/local/semantic-pi05-hierarchy-001'
 p = argparse.ArgumentParser()
-p.add_argument('--condition', choices=('motor_only', 'task_plus_subtask'), default='motor_only')
+p.add_argument('--condition', choices=('motor_only', 'task_plus_subtask', 'subtask_only'), default='motor_only')
 p.add_argument('--case-id', default='build_tower__standard__g0__l0')
 p.add_argument('--worker-gpu', type=int, choices=(0, 1), default=0)
 a = p.parse_args()
 assert a.case_id in load_json(bound / 'roster-plan.json')['cases']
-label = 'motor' if a.condition == 'motor_only' else 'task_plus_subtask'
+label = 'motor' if a.condition == 'motor_only' else a.condition
 config_path = bound / ('robodojo_pi05_robodojo_semantic_v5_' + label + '_matched_dev_001.json')
 cfg = resolved_config(load_json(config_path))
 verify(root, load_json(bound / 'freeze.json'), load_json(root / 'configs/local/robodojo-cases.json'),
