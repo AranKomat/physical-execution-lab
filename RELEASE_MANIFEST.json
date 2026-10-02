@@ -1265,7 +1265,8 @@
     "docs/evidence/reference-arrange-random-motor001-20261002/pre-action-binding.json": "9fe417d674b889960e9e1506cd035395e870f9682221f387a3bb9b82bdab2a54",
     "docs/evidence/reference-arrange-random-motor001-20261002/report.json": "ba97e10083c661ed659129c273bbea8711ccfee303f3f2cc2a2eecd1cae4e8c3",
     "docs/evidence/reference-arrange-random-motor001-20261002/worker-ready.json": "56dadeb81657a51acc8abb235c1cf2135e71616db48fb83476f23ca504557d33",
-    "docs/semantic/REFERENCE_EXECUTOR_ADMISSION_20261002.md": "4197a3c6b14630350753c07d54b562bea4c15711d82fd1a029c5e475ba27e52b",
-    "scripts/semantic/freeze_executor.py": "e82628d4112407eb2ff3ce5184179d31b5d1af1e7d7c6224640afaf51af1a535"
+    "docs/semantic/REFERENCE_EXECUTOR_ADMISSION_20261002.md": "4a31d5202a422fc55d9d683809f0d23bd34df69ff57bf40d0957e537a22c1950",
+    "scripts/semantic/freeze_executor.py": "e82628d4112407eb2ff3ce5184179d31b5d1af1e7d7c6224640afaf51af1a535",
+    "docs/evidence/reference-execution-binding001-20261002/freeze.json": "2b9f20fe1ff739a467a769e9b2ecd67bb603045d77d36ed07c2fb2ef8205b327"
   }
 }

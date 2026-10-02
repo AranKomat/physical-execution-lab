@@ -90,3 +90,35 @@ Legacy freezes without the optional snapshot remain readable; they do not gain
 new execution-source coverage. Future reference-executor qualification must
 require the snapshot and its exact hash rather than reuse an old qualification.
 Historical results/qualification artifacts remain unchanged.
+
+## Host Binding Preparation Completed
+
+At repository revision `ea8d067`, the source-only preparation command created
+`runs/reference-execution-freeze002.json` on the existing two-GPU host. The
+retained copy is `../evidence/reference-execution-binding001-20261002/freeze.json`.
+It binds3003 files, including executor callbacks/coordinator/shared worker,
+native environment/task/config/utils, installed OpenPI source, donor policy
+client/server/session code, provider/artifact metadata and layout config bytes.
+The execution snapshot SHA256 is
+`00177ed46e1a6c75ffaae39fab4a53f49cf1540bf8301ac7b05eb2313c9eeb9d`.
+Recomputing the snapshot immediately matched; separately checking every selected
+layout against the sealed manifest verified all50 hashes. No simulator/model
+was loaded, paid request made, or native qualification issued.
+
+The first preparation omitted actual layout bytes and remains separately on
+the host as `reference-execution-freeze001.json`. Attempting the expanded
+binding via `external/RoboDojo/Assets` was rejected before output creation:
+that directory is a symlink. The successful selection uses its repository-local
+resolved `.cache/robodojo_assets_repo/Assets/Eval_Layout/RoboDojo/arx_x5/0` tree.
+Do not weaken symlink rejection. The native runner also checks resolved layout
+paths and actual hashes after reset and before controls.
+
+This snapshot binds the existing motor and arrange semantic configurations,
+not the future four-way comparison. It does not cover installed binary/physics
+asset integrity, prove the dependency graph complete, enforce itself in the
+prototype runner, admit untouched task variants or establish policy obedience.
+The next steps are evidence-backed qualification/pre-action enforcement and
+the separately frozen pi0.5-first matched panel. Both GPUs were idle; the host
+had5.5GiB free. New sensor-heavy waves need a storage plan first. Unrelated
+CPU work and untracked remote files were preserved. No model weights were
+downloaded to the Mac.
