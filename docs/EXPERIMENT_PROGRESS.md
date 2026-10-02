@@ -12,9 +12,9 @@ RoboDojo screen. Xiaomi's separate RoboCasa365 track is unchanged.
 | Stage | Status | Actual evidence / remaining gate |
 |---|---|---|
 | Pre-GPU | Complete | CPU suite, synthetic audit, source inspection and config preparation |
-| A: native qualification | Complete for active motor-only RoboDojo scope | Reset/render/FK/conventions/ACK and complete episodes verified; exact G0.5/pi0.5 motor-only qualification and full-manifest freezes verify. GPT correction/contact integration remains a separate Stage C gate |
-| B: speed/quality screen | Complete for active RoboDojo policies | Same fixed five-case roster: G0.5 3/5, exact pi0.5 4/5; all native-limit failures retained. Same-input 30-sample warm timing: G0.5 p50 801 ms, pi0.5 p50 454 ms. Development evidence only; qualification/freeze and matched supervision remain separate |
-| C: matched harness comparison | First full sparse development result; overall incomplete | Pi0.5 tower0 sparse fails at full 1050-action limit, score 0.0, 27 settled Flex reviews/$0.258; nominal motor-only succeeded at 714 actions. Every-chunk stops at 626 actions on an invalid-quaternion correction; 69 settled API calls/$0.656, native score null. Held-out matched conditions and direct comparisons remain open |
+| A: native qualification | Motor-only contracts qualified; current-source freezes pending | Reset/render/FK/conventions/ACK and complete episodes verified for G0.5/pi0.5; added Intern has an exact motor-only evidence-reviewed record from its successful pilot. Older G0.5/pi0.5 freezes remain historical after source changes. GPT correction/contact integration remains a separate Stage C gate |
+| B: speed/quality screen | Complete for G0.5/pi0.5; added Intern incomplete | Same fixed five-case roster: G0.5 3/5, exact pi0.5 4/5; all native-limit failures retained. Same-input 30-sample warm timing: G0.5 p50 801 ms, pi0.5 p50 454 ms. Intern succeeds on tower0; four roster cases remain, with only three warm speed repeats so far. Development evidence only |
+| C: matched harness comparison | Development negative/censored evidence; overall incomplete | Pi0.5 tower0 sparse fails at full 1050-action limit, score 0.0, 27 settled reviews/$0.258; nominal motor-only succeeded at 714 actions. Old every-chunk stops at 626 actions on quaternion contract error. Fresh 002 stops at review budget after 658 actions/75 settled calls/$0.712, no API/contract error, native score null. Held-out matched conditions and direct comparisons remain open |
 | D: RoboCasa365 | Motor-only qualified/freeze refreshed; comparison pending | Fixed six-case screen: 2/6 success, no infrastructure errors. Initial official-client chunk matches exactly. Current-source motor freeze verifies; supervision/corrections remain unqualified. Sparse kettle pilot reached 50 steps then Flex capacity failed |
 | E: sensing/transfer | Deferred as specified | Only after useful matched physical results; no RGB-D port claimed |
 
@@ -126,3 +126,21 @@ Every-chunk tower0 stopped at 626 actions with `infrastructure_or_contract_error
 matched comparison. Preserve the rejected response and investigate correction
 validation before another named trial; no automatic retry. Shared ledger now
 has 4633 reservations/$76.848702994300 spent plus holds, $8.151297005700 remaining.
+
+Follow-up terminal: fresh `pi05-every-chunk-sol-flex-dev-002` uses the bounded
+quaternion representation fix, unchanged geometric gates, the same tower0 case,
+75-review/$3 limit and Sol 6.1 medium/Flex-only route. It ran deployed commit
+`773b5d0` and stopped at review budget: 658 actions, 76 policy calls, 75 settled
+reviews/$0.712365, 1191.61 s, native score null. Three accepts/72 shortens; no
+corrections, so live normalization was not exercised. All 658 ACKs and all 76
+source NPZ proposals verify. This is censored, not a full-horizon native failure.
+See [the budget-censored result](PI05_EVERY_CHUNK_BUDGET_RESULT_20261002.md).
+The original abort remains separate. Intern's remaining four original roster
+cases are prepared but not launched concurrently: its placement needs both GPUs.
+
+Reporting now exposes status and termination counts, distinguishing native
+failures, contract/infrastructure errors and budget stops (including incomplete
+review/wall stops) without dropping any case from the success denominator.
+CPU suite: 297 passed; this is reporting validation, not phase completion.
+Latest shared ledger: 4708 reservations, $77.561067994300 spent plus holds,
+$7.438932005700 remaining, 154 older unsettled reservations unchanged.

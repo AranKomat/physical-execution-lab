@@ -59,19 +59,40 @@ Native evaluator state was inspected only after terminal completion.
 
 The offline audit verifies 876 journal events, 727 contiguous ACKs, 73
 seed-tagged proposals, nonvacuous native evaluation, matching controller and
-evaluator outcome, and complete proposal disposition. Gripper clipping was
-zero. This bookkeeping audit does not certify every sensor boundary, physical
+evaluator outcome, and complete proposal disposition. Additional wrapper
+gripper clipping was zero. The upstream WAM adapter clips grippers internally
+before returning actions; its pre-clip values were not retained by this probe.
+Therefore zero wrapper clips does not prove zero upstream clipping.
+This bookkeeping audit does not certify every sensor boundary, physical
 safety, or production qualification. Original result is `native_unqualified`.
 
 Small public evidence: `docs/evidence/intern-two-gpu-native-001/`.
 Full local evidence: `runs/native-evidence/intern-two-gpu-native-001/`.
 Its terminal remote per-file checksum list is retained alongside that directory.
-All 1,848 payloads were verified locally with zero checksum failures.
+All 1,848 original terminal payloads were verified locally with zero checksum
+failures. The later qualification record/verification is retained separately
+with the small public evidence.
+
+## Prospective Motor Qualification
+
+The exact resolved motor-only config
+`67e2d947ff0497c0d33724ef9937bfe60949af59ad68a8c4f4324b78b18a687a`
+now has an evidence-reviewed software-contract qualification record. Artifact
+bytes were rehashed on the host; nine hashed pilot/source files verify. Reviewed
+checks cover reset/render, native joint14 convention, nonvacuous completion,
+legal sensor/instruction input, actual observation ACKs and 25 Hz native timing.
+The upstream `_adapt_obs`/`_ingest` consumes current RGB/joints and acknowledges
+pending actions; it does not ingest object transforms, rewards or other episodes.
+
+This is prospective motor-only approval, not GPT correction qualification,
+hardware safety certification, published-score reproduction or a completed
+quality screen. The original pilot's `native_unqualified` label is unchanged.
+A fresh current-source freeze remains required before scored runs.
 
 ## Next
 
-Retain Intern as an active feasible candidate. Complete configuration-bound
-native qualification and the remaining four cases of the predefined five-case
+Retain Intern as an active feasible candidate. Complete the current-source
+freeze and the remaining four cases of the predefined five-case
 development roster; retain all failures. Do not extend the roster to favor
 Intern or reopen held-out tasks prematurely. The principal harness comparisons
 remain unfinished; this successful motor-only pilot is not a supervision gain.

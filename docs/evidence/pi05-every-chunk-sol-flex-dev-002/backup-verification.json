@@ -1,0 +1,9 @@
+{
+  "run": "pi05-every-chunk-sol-flex-dev-002",
+  "method": "rsync terminal run then shasum -a 256 --check terminal remote per-file manifest",
+  "verified_payloads": 2101,
+  "missing_or_changed_payloads": 0,
+  "local_directory": "runs/native-evidence/pi05-every-chunk-sol-flex-dev-002",
+  "includes": ["native episode", "bound configs without relay token", "source identity", "source NPZ proposals", "terminal audits"],
+  "scope": "payload integrity; incomplete review-budget outcome, not native completion"
+}

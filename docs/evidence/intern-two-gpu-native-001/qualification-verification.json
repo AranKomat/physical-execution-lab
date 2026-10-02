@@ -1,0 +1,14 @@
+{
+  "checks_verified": [
+    "native_reset_render",
+    "action_space_verified",
+    "native_completion_not_vacuous",
+    "current_sensor_only_actor",
+    "policy_observation_ack_verified",
+    "controller_timing_verified"
+  ],
+  "config_sha256": "67e2d947ff0497c0d33724ef9937bfe60949af59ad68a8c4f4324b78b18a687a",
+  "evidence_files_verified": 9,
+  "pilot_relabelled": false,
+  "scope": "exact motor-only software contract, not safety or task quality"
+}

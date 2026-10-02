@@ -1,0 +1,10 @@
+{
+  "shared_ceiling_usd": "85",
+  "reservations": 4708,
+  "spent_plus_holds_usd": "77.561067994300",
+  "remaining_usd": "7.438932005700",
+  "unsettled_reservations": 154,
+  "trial_settled_requests": 75,
+  "trial_cost_usd": "0.71236500",
+  "older_holds_preserved": true
+}

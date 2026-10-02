@@ -1,0 +1,11 @@
+{
+  "correction_leases": [],
+  "count": 76,
+  "fresh_source_inference_indices_contiguous": true,
+  "review_modes": {
+    "accept": 3,
+    "shorten": 72
+  },
+  "source_npz_actions_match_journal": true,
+  "source_session": "/root/physical-execution-lab/configs/local/pi05-exact-bound-001/policy-proposals/session-zoyp_4p7"
+}

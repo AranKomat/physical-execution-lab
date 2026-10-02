@@ -138,6 +138,30 @@ def test_missing_whole_condition_report(tmp_path):
     assert a[1]['condition']=='b' and a[1]['missing']==8
 
 
+def test_report_separates_native_failure_contract_error_and_budget_stop(tmp_path):
+    c=cases()['cases'];rows=[row(c[i],success=False) for i in range(3)]
+    for r,status,reason in zip(rows,('native_completed','infrastructure_or_contract_error','budget_exhausted'),
+                              ('native_terminal','error:ContractError','native_step_budget')):
+        r.update(status=status,termination=reason)
+    result=render(c,rows,tmp_path)[0]
+    assert result['native_failures']==1 and result['contract_errors']==1 and result['budget_stops']==1
+    assert result['missing']==5 and result['success_rate_full_denominator']==0
+    assert result['status_counts']==dict.fromkeys(
+        ('native_completed','infrastructure_or_contract_error','budget_exhausted'),1)
+    assert result['termination_counts']['error:ContractError']==1
+    assert 'infrastructure_or_contract_error: 1' in (tmp_path/'report.html').read_text()
+    assert 'native_failures,contract_errors,budget_stops' in (tmp_path/'aggregates.csv').read_text()
+
+
+def test_report_counts_incomplete_wall_and_review_budgets_without_relabeling_status():
+    c=cases()['cases'];rows=[row(c[i],success=False) for i in range(3)]
+    for r,reason in zip(rows,('wall_limit','review_budget','model_stop')):
+        r.update(status='incomplete',termination=reason)
+    result=aggregate(c,rows,'a')
+    assert result['budget_stops']==2 and result['status_counts']=={'incomplete':3}
+    assert result['native_failures']==0 and result['contract_errors']==0
+
+
 def test_native_synthetic_never_mixed(tmp_path):
     c=cases()['cases']
     with pytest.raises(ContractError):render(c,[row(c[0]),row(c[1],kind='native_unqualified')],tmp_path)

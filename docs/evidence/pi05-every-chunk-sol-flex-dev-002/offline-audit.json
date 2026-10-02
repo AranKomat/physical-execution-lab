@@ -1,0 +1,8 @@
+{
+  "events": 961,
+  "head_sha256": "d8ed83dd051e7a559b8d3a426cd42095494d125129f9bfafd99649ea8d069949",
+  "scope": "terminal journal audit; not native completion",
+  "sequential_acks": 658,
+  "status": "incomplete",
+  "termination": "review_budget"
+}

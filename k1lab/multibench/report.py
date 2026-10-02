@@ -1,6 +1,6 @@
 """Full-denominator evaluation, task-weighted aggregates and descriptive Pareto data."""
 from __future__ import annotations
-from collections import defaultdict
+from collections import Counter,defaultdict
 from pathlib import Path
 import csv
 import html
@@ -25,6 +25,14 @@ def aggregate(cases,results,condition):
         if key not in ids or key in rows:raise ContractError('unknown or duplicate result case')
         rows[key]=r
     n=len(cases);k=sum(r.get('success') is True for r in rows.values())
+    statuses=Counter(r.get('status','unspecified') for r in rows.values())
+    terminations=Counter(r.get('termination') or 'unspecified' for r in rows.values())
+    native_failures=sum(r.get('status')=='native_completed' and r.get('success') is False
+                        for r in rows.values())
+    budget_stops=sum(r.get('status')=='budget_exhausted' or
+                     (r.get('status')=='incomplete' and
+                      r.get('termination') in ('wall_limit','review_budget','native_step_budget'))
+                     for r in rows.values())
     by_task=defaultdict(list)
     for c in cases:by_task[c['task']].append(bool(rows.get(c['case_id'],{}).get('success',False)))
     scores=[r['native_score'] for r in rows.values() if r.get('native_score') is not None]
@@ -34,6 +42,10 @@ def aggregate(cases,results,condition):
     for c in cases:category[c.get('category','unmapped')].append(c)
     return {'condition':condition,'scheduled':n,'results_present':len(rows),'missing':n-len(rows),
             'successes':k,'success_rate_full_denominator':k/n if n else None,'wilson95':wilson(k,n),
+            'status_counts':dict(statuses),'termination_counts':dict(terminations),
+            'native_failures':native_failures,
+            'contract_errors':statuses['infrastructure_or_contract_error'],
+            'budget_stops':budget_stops,
             'task_weighted_success':float(np.mean([np.mean(x) for x in by_task.values()])) if by_task else None,
             'score_mean_available_only':float(np.mean(scores)) if scores else None,'score_coverage':len(scores),
             'mean_episode_wall_s_available':float(np.mean(elapsed)) if elapsed else None,
@@ -95,15 +107,18 @@ def render(cases,results,output,conditions=None):
          '<style>body{font:16px system-ui;margin:40px auto;max-width:1200px;padding:0 20px;line-height:1.5}table{border-collapse:collapse;width:100%}td,th{padding:12px;border-bottom:1px solid #ddd;text-align:left}code{white-space:pre-wrap}</style>',
          '<h1>Physical Execution Lab</h1><h2>'+html.escape(label)+'</h2>',
          '<p>Conditions include failures and missing runs. No historical paper score is counted as an experiment here. Token fields remain blank when unmeasured.</p>',
-         '<table><tr><th>Condition</th><th>Success / scheduled</th><th>Missing</th><th>Mean wall s</th><th>Review calls</th><th>Policy calls</th></tr>']
+         '<table><tr><th>Condition</th><th>Success / scheduled</th><th>Missing</th><th>Terminal statuses</th><th>Mean wall s</th><th>Review calls</th><th>Policy calls</th></tr>']
     for r in agg:
         doc.append('<tr>'+''.join('<td>'+html.escape(str(x))+'</td>' for x in (
             r['condition'],f"{r['successes']}/{r['scheduled']}",r['missing'],
+            ', '.join(f'{key}: {value}' for key,value in sorted(r['status_counts'].items())),
             round(r['mean_episode_wall_s_available'],3) if r['mean_episode_wall_s_available'] is not None else '—',r['review_calls'],r['policy_calls']))+'</tr>')
     doc+=['</table><h2>Interpretation</h2><p>Model-only vs hybrid tests the additional supervisor. Every-chunk vs sparse tests invocation scheduling with the same motor and language model. Native and synthetic rows must never be combined.</p></html>']
     (root/'report.html').write_text('\n'.join(doc));atomic_json(root/'aggregates.json',agg)
     atomic_json(root/'outcomes.json',results)
-    fields=['condition','scheduled','successes','missing','success_rate_full_denominator','mean_episode_wall_s_available','total_steps_per_success','review_calls','policy_calls']
+    fields=['condition','scheduled','successes','missing','native_failures','contract_errors',
+            'budget_stops','success_rate_full_denominator','mean_episode_wall_s_available',
+            'total_steps_per_success','review_calls','policy_calls']
     with (root/'aggregates.csv').open('w',newline='') as f:
         w=csv.DictWriter(f,fieldnames=fields,extrasaction='ignore');w.writeheader();w.writerows(agg)
     return agg

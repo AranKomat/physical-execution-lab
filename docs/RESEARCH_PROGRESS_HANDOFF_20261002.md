@@ -1,9 +1,10 @@
 # Physical Execution Lab: Research Progress Handoff
 
-Snapshot: 2026-10-02 Japan time, updated after the every-chunk trial stopped. This is a
+Snapshot: 2026-10-02 Japan time, updated after fresh every-chunk trial 002 stopped. This is a
 self-contained account of the current project, not the earlier BEHAVIOR,
-EmbodiedSWE assembly, or FLUX branches. The every-chunk trial is now terminal
-with a correction-contract error, not native task completion.
+EmbodiedSWE assembly, or FLUX branches. Every-chunk 001 ended with a correction
+contract error; fresh 002 ended at review budget without a contract/API error.
+Neither is native task completion.
 
 ## Objective And Scope
 
@@ -21,7 +22,8 @@ The first fresh Intern tower0 motor-only episode completed successfully as
 `runs/intern-two-gpu-native-001`: score 1.0, 727 actions, 73 policy calls,
 489.11 s, zero paid calls. Executed code was commit `a3d4421`; its terminal
 audit verifies all ACKs and native outcome. Both owned GPU workers exited.
-Formal qualification and four remaining fixed-roster cases are pending.
+An exact motor-only qualification now verifies; a current-source freeze and
+four remaining fixed-roster cases are pending.
 See `docs/INTERN_NATIVE_PILOT_20261002.md`. The separate
 official Xiaomi Robotics-1 RoboCasa365 track remains active.
 Supervisor: **GPT-6.1 Sol, medium reasoning, Flex-only**. No automatic request
@@ -42,10 +44,11 @@ retry, provider/model fallback, or Standard-tier substitution.
 - Large verified backups: local `runs/native-evidence/`, not Git or actor memory.
 - Small public evidence: `docs/evidence/`; detailed reports are linked below.
 
-CPU verification now passes 295 tests, including two-GPU placement and bounded
+CPU verification now passes 297 tests, including two-GPU placement and bounded
 EEF quaternion representation normalization. The latter fixes small quaternion
 scale errors without changing translation/rotation/takeover gates; the original
-every-chunk abort remains preserved and no corrected episode has been run.
+every-chunk abort remains preserved. A fresh episode was run with this code,
+but requested no correction, so live normalization was not exercised.
 See `docs/CORRECTION_QUATERNION_FIX_20261002.md`.
 Release verification at `8ba161d` checked 880 files with no missing/changed bytes.
 These checks do not establish robot competence or phase completion. Source
@@ -196,9 +199,32 @@ Shortening can exhaust 75 calls before the native horizon. If so, report a
 resource-limited result separately from full-horizon failure. Do not silently
 raise limits, retry, substitute tiers, or feed the earlier episode to the actor.
 
-Three-condition configuration freeze was generated and matches the unchanged
-code fingerprint/full grouped manifest. This is preregistration/integrity,
-not supervision/contact qualification or a held-out result.
+The earlier three-condition freeze is historical after subsequent source
+changes. Freeze metadata is preregistration/integrity, not supervision/contact
+qualification or a held-out result.
+
+## Fresh Every-Chunk Trial: Review-Budget Stop
+
+Run `pi05-every-chunk-sol-flex-dev-002`, executed code `773b5d0`, same nominal
+tower0 case and 75-review/$3 cap. It stopped after **658 motor actions**,
+76 policy calls, **75 settled Sol 6.1 medium/Flex calls/$0.71236500**, and
+**1191.61 seconds**. Original status is `incomplete`, reason `review_budget`,
+native score null. No API or contract error, no corrections. This is budget
+censorship, not a full-horizon task failure or demonstrated successful recovery.
+
+Decisions: three accepts/72 shortens. Review waiting 795.14 s, environment
+249.07 s, ACK transport 65.77 s, policy inference 44.82 s. All 658 ACKs and
+76 source NPZ proposals verify, with contiguous source indices. Accounting:
+3800 proposed = 658 executed + 3092 discarded + 50 unresolved at budget stop.
+The extra policy proposal was made before the review-budget check; no action
+from it was executed. Keep it unresolved, not fabricated as discarded.
+
+The cap could theoretically allow 1125 actions; shorter actual prefixes
+exhausted it at 658. The run establishes costly aggressive shortening, not
+that supervision helps. It also cannot prove the live quaternion fix, because
+no correction was requested. The rejected original response still passes the
+offline geometric-gate check. No tower-specific tuning or repeat-until-win.
+See `docs/PI05_EVERY_CHUNK_BUDGET_RESULT_20261002.md`.
 
 ## RoboCasa365 Results
 
@@ -230,7 +256,9 @@ task failure or a supervision benefit. Report:
 - Intern stock BF16 startup exceeded an idle 24 GB GPU at 22.95 GiB allocated
   before model load completed. A subsequent explicit two-GPU component-placement
   probe now loads and completes inference; warm median 820 ms in three repeats,
-  peak reserved 15.09/13.39 GiB. Intern's native competence remains untested.
+  peak reserved 15.09/13.39 GiB. Its subsequent native tower0 pilot succeeded
+  in 727 actions/73 calls; exact motor-only qualification verifies nine hashed
+  evidence/source files. Remaining four fixed-roster cases are prepared.
   The successful inference probe's report export failed afterward; original
   error and exact completed-inference timings are preserved, not rerun/hidden.
 
@@ -243,15 +271,15 @@ Qualification reports: `docs/ROBODOJO_MOTOR_QUALIFICATION_20261002.md`,
 |---|---|
 | Pre-GPU | Complete; CPU evidence only |
 | A, native execution | Active RoboDojo motor-only interfaces qualified; supervision/contact remains separate |
-| B, speed/quality screen | Complete for G0.5/pi0.5 on the fixed five-case development roster |
-| C, matched harness | Partial: complete negative sparse result; every-chunk stopped on correction-contract error; broader matched and robot-policy-free direct comparisons unfinished |
+| B, speed/quality screen | Complete for G0.5/pi0.5; added Intern has one success and four roster cases pending |
+| C, matched harness | Partial: complete negative sparse result; every-chunk 001 contract error and 002 review-budget stop; broader matched and robot-policy-free direct comparisons unfinished |
 | D, RoboCasa365 | Motor-only qualification/six-case screen complete; matched supervision unfinished |
 | E, sensing/transfer | Deferred until useful matched physical results |
 
 No held-out task episode has been opened. Eight untouched RoboDojo task groups
-remain test; sorting and tower families are development. Next audit/back up
-every-chunk and address its correction-contract issue, then use predefined matched conditions/subsets rather than more
-baseline screens, component tests, new models, or task-specific fixes. Complete
+remain test; sorting and tower families are development. Next finish the
+already-defined Intern screen and use predefined matched conditions/subsets,
+not additional candidate models, component sweeps, or task-specific fixes. Complete
 robot-policy-free direct dense/sparse and XR1 matched supervision separately.
 
 Direct-budget caveat: current dense template permits 180 decisions x five actions
@@ -264,8 +292,9 @@ and interpreting that comparison; do not silently alter budgets.
 
 Shared ceiling is **$85**. Before the every-chunk trial: 4,564 reservations,
 $76.192461494300 spent plus holds, $8.807538505700 remaining. Every-chunk added
-69 settled requests/$0.65624150. Authoritative post-trial ledger: **4,633
-reservations, $76.848702994300 spent plus holds, $8.151297005700 remaining**,
+69 settled requests/$0.65624150; new 002 added 75/$0.71236500. Authoritative
+post-002 ledger: **4,708 reservations, $77.561067994300 spent plus holds,
+$7.438932005700 remaining**,
 154 unsettled reservations. Query the ledger before new work. Three prior Sol holds remain charged:
 `g05-sparse-sol-flex-dev-001-0`, `g05-sparse-sol-flex-dev-002-0`, and
 `xr1-supervision-kettle-001-1`. Acknowledgement enabled a new named trial, not a
