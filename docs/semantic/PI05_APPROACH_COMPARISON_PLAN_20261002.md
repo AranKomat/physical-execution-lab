@@ -96,6 +96,20 @@ after tasks terminate; padded rows never receive simulator actions or scores.
 
 ### Scoped Admission And Interrupted Direct Trial (2026-10-03 JST)
 
+Shutdown continuation: numeric001 failed its disk preflight before simulator
+startup or paid calls. Clearing about5.7GiB of old regenerable Omniverse texture
+cache raised free space to8.7GiB without deleting records or weights. The fresh
+numeric002 passed all-ten live admission and executed3,986 recorded actions
+before the owner requested instance shutdown preparation. Retained native
+outcomes: fold_clothes succeeded at297 actions/score1; make_kong failed at600/
+score0; imitate_sorting_sequence failed at636/score0. organize_table issued an
+incomplete model stop at158 actions. Six other episodes were owner-interrupted.
+Do not convert these six into physical failures or quote a full-panel SR.
+Numeric is partially executed, not complete; semantic remains unrun.
+Settled cost$1.478102 plus retained Flex hold$0.053577. All owned GPU processes
+and the short-lived token were removed. See
+`../semantic/INSTANCE_SHUTDOWN_HANDOFF_20261003.md` for backup and restart notes.
+
 Latest continuation: `pi05-full-panel-direct002` has ended and its evidence is
 backed up and audited. Standard fallback worked, but all ten outcomes remain
 censored/invalid: four translation-contract rejections, two action-shape

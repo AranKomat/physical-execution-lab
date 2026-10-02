@@ -1,0 +1,97 @@
+{
+  "scope": "retained partial journals and command/ACK prefix integrity, NOT complete task evaluation",
+  "passed": true,
+  "acknowledged_actions": 3986,
+  "rows": [
+    {
+      "case_id": "arrange_largest_number__standard__g0__l0",
+      "acknowledged_actions": 382,
+      "recorded_commands": 382,
+      "unacknowledged_recorded_commands": 0,
+      "result_status": "owner_interrupted_no_final_result",
+      "native_score": null,
+      "native_success": null
+    },
+    {
+      "case_id": "build_tower__standard__g0__l0",
+      "acknowledged_actions": 382,
+      "recorded_commands": 382,
+      "unacknowledged_recorded_commands": 0,
+      "result_status": "owner_interrupted_no_final_result",
+      "native_score": null,
+      "native_success": null
+    },
+    {
+      "case_id": "classify_objects_by_language__standard__g0__l0",
+      "acknowledged_actions": 382,
+      "recorded_commands": 382,
+      "unacknowledged_recorded_commands": 0,
+      "result_status": "owner_interrupted_no_final_result",
+      "native_score": null,
+      "native_success": null
+    },
+    {
+      "case_id": "fold_clothes__standard__g0__l0",
+      "acknowledged_actions": 297,
+      "recorded_commands": 297,
+      "unacknowledged_recorded_commands": 0,
+      "result_status": "native_completed",
+      "native_score": 1.0,
+      "native_success": true
+    },
+    {
+      "case_id": "imitate_sorting_sequence__standard__g0__l0",
+      "acknowledged_actions": 636,
+      "recorded_commands": 636,
+      "unacknowledged_recorded_commands": 0,
+      "result_status": "native_completed",
+      "native_score": 0.0,
+      "native_success": false
+    },
+    {
+      "case_id": "make_kong__standard__g0__l0",
+      "acknowledged_actions": 600,
+      "recorded_commands": 600,
+      "unacknowledged_recorded_commands": 0,
+      "result_status": "native_completed",
+      "native_score": 0.0,
+      "native_success": false
+    },
+    {
+      "case_id": "classify_objects__standard__g0__l0",
+      "acknowledged_actions": 383,
+      "recorded_commands": 383,
+      "unacknowledged_recorded_commands": 0,
+      "result_status": "owner_interrupted_no_final_result",
+      "native_score": null,
+      "native_success": null
+    },
+    {
+      "case_id": "organize_table__standard__g0__l0",
+      "acknowledged_actions": 158,
+      "recorded_commands": 158,
+      "unacknowledged_recorded_commands": 0,
+      "result_status": "incomplete",
+      "native_score": null,
+      "native_success": null
+    },
+    {
+      "case_id": "pack_objects_into_box__standard__g0__l0",
+      "acknowledged_actions": 383,
+      "recorded_commands": 383,
+      "unacknowledged_recorded_commands": 0,
+      "result_status": "owner_interrupted_no_final_result",
+      "native_score": null,
+      "native_success": null
+    },
+    {
+      "case_id": "put_bottles_into_dustbin__standard__g0__l0",
+      "acknowledged_actions": 383,
+      "recorded_commands": 383,
+      "unacknowledged_recorded_commands": 0,
+      "result_status": "owner_interrupted_no_final_result",
+      "native_score": null,
+      "native_success": null
+    }
+  ]
+}

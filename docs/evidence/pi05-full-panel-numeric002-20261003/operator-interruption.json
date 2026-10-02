@@ -1,0 +1,7 @@
+{
+  "native_scores_not_inferred": true,
+  "physical_task_failure": false,
+  "reason": "Owner requested GPU instance shutdown preparation",
+  "status": "owner_interrupted",
+  "time": 1790958758.0238183
+}

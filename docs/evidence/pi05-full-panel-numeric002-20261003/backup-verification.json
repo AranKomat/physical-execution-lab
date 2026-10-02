@@ -1,0 +1,40 @@
+{
+  "passed": true,
+  "trees": [
+    {
+      "remote": "runs/pi05-full-panel-numeric002",
+      "local": "runs/pi05-full-panel-numeric002",
+      "files": 3224,
+      "all_match": true,
+      "aggregate_sha256": "a6a22efb1b06a678ce7a531d14903d402c0a93e475d3d1c70103077b2dbf5983"
+    },
+    {
+      "remote": "runs/reference-pi05-2-005",
+      "local": "runs/reference-pi05-2-005",
+      "files": 87,
+      "all_match": true,
+      "aggregate_sha256": "5e6fba22d36d5e3bd228abb99f2fb983b2d68ab4179214286bb34257e595c1b5"
+    },
+    {
+      "remote": "runs/pi05-approach-standard-fallback-preparation001",
+      "local": "runs/pi05-approach-standard-fallback-preparation001",
+      "files": 6,
+      "all_match": true,
+      "aggregate_sha256": "24b7b108f20146085cc20acf33168aad290b08ff8c0d4590577e46d5830ed8b7"
+    },
+    {
+      "remote": "configs/local",
+      "local": "runs/instance-shutdown-20261003/configs-local",
+      "files": 676,
+      "all_match": true,
+      "aggregate_sha256": "e2bef3707fd96f5c78afaab2e7abd48e49720fbf0577d8f296536d716d28a261"
+    },
+    {
+      "remote": "runs/pi05-full-panel-direct002",
+      "local": "runs/pi05-full-panel-direct002",
+      "files": 1066,
+      "all_match": true,
+      "aggregate_sha256": "29e3b5a1d63a43879b3e49f0034e8612ccbf18d3905268662705055f4078fa60"
+    }
+  ]
+}
