@@ -415,3 +415,46 @@ prepared but unrun in this cohort. Next run those full concurrent conditions,
 then interpret C before enabling D/recovery. Evidence and exact operators:
 `../evidence/semantic-vector-matched-dev001-20261002/`. Unique sensors remain
 remote pending full backup; do not retire them based on small public reports.
+
+## Concurrent Task-Plus-Subtask Panel
+
+All five unique development cases are now terminal under task-plus-subtask:
+4,656 controls, 46 settled Sol 6.1 medium/Flex calls/$0.26964350 and 775.12 s
+including startup/shutdown. Sorting0 succeeded at721; sorting1 abstained at735
+with null native score; sorting2 failed at1100/score0.15. Tower0 and tower1
+both failed at1050/score0.0. Source H50/15, exact worker prompt routing,
+episode/stamp/step bindings, actual ACKs, separate source RNG/call accounting
+and semantic journals passed; no recoveries, resets, resampling, shortening,
+controller faults or unresolved actions. Within-episode changing goals and
+native planner abstention now have actual vector evidence, beyond the pilot.
+
+| Task/Layout | Original-Only | Task-Plus-Subtask |
+|---|---|---|
+| Sorting0 | Success at867 | Success at721 |
+| Sorting1 | Success at758 | Abstention at735, null score |
+| Sorting2 | Failure, 0.0 | Failure, 0.15 |
+| Tower0 | Success at733 | Failure, 0.0 |
+| Tower1 | Failure, 0.1 | Failure, 0.0 |
+
+This negative five-case panel shows no reliable hierarchy benefit. One shared
+success used fewer actions; that does not offset two lost successes or make
+abstention an efficiency gain. The two task types and single execution per
+case/condition cannot establish whole-benchmark SR or a general training
+mismatch. Subtask-only is still unrun in this vector cohort. Complete that
+predefined controlled variant before interpreting prompt-format effects or
+moving to recovery. Do not replace unsuccessful cases or tune on held-out.
+Structured decisions/usage and audited reports are in the cohort evidence.
+
+Both complete motor-baseline archives are now local and hash-verified:
+sorting457 files/312,941,330 bytes, tower366 files/213,664,601 bytes. No remote
+originals were removed. Unique task-plus-subtask sensors still need full
+backup before retirement or shutdown.
+
+Batching exit criterion is now met for the current pi0.5 development path:
+full native terminal waves, separate RNG/episode journals, effective prompt
+delivery, changing goals, abstention membership removal and actual source/ACK
+audits. Stop capacity-only tests and maximum-batch sweeps. The next subtask-only
+panel is Phase C research, not a prerequisite batching test. G0.5/Intern
+integration belongs to the later second-backend factor, not a reason to hold
+the pi0.5 main path. Async planner wait optimization is useful later but is
+not required to complete this synchronous comparison.

@@ -1,0 +1,170 @@
+{
+  "cohort": "semantic-vector-matched-dev001",
+  "scope": "five unique task-layout cases across two development task types; not benchmark SR",
+  "conditions_audited": {
+    "motor_only": true,
+    "task_plus_subtask": true,
+    "subtask_only": false
+  },
+  "all_conditions_present_and_audited": false,
+  "cases": {
+    "classify_objects__layout0": {
+      "task": "classify_objects",
+      "layout": 0,
+      "conditions": {
+        "motor_only": {
+          "status": "native_completed",
+          "native_terminal": true,
+          "success": true,
+          "native_score": 1.0,
+          "actions": 867,
+          "policy_calls": 58,
+          "semantic_calls": 0,
+          "semantic_changes": 0,
+          "semantic_recoveries": 0
+        },
+        "task_plus_subtask": {
+          "status": "native_completed",
+          "native_terminal": true,
+          "success": true,
+          "native_score": 1.0,
+          "actions": 721,
+          "policy_calls": 49,
+          "semantic_calls": 7,
+          "semantic_changes": 5,
+          "semantic_recoveries": 0
+        }
+      },
+      "layout_sha256": "5ceb9e18e6d8490a7db85dd001462d63265c297ea6fad0d7438364deb2de3ece"
+    },
+    "classify_objects__layout1": {
+      "task": "classify_objects",
+      "layout": 1,
+      "conditions": {
+        "motor_only": {
+          "status": "native_completed",
+          "native_terminal": true,
+          "success": true,
+          "native_score": 1.0,
+          "actions": 758,
+          "policy_calls": 51,
+          "semantic_calls": 0,
+          "semantic_changes": 0,
+          "semantic_recoveries": 0
+        },
+        "task_plus_subtask": {
+          "status": "planner_stop_incomplete",
+          "native_terminal": false,
+          "success": false,
+          "native_score": null,
+          "actions": 735,
+          "policy_calls": 49,
+          "semantic_calls": 8,
+          "semantic_changes": 2,
+          "semantic_recoveries": 0
+        }
+      },
+      "layout_sha256": "013d7141ffc9865d7cccf650301f642e6b83b3eb59f78cf5b1d0caf47158e17a"
+    },
+    "classify_objects__layout2": {
+      "task": "classify_objects",
+      "layout": 2,
+      "conditions": {
+        "motor_only": {
+          "status": "native_completed",
+          "native_terminal": true,
+          "success": false,
+          "native_score": 0.0,
+          "actions": 1100,
+          "policy_calls": 74,
+          "semantic_calls": 0,
+          "semantic_changes": 0,
+          "semantic_recoveries": 0
+        },
+        "task_plus_subtask": {
+          "status": "native_completed",
+          "native_terminal": true,
+          "success": false,
+          "native_score": 0.15,
+          "actions": 1100,
+          "policy_calls": 74,
+          "semantic_calls": 11,
+          "semantic_changes": 2,
+          "semantic_recoveries": 0
+        }
+      },
+      "layout_sha256": "6b3a30251bd92a465ffdc82436e14dde84879906eeab3b0e8944865b9eef38f7"
+    },
+    "build_tower__layout0": {
+      "task": "build_tower",
+      "layout": 0,
+      "conditions": {
+        "motor_only": {
+          "status": "native_completed",
+          "native_terminal": true,
+          "success": true,
+          "native_score": 1.0,
+          "actions": 733,
+          "policy_calls": 49,
+          "semantic_calls": 0,
+          "semantic_changes": 0,
+          "semantic_recoveries": 0
+        },
+        "task_plus_subtask": {
+          "status": "native_completed",
+          "native_terminal": true,
+          "success": false,
+          "native_score": 0.0,
+          "actions": 1050,
+          "policy_calls": 70,
+          "semantic_calls": 10,
+          "semantic_changes": 1,
+          "semantic_recoveries": 0
+        }
+      },
+      "layout_sha256": "afcf896086392357a8826f84bebe4910dcb7a5f1b84e7be435e16e3d5c3607a4"
+    },
+    "build_tower__layout1": {
+      "task": "build_tower",
+      "layout": 1,
+      "conditions": {
+        "motor_only": {
+          "status": "native_completed",
+          "native_terminal": true,
+          "success": false,
+          "native_score": 0.1,
+          "actions": 1050,
+          "policy_calls": 70,
+          "semantic_calls": 0,
+          "semantic_changes": 0,
+          "semantic_recoveries": 0
+        },
+        "task_plus_subtask": {
+          "status": "native_completed",
+          "native_terminal": true,
+          "success": false,
+          "native_score": 0.0,
+          "actions": 1050,
+          "policy_calls": 70,
+          "semantic_calls": 10,
+          "semantic_changes": 1,
+          "semantic_recoveries": 0
+        }
+      },
+      "layout_sha256": "c4c67f1c1c2abe8ae32d2686048e61eb6e4396c79025b30779091f14705db18c"
+    }
+  },
+  "missing_cases_by_condition": {
+    "motor_only": [],
+    "task_plus_subtask": [],
+    "subtask_only": [
+      "classify_objects__layout0",
+      "classify_objects__layout1",
+      "classify_objects__layout2",
+      "build_tower__layout0",
+      "build_tower__layout1"
+    ]
+  },
+  "historical_serial_cohort_not_pooled": true,
+  "recovery_enabled": false
+}

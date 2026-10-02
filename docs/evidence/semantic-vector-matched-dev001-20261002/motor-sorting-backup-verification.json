@@ -1,0 +1,8 @@
+{
+  "archive_sha256": "bb8dfc1a90563dc0aeb5fef21c5bf71711144569751ec151d4bfea94fdc7136e",
+  "verified_files": 457,
+  "compressed_bytes": 312941330,
+  "verification": "archive digest and every original per-file hash, no extraction",
+  "source": "/root/physical-execution-lab/runs/vector-pi05-3-012",
+  "no_source_retirement": true
+}

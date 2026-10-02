@@ -1,0 +1,2056 @@
+{
+  "summary": {
+    "attempts": 46,
+    "cost_usd": "0.26964350",
+    "no_automatic_retry": true,
+    "requested_model": "openai/gpt-6.1-sol",
+    "provider": {
+      "only": [
+        "openai/flex"
+      ],
+      "allow_fallbacks": false,
+      "require_parameters": true,
+      "max_price": {
+        "prompt": 1.5,
+        "completion": 6
+      }
+    },
+    "service_tier": "flex",
+    "tool_name": "semantic_goal"
+  },
+  "decisions": [
+    {
+      "index": 0,
+      "decision": {
+        "episode": "192eeebd138e49ba9d0f8ea6f4c70823",
+        "based_on_step": 0,
+        "based_on_stamp": "25d7e4844d35327a24b15a025be4b30d626d826cbbe30621e37314a1373535eb",
+        "expected_epoch": 0,
+        "operation": "set_subtask",
+        "subtask": "Place the leftmost white wooden block upright on the left end of the shorter wooden board at the front center of the table using the left arm.",
+        "assessment": "not_started",
+        "evidence": "At step 0, four white blocks and several wooden boards are separate on the table. The shorter front-center board is flat and empty, and the leftmost white block is visible near the left arm.",
+        "completed_claims": [],
+        "uncertain_or_invalidated": []
+      },
+      "served_model": "openai/gpt-6.1-sol",
+      "served_tier": "flex",
+      "usage": {
+        "input_tokens": 2007,
+        "input_tokens_details": {
+          "cached_tokens": 0,
+          "cache_write_tokens": 1881
+        },
+        "output_tokens": 306,
+        "output_tokens_details": {
+          "reasoning_tokens": 117
+        },
+        "total_tokens": 2313,
+        "cost": 0.00400725,
+        "is_byok": false,
+        "cost_details": {
+          "upstream_inference_cost": 0.00400725,
+          "upstream_inference_input_cost": 0.00247725,
+          "upstream_inference_output_cost": 0.00153
+        }
+      }
+    },
+    {
+      "index": 1,
+      "decision": {
+        "episode": "c0c60cbbbee244b2a4041c6e2345c513",
+        "based_on_step": 0,
+        "based_on_stamp": "7b2769684be248ca681bcf5e6377b5112ef4cc4adbc713552d876ea958f3ab2f",
+        "expected_epoch": 0,
+        "operation": "set_subtask",
+        "subtask": "Grasp the wooden block immediately to the left of the long central board with the left arm.",
+        "assessment": "not_started",
+        "evidence": "At step 0, four light-colored blocks and two flat central boards are visible on the table. The target block lies beside the left end of the long board; neither arm is visibly holding an object.",
+        "completed_claims": [],
+        "uncertain_or_invalidated": []
+      },
+      "served_model": "openai/gpt-6.1-sol",
+      "served_tier": "flex",
+      "usage": {
+        "input_tokens": 2007,
+        "input_tokens_details": {
+          "cached_tokens": 0,
+          "cache_write_tokens": 1881
+        },
+        "output_tokens": 226,
+        "output_tokens_details": {
+          "reasoning_tokens": 47
+        },
+        "total_tokens": 2233,
+        "cost": 0.00360725,
+        "is_byok": false,
+        "cost_details": {
+          "upstream_inference_cost": 0.00360725,
+          "upstream_inference_input_cost": 0.00247725,
+          "upstream_inference_output_cost": 0.00113
+        }
+      }
+    },
+    {
+      "index": 2,
+      "decision": {
+        "episode": "7f8a6e461b9c484a973b8a4742378c15",
+        "based_on_step": 0,
+        "based_on_stamp": "8954068fc4a999a0b4b2d6f0af10483164c61d5589fba526e5cc356e28b739da",
+        "expected_epoch": 0,
+        "operation": "set_subtask",
+        "subtask": "Grasp the blue-clothed doll lying directly in front of the white basket with the left arm.",
+        "assessment": "not_started",
+        "evidence": "Step 0 shows three baskets and three similar blue-clothed dolls. The doll directly in front of the white basket is visible in the left wrist view; neither gripper is visibly holding an object.",
+        "completed_claims": [],
+        "uncertain_or_invalidated": [
+          "The baskets have no visible category labels; category-to-basket assignments are not yet established."
+        ]
+      },
+      "served_model": "openai/gpt-6.1-sol",
+      "served_tier": "flex",
+      "usage": {
+        "input_tokens": 2015,
+        "input_tokens_details": {
+          "cached_tokens": 0,
+          "cache_write_tokens": 1889
+        },
+        "output_tokens": 243,
+        "output_tokens_details": {
+          "reasoning_tokens": 39
+        },
+        "total_tokens": 2258,
+        "cost": 0.00370225,
+        "is_byok": false,
+        "cost_details": {
+          "upstream_inference_cost": 0.00370225,
+          "upstream_inference_input_cost": 0.00248725,
+          "upstream_inference_output_cost": 0.001215
+        }
+      }
+    },
+    {
+      "index": 3,
+      "decision": {
+        "episode": "fbc37f67f24b4927a6121b03a3b5bd7e",
+        "based_on_step": 0,
+        "based_on_stamp": "79a052e690d01f3c21433bfacd33e72855765862d578a401605f5ea98b7f46c0",
+        "expected_epoch": 0,
+        "operation": "set_subtask",
+        "subtask": "Put the light blue toy car into the white basket using the left arm.",
+        "assessment": "not_started",
+        "evidence": "At step 0, the light blue toy car is on the table in front of the empty white basket, visible in the high and left-wrist views. No object is visibly held. The baskets have no visible category labels; this placement establishes the white basket for toy cars.",
+        "completed_claims": [],
+        "uncertain_or_invalidated": []
+      },
+      "served_model": "openai/gpt-6.1-sol",
+      "served_tier": "flex",
+      "usage": {
+        "input_tokens": 2011,
+        "input_tokens_details": {
+          "cached_tokens": 0,
+          "cache_write_tokens": 1885
+        },
+        "output_tokens": 230,
+        "output_tokens_details": {
+          "reasoning_tokens": 38
+        },
+        "total_tokens": 2241,
+        "cost": 0.00363225,
+        "is_byok": false,
+        "cost_details": {
+          "upstream_inference_cost": 0.00363225,
+          "upstream_inference_input_cost": 0.00248225,
+          "upstream_inference_output_cost": 0.00115
+        }
+      }
+    },
+    {
+      "index": 4,
+      "decision": {
+        "episode": "294b00eff39148f2b26dedce0803407c",
+        "based_on_step": 0,
+        "based_on_stamp": "6966b4d6dad3ff0a7492c7904f7641f9efaa82cca542a7b9fcb48d4afb91df14",
+        "expected_epoch": 0,
+        "operation": "set_subtask",
+        "subtask": "Grasp the white pen in front of the red basket with the right arm.",
+        "assessment": "not_started",
+        "evidence": "At step 0, the right wrist and overhead RGB views show a white pen on the table in front of the red basket. Both grippers are open; no objects have been sorted.",
+        "completed_claims": [],
+        "uncertain_or_invalidated": [
+          "The category assignment for each basket is not indicated."
+        ]
+      },
+      "served_model": "openai/gpt-6.1-sol",
+      "served_tier": "flex",
+      "usage": {
+        "input_tokens": 2005,
+        "input_tokens_details": {
+          "cached_tokens": 0,
+          "cache_write_tokens": 1879
+        },
+        "output_tokens": 209,
+        "output_tokens_details": {
+          "reasoning_tokens": 25
+        },
+        "total_tokens": 2214,
+        "cost": 0.00351975,
+        "is_byok": false,
+        "cost_details": {
+          "upstream_inference_cost": 0.00351975,
+          "upstream_inference_input_cost": 0.00247475,
+          "upstream_inference_output_cost": 0.001045
+        }
+      }
+    },
+    {
+      "index": 5,
+      "decision": {
+        "episode": "c0c60cbbbee244b2a4041c6e2345c513",
+        "based_on_step": 105,
+        "based_on_stamp": "460309b55e092fc5fcc9b39966ca1bedcf6df1dd8e44ae79e5e926671c36a302",
+        "expected_epoch": 1,
+        "operation": "continue",
+        "subtask": "",
+        "assessment": "not_started",
+        "evidence": "At step 105, the target block remains on the table immediately left of the long central board. The left wrist view shows open fingers with the block outside their grasp; no secure hold or lift is visible. Retain the current grasp goal.",
+        "completed_claims": [],
+        "uncertain_or_invalidated": []
+      },
+      "served_model": "openai/gpt-6.1-sol",
+      "served_tier": "flex",
+      "usage": {
+        "input_tokens": 3064,
+        "input_tokens_details": {
+          "cached_tokens": 0,
+          "cache_write_tokens": 2938
+        },
+        "output_tokens": 164,
+        "output_tokens_details": {
+          "reasoning_tokens": 0
+        },
+        "total_tokens": 3228,
+        "cost": 0.0046185,
+        "is_byok": false,
+        "cost_details": {
+          "upstream_inference_cost": 0.0046185,
+          "upstream_inference_input_cost": 0.0037985,
+          "upstream_inference_output_cost": 0.00082
+        }
+      }
+    },
+    {
+      "index": 6,
+      "decision": {
+        "episode": "192eeebd138e49ba9d0f8ea6f4c70823",
+        "based_on_step": 105,
+        "based_on_stamp": "217c3bddd13e0eff99dadd4fa29b923e81b53d11cfdf7bea4f95570745dc2056",
+        "expected_epoch": 1,
+        "operation": "continue",
+        "subtask": "",
+        "assessment": "not_started",
+        "evidence": "At step 105, the shorter front-center board remains empty. The leftmost white block is still on the tabletop beside the small left board, visible in both the high and left-wrist views. No grasp or placement of that block is visible; robot motion alone does not establish progress.",
+        "completed_claims": [],
+        "uncertain_or_invalidated": []
+      },
+      "served_model": "openai/gpt-6.1-sol",
+      "served_tier": "flex",
+      "usage": {
+        "input_tokens": 3100,
+        "input_tokens_details": {
+          "cached_tokens": 0,
+          "cache_write_tokens": 2974
+        },
+        "output_tokens": 173,
+        "output_tokens_details": {
+          "reasoning_tokens": 0
+        },
+        "total_tokens": 3273,
+        "cost": 0.0047085,
+        "is_byok": false,
+        "cost_details": {
+          "upstream_inference_cost": 0.0047085,
+          "upstream_inference_input_cost": 0.0038435,
+          "upstream_inference_output_cost": 0.000865
+        }
+      }
+    },
+    {
+      "index": 7,
+      "decision": {
+        "episode": "7f8a6e461b9c484a973b8a4742378c15",
+        "based_on_step": 105,
+        "based_on_stamp": "2969689ae303f48bdac134d219f43208bc2937baff9566be3f918182f41d4054",
+        "expected_epoch": 1,
+        "operation": "continue",
+        "subtask": "",
+        "assessment": "uncertain",
+        "evidence": "At step 105 the left wrist view shows a blue-clothed doll between the open gripper fingers, but no secure grasp or lift is visible. The overhead view still shows the doll lying directly in front of the white basket on the table; the wrist-view doll's identity is uncertain. Grasp completion is not established.",
+        "completed_claims": [],
+        "uncertain_or_invalidated": [
+          "The baskets have no visible category labels; category-to-basket assignments are not yet established.",
+          "The left gripper may be approaching a different doll than the specified target; no successful grasp is verified at step 105."
+        ]
+      },
+      "served_model": "openai/gpt-6.1-sol",
+      "served_tier": "flex",
+      "usage": {
+        "input_tokens": 3123,
+        "input_tokens_details": {
+          "cached_tokens": 0,
+          "cache_write_tokens": 2997
+        },
+        "output_tokens": 264,
+        "output_tokens_details": {
+          "reasoning_tokens": 39
+        },
+        "total_tokens": 3387,
+        "cost": 0.00519225,
+        "is_byok": false,
+        "cost_details": {
+          "upstream_inference_cost": 0.00519225,
+          "upstream_inference_input_cost": 0.00387225,
+          "upstream_inference_output_cost": 0.00132
+        }
+      }
+    },
+    {
+      "index": 8,
+      "decision": {
+        "episode": "294b00eff39148f2b26dedce0803407c",
+        "based_on_step": 105,
+        "based_on_stamp": "f2b0fa16a7dfe1903037eb7b2ccd6744450d6195b09b574d028c1a8197e371cf",
+        "expected_epoch": 1,
+        "operation": "continue",
+        "subtask": "",
+        "assessment": "not_started",
+        "evidence": "At step 105, overhead and right-wrist RGB show the white pen still resting on the table in front of the red basket, outside the right gripper. No grasp or sorting is visibly established. Retain the current grasp goal.",
+        "completed_claims": [],
+        "uncertain_or_invalidated": [
+          "The category assignment for each basket is not indicated.",
+          "Robot motion does not establish progress toward grasping the pen."
+        ]
+      },
+      "served_model": "openai/gpt-6.1-sol",
+      "served_tier": "flex",
+      "usage": {
+        "input_tokens": 3086,
+        "input_tokens_details": {
+          "cached_tokens": 0,
+          "cache_write_tokens": 2960
+        },
+        "output_tokens": 185,
+        "output_tokens_details": {
+          "reasoning_tokens": 0
+        },
+        "total_tokens": 3271,
+        "cost": 0.004751,
+        "is_byok": false,
+        "cost_details": {
+          "upstream_inference_cost": 0.004751,
+          "upstream_inference_input_cost": 0.003826,
+          "upstream_inference_output_cost": 0.000925
+        }
+      }
+    },
+    {
+      "index": 9,
+      "decision": {
+        "episode": "fbc37f67f24b4927a6121b03a3b5bd7e",
+        "based_on_step": 105,
+        "based_on_stamp": "842e3df93c455a72d34ca8a420aea979f3fe79dafdf40c037fcd4f0883efa1ee",
+        "expected_epoch": 1,
+        "operation": "continue",
+        "subtask": "",
+        "assessment": "uncertain",
+        "evidence": "At step 105, the left gripper is over the white basket, obscuring much of its interior. The light blue car is no longer visible at its step-0 table location, but neither its placement inside the basket nor a secure grasp is visible. The open-gripper command and robot motion do not certify placement. Retain the current goal pending visible confirmation.",
+        "completed_claims": [],
+        "uncertain_or_invalidated": [
+          "Placement of the light blue toy car in the white basket is not visually confirmed at step 105."
+        ]
+      },
+      "served_model": "openai/gpt-6.1-sol",
+      "served_tier": "flex",
+      "usage": {
+        "input_tokens": 3099,
+        "input_tokens_details": {
+          "cached_tokens": 0,
+          "cache_write_tokens": 2973
+        },
+        "output_tokens": 232,
+        "output_tokens_details": {
+          "reasoning_tokens": 18
+        },
+        "total_tokens": 3331,
+        "cost": 0.00500225,
+        "is_byok": false,
+        "cost_details": {
+          "upstream_inference_cost": 0.00500225,
+          "upstream_inference_input_cost": 0.00384225,
+          "upstream_inference_output_cost": 0.00116
+        }
+      }
+    },
+    {
+      "index": 10,
+      "decision": {
+        "episode": "192eeebd138e49ba9d0f8ea6f4c70823",
+        "based_on_step": 210,
+        "based_on_stamp": "e6d4969a2c1410206f1b9818fea02680300c6c9e678465649ab2885793c565a9",
+        "expected_epoch": 1,
+        "operation": "continue",
+        "subtask": "",
+        "assessment": "not_started",
+        "evidence": "At step 210, the shorter front-center board remains empty. The left-wrist view shows a white block on the tabletop outside the gripper, while both wrist views show the hands near the longer board. No grasp or upright placement of the target block is verified.",
+        "completed_claims": [],
+        "uncertain_or_invalidated": []
+      },
+      "served_model": "openai/gpt-6.1-sol",
+      "served_tier": "flex",
+      "usage": {
+        "input_tokens": 3293,
+        "input_tokens_details": {
+          "cached_tokens": 0,
+          "cache_write_tokens": 3167
+        },
+        "output_tokens": 170,
+        "output_tokens_details": {
+          "reasoning_tokens": 0
+        },
+        "total_tokens": 3463,
+        "cost": 0.00493475,
+        "is_byok": false,
+        "cost_details": {
+          "upstream_inference_cost": 0.00493475,
+          "upstream_inference_input_cost": 0.00408475,
+          "upstream_inference_output_cost": 0.00085
+        }
+      }
+    },
+    {
+      "index": 11,
+      "decision": {
+        "episode": "c0c60cbbbee244b2a4041c6e2345c513",
+        "based_on_step": 210,
+        "based_on_stamp": "cad332e13a7be61b98e2b1dec6e3a0aecb30a2f72b81b5e82aade711fa75d287",
+        "expected_epoch": 1,
+        "operation": "continue",
+        "subtask": "",
+        "assessment": "not_started",
+        "evidence": "At step 210, the left wrist view shows the long board between the fingers, while the nearby light-colored block remains on the tabletop outside the grasp. The overhead view does not show a lifted block or assembled tower. The requested block grasp is not verified; retain the current goal.",
+        "completed_claims": [],
+        "uncertain_or_invalidated": []
+      },
+      "served_model": "openai/gpt-6.1-sol",
+      "served_tier": "flex",
+      "usage": {
+        "input_tokens": 3267,
+        "input_tokens_details": {
+          "cached_tokens": 0,
+          "cache_write_tokens": 3141
+        },
+        "output_tokens": 177,
+        "output_tokens_details": {
+          "reasoning_tokens": 0
+        },
+        "total_tokens": 3444,
+        "cost": 0.00493725,
+        "is_byok": false,
+        "cost_details": {
+          "upstream_inference_cost": 0.00493725,
+          "upstream_inference_input_cost": 0.00405225,
+          "upstream_inference_output_cost": 0.000885
+        }
+      }
+    },
+    {
+      "index": 12,
+      "decision": {
+        "episode": "294b00eff39148f2b26dedce0803407c",
+        "based_on_step": 210,
+        "based_on_stamp": "43853703e6f4354d3f5174a4282cfbf2a2892b8c69917e3fc458f45ba6f080d3",
+        "expected_epoch": 1,
+        "operation": "continue",
+        "subtask": "",
+        "assessment": "not_started",
+        "evidence": "At step 210, overhead and right-wrist RGB show the white pen still resting on the table in front of the red basket, outside the open right gripper, as at step 105. The requested grasp is not visibly established; retain the current goal. Two toy figures are now visible in the white basket, but this does not establish progress on the pen grasp.",
+        "completed_claims": [],
+        "uncertain_or_invalidated": [
+          "The category assignment for each basket is not indicated.",
+          "Robot motion does not establish progress toward grasping the pen."
+        ]
+      },
+      "served_model": "openai/gpt-6.1-sol",
+      "served_tier": "flex",
+      "usage": {
+        "input_tokens": 3299,
+        "input_tokens_details": {
+          "cached_tokens": 0,
+          "cache_write_tokens": 3173
+        },
+        "output_tokens": 213,
+        "output_tokens_details": {
+          "reasoning_tokens": 0
+        },
+        "total_tokens": 3512,
+        "cost": 0.00515725,
+        "is_byok": false,
+        "cost_details": {
+          "upstream_inference_cost": 0.00515725,
+          "upstream_inference_input_cost": 0.00409225,
+          "upstream_inference_output_cost": 0.001065
+        }
+      }
+    },
+    {
+      "index": 13,
+      "decision": {
+        "episode": "7f8a6e461b9c484a973b8a4742378c15",
+        "based_on_step": 210,
+        "based_on_stamp": "16df4a8a205c7d33f2a8ba2367d743a589791fc99515790f217934d2817a41a1",
+        "expected_epoch": 1,
+        "operation": "set_subtask",
+        "subtask": "Grasp the remaining blue-clothed doll on the table beside the red basket with the right arm.",
+        "assessment": "complete",
+        "evidence": "At step 210, the overhead and left wrist images show two blue-clothed dolls inside the white basket and no doll remaining directly in front of it, unlike step 105. The left gripper is empty; the precise intervening grasp was not observed. The remaining doll is still on the table beside the red basket, adjacent to the right gripper; the close wrist image does not establish a secure hold.",
+        "completed_claims": [
+          {
+            "text": "Two blue-clothed dolls are in the white basket; the doll previously lying directly in front of that basket is no longer there.",
+            "evidence_steps": [
+              105,
+              210
+            ]
+          }
+        ],
+        "uncertain_or_invalidated": [
+          "The intervening left-arm grasp was not directly verified.",
+          "The remaining doll is adjacent to the right gripper, but a secure grasp is not established at step 210.",
+          "The white basket visibly contains dolls; assignments for the other object categories remain unestablished."
+        ]
+      },
+      "served_model": "openai/gpt-6.1-sol",
+      "served_tier": "flex",
+      "usage": {
+        "input_tokens": 3400,
+        "input_tokens_details": {
+          "cached_tokens": 0,
+          "cache_write_tokens": 3274
+        },
+        "output_tokens": 456,
+        "output_tokens_details": {
+          "reasoning_tokens": 139
+        },
+        "total_tokens": 3856,
+        "cost": 0.0064985,
+        "is_byok": false,
+        "cost_details": {
+          "upstream_inference_cost": 0.0064985,
+          "upstream_inference_input_cost": 0.0042185,
+          "upstream_inference_output_cost": 0.00228
+        }
+      }
+    },
+    {
+      "index": 14,
+      "decision": {
+        "episode": "fbc37f67f24b4927a6121b03a3b5bd7e",
+        "based_on_step": 210,
+        "based_on_stamp": "7ff456c532f2b19a8628382300902c6bfd034d5a539d20fd62df6d564a0a03c4",
+        "expected_epoch": 1,
+        "operation": "set_subtask",
+        "subtask": "Put the green wristwatch from the white basket into the blue basket using the left arm.",
+        "assessment": "complete",
+        "evidence": "At step 210, the high view visibly shows the light blue toy car inside the white basket, confirming the current placement goal. A green wristwatch is also visible inside that basket in the high and left-wrist views; it is a different category from the car. The blue basket is visibly empty, so moving the watch there separates watches from cars.",
+        "completed_claims": [
+          {
+            "text": "The light blue toy car is inside the white basket.",
+            "evidence_steps": [
+              210
+            ]
+          }
+        ],
+        "uncertain_or_invalidated": [
+          "The step-105 uncertainty about the light blue car's placement is resolved by the step-210 view.",
+          "Category sorting is incomplete: the green wristwatch shares the white basket with the toy car."
+        ]
+      },
+      "served_model": "openai/gpt-6.1-sol",
+      "served_tier": "flex",
+      "usage": {
+        "input_tokens": 3347,
+        "input_tokens_details": {
+          "cached_tokens": 0,
+          "cache_write_tokens": 3221
+        },
+        "output_tokens": 362,
+        "output_tokens_details": {
+          "reasoning_tokens": 91
+        },
+        "total_tokens": 3709,
+        "cost": 0.00596225,
+        "is_byok": false,
+        "cost_details": {
+          "upstream_inference_cost": 0.00596225,
+          "upstream_inference_input_cost": 0.00415225,
+          "upstream_inference_output_cost": 0.00181
+        }
+      }
+    },
+    {
+      "index": 15,
+      "decision": {
+        "episode": "192eeebd138e49ba9d0f8ea6f4c70823",
+        "based_on_step": 315,
+        "based_on_stamp": "5d75d052bfe86eb4db6ddc443f37297a1b0c08c4ac2787e28ce71fbfc293674b",
+        "expected_epoch": 1,
+        "operation": "continue",
+        "subtask": "",
+        "assessment": "progressing",
+        "evidence": "At step 315, a white wooden block is visibly between the left gripper fingers in the left-wrist view, and the high view shows the left hand lifted away from the tabletop. This supports progress toward grasping and carrying the block, but the shorter front-center board remains empty; upright placement is not complete.",
+        "completed_claims": [],
+        "uncertain_or_invalidated": [
+          "The block's secure retention and identity as the original leftmost block are not fully verified from the current views."
+        ]
+      },
+      "served_model": "openai/gpt-6.1-sol",
+      "served_tier": "flex",
+      "usage": {
+        "input_tokens": 3485,
+        "input_tokens_details": {
+          "cached_tokens": 0,
+          "cache_write_tokens": 3359
+        },
+        "output_tokens": 205,
+        "output_tokens_details": {
+          "reasoning_tokens": 0
+        },
+        "total_tokens": 3690,
+        "cost": 0.00534975,
+        "is_byok": false,
+        "cost_details": {
+          "upstream_inference_cost": 0.00534975,
+          "upstream_inference_input_cost": 0.00432475,
+          "upstream_inference_output_cost": 0.001025
+        }
+      }
+    },
+    {
+      "index": 16,
+      "decision": {
+        "episode": "c0c60cbbbee244b2a4041c6e2345c513",
+        "based_on_step": 315,
+        "based_on_stamp": "6ced1e2a4cf39f281d0a88b6df4fe7137a9cadc1c9566dd6b85384f970aa0286",
+        "expected_epoch": 1,
+        "operation": "continue",
+        "subtask": "",
+        "assessment": "progressing",
+        "evidence": "At step 315, the left wrist image shows a light-colored block between the fingers, with a board behind it. This supports progress toward the block grasp, unlike step 210, but the overhead view obscures the contact and does not clearly establish a secure hold or lift. Retain the current grasp goal.",
+        "completed_claims": [],
+        "uncertain_or_invalidated": [
+          "A secure grasp of the target block is not yet verified at step 315."
+        ]
+      },
+      "served_model": "openai/gpt-6.1-sol",
+      "served_tier": "flex",
+      "usage": {
+        "input_tokens": 3460,
+        "input_tokens_details": {
+          "cached_tokens": 0,
+          "cache_write_tokens": 3334
+        },
+        "output_tokens": 250,
+        "output_tokens_details": {
+          "reasoning_tokens": 48
+        },
+        "total_tokens": 3710,
+        "cost": 0.0055435,
+        "is_byok": false,
+        "cost_details": {
+          "upstream_inference_cost": 0.0055435,
+          "upstream_inference_input_cost": 0.0042935,
+          "upstream_inference_output_cost": 0.00125
+        }
+      }
+    },
+    {
+      "index": 17,
+      "decision": {
+        "episode": "7f8a6e461b9c484a973b8a4742378c15",
+        "based_on_step": 315,
+        "based_on_stamp": "52c24cbbe7ec9e59c0642f3d0b12372ccaf9186ef04bbeb80d9ead8ae3b34c80",
+        "expected_epoch": 2,
+        "operation": "continue",
+        "subtask": "",
+        "assessment": "uncertain",
+        "evidence": "At step 315, the right wrist view shows an empty gripper facing the red basket. A blue-clothed doll is visible between the left gripper fingers near the white basket, but the overhead image does not establish a secure grasp or lift. The specified right-arm grasp is not verified; the doll is no longer visibly beside the red basket.",
+        "completed_claims": [
+          {
+            "text": "At step 210, two blue-clothed dolls were visible in the white basket and the doll previously directly in front of it was absent.",
+            "evidence_steps": [
+              105,
+              210
+            ]
+          }
+        ],
+        "uncertain_or_invalidated": [
+          "The doll's secure grasp by either arm is unverified at step 315; proximity to the left gripper does not establish holding.",
+          "The prior location of the remaining doll beside the red basket is no longer supported at step 315.",
+          "The white basket's current contents are obscured by the left arm.",
+          "Assignments for the other object categories remain unestablished."
+        ]
+      },
+      "served_model": "openai/gpt-6.1-sol",
+      "served_tier": "flex",
+      "usage": {
+        "input_tokens": 3790,
+        "input_tokens_details": {
+          "cached_tokens": 0,
+          "cache_write_tokens": 3664
+        },
+        "output_tokens": 377,
+        "output_tokens_details": {
+          "reasoning_tokens": 71
+        },
+        "total_tokens": 4167,
+        "cost": 0.006591,
+        "is_byok": false,
+        "cost_details": {
+          "upstream_inference_cost": 0.006591,
+          "upstream_inference_input_cost": 0.004706,
+          "upstream_inference_output_cost": 0.001885
+        }
+      }
+    },
+    {
+      "index": 18,
+      "decision": {
+        "episode": "294b00eff39148f2b26dedce0803407c",
+        "based_on_step": 315,
+        "based_on_stamp": "0d547b90ba188d49737ebb771539a078e0bd7182095b52aa16b48ea81efef5bb",
+        "expected_epoch": 1,
+        "operation": "continue",
+        "subtask": "",
+        "assessment": "not_started",
+        "evidence": "At step 315, overhead RGB shows the white pen still on the table in front of the red basket; the right-wrist view shows it outside the gripper. The requested grasp remains unestablished, as at step 210. Retain the current goal. A black-and-yellow pen is now visible inside the blue basket, and two toy figures remain visible inside the white basket; these do not establish completion of the white-pen grasp.",
+        "completed_claims": [
+          {
+            "text": "A black-and-yellow pen is visible inside the blue basket.",
+            "evidence_steps": [
+              315
+            ]
+          },
+          {
+            "text": "Two toy figures are visible inside the white basket.",
+            "evidence_steps": [
+              210,
+              315
+            ]
+          }
+        ],
+        "uncertain_or_invalidated": [
+          "The category assignment for each basket is not explicitly indicated.",
+          "Robot motion does not establish progress toward grasping the white pen."
+        ]
+      },
+      "served_model": "openai/gpt-6.1-sol",
+      "served_tier": "flex",
+      "usage": {
+        "input_tokens": 3523,
+        "input_tokens_details": {
+          "cached_tokens": 0,
+          "cache_write_tokens": 3397
+        },
+        "output_tokens": 266,
+        "output_tokens_details": {
+          "reasoning_tokens": 0
+        },
+        "total_tokens": 3789,
+        "cost": 0.00570225,
+        "is_byok": false,
+        "cost_details": {
+          "upstream_inference_cost": 0.00570225,
+          "upstream_inference_input_cost": 0.00437225,
+          "upstream_inference_output_cost": 0.00133
+        }
+      }
+    },
+    {
+      "index": 19,
+      "decision": {
+        "episode": "fbc37f67f24b4927a6121b03a3b5bd7e",
+        "based_on_step": 315,
+        "based_on_stamp": "40a35bdf8b90b9205c8e85624e6ff608a350340283933b37ecdbc4626e89d881",
+        "expected_epoch": 2,
+        "operation": "continue",
+        "subtask": "",
+        "assessment": "not_started",
+        "evidence": "At step 315, the green wristwatch remains visibly inside the white basket beside the light blue toy car in the high view; the left-wrist view also shows its green edge inside the basket. The requested watch transfer is not visibly achieved. The right gripper is over the blue basket and obscures its interior, which does not establish progress on the left-arm watch goal.",
+        "completed_claims": [
+          {
+            "text": "The light blue toy car is inside the white basket.",
+            "evidence_steps": [
+              210,
+              315
+            ]
+          }
+        ],
+        "uncertain_or_invalidated": [
+          "Category sorting remains incomplete: at step 315 the green wristwatch still shares the white basket with the toy car.",
+          "The contents of the blue basket are partly obscured at step 315; right-arm motion does not certify any placement."
+        ]
+      },
+      "served_model": "openai/gpt-6.1-sol",
+      "served_tier": "flex",
+      "usage": {
+        "input_tokens": 3677,
+        "input_tokens_details": {
+          "cached_tokens": 0,
+          "cache_write_tokens": 3551
+        },
+        "output_tokens": 263,
+        "output_tokens_details": {
+          "reasoning_tokens": 0
+        },
+        "total_tokens": 3940,
+        "cost": 0.00587975,
+        "is_byok": false,
+        "cost_details": {
+          "upstream_inference_cost": 0.00587975,
+          "upstream_inference_input_cost": 0.00456475,
+          "upstream_inference_output_cost": 0.001315
+        }
+      }
+    },
+    {
+      "index": 20,
+      "decision": {
+        "episode": "c0c60cbbbee244b2a4041c6e2345c513",
+        "based_on_step": 420,
+        "based_on_stamp": "5a7b37804d8df6267d13a3cfe729c587701baea7444a8008e18dd84e4422a138",
+        "expected_epoch": 1,
+        "operation": "continue",
+        "subtask": "",
+        "assessment": "not_started",
+        "evidence": "At step 420, the left wrist view shows empty open fingers, not the target block. The right wrist view shows a light-colored block between its fingers near the long board, but this does not establish the requested left-arm grasp. No secure left-arm hold is visible; retain the current goal.",
+        "completed_claims": [],
+        "uncertain_or_invalidated": [
+          "The apparent left-arm grasp progress at step 315 is not sustained at step 420; the left fingers are visibly empty.",
+          "A secure grasp of the target block with the left arm remains unverified."
+        ]
+      },
+      "served_model": "openai/gpt-6.1-sol",
+      "served_tier": "flex",
+      "usage": {
+        "input_tokens": 3677,
+        "input_tokens_details": {
+          "cached_tokens": 0,
+          "cache_write_tokens": 3551
+        },
+        "output_tokens": 267,
+        "output_tokens_details": {
+          "reasoning_tokens": 47
+        },
+        "total_tokens": 3944,
+        "cost": 0.00589975,
+        "is_byok": false,
+        "cost_details": {
+          "upstream_inference_cost": 0.00589975,
+          "upstream_inference_input_cost": 0.00456475,
+          "upstream_inference_output_cost": 0.001335
+        }
+      }
+    },
+    {
+      "index": 21,
+      "decision": {
+        "episode": "192eeebd138e49ba9d0f8ea6f4c70823",
+        "based_on_step": 420,
+        "based_on_stamp": "ce23c5f94913415f577a40a98b5dca07ab9265e0af068a7c3a843e737b2c7ef7",
+        "expected_epoch": 1,
+        "operation": "continue",
+        "subtask": "",
+        "assessment": "uncertain",
+        "evidence": "At step 420, the shorter front-center board is still empty, so the requested upright placement is not complete. The left-wrist view no longer shows a block between the fingers. The high view shows white blocks near the left portion of the longer rear board, while the right-wrist view shows another white block between the right fingers above that board. These observations do not verify placement of the original target on the specified board.",
+        "completed_claims": [],
+        "uncertain_or_invalidated": [
+          "The apparent left-arm carrying progress at step 315 does not establish continued retention at step 420; the left gripper now appears empty.",
+          "The original leftmost block's identity and current location remain uncertain; no placement on the shorter front-center board is verified."
+        ]
+      },
+      "served_model": "openai/gpt-6.1-sol",
+      "served_tier": "flex",
+      "usage": {
+        "input_tokens": 3715,
+        "input_tokens_details": {
+          "cached_tokens": 0,
+          "cache_write_tokens": 3589
+        },
+        "output_tokens": 311,
+        "output_tokens_details": {
+          "reasoning_tokens": 50
+        },
+        "total_tokens": 4026,
+        "cost": 0.00616725,
+        "is_byok": false,
+        "cost_details": {
+          "upstream_inference_cost": 0.00616725,
+          "upstream_inference_input_cost": 0.00461225,
+          "upstream_inference_output_cost": 0.001555
+        }
+      }
+    },
+    {
+      "index": 22,
+      "decision": {
+        "episode": "294b00eff39148f2b26dedce0803407c",
+        "based_on_step": 420,
+        "based_on_stamp": "b99a1fdb7c384261f514fd8a6b5ddc467aed41d4c8b0b15efec70b815f709354",
+        "expected_epoch": 1,
+        "operation": "set_subtask",
+        "subtask": "Grasp the black rectangular object in front of the white basket with the left arm.",
+        "assessment": "uncertain",
+        "evidence": "At step 420, the white pen is no longer visible at its previous tabletop location; a white pen-like object is visible inside the blue basket in the left-wrist RGB. The right gripper is open, so the preceding grasp itself cannot be verified. Two toy figures remain in the white basket. A black rectangular object remains on the table directly in front of that basket and is available for the next grasp.",
+        "completed_claims": [
+          {
+            "text": "A black-and-yellow pen is visible inside the blue basket.",
+            "evidence_steps": [
+              315
+            ]
+          },
+          {
+            "text": "Two toy figures are visible inside the white basket.",
+            "evidence_steps": [
+              210,
+              315,
+              420
+            ]
+          }
+        ],
+        "uncertain_or_invalidated": [
+          "The preceding white-pen grasp was not directly verified; its apparent relocation into the blue basket is partly occluded.",
+          "The category assignment for each basket is not explicitly indicated."
+        ]
+      },
+      "served_model": "openai/gpt-6.1-sol",
+      "served_tier": "flex",
+      "usage": {
+        "input_tokens": 3852,
+        "input_tokens_details": {
+          "cached_tokens": 0,
+          "cache_write_tokens": 3726
+        },
+        "output_tokens": 549,
+        "output_tokens_details": {
+          "reasoning_tokens": 251
+        },
+        "total_tokens": 4401,
+        "cost": 0.0075285,
+        "is_byok": false,
+        "cost_details": {
+          "upstream_inference_cost": 0.0075285,
+          "upstream_inference_input_cost": 0.0047835,
+          "upstream_inference_output_cost": 0.002745
+        }
+      }
+    },
+    {
+      "index": 23,
+      "decision": {
+        "episode": "7f8a6e461b9c484a973b8a4742378c15",
+        "based_on_step": 420,
+        "based_on_stamp": "b7c964d46dd2ca344f04de394f0419b913cd50ccbb2abee94ce8a1aaa0092a2d",
+        "expected_epoch": 2,
+        "operation": "set_subtask",
+        "subtask": "Put the black wristband between the right gripper fingers into the blue basket.",
+        "assessment": "complete",
+        "evidence": "At step 420, the overhead and left wrist views show three blue-clothed dolls inside the white basket, with no doll visible on the table. The specified right-arm grasp was not directly verified, but its target is now in the doll basket. The right wrist view shows a black wristband between the fingers above the table beside the blue basket; the overhead view supports this location.",
+        "completed_claims": [
+          {
+            "text": "Three blue-clothed dolls are visible inside the white basket, and no doll is visible remaining on the table at step 420.",
+            "evidence_steps": [
+              420
+            ]
+          }
+        ],
+        "uncertain_or_invalidated": [
+          "The intervening right-arm grasp of the doll was not verified.",
+          "The black wristband appears between the right gripper fingers; grasp stability remains unverified.",
+          "The baskets have no visible category labels; assigning accessories to the blue basket is not externally confirmed."
+        ]
+      },
+      "served_model": "openai/gpt-6.1-sol",
+      "served_tier": "flex",
+      "usage": {
+        "input_tokens": 4132,
+        "input_tokens_details": {
+          "cached_tokens": 0,
+          "cache_write_tokens": 4006
+        },
+        "output_tokens": 430,
+        "output_tokens_details": {
+          "reasoning_tokens": 129
+        },
+        "total_tokens": 4562,
+        "cost": 0.0072835,
+        "is_byok": false,
+        "cost_details": {
+          "upstream_inference_cost": 0.0072835,
+          "upstream_inference_input_cost": 0.0051335,
+          "upstream_inference_output_cost": 0.00215
+        }
+      }
+    },
+    {
+      "index": 24,
+      "decision": {
+        "episode": "fbc37f67f24b4927a6121b03a3b5bd7e",
+        "based_on_step": 420,
+        "based_on_stamp": "f1b250aaafb95b382a23179a3fdb32c3f9b93e7666b6b1aae114540701c2d67d",
+        "expected_epoch": 2,
+        "operation": "continue",
+        "subtask": "",
+        "assessment": "not_started",
+        "evidence": "At step 420, the high view still shows the green wristwatch beside the light blue toy car inside the white basket; its green edge is also visible in the left-wrist view. The watch transfer has not occurred. The right-wrist view shows a white pen-like object and a black pen-like object inside the blue basket, not the green watch. Retain the current goal; robot motion does not demonstrate progress on it.",
+        "completed_claims": [
+          {
+            "text": "The light blue toy car is inside the white basket.",
+            "evidence_steps": [
+              210,
+              315,
+              420
+            ]
+          }
+        ],
+        "uncertain_or_invalidated": [
+          "Category sorting remains incomplete at step 420: the green wristwatch still shares the white basket with the toy car.",
+          "The earlier uncertainty about blue-basket contents is partly resolved: white and black pen-like objects are visible there at step 420; their transfer history is not certified."
+        ]
+      },
+      "served_model": "openai/gpt-6.1-sol",
+      "served_tier": "flex",
+      "usage": {
+        "input_tokens": 3974,
+        "input_tokens_details": {
+          "cached_tokens": 0,
+          "cache_write_tokens": 3848
+        },
+        "output_tokens": 289,
+        "output_tokens_details": {
+          "reasoning_tokens": 0
+        },
+        "total_tokens": 4263,
+        "cost": 0.006381,
+        "is_byok": false,
+        "cost_details": {
+          "upstream_inference_cost": 0.006381,
+          "upstream_inference_input_cost": 0.004936,
+          "upstream_inference_output_cost": 0.001445
+        }
+      }
+    },
+    {
+      "index": 25,
+      "decision": {
+        "episode": "c0c60cbbbee244b2a4041c6e2345c513",
+        "based_on_step": 525,
+        "based_on_stamp": "92345590cbef3a6ed915a418117ffc0686c7d3f7aa47fa50e7a1cc438cc36bbb",
+        "expected_epoch": 1,
+        "operation": "continue",
+        "subtask": "",
+        "assessment": "not_started",
+        "evidence": "At step 525, both wrist views show open fingers without a held block. The light-colored block beside the central boards remains outside the left fingers. The boards now overlap centrally, but this does not establish the requested left-arm block grasp. Retain the current goal.",
+        "completed_claims": [],
+        "uncertain_or_invalidated": [
+          "A secure grasp of the target block with the left arm remains unverified at step 525.",
+          "The apparent left-arm grasp progress at step 315 was contradicted by empty fingers at steps 420 and 525."
+        ]
+      },
+      "served_model": "openai/gpt-6.1-sol",
+      "served_tier": "flex",
+      "usage": {
+        "input_tokens": 3736,
+        "input_tokens_details": {
+          "cached_tokens": 0,
+          "cache_write_tokens": 3610
+        },
+        "output_tokens": 213,
+        "output_tokens_details": {
+          "reasoning_tokens": 0
+        },
+        "total_tokens": 3949,
+        "cost": 0.0057035,
+        "is_byok": false,
+        "cost_details": {
+          "upstream_inference_cost": 0.0057035,
+          "upstream_inference_input_cost": 0.0046385,
+          "upstream_inference_output_cost": 0.001065
+        }
+      }
+    },
+    {
+      "index": 26,
+      "decision": {
+        "episode": "192eeebd138e49ba9d0f8ea6f4c70823",
+        "based_on_step": 525,
+        "based_on_stamp": "551595d1e180dc1a4fdc01028f933c827ab0de0e84ed12fc622abc6fb60ee9f5",
+        "expected_epoch": 1,
+        "operation": "continue",
+        "subtask": "",
+        "assessment": "uncertain",
+        "evidence": "At step 525, both wrist views show wooden boards between or beneath the open fingers, rather than a verified white-block grasp. The high view shows overlapping boards at the center; the shorter board is no longer separately visible in its prior front-center position at step 420. Neither the original target block's identity nor its upright placement on the specified board is verified.",
+        "completed_claims": [],
+        "uncertain_or_invalidated": [
+          "The apparent left-arm block-carrying progress at step 315 remains unverified at step 525.",
+          "The original leftmost block's location and identity remain uncertain.",
+          "The shorter board's prior front-center location is no longer supported by step 525; no target placement on it is verified."
+        ]
+      },
+      "served_model": "openai/gpt-6.1-sol",
+      "served_tier": "flex",
+      "usage": {
+        "input_tokens": 3817,
+        "input_tokens_details": {
+          "cached_tokens": 0,
+          "cache_write_tokens": 3691
+        },
+        "output_tokens": 317,
+        "output_tokens_details": {
+          "reasoning_tokens": 67
+        },
+        "total_tokens": 4134,
+        "cost": 0.00632475,
+        "is_byok": false,
+        "cost_details": {
+          "upstream_inference_cost": 0.00632475,
+          "upstream_inference_input_cost": 0.00473975,
+          "upstream_inference_output_cost": 0.001585
+        }
+      }
+    },
+    {
+      "index": 27,
+      "decision": {
+        "episode": "7f8a6e461b9c484a973b8a4742378c15",
+        "based_on_step": 525,
+        "based_on_stamp": "735af3d1f23c49a184a98a7e1f294b52264c29bfabf353dc405b09cf9c522537",
+        "expected_epoch": 3,
+        "operation": "set_subtask",
+        "subtask": "Grasp the white pen on the table with the right arm.",
+        "assessment": "complete",
+        "evidence": "At step 525, a dark loop is visible inside the blue basket, partly obscured by the right arm, and the right wrist view shows empty fingers. This supports placement of the wristband, although its full shape is occluded. Three dolls remain visible in the white basket. A white pen lies on the table directly in the right wrist view; a yellow-and-black writing object also remains on the table.",
+        "completed_claims": [
+          {
+            "text": "Three blue-clothed dolls are visible inside the white basket at step 525.",
+            "evidence_steps": [
+              420,
+              525
+            ]
+          },
+          {
+            "text": "The wristband appears deposited in the blue basket: a dark loop is visible inside it and the right gripper is empty.",
+            "evidence_steps": [
+              420,
+              525
+            ]
+          }
+        ],
+        "uncertain_or_invalidated": [
+          "The wristband's full shape and resting position inside the blue basket are partly occluded by the right arm.",
+          "The baskets have no visible category labels; accessories-to-blue and writing-objects-to-red assignments are not externally confirmed.",
+          "The intervening wristband grasp and release were not directly observed."
+        ]
+      },
+      "served_model": "openai/gpt-6.1-sol",
+      "served_tier": "flex",
+      "usage": {
+        "input_tokens": 4201,
+        "input_tokens_details": {
+          "cached_tokens": 0,
+          "cache_write_tokens": 4075
+        },
+        "output_tokens": 513,
+        "output_tokens_details": {
+          "reasoning_tokens": 173
+        },
+        "total_tokens": 4714,
+        "cost": 0.00778475,
+        "is_byok": false,
+        "cost_details": {
+          "upstream_inference_cost": 0.00778475,
+          "upstream_inference_input_cost": 0.00521975,
+          "upstream_inference_output_cost": 0.002565
+        }
+      }
+    },
+    {
+      "index": 28,
+      "decision": {
+        "episode": "fbc37f67f24b4927a6121b03a3b5bd7e",
+        "based_on_step": 525,
+        "based_on_stamp": "85fc407dc362d51772a1bb27f48cc19f40b7892f7a27b8966ed451025e13ae52",
+        "expected_epoch": 2,
+        "operation": "continue",
+        "subtask": "",
+        "assessment": "uncertain",
+        "evidence": "At step 525, the left arm obscures the white basket interior, so the green wristwatch's current location cannot be confirmed. The blue basket visibly contains white and black pen-like objects, with no green watch visible. The left-wrist view shows a white elongated object between the fingers rather than the target watch; neither this nor arm motion certifies progress on the watch transfer. Retain the current goal pending visible confirmation.",
+        "completed_claims": [
+          {
+            "text": "The light blue toy car was visibly inside the white basket at steps 210, 315 and 420; its current placement is occluded at step 525.",
+            "evidence_steps": [
+              210,
+              315,
+              420
+            ]
+          }
+        ],
+        "uncertain_or_invalidated": [
+          "The green wristwatch was in the white basket at step 420, but its location is obscured at step 525; transfer to the blue basket is not confirmed.",
+          "The light blue toy car's current placement cannot be reverified because the white basket is occluded at step 525."
+        ]
+      },
+      "served_model": "openai/gpt-6.1-sol",
+      "served_tier": "flex",
+      "usage": {
+        "input_tokens": 4074,
+        "input_tokens_details": {
+          "cached_tokens": 0,
+          "cache_write_tokens": 3948
+        },
+        "output_tokens": 308,
+        "output_tokens_details": {
+          "reasoning_tokens": 0
+        },
+        "total_tokens": 4382,
+        "cost": 0.006601,
+        "is_byok": false,
+        "cost_details": {
+          "upstream_inference_cost": 0.006601,
+          "upstream_inference_input_cost": 0.005061,
+          "upstream_inference_output_cost": 0.00154
+        }
+      }
+    },
+    {
+      "index": 29,
+      "decision": {
+        "episode": "294b00eff39148f2b26dedce0803407c",
+        "based_on_step": 525,
+        "based_on_stamp": "7b6ca30558825592b9ce09d4556c3e4be586ae63f9cb2e584dfabad4efaf01b5",
+        "expected_epoch": 2,
+        "operation": "continue",
+        "subtask": "",
+        "assessment": "not_started",
+        "evidence": "At step 525, left-wrist RGB shows the black rectangular object resting on the tabletop between, but not held by, the open gripper fingers. Overhead RGB places it in front of the white basket. The requested grasp is not established; retain the current goal. A separate black rectangular object is visible inside the red basket.",
+        "completed_claims": [
+          {
+            "text": "A black-and-yellow pen is visible inside the blue basket.",
+            "evidence_steps": [
+              315
+            ]
+          },
+          {
+            "text": "Two toy figures are visible inside the white basket.",
+            "evidence_steps": [
+              210,
+              315,
+              420
+            ]
+          },
+          {
+            "text": "A black rectangular object is visible inside the red basket.",
+            "evidence_steps": [
+              525
+            ]
+          }
+        ],
+        "uncertain_or_invalidated": [
+          "The preceding white-pen grasp was not directly verified; its apparent relocation into the blue basket is partly occluded.",
+          "The category assignment for each basket is not explicitly indicated.",
+          "The left arm's proximity to the target does not establish a grasp."
+        ]
+      },
+      "served_model": "openai/gpt-6.1-sol",
+      "served_tier": "flex",
+      "usage": {
+        "input_tokens": 3986,
+        "input_tokens_details": {
+          "cached_tokens": 0,
+          "cache_write_tokens": 3860
+        },
+        "output_tokens": 293,
+        "output_tokens_details": {
+          "reasoning_tokens": 0
+        },
+        "total_tokens": 4279,
+        "cost": 0.006416,
+        "is_byok": false,
+        "cost_details": {
+          "upstream_inference_cost": 0.006416,
+          "upstream_inference_input_cost": 0.004951,
+          "upstream_inference_output_cost": 0.001465
+        }
+      }
+    },
+    {
+      "index": 30,
+      "decision": {
+        "episode": "c0c60cbbbee244b2a4041c6e2345c513",
+        "based_on_step": 630,
+        "based_on_stamp": "8c4ce0ab66e68ac22212d8ef2c824858ce5f60d8c3b856eec3d7ec63ed042f95",
+        "expected_epoch": 1,
+        "operation": "continue",
+        "subtask": "",
+        "assessment": "not_started",
+        "evidence": "At step 630, both wrist views show open, empty fingers. The left wrist faces the green object rather than a held wooden block. The overhead image shows a small wooden block resting on the overlapping central boards, but does not establish the requested left-arm grasp. Retain the current goal.",
+        "completed_claims": [],
+        "uncertain_or_invalidated": [
+          "The requested left-arm wooden-block grasp remains unverified at step 630.",
+          "The apparent left-arm grasp progress at step 315 was contradicted by empty fingers at steps 420, 525, and 630."
+        ]
+      },
+      "served_model": "openai/gpt-6.1-sol",
+      "served_tier": "flex",
+      "usage": {
+        "input_tokens": 3795,
+        "input_tokens_details": {
+          "cached_tokens": 0,
+          "cache_write_tokens": 3669
+        },
+        "output_tokens": 251,
+        "output_tokens_details": {
+          "reasoning_tokens": 26
+        },
+        "total_tokens": 4046,
+        "cost": 0.00596725,
+        "is_byok": false,
+        "cost_details": {
+          "upstream_inference_cost": 0.00596725,
+          "upstream_inference_input_cost": 0.00471225,
+          "upstream_inference_output_cost": 0.001255
+        }
+      }
+    },
+    {
+      "index": 31,
+      "decision": {
+        "episode": "192eeebd138e49ba9d0f8ea6f4c70823",
+        "based_on_step": 630,
+        "based_on_stamp": "6a24b068184e2638d7b95df80139fd2caa4fa83d65b04d6ed3735a045380ef3c",
+        "expected_epoch": 1,
+        "operation": "continue",
+        "subtask": "",
+        "assessment": "uncertain",
+        "evidence": "At step 630, the boards remain overlapping near the table center. The left-wrist view shows a wooden board beneath the open fingers, not a verified white-block grasp; the right gripper is away from the boards and appears empty. White block surfaces are partly visible around the boards, but no upright placement of the original leftmost block on the specified shorter board is verified. Recovery is disabled, so the current goal is retained.",
+        "completed_claims": [],
+        "uncertain_or_invalidated": [
+          "The apparent left-arm block-carrying progress at step 315 is not supported by step 630.",
+          "The original leftmost block's identity and location remain uncertain.",
+          "The shorter board is not separately identified at its original front-center location; the requested upright placement remains unverified at step 630."
+        ]
+      },
+      "served_model": "openai/gpt-6.1-sol",
+      "served_tier": "flex",
+      "usage": {
+        "input_tokens": 3909,
+        "input_tokens_details": {
+          "cached_tokens": 0,
+          "cache_write_tokens": 3783
+        },
+        "output_tokens": 265,
+        "output_tokens_details": {
+          "reasoning_tokens": 0
+        },
+        "total_tokens": 4174,
+        "cost": 0.00617975,
+        "is_byok": false,
+        "cost_details": {
+          "upstream_inference_cost": 0.00617975,
+          "upstream_inference_input_cost": 0.00485475,
+          "upstream_inference_output_cost": 0.001325
+        }
+      }
+    },
+    {
+      "index": 32,
+      "decision": {
+        "episode": "294b00eff39148f2b26dedce0803407c",
+        "based_on_step": 630,
+        "based_on_stamp": "5e1546d7624244230e3ff09d753b109eecc8bb4bb4d0b26d5ef81084a99ec718",
+        "expected_epoch": 2,
+        "operation": "continue",
+        "subtask": "",
+        "assessment": "uncertain",
+        "evidence": "At step 630, the left-wrist view shows an empty tabletop in front of the white basket and open fingers. The black rectangular target is instead visible between the right gripper fingers in the right-wrist view, with tabletop behind it; a secure grasp or lift is not established. The requested left-arm grasp therefore remains unverified. Retain the current goal. Two figures remain visible in the white basket and pens are visible in the blue basket; the red basket is partly occluded by the right arm.",
+        "completed_claims": [
+          {
+            "text": "A black-and-yellow pen is visible inside the blue basket.",
+            "evidence_steps": [
+              315
+            ]
+          },
+          {
+            "text": "Two toy figures are visible inside the white basket.",
+            "evidence_steps": [
+              210,
+              315,
+              420,
+              630
+            ]
+          },
+          {
+            "text": "A black rectangular object was visible inside the red basket at step 525.",
+            "evidence_steps": [
+              525
+            ]
+          }
+        ],
+        "uncertain_or_invalidated": [
+          "The target is no longer visible at its previous position in front of the white basket; it is now visible near the right gripper, but its support and grasp status are uncertain.",
+          "Neither proximity nor gripper commands establish completion of the requested left-arm grasp.",
+          "The category assignment for each basket is not explicitly indicated.",
+          "The preceding white-pen grasp was not directly verified; its apparent relocation into the blue basket was partly occluded."
+        ]
+      },
+      "served_model": "openai/gpt-6.1-sol",
+      "served_tier": "flex",
+      "usage": {
+        "input_tokens": 4163,
+        "input_tokens_details": {
+          "cached_tokens": 0,
+          "cache_write_tokens": 4037
+        },
+        "output_tokens": 434,
+        "output_tokens_details": {
+          "reasoning_tokens": 60
+        },
+        "total_tokens": 4597,
+        "cost": 0.00734225,
+        "is_byok": false,
+        "cost_details": {
+          "upstream_inference_cost": 0.00734225,
+          "upstream_inference_input_cost": 0.00517225,
+          "upstream_inference_output_cost": 0.00217
+        }
+      }
+    },
+    {
+      "index": 33,
+      "decision": {
+        "episode": "7f8a6e461b9c484a973b8a4742378c15",
+        "based_on_step": 630,
+        "based_on_stamp": "7b3075b02ef835b97ff0c1ec08669423265a0cab1a588f6c36ccdf21fcb2a6d4",
+        "expected_epoch": 4,
+        "operation": "set_subtask",
+        "subtask": "Grasp the black-and-yellow pen on the table beside the red basket with the right arm.",
+        "assessment": "complete",
+        "evidence": "At step 630, the right wrist and overhead images show the white pen resting inside the red basket, no longer on the table as at step 525. The right fingers appear empty; the intervening grasp was not observed, but the target has been deposited. The black-and-yellow pen remains on the table beside the red basket. Three dolls are visible in the white basket and a dark loop is visible in the blue basket.",
+        "completed_claims": [
+          {
+            "text": "The white pen is now resting inside the red basket.",
+            "evidence_steps": [
+              525,
+              630
+            ]
+          },
+          {
+            "text": "Three blue-clothed dolls remain visible inside the white basket.",
+            "evidence_steps": [
+              630
+            ]
+          },
+          {
+            "text": "A dark wristband loop is visible inside the blue basket.",
+            "evidence_steps": [
+              525,
+              630
+            ]
+          }
+        ],
+        "uncertain_or_invalidated": [
+          "The intervening white-pen grasp and release were not directly observed.",
+          "The baskets have no visible category labels; assignments are inferred from their observed contents."
+        ]
+      },
+      "served_model": "openai/gpt-6.1-sol",
+      "served_tier": "flex",
+      "usage": {
+        "input_tokens": 4369,
+        "input_tokens_details": {
+          "cached_tokens": 0,
+          "cache_write_tokens": 4243
+        },
+        "output_tokens": 324,
+        "output_tokens_details": {
+          "reasoning_tokens": 0
+        },
+        "total_tokens": 4693,
+        "cost": 0.00704975,
+        "is_byok": false,
+        "cost_details": {
+          "upstream_inference_cost": 0.00704975,
+          "upstream_inference_input_cost": 0.00542975,
+          "upstream_inference_output_cost": 0.00162
+        }
+      }
+    },
+    {
+      "index": 34,
+      "decision": {
+        "episode": "fbc37f67f24b4927a6121b03a3b5bd7e",
+        "based_on_step": 630,
+        "based_on_stamp": "f06c62d8bf38eeaa202df29aaeee8c76d426155a75a2f27b2f55524a8fb50f82",
+        "expected_epoch": 2,
+        "operation": "continue",
+        "subtask": "",
+        "assessment": "uncertain",
+        "evidence": "At step 630, the high view shows the light blue toy car inside the white basket. The left-wrist view shows a yellow toy vehicle between the fingers above the blue basket, not the green wristwatch. White and black pen-like objects are visible in the blue basket, but the target watch's placement there is not confirmed. Retain the current goal; the observed handling of a different object does not establish watch-transfer progress.",
+        "completed_claims": [
+          {
+            "text": "The light blue toy car is visibly inside the white basket.",
+            "evidence_steps": [
+              210,
+              315,
+              420,
+              630
+            ]
+          }
+        ],
+        "uncertain_or_invalidated": [
+          "The green wristwatch's current location remains uncertain; transfer from the white basket to the blue basket is not confirmed at step 630.",
+          "The step-525 occlusion uncertainty about the light blue toy car is resolved by the step-630 high view.",
+          "The yellow vehicle between the left fingers is not evidence of grasping or transferring the target wristwatch."
+        ]
+      },
+      "served_model": "openai/gpt-6.1-sol",
+      "served_tier": "flex",
+      "usage": {
+        "input_tokens": 4213,
+        "input_tokens_details": {
+          "cached_tokens": 0,
+          "cache_write_tokens": 4087
+        },
+        "output_tokens": 353,
+        "output_tokens_details": {
+          "reasoning_tokens": 46
+        },
+        "total_tokens": 4566,
+        "cost": 0.00699975,
+        "is_byok": false,
+        "cost_details": {
+          "upstream_inference_cost": 0.00699975,
+          "upstream_inference_input_cost": 0.00523475,
+          "upstream_inference_output_cost": 0.001765
+        }
+      }
+    },
+    {
+      "index": 35,
+      "decision": {
+        "episode": "192eeebd138e49ba9d0f8ea6f4c70823",
+        "based_on_step": 735,
+        "based_on_stamp": "037012d4ac9b12e8c8a0b203b33df3815b23c0f2ab3175dd0c486cd74dc4c512",
+        "expected_epoch": 1,
+        "operation": "continue",
+        "subtask": "",
+        "assessment": "uncertain",
+        "evidence": "At step 735, the high and right-wrist views show wooden boards stacked with white blocks between levels and a green piece on top. Both grippers appear empty and away from the stack. This visible arrangement does not establish that the original leftmost white block was placed upright on the left end of the specified shorter board. The current goal remains unverified; recovery is disabled.",
+        "completed_claims": [],
+        "uncertain_or_invalidated": [
+          "The apparent left-arm block-carrying progress at step 315 does not establish retention or placement at step 735.",
+          "The original leftmost white block's identity within the visible arrangement remains uncertain.",
+          "The shorter board's original front-center location and the requested upright placement on its left end remain unverified at step 735."
+        ]
+      },
+      "served_model": "openai/gpt-6.1-sol",
+      "served_tier": "flex",
+      "usage": {
+        "input_tokens": 4005,
+        "input_tokens_details": {
+          "cached_tokens": 0,
+          "cache_write_tokens": 3879
+        },
+        "output_tokens": 309,
+        "output_tokens_details": {
+          "reasoning_tokens": 46
+        },
+        "total_tokens": 4314,
+        "cost": 0.00651975,
+        "is_byok": false,
+        "cost_details": {
+          "upstream_inference_cost": 0.00651975,
+          "upstream_inference_input_cost": 0.00497475,
+          "upstream_inference_output_cost": 0.001545
+        }
+      }
+    },
+    {
+      "index": 36,
+      "decision": {
+        "episode": "c0c60cbbbee244b2a4041c6e2345c513",
+        "based_on_step": 735,
+        "based_on_stamp": "46a3be30d75adc731185ec2d23885dab88bcd63e19e92b929c014dc5af34064e",
+        "expected_epoch": 1,
+        "operation": "continue",
+        "subtask": "",
+        "assessment": "not_started",
+        "evidence": "At step 735, both wrist images show empty fingers. The overhead view shows the wooden block resting on the overlapping central boards, beside a green object, rather than held by the left arm. The requested wooden-block grasp is not established; retain the current goal.",
+        "completed_claims": [],
+        "uncertain_or_invalidated": [
+          "The requested left-arm wooden-block grasp remains unverified at step 735.",
+          "The apparent left-arm grasp progress at step 315 was contradicted by empty fingers at steps 420, 525, 630, and 735."
+        ]
+      },
+      "served_model": "openai/gpt-6.1-sol",
+      "served_tier": "flex",
+      "usage": {
+        "input_tokens": 3838,
+        "input_tokens_details": {
+          "cached_tokens": 0,
+          "cache_write_tokens": 3712
+        },
+        "output_tokens": 214,
+        "output_tokens_details": {
+          "reasoning_tokens": 0
+        },
+        "total_tokens": 4052,
+        "cost": 0.005836,
+        "is_byok": false,
+        "cost_details": {
+          "upstream_inference_cost": 0.005836,
+          "upstream_inference_input_cost": 0.004766,
+          "upstream_inference_output_cost": 0.00107
+        }
+      }
+    },
+    {
+      "index": 37,
+      "decision": {
+        "episode": "fbc37f67f24b4927a6121b03a3b5bd7e",
+        "based_on_step": 735,
+        "based_on_stamp": "b112614c5b894b080a367bd5e70f464ca7200c103535b9a6502f3d2a0b99b654",
+        "expected_epoch": 2,
+        "operation": "continue",
+        "subtask": "",
+        "assessment": "not_started",
+        "evidence": "At step 735, the high and left-wrist views show the green wristwatch still inside the white basket alongside the light blue toy car. The right-wrist view shows a silver wristwatch, a yellow toy vehicle, and pen-like objects in the blue basket; these are not the target green watch. The requested transfer remains unachieved, so retain the current goal.",
+        "completed_claims": [
+          {
+            "text": "The light blue toy car is visibly inside the white basket.",
+            "evidence_steps": [
+              210,
+              315,
+              420,
+              630,
+              735
+            ]
+          }
+        ],
+        "uncertain_or_invalidated": [
+          "The prior uncertainty about the green wristwatch's location is resolved at step 735: it remains in the white basket, not transferred to the blue basket.",
+          "The silver wristwatch and yellow vehicle visible in the blue basket do not establish completion of the green-wristwatch goal."
+        ]
+      },
+      "served_model": "openai/gpt-6.1-sol",
+      "served_tier": "flex",
+      "usage": {
+        "input_tokens": 4253,
+        "input_tokens_details": {
+          "cached_tokens": 0,
+          "cache_write_tokens": 4127
+        },
+        "output_tokens": 281,
+        "output_tokens_details": {
+          "reasoning_tokens": 0
+        },
+        "total_tokens": 4534,
+        "cost": 0.00668975,
+        "is_byok": false,
+        "cost_details": {
+          "upstream_inference_cost": 0.00668975,
+          "upstream_inference_input_cost": 0.00528475,
+          "upstream_inference_output_cost": 0.001405
+        }
+      }
+    },
+    {
+      "index": 38,
+      "decision": {
+        "episode": "294b00eff39148f2b26dedce0803407c",
+        "based_on_step": 735,
+        "based_on_stamp": "8df5013feda8ad12c7f4e68bb874bea29cd4dba216390b23ccc700dc7b84057f",
+        "expected_epoch": 2,
+        "operation": "stop",
+        "subtask": "",
+        "assessment": "uncertain",
+        "evidence": "At step 735, right-wrist RGB shows two black rectangular objects inside the red basket with open gripper fingers. The tabletop in front of the white basket is empty; two figures remain in the white basket and pens are visible in the blue basket. The target appears to have reached the red basket, but the requested left-arm grasp was never verified. No remaining tabletop object is visible to support another sorting subtask. Stop rather than pursue the stale grasp; this is abstention, not certified task success.",
+        "completed_claims": [
+          {
+            "text": "Two black rectangular objects are visible inside the red basket.",
+            "evidence_steps": [
+              735
+            ]
+          },
+          {
+            "text": "Two toy figures are visible inside the white basket.",
+            "evidence_steps": [
+              210,
+              315,
+              420,
+              630,
+              735
+            ]
+          },
+          {
+            "text": "Pens are visible inside the blue basket.",
+            "evidence_steps": [
+              315,
+              630,
+              735
+            ]
+          }
+        ],
+        "uncertain_or_invalidated": [
+          "The requested left-arm grasp remains unverified.",
+          "The prior uncertainty about the target's location near the right gripper is superseded by two black rectangular objects visible inside the red basket at step 735; exact identity is not independently verified.",
+          "Basket category assignments are inferred from visible contents, not explicitly indicated.",
+          "No unsorted objects are visible, but overall task completion is not certified."
+        ]
+      },
+      "served_model": "openai/gpt-6.1-sol",
+      "served_tier": "flex",
+      "usage": {
+        "input_tokens": 4378,
+        "input_tokens_details": {
+          "cached_tokens": 0,
+          "cache_write_tokens": 4252
+        },
+        "output_tokens": 434,
+        "output_tokens_details": {
+          "reasoning_tokens": 75
+        },
+        "total_tokens": 4812,
+        "cost": 0.007611,
+        "is_byok": false,
+        "cost_details": {
+          "upstream_inference_cost": 0.007611,
+          "upstream_inference_input_cost": 0.005441,
+          "upstream_inference_output_cost": 0.00217
+        }
+      }
+    },
+    {
+      "index": 39,
+      "decision": {
+        "episode": "192eeebd138e49ba9d0f8ea6f4c70823",
+        "based_on_step": 840,
+        "based_on_stamp": "102ef963b15ddcb8042feeb655d1aea1e30f33454418160d3d26978e89feb4ea",
+        "expected_epoch": 1,
+        "operation": "continue",
+        "subtask": "",
+        "assessment": "uncertain",
+        "evidence": "At step 840, the central arrangement of wooden boards, white blocks between levels, and a green piece on top appears unchanged from step 735. Both wrist views show no object held between the fingers. The visible stack does not verify the original leftmost white block's identity or its upright placement on the left end of the specified shorter board. Recovery is disabled; retain the current goal.",
+        "completed_claims": [],
+        "uncertain_or_invalidated": [
+          "The apparent block-carrying progress at step 315 does not establish retention or target placement at step 840.",
+          "The original leftmost white block's identity within the stack remains uncertain.",
+          "The requested upright placement on the left end of the shorter board remains unverified at step 840."
+        ]
+      },
+      "served_model": "openai/gpt-6.1-sol",
+      "served_tier": "flex",
+      "usage": {
+        "input_tokens": 4060,
+        "input_tokens_details": {
+          "cached_tokens": 0,
+          "cache_write_tokens": 3934
+        },
+        "output_tokens": 249,
+        "output_tokens_details": {
+          "reasoning_tokens": 0
+        },
+        "total_tokens": 4309,
+        "cost": 0.0062885,
+        "is_byok": false,
+        "cost_details": {
+          "upstream_inference_cost": 0.0062885,
+          "upstream_inference_input_cost": 0.0050435,
+          "upstream_inference_output_cost": 0.001245
+        }
+      }
+    },
+    {
+      "index": 40,
+      "decision": {
+        "episode": "c0c60cbbbee244b2a4041c6e2345c513",
+        "based_on_step": 840,
+        "based_on_stamp": "5b3a96e6a07045ebc1b78ff200d92c19893999b152a55d60d467dad0c82845f6",
+        "expected_epoch": 1,
+        "operation": "continue",
+        "subtask": "",
+        "assessment": "not_started",
+        "evidence": "At step 840, both wrist views show open, empty fingers. The overhead view shows the wooden pieces remaining on the table centrally, not held by the left arm. The requested left-arm wooden-block grasp is not established; retain the current goal.",
+        "completed_claims": [],
+        "uncertain_or_invalidated": [
+          "The requested left-arm wooden-block grasp remains unverified at step 840.",
+          "The apparent left-arm grasp progress at step 315 was contradicted by empty fingers at steps 420, 525, 630, 735, and 840."
+        ]
+      },
+      "served_model": "openai/gpt-6.1-sol",
+      "served_tier": "flex",
+      "usage": {
+        "input_tokens": 3879,
+        "input_tokens_details": {
+          "cached_tokens": 0,
+          "cache_write_tokens": 3753
+        },
+        "output_tokens": 218,
+        "output_tokens_details": {
+          "reasoning_tokens": 0
+        },
+        "total_tokens": 4097,
+        "cost": 0.00590725,
+        "is_byok": false,
+        "cost_details": {
+          "upstream_inference_cost": 0.00590725,
+          "upstream_inference_input_cost": 0.00481725,
+          "upstream_inference_output_cost": 0.00109
+        }
+      }
+    },
+    {
+      "index": 41,
+      "decision": {
+        "episode": "fbc37f67f24b4927a6121b03a3b5bd7e",
+        "based_on_step": 840,
+        "based_on_stamp": "4c334331bcaaf6cb2e10107713c84d0b27c3db4317d20919fe3b45191745ec45",
+        "expected_epoch": 2,
+        "operation": "continue",
+        "subtask": "",
+        "assessment": "not_started",
+        "evidence": "At step 840, the high view shows the green wristwatch still inside the white basket beside the light blue toy car; its green strap is also visible in the left-wrist view. The target has not been transferred to the blue basket. Retain the current goal; other objects visible in the blue and red baskets do not establish progress on this transfer.",
+        "completed_claims": [
+          {
+            "text": "The light blue toy car is visibly inside the white basket.",
+            "evidence_steps": [
+              210,
+              315,
+              420,
+              630,
+              735,
+              840
+            ]
+          }
+        ],
+        "uncertain_or_invalidated": [
+          "The green wristwatch remains in the white basket at step 840; its transfer to the blue basket is not complete.",
+          "Other objects in the blue and red baskets do not demonstrate completion of category sorting."
+        ]
+      },
+      "served_model": "openai/gpt-6.1-sol",
+      "served_tier": "flex",
+      "usage": {
+        "input_tokens": 4258,
+        "input_tokens_details": {
+          "cached_tokens": 0,
+          "cache_write_tokens": 4132
+        },
+        "output_tokens": 262,
+        "output_tokens_details": {
+          "reasoning_tokens": 0
+        },
+        "total_tokens": 4520,
+        "cost": 0.006601,
+        "is_byok": false,
+        "cost_details": {
+          "upstream_inference_cost": 0.006601,
+          "upstream_inference_input_cost": 0.005291,
+          "upstream_inference_output_cost": 0.00131
+        }
+      }
+    },
+    {
+      "index": 42,
+      "decision": {
+        "episode": "c0c60cbbbee244b2a4041c6e2345c513",
+        "based_on_step": 945,
+        "based_on_stamp": "4a34aadffed4ffa49dfdc0c2b6d279a511863d73aac0d600db60249002603ace",
+        "expected_epoch": 1,
+        "operation": "continue",
+        "subtask": "",
+        "assessment": "not_started",
+        "evidence": "At step 945, both wrist views show open, empty fingers. The overhead view shows the wooden pieces still resting centrally on the table, with no block held by the left arm. Relative to step 840, arm movement does not establish object grasp progress. Retain the current goal.",
+        "completed_claims": [],
+        "uncertain_or_invalidated": [
+          "The requested left-arm wooden-block grasp remains unverified at step 945.",
+          "The apparent left-arm grasp progress at step 315 was contradicted by empty fingers at steps 420, 525, 630, 735, 840, and 945."
+        ]
+      },
+      "served_model": "openai/gpt-6.1-sol",
+      "served_tier": "flex",
+      "usage": {
+        "input_tokens": 3866,
+        "input_tokens_details": {
+          "cached_tokens": 0,
+          "cache_write_tokens": 3740
+        },
+        "output_tokens": 224,
+        "output_tokens_details": {
+          "reasoning_tokens": 0
+        },
+        "total_tokens": 4090,
+        "cost": 0.005921,
+        "is_byok": false,
+        "cost_details": {
+          "upstream_inference_cost": 0.005921,
+          "upstream_inference_input_cost": 0.004801,
+          "upstream_inference_output_cost": 0.00112
+        }
+      }
+    },
+    {
+      "index": 43,
+      "decision": {
+        "episode": "192eeebd138e49ba9d0f8ea6f4c70823",
+        "based_on_step": 945,
+        "based_on_stamp": "3b82075cdd415b89e0bfb3da833d31ee421e342a336226f1ce82f84c88c24c8a",
+        "expected_epoch": 1,
+        "operation": "continue",
+        "subtask": "",
+        "assessment": "uncertain",
+        "evidence": "At step 945, the central arrangement of boards, white blocks between levels, and a green piece on top appears unchanged from step 840. Neither wrist view shows an object held between the fingers. The original leftmost white block cannot be identified confidently within the arrangement, and its requested upright placement on the left end of the shorter board remains unverified. Recovery is disabled; retain the current goal.",
+        "completed_claims": [],
+        "uncertain_or_invalidated": [
+          "The apparent block-carrying progress at step 315 does not establish retention or target placement at step 945.",
+          "The original leftmost white block's identity within the stack remains uncertain.",
+          "The requested upright placement on the left end of the shorter board remains unverified at step 945."
+        ]
+      },
+      "served_model": "openai/gpt-6.1-sol",
+      "served_tier": "flex",
+      "usage": {
+        "input_tokens": 4056,
+        "input_tokens_details": {
+          "cached_tokens": 0,
+          "cache_write_tokens": 3930
+        },
+        "output_tokens": 256,
+        "output_tokens_details": {
+          "reasoning_tokens": 0
+        },
+        "total_tokens": 4312,
+        "cost": 0.0063185,
+        "is_byok": false,
+        "cost_details": {
+          "upstream_inference_cost": 0.0063185,
+          "upstream_inference_input_cost": 0.0050385,
+          "upstream_inference_output_cost": 0.00128
+        }
+      }
+    },
+    {
+      "index": 44,
+      "decision": {
+        "episode": "fbc37f67f24b4927a6121b03a3b5bd7e",
+        "based_on_step": 945,
+        "based_on_stamp": "6af0864a41436cbec0c8092670a7f9bbc028434f3f7c3569717faed2c725332a",
+        "expected_epoch": 2,
+        "operation": "continue",
+        "subtask": "",
+        "assessment": "not_started",
+        "evidence": "At step 945, the high view shows the green wristwatch still inside the white basket beside the light blue toy car; its green strap is also visible in the left-wrist view. The target transfer remains unachieved. Retain the current goal; robot motion and other objects in the baskets do not certify progress.",
+        "completed_claims": [
+          {
+            "text": "The light blue toy car is visibly inside the white basket.",
+            "evidence_steps": [
+              210,
+              315,
+              420,
+              630,
+              735,
+              840,
+              945
+            ]
+          }
+        ],
+        "uncertain_or_invalidated": [
+          "The green wristwatch remains in the white basket at step 945; its transfer to the blue basket is not complete.",
+          "Other objects in the blue and red baskets do not demonstrate completion of category sorting."
+        ]
+      },
+      "served_model": "openai/gpt-6.1-sol",
+      "served_tier": "flex",
+      "usage": {
+        "input_tokens": 4232,
+        "input_tokens_details": {
+          "cached_tokens": 0,
+          "cache_write_tokens": 4106
+        },
+        "output_tokens": 257,
+        "output_tokens_details": {
+          "reasoning_tokens": 0
+        },
+        "total_tokens": 4489,
+        "cost": 0.0065435,
+        "is_byok": false,
+        "cost_details": {
+          "upstream_inference_cost": 0.0065435,
+          "upstream_inference_input_cost": 0.0052585,
+          "upstream_inference_output_cost": 0.001285
+        }
+      }
+    },
+    {
+      "index": 45,
+      "decision": {
+        "episode": "fbc37f67f24b4927a6121b03a3b5bd7e",
+        "based_on_step": 1050,
+        "based_on_stamp": "c46ac265bbe837c93eb12157c138a11644db5753ada1fec09f746e2604e9d744",
+        "expected_epoch": 2,
+        "operation": "continue",
+        "subtask": "",
+        "assessment": "not_started",
+        "evidence": "At step 1050, the high view shows the green wristwatch still in the white basket beside the light blue toy car, and its strap is visible in the left-wrist view. The scene is materially unchanged from step 945; no grasp or transfer of the target is observed. Retain the current goal.",
+        "completed_claims": [
+          {
+            "text": "The light blue toy car is visibly inside the white basket.",
+            "evidence_steps": [
+              210,
+              315,
+              420,
+              630,
+              735,
+              840,
+              945,
+              1050
+            ]
+          }
+        ],
+        "uncertain_or_invalidated": [
+          "The green wristwatch remains in the white basket at step 1050; its transfer to the blue basket is not complete.",
+          "Other objects in the blue and red baskets do not demonstrate completion of category sorting."
+        ]
+      },
+      "served_model": "openai/gpt-6.1-sol",
+      "served_tier": "flex",
+      "usage": {
+        "input_tokens": 4182,
+        "input_tokens_details": {
+          "cached_tokens": 0,
+          "cache_write_tokens": 4056
+        },
+        "output_tokens": 257,
+        "output_tokens_details": {
+          "reasoning_tokens": 0
+        },
+        "total_tokens": 4439,
+        "cost": 0.006481,
+        "is_byok": false,
+        "cost_details": {
+          "upstream_inference_cost": 0.006481,
+          "upstream_inference_input_cost": 0.005196,
+          "upstream_inference_output_cost": 0.001285
+        }
+      }
+    }
+  ]
+}

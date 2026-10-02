@@ -1,5 +1,28 @@
 # Parallel Execution
 
+## Current Vector Executor
+
+The separate-worker discussion below is historical. A subsequent executor
+shares one pi0.5 runtime on GPU1 between two native simulator processes on
+GPU0. Five environments per family passed a full-horizon capacity run; a
+fresh five-case development cohort uses three unique sorting layouts and two
+unique tower layouts, not ten distinct tasks. Its full motor baseline passed
+source/ACK/RNG audits with 4,508 controls in 529.94 s including startup.
+
+Per-episode semantic integration passed a five-row bounded native pilot with
+ten Sol 6.1 medium/Flex decisions. The planner lock and one budget relay
+serialize paid calls, so family barriers pause during semantic review. This
+does not require concurrent ledger owners or change the source singleton RNG
+contract. It is shared weights/simulation, not fused policy inference or a
+measured end-to-end serial speedup. Paid planner transport errors still stop
+new requests without retry; all incomplete outcomes remain evidence.
+
+Full vector task-plus-subtask/subtask-only comparisons are tracked in
+`MATCHED_HIERARCHY_PROGRESS_20261002.md`; use that live checklist rather than
+interpreting older worker examples as the present topology. Intern and G0.5
+semantic vector integration remain unqualified. Held-out families remain
+separate from these two already-opened development task types.
+
 ## Current Choice
 
 Use the existing two RTX 4090s before renting more GPUs. Two independent
