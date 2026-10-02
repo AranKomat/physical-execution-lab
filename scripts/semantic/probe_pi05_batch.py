@@ -27,6 +27,7 @@ def main():
     checkpoint = Path(provider['checkpoint_path'])
     cfg,_ = data_contract(checkpoint)
     policy = create_trained_policy(cfg,checkpoint)
+    print('Loaded source checkpoint; starting retained-input batch check',flush=True)
     with np.load(a.request,allow_pickle=False) as data:
         raws = [dict(state=data['states'][i].copy(),prompt=str(data['prompts'][i]),images={
             name:np.transpose(data[name][i],(2,0,1)).copy()
@@ -52,6 +53,7 @@ def main():
             output_shape=list(warm['actions'].shape),source_singleton_max_abs_errors=errors,
             repeated_retained_inputs=True,distinct_task_coverage=False,
             device_memory=jax.devices()[0].memory_stats()))
+        print(json.dumps(records[-1]),flush=True)
     atomic_json(a.output,dict(scope='GPU batched-inference integration only, not task performance or full-task simulator capacity',
         source_request_sha256=file_sha(a.request),checkpoint_identity=checkpoint_identity(checkpoint),
         records=records,simulator_actions=0,paid_calls=0),exclusive=True)

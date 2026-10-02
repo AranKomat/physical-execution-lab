@@ -7,6 +7,7 @@ class Pi05Batch:
     def __init__(self, policy, observation_type):
         import jax
         import jax.numpy as jnp
+        from flax import nnx
         if getattr(policy, '_is_pytorch_model', False):
             raise ContractError('this executor binds the released JAX pi0.5 path')
         self.policy = policy
@@ -14,12 +15,17 @@ class Pi05Batch:
         self.keys = {}
         self.calls = {}
         self.jax, self.jnp = jax, jnp
+        graphdef, self.model_state = nnx.split(policy._model)
+        source_method = policy._model.sample_actions.__func__
 
-        def sample(key, inputs):
-            return policy._sample_actions(key, observation_type.from_dict(inputs), **policy._sample_kwargs)
+        def sample(state, key, inputs):
+            model = nnx.merge(graphdef, state)
+            return source_method(model, key, observation_type.from_dict(inputs), **policy._sample_kwargs)
 
         # Each mapped row retains the source's inner batch-of-one observation shape.
-        self.sample_batch = jax.jit(jax.vmap(sample, in_axes=(0, 0)))
+        # Keep weights dynamic and shared, as source module_jit does. Closing over
+        # them in an outer JIT embeds gigabytes of constants in the compiler graph.
+        self.sample_batch = jax.jit(jax.vmap(sample, in_axes=(None, 0, 0)))
 
     def infer(self, episode_ids, raws):
         if (not episode_ids or len(episode_ids) != len(raws)
@@ -30,7 +36,7 @@ class Pi05Batch:
         inputs = jax.tree.map(lambda *x: jnp.stack([jnp.asarray(v)[None, ...] for v in x]), *rows)
         split = [jax.random.split(self.keys.get(idx, jax.random.key(0))) for idx in episode_ids]
         sampling_keys = jnp.stack([pair[1] for pair in split])
-        actions = self.sample_batch(sampling_keys, inputs)
+        actions = self.sample_batch(self.model_state, sampling_keys, inputs)
         actions.block_until_ready()
         result = np.stack([self.policy._output_transform(dict(
             state=np.asarray(inputs['state'][i, 0]), actions=np.asarray(actions[i, 0])))['actions']
