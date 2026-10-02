@@ -17,10 +17,12 @@ Active RoboDojo policies are **G0.5 and the exact released pi0.5 checkpoint**.
 Xiaomi RoboDojo is deferred. Intern was subsequently reopened for feasibility:
 the two-GPU probe now loads and infers at about 820 ms/10-action chunk, with
 native qualification pending (see `docs/INTERN_TWO_GPU_PROBE_20261002.md`).
-The first fresh Intern tower0 motor-only episode is now running as
-`runs/intern-two-gpu-native-001`, with zero paid calls and the original
-1050-action limit. Its running code is commit `a3d4421`; do not restart it or
-inspect evaluator truth to guide control. The separate
+The first fresh Intern tower0 motor-only episode completed successfully as
+`runs/intern-two-gpu-native-001`: score 1.0, 727 actions, 73 policy calls,
+489.11 s, zero paid calls. Executed code was commit `a3d4421`; its terminal
+audit verifies all ACKs and native outcome. Both owned GPU workers exited.
+Formal qualification and four remaining fixed-roster cases are pending.
+See `docs/INTERN_NATIVE_PILOT_20261002.md`. The separate
 official Xiaomi Robotics-1 RoboCasa365 track remains active.
 Supervisor: **GPT-6.1 Sol, medium reasoning, Flex-only**. No automatic request
 retry, provider/model fallback, or Standard-tier substitution.
@@ -33,7 +35,7 @@ retry, provider/model fallback, or Standard-tier substitution.
 - Remote checkout: `/root/physical-execution-lab`.
 - Motor qualification/sparse evidence commit: `8ba161d`; this handoff was first
   published in `6196940`, with terminal every-chunk evidence added afterward.
-- Current code fingerprint:
+- Historical motor-screen code fingerprint (not current HEAD):
   `8304dc48a8d6d1ddc46983de0c9aa107a09420e556a8b0362d01b9decdaeb233`.
 - Experiment sequence/checklist:
   `/Users/macbookpro/Developer/random/gpu/PHYSICAL_EXECUTION_LAB_V4_HANDOFF.md`.
@@ -46,7 +48,9 @@ scale errors without changing translation/rotation/takeover gates; the original
 every-chunk abort remains preserved and no corrected episode has been run.
 See `docs/CORRECTION_QUATERNION_FIX_20261002.md`.
 Release verification at `8ba161d` checked 880 files with no missing/changed bytes.
-These checks do not establish robot competence or phase completion.
+These checks do not establish robot competence or phase completion. Source
+changes since the retained motor freezes require a fresh freeze before scored
+comparisons; old records remain historical evidence, not current-source approval.
 
 ## Scientific Contract
 

@@ -6,7 +6,7 @@ two G0.5 attempts stopped before motion. XR1's first sparse attempt completed
 one review and 50 steps, then stopped on Flex capacity at request two.
 Owner scope update: RoboDojo candidates are **G0.5, exact pi0.5, and Intern
 if two-GPU feasibility passes**. Intern feasibility has passed inference;
-its first native episode is in progress. Xiaomi R1 remains outside the active
+its first native episode succeeded. Xiaomi R1 remains outside the active
 RoboDojo screen. Xiaomi's separate RoboCasa365 track is unchanged.
 
 | Stage | Status | Actual evidence / remaining gate |
@@ -60,8 +60,13 @@ Removed from active scope: Intern inference/native qualification (stock BF16
 loader exceeded 24 GB), and Xiaomi RoboDojo native EE versus donor DLS checks.
 Owner subsequently reopened Intern feasibility. Its two-GPU probe now loads and
 completes four action inferences, warm median 820 ms/10 exposed actions;
-native qualification remains pending. Xiaomi RoboDojo remains deferred. See
+The first fresh tower0 episode then succeeded: score 1.0, 727 actions,
+73 policy calls, 489.11 s, zero GPT calls. Its terminal audit passes; formal
+qualification and the remaining fixed roster are pending. Xiaomi RoboDojo remains deferred. See
 [two-GPU Intern probe](INTERN_TWO_GPU_PROBE_20261002.md).
+
+Latest: [Intern native pilot](INTERN_NATIVE_PILOT_20261002.md). Stages A/B remain
+complete for G0.5/pi0.5, but are reopened and incomplete for added Intern.
 
 See [the first pilot report](NATIVE_PILOT_20261002.md) for methods, limitations,
 timing, exact identities and evidence pointers. Large native traces/video are

@@ -12,7 +12,7 @@
     ".gitignore": "18a8bc0b3690974890b205d51fb275c533070e80dfde2c879caa0e7c5e3188d2",
     "AGENTS.md": "0fdb40ada8526df213d67c97fb45952807060cf6099b774d1c446f02dee22b52",
     "HANDOFF.md": "ba24f919528d00ae16d0464c2cafad92d8941fadc1d3700d8cf10d04dd77f2de",
-    "IMPLEMENTATION_STATUS.md": "0932efe49d890b9fa912c0da7267da416e412f484aa285160ec1e77fc2967ada",
+    "IMPLEMENTATION_STATUS.md": "e06ed13b2121c842e3c0119a16ff75115f67ec986d33957b1bc96915978689a5",
     "LICENSE": "db041e48f5338b6ae6a5fee1d2aeaee23a470d019b44c2cb7f2a30ea8ba23bb8",
     "README.md": "da1c7da46707c73ad56572febd1ceca8c36ee03f6d9236725326e324e832130f",
     "TAKEOVER.md": "6d66aa671f9d7188c479be7ce9ed8e415932e5f75eec61eaafd868aef7a1a582",
@@ -768,7 +768,7 @@
     "tests/test_runner.py": "1367ffdeaa9b9c598979e6af98b5c3f9fee3f0bee3256524ad491f3ea14944e9",
     "upstream.lock.json": "553a969210291a8d72a6ae9d0dcd0b49d696e3377125ba400079762a67390a9e",
     "docs/NATIVE_PILOT_20261002.md": "3c481089ade9c7ca93bd0fe1775230966ad8a691d5c805d1751c16edb18acb10",
-    "docs/EXPERIMENT_PROGRESS.md": "b8c50ceb33b69b761902808eccd47cbf1be7b78e238b18ce5d0b7cd7fac20f6b",
+    "docs/EXPERIMENT_PROGRESS.md": "ea6abd15a586783fea7e4ff95c182deae5dc286dfbfb53f302eb1fbb1c08c0cc",
     "scripts/multibench/prepare_g05_bundle.py": "d976e0a3c611ab8ab660e0c735695d30ab68f310e16ce8510a52d5a593a7e332",
     "docs/evidence/g05-native-002/evaluation_outcome.json": "c9c9756f6697ae64e36d0617ba0ed4d1a36d81c2e2853ab8a7c96d57d43f6024",
     "docs/evidence/g05-native-002/fk_validation.json": "d78c3f14caf685676a9fc9e3c82c74377eb5d4e111afe64d0d7142abb1ba6fe4",
@@ -883,7 +883,7 @@
     "docs/evidence/robodojo-motor-qualification/pi05-freeze.json": "c5906d1f4e6c51ca101fc0cc15fc82dae2ea69ab56b7920f9fac41354dc3e441",
     "docs/evidence/robodojo-motor-qualification/pi05.json": "144bebdb5c7c0665daa11b9d2989ef1bd9966808d54d015f6cbfbcbc4f48fc5e",
     "docs/evidence/robodojo-motor-qualification/xr1-freeze.json": "e77f0d4c29791d2d6ea59038ec423540eedee9cd75f10be7163edd7efe1c5eee",
-    "docs/RESEARCH_PROGRESS_HANDOFF_20261002.md": "e479762ccf304b629cec5c9a80c59004cb10ba73e0f1bf50288fa495b821ce9b",
+    "docs/RESEARCH_PROGRESS_HANDOFF_20261002.md": "5d4c8fc3444337cda13127c005c5e1192070ba198b054f6b4336f4a67da1b297",
     "docs/evidence/pi05-every-chunk-sol-flex-dev-001/api-summary.json": "78467ebecadb5247bbe9d8363125ba1e42cfbc9fa16f055b386876ea2aaaf54a",
     "docs/evidence/pi05-every-chunk-sol-flex-dev-001/backup-verification.json": "1ffa223d9a84f110e627f76f45a15321ffbf939f06883ec1c22bbf765145828b",
     "docs/evidence/pi05-every-chunk-sol-flex-dev-001/offline-audit.json": "f1cbac3889e0be0c3e46db86cfcddb40b05606d32396dabb23840782505fd29e",
@@ -897,6 +897,14 @@
     "k1lab/multibench/adapters/intern_placement.py": "4d138428f2b6152ff30a0021182c0bc4062e7c089d035c78247e978707d41dc8",
     "tests/multibench/test_intern_placement.py": "67b8fef070600ec0e254611d0d7bd8e1da6911f4f04bc83a4410699cafd6a7e3",
     "docs/CORRECTION_QUATERNION_FIX_20261002.md": "d93942d12a608b4b857eae8d3c6ac6a85f98acb3bc31051a53e4f6cf86073036",
-    "docs/evidence/pi05-every-chunk-sol-flex-dev-001/quaternion-offline-check.json": "39f0b18c615f5317d9b9024926193208128b043f6b6b7e3ade0e416e6c710678"
+    "docs/evidence/pi05-every-chunk-sol-flex-dev-001/quaternion-offline-check.json": "39f0b18c615f5317d9b9024926193208128b043f6b6b7e3ade0e416e6c710678",
+    "docs/INTERN_NATIVE_PILOT_20261002.md": "ad577f2076908e1df1ce4fc0e07d4d21558bd451976d6458609b8a4960b5f821",
+    "docs/evidence/intern-two-gpu-native-001/artifacts.json": "5f8d5fd120b6da330aaf5aa90c1c0887f0ecdae0ff0ce5b8e30844bc09a1b5bf",
+    "docs/evidence/intern-two-gpu-native-001/backup-verification.json": "79aea23de781259cbd14a2bd3f7f1a7c64e8bea864360b90b379e104fe5d2f1e",
+    "docs/evidence/intern-two-gpu-native-001/native-audit.json": "85da500f59a909aab5aa195d2832586fda87dbbad77231917d6ca0352cd9b407",
+    "docs/evidence/intern-two-gpu-native-001/plan.json": "513b7d011ff507a97ba047150cc62f953d9e258a6ada89483b23b81883659b28",
+    "docs/evidence/intern-two-gpu-native-001/provider.json": "06b0a2d081e847f12aefaef87e8d2d935956ac4b7d4bf77bdca93334615e9faf",
+    "docs/evidence/intern-two-gpu-native-001/result.json": "9b563feb34a207fb7bbef752b6dc47fb6fa8bdde63c26da629cb2ab0720ac162",
+    "docs/evidence/intern-two-gpu-native-001/robodojo_internw0_delta_motor_only.json": "efdd7a98de58f8f9077710ad7916d48d7d7cec18389fe1fa3a54507ef269999b"
   }
 }

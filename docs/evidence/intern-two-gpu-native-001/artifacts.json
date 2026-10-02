@@ -1,0 +1,27 @@
+{
+  "files": {
+    "assets/Alibaba-DAMO-Academy/RynnBrain1.1-2B/.gitattributes": "34448b82c17d60fec9b65b1f093c115ddbaadc04beb1b0140b6bfed2e012a930",
+    "assets/Alibaba-DAMO-Academy/RynnBrain1.1-2B/README.md": "d19e40a4f84dbe1daeb907dab2eb8cb168c954e310ac5639393df265778d4822",
+    "assets/Alibaba-DAMO-Academy/RynnBrain1.1-2B/chat_template.jinja": "273d8e0e683b885071fb17e08d71e5f2a5ddfb5309756181681de4f5a1822d80",
+    "assets/Alibaba-DAMO-Academy/RynnBrain1.1-2B/config.json": "3db6717dea7333fd0a4f543e378c5e68e761c8f2907384c537bd8bbee4d18b81",
+    "assets/Alibaba-DAMO-Academy/RynnBrain1.1-2B/generation_config.json": "943f9e0a394325880a8a7e38c8d2c5bc40e2bb44a9bdc689f50fc26a2212edcc",
+    "assets/Alibaba-DAMO-Academy/RynnBrain1.1-2B/model.safetensors": "2819d84441c27c18c403c1302f60ff1ba2c9cfcdc989657bf6589e8cd11a7e6d",
+    "assets/Alibaba-DAMO-Academy/RynnBrain1.1-2B/processor_config.json": "14932921ca485d458a04dafd8069fbb0a4505622a48208d19ed247115801385b",
+    "assets/Alibaba-DAMO-Academy/RynnBrain1.1-2B/tokenizer.json": "87a7830d63fcf43bf241c3c5242e96e62dd3fdc29224ca26fed8ea333db72de4",
+    "assets/Alibaba-DAMO-Academy/RynnBrain1.1-2B/tokenizer_config.json": "e98f1901ac6f0adff67b1d540bfa0c36ac1a0cf59eb72ed78146ef89aafa1182",
+    "assets/Wan-AI/Wan2.2-TI2V-5B/Wan2.2_VAE.pth": "20eb789667fa5e60e7516bf509512f6cb61f01b0aa0695eadaea930c13892b36",
+    "assets/Wan-AI/Wan2.2-TI2V-5B/google/umt5-xxl/special_tokens_map.json": "7b8a9f5040adb67b5805abdfd42c1f8d0f3d0e711f10726580eb3789cd0ad61d",
+    "assets/Wan-AI/Wan2.2-TI2V-5B/google/umt5-xxl/spiece.model": "e3909a67b780650b35cf529ac782ad2b6b26e6d1f849d3fbb6a872905f452458",
+    "assets/Wan-AI/Wan2.2-TI2V-5B/google/umt5-xxl/tokenizer.json": "6e197b4d3dbd71da14b4eb255f4fa91c9c1f2068b20a2de2472967ca3d22602b",
+    "assets/Wan-AI/Wan2.2-TI2V-5B/google/umt5-xxl/tokenizer_config.json": "ed9a3a8b0faa71a70a32847e0435fe036e6e112d4df4edb7bb48a921e344dc05",
+    "assets/Wan-AI/Wan2.2-TI2V-5B/models_t5_umt5-xxl-enc-bf16.pth": "7cace0da2b446bbbbc57d031ab6cf163a3d59b366da94e5afe36745b746fd81d",
+    "checkpoints/robodojo.pt": "344d4221d628462fb8d1f7263fdfeab74ed4701e7e0af25dde4a693b22968aaa",
+    "config/artifacts.lock.json": "f12d8ab49a11ce0c2a7901a8f593e9ae9130925dc52fa1adc8d42e71f4493471",
+    "config/dataset_stats.json": "520202818f0c921cc281376343c2a4fe9285dd48cda1fced272cd89863dcce3d",
+    "config/eval_model.yaml": "2771fc3c545044d769dfad81effa8257eeda58eb0ec761072270f00a30e9471a"
+  },
+  "root": "/root/physical-execution-lab/external/XPolicyLab/policy/InternW0_delta",
+  "schema": "multibench.artifacts.v1",
+  "scope": "Released config, checkpoint and local base assets; cache excluded",
+  "sha256": "c11fd9a9400aedeaaa9fc178571e529c35e9671cd58e052ffe23a01039c50f78"
+}

@@ -1,0 +1,45 @@
+{
+  "code_sha256": "5227e6e5440de7b4f930419c9d4750dc643cc55246b9c1dded39e4edcf431915",
+  "episode": [
+    "/root/physical-execution-lab/.venv/bin/python",
+    "-u",
+    "/root/physical-execution-lab/scripts/multibench/launch_robodojo_case.py",
+    "--config",
+    "/root/physical-execution-lab/configs/local/intern-two-gpu-bound-001/robodojo_internw0_delta_motor_only.json",
+    "--manifest",
+    "/root/physical-execution-lab/configs/local/g05-dev-screen-5.json",
+    "--case-id",
+    "build_tower__standard__g0__l0",
+    "--source-panel",
+    "/root/physical-execution-lab/external/GPT-as-Policy/hybrid_rollout/robodojo/eval_panels/robodojo_panel60_v1.json",
+    "--sim-python",
+    "/root/miniconda3/envs/RoboDojo/bin/python3.11",
+    "--robodojo-root",
+    "/root/physical-execution-lab/external/RoboDojo",
+    "--sim-port",
+    "19117",
+    "--output",
+    "/root/physical-execution-lab/runs/intern-two-gpu-native-001/episode",
+    "--development",
+    "--allow-policy",
+    "--execute"
+  ],
+  "paid_calls": 0,
+  "placement": {
+    "disable_causal_conv1d_fast_path": true,
+    "encoder_device": "cuda:0",
+    "main_device": "cuda:1"
+  },
+  "selection_rule": "same first lexically sorted fixed development case",
+  "server": [
+    "/root/physical-execution-lab/.venv-intern/bin/python",
+    "-u",
+    "/root/physical-execution-lab/run_bench.py",
+    "serve-policy",
+    "--config",
+    "/root/physical-execution-lab/configs/local/intern-two-gpu-bound-001/provider.json",
+    "--port",
+    "19605",
+    "--allow-policy"
+  ]
+}

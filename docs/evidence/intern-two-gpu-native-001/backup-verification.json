@@ -1,0 +1,9 @@
+{
+  "run": "intern-two-gpu-native-001",
+  "method": "rsync terminal run then shasum -a 256 --check remote terminal per-file manifest",
+  "verified_payloads": 1848,
+  "missing_or_changed_payloads": 0,
+  "local_directory": "runs/native-evidence/intern-two-gpu-native-001",
+  "local_checksum_manifest": "runs/native-evidence/intern-two-gpu-native-001.sha256",
+  "scope": "terminal run payload integrity; not formal native qualification"
+}

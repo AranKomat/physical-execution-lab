@@ -20,7 +20,9 @@ its isolated OpenPI/JAX runtime and native sorting pilot now pass (score 1.0,
 GPT calls, matched saved-input warm p50 454 ms versus G0.5's 801 ms. See
 `docs/PI05_DEVELOPMENT_SCREEN_20261002.md`.
 Intern was reopened by the owner: explicit two-GPU BF16 placement now loads and
-infers at about 820 ms per 10-action chunk; the first native episode is running.
+infers at about 820 ms per 10-action chunk; the first native tower0 episode
+succeeded at 727 actions/73 calls in 489.11 s. Formal qualification and the
+remaining fixed development roster are pending; see `docs/INTERN_NATIVE_PILOT_20261002.md`.
 Xiaomi RoboDojo remains outside active scope; XR1 RoboCasa365 remains active.
 
 Exact motor-only G0.5/pi0.5 native qualifications are now evidence-reviewed;
