@@ -1,0 +1,705 @@
+{
+  "cohort": "semantic-vector-recovery-dev001",
+  "phase": "D",
+  "scope": "five development task-layout cases; single execution each; not benchmark SR",
+  "all_cases_accounted_for": true,
+  "audit_passed": true,
+  "successes": 3,
+  "applied_recoveries": 12,
+  "cases_with_native_success_after_applied_recovery": 2,
+  "causal_benefit_established": false,
+  "total_wall_s": 738.3539731170022,
+  "paid_calls": 40,
+  "supervisor_status": "error_stop_no_retry",
+  "supervisor_reported_paid_calls": 0,
+  "all_planner_contracts_valid": false,
+  "cases": [
+    {
+      "case": "classify_objects__layout0",
+      "status": "native_completed",
+      "success": true,
+      "native_score": 1.0,
+      "actions": 730,
+      "semantic_calls": 7,
+      "recovery_decisions": [
+        {
+          "step": 315,
+          "reasons": [
+            "periodic_semantic_check_at_native_boundary"
+          ],
+          "decision": {
+            "episode": "55bcea444fec4042ba0a4a9f97afcaca",
+            "based_on_step": 315,
+            "based_on_stamp": "c8206ef6e13b1ac4242266ff1f639cc4f3327c48519c6229133421655aa6fbf4",
+            "expected_epoch": 2,
+            "operation": "recover",
+            "subtask": "Put the remaining doll beneath the left gripper into the white basket with the left arm.",
+            "assessment": "failed",
+            "evidence": "At step 315, two dolls remain visible in the white basket. The third doll is outside the basket beneath the left gripper, and the left-wrist view shows it between the fingers. The right-wrist view shows no doll between its fingers. The right-arm placement has not been completed; the doll is now accessible to the left arm instead.",
+            "completed_claims": [
+              {
+                "text": "The previously targeted doll was placed in the white basket; two dolls are visibly inside it.",
+                "evidence_steps": [
+                  210,
+                  315
+                ]
+              }
+            ],
+            "uncertain_or_invalidated": [
+              "No category-to-basket assignment is visibly marked; the white basket is selected for dolls.",
+              "A secure grasp of the remaining doll by the left gripper is not established by these images.",
+              "The earlier proximity of the remaining doll to the right gripper no longer describes its current position."
+            ]
+          },
+          "effect": {
+            "changed": true,
+            "stop": false,
+            "age_steps": 0,
+            "shadow_only": false
+          },
+          "native_evaluator_information_supplied": false
+        }
+      ],
+      "applied_recoveries": 1,
+      "native_success_after_applied_recovery": true,
+      "causal_recovery_success_established": false,
+      "prior_same_layout_conditions": {
+        "motor_only": {
+          "status": "native_completed",
+          "native_terminal": true,
+          "success": true,
+          "native_score": 1.0,
+          "actions": 867,
+          "policy_calls": 58,
+          "semantic_calls": 0,
+          "semantic_changes": 0,
+          "semantic_recoveries": 0
+        },
+        "task_plus_subtask": {
+          "status": "native_completed",
+          "native_terminal": true,
+          "success": true,
+          "native_score": 1.0,
+          "actions": 721,
+          "policy_calls": 49,
+          "semantic_calls": 7,
+          "semantic_changes": 5,
+          "semantic_recoveries": 0
+        },
+        "subtask_only": {
+          "status": "native_completed",
+          "native_terminal": true,
+          "success": true,
+          "native_score": 1.0,
+          "actions": 728,
+          "policy_calls": 49,
+          "semantic_calls": 7,
+          "semantic_changes": 5,
+          "semantic_recoveries": 0
+        }
+      }
+    },
+    {
+      "case": "classify_objects__layout1",
+      "status": "native_completed",
+      "success": true,
+      "native_score": 1.0,
+      "actions": 767,
+      "semantic_calls": 8,
+      "recovery_decisions": [],
+      "applied_recoveries": 0,
+      "native_success_after_applied_recovery": false,
+      "causal_recovery_success_established": false,
+      "prior_same_layout_conditions": {
+        "motor_only": {
+          "status": "native_completed",
+          "native_terminal": true,
+          "success": true,
+          "native_score": 1.0,
+          "actions": 758,
+          "policy_calls": 51,
+          "semantic_calls": 0,
+          "semantic_changes": 0,
+          "semantic_recoveries": 0
+        },
+        "task_plus_subtask": {
+          "status": "planner_stop_incomplete",
+          "native_terminal": false,
+          "success": false,
+          "native_score": null,
+          "actions": 735,
+          "policy_calls": 49,
+          "semantic_calls": 8,
+          "semantic_changes": 2,
+          "semantic_recoveries": 0
+        },
+        "subtask_only": {
+          "status": "planner_stop_incomplete",
+          "native_terminal": false,
+          "success": false,
+          "native_score": null,
+          "actions": 735,
+          "policy_calls": 49,
+          "semantic_calls": 8,
+          "semantic_changes": 3,
+          "semantic_recoveries": 0
+        }
+      }
+    },
+    {
+      "case": "classify_objects__layout2",
+      "status": "native_completed",
+      "success": false,
+      "native_score": 0.0,
+      "actions": 1100,
+      "semantic_calls": 11,
+      "recovery_decisions": [
+        {
+          "step": 210,
+          "reasons": [
+            "periodic_semantic_check_at_native_boundary"
+          ],
+          "decision": {
+            "episode": "06846a8be1e84d37b5c99a641eabeda7",
+            "based_on_step": 210,
+            "based_on_stamp": "cb2f49598cfc6dd650cb3925f6f9feb2b15b57c6e4032cb4b44804da6cc0f75f",
+            "expected_epoch": 1,
+            "operation": "recover",
+            "subtask": "Place the green wristwatch held by the left gripper into the blue basket.",
+            "assessment": "failed",
+            "evidence": "At step 210, the left wrist view shows a green wristwatch between the gripper fingers rather than the requested light-blue car. The light-blue car is visible inside the white basket. Replace the mismatched grasp goal with placing the held watch in the blue basket, keeping watches separate from cars.",
+            "completed_claims": [
+              {
+                "text": "The light-blue toy car is inside the white basket.",
+                "evidence_steps": [
+                  210
+                ]
+              }
+            ],
+            "uncertain_or_invalidated": [
+              "The requested car grasp is not currently satisfied: the left gripper visibly contains the green wristwatch instead."
+            ]
+          },
+          "effect": {
+            "changed": true,
+            "stop": false,
+            "age_steps": 0,
+            "shadow_only": false
+          },
+          "native_evaluator_information_supplied": false
+        },
+        {
+          "step": 315,
+          "reasons": [
+            "periodic_semantic_check_at_native_boundary"
+          ],
+          "decision": {
+            "episode": "06846a8be1e84d37b5c99a641eabeda7",
+            "based_on_step": 315,
+            "based_on_stamp": "fd193003f068582f58e6192812a32736b49b251280754b03259caa9b58492cfc",
+            "expected_epoch": 2,
+            "operation": "recover",
+            "subtask": "Move the green wristwatch from the white basket into the blue basket with the left arm.",
+            "assessment": "failed",
+            "evidence": "At step 315, the overhead view shows the green wristwatch inside the white basket beside the light-blue toy car; the blue basket is empty. The left wrist view shows empty gripper fingers. The previous goal's held-watch premise is no longer supported, and the watch was not placed in the blue basket.",
+            "completed_claims": [
+              {
+                "text": "The light-blue toy car is inside the white basket.",
+                "evidence_steps": [
+                  210,
+                  315
+                ]
+              }
+            ],
+            "uncertain_or_invalidated": [
+              "The green wristwatch is no longer held by the left gripper; it is visible in the white basket at step 315.",
+              "Placement of the green wristwatch into the blue basket has not been achieved."
+            ]
+          },
+          "effect": {
+            "changed": true,
+            "stop": false,
+            "age_steps": 0,
+            "shadow_only": false
+          },
+          "native_evaluator_information_supplied": false
+        },
+        {
+          "step": 420,
+          "reasons": [
+            "periodic_semantic_check_at_native_boundary"
+          ],
+          "decision": {
+            "episode": "06846a8be1e84d37b5c99a641eabeda7",
+            "based_on_step": 420,
+            "based_on_stamp": "00b2e119b66b4591b89d12166719e8b172e3eee5e164a94b7974ce0ea27e894d",
+            "expected_epoch": 3,
+            "operation": "recover",
+            "subtask": "Put the silver wristwatch at the left gripper into the blue basket with the left arm.",
+            "assessment": "failed",
+            "evidence": "At step 420, the left wrist view shows a silver wristwatch between the fingers, rather than the targeted green wristwatch. Secure lifting is not established. The blue basket remains visibly empty, and the white basket is obscured by the arm. Replace the mismatched green-watch transfer with sorting the silver watch into the watch basket.",
+            "completed_claims": [
+              {
+                "text": "The light-blue toy car was inside the white basket at the last unobscured review.",
+                "evidence_steps": [
+                  210,
+                  315
+                ]
+              }
+            ],
+            "uncertain_or_invalidated": [
+              "The green wristwatch's current location is obscured at step 420; its transfer to the blue basket is not verified.",
+              "The silver wristwatch is at the left gripper, but a secure grasp or lift is not verified at step 420."
+            ]
+          },
+          "effect": {
+            "changed": true,
+            "stop": false,
+            "age_steps": 0,
+            "shadow_only": false
+          },
+          "native_evaluator_information_supplied": false
+        },
+        {
+          "step": 525,
+          "reasons": [
+            "periodic_semantic_check_at_native_boundary"
+          ],
+          "decision": {
+            "episode": "06846a8be1e84d37b5c99a641eabeda7",
+            "based_on_step": 525,
+            "based_on_stamp": "f6879e24e78b2f1ca2e7e914d370be7bbf06464680dfb4a4dd5a1d319f63aba1",
+            "expected_epoch": 4,
+            "operation": "recover",
+            "subtask": "Move the silver wristwatch from the white basket into the blue basket with the left arm.",
+            "assessment": "failed",
+            "evidence": "At step 525, the left wrist view clearly shows the silver wristwatch and green wristwatch inside the white basket beside the light-blue toy car. The left gripper is empty, and the blue basket is visibly empty in the overhead view. The silver watch was placed in the wrong basket; replace the unsupported at-gripper premise with a transfer from the white basket.",
+            "completed_claims": [
+              {
+                "text": "The light-blue toy car is inside the white basket.",
+                "evidence_steps": [
+                  210,
+                  315,
+                  525
+                ]
+              }
+            ],
+            "uncertain_or_invalidated": [
+              "The silver wristwatch is not held by the left gripper at step 525; it is inside the white basket.",
+              "The green wristwatch is visible inside the white basket at step 525, not sorted into the blue basket.",
+              "Placement of the silver wristwatch into the blue basket has not been achieved."
+            ]
+          },
+          "effect": {
+            "changed": true,
+            "stop": false,
+            "age_steps": 0,
+            "shadow_only": false
+          },
+          "native_evaluator_information_supplied": false
+        },
+        {
+          "step": 735,
+          "reasons": [
+            "periodic_semantic_check_at_native_boundary"
+          ],
+          "decision": {
+            "episode": "06846a8be1e84d37b5c99a641eabeda7",
+            "based_on_step": 735,
+            "based_on_stamp": "cb2a5ea82bd10a7408e6eb34ae81144e32ec44988afab91bac9f250a6a996267",
+            "expected_epoch": 5,
+            "operation": "recover",
+            "subtask": "Put the red toy car at the left gripper into the white basket with the left arm.",
+            "assessment": "failed",
+            "evidence": "At step 735, the left wrist view shows a red toy car between the fingers over the blue basket, with a yellow toy car beneath it. The overhead view shows wristwatches still in the white basket alongside the light-blue toy car. The silver-watch transfer is not achieved; the object at the gripper is a car, not the targeted watch. Redirect this car to the white basket. Secure holding of the red car is not independently established.",
+            "completed_claims": [
+              {
+                "text": "The light-blue toy car is inside the white basket.",
+                "evidence_steps": [
+                  210,
+                  315,
+                  525,
+                  630,
+                  735
+                ]
+              }
+            ],
+            "uncertain_or_invalidated": [
+              "The silver wristwatch's transfer into the blue basket is not verified; wristwatches remain visible in the white basket at step 735.",
+              "The green wristwatch has not been verified in the blue basket.",
+              "The red toy car is at the left gripper at step 735, but a secure grasp is not established.",
+              "A yellow toy car is visible in the blue basket at step 735; category sorting remains incomplete."
+            ]
+          },
+          "effect": {
+            "changed": true,
+            "stop": false,
+            "age_steps": 0,
+            "shadow_only": false
+          },
+          "native_evaluator_information_supplied": false
+        },
+        {
+          "step": 840,
+          "reasons": [
+            "periodic_semantic_check_at_native_boundary"
+          ],
+          "decision": {
+            "episode": "06846a8be1e84d37b5c99a641eabeda7",
+            "based_on_step": 840,
+            "based_on_stamp": "80d54b36b79bafbbb519a1206cd4acad23dd588b4d47d23e73eac46737c7d528",
+            "expected_epoch": 6,
+            "operation": "recover",
+            "subtask": "Move the red toy car from the blue basket into the white basket with the left arm.",
+            "assessment": "failed",
+            "evidence": "At step 840, the overhead and left wrist views show the red toy car resting in the blue basket rather than at the left gripper. The left gripper is empty, and the white basket contains the light-blue car and visible wristwatches. The red-car placement goal has not been achieved; replace its unsupported at-gripper premise with a transfer from the blue basket.",
+            "completed_claims": [
+              {
+                "text": "The light-blue toy car is inside the white basket.",
+                "evidence_steps": [
+                  210,
+                  315,
+                  525,
+                  630,
+                  735,
+                  840
+                ]
+              }
+            ],
+            "uncertain_or_invalidated": [
+              "The red toy car is not held by the left gripper at step 840; it rests in the blue basket.",
+              "The silver and green wristwatches have not been verified in the blue basket; wristwatches remain visible in the white basket at step 840.",
+              "The yellow toy car remains visible in the blue basket at step 840; category sorting is incomplete.",
+              "The right wrist view shows a black pen-like object between the fingers over the red basket, but release and placement are not verified."
+            ]
+          },
+          "effect": {
+            "changed": true,
+            "stop": false,
+            "age_steps": 0,
+            "shadow_only": false
+          },
+          "native_evaluator_information_supplied": false
+        }
+      ],
+      "applied_recoveries": 6,
+      "native_success_after_applied_recovery": false,
+      "causal_recovery_success_established": false,
+      "prior_same_layout_conditions": {
+        "motor_only": {
+          "status": "native_completed",
+          "native_terminal": true,
+          "success": false,
+          "native_score": 0.0,
+          "actions": 1100,
+          "policy_calls": 74,
+          "semantic_calls": 0,
+          "semantic_changes": 0,
+          "semantic_recoveries": 0
+        },
+        "task_plus_subtask": {
+          "status": "native_completed",
+          "native_terminal": true,
+          "success": false,
+          "native_score": 0.15,
+          "actions": 1100,
+          "policy_calls": 74,
+          "semantic_calls": 11,
+          "semantic_changes": 2,
+          "semantic_recoveries": 0
+        },
+        "subtask_only": {
+          "status": "native_completed",
+          "native_terminal": true,
+          "success": false,
+          "native_score": 0.15,
+          "actions": 1100,
+          "policy_calls": 74,
+          "semantic_calls": 11,
+          "semantic_changes": 3,
+          "semantic_recoveries": 0
+        }
+      }
+    },
+    {
+      "case": "build_tower__layout0",
+      "status": "native_completed",
+      "success": true,
+      "native_score": 1.0,
+      "actions": 731,
+      "semantic_calls": 7,
+      "recovery_decisions": [
+        {
+          "step": 210,
+          "reasons": [
+            "periodic_semantic_check_at_native_boundary"
+          ],
+          "decision": {
+            "episode": "578e5478149b4999954e2ce668f4b128",
+            "based_on_step": 210,
+            "based_on_stamp": "37bb8a952cfb5112eb7f5034cb31a34e54ac6c4615d49b5e7e3e8b992d8d9c25",
+            "expected_epoch": 1,
+            "operation": "recover",
+            "subtask": "Grasp the long wooden board with both grippers.",
+            "assessment": "failed",
+            "evidence": "At step 105, the target white block was still on the table beside the left gripper. At step 210, both grippers instead flank the ends of the long wooden board, and both wrist views center on the board rather than a held white block. The requested block grasp is not verified; a secure board grasp is also not yet established.",
+            "completed_claims": [],
+            "uncertain_or_invalidated": [
+              "The target white block is partly obscured at step 210; its exact position is uncertain.",
+              "Gripper proximity to the long board does not establish that it is securely held."
+            ]
+          },
+          "effect": {
+            "changed": true,
+            "stop": false,
+            "age_steps": 0,
+            "shadow_only": false
+          },
+          "native_evaluator_information_supplied": false
+        },
+        {
+          "step": 315,
+          "reasons": [
+            "periodic_semantic_check_at_native_boundary"
+          ],
+          "decision": {
+            "episode": "578e5478149b4999954e2ce668f4b128",
+            "based_on_step": 315,
+            "based_on_stamp": "6e22c324c585ecb687b5b336e86c5eeb04a99e1e89c9d97e7ee7c1f8f6403311",
+            "expected_epoch": 2,
+            "operation": "recover",
+            "subtask": "Grasp the loose white wooden block to the right of the long wooden board with the right gripper.",
+            "assessment": "failed",
+            "evidence": "At step 315, the long board is separate from both grippers and appears to span two white blocks. The two-gripper board grasp is not established. A loose white block is clearly visible on the tabletop to the board's right in the overhead and right-wrist views; the right fingers are open and do not hold it.",
+            "completed_claims": [
+              {
+                "text": "The long wooden board visibly spans two white blocks beneath its ends.",
+                "evidence_steps": [
+                  315
+                ]
+              }
+            ],
+            "uncertain_or_invalidated": [
+              "A secure two-gripper grasp of the long board is not supported at step 315.",
+              "The left-wrist view does not establish a held white block."
+            ]
+          },
+          "effect": {
+            "changed": true,
+            "stop": false,
+            "age_steps": 0,
+            "shadow_only": false
+          },
+          "native_evaluator_information_supplied": false
+        },
+        {
+          "step": 630,
+          "reasons": [
+            "periodic_semantic_check_at_native_boundary"
+          ],
+          "decision": {
+            "episode": "578e5478149b4999954e2ce668f4b128",
+            "based_on_step": 630,
+            "based_on_stamp": "e55894c3ef1f18caa6c109c64e9f26dffc2a10b66891126b1cd869247bba8435",
+            "expected_epoch": 5,
+            "operation": "recover",
+            "subtask": "Grasp the green block on the tabletop to the left of the tower with the left gripper.",
+            "assessment": "failed",
+            "evidence": "At step 630, the previously loose small wooden board is visible resting across the center of the tower's upper board, rather than on the tabletop to its right. The right-wrist view shows separated fingers beside the boards, not a verified held board. The current grasp goal is therefore no longer applicable at its specified location. The green block remains clearly visible on the tabletop beside the open left gripper.",
+            "completed_claims": [
+              {
+                "text": "The long wooden board visibly spans two white blocks beneath its ends.",
+                "evidence_steps": [
+                  315
+                ]
+              },
+              {
+                "text": "The right white block has been released onto the right end of the lower long board, beneath an upper wooden board.",
+                "evidence_steps": [
+                  420,
+                  525
+                ]
+              },
+              {
+                "text": "The previously loose small wooden board is now visible resting on the tower's upper board.",
+                "evidence_steps": [
+                  525,
+                  630
+                ]
+              }
+            ],
+            "uncertain_or_invalidated": [
+              "A secure right-gripper grasp of the small board is not established at step 630.",
+              "The small board is no longer at its step-525 tabletop location.",
+              "Long-term tower stability remains unverified."
+            ]
+          },
+          "effect": {
+            "changed": true,
+            "stop": false,
+            "age_steps": 0,
+            "shadow_only": false
+          },
+          "native_evaluator_information_supplied": false
+        }
+      ],
+      "applied_recoveries": 3,
+      "native_success_after_applied_recovery": true,
+      "causal_recovery_success_established": false,
+      "prior_same_layout_conditions": {
+        "motor_only": {
+          "status": "native_completed",
+          "native_terminal": true,
+          "success": true,
+          "native_score": 1.0,
+          "actions": 733,
+          "policy_calls": 49,
+          "semantic_calls": 0,
+          "semantic_changes": 0,
+          "semantic_recoveries": 0
+        },
+        "task_plus_subtask": {
+          "status": "native_completed",
+          "native_terminal": true,
+          "success": false,
+          "native_score": 0.0,
+          "actions": 1050,
+          "policy_calls": 70,
+          "semantic_calls": 10,
+          "semantic_changes": 1,
+          "semantic_recoveries": 0
+        },
+        "subtask_only": {
+          "status": "planner_stop_incomplete",
+          "native_terminal": false,
+          "success": false,
+          "native_score": null,
+          "actions": 630,
+          "policy_calls": 42,
+          "semantic_calls": 7,
+          "semantic_changes": 2,
+          "semantic_recoveries": 0
+        }
+      }
+    },
+    {
+      "case": "build_tower__layout1",
+      "status": "infrastructure_or_contract_error",
+      "success": false,
+      "native_score": null,
+      "actions": 630,
+      "semantic_calls": 7,
+      "recovery_decisions": [
+        {
+          "step": 420,
+          "reasons": [
+            "periodic_semantic_check_at_native_boundary"
+          ],
+          "decision": {
+            "episode": "9474d91c1ac24b4ca697c4fc6a64dad5",
+            "based_on_step": 420,
+            "based_on_stamp": "3baa25e0f8091bc04316f3342ec1fdbbe4be5210c8a93cd6cf7c124713ae79fc",
+            "expected_epoch": 2,
+            "operation": "recover",
+            "subtask": "Place the white wooden block held by the right arm upright on the wide wooden board near the front center of the table.",
+            "assessment": "failed",
+            "evidence": "At step 420, the wide front-center board is still empty. Two white blocks appear upright on the longer rear board, and the left gripper is empty. The right wrist image shows a white block enclosed between its fingers, with the high view also showing a block at the right gripper. The requested left-arm placement on the front board is not achieved; use the currently held block for that placement.",
+            "completed_claims": [
+              {
+                "text": "The left arm grasped and lifted a white wooden block at step 315.",
+                "evidence_steps": [
+                  315
+                ]
+              }
+            ],
+            "uncertain_or_invalidated": [
+              "The left arm no longer holds the white block at step 420.",
+              "Placement of the left-held block on the wide front-center board is contradicted by the empty board at step 420."
+            ]
+          },
+          "effect": {
+            "changed": true,
+            "stop": false,
+            "age_steps": 0,
+            "shadow_only": false
+          },
+          "native_evaluator_information_supplied": false
+        },
+        {
+          "step": 525,
+          "reasons": [
+            "periodic_semantic_check_at_native_boundary"
+          ],
+          "decision": {
+            "episode": "9474d91c1ac24b4ca697c4fc6a64dad5",
+            "based_on_step": 525,
+            "based_on_stamp": "66a171a9a1756bf745dcd70d42aa812c8680748d9078aa08abca922dec43181d",
+            "expected_epoch": 3,
+            "operation": "recover",
+            "subtask": "Place the wide wooden board flat across the white blocks on the longer wooden board to form a raised platform.",
+            "assessment": "failed",
+            "evidence": "At step 525, neither wrist view shows the previously held white block between the fingers; both show a wide wooden board instead. The high view shows that board over the longer board, with white block portions visible beneath its ends in the wrist views. The requested upright-block placement on the front-center board is not verified, and that board has moved from its step-420 location. A stable raised platform is not yet confirmed.",
+            "completed_claims": [
+              {
+                "text": "The left arm grasped and lifted a white wooden block at step 315.",
+                "evidence_steps": [
+                  315
+                ]
+              }
+            ],
+            "uncertain_or_invalidated": [
+              "The right arm's step-420 hold of a white block is no longer supported at step 525.",
+              "Placement of the right-held white block upright on the wide front-center board is unverified.",
+              "The wide board appears over the white blocks, but its stable support and release are uncertain at step 525."
+            ]
+          },
+          "effect": {
+            "changed": true,
+            "stop": false,
+            "age_steps": 0,
+            "shadow_only": false
+          },
+          "native_evaluator_information_supplied": false
+        }
+      ],
+      "applied_recoveries": 2,
+      "native_success_after_applied_recovery": false,
+      "causal_recovery_success_established": false,
+      "prior_same_layout_conditions": {
+        "motor_only": {
+          "status": "native_completed",
+          "native_terminal": true,
+          "success": false,
+          "native_score": 0.1,
+          "actions": 1050,
+          "policy_calls": 70,
+          "semantic_calls": 0,
+          "semantic_changes": 0,
+          "semantic_recoveries": 0
+        },
+        "task_plus_subtask": {
+          "status": "native_completed",
+          "native_terminal": true,
+          "success": false,
+          "native_score": 0.0,
+          "actions": 1050,
+          "policy_calls": 70,
+          "semantic_calls": 10,
+          "semantic_changes": 1,
+          "semantic_recoveries": 0
+        },
+        "subtask_only": {
+          "status": "native_completed",
+          "native_terminal": true,
+          "success": false,
+          "native_score": 0.1,
+          "actions": 1050,
+          "policy_calls": 70,
+          "semantic_calls": 10,
+          "semantic_changes": 5,
+          "semantic_recoveries": 0
+        }
+      }
+    }
+  ]
+}

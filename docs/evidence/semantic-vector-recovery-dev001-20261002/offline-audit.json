@@ -1,0 +1,166 @@
+{
+  "status": "concurrent_semantic_families_audited",
+  "families": {
+    "classify_objects": {
+      "status": "native_semantic_planner_vector_audit_passed",
+      "actual_controls": 2597,
+      "episodes": {
+        "0": {
+          "journal": {
+            "events": 837,
+            "head_sha256": "09a70458663b600da44d738aa611d16c30963cbe4eb276818327bea239587b9a"
+          },
+          "actual_control_acks": 730,
+          "policy_proposals": 49,
+          "semantic_epochs_seen_by_motor": [
+            1,
+            2,
+            3,
+            4,
+            5
+          ],
+          "distinct_effective_prompts": 5,
+          "prefix_cadence_verified": true,
+          "complete_native_result": true,
+          "evidence_kind": "native_unqualified",
+          "robot_competence_claim": false,
+          "source_H50_predictions_and_effective_request_prompts_equal": true,
+          "planner_episode_bindings_verified": 7,
+          "rejected_planner_contracts": [],
+          "status": "native_completed",
+          "recovery_decisions": 1,
+          "applied_recoveries": 1
+        },
+        "1": {
+          "journal": {
+            "events": 881,
+            "head_sha256": "054b0e9c191983818403b1e489d3ff9c3341eee64e4f1ad1078b30bf6d8bc2e3"
+          },
+          "actual_control_acks": 767,
+          "policy_proposals": 52,
+          "semantic_epochs_seen_by_motor": [
+            1,
+            2,
+            3
+          ],
+          "distinct_effective_prompts": 3,
+          "prefix_cadence_verified": true,
+          "complete_native_result": true,
+          "evidence_kind": "native_unqualified",
+          "robot_competence_claim": false,
+          "source_H50_predictions_and_effective_request_prompts_equal": true,
+          "planner_episode_bindings_verified": 8,
+          "rejected_planner_contracts": [],
+          "status": "native_completed",
+          "recovery_decisions": 0,
+          "applied_recoveries": 0
+        },
+        "2": {
+          "journal": {
+            "events": 1261,
+            "head_sha256": "182610fb293c2950ba1439c9dd4753a2c614574803c72318054e7960a87b5b64"
+          },
+          "actual_control_acks": 1100,
+          "policy_proposals": 74,
+          "semantic_epochs_seen_by_motor": [
+            1,
+            2,
+            3,
+            4,
+            5,
+            6,
+            7
+          ],
+          "distinct_effective_prompts": 7,
+          "prefix_cadence_verified": true,
+          "complete_native_result": true,
+          "evidence_kind": "native_unqualified",
+          "robot_competence_claim": false,
+          "source_H50_predictions_and_effective_request_prompts_equal": true,
+          "planner_episode_bindings_verified": 11,
+          "rejected_planner_contracts": [],
+          "status": "native_completed",
+          "recovery_decisions": 6,
+          "applied_recoveries": 6
+        }
+      },
+      "paid_calls": 26,
+      "all_planner_contracts_valid": true,
+      "scope": "actual execution and rejection accounting; rejected planner contracts are not valid decisions"
+    },
+    "build_tower": {
+      "status": "native_semantic_planner_vector_audit_passed",
+      "actual_controls": 1361,
+      "episodes": {
+        "0": {
+          "journal": {
+            "events": 838,
+            "head_sha256": "1d28ec3fb21ac1312fcfaa5acb1ff8469ef36bdaf2b8d5ef1fff2bfed50bf64e"
+          },
+          "actual_control_acks": 731,
+          "policy_proposals": 49,
+          "semantic_epochs_seen_by_motor": [
+            1,
+            2,
+            3,
+            4,
+            5,
+            6
+          ],
+          "distinct_effective_prompts": 6,
+          "prefix_cadence_verified": true,
+          "complete_native_result": true,
+          "evidence_kind": "native_unqualified",
+          "robot_competence_claim": false,
+          "source_H50_predictions_and_effective_request_prompts_equal": true,
+          "planner_episode_bindings_verified": 7,
+          "rejected_planner_contracts": [],
+          "status": "native_completed",
+          "recovery_decisions": 3,
+          "applied_recoveries": 3
+        },
+        "1": {
+          "journal": {
+            "events": 723,
+            "head_sha256": "005d0d4bedc6b14ee78870cf2d2873a637b039c2704c5fd4f0f8b7a1814ad2e7"
+          },
+          "actual_control_acks": 630,
+          "policy_proposals": 42,
+          "semantic_epochs_seen_by_motor": [
+            1,
+            2,
+            3,
+            4
+          ],
+          "distinct_effective_prompts": 4,
+          "prefix_cadence_verified": true,
+          "complete_native_result": false,
+          "evidence_kind": "native_unqualified",
+          "robot_competence_claim": false,
+          "source_H50_predictions_and_effective_request_prompts_equal": true,
+          "planner_episode_bindings_verified": 6,
+          "rejected_planner_contracts": [
+            {
+              "step": 630,
+              "error": "decision requires observation SHA256",
+              "applied": false
+            }
+          ],
+          "status": "infrastructure_or_contract_error",
+          "recovery_decisions": 2,
+          "applied_recoveries": 2
+        }
+      },
+      "paid_calls": 14,
+      "all_planner_contracts_valid": false,
+      "scope": "actual execution and rejection accounting; rejected planner contracts are not valid decisions"
+    }
+  },
+  "actual_controls": 3958,
+  "paid_calls": 40,
+  "supervisor_reported_paid_calls": 0,
+  "supervisor_status": "error_stop_no_retry",
+  "source_rng_and_membership_counts_verified": true,
+  "all_planner_contracts_valid": false,
+  "scope": "execution/rejection accounting with retained supervisor error; not all-valid planner qualification"
+}

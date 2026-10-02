@@ -1031,7 +1031,7 @@
     "docs/evidence/semantic-pi05-hierarchy-001/task_plus_subtask/result.json": "8a7e7f9cf62099e7585bc0b5c42c1c5e1952cdb7d059fe24cb9277702b82bbbe",
     "docs/evidence/semantic-pi05-hierarchy-001/task_plus_subtask/semantic-decisions.json": "205a4088ac95da694957d08a6a1b81b4c69193bf25c20b423e7430a319efa818",
     "docs/evidence/semantic-pi05-hierarchy-001/task_plus_subtask/source-identity.json": "f5d791db6665ccc59a510b4a75db73a35f4d72da9623cc611336b6c5cd0a3986",
-    "docs/semantic/MATCHED_HIERARCHY_PROGRESS_20261002.md": "9d0968b48a00d215f23af92bcc5e3ce8207979b459335f080548aab6cd6e5a86",
+    "docs/semantic/MATCHED_HIERARCHY_PROGRESS_20261002.md": "5dcae37f45fda46e06a6f62a5481275d9bed9da542e05bea69c1f8300cc05a38",
     "docs/evidence/semantic-pi05-hierarchy-001/task_plus_subtask/sort-l2/api-summary.json": "1ed5662dbd32e2bd4ace231d7b559e90c3c61a8e1eb10dac34b03f7aa291a33d",
     "docs/evidence/semantic-pi05-hierarchy-001/task_plus_subtask/sort-l2/initial-observation-fingerprint.json": "e017a3df0bea46e6b9c0d3efd451acd4ba5446062bfa45367a85d5d2276832c8",
     "docs/evidence/semantic-pi05-hierarchy-001/task_plus_subtask/sort-l2/offline-audit.json": "7681ffe88b171ac9093111f0695308f6c85835b11d905cd70d805b34fa951924",
@@ -1204,6 +1204,20 @@
     "docs/evidence/vector-intern-colocation-20261002/operator_audit_vector_intern001.py": "c52928c3a90b929167d5f808324152e9779eddd976e0878e568a408abeef31cd",
     "docs/evidence/vector-intern-colocation-20261002/operator_vector_intern_rollout001.py": "153e023583afe6ed708d1b148beac4482f681d941521d1eef84a620085f0c888",
     "docs/evidence/vector-intern-colocation-20261002/operator_vector_intern_worker001.py": "a1c85256b13219b122d64aea506190e4faa0916b7572935c657f90eaa057496c",
-    "docs/evidence/vector-intern-colocation-20261002/report.json": "13796248f2e2e05cbbd2cf644aeffe64941674c066cfb973f2766b82c59efdfb"
+    "docs/evidence/vector-intern-colocation-20261002/report.json": "13796248f2e2e05cbbd2cf644aeffe64941674c066cfb973f2766b82c59efdfb",
+    "docs/evidence/semantic-vector-recovery-dev001-20261002/README.md": "a05a2d2a68c4699714ddcb47a8cc1f7a75e3d37cdb279310c75448ba4f3a59ca",
+    "docs/evidence/semantic-vector-recovery-dev001-20261002/config.json": "fa0456fdc62d3f8ccd0d42c7a217503f5a28d872d93bfc6f1c4d4d5311ef3e61",
+    "docs/evidence/semantic-vector-recovery-dev001-20261002/offline-audit.json": "629cfcf5ccde087015e7ffe214f293a856e5f7326bb254905ac345d8fb9397b4",
+    "docs/evidence/semantic-vector-recovery-dev001-20261002/operator_audit_semantic_recovery_multifamily001.py": "353bbdb9a4631c5ea8babe3ece93aa491f537a4a4982ce2a366a43f0f8cff972",
+    "docs/evidence/semantic-vector-recovery-dev001-20261002/operator_audit_semantic_recovery_vector001.py": "dfc7898735d605286e1b93b3c65c802b036b259b1f7cdaa653aa10603d2fcfc3",
+    "docs/evidence/semantic-vector-recovery-dev001-20261002/operator_launch_paid_semantic_recovery001.py": "3cb538c190c2072bd15dde4cecf54c8bed6dfef33aba00640f4532cbefe30b3f",
+    "docs/evidence/semantic-vector-recovery-dev001-20261002/operator_paid_semantic_recovery001_local.py": "1eea750f5334502d095606787a1903ec8324611b3ae6ae68a0f976a586e3279c",
+    "docs/evidence/semantic-vector-recovery-dev001-20261002/operator_prepare_reference_coverage001.py": "7f4e728fef9c26d2833ba2dad9168283c69d98e39bf21df46e1ddc2ce3f771b2",
+    "docs/evidence/semantic-vector-recovery-dev001-20261002/operator_summarize_semantic_recovery001.py": "47b3ef03afae5726706a5b0a46984dee9aa68cfe1c1dd1305ea6349c9705a73c",
+    "docs/evidence/semantic-vector-recovery-dev001-20261002/plan.json": "6f29651aac30e0fa6fd454aa8cab6e8d1eaf87d6deeaafc5b7a8cf016e19f3a9",
+    "docs/evidence/semantic-vector-recovery-dev001-20261002/planner-decisions.json": "3e72a1fcf0d503e8499a44e7b3593a49f34e424f84291abc22686102ae660fdc",
+    "docs/evidence/semantic-vector-recovery-dev001-20261002/reference-coverage-plan.json": "f55130c20137c3499f458bbfa50e4bd7a6f75cb4930c4f22064b89c264e8a5ef",
+    "docs/evidence/semantic-vector-recovery-dev001-20261002/report.json": "af0ea72003e43bc53caece6a6089dfbf7a9a65574537ecd2cbfa471df755ddc5",
+    "docs/evidence/semantic-vector-recovery-dev001-20261002/summary.json": "c1abd56af27f136a5468e6f3d4acc254f1353a8f4213b673ca52449d5449ab72"
   }
 }

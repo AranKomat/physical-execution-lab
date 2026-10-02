@@ -16,7 +16,7 @@ are competing explanations, not established diagnoses.
 | A: no-interference | Passed native cadence/prompt audit for synchronous stateless pi0.5; not bitwise trajectory parity |
 | B: conditioning | Actual source tokenizer/context/ACK plumbing and responsiveness passed; obedience not established |
 | C: matched hierarchy | Fresh vector cohort: all three conditions across all five cases executed and audited; original-only 3 successes, task-plus-subtask 1, subtask-only 1. Historical serial cohort remains separate and incomplete |
-| D: semantic recovery | Not run; disabled in current conditions |
+| D: semantic recovery | Separate five-case panel executed: 3 successes, 1 horizon failure, 1 rejected planner contract. 12 applied recoveries; execution/rejection accounting audited, not all-valid planner or causal recovery qualification |
 | E: held-out/second backend | Not run under V5; opened historical task cannot serve as untouched held-out evidence |
 
 Use the existing five-case development roster: classify_objects layouts 0, 1,
@@ -504,3 +504,90 @@ full-horizon success, long-history Intern memory stability or native semantic
 qualification. No additional maximum-capacity sweep is needed now. Evidence:
 `../evidence/vector-intern-colocation-20261002/` and the existing G0.5 capacity
 record. Phase E remains unrun; return to the main research sequence.
+
+## Task Diversity And Reference Alignment
+
+The user requested broader task diversity aligned with GPT-as-Policy, rather
+than treating five layouts from two task types as sufficient coverage. The
+existing full `configs/local/robodojo-cases.json` already imports its 50 selected
+case identities: ten task groups, five cases each. The upstream panel60 is the
+larger source layout pool, not the article's 50-case evaluation denominator.
+
+The task groups are organize_table, classify_objects_by_language,
+imitate_sorting_sequence, arrange_largest_number, pack_objects_into_box,
+classify_objects, build_tower, make_kong, fold_clothes and
+put_bottles_into_dustbin. Keep all ten as the coverage target rather than
+selecting favorable outcomes. The current five-case panel covers only
+classify_objects and build_tower. Preserve its descriptive development role.
+
+The native per-episode score is not a new scoring function: vector evaluation
+uses native `reward_manager.get_score()/100`, while the upstream public CSV
+displays `score_100`. Success is the independent native boolean, not any partial
+score threshold. Null abstention scores remain null. Do not compare means with
+different scored denominators or confuse upstream official-model references
+(reweighted public results, not paired reruns) with our own matched controls.
+
+No score-scale-only baseline rerun is required. Reuse results only within their
+actual task/layout/checkpoint/cadence/sensor/runtime cohort; populate missing
+cases with fresh matched motor baselines. Historical serial and current vector
+results remain separate. A ten-task initial pass may use one preselected case
+per task for diversity, but cannot be labeled the upstream 50-case reproduction.
+Full reference coverage requires all five selected cases per task/condition.
+Preserve the grouped split and frozen source identities; arrange_largest_number
+was already opened historically and cannot be called untouched held-out.
+Do not tune prompts on the other test task outcomes. Native vector execution
+for new task types, variants and any scripted support arm needs source-faithful
+admission before those outcomes can be used.
+
+## Recovery Factor Results And Remaining Issues
+
+The separate task-plus-subtask/recovery-enabled condition completed 3,958
+actual controls in 738.35 s including startup/shutdown. Forty settled Sol6.1
+medium/Flex calls cost $0.24149625. No API retry or case replacement. Motor
+source predictions, actual ACKs, H50/15 cadence, RNG, prompt exposure and
+termination membership pass execution/rejection accounting audits. The
+condition is not fully planner-contract-qualified: one response was invalid.
+
+| Task/Layout | Outcome | Score | Actions | Applied Recoveries |
+|---|---|---:|---:|---:|
+| Sorting0 | Success | 1.0 | 730 | 1 |
+| Sorting1 | Success | 1.0 | 767 | 0 |
+| Sorting2 | Native horizon failure | 0.0 | 1100 | 6 |
+| Tower0 | Success | 1.0 | 731 | 3 |
+| Tower1 | Planner contract error | null | 630 | 2 |
+
+Two cases reached native success after applied recovery goals. This is temporal
+evidence, not proof those specific subtask failures were repaired or that
+recovery caused success. Three successes restore the original-only panel's
+count, versus one for each recovery-disabled hierarchy variant; no advantage
+over the motor baseline is established. Sorting1 succeeded without any RECOVER.
+Sorting2's six language recoveries did not produce native success.
+
+Tower1's final response supplied an overlength `based_on_stamp`; the existing
+contract rejected it before applying its subtask or executing another action.
+Its 630-action prefix history remains resolved. It is neither abstention nor
+native physical failure. Subsequent wave/supervisor status assertions retained
+`error_stop_no_retry`; the supervisor's original paid-call total stayed zero
+because its aggregation followed that assertion. Do not rewrite that report.
+The posthoc audit/summary derives the actual forty calls from both wave reports
+and agrees with the independently settled relay ledger. Three successful cases
+and one native horizon result remain usable with the fifth censored contract
+case explicitly retained. No rerun was performed.
+
+Next fix response-binding schema constraints and mixed-error supervisor
+aggregation in a new source binding before broader evaluation; do not bypass
+validation, fabricate the missing SHA, or relabel this condition all-valid.
+Broader ten-task source-faithful native admission and fresh missing baselines
+then take priority over another two-task prompt/capacity sweep. Reference
+coverage metadata and this trial's frozen plan/config/operators, structured
+decisions, summary and audit are in
+`../evidence/semantic-vector-recovery-dev001-20261002/`.
+CPU verification: all374 repository tests pass; this does not replace native
+qualification. Both GPUs were confirmed idle after cleanup.
+
+Storage instruction: do not download model weights to the user's Mac again.
+Keep weights on the GPU host or approved external storage; local transfers
+should be small reports/essential evidence. Existing model files must not be
+deleted without checking dependencies. The disposable local pip cache was
+purged (1097.9 MB); experiment evidence was preserved. Unique semantic sensors
+remain remote pending verified full backup, so this is not shutdown clearance.
