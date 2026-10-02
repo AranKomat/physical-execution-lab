@@ -36,6 +36,33 @@ predictions, as recorded in `../SIMULATOR_BATCH_CAPACITY_20261002.md`.
 Do not claim full-task batching is already implemented or silently replace it
 with two-family singleton dispatch. The 40-slot roster remains unchanged.
 
+### True Batched Inference Implemented
+
+`semantic_lab/pi05_batch.py` now vectorizes the released source sampler with
+one independent seed0 RNG stream per stable episode ID and source inner
+batch-of-one shapes. It applies the source input/output transforms and native
+continuous-gripper clipping. Weights are shared dynamic JAX arguments rather
+than embedded constants. The first outer-JIT implementation accidentally
+closed over weights, inflated host compiler memory and was stopped before any
+robot action or paid call; that implementation is retained in commit6106cc7.
+The corrected implementation is commit713f139.
+
+A bounded retained-input GPU check completed at B1/B2/B10. B10 returned a finite
+10x50x14 tensor, took 17.12s including initial compilation and 0.699s warm, with
+7.45GiB peak active JAX bytes and 16.06GiB allocator pool. These are distinct
+memory measurements, not interchangeable VRAM figures. B1/B2 warm times were
+0.104s/0.176s. Inputs were repeated from the two-row retained sorting request;
+this check is not ten distinct tasks or completed robot throughput.
+
+The new executor is not bitwise source singleton parity: maximum raw action
+differences were 0.00794 at B1, up to0.01350 at B2 and up to0.00953 at B10.
+These cover full H50 raw joint/gripper predictions. Do not silently reuse
+historical singleton baseline scores as batched controls. All motor-based
+comparison conditions must use the same explicitly bound executor. Actual
+worker/full-task scene integration and native reset/support/scoring routing
+remain pending. Do not repeat maximum-batch searches before that integration.
+Evidence: `../evidence/reference-execution-binding001-20261002/pi05-vmap-batch-probe002.json`.
+
 Compare approaches first, motor models afterward. This is the next experiment
 priority, not a completed comparison or a substitute for the wider V5 scope.
 Roster selection below is fixed before new outcomes. Exact resolved treatment
