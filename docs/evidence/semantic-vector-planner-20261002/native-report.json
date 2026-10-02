@@ -1,0 +1,2198 @@
+{
+  "status": "incomplete_semantic_wave",
+  "scope": "experimental vector motor rollout, separate execution cohort",
+  "paid_calls": 10,
+  "resets": 1,
+  "task": "classify_objects",
+  "requested_envs": 5,
+  "budget_steps_per_env": 150,
+  "physics_of_completed_envs": "continues globally; terminal score frozen",
+  "rng_parity": false,
+  "inference_mode": "native_singleton",
+  "scored_benchmark_qualified": false,
+  "policy": "pi05",
+  "execute_steps": 15,
+  "returned_action_steps": 50,
+  "native_prediction_horizon": 50,
+  "shared_worker_root": null,
+  "native_registration": {
+    "registered": true,
+    "source": "native EvalEnv.run_eval preamble",
+    "condition_group_counts": {
+      "check_list": [
+        1,
+        1,
+        1,
+        1,
+        1
+      ],
+      "final_check_list": [
+        0,
+        0,
+        0,
+        0,
+        0
+      ],
+      "trigger_check_list": [
+        0,
+        0,
+        0,
+        0,
+        0
+      ]
+    },
+    "initial_support_arm_query_envs": []
+  },
+  "reset_seeds": [
+    0,
+    1,
+    2,
+    0,
+    1
+  ],
+  "layout_bindings": [
+    {
+      "env_idx": 0,
+      "layout_id": 0,
+      "path": "/root/physical-execution-lab/external/RoboDojo/env/../Assets/Eval_Layout/RoboDojo/arx_x5/0/classify_objects_0.json",
+      "sha256": "5ceb9e18e6d8490a7db85dd001462d63265c297ea6fad0d7438364deb2de3ece"
+    },
+    {
+      "env_idx": 1,
+      "layout_id": 1,
+      "path": "/root/physical-execution-lab/external/RoboDojo/env/../Assets/Eval_Layout/RoboDojo/arx_x5/0/classify_objects_1.json",
+      "sha256": "013d7141ffc9865d7cccf650301f642e6b83b3eb59f78cf5b1d0caf47158e17a"
+    },
+    {
+      "env_idx": 2,
+      "layout_id": 2,
+      "path": "/root/physical-execution-lab/external/RoboDojo/env/../Assets/Eval_Layout/RoboDojo/arx_x5/0/classify_objects_2.json",
+      "sha256": "6b3a30251bd92a465ffdc82436e14dde84879906eeab3b0e8944865b9eef38f7"
+    },
+    {
+      "env_idx": 3,
+      "layout_id": 0,
+      "path": "/root/physical-execution-lab/external/RoboDojo/env/../Assets/Eval_Layout/RoboDojo/arx_x5/0/classify_objects_0.json",
+      "sha256": "5ceb9e18e6d8490a7db85dd001462d63265c297ea6fad0d7438364deb2de3ece"
+    },
+    {
+      "env_idx": 4,
+      "layout_id": 1,
+      "path": "/root/physical-execution-lab/external/RoboDojo/env/../Assets/Eval_Layout/RoboDojo/arx_x5/0/classify_objects_1.json",
+      "sha256": "013d7141ffc9865d7cccf650301f642e6b83b3eb59f78cf5b1d0caf47158e17a"
+    }
+  ],
+  "action_counts": [
+    150,
+    150,
+    150,
+    150,
+    150
+  ],
+  "predictions": 10,
+  "semantic_config_sha256": "64638ae25da56ef0374fdcdf6f7b8d35d4bfbf6446fb9f1c85a7a2a2314021d6",
+  "controller_results": {
+    "0": {
+      "schema": "semantic.result.v1",
+      "case_id": "classify_objects__layout0__vectorrow0",
+      "task": "classify_objects",
+      "benchmark": "robodojo",
+      "partition": "dev",
+      "task_group": "classify_objects",
+      "condition": "experimental_semantic_vector_planner_pilot001",
+      "mode": "semantic_subtask_hierarchy",
+      "success": false,
+      "native_score": null,
+      "native_terminal_observed": false,
+      "native_success_observed": false,
+      "status": "resource_limited",
+      "termination": "native_step_budget_without_terminal_ack",
+      "error": null,
+      "native_steps": 150,
+      "elapsed_s": 185.7037275190014,
+      "timing": {
+        "setup_s": 0.02074557299783919,
+        "policy_s": 71.69534433901572,
+        "ack_s": 2.942346149000514,
+        "review_s": 44.11437926999497,
+        "env_s": 64.39074343995162,
+        "evidence_io_s": 0.37117865899926983
+      },
+      "simulated_seconds": 6.0,
+      "metrics": {
+        "policy_calls": 10,
+        "policy_requests": 10,
+        "semantic_calls": 2,
+        "semantic_changes": 1,
+        "motor_prompt_changes": 1,
+        "semantic_recoveries": 0,
+        "shadow_planner_failures": 0,
+        "controller_faults": 0,
+        "native_steps": 150,
+        "predicted_policy_actions": 500,
+        "natural_suffix_discards": 350,
+        "abort_prefix_discards": 0,
+        "unresolved_policy_actions": 0,
+        "natural_prefixes": 10,
+        "completed_prefixes": 10,
+        "gpt_induced_motor_resamples": 0,
+        "gpt_induced_policy_resets": 0,
+        "gpt_induced_prefix_shortening": 0,
+        "corrections": 0
+      },
+      "usage": {
+        "source": "provider-reported, missing fields remain null",
+        "api_requests": 2,
+        "usage_rows": 2,
+        "all_request_usage_rows_present": true,
+        "unreported_requests": 0,
+        "input_tokens": 5120,
+        "cached_input_tokens": 0,
+        "output_tokens": 425,
+        "reasoning_tokens": 28,
+        "known_usage_subtotals": {
+          "input_tokens": 5120,
+          "cached_input_tokens": 0,
+          "output_tokens": 425,
+          "reasoning_tokens": 28
+        },
+        "reasoning_is_subset_of_output": true,
+        "served_models": [
+          "openai/gpt-6.1-sol"
+        ],
+        "served_tiers": [
+          "flex"
+        ],
+        "unresolved_output_reservations": 0
+      },
+      "shadow_planner_disabled_after_failure": false,
+      "config_sha256": "64638ae25da56ef0374fdcdf6f7b8d35d4bfbf6446fb9f1c85a7a2a2314021d6",
+      "case_sha256": "c60ac079ab56def6adb42f12b9d4c38ba56357fc8b77d3ee524959c25682eea5",
+      "policy_identity": "78de83adc06eae60af453f72fd026f40de9c3eef3a214bf528770f51abd321c2",
+      "initial_observation_sha256": "1f6b8ded502439ff6213caf96b29b3a58f80c124dd7ade2e6a9a3d25eaa8721b",
+      "environment_contract_sha256": "7e4741dc96dc08f174f3e567d65ac68d8dedfedef7712851d3c8fe45907d8284",
+      "planner_config": {
+        "api_key_env": "K1_RELAY_TOKEN",
+        "base_url": "http://127.0.0.1:19861",
+        "history_rounds": 4,
+        "image_max_edge": 480,
+        "max_output_tokens": 2048,
+        "max_requests": 2,
+        "max_total_output_tokens": 4096,
+        "model": "gpt-6.1-sol",
+        "reasoning_effort": "medium",
+        "service_tier": "flex",
+        "timeout_s": 900,
+        "transport": "responses"
+      },
+      "evidence_kind": "native_unqualified",
+      "simulation_advances_during_model_wait": false,
+      "task_solution_memory": false,
+      "weight_updates": false
+    },
+    "1": {
+      "schema": "semantic.result.v1",
+      "case_id": "classify_objects__layout1__vectorrow1",
+      "task": "classify_objects",
+      "benchmark": "robodojo",
+      "partition": "dev",
+      "task_group": "classify_objects",
+      "condition": "experimental_semantic_vector_planner_pilot001",
+      "mode": "semantic_subtask_hierarchy",
+      "success": false,
+      "native_score": null,
+      "native_terminal_observed": false,
+      "native_success_observed": false,
+      "status": "resource_limited",
+      "termination": "native_step_budget_without_terminal_ack",
+      "error": null,
+      "native_steps": 150,
+      "elapsed_s": 185.72261122499913,
+      "timing": {
+        "setup_s": 0.02353888100333279,
+        "policy_s": 71.97977047000313,
+        "ack_s": 3.0105064419767587,
+        "review_s": 43.83738528400136,
+        "env_s": 64.28233471395652,
+        "evidence_io_s": 0.39554897399648326
+      },
+      "simulated_seconds": 6.0,
+      "metrics": {
+        "policy_calls": 10,
+        "policy_requests": 10,
+        "semantic_calls": 2,
+        "semantic_changes": 1,
+        "motor_prompt_changes": 1,
+        "semantic_recoveries": 0,
+        "shadow_planner_failures": 0,
+        "controller_faults": 0,
+        "native_steps": 150,
+        "predicted_policy_actions": 500,
+        "natural_suffix_discards": 350,
+        "abort_prefix_discards": 0,
+        "unresolved_policy_actions": 0,
+        "natural_prefixes": 10,
+        "completed_prefixes": 10,
+        "gpt_induced_motor_resamples": 0,
+        "gpt_induced_policy_resets": 0,
+        "gpt_induced_prefix_shortening": 0,
+        "corrections": 0
+      },
+      "usage": {
+        "source": "provider-reported, missing fields remain null",
+        "api_requests": 2,
+        "usage_rows": 2,
+        "all_request_usage_rows_present": true,
+        "unreported_requests": 0,
+        "input_tokens": 5065,
+        "cached_input_tokens": 0,
+        "output_tokens": 411,
+        "reasoning_tokens": 80,
+        "known_usage_subtotals": {
+          "input_tokens": 5065,
+          "cached_input_tokens": 0,
+          "output_tokens": 411,
+          "reasoning_tokens": 80
+        },
+        "reasoning_is_subset_of_output": true,
+        "served_models": [
+          "openai/gpt-6.1-sol"
+        ],
+        "served_tiers": [
+          "flex"
+        ],
+        "unresolved_output_reservations": 0
+      },
+      "shadow_planner_disabled_after_failure": false,
+      "config_sha256": "64638ae25da56ef0374fdcdf6f7b8d35d4bfbf6446fb9f1c85a7a2a2314021d6",
+      "case_sha256": "5242dbf6c2f8ccc54906038107ec1da603b9eab45aa76c60d66daa14f81cb035",
+      "policy_identity": "78de83adc06eae60af453f72fd026f40de9c3eef3a214bf528770f51abd321c2",
+      "initial_observation_sha256": "aa75fc063eb633f92cb8fbcf673fadc46e9102ba3b4e65b154ca445b29343ae0",
+      "environment_contract_sha256": "1b49537161288e9098b310e32ec3703b31c1b52665f80cff8d38086a66643c3f",
+      "planner_config": {
+        "api_key_env": "K1_RELAY_TOKEN",
+        "base_url": "http://127.0.0.1:19861",
+        "history_rounds": 4,
+        "image_max_edge": 480,
+        "max_output_tokens": 2048,
+        "max_requests": 2,
+        "max_total_output_tokens": 4096,
+        "model": "gpt-6.1-sol",
+        "reasoning_effort": "medium",
+        "service_tier": "flex",
+        "timeout_s": 900,
+        "transport": "responses"
+      },
+      "evidence_kind": "native_unqualified",
+      "simulation_advances_during_model_wait": false,
+      "task_solution_memory": false,
+      "weight_updates": false
+    },
+    "2": {
+      "schema": "semantic.result.v1",
+      "case_id": "classify_objects__layout2__vectorrow2",
+      "task": "classify_objects",
+      "benchmark": "robodojo",
+      "partition": "dev",
+      "task_group": "classify_objects",
+      "condition": "experimental_semantic_vector_planner_pilot001",
+      "mode": "semantic_subtask_hierarchy",
+      "success": false,
+      "native_score": null,
+      "native_terminal_observed": false,
+      "native_success_observed": false,
+      "status": "resource_limited",
+      "termination": "native_step_budget_without_terminal_ack",
+      "error": null,
+      "native_steps": 150,
+      "elapsed_s": 185.71121276099439,
+      "timing": {
+        "setup_s": 0.017870104005851317,
+        "policy_s": 30.512733970019326,
+        "ack_s": 2.9577016339826514,
+        "review_s": 85.27969505800866,
+        "env_s": 64.32565864000208,
+        "evidence_io_s": 0.41017423599987524
+      },
+      "simulated_seconds": 6.0,
+      "metrics": {
+        "policy_calls": 10,
+        "policy_requests": 10,
+        "semantic_calls": 2,
+        "semantic_changes": 1,
+        "motor_prompt_changes": 1,
+        "semantic_recoveries": 0,
+        "shadow_planner_failures": 0,
+        "controller_faults": 0,
+        "native_steps": 150,
+        "predicted_policy_actions": 500,
+        "natural_suffix_discards": 350,
+        "abort_prefix_discards": 0,
+        "unresolved_policy_actions": 0,
+        "natural_prefixes": 10,
+        "completed_prefixes": 10,
+        "gpt_induced_motor_resamples": 0,
+        "gpt_induced_policy_resets": 0,
+        "gpt_induced_prefix_shortening": 0,
+        "corrections": 0
+      },
+      "usage": {
+        "source": "provider-reported, missing fields remain null",
+        "api_requests": 2,
+        "usage_rows": 2,
+        "all_request_usage_rows_present": true,
+        "unreported_requests": 0,
+        "input_tokens": 5088,
+        "cached_input_tokens": 0,
+        "output_tokens": 448,
+        "reasoning_tokens": 69,
+        "known_usage_subtotals": {
+          "input_tokens": 5088,
+          "cached_input_tokens": 0,
+          "output_tokens": 448,
+          "reasoning_tokens": 69
+        },
+        "reasoning_is_subset_of_output": true,
+        "served_models": [
+          "openai/gpt-6.1-sol"
+        ],
+        "served_tiers": [
+          "flex"
+        ],
+        "unresolved_output_reservations": 0
+      },
+      "shadow_planner_disabled_after_failure": false,
+      "config_sha256": "64638ae25da56ef0374fdcdf6f7b8d35d4bfbf6446fb9f1c85a7a2a2314021d6",
+      "case_sha256": "9e1f212d5d0585cde8c513875b61c1436c0bef00a0c1656d57715eb6a5f1948c",
+      "policy_identity": "78de83adc06eae60af453f72fd026f40de9c3eef3a214bf528770f51abd321c2",
+      "initial_observation_sha256": "fdd78bd5f2346fa45b823f26c2690f55a43540a04431afe21cc864095c89a879",
+      "environment_contract_sha256": "456332a32cb19cb9994c647147afccbf9034b9f6b24564637368fd3ae2f8078e",
+      "planner_config": {
+        "api_key_env": "K1_RELAY_TOKEN",
+        "base_url": "http://127.0.0.1:19861",
+        "history_rounds": 4,
+        "image_max_edge": 480,
+        "max_output_tokens": 2048,
+        "max_requests": 2,
+        "max_total_output_tokens": 4096,
+        "model": "gpt-6.1-sol",
+        "reasoning_effort": "medium",
+        "service_tier": "flex",
+        "timeout_s": 900,
+        "transport": "responses"
+      },
+      "evidence_kind": "native_unqualified",
+      "simulation_advances_during_model_wait": false,
+      "task_solution_memory": false,
+      "weight_updates": false
+    },
+    "3": {
+      "schema": "semantic.result.v1",
+      "case_id": "classify_objects__layout0__vectorrow3",
+      "task": "classify_objects",
+      "benchmark": "robodojo",
+      "partition": "dev",
+      "task_group": "classify_objects",
+      "condition": "experimental_semantic_vector_planner_pilot001",
+      "mode": "semantic_subtask_hierarchy",
+      "success": false,
+      "native_score": null,
+      "native_terminal_observed": false,
+      "native_success_observed": false,
+      "status": "resource_limited",
+      "termination": "native_step_budget_without_terminal_ack",
+      "error": null,
+      "native_steps": 150,
+      "elapsed_s": 185.6892281249966,
+      "timing": {
+        "setup_s": 0.012884828000096604,
+        "policy_s": 54.148333085009654,
+        "ack_s": 2.959960268024588,
+        "review_s": 61.69419072099845,
+        "env_s": 64.26711121400149,
+        "evidence_io_s": 0.38664839600096457
+      },
+      "simulated_seconds": 6.0,
+      "metrics": {
+        "policy_calls": 10,
+        "policy_requests": 10,
+        "semantic_calls": 2,
+        "semantic_changes": 1,
+        "motor_prompt_changes": 1,
+        "semantic_recoveries": 0,
+        "shadow_planner_failures": 0,
+        "controller_faults": 0,
+        "native_steps": 150,
+        "predicted_policy_actions": 500,
+        "natural_suffix_discards": 350,
+        "abort_prefix_discards": 0,
+        "unresolved_policy_actions": 0,
+        "natural_prefixes": 10,
+        "completed_prefixes": 10,
+        "gpt_induced_motor_resamples": 0,
+        "gpt_induced_policy_resets": 0,
+        "gpt_induced_prefix_shortening": 0,
+        "corrections": 0
+      },
+      "usage": {
+        "source": "provider-reported, missing fields remain null",
+        "api_requests": 2,
+        "usage_rows": 2,
+        "all_request_usage_rows_present": true,
+        "unreported_requests": 0,
+        "input_tokens": 5105,
+        "cached_input_tokens": 0,
+        "output_tokens": 486,
+        "reasoning_tokens": 94,
+        "known_usage_subtotals": {
+          "input_tokens": 5105,
+          "cached_input_tokens": 0,
+          "output_tokens": 486,
+          "reasoning_tokens": 94
+        },
+        "reasoning_is_subset_of_output": true,
+        "served_models": [
+          "openai/gpt-6.1-sol"
+        ],
+        "served_tiers": [
+          "flex"
+        ],
+        "unresolved_output_reservations": 0
+      },
+      "shadow_planner_disabled_after_failure": false,
+      "config_sha256": "64638ae25da56ef0374fdcdf6f7b8d35d4bfbf6446fb9f1c85a7a2a2314021d6",
+      "case_sha256": "f0dd874c3754eb394e505c1dfb4de1a991c18abfe52492ad85bdfae93b705a3d",
+      "policy_identity": "78de83adc06eae60af453f72fd026f40de9c3eef3a214bf528770f51abd321c2",
+      "initial_observation_sha256": "9cdd68769a887e9c6961b4f1b4d4e008b9c261f135c58403594622f57e2beef1",
+      "environment_contract_sha256": "00a7dfd6f7f0bf1f95e927611d44be09d11f44f9916bd80c7e3f796151231a95",
+      "planner_config": {
+        "api_key_env": "K1_RELAY_TOKEN",
+        "base_url": "http://127.0.0.1:19861",
+        "history_rounds": 4,
+        "image_max_edge": 480,
+        "max_output_tokens": 2048,
+        "max_requests": 2,
+        "max_total_output_tokens": 4096,
+        "model": "gpt-6.1-sol",
+        "reasoning_effort": "medium",
+        "service_tier": "flex",
+        "timeout_s": 900,
+        "transport": "responses"
+      },
+      "evidence_kind": "native_unqualified",
+      "simulation_advances_during_model_wait": false,
+      "task_solution_memory": false,
+      "weight_updates": false
+    },
+    "4": {
+      "schema": "semantic.result.v1",
+      "case_id": "classify_objects__layout1__vectorrow4",
+      "task": "classify_objects",
+      "benchmark": "robodojo",
+      "partition": "dev",
+      "task_group": "classify_objects",
+      "condition": "experimental_semantic_vector_planner_pilot001",
+      "mode": "semantic_subtask_hierarchy",
+      "success": false,
+      "native_score": null,
+      "native_terminal_observed": false,
+      "native_success_observed": false,
+      "status": "resource_limited",
+      "termination": "native_step_budget_without_terminal_ack",
+      "error": null,
+      "native_steps": 150,
+      "elapsed_s": 185.68020973999955,
+      "timing": {
+        "setup_s": 0.01238443700276548,
+        "policy_s": 88.12056679701345,
+        "ack_s": 2.712844437970489,
+        "review_s": 27.769284237001557,
+        "env_s": 64.62502762302029,
+        "evidence_io_s": 0.3574906500070938
+      },
+      "simulated_seconds": 6.0,
+      "metrics": {
+        "policy_calls": 10,
+        "policy_requests": 10,
+        "semantic_calls": 2,
+        "semantic_changes": 1,
+        "motor_prompt_changes": 1,
+        "semantic_recoveries": 0,
+        "shadow_planner_failures": 0,
+        "controller_faults": 0,
+        "native_steps": 150,
+        "predicted_policy_actions": 500,
+        "natural_suffix_discards": 350,
+        "abort_prefix_discards": 0,
+        "unresolved_policy_actions": 0,
+        "natural_prefixes": 10,
+        "completed_prefixes": 10,
+        "gpt_induced_motor_resamples": 0,
+        "gpt_induced_policy_resets": 0,
+        "gpt_induced_prefix_shortening": 0,
+        "corrections": 0
+      },
+      "usage": {
+        "source": "provider-reported, missing fields remain null",
+        "api_requests": 2,
+        "usage_rows": 2,
+        "all_request_usage_rows_present": true,
+        "unreported_requests": 0,
+        "input_tokens": 5116,
+        "cached_input_tokens": 0,
+        "output_tokens": 516,
+        "reasoning_tokens": 97,
+        "known_usage_subtotals": {
+          "input_tokens": 5116,
+          "cached_input_tokens": 0,
+          "output_tokens": 516,
+          "reasoning_tokens": 97
+        },
+        "reasoning_is_subset_of_output": true,
+        "served_models": [
+          "openai/gpt-6.1-sol"
+        ],
+        "served_tiers": [
+          "flex"
+        ],
+        "unresolved_output_reservations": 0
+      },
+      "shadow_planner_disabled_after_failure": false,
+      "config_sha256": "64638ae25da56ef0374fdcdf6f7b8d35d4bfbf6446fb9f1c85a7a2a2314021d6",
+      "case_sha256": "ac4af7eb821ba6d77c00c6d7dfc01db9ffcf2f24921e60b170fa84b256783832",
+      "policy_identity": "78de83adc06eae60af453f72fd026f40de9c3eef3a214bf528770f51abd321c2",
+      "initial_observation_sha256": "71d7f5356836b545d0ae88b0d520487b86bda4e35ff08c3c4df0d3fa010ff19d",
+      "environment_contract_sha256": "509b0cc42698d092dfed836f3d922118cd844d1fffe405f5f8db852a5c33a062",
+      "planner_config": {
+        "api_key_env": "K1_RELAY_TOKEN",
+        "base_url": "http://127.0.0.1:19861",
+        "history_rounds": 4,
+        "image_max_edge": 480,
+        "max_output_tokens": 2048,
+        "max_requests": 2,
+        "max_total_output_tokens": 4096,
+        "model": "gpt-6.1-sol",
+        "reasoning_effort": "medium",
+        "service_tier": "flex",
+        "timeout_s": 900,
+        "transport": "responses"
+      },
+      "evidence_kind": "native_unqualified",
+      "simulation_advances_during_model_wait": false,
+      "task_solution_memory": false,
+      "weight_updates": false
+    }
+  },
+  "dispatches": [
+    {
+      "operation": "infer",
+      "env_ids": [
+        0,
+        1,
+        2,
+        3,
+        4
+      ]
+    },
+    {
+      "operation": "action",
+      "env_ids": [
+        0,
+        1,
+        2,
+        3,
+        4
+      ]
+    },
+    {
+      "operation": "action",
+      "env_ids": [
+        0,
+        1,
+        2,
+        3,
+        4
+      ]
+    },
+    {
+      "operation": "action",
+      "env_ids": [
+        0,
+        1,
+        2,
+        3,
+        4
+      ]
+    },
+    {
+      "operation": "action",
+      "env_ids": [
+        0,
+        1,
+        2,
+        3,
+        4
+      ]
+    },
+    {
+      "operation": "action",
+      "env_ids": [
+        0,
+        1,
+        2,
+        3,
+        4
+      ]
+    },
+    {
+      "operation": "action",
+      "env_ids": [
+        0,
+        1,
+        2,
+        3,
+        4
+      ]
+    },
+    {
+      "operation": "action",
+      "env_ids": [
+        0,
+        1,
+        2,
+        3,
+        4
+      ]
+    },
+    {
+      "operation": "action",
+      "env_ids": [
+        0,
+        1,
+        2,
+        3,
+        4
+      ]
+    },
+    {
+      "operation": "action",
+      "env_ids": [
+        0,
+        1,
+        2,
+        3,
+        4
+      ]
+    },
+    {
+      "operation": "action",
+      "env_ids": [
+        0,
+        1,
+        2,
+        3,
+        4
+      ]
+    },
+    {
+      "operation": "action",
+      "env_ids": [
+        0,
+        1,
+        2,
+        3,
+        4
+      ]
+    },
+    {
+      "operation": "action",
+      "env_ids": [
+        0,
+        1,
+        2,
+        3,
+        4
+      ]
+    },
+    {
+      "operation": "action",
+      "env_ids": [
+        0,
+        1,
+        2,
+        3,
+        4
+      ]
+    },
+    {
+      "operation": "action",
+      "env_ids": [
+        0,
+        1,
+        2,
+        3,
+        4
+      ]
+    },
+    {
+      "operation": "action",
+      "env_ids": [
+        0,
+        1,
+        2,
+        3,
+        4
+      ]
+    },
+    {
+      "operation": "infer",
+      "env_ids": [
+        0,
+        1,
+        2,
+        3,
+        4
+      ]
+    },
+    {
+      "operation": "action",
+      "env_ids": [
+        0,
+        1,
+        2,
+        3,
+        4
+      ]
+    },
+    {
+      "operation": "action",
+      "env_ids": [
+        0,
+        1,
+        2,
+        3,
+        4
+      ]
+    },
+    {
+      "operation": "action",
+      "env_ids": [
+        0,
+        1,
+        2,
+        3,
+        4
+      ]
+    },
+    {
+      "operation": "action",
+      "env_ids": [
+        0,
+        1,
+        2,
+        3,
+        4
+      ]
+    },
+    {
+      "operation": "action",
+      "env_ids": [
+        0,
+        1,
+        2,
+        3,
+        4
+      ]
+    },
+    {
+      "operation": "action",
+      "env_ids": [
+        0,
+        1,
+        2,
+        3,
+        4
+      ]
+    },
+    {
+      "operation": "action",
+      "env_ids": [
+        0,
+        1,
+        2,
+        3,
+        4
+      ]
+    },
+    {
+      "operation": "action",
+      "env_ids": [
+        0,
+        1,
+        2,
+        3,
+        4
+      ]
+    },
+    {
+      "operation": "action",
+      "env_ids": [
+        0,
+        1,
+        2,
+        3,
+        4
+      ]
+    },
+    {
+      "operation": "action",
+      "env_ids": [
+        0,
+        1,
+        2,
+        3,
+        4
+      ]
+    },
+    {
+      "operation": "action",
+      "env_ids": [
+        0,
+        1,
+        2,
+        3,
+        4
+      ]
+    },
+    {
+      "operation": "action",
+      "env_ids": [
+        0,
+        1,
+        2,
+        3,
+        4
+      ]
+    },
+    {
+      "operation": "action",
+      "env_ids": [
+        0,
+        1,
+        2,
+        3,
+        4
+      ]
+    },
+    {
+      "operation": "action",
+      "env_ids": [
+        0,
+        1,
+        2,
+        3,
+        4
+      ]
+    },
+    {
+      "operation": "action",
+      "env_ids": [
+        0,
+        1,
+        2,
+        3,
+        4
+      ]
+    },
+    {
+      "operation": "infer",
+      "env_ids": [
+        0,
+        1,
+        2,
+        3,
+        4
+      ]
+    },
+    {
+      "operation": "action",
+      "env_ids": [
+        0,
+        1,
+        2,
+        3,
+        4
+      ]
+    },
+    {
+      "operation": "action",
+      "env_ids": [
+        0,
+        1,
+        2,
+        3,
+        4
+      ]
+    },
+    {
+      "operation": "action",
+      "env_ids": [
+        0,
+        1,
+        2,
+        3,
+        4
+      ]
+    },
+    {
+      "operation": "action",
+      "env_ids": [
+        0,
+        1,
+        2,
+        3,
+        4
+      ]
+    },
+    {
+      "operation": "action",
+      "env_ids": [
+        0,
+        1,
+        2,
+        3,
+        4
+      ]
+    },
+    {
+      "operation": "action",
+      "env_ids": [
+        0,
+        1,
+        2,
+        3,
+        4
+      ]
+    },
+    {
+      "operation": "action",
+      "env_ids": [
+        0,
+        1,
+        2,
+        3,
+        4
+      ]
+    },
+    {
+      "operation": "action",
+      "env_ids": [
+        0,
+        1,
+        2,
+        3,
+        4
+      ]
+    },
+    {
+      "operation": "action",
+      "env_ids": [
+        0,
+        1,
+        2,
+        3,
+        4
+      ]
+    },
+    {
+      "operation": "action",
+      "env_ids": [
+        0,
+        1,
+        2,
+        3,
+        4
+      ]
+    },
+    {
+      "operation": "action",
+      "env_ids": [
+        0,
+        1,
+        2,
+        3,
+        4
+      ]
+    },
+    {
+      "operation": "action",
+      "env_ids": [
+        0,
+        1,
+        2,
+        3,
+        4
+      ]
+    },
+    {
+      "operation": "action",
+      "env_ids": [
+        0,
+        1,
+        2,
+        3,
+        4
+      ]
+    },
+    {
+      "operation": "action",
+      "env_ids": [
+        0,
+        1,
+        2,
+        3,
+        4
+      ]
+    },
+    {
+      "operation": "action",
+      "env_ids": [
+        0,
+        1,
+        2,
+        3,
+        4
+      ]
+    },
+    {
+      "operation": "infer",
+      "env_ids": [
+        0,
+        1,
+        2,
+        3,
+        4
+      ]
+    },
+    {
+      "operation": "action",
+      "env_ids": [
+        0,
+        1,
+        2,
+        3,
+        4
+      ]
+    },
+    {
+      "operation": "action",
+      "env_ids": [
+        0,
+        1,
+        2,
+        3,
+        4
+      ]
+    },
+    {
+      "operation": "action",
+      "env_ids": [
+        0,
+        1,
+        2,
+        3,
+        4
+      ]
+    },
+    {
+      "operation": "action",
+      "env_ids": [
+        0,
+        1,
+        2,
+        3,
+        4
+      ]
+    },
+    {
+      "operation": "action",
+      "env_ids": [
+        0,
+        1,
+        2,
+        3,
+        4
+      ]
+    },
+    {
+      "operation": "action",
+      "env_ids": [
+        0,
+        1,
+        2,
+        3,
+        4
+      ]
+    },
+    {
+      "operation": "action",
+      "env_ids": [
+        0,
+        1,
+        2,
+        3,
+        4
+      ]
+    },
+    {
+      "operation": "action",
+      "env_ids": [
+        0,
+        1,
+        2,
+        3,
+        4
+      ]
+    },
+    {
+      "operation": "action",
+      "env_ids": [
+        0,
+        1,
+        2,
+        3,
+        4
+      ]
+    },
+    {
+      "operation": "action",
+      "env_ids": [
+        0,
+        1,
+        2,
+        3,
+        4
+      ]
+    },
+    {
+      "operation": "action",
+      "env_ids": [
+        0,
+        1,
+        2,
+        3,
+        4
+      ]
+    },
+    {
+      "operation": "action",
+      "env_ids": [
+        0,
+        1,
+        2,
+        3,
+        4
+      ]
+    },
+    {
+      "operation": "action",
+      "env_ids": [
+        0,
+        1,
+        2,
+        3,
+        4
+      ]
+    },
+    {
+      "operation": "action",
+      "env_ids": [
+        0,
+        1,
+        2,
+        3,
+        4
+      ]
+    },
+    {
+      "operation": "action",
+      "env_ids": [
+        0,
+        1,
+        2,
+        3,
+        4
+      ]
+    },
+    {
+      "operation": "infer",
+      "env_ids": [
+        0,
+        1,
+        2,
+        3,
+        4
+      ]
+    },
+    {
+      "operation": "action",
+      "env_ids": [
+        0,
+        1,
+        2,
+        3,
+        4
+      ]
+    },
+    {
+      "operation": "action",
+      "env_ids": [
+        0,
+        1,
+        2,
+        3,
+        4
+      ]
+    },
+    {
+      "operation": "action",
+      "env_ids": [
+        0,
+        1,
+        2,
+        3,
+        4
+      ]
+    },
+    {
+      "operation": "action",
+      "env_ids": [
+        0,
+        1,
+        2,
+        3,
+        4
+      ]
+    },
+    {
+      "operation": "action",
+      "env_ids": [
+        0,
+        1,
+        2,
+        3,
+        4
+      ]
+    },
+    {
+      "operation": "action",
+      "env_ids": [
+        0,
+        1,
+        2,
+        3,
+        4
+      ]
+    },
+    {
+      "operation": "action",
+      "env_ids": [
+        0,
+        1,
+        2,
+        3,
+        4
+      ]
+    },
+    {
+      "operation": "action",
+      "env_ids": [
+        0,
+        1,
+        2,
+        3,
+        4
+      ]
+    },
+    {
+      "operation": "action",
+      "env_ids": [
+        0,
+        1,
+        2,
+        3,
+        4
+      ]
+    },
+    {
+      "operation": "action",
+      "env_ids": [
+        0,
+        1,
+        2,
+        3,
+        4
+      ]
+    },
+    {
+      "operation": "action",
+      "env_ids": [
+        0,
+        1,
+        2,
+        3,
+        4
+      ]
+    },
+    {
+      "operation": "action",
+      "env_ids": [
+        0,
+        1,
+        2,
+        3,
+        4
+      ]
+    },
+    {
+      "operation": "action",
+      "env_ids": [
+        0,
+        1,
+        2,
+        3,
+        4
+      ]
+    },
+    {
+      "operation": "action",
+      "env_ids": [
+        0,
+        1,
+        2,
+        3,
+        4
+      ]
+    },
+    {
+      "operation": "action",
+      "env_ids": [
+        0,
+        1,
+        2,
+        3,
+        4
+      ]
+    },
+    {
+      "operation": "infer",
+      "env_ids": [
+        0,
+        1,
+        2,
+        3,
+        4
+      ]
+    },
+    {
+      "operation": "action",
+      "env_ids": [
+        0,
+        1,
+        2,
+        3,
+        4
+      ]
+    },
+    {
+      "operation": "action",
+      "env_ids": [
+        0,
+        1,
+        2,
+        3,
+        4
+      ]
+    },
+    {
+      "operation": "action",
+      "env_ids": [
+        0,
+        1,
+        2,
+        3,
+        4
+      ]
+    },
+    {
+      "operation": "action",
+      "env_ids": [
+        0,
+        1,
+        2,
+        3,
+        4
+      ]
+    },
+    {
+      "operation": "action",
+      "env_ids": [
+        0,
+        1,
+        2,
+        3,
+        4
+      ]
+    },
+    {
+      "operation": "action",
+      "env_ids": [
+        0,
+        1,
+        2,
+        3,
+        4
+      ]
+    },
+    {
+      "operation": "action",
+      "env_ids": [
+        0,
+        1,
+        2,
+        3,
+        4
+      ]
+    },
+    {
+      "operation": "action",
+      "env_ids": [
+        0,
+        1,
+        2,
+        3,
+        4
+      ]
+    },
+    {
+      "operation": "action",
+      "env_ids": [
+        0,
+        1,
+        2,
+        3,
+        4
+      ]
+    },
+    {
+      "operation": "action",
+      "env_ids": [
+        0,
+        1,
+        2,
+        3,
+        4
+      ]
+    },
+    {
+      "operation": "action",
+      "env_ids": [
+        0,
+        1,
+        2,
+        3,
+        4
+      ]
+    },
+    {
+      "operation": "action",
+      "env_ids": [
+        0,
+        1,
+        2,
+        3,
+        4
+      ]
+    },
+    {
+      "operation": "action",
+      "env_ids": [
+        0,
+        1,
+        2,
+        3,
+        4
+      ]
+    },
+    {
+      "operation": "action",
+      "env_ids": [
+        0,
+        1,
+        2,
+        3,
+        4
+      ]
+    },
+    {
+      "operation": "action",
+      "env_ids": [
+        0,
+        1,
+        2,
+        3,
+        4
+      ]
+    },
+    {
+      "operation": "infer",
+      "env_ids": [
+        0,
+        1,
+        2,
+        3,
+        4
+      ]
+    },
+    {
+      "operation": "action",
+      "env_ids": [
+        0,
+        1,
+        2,
+        3,
+        4
+      ]
+    },
+    {
+      "operation": "action",
+      "env_ids": [
+        0,
+        1,
+        2,
+        3,
+        4
+      ]
+    },
+    {
+      "operation": "action",
+      "env_ids": [
+        0,
+        1,
+        2,
+        3,
+        4
+      ]
+    },
+    {
+      "operation": "action",
+      "env_ids": [
+        0,
+        1,
+        2,
+        3,
+        4
+      ]
+    },
+    {
+      "operation": "action",
+      "env_ids": [
+        0,
+        1,
+        2,
+        3,
+        4
+      ]
+    },
+    {
+      "operation": "action",
+      "env_ids": [
+        0,
+        1,
+        2,
+        3,
+        4
+      ]
+    },
+    {
+      "operation": "action",
+      "env_ids": [
+        0,
+        1,
+        2,
+        3,
+        4
+      ]
+    },
+    {
+      "operation": "action",
+      "env_ids": [
+        0,
+        1,
+        2,
+        3,
+        4
+      ]
+    },
+    {
+      "operation": "action",
+      "env_ids": [
+        0,
+        1,
+        2,
+        3,
+        4
+      ]
+    },
+    {
+      "operation": "action",
+      "env_ids": [
+        0,
+        1,
+        2,
+        3,
+        4
+      ]
+    },
+    {
+      "operation": "action",
+      "env_ids": [
+        0,
+        1,
+        2,
+        3,
+        4
+      ]
+    },
+    {
+      "operation": "action",
+      "env_ids": [
+        0,
+        1,
+        2,
+        3,
+        4
+      ]
+    },
+    {
+      "operation": "action",
+      "env_ids": [
+        0,
+        1,
+        2,
+        3,
+        4
+      ]
+    },
+    {
+      "operation": "action",
+      "env_ids": [
+        0,
+        1,
+        2,
+        3,
+        4
+      ]
+    },
+    {
+      "operation": "action",
+      "env_ids": [
+        0,
+        1,
+        2,
+        3,
+        4
+      ]
+    },
+    {
+      "operation": "infer",
+      "env_ids": [
+        0,
+        1,
+        2,
+        3,
+        4
+      ]
+    },
+    {
+      "operation": "action",
+      "env_ids": [
+        0,
+        1,
+        2,
+        3,
+        4
+      ]
+    },
+    {
+      "operation": "action",
+      "env_ids": [
+        0,
+        1,
+        2,
+        3,
+        4
+      ]
+    },
+    {
+      "operation": "action",
+      "env_ids": [
+        0,
+        1,
+        2,
+        3,
+        4
+      ]
+    },
+    {
+      "operation": "action",
+      "env_ids": [
+        0,
+        1,
+        2,
+        3,
+        4
+      ]
+    },
+    {
+      "operation": "action",
+      "env_ids": [
+        0,
+        1,
+        2,
+        3,
+        4
+      ]
+    },
+    {
+      "operation": "action",
+      "env_ids": [
+        0,
+        1,
+        2,
+        3,
+        4
+      ]
+    },
+    {
+      "operation": "action",
+      "env_ids": [
+        0,
+        1,
+        2,
+        3,
+        4
+      ]
+    },
+    {
+      "operation": "action",
+      "env_ids": [
+        0,
+        1,
+        2,
+        3,
+        4
+      ]
+    },
+    {
+      "operation": "action",
+      "env_ids": [
+        0,
+        1,
+        2,
+        3,
+        4
+      ]
+    },
+    {
+      "operation": "action",
+      "env_ids": [
+        0,
+        1,
+        2,
+        3,
+        4
+      ]
+    },
+    {
+      "operation": "action",
+      "env_ids": [
+        0,
+        1,
+        2,
+        3,
+        4
+      ]
+    },
+    {
+      "operation": "action",
+      "env_ids": [
+        0,
+        1,
+        2,
+        3,
+        4
+      ]
+    },
+    {
+      "operation": "action",
+      "env_ids": [
+        0,
+        1,
+        2,
+        3,
+        4
+      ]
+    },
+    {
+      "operation": "action",
+      "env_ids": [
+        0,
+        1,
+        2,
+        3,
+        4
+      ]
+    },
+    {
+      "operation": "action",
+      "env_ids": [
+        0,
+        1,
+        2,
+        3,
+        4
+      ]
+    },
+    {
+      "operation": "infer",
+      "env_ids": [
+        0,
+        1,
+        2,
+        3,
+        4
+      ]
+    },
+    {
+      "operation": "action",
+      "env_ids": [
+        0,
+        1,
+        2,
+        3,
+        4
+      ]
+    },
+    {
+      "operation": "action",
+      "env_ids": [
+        0,
+        1,
+        2,
+        3,
+        4
+      ]
+    },
+    {
+      "operation": "action",
+      "env_ids": [
+        0,
+        1,
+        2,
+        3,
+        4
+      ]
+    },
+    {
+      "operation": "action",
+      "env_ids": [
+        0,
+        1,
+        2,
+        3,
+        4
+      ]
+    },
+    {
+      "operation": "action",
+      "env_ids": [
+        0,
+        1,
+        2,
+        3,
+        4
+      ]
+    },
+    {
+      "operation": "action",
+      "env_ids": [
+        0,
+        1,
+        2,
+        3,
+        4
+      ]
+    },
+    {
+      "operation": "action",
+      "env_ids": [
+        0,
+        1,
+        2,
+        3,
+        4
+      ]
+    },
+    {
+      "operation": "action",
+      "env_ids": [
+        0,
+        1,
+        2,
+        3,
+        4
+      ]
+    },
+    {
+      "operation": "action",
+      "env_ids": [
+        0,
+        1,
+        2,
+        3,
+        4
+      ]
+    },
+    {
+      "operation": "action",
+      "env_ids": [
+        0,
+        1,
+        2,
+        3,
+        4
+      ]
+    },
+    {
+      "operation": "action",
+      "env_ids": [
+        0,
+        1,
+        2,
+        3,
+        4
+      ]
+    },
+    {
+      "operation": "action",
+      "env_ids": [
+        0,
+        1,
+        2,
+        3,
+        4
+      ]
+    },
+    {
+      "operation": "action",
+      "env_ids": [
+        0,
+        1,
+        2,
+        3,
+        4
+      ]
+    },
+    {
+      "operation": "action",
+      "env_ids": [
+        0,
+        1,
+        2,
+        3,
+        4
+      ]
+    },
+    {
+      "operation": "action",
+      "env_ids": [
+        0,
+        1,
+        2,
+        3,
+        4
+      ]
+    },
+    {
+      "operation": "infer",
+      "env_ids": [
+        0,
+        1,
+        2,
+        3,
+        4
+      ]
+    },
+    {
+      "operation": "action",
+      "env_ids": [
+        0,
+        1,
+        2,
+        3,
+        4
+      ]
+    },
+    {
+      "operation": "action",
+      "env_ids": [
+        0,
+        1,
+        2,
+        3,
+        4
+      ]
+    },
+    {
+      "operation": "action",
+      "env_ids": [
+        0,
+        1,
+        2,
+        3,
+        4
+      ]
+    },
+    {
+      "operation": "action",
+      "env_ids": [
+        0,
+        1,
+        2,
+        3,
+        4
+      ]
+    },
+    {
+      "operation": "action",
+      "env_ids": [
+        0,
+        1,
+        2,
+        3,
+        4
+      ]
+    },
+    {
+      "operation": "action",
+      "env_ids": [
+        0,
+        1,
+        2,
+        3,
+        4
+      ]
+    },
+    {
+      "operation": "action",
+      "env_ids": [
+        0,
+        1,
+        2,
+        3,
+        4
+      ]
+    },
+    {
+      "operation": "action",
+      "env_ids": [
+        0,
+        1,
+        2,
+        3,
+        4
+      ]
+    },
+    {
+      "operation": "action",
+      "env_ids": [
+        0,
+        1,
+        2,
+        3,
+        4
+      ]
+    },
+    {
+      "operation": "action",
+      "env_ids": [
+        0,
+        1,
+        2,
+        3,
+        4
+      ]
+    },
+    {
+      "operation": "action",
+      "env_ids": [
+        0,
+        1,
+        2,
+        3,
+        4
+      ]
+    },
+    {
+      "operation": "action",
+      "env_ids": [
+        0,
+        1,
+        2,
+        3,
+        4
+      ]
+    },
+    {
+      "operation": "action",
+      "env_ids": [
+        0,
+        1,
+        2,
+        3,
+        4
+      ]
+    },
+    {
+      "operation": "action",
+      "env_ids": [
+        0,
+        1,
+        2,
+        3,
+        4
+      ]
+    },
+    {
+      "operation": "action",
+      "env_ids": [
+        0,
+        1,
+        2,
+        3,
+        4
+      ]
+    }
+  ],
+  "native_calls_per_env": {
+    "0": 10,
+    "1": 10,
+    "2": 10,
+    "3": 10,
+    "4": 10
+  },
+  "wall_s": 185.7301323770007,
+  "memory": "0, 9907, 14175\n1, 8666, 15416\n",
+  "unstable_envs": []
+}

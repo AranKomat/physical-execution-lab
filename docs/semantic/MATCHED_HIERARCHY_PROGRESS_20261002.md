@@ -366,3 +366,24 @@ GPU snapshots were 9,907/8,634 MiB. Evidence and prototype sources are under
 `../evidence/semantic-vector-coordinator-20261002/`. The frozen production
 runtime was not changed. Native paid planner integration remains pending;
 synthetic stop/prompt-isolation tests do not substitute for that qualification.
+
+## Bounded Native Parallel Planners
+
+Five sorting rows now ran through the same semantic adapter with independent
+planners: 750 controls, ten settled Sol 6.1 medium/Flex calls/$0.04298250,
+185.73 s rollout. All rows ended `resource_limited` at150, not native failures.
+Each received an initial subtask and then CONTINUE. Source predictions,
+effective prompts at worker requests, episode/stamp/step bindings, actual ACKs,
+served tier and existing semantic journal audits passed. Zero resets,
+resampling, shortening, recoveries, controller faults or unresolved actions.
+
+SSH returned a timeout after calls settled; a read-only reconnection found the
+terminal report and audit, and both GPUs idle. No restart/retry. Planner lock
+wait is included in per-row review timers; synchronous family barriers still
+pause while planners decide. Native changing goals/abstention and cross-family
+semantic execution are not verified by this bounded run. The next supervisor
+is prepared for three sorting plus two tower rows, avoiding repeated capacity
+layouts. Freeze a new vector comparison cohort, then run full matched waves;
+do not resume serial comparisons or count these component gates as Phase C.
+Evidence: `../evidence/semantic-vector-planner-20261002/`. Full unique sensors
+remain remote; backup is required before retirement. D/E remain unrun.

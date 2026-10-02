@@ -1,0 +1,397 @@
+{
+  "summary": {
+    "attempts": 10,
+    "cost_usd": "0.04298250",
+    "no_automatic_retry": true,
+    "requested_model": "openai/gpt-6.1-sol",
+    "provider": {
+      "only": [
+        "openai/flex"
+      ],
+      "allow_fallbacks": false,
+      "require_parameters": true,
+      "max_price": {
+        "prompt": 1.5,
+        "completion": 6
+      }
+    },
+    "service_tier": "flex",
+    "tool_name": "semantic_goal"
+  },
+  "decisions": [
+    {
+      "index": 0,
+      "decision": {
+        "episode": "9455262abf334ceb998f8c2d6b283c7e",
+        "based_on_step": 0,
+        "based_on_stamp": "aa75fc063eb633f92cb8fbcf673fadc46e9102ba3b4e65b154ca445b29343ae0",
+        "expected_epoch": 0,
+        "operation": "set_subtask",
+        "subtask": "Place the black-and-yellow pen in the white basket using the left arm.",
+        "assessment": "not_started",
+        "evidence": "At step 0, the black-and-yellow pen lies on the table in front of the empty white basket; both grippers are open. No objects have yet been visibly sorted.",
+        "completed_claims": [],
+        "uncertain_or_invalidated": []
+      },
+      "served_model": "openai/gpt-6.1-sol",
+      "served_tier": "flex",
+      "usage": {
+        "input_tokens": 2003,
+        "input_tokens_details": {
+          "cached_tokens": 0,
+          "cache_write_tokens": 1877
+        },
+        "output_tokens": 249,
+        "output_tokens_details": {
+          "reasoning_tokens": 80
+        },
+        "total_tokens": 2252,
+        "cost": 0.00371725,
+        "is_byok": false,
+        "cost_details": {
+          "upstream_inference_cost": 0.00371725,
+          "upstream_inference_input_cost": 0.00247225,
+          "upstream_inference_output_cost": 0.001245
+        }
+      }
+    },
+    {
+      "index": 1,
+      "decision": {
+        "episode": "3c74f7e661ff43a7927459d9748e45eb",
+        "based_on_step": 0,
+        "based_on_stamp": "71d7f5356836b545d0ae88b0d520487b86bda4e35ff08c3c4df0d3fa010ff19d",
+        "expected_epoch": 0,
+        "operation": "set_subtask",
+        "subtask": "Grasp the black rectangular object in front of the white basket with the left arm.",
+        "assessment": "not_started",
+        "evidence": "At step 0, the left wrist view shows a black rectangular object on the table in front of the white basket. Both grippers are open; no object is visibly held. Three baskets and several loose objects are visible.",
+        "completed_claims": [],
+        "uncertain_or_invalidated": [
+          "The baskets have no visible category labels; category-to-basket assignments are not established."
+        ]
+      },
+      "served_model": "openai/gpt-6.1-sol",
+      "served_tier": "flex",
+      "usage": {
+        "input_tokens": 2013,
+        "input_tokens_details": {
+          "cached_tokens": 0,
+          "cache_write_tokens": 1887
+        },
+        "output_tokens": 260,
+        "output_tokens_details": {
+          "reasoning_tokens": 57
+        },
+        "total_tokens": 2273,
+        "cost": 0.00378475,
+        "is_byok": false,
+        "cost_details": {
+          "upstream_inference_cost": 0.00378475,
+          "upstream_inference_input_cost": 0.00248475,
+          "upstream_inference_output_cost": 0.0013
+        }
+      }
+    },
+    {
+      "index": 2,
+      "decision": {
+        "episode": "91808230d9f44b028cb6f93bd8484a2e",
+        "based_on_step": 0,
+        "based_on_stamp": "1f6b8ded502439ff6213caf96b29b3a58f80c124dd7ade2e6a9a3d25eaa8721b",
+        "expected_epoch": 0,
+        "operation": "set_subtask",
+        "subtask": "Put the blue-clothed toy lying directly in front of the white basket into the white basket.",
+        "assessment": "not_started",
+        "evidence": "At step 0, three empty baskets are visible. A blue-clothed toy lies on the table directly in front of the white basket; no object is visibly held.",
+        "completed_claims": [],
+        "uncertain_or_invalidated": [
+          "No category-to-basket mapping is specified; using the white basket for the toys."
+        ]
+      },
+      "served_model": "openai/gpt-6.1-sol",
+      "served_tier": "flex",
+      "usage": {
+        "input_tokens": 2013,
+        "input_tokens_details": {
+          "cached_tokens": 0,
+          "cache_write_tokens": 1887
+        },
+        "output_tokens": 224,
+        "output_tokens_details": {
+          "reasoning_tokens": 28
+        },
+        "total_tokens": 2237,
+        "cost": 0.00360475,
+        "is_byok": false,
+        "cost_details": {
+          "upstream_inference_cost": 0.00360475,
+          "upstream_inference_input_cost": 0.00248475,
+          "upstream_inference_output_cost": 0.00112
+        }
+      }
+    },
+    {
+      "index": 3,
+      "decision": {
+        "episode": "2a903bca139845ddaf7a4453a6b446af",
+        "based_on_step": 0,
+        "based_on_stamp": "9cdd68769a887e9c6961b4f1b4d4e008b9c261f135c58403594622f57e2beef1",
+        "expected_epoch": 0,
+        "operation": "set_subtask",
+        "subtask": "Put the leftmost toy figure into the white basket using the left arm.",
+        "assessment": "not_started",
+        "evidence": "At step 0, three toy figures lie on the table; the leftmost is near the left gripper and the empty white basket. No object is visibly held. Basket category assignments are not marked visibly; grouping toy figures in the white basket is a chosen sorting convention.",
+        "completed_claims": [],
+        "uncertain_or_invalidated": []
+      },
+      "served_model": "openai/gpt-6.1-sol",
+      "served_tier": "flex",
+      "usage": {
+        "input_tokens": 2011,
+        "input_tokens_details": {
+          "cached_tokens": 0,
+          "cache_write_tokens": 1885
+        },
+        "output_tokens": 190,
+        "output_tokens_details": {
+          "reasoning_tokens": 0
+        },
+        "total_tokens": 2201,
+        "cost": 0.00343225,
+        "is_byok": false,
+        "cost_details": {
+          "upstream_inference_cost": 0.00343225,
+          "upstream_inference_input_cost": 0.00248225,
+          "upstream_inference_output_cost": 0.00095
+        }
+      }
+    },
+    {
+      "index": 4,
+      "decision": {
+        "episode": "75ef7d4ef0714759b3a3ace2ab2db9da",
+        "based_on_step": 0,
+        "based_on_stamp": "fdd78bd5f2346fa45b823f26c2690f55a43540a04431afe21cc864095c89a879",
+        "expected_epoch": 0,
+        "operation": "set_subtask",
+        "subtask": "Put the light blue toy car into the white basket using the left arm.",
+        "assessment": "not_started",
+        "evidence": "At step 0, the light blue toy car is on the table in front of the empty white basket on the left. Other toy vehicles, writing implements, and wristbands or watches remain on the table; no category labels are visible on the baskets.",
+        "completed_claims": [],
+        "uncertain_or_invalidated": []
+      },
+      "served_model": "openai/gpt-6.1-sol",
+      "served_tier": "flex",
+      "usage": {
+        "input_tokens": 2003,
+        "input_tokens_details": {
+          "cached_tokens": 0,
+          "cache_write_tokens": 1877
+        },
+        "output_tokens": 221,
+        "output_tokens_details": {
+          "reasoning_tokens": 37
+        },
+        "total_tokens": 2224,
+        "cost": 0.00357725,
+        "is_byok": false,
+        "cost_details": {
+          "upstream_inference_cost": 0.00357725,
+          "upstream_inference_input_cost": 0.00247225,
+          "upstream_inference_output_cost": 0.001105
+        }
+      }
+    },
+    {
+      "index": 5,
+      "decision": {
+        "episode": "3c74f7e661ff43a7927459d9748e45eb",
+        "based_on_step": 105,
+        "based_on_stamp": "0fb071e2fac7e43bd4feecdf7769df9848b7a515e569ad531acd42d1b181ba4f",
+        "expected_epoch": 1,
+        "operation": "continue",
+        "subtask": "",
+        "assessment": "uncertain",
+        "evidence": "At step 105, the left wrist view shows the plush toy on the tabletop between open gripper fingers, not the requested black rectangular object. The left arm obscures the target's earlier location in the overhead view. No grasp of the target is visibly confirmed; arm motion alone does not establish progress.",
+        "completed_claims": [],
+        "uncertain_or_invalidated": [
+          "The baskets have no visible category labels; category-to-basket assignments are not established.",
+          "The black rectangular object's current position and a successful left-arm grasp are unverified at step 105."
+        ]
+      },
+      "served_model": "openai/gpt-6.1-sol",
+      "served_tier": "flex",
+      "usage": {
+        "input_tokens": 3103,
+        "input_tokens_details": {
+          "cached_tokens": 0,
+          "cache_write_tokens": 2977
+        },
+        "output_tokens": 256,
+        "output_tokens_details": {
+          "reasoning_tokens": 40
+        },
+        "total_tokens": 3359,
+        "cost": 0.00512725,
+        "is_byok": false,
+        "cost_details": {
+          "upstream_inference_cost": 0.00512725,
+          "upstream_inference_input_cost": 0.00384725,
+          "upstream_inference_output_cost": 0.00128
+        }
+      }
+    },
+    {
+      "index": 6,
+      "decision": {
+        "episode": "91808230d9f44b028cb6f93bd8484a2e",
+        "based_on_step": 105,
+        "based_on_stamp": "b410241529f09597b98e203c01073637766e9194ca25caf4b85108ab8c2646f8",
+        "expected_epoch": 1,
+        "operation": "continue",
+        "subtask": "",
+        "assessment": "not_started",
+        "evidence": "At step 105, the target blue-clothed toy remains on the tabletop directly in front of the white basket. The left wrist view shows the toy between the open gripper fingers, but no secure grasp or placement inside the basket is visible. The current goal remains unmet.",
+        "completed_claims": [],
+        "uncertain_or_invalidated": [
+          "No category-to-basket mapping is specified; using the white basket for the toys.",
+          "A secure grasp of the target toy is not established at step 105."
+        ]
+      },
+      "served_model": "openai/gpt-6.1-sol",
+      "served_tier": "flex",
+      "usage": {
+        "input_tokens": 3107,
+        "input_tokens_details": {
+          "cached_tokens": 0,
+          "cache_write_tokens": 2981
+        },
+        "output_tokens": 201,
+        "output_tokens_details": {
+          "reasoning_tokens": 0
+        },
+        "total_tokens": 3308,
+        "cost": 0.00485725,
+        "is_byok": false,
+        "cost_details": {
+          "upstream_inference_cost": 0.00485725,
+          "upstream_inference_input_cost": 0.00385225,
+          "upstream_inference_output_cost": 0.001005
+        }
+      }
+    },
+    {
+      "index": 7,
+      "decision": {
+        "episode": "2a903bca139845ddaf7a4453a6b446af",
+        "based_on_step": 105,
+        "based_on_stamp": "e8920fb40ff7fc7fd7821ae68cba2a8dc8ffd57544fa8701bba9e1605c29966b",
+        "expected_epoch": 1,
+        "operation": "continue",
+        "subtask": "",
+        "assessment": "uncertain",
+        "evidence": "At step 105, the left arm partly obscures the white basket in the overhead view. The left-wrist view shows a toy figure against the wooden tabletop between open gripper fingers; neither a secure grasp nor placement of the originally leftmost figure inside the basket is clearly verified. Retain the current placement goal.",
+        "completed_claims": [],
+        "uncertain_or_invalidated": [
+          "Placement of the originally leftmost toy figure in the white basket is not verified at step 105."
+        ]
+      },
+      "served_model": "openai/gpt-6.1-sol",
+      "served_tier": "flex",
+      "usage": {
+        "input_tokens": 3094,
+        "input_tokens_details": {
+          "cached_tokens": 0,
+          "cache_write_tokens": 2968
+        },
+        "output_tokens": 296,
+        "output_tokens_details": {
+          "reasoning_tokens": 94
+        },
+        "total_tokens": 3390,
+        "cost": 0.005316,
+        "is_byok": false,
+        "cost_details": {
+          "upstream_inference_cost": 0.005316,
+          "upstream_inference_input_cost": 0.003836,
+          "upstream_inference_output_cost": 0.00148
+        }
+      }
+    },
+    {
+      "index": 8,
+      "decision": {
+        "episode": "9455262abf334ceb998f8c2d6b283c7e",
+        "based_on_step": 105,
+        "based_on_stamp": "b9e31cfa4ce76480719e3cac6877d8945d9560685257aae680475b53596b3216",
+        "expected_epoch": 1,
+        "operation": "continue",
+        "subtask": "",
+        "assessment": "not_started",
+        "evidence": "At step 105, the black-and-yellow pen remains visibly on the tabletop in front of the white basket. The left wrist view shows its yellow end outside the open gripper; neither grasp nor placement is verified. Retain the current placement goal.",
+        "completed_claims": [],
+        "uncertain_or_invalidated": []
+      },
+      "served_model": "openai/gpt-6.1-sol",
+      "served_tier": "flex",
+      "usage": {
+        "input_tokens": 3062,
+        "input_tokens_details": {
+          "cached_tokens": 0,
+          "cache_write_tokens": 2936
+        },
+        "output_tokens": 162,
+        "output_tokens_details": {
+          "reasoning_tokens": 0
+        },
+        "total_tokens": 3224,
+        "cost": 0.004606,
+        "is_byok": false,
+        "cost_details": {
+          "upstream_inference_cost": 0.004606,
+          "upstream_inference_input_cost": 0.003796,
+          "upstream_inference_output_cost": 0.00081
+        }
+      }
+    },
+    {
+      "index": 9,
+      "decision": {
+        "episode": "75ef7d4ef0714759b3a3ace2ab2db9da",
+        "based_on_step": 105,
+        "based_on_stamp": "f6491e73ce0ced2fb5fe8e55d89eb110aba88ead17ad07b194100f03cb5e34d2",
+        "expected_epoch": 1,
+        "operation": "continue",
+        "subtask": "",
+        "assessment": "uncertain",
+        "evidence": "At step 105, the light blue car is no longer visible at its step-0 table location, but the left arm obscures much of the white basket. Neither the car inside the basket nor a held car is clearly visible, so placement cannot be verified from the current RGB views.",
+        "completed_claims": [],
+        "uncertain_or_invalidated": [
+          "The light blue car's placement in the white basket is unverified at step 105."
+        ]
+      },
+      "served_model": "openai/gpt-6.1-sol",
+      "served_tier": "flex",
+      "usage": {
+        "input_tokens": 3085,
+        "input_tokens_details": {
+          "cached_tokens": 0,
+          "cache_write_tokens": 2959
+        },
+        "output_tokens": 227,
+        "output_tokens_details": {
+          "reasoning_tokens": 32
+        },
+        "total_tokens": 3312,
+        "cost": 0.00495975,
+        "is_byok": false,
+        "cost_details": {
+          "upstream_inference_cost": 0.00495975,
+          "upstream_inference_input_cost": 0.00382475,
+          "upstream_inference_output_cost": 0.001135
+        }
+      }
+    }
+  ]
+}

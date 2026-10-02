@@ -1,0 +1,103 @@
+{
+  "status": "native_semantic_planner_vector_audit_passed",
+  "actual_controls": 750,
+  "episodes": {
+    "0": {
+      "journal": {
+        "events": 174,
+        "head_sha256": "a74c4d16344f3b0c37584bd7fd5bbbb2a96ea5e10db3ab44d8be2cef67e863a9"
+      },
+      "actual_control_acks": 150,
+      "policy_proposals": 10,
+      "semantic_epochs_seen_by_motor": [
+        1
+      ],
+      "distinct_effective_prompts": 1,
+      "prefix_cadence_verified": true,
+      "complete_native_result": false,
+      "evidence_kind": "native_unqualified",
+      "robot_competence_claim": false,
+      "source_H50_predictions_and_effective_request_prompts_equal": true,
+      "planner_episode_bindings_verified": 2,
+      "status": "resource_limited"
+    },
+    "1": {
+      "journal": {
+        "events": 174,
+        "head_sha256": "ac795d67359898c381863d57e8496373c6702673ab0a266dfcb50e1e60f8a676"
+      },
+      "actual_control_acks": 150,
+      "policy_proposals": 10,
+      "semantic_epochs_seen_by_motor": [
+        1
+      ],
+      "distinct_effective_prompts": 1,
+      "prefix_cadence_verified": true,
+      "complete_native_result": false,
+      "evidence_kind": "native_unqualified",
+      "robot_competence_claim": false,
+      "source_H50_predictions_and_effective_request_prompts_equal": true,
+      "planner_episode_bindings_verified": 2,
+      "status": "resource_limited"
+    },
+    "2": {
+      "journal": {
+        "events": 174,
+        "head_sha256": "23a46efffab10d914535add854b2a8492299ea019dc07ac26ff4b1a22cb449c7"
+      },
+      "actual_control_acks": 150,
+      "policy_proposals": 10,
+      "semantic_epochs_seen_by_motor": [
+        1
+      ],
+      "distinct_effective_prompts": 1,
+      "prefix_cadence_verified": true,
+      "complete_native_result": false,
+      "evidence_kind": "native_unqualified",
+      "robot_competence_claim": false,
+      "source_H50_predictions_and_effective_request_prompts_equal": true,
+      "planner_episode_bindings_verified": 2,
+      "status": "resource_limited"
+    },
+    "3": {
+      "journal": {
+        "events": 174,
+        "head_sha256": "9cb16a776c7556884ce03f8bbfb64c6a944964e8491913d510e0aa428821163e"
+      },
+      "actual_control_acks": 150,
+      "policy_proposals": 10,
+      "semantic_epochs_seen_by_motor": [
+        1
+      ],
+      "distinct_effective_prompts": 1,
+      "prefix_cadence_verified": true,
+      "complete_native_result": false,
+      "evidence_kind": "native_unqualified",
+      "robot_competence_claim": false,
+      "source_H50_predictions_and_effective_request_prompts_equal": true,
+      "planner_episode_bindings_verified": 2,
+      "status": "resource_limited"
+    },
+    "4": {
+      "journal": {
+        "events": 174,
+        "head_sha256": "5e241b708d589a957b6446ce5d37b753d6e515b047ed49f217979198316b904c"
+      },
+      "actual_control_acks": 150,
+      "policy_proposals": 10,
+      "semantic_epochs_seen_by_motor": [
+        1
+      ],
+      "distinct_effective_prompts": 1,
+      "prefix_cadence_verified": true,
+      "complete_native_result": false,
+      "evidence_kind": "native_unqualified",
+      "robot_competence_claim": false,
+      "source_H50_predictions_and_effective_request_prompts_equal": true,
+      "planner_episode_bindings_verified": 2,
+      "status": "resource_limited"
+    }
+  },
+  "paid_calls": 10,
+  "scope": "bounded native planner integration, not hierarchy benefit or full-horizon qualification"
+}
