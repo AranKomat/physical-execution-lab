@@ -340,3 +340,29 @@ GPU host; only their small audited results/structured decisions are local and
 published so far. Do not retire those unique sensors or stop/destroy the host
 before completing backups. Sorting2's full local archive is hash-verified;
 its remote native sensor duplicates were retired against that verification.
+
+## Full Concurrent Motor Wave
+
+Both five-row family waves now reached native success or native horizon:
+9,432 audited controls, zero paid calls, no unstable rows, 670.83 s including
+startup/shutdown. Terminal membership removal and independent source RNG/call
+accounting passed. Four successes/six failures across repeated development
+layouts are capacity outcomes, not independent-task SR or hierarchy evidence.
+
+The next adapter reuses ordinary per-episode `run_episode` and
+`InstructionPolicy`, with one physics/model dispatcher and isolated journals.
+A CPU synthetic test passed prompt isolation, one episode's abstention while
+another continues, and partial terminal prefix accounting. It is not native
+robot evidence. Native motor-only adapter qualification is the next gate;
+paid planner concurrency and a new bound comparison roster remain pending.
+
+The zero-API native adapter pilot subsequently passed: five sorting rows,
+150 controls each (750 total), ten H50 proposals per row and 102.00 s rollout.
+Each existing semantic journal audit passed; source predictions matched all
+logged proposals and native actions matched all controller ACKs. Original
+instructions remained unchanged, with no semantic decisions or unstable rows.
+This explicitly budget-limited wave is incomplete, not five native failures.
+GPU snapshots were 9,907/8,634 MiB. Evidence and prototype sources are under
+`../evidence/semantic-vector-coordinator-20261002/`. The frozen production
+runtime was not changed. Native paid planner integration remains pending;
+synthetic stop/prompt-isolation tests do not substitute for that qualification.

@@ -1,0 +1,94 @@
+{
+  "status": "native_semantic_motor_vector_audit_passed",
+  "actual_controls": 750,
+  "episodes": {
+    "0": {
+      "journal": {
+        "events": 172,
+        "head_sha256": "f6f68f5c24630c589b26ddc638db400eacc2ffa84149d59057bb76cf8b944da7"
+      },
+      "actual_control_acks": 150,
+      "policy_proposals": 10,
+      "semantic_epochs_seen_by_motor": [
+        0
+      ],
+      "distinct_effective_prompts": 1,
+      "prefix_cadence_verified": true,
+      "complete_native_result": false,
+      "evidence_kind": "native_unqualified",
+      "robot_competence_claim": false,
+      "source_H50_predictions_equal": true
+    },
+    "1": {
+      "journal": {
+        "events": 172,
+        "head_sha256": "e8e16e4b476d3b5899247ee29c54b756915dd3e161f5bea05c7ce02488515bb6"
+      },
+      "actual_control_acks": 150,
+      "policy_proposals": 10,
+      "semantic_epochs_seen_by_motor": [
+        0
+      ],
+      "distinct_effective_prompts": 1,
+      "prefix_cadence_verified": true,
+      "complete_native_result": false,
+      "evidence_kind": "native_unqualified",
+      "robot_competence_claim": false,
+      "source_H50_predictions_equal": true
+    },
+    "2": {
+      "journal": {
+        "events": 172,
+        "head_sha256": "4edb25558f9fff77589e8825b226ac95163089839dc149418677964b0748ad75"
+      },
+      "actual_control_acks": 150,
+      "policy_proposals": 10,
+      "semantic_epochs_seen_by_motor": [
+        0
+      ],
+      "distinct_effective_prompts": 1,
+      "prefix_cadence_verified": true,
+      "complete_native_result": false,
+      "evidence_kind": "native_unqualified",
+      "robot_competence_claim": false,
+      "source_H50_predictions_equal": true
+    },
+    "3": {
+      "journal": {
+        "events": 172,
+        "head_sha256": "59fcff672dc3cf5c4d7de98a7da92f996ce2783d51fb268dd5c42dcc465c41ee"
+      },
+      "actual_control_acks": 150,
+      "policy_proposals": 10,
+      "semantic_epochs_seen_by_motor": [
+        0
+      ],
+      "distinct_effective_prompts": 1,
+      "prefix_cadence_verified": true,
+      "complete_native_result": false,
+      "evidence_kind": "native_unqualified",
+      "robot_competence_claim": false,
+      "source_H50_predictions_equal": true
+    },
+    "4": {
+      "journal": {
+        "events": 172,
+        "head_sha256": "2b07ea6eda61ff5b3960bcba0c9216be392b4c7f4898855f2efbab760fc56864"
+      },
+      "actual_control_acks": 150,
+      "policy_proposals": 10,
+      "semantic_epochs_seen_by_motor": [
+        0
+      ],
+      "distinct_effective_prompts": 1,
+      "prefix_cadence_verified": true,
+      "complete_native_result": false,
+      "evidence_kind": "native_unqualified",
+      "robot_competence_claim": false,
+      "source_H50_predictions_equal": true
+    }
+  },
+  "paid_calls": 0,
+  "source_predictions_and_native_acks_match": true,
+  "scope": "motor-only native semantic adapter; not paid planner or hierarchy qualification"
+}

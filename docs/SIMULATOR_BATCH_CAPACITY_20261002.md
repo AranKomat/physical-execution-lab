@@ -325,10 +325,46 @@ After terminal reports, completed audits and absence of the remote supervisor
 were confirmed, its lingering local SSH transport was closed. No episode was
 restarted or replaced due to the transport issue.
 
-**Next:** full-horizon concurrent termination/membership handling, then
+**Next (superseded by the full-wave result below):** full-horizon concurrent termination/membership handling, then
 per-episode semantic state/planner integration with the campaign's serialized
 budget relay. Bind the roster and explicit new execution cohort before
 comparisons; do not open held-out families to debug the runner or count
 repeated layouts as independent task coverage. Stop further serial paid
 comparisons while this parallel path is being finished. This bounded test is
 working native execution, not completion of the research phases.
+
+## Full-Horizon Concurrent Execution
+
+The follow-up completed both five-environment families to native termination,
+with one shared pi0.5 runtime: **9,432 controls**, zero paid calls and no
+unstable environments. Sorting executed [760,1100,1100,855,716] controls
+(three successes, two horizon failures); tower executed [1050,1050,701,1050,1050]
+(one success, four horizon failures). These are repeated development layouts,
+not ten independent tasks or a benchmark success-rate estimate.
+
+Sorting rollout took 566.85 s, tower 533.84 s. Concurrent wall including
+simulator startup was 635.73 s; including model startup/shutdown, 670.83 s.
+There is no matched serial speedup measurement. Reported device snapshots were
+19,018 MiB on GPU0 and 8,674 MiB on GPU1, not measured worst-case peaks.
+
+Audits verified source prediction equality, contiguous actual ACKs, H50/15
+cadence, removal of terminal rows, final score snapshots, original prompts,
+per-wave/per-row source RNG and call counts. Retired rows' physics continues
+globally inside each family, while their terminal scores remain frozen.
+Exact executed operators and audits are in
+[full-wave evidence](evidence/multifamily-full-wave-20261002/).
+
+Next qualify the existing semantic runner on this executor, first without
+paid calls, then with per-episode planners and serialized budget accounting.
+Do not resume serial paid comparisons or merge this new motor cohort with
+the historical frozen hierarchy pairs. No extra GPUs are needed for this
+tested topology. G0.5 and Intern semantic integration remain unqualified.
+
+The existing semantic-loop motor-only adapter passed a subsequent five-row,
+750-control native pilot in 102.00 s rollout, with exact source predictions,
+controller/native ACK equality and original prompts. It ended at the explicit
+150-action bound, not native termination. Zero paid calls. The CPU structural
+test also covers isolated prompt changes and retiring an abstaining episode;
+that portion remains synthetic. Per-episode paid planners are still untested
+on the native parallel executor. Prototype sources and both audits are in
+[semantic coordinator evidence](evidence/semantic-vector-coordinator-20261002/).

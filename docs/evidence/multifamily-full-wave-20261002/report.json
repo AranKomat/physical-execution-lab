@@ -1,0 +1,280 @@
+{
+  "status": "native_terminal_concurrent_waves",
+  "paid_calls": 0,
+  "policy_runtimes": 1,
+  "simulator_processes": 2,
+  "simulator_gpu": 0,
+  "policy_gpu": 1,
+  "scope": "concurrent development execution, not hierarchy comparison or independent task coverage",
+  "requested_action_bound_per_env": 1100,
+  "wave_outputs": {
+    "classify_objects": "/root/physical-execution-lab/runs/vector-pi05-5-008",
+    "build_tower": "/root/physical-execution-lab/runs/vector-pi05-5-009"
+  },
+  "initial_device_usage_mib": [
+    "0",
+    "0"
+  ],
+  "concurrent_wave_wall_including_sim_setup_s": 635.7311396359946,
+  "waves": {
+    "classify_objects": {
+      "status": "native_terminal_wave",
+      "scope": "experimental vector motor rollout, separate execution cohort",
+      "paid_calls": 0,
+      "resets": 1,
+      "task": "classify_objects",
+      "requested_envs": 5,
+      "budget_steps_per_env": 1100,
+      "physics_of_completed_envs": "continues globally; terminal score frozen",
+      "rng_parity": false,
+      "inference_mode": "native_singleton",
+      "scored_benchmark_qualified": false,
+      "policy": "pi05",
+      "execute_steps": 15,
+      "returned_action_steps": 50,
+      "native_prediction_horizon": 50,
+      "shared_worker_root": "/root/physical-execution-lab/runs/multifamily-pi05-002/shared-worker",
+      "native_registration": {
+        "registered": true,
+        "source": "native EvalEnv.run_eval preamble",
+        "condition_group_counts": {
+          "check_list": [
+            1,
+            1,
+            1,
+            1,
+            1
+          ],
+          "final_check_list": [
+            0,
+            0,
+            0,
+            0,
+            0
+          ],
+          "trigger_check_list": [
+            0,
+            0,
+            0,
+            0,
+            0
+          ]
+        },
+        "initial_support_arm_query_envs": []
+      },
+      "reset_seeds": [
+        0,
+        1,
+        2,
+        0,
+        1
+      ],
+      "layout_bindings": [
+        {
+          "env_idx": 0,
+          "layout_id": 0,
+          "path": "/root/physical-execution-lab/external/RoboDojo/env/../Assets/Eval_Layout/RoboDojo/arx_x5/0/classify_objects_0.json",
+          "sha256": "5ceb9e18e6d8490a7db85dd001462d63265c297ea6fad0d7438364deb2de3ece"
+        },
+        {
+          "env_idx": 1,
+          "layout_id": 1,
+          "path": "/root/physical-execution-lab/external/RoboDojo/env/../Assets/Eval_Layout/RoboDojo/arx_x5/0/classify_objects_1.json",
+          "sha256": "013d7141ffc9865d7cccf650301f642e6b83b3eb59f78cf5b1d0caf47158e17a"
+        },
+        {
+          "env_idx": 2,
+          "layout_id": 2,
+          "path": "/root/physical-execution-lab/external/RoboDojo/env/../Assets/Eval_Layout/RoboDojo/arx_x5/0/classify_objects_2.json",
+          "sha256": "6b3a30251bd92a465ffdc82436e14dde84879906eeab3b0e8944865b9eef38f7"
+        },
+        {
+          "env_idx": 3,
+          "layout_id": 0,
+          "path": "/root/physical-execution-lab/external/RoboDojo/env/../Assets/Eval_Layout/RoboDojo/arx_x5/0/classify_objects_0.json",
+          "sha256": "5ceb9e18e6d8490a7db85dd001462d63265c297ea6fad0d7438364deb2de3ece"
+        },
+        {
+          "env_idx": 4,
+          "layout_id": 1,
+          "path": "/root/physical-execution-lab/external/RoboDojo/env/../Assets/Eval_Layout/RoboDojo/arx_x5/0/classify_objects_1.json",
+          "sha256": "013d7141ffc9865d7cccf650301f642e6b83b3eb59f78cf5b1d0caf47158e17a"
+        }
+      ],
+      "action_counts": [
+        760,
+        1100,
+        1100,
+        855,
+        716
+      ],
+      "predictions": 74,
+      "terminal": {
+        "4": {
+          "step": 716,
+          "success": true,
+          "native_score": 1.0,
+          "unstable": false
+        },
+        "0": {
+          "step": 760,
+          "success": true,
+          "native_score": 1.0,
+          "unstable": false
+        },
+        "3": {
+          "step": 855,
+          "success": true,
+          "native_score": 1.0,
+          "unstable": false
+        },
+        "1": {
+          "step": 1100,
+          "success": false,
+          "native_score": 0.4,
+          "unstable": false
+        },
+        "2": {
+          "step": 1100,
+          "success": false,
+          "native_score": 0.15,
+          "unstable": false
+        }
+      },
+      "memory": "0, 10007, 14075\n1, 8674, 15408\n",
+      "wall_s": 566.8482158929983,
+      "active_envs": [],
+      "unstable_envs": []
+    },
+    "build_tower": {
+      "status": "native_terminal_wave",
+      "scope": "experimental vector motor rollout, separate execution cohort",
+      "paid_calls": 0,
+      "resets": 1,
+      "task": "build_tower",
+      "requested_envs": 5,
+      "budget_steps_per_env": 1100,
+      "physics_of_completed_envs": "continues globally; terminal score frozen",
+      "rng_parity": false,
+      "inference_mode": "native_singleton",
+      "scored_benchmark_qualified": false,
+      "policy": "pi05",
+      "execute_steps": 15,
+      "returned_action_steps": 50,
+      "native_prediction_horizon": 50,
+      "shared_worker_root": "/root/physical-execution-lab/runs/multifamily-pi05-002/shared-worker",
+      "native_registration": {
+        "registered": true,
+        "source": "native EvalEnv.run_eval preamble",
+        "condition_group_counts": {
+          "check_list": [
+            1,
+            1,
+            1,
+            1,
+            1
+          ],
+          "final_check_list": [
+            0,
+            0,
+            0,
+            0,
+            0
+          ],
+          "trigger_check_list": [
+            0,
+            0,
+            0,
+            0,
+            0
+          ]
+        },
+        "initial_support_arm_query_envs": []
+      },
+      "reset_seeds": [
+        0,
+        1,
+        0,
+        1,
+        0
+      ],
+      "layout_bindings": [
+        {
+          "env_idx": 0,
+          "layout_id": 0,
+          "path": "/root/physical-execution-lab/external/RoboDojo/env/../Assets/Eval_Layout/RoboDojo/arx_x5/0/build_tower_0.json",
+          "sha256": "afcf896086392357a8826f84bebe4910dcb7a5f1b84e7be435e16e3d5c3607a4"
+        },
+        {
+          "env_idx": 1,
+          "layout_id": 1,
+          "path": "/root/physical-execution-lab/external/RoboDojo/env/../Assets/Eval_Layout/RoboDojo/arx_x5/0/build_tower_1.json",
+          "sha256": "c4c67f1c1c2abe8ae32d2686048e61eb6e4396c79025b30779091f14705db18c"
+        },
+        {
+          "env_idx": 2,
+          "layout_id": 0,
+          "path": "/root/physical-execution-lab/external/RoboDojo/env/../Assets/Eval_Layout/RoboDojo/arx_x5/0/build_tower_0.json",
+          "sha256": "afcf896086392357a8826f84bebe4910dcb7a5f1b84e7be435e16e3d5c3607a4"
+        },
+        {
+          "env_idx": 3,
+          "layout_id": 1,
+          "path": "/root/physical-execution-lab/external/RoboDojo/env/../Assets/Eval_Layout/RoboDojo/arx_x5/0/build_tower_1.json",
+          "sha256": "c4c67f1c1c2abe8ae32d2686048e61eb6e4396c79025b30779091f14705db18c"
+        },
+        {
+          "env_idx": 4,
+          "layout_id": 0,
+          "path": "/root/physical-execution-lab/external/RoboDojo/env/../Assets/Eval_Layout/RoboDojo/arx_x5/0/build_tower_0.json",
+          "sha256": "afcf896086392357a8826f84bebe4910dcb7a5f1b84e7be435e16e3d5c3607a4"
+        }
+      ],
+      "action_counts": [
+        1050,
+        1050,
+        701,
+        1050,
+        1050
+      ],
+      "predictions": 70,
+      "terminal": {
+        "2": {
+          "step": 701,
+          "success": true,
+          "native_score": 1.0,
+          "unstable": false
+        },
+        "0": {
+          "step": 1050,
+          "success": false,
+          "native_score": 0.1,
+          "unstable": false
+        },
+        "1": {
+          "step": 1050,
+          "success": false,
+          "native_score": 0.1,
+          "unstable": false
+        },
+        "3": {
+          "step": 1050,
+          "success": false,
+          "native_score": 0.0,
+          "unstable": false
+        },
+        "4": {
+          "step": 1050,
+          "success": false,
+          "native_score": 0.0,
+          "unstable": false
+        }
+      },
+      "memory": "0, 19018, 5064\n1, 8674, 15408\n",
+      "wall_s": 533.842074840999,
+      "active_envs": [],
+      "unstable_envs": []
+    }
+  },
+  "total_wall_s": 670.8279282309959
+}

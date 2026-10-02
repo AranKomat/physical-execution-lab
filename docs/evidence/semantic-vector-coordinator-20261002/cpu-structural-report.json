@@ -1,0 +1,104 @@
+{
+  "status": "synthetic_vector_structure_passed",
+  "controls": {
+    "0": 2,
+    "1": 5
+  },
+  "policy_calls": {
+    "0": 1,
+    "1": 3
+  },
+  "per_episode_prompt_isolation": true,
+  "abstention_and_partial_terminal_prefix_accounted": true,
+  "existing_semantic_journal_audits": {
+    "0": {
+      "journal": {
+        "events": 8,
+        "head_sha256": "8b00d84b66f671ee33ff3de3d91f65ce4928af9cf05ccd3c779f408c4784bcb0"
+      },
+      "actual_control_acks": 2,
+      "policy_proposals": 1,
+      "semantic_epochs_seen_by_motor": [
+        1
+      ],
+      "distinct_effective_prompts": 1,
+      "prefix_cadence_verified": true,
+      "complete_native_result": false,
+      "evidence_kind": "synthetic",
+      "robot_competence_claim": false
+    },
+    "1": {
+      "journal": {
+        "events": 16,
+        "head_sha256": "ee50eb7305857c453d94e53fd9dde754e3498ac47915dcc49389eec7a5ba9e8a"
+      },
+      "actual_control_acks": 5,
+      "policy_proposals": 3,
+      "semantic_epochs_seen_by_motor": [
+        1
+      ],
+      "distinct_effective_prompts": 1,
+      "prefix_cadence_verified": true,
+      "complete_native_result": true,
+      "evidence_kind": "synthetic",
+      "robot_competence_claim": false
+    }
+  },
+  "dispatches": [
+    {
+      "operation": "infer",
+      "env_ids": [
+        0,
+        1
+      ]
+    },
+    {
+      "operation": "action",
+      "env_ids": [
+        0,
+        1
+      ]
+    },
+    {
+      "operation": "action",
+      "env_ids": [
+        0,
+        1
+      ]
+    },
+    {
+      "operation": "infer",
+      "env_ids": [
+        1
+      ]
+    },
+    {
+      "operation": "action",
+      "env_ids": [
+        1
+      ]
+    },
+    {
+      "operation": "action",
+      "env_ids": [
+        1
+      ]
+    },
+    {
+      "operation": "infer",
+      "env_ids": [
+        1
+      ]
+    },
+    {
+      "operation": "action",
+      "env_ids": [
+        1
+      ]
+    }
+  ],
+  "paid_calls": 0,
+  "native_simulators": 0,
+  "learned_model_inferences": 0,
+  "scope": "CPU structural check only; not native semantic vector qualification or phase completion"
+}

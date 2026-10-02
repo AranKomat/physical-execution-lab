@@ -1,0 +1,9 @@
+{
+  "name": "experimental_semantic_vector_motor_pilot001",
+  "mode": "motor_only",
+  "prompt_mode": "original_only",
+  "max_semantic_calls": 0,
+  "wall_limit_s": 900,
+  "no_task_memory": true,
+  "no_task_demonstrations": true
+}
