@@ -70,12 +70,21 @@ class XPolicyModel:
         name=config['policy']
         if name not in MODULES:raise ContractError('unsupported XPolicyLab policy')
         cfg=dict(config.get('model_config',{}))
+        self.placement=config.get('intern_component_placement')
+        if self.placement is not None:
+            if name!='internw0_delta':raise ContractError('component placement is specific to Intern')
+            from .intern_placement import validate
+            validate(cfg,self.placement)
         if cfg.get('allow_dummy_policy') or cfg.get('device')=='cpu':raise Unavailable('real policy bridge refuses dummy/CPU evaluation')
         if model is None:
             root=check_checkout(config['xpolicylab_root'],REV)
             sys.path.insert(0,str(root.parent))
             module=importlib.import_module('XPolicyLab.policy.'+MODULES[name]+'.model')
-            model=module.Model(cfg)
+            if self.placement is None:
+                model=module.Model(cfg)
+            else:
+                from .intern_placement import load_model
+                model=load_model(module,cfg,self.placement)
         self.model=model;self.last_stamp=None;self.last_step=None;self.episode=None
         self.pending=0;self.last_diag={}
 
@@ -114,10 +123,19 @@ class XPolicyModel:
 
     def synchronize(self):
         import torch
-        if torch.cuda.is_available():torch.cuda.synchronize()
+        if torch.cuda.is_available():
+            if self.placement is None:torch.cuda.synchronize()
+            else:
+                for device in (self.placement['encoder_device'],self.placement['main_device']):
+                    torch.cuda.synchronize(device)
 
     def memory(self):
         import torch
+        if self.placement is not None and torch.cuda.is_available():
+            return {'devices':{d:{'allocated_bytes':torch.cuda.max_memory_allocated(d),
+                                  'reserved_bytes':torch.cuda.max_memory_reserved(d)}
+                    for d in (self.placement['encoder_device'],self.placement['main_device'])},
+                    'scope':'per-device process lifetime peaks'}
         return {'allocated_bytes':torch.cuda.max_memory_allocated(),
                 'reserved_bytes':torch.cuda.max_memory_reserved()} if torch.cuda.is_available() else {}
     def close(self):pass

@@ -96,7 +96,7 @@
     "k1lab/multibench/adapters/pi05.py": "16cac60a150377ba4f23fbb493ce8579c24f09f1feb532951ae5c034895e0c18",
     "k1lab/multibench/adapters/robocasa.py": "4640172e77ae02dd4692b0b7105dd6ac76f4b30bfcc888bbe3d416b885544b2e",
     "k1lab/multibench/adapters/robodojo.py": "dc3897599cee29643cbf7cbd5141ecbaaf496493eb10e0614b2d7f50aa2077ce",
-    "k1lab/multibench/adapters/xpolicylab.py": "f3076a9e2dbe08352791dea4236595670b7d53d083038e1e26f095fee0624acb",
+    "k1lab/multibench/adapters/xpolicylab.py": "5c052a5d0f0efefb45a548ccc65525eb631d0de5b98ba23bc10bbba8b74ad54c",
     "k1lab/multibench/catalog.py": "ecc7f799c579ec2b130016962383f4a38e1bfee20299b3f1edafba606b04b963",
     "k1lab/multibench/cli.py": "3e748264579b044a77f907ca618a31240118f87d651beda69777fab2d8a35385",
     "k1lab/multibench/factory.py": "7f0e83a94a17003d69f8b8f5d6820ef3d984323d1dd56a44e23bc6dbc0f95c72",
@@ -893,6 +893,8 @@
     "docs/evidence/intern-two-gpu-probe/attempt001.json": "fc42860f74196cc39f45679f3a7fd53d71eec027d9fb451624e5435682d8358c",
     "docs/evidence/intern-two-gpu-probe/attempt002.json": "5906d49bb17bf4bed610b24c64e5d87b3813144b3ab048be73341b7a6e237ab5",
     "docs/evidence/intern-two-gpu-probe/captured-timings.json": "20cece9c13f842a093408b9289aa5c7560ec2d21777f706cea3c9976509d0b62",
-    "docs/evidence/intern-two-gpu-probe/probe-attempt002.py": "10fa4d8008b0ef66497e721fd71639e28e4acebe87bd4ec09fde4213059e7814"
+    "docs/evidence/intern-two-gpu-probe/probe-attempt002.py": "10fa4d8008b0ef66497e721fd71639e28e4acebe87bd4ec09fde4213059e7814",
+    "k1lab/multibench/adapters/intern_placement.py": "4d138428f2b6152ff30a0021182c0bc4062e7c089d035c78247e978707d41dc8",
+    "tests/multibench/test_intern_placement.py": "67b8fef070600ec0e254611d0d7bd8e1da6911f4f04bc83a4410699cafd6a7e3"
   }
 }
