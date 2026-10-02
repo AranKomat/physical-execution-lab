@@ -1351,6 +1351,8 @@
     "scripts/semantic/prepare_approach_comparison.py": "3c074b31e4b96dce6675b8c9d51e4f1557e8601bff01563ce49a53dbd245d0e4",
     "semantic_lab/comparison.py": "a814696645690f44f174324d1df943bb75f27bc8fa56e1b5fde02a4fcbe46bc3",
     "tests/semantic/test_comparison.py": "7fae94b4b86bf737a913da6f213cbf03d7bb5d4cadb913bbaa4bcf058c702258",
-    "scripts/semantic/run_reference_waves.py": "4f4ee91e564cb6c86ddcc74d77fff771879db9e0a735a014812e71cfa5c0c022"
+    "scripts/semantic/run_reference_waves.py": "4f4ee91e564cb6c86ddcc74d77fff771879db9e0a735a014812e71cfa5c0c022",
+    "scripts/semantic/probe_pi05_batch.py": "76fefb1c247268b5f31cb24955fc0270f1384f01c2c6215a8e5cabd30af35051",
+    "semantic_lab/pi05_batch.py": "6a7313cd7a20047b02a6b0bf45169b3243cd6648cc3dd9e3dd4d99d127316702"
   }
 }
