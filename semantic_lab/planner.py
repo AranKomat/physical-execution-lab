@@ -31,7 +31,7 @@ Return a compact public evidence summary, not private chain-of-thought.
 '''
 
 
-def tool_schema():
+def tool_schema(binding=None):
     claim = {'type': 'object', 'additionalProperties': False,
              'properties': {'text': {'type': 'string', 'maxLength': 400},
                             'evidence_steps': {'type': 'array', 'minItems': 1, 'maxItems': 12,
@@ -40,7 +40,7 @@ def tool_schema():
     props = {
         'episode': {'type': 'string'},
         'based_on_step': {'type': 'integer', 'minimum': 0},
-        'based_on_stamp': {'type': 'string'},
+        'based_on_stamp': {'type': 'string', 'minLength': 64, 'maxLength': 64},
         'expected_epoch': {'type': 'integer', 'minimum': 0},
         'operation': {'type': 'string', 'enum': ['continue', 'set_subtask', 'recover', 'stop']},
         'subtask': {'type': 'string', 'maxLength': 600},
@@ -49,6 +49,11 @@ def tool_schema():
         'completed_claims': {'type': 'array', 'maxItems': 12, 'items': claim},
         'uncertain_or_invalidated': {'type': 'array', 'maxItems': 12, 'items': {'type': 'string', 'maxLength': 400}},
     }
+    if binding is not None:
+        if set(binding) != {'episode', 'based_on_step', 'based_on_stamp', 'expected_epoch'}:
+            raise ContractError('semantic tool binding requires all request identity fields')
+        for name, value in binding.items():
+            props[name]['enum'] = [value]
     return {'type': 'function', 'function': {'name': 'semantic_goal',
             'description': 'One language subtask decision, never a motor-control decision.',
             'parameters': {'type': 'object', 'additionalProperties': False,
@@ -91,7 +96,7 @@ class SemanticPlanner:
                        {'type': 'image_url', 'image_url': {'url': 'data:image/jpeg;base64,' + base64.b64encode(buf.getvalue()).decode()}}]
         payload = {'model': self.config['model'],
                    'messages': [{'role': 'system', 'content': SYSTEM}, {'role': 'user', 'content': blocks}],
-                   'tools': [tool_schema()], 'tool_choice': 'required'}
+                   'tools': [tool_schema(packet['request_binding'])], 'tool_choice': 'required'}
         response = self.client.post('', headers={}, json=payload).json()
         calls = response['choices'][0]['message'].get('tool_calls', [])
         if len(calls) != 1 or calls[0]['function']['name'] != 'semantic_goal':

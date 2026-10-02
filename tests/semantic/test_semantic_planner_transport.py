@@ -31,6 +31,35 @@ def test_planner_exact_tool_contract_and_no_lowlevel_actions(tmp_path):
     assert 'actions' not in schema and 'steps' not in schema
     assert schema['operation']['enum'] == ['continue', 'set_subtask', 'recover', 'stop']
     assert len([b for b in client.payload['messages'][1]['content'] if b['type'] == 'image_url']) == 1
+    bound = client.payload['tools'][0]['function']['parameters']['properties']
+    for name, value in {'episode': obs.episode, 'based_on_step': obs.step,
+                        'based_on_stamp': obs.stamp, 'expected_epoch': state.context.epoch}.items():
+        assert bound[name]['enum'] == [value]
+    assert bound['based_on_stamp']['minLength'] == bound['based_on_stamp']['maxLength'] == 64
+
+
+def test_planner_rejects_overlength_stamp_even_if_provider_ignores_schema(tmp_path):
+    obs = ToyEnvironment().obs()
+    state = SemanticState(obs.instruction, 'subtask_only'); state.observe(obs)
+    value = ToyPlanner().decide(obs, state, [], None).wire()
+    value['based_on_stamp'] += 'extra'
+    class Client:
+        def post(self, _, headers, json):
+            class Response:
+                def json(self):
+                    return {'choices': [{'message': {'tool_calls': [{'function': {
+                        'name': 'semantic_goal', 'arguments': __import__('json').dumps(value)}}]}}]}
+            return Response()
+    planner = SemanticPlanner({'model': 'configured-model'}, tmp_path, client=Client())
+    with pytest.raises(ContractError, match='decision requires observation SHA256'):
+        planner.decide(obs, state, [], None)
+    assert not planner.history and not planner.last_images
+    assert state.context.epoch == 0
+
+
+def test_tool_schema_rejects_partial_request_binding():
+    with pytest.raises(ContractError, match='all request identity fields'):
+        tool_schema({'based_on_stamp': 'a' * 64})
 
 
 def test_dispatcher_context_and_prefix_ops_reject_sequence_replay():

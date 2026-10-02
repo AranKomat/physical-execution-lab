@@ -591,3 +591,22 @@ should be small reports/essential evidence. Existing model files must not be
 deleted without checking dependencies. The disposable local pip cache was
 purged (1097.9 MB); experiment evidence was preserved. Unique semantic sensors
 remain remote pending verified full backup, so this is not shutdown clearance.
+
+## Binding And Accounting Correction
+
+The correction above is now implemented as a new source version, not retrofitted
+to the recovery evidence. The planner tool schema enumerates the request's exact
+episode/step/SHA/epoch and bounds SHA length to64; parsing and state validation
+still reject invalid responses without repair or retry. Native response/schema
+compliance is not established by the CPU test.
+
+Wave summaries now retain mixed native/contract outcomes and actual call totals.
+Revised `002` experimental native/vector/supervisor operators use this accounting;
+old `001` files and reports stay unchanged. The tower mixed-outcome regression
+preserves fourteen calls, one native-completed row and one contract-error row.
+All379 repository tests, including77 semantic tests, pass; revised operators
+compile. Evidence: `../evidence/vector-binding-accounting-fix-20261002/`.
+No paid call or native episode was launched for this correction. New source
+bindings and native admission are required before broader task execution;
+this does not complete Phase E. Next priority remains the reference-aligned
+ten-task coverage, not more two-task prompt sweeps or maximum-capacity tests.

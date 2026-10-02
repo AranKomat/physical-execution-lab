@@ -7,6 +7,22 @@ from k1lab.errors import ContractError
 from k1lab.util import atomic_json, load_json
 
 
+def summarize_wave_results(results):
+    """Account for all resolved rows, including fail-closed planner errors."""
+    if not results:
+        raise ContractError('empty semantic wave')
+    rows = list(results.values())
+    calls = [row['metrics']['semantic_calls'] for row in rows]
+    if any(type(count) is not int or count < 0 for count in calls):
+        raise ContractError('invalid semantic call count')
+    terminal = all(row['status'] == 'native_completed' and row['native_terminal_observed'] for row in rows)
+    return {'status': 'native_terminal_semantic_wave' if terminal else 'incomplete_semantic_wave',
+            'paid_calls': sum(calls),
+            'controller_status_counts': dict(Counter(row['status'] for row in rows)),
+            'all_rows_native_terminal': terminal,
+            'contains_controller_or_contract_error': any(row['status'] == 'infrastructure_or_contract_error' for row in rows)}
+
+
 def aggregate(cases, results, conditions):
     ids = {c['case_id'] for c in cases}
     if len(ids) != len(cases):
