@@ -1275,7 +1275,7 @@
     "semantic_lab/token_retention.py": "2755a9a4fae843749a0d1b8e3fe0c48ed703a5cbee1336da655e39f580f1ab7d",
     "tests/semantic/test_token_retention.py": "2096d5dc6d533b691a47015e257a375ee165526fdbd0cab6014d7ef24d99f22b",
     "docs/evidence/reference-execution-binding001-20261002/live-token-guard-probe001.json": "31d762f668e6795fcfb081776aa559e3a62811663fa4acba41071ea4756ca872",
-    "docs/semantic/PI05_APPROACH_COMPARISON_PLAN_20261002.md": "a93603a79197aeb30cfeb2650c348b4632c3e433b9b315af58b86bf469630877",
+    "docs/semantic/PI05_APPROACH_COMPARISON_PLAN_20261002.md": "2943c33d4684d7811ec5a31877ae0b468ce3a59403364ec17adfbde82458bb53",
     "docs/evidence/reference-execution-binding001-20261002/operator_reference_native001.py": "dfb385557ab8be0b01eb6e6728c852b87816f108a16512c9c87f59173e605f56",
     "semantic_lab/robot_view.py": "4c178b451a1f07d0fcbf1e648e17c9cfef05aee61ba48c2d3207ca3514c7e3a0",
     "semantic_lab/vector.py": "b5d9a28abb87fcbacd5ac32f1b2ad53651ae6c09d92fd0bf3f4aa0a3323f58b2",
@@ -1354,6 +1354,13 @@
     "scripts/semantic/run_reference_waves.py": "4f4ee91e564cb6c86ddcc74d77fff771879db9e0a735a014812e71cfa5c0c022",
     "scripts/semantic/probe_pi05_batch.py": "7744444211ae04399f72cb7996160e2fcab6d712044262129a0b2651f3e581a7",
     "semantic_lab/pi05_batch.py": "485b78333eecc46c30a05e8092c8c4bf6e704889d7cd28d53272aa457ac27104",
-    "docs/evidence/reference-execution-binding001-20261002/pi05-vmap-batch-probe002.json": "74db2605850d40f927624e89f3e272edeae2c6f683f69ff3547a6d81b439192f"
+    "docs/evidence/reference-execution-binding001-20261002/pi05-vmap-batch-probe002.json": "74db2605850d40f927624e89f3e272edeae2c6f683f69ff3547a6d81b439192f",
+    "scripts/semantic/run_distinct_task_group.py": "63effb4150b5be24af259ba1f19d4738d5ed561e800f60be858e79208dcad27c",
+    "scripts/semantic/run_full_panel_baseline.py": "02b9b79c7882c744f983e04e41560ca673bc8123e620e53390783b70766c3a1c",
+    "scripts/semantic/serve_pi05_batch.py": "283280ce703629502613cb781ad0cab7a727ef9683c9091e7b4308148010a9ac",
+    "semantic_lab/native_execution.py": "1fe3231a78df48017a82d3f4a6b0b29d64705079ef782018922c5f1ab4339456",
+    "semantic_lab/native_io.py": "c8ee14dcb9785b4c5e3e6714a32d579d51d5e56e32bb33c323144104b45e8872",
+    "semantic_lab/task_rows.py": "cfaf22b50b8af0667d40aeab899916cb3927d6939056d7f9efbc1220a04d7ce0",
+    "tests/test_semantic_task_rows.py": "b9aac40f9a5f8176fcef38964306c16753bb7cc744bfd7ff5c429aeff793fc73"
   }
 }

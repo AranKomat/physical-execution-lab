@@ -22,8 +22,8 @@ task types with several layouts each. It does not prove ten distinct task
 scenes share simulator memory. Independent single-environment processes used
 about 6.7GiB each in the prior capacity check; ten such processes cannot simply
 be placed on the existing two 24GiB GPUs alongside the motor runtime.
-The shared pi0.5 worker currently performs isolated singleton inference, not
-fused tensor batching. Earlier fused predictions differed from source singleton
+The historical shared pi0.5 worker performed isolated singleton inference.
+The new cohort service uses fused vmap inference. Earlier fused predictions differed from source singleton
 predictions, as recorded in `../SIMULATOR_BATCH_CAPACITY_20261002.md`.
 
 - [ ] Enable concurrent distinct-task scenes with bounded simulator memory.
@@ -62,6 +62,39 @@ comparison conditions must use the same explicitly bound executor. Actual
 worker/full-task scene integration and native reset/support/scoring routing
 remain pending. Do not repeat maximum-batch searches before that integration.
 Evidence: `../evidence/reference-execution-binding001-20261002/pi05-vmap-batch-probe002.json`.
+
+### Full Distinct-Task Integration
+
+The new `run_full_panel_baseline.py` owns the complete ten-task original-only
+cohort, not a two-task pilot. It launches one fused pi0.5 service and three
+concurrent native simulator groups (four default datagen tasks, two support-arm
+tasks, four teleop tasks). Source teleop tasks enable global PhysX stabilization;
+support-arm tasks also use a different robot configuration. Keeping those
+groups separate preserves native physical settings instead of flattening them
+into a single modified benchmark scene. Actual group configuration equality is
+checked after native resolution, not assumed from these labels.
+
+`semantic_lab/task_rows.py` delegates unchanged task constructors, resets,
+instructions, rewards and support demonstrations through singleton-index views
+of shared managers. Native per-task horizons terminate independently; terminal
+scores are frozen. `native_execution.py` promotes the previously tested
+callbacks and applies row-specific horizons. `serve_pi05_batch.py` coalesces all
+active group requests, preserves independent episode RNG streams and returns
+indexed predictions/ACKs. Inference-only padding keeps the compiled B10 shape
+after tasks terminate; padded rows never receive simulator actions or scores.
+
+- [x] Implement task-row routing, compatible-scene factory, fused cohort worker,
+  and full-panel baseline launcher.
+- [ ] Verify actual full-panel startup, support trajectories, native scoring,
+  memory and actions on the GPU host.
+- [ ] Complete all ten original-only episodes and inspect their evidence.
+- [ ] Admit the native-equivalent executor and bind all four matched conditions.
+
+429 CPU tests pass, including index isolation, cooperative native lifecycle,
+independent final checks and terminal-score freezing. These are plumbing checks,
+not completed phase/task results. No paid calls are used by this initial run.
+The native-equivalence admission remains pending; do not claim the 40-slot
+approach comparison complete merely because this launcher exists.
 
 Compare approaches first, motor models afterward. This is the next experiment
 priority, not a completed comparison or a substitute for the wider V5 scope.
