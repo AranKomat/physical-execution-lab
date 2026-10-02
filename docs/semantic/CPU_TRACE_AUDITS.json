@@ -1,0 +1,130 @@
+{
+  "motor_only__original_only/toy-0": {
+    "actual_control_acks": 24,
+    "complete_native_result": true,
+    "distinct_effective_prompts": 1,
+    "evidence_kind": "synthetic",
+    "journal": {
+      "events": 42,
+      "head_sha256": "9b93018e8c4c5db681ff5251a05602d7d5529d6f95d2255c7c966be4b4c92fe8"
+    },
+    "policy_proposals": 8,
+    "prefix_cadence_verified": true,
+    "robot_competence_claim": false,
+    "semantic_epochs_seen_by_motor": [
+      0
+    ]
+  },
+  "motor_only__original_only/toy-1": {
+    "actual_control_acks": 24,
+    "complete_native_result": true,
+    "distinct_effective_prompts": 1,
+    "evidence_kind": "synthetic",
+    "journal": {
+      "events": 42,
+      "head_sha256": "b6c0020fef6bbbb353fe2acdb6a57efecfac246d83db409cd1ff05d05e69375d"
+    },
+    "policy_proposals": 8,
+    "prefix_cadence_verified": true,
+    "robot_competence_claim": false,
+    "semantic_epochs_seen_by_motor": [
+      0
+    ]
+  },
+  "semantic_shadow__original_only/toy-0": {
+    "actual_control_acks": 24,
+    "complete_native_result": true,
+    "distinct_effective_prompts": 1,
+    "evidence_kind": "synthetic",
+    "journal": {
+      "events": 46,
+      "head_sha256": "3babc5109c90e4f0c54f3fde5290e54263b6702b4df9492574cd3075f281076a"
+    },
+    "policy_proposals": 8,
+    "prefix_cadence_verified": true,
+    "robot_competence_claim": false,
+    "semantic_epochs_seen_by_motor": [
+      0
+    ]
+  },
+  "semantic_shadow__original_only/toy-1": {
+    "actual_control_acks": 24,
+    "complete_native_result": true,
+    "distinct_effective_prompts": 1,
+    "evidence_kind": "synthetic",
+    "journal": {
+      "events": 47,
+      "head_sha256": "b652de4d1dbbf868f009a23f7e7ae5546a3e0df4293b729eb4ad00414068a2bf"
+    },
+    "policy_proposals": 8,
+    "prefix_cadence_verified": true,
+    "robot_competence_claim": false,
+    "semantic_epochs_seen_by_motor": [
+      0
+    ]
+  },
+  "semantic_subtask_hierarchy__subtask_only/toy-0": {
+    "actual_control_acks": 24,
+    "complete_native_result": true,
+    "distinct_effective_prompts": 1,
+    "evidence_kind": "synthetic",
+    "journal": {
+      "events": 46,
+      "head_sha256": "4407e7b9d246c390af78bca40bb757ee88ff3471e20723a3bec94ed2794901b3"
+    },
+    "policy_proposals": 8,
+    "prefix_cadence_verified": true,
+    "robot_competence_claim": false,
+    "semantic_epochs_seen_by_motor": [
+      1
+    ]
+  },
+  "semantic_subtask_hierarchy__subtask_only/toy-1": {
+    "actual_control_acks": 24,
+    "complete_native_result": true,
+    "distinct_effective_prompts": 1,
+    "evidence_kind": "synthetic",
+    "journal": {
+      "events": 47,
+      "head_sha256": "337bc2b2217a09d5ddc4856de6c82fc580e13ae2002c21f5e54f852074fe76b4"
+    },
+    "policy_proposals": 8,
+    "prefix_cadence_verified": true,
+    "robot_competence_claim": false,
+    "semantic_epochs_seen_by_motor": [
+      1
+    ]
+  },
+  "semantic_subtask_hierarchy__task_plus_subtask/toy-0": {
+    "actual_control_acks": 24,
+    "complete_native_result": true,
+    "distinct_effective_prompts": 1,
+    "evidence_kind": "synthetic",
+    "journal": {
+      "events": 46,
+      "head_sha256": "b53073fa4a8ae921345feeb4414ccb7cb95b5f46b96e4a32404a792b1b0582fe"
+    },
+    "policy_proposals": 8,
+    "prefix_cadence_verified": true,
+    "robot_competence_claim": false,
+    "semantic_epochs_seen_by_motor": [
+      1
+    ]
+  },
+  "semantic_subtask_hierarchy__task_plus_subtask/toy-1": {
+    "actual_control_acks": 24,
+    "complete_native_result": true,
+    "distinct_effective_prompts": 1,
+    "evidence_kind": "synthetic",
+    "journal": {
+      "events": 47,
+      "head_sha256": "e54f16b37f8b64e044da872ce15e172882352d8f20d1ee96cfa4fff81acc385b"
+    },
+    "policy_proposals": 8,
+    "prefix_cadence_verified": true,
+    "robot_competence_claim": false,
+    "semantic_epochs_seen_by_motor": [
+      1
+    ]
+  }
+}

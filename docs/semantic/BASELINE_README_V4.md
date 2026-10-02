@@ -1,17 +1,4 @@
-# Physical Execution Lab — v0.5
-
-## Current Direction
-
-Read [HANDOFF_V5.md](HANDOFF_V5.md) for the active semantic-subtask hierarchy
-plan and [V5 integration status](docs/semantic/LIVE_INTEGRATION_20261002.md)
-for local validation and the next qualification gates. GPT supplies short language
-subtasks to a frozen motor policy at natural prefix boundaries; it cannot shorten
-prefixes or issue numeric motor corrections in this condition. Start with
-`python run_semantic.py doctor`.
-
-The v0.4 architecture and experiments below remain historical/reference material.
-Existing native results are retained in [experiment progress](docs/EXPERIMENT_PROGRESS.md).
-No native V5 hierarchy improvement has yet been measured.
+# Physical Execution Lab — v0.4
 
 **Frozen models, generic controls, sparse supervision.** This repository extends
 K1 Execution Lab without replacing its original LIBERO/K1 runner.
@@ -47,9 +34,8 @@ review scheduling, budget handling, archival and full-denominator reporting.
 | RoboCasa365 | Xiaomi R1 only, every-chunk Sol, sparse Sol | Official XR1 preprocessing and action conversion; native qualification required |
 | Original K1/LIBERO | Existing `run.py` experiments | Retained regression and future cross-environment transfer path |
 
-The supervisor is `gpt-6.1-sol` through **Responses**, using Flex by default.
-Standard (`default`) remains an explicit comparison configuration; there is no
-implicit model/tier fallback.
+The supervisor is `gpt-6.1-sol` through **Responses**. Standard (`default`) and
+Flex are separate configurations; there is no implicit model/tier fallback.
 No task recipe retrieval, extra target-task demonstrations, privileged object
 poses, online weight updates, or newly generated task scripts are used.
 

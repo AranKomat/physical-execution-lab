@@ -1,0 +1,90 @@
+{
+  "conditions": {
+    "motor_only__original_only": {
+      "scheduled": 2,
+      "observed": 2,
+      "missing": 0,
+      "successes": 2,
+      "success_rate_full_denominator": 1.0,
+      "statuses": {
+        "native_completed": 2
+      },
+      "partial_score_mean_observed": 1.0,
+      "partial_score_coverage": 2,
+      "total_native_steps_observed": 48,
+      "wall_seconds_observed": 0.028354908999972395,
+      "semantic_calls_observed": 0,
+      "gpt_induced_resamples": 0,
+      "evidence_kinds": [
+        "synthetic"
+      ]
+    },
+    "semantic_shadow__original_only": {
+      "scheduled": 2,
+      "observed": 2,
+      "missing": 0,
+      "successes": 2,
+      "success_rate_full_denominator": 1.0,
+      "statuses": {
+        "native_completed": 2
+      },
+      "partial_score_mean_observed": 1.0,
+      "partial_score_coverage": 2,
+      "total_native_steps_observed": 48,
+      "wall_seconds_observed": 0.03627570399999058,
+      "semantic_calls_observed": 9,
+      "gpt_induced_resamples": 0,
+      "evidence_kinds": [
+        "synthetic"
+      ]
+    },
+    "semantic_subtask_hierarchy__task_plus_subtask": {
+      "scheduled": 2,
+      "observed": 2,
+      "missing": 0,
+      "successes": 2,
+      "success_rate_full_denominator": 1.0,
+      "statuses": {
+        "native_completed": 2
+      },
+      "partial_score_mean_observed": 1.0,
+      "partial_score_coverage": 2,
+      "total_native_steps_observed": 48,
+      "wall_seconds_observed": 0.035502364999956626,
+      "semantic_calls_observed": 9,
+      "gpt_induced_resamples": 0,
+      "evidence_kinds": [
+        "synthetic"
+      ]
+    },
+    "semantic_subtask_hierarchy__subtask_only": {
+      "scheduled": 2,
+      "observed": 2,
+      "missing": 0,
+      "successes": 2,
+      "success_rate_full_denominator": 1.0,
+      "statuses": {
+        "native_completed": 2
+      },
+      "partial_score_mean_observed": 1.0,
+      "partial_score_coverage": 2,
+      "total_native_steps_observed": 48,
+      "wall_seconds_observed": 0.04027984099980131,
+      "semantic_calls_observed": 9,
+      "gpt_induced_resamples": 0,
+      "evidence_kinds": [
+        "synthetic"
+      ]
+    }
+  },
+  "paired": {
+    "task_weighted_success_delta": 0.0,
+    "task_cluster_bootstrap_95": [
+      0.0,
+      0.0
+    ],
+    "task_groups": 2,
+    "missing_counts_as_not_successful": true,
+    "caution": "small development panels do not establish broad generalization; no automatic claim of significance"
+  }
+}

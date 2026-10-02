@@ -1,5 +1,16 @@
 # External implementation agent instructions
 
+## Active v0.5 Direction
+
+Read HANDOFF_V5.md and docs/semantic/LIVE_INTEGRATION_20261002.md first.
+Semantic language hierarchy supersedes the v0.4 research priorities below;
+the old evidence and runners remain intact. Qualify unchanged motor cadence and
+shadow parity, then model-boundary prompt/tokenizer plumbing, before comparing
+original-only, task-plus-subtask and subtask-only. Preserve actual ACK history.
+Do not resume the old interruptive-review sequence automatically or tune on the
+opened held-out arrange_largest_number case. Use Sol/medium/Flex-only and the
+existing budget-enforced relay. No native V5 qualification is implied by CPU tests.
+
 Read HANDOFF.md and IMPLEMENTATION_STATUS.md before editing. This v0.4 scope
 supersedes earlier benchmark prioritization; original K1/LIBERO code remains.
 

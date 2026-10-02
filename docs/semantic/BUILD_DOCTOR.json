@@ -1,0 +1,30 @@
+{
+  "version": "0.5.0",
+  "native_results_from_this_build": 0,
+  "architecture": "semantic goals -> unchanged natural VLA execution prefixes",
+  "native_base": {
+    "reviewed_commit": "dc2e704064bc8e997f64d7978bb9714e995e65f2",
+    "files": {
+      "k1lab/multibench/adapters/pi05.py": {
+        "expected": "f8363f8b9bd2676779e0b24bd74c1f0c09119f16",
+        "actual": "7b600e40eda919064c2a83ce071b04224d7b1a25"
+      },
+      "k1lab/multibench/adapters/xpolicylab.py": {
+        "expected": "68a334ba1a80fb756f45ac9dee80ff1b5aa5ace9",
+        "actual": "dbe2b5e0daa1b192c0eddd285d79422fc5700997"
+      },
+      "k1lab/multibench/adapters/robocasa.py": {
+        "expected": "3ccadc36b31a6a387eaf27cda7ab9557f58bd51c",
+        "actual": "3ccadc36b31a6a387eaf27cda7ab9557f58bd51c"
+      },
+      "k1lab/multibench/adapters/robodojo.py": {
+        "expected": "5486b2e975508d8ea90776db5b42824b65d173ce",
+        "actual": "5486b2e975508d8ea90776db5b42824b65d173ce"
+      }
+    },
+    "matches_reviewed_base": false
+  },
+  "async_native_runner": false,
+  "new_training": false,
+  "model_or_tier_fallback": false
+}

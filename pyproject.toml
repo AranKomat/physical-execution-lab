@@ -4,8 +4,8 @@ build-backend = "setuptools.build_meta"
 
 [project]
 name = "k1-execution-lab"
-version = "0.4.0"
-description = "Sparse physical-agent execution experiments across RoboDojo, RoboCasa365 and K1; no claimed native gains"
+version = "0.5.0"
+description = "Language-subtask hierarchy experiments with frozen motor policies; no claimed native hierarchy gains"
 requires-python = ">=3.10"
 license = {text = "MIT"}
 dependencies = ["numpy>=1.24", "scipy>=1.11", "httpx>=0.27"]
@@ -19,9 +19,10 @@ native = ["numpy>=1.26,<2", "opencv-python-headless>=4.8,<4.12", "Pillow>=10", "
 [project.scripts]
 k1-exec = "k1lab.cli:main"
 physical-exec = "k1lab.multibench.cli:main"
+physical-semantic = "semantic_lab.cli:main"
 
 [tool.setuptools.packages.find]
-include = ["k1lab*"]
+include = ["k1lab*", "semantic_lab*"]
 
 [tool.pytest.ini_options]
 testpaths = ["tests"]

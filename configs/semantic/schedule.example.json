@@ -1,0 +1,14 @@
+{
+  "note": "Schedule fragment only. Generate complete configs from a working bound motor config with run_semantic.py prepare.",
+  "mode": "semantic_subtask_hierarchy",
+  "prompt_mode": "task_plus_subtask",
+  "max_semantic_calls": 32,
+  "async_planner": false,
+  "semantic_schedule": {
+    "review_interval_steps": 100,
+    "minimum_dwell_steps": 30,
+    "event_cooldown_steps": 30,
+    "max_decision_age_steps": 100,
+    "allow_semantic_recovery": false
+  }
+}

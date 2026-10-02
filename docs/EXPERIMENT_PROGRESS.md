@@ -176,3 +176,18 @@ historical after this source change. No result is claimed before termination.
 Seven other test groups remain unopened. See
 [the fixed comparison plan](PI05_MATCHED_COMPARISON_PLAN_20261002.md) and
 `docs/evidence/pi05-matched-heldout-001-configuration/`.
+# Active Direction Update: V5 Semantic Hierarchy
+
+The owner supplied a new semantic-subtask overlay on 2026-10-02. The active
+sequence is now native no-interference/shadow qualification, prompt and tokenizer
+responsiveness, matched development language hierarchy, separate semantic
+recovery, then untouched held-out groups. See
+[integration status](semantic/LIVE_INTEGRATION_20261002.md) and
+[V5 handoff](../HANDOFF_V5.md). Old interruptive-review conditions and all their
+failures/censored results remain historical evidence, not renamed V5 trials.
+
+The already-started held-out pi0.5 motor-only episode on
+`arrange_largest_number__standard__g0__l0` completed unsuccessfully at its full
+1050-action horizon: native score 0.15, 70 policy calls, zero GPT calls, 579.97 s.
+It remains an opened test task, not a development case. The other two old
+matched conditions were not started before this direction change.

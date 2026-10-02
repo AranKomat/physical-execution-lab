@@ -1,0 +1,96 @@
+from dataclasses import asdict
+import json
+import pytest
+from k1lab.errors import ContractError
+from k1lab.util import digest
+from k1lab.multibench.transport import encode_obs
+from semantic_lab.contracts import SemanticContext
+from semantic_lab.policy import InstructionPolicy
+from semantic_lab.planner import SemanticPlanner, tool_schema
+from semantic_lab.synthetic import ToyEnvironment, ToyPolicy, ToyPlanner
+from semantic_lab.state import SemanticState
+from semantic_lab.transport import SemanticDispatcher, SemanticRemotePolicy
+from semantic_lab.tau_reference import export_sample
+
+
+def test_planner_exact_tool_contract_and_no_lowlevel_actions(tmp_path):
+    class Response:
+        def __init__(self, body): self.body = body
+        def json(self): return self.body
+    class Client:
+        def post(self, _, headers, json):
+            self.payload = json
+            return Response({'choices': [{'message': {'tool_calls': [{'function': {
+                'name': 'semantic_goal', 'arguments': __import__('json').dumps(d.wire())}}]}}]})
+        def __exit__(self): pass
+    obs = ToyEnvironment().obs(); state = SemanticState(obs.instruction, 'subtask_only'); state.observe(obs)
+    d = ToyPlanner().decide(obs, state, [], None)
+    client = Client(); planner = SemanticPlanner({'model': 'configured-model'}, tmp_path, client=client)
+    assert planner.decide(obs, state, [], None) == d
+    schema = tool_schema()['function']['parameters']['properties']
+    assert 'actions' not in schema and 'steps' not in schema
+    assert schema['operation']['enum'] == ['continue', 'set_subtask', 'recover', 'stop']
+    assert len([b for b in client.payload['messages'][1]['content'] if b['type'] == 'image_url']) == 1
+
+
+def test_dispatcher_context_and_prefix_ops_reject_sequence_replay():
+    wrapper = InstructionPolicy(ToyPolicy(), kind='test'); server = SemanticDispatcher(wrapper)
+    seq = 0
+    def call(op, args):
+        nonlocal seq
+        req = {'op': op, 'args': args, 'owner': 'owner', 'seq': seq}
+        envelope = {'request': req, 'request_sha256': digest(req)}
+        result = server.dispatch(envelope); seq += 1
+        return result, envelope
+    r, _ = call('acquire', {}); assert r['result']['semantic_protocol'] == 'semantic-policy.v1'
+    call('reset', {})
+    env = ToyEnvironment(); obs = env.obs()
+    call('semantic_context', {'context': asdict(SemanticContext(obs.instruction))})
+    _, envelope = call('observe', {'observation': encode_obs(obs)})
+    with pytest.raises(ContractError): server.dispatch(envelope)
+    r, _ = call('propose', {'observation': encode_obs(obs)})
+    assert r['result']['diagnostics']['semantic']['effective_prompt'] == obs.instruction
+    with pytest.raises(ContractError): call('finish_prefix', {'executed': 3, 'reason': 'natural_boundary'})
+
+
+def test_tau_export_requires_actual_three_cameras(tmp_path):
+    env = ToyEnvironment(); obs = env.obs(); ctx = SemanticContext(obs.instruction)
+    with pytest.raises(ContractError): export_sample(obs, ctx, tmp_path / 'bad')
+    obs.rgb.update(cam_left_wrist=obs.rgb['cam_high'].copy(), cam_right_wrist=obs.rgb['cam_high'].copy())
+    row = export_sample(obs, ctx, tmp_path / 'good')
+    assert row['task_type'] == 'full_qa' and 'answer' not in row
+    assert row['memory'] == '(empty)'
+
+
+def test_tau_export_rejects_duplicate_camera_alias(tmp_path):
+    obs = ToyEnvironment().obs()
+    with pytest.raises(ContractError):
+        export_sample(obs, SemanticContext(obs.instruction), tmp_path,
+                      cameras={'head': 'cam_high', 'left': 'cam_high', 'right': 'cam_high'})
+
+
+def test_remote_policy_end_to_end_via_mock_http(tmp_path):
+    import httpx
+    from semantic_lab.runner import run_episode
+    from semantic_lab.audit import audit
+    wrapper = InstructionPolicy(ToyPolicy(), kind='test')
+    dispatcher = SemanticDispatcher(wrapper)
+    operations = []
+    def transport(request):
+        envelope = json.loads(request.content)
+        operations.append(envelope['request']['op'])
+        return httpx.Response(200, json=dispatcher.dispatch(envelope))
+    client = httpx.Client(transport=httpx.MockTransport(transport))
+    remote = SemanticRemotePolicy({'identity': asdict(wrapper.identity), 'endpoint':'http://127.0.0.1:9999'},
+                                  allow_policy=True, client=client)
+    env = ToyEnvironment(horizon=12)
+    case = dict(case_id='c',task='t',task_group='t',benchmark='synthetic',partition='dev')
+    cfg = dict(name='remote', mode='semantic_subtask_hierarchy',prompt_mode='task_plus_subtask',
+               semantic_schedule=dict(review_interval_steps=6,minimum_dwell_steps=3,event_cooldown_steps=3))
+    result = run_episode(env,remote,ToyPlanner(),case,cfg,tmp_path)
+    assert result['success'] and operations.count('propose') == 4
+    assert operations.count('observe') == 13
+    assert operations.count('finish_prefix') == 4
+    assert operations.count('semantic_context') == 2
+    assert 'invalidate' not in operations
+    assert audit(tmp_path)['actual_control_acks'] == 12
