@@ -30,6 +30,7 @@ def main():
     p.add_argument('--native-reference-freeze', required=True)
     p.add_argument('--controller-run', required=True)
     p.add_argument('--acknowledge-failed-request', action='append', default=[])
+    p.add_argument('--allow-standard-fallback', action='store_true')
     args = p.parse_args()
     if not args.name or any(c not in 'abcdefghijklmnopqrstuvwxyz0123456789-_' for c in args.name):
         raise ValueError('name must be a fresh lowercase run identifier')
@@ -46,6 +47,8 @@ def main():
         '--wall-limit-s', '3600', '--cap-usd', '3']
     for ident in args.acknowledge_failed_request:
         relay.extend(['--acknowledge-failed-request', ident])
+    if args.allow_standard_fallback:
+        relay.append('--allow-standard-fallback')
     ssh = ['ssh', '-p', str(args.ssh_port), '-o', 'ConnectTimeout=15',
            '-o', 'ServerAliveInterval=10', '-o', 'ServerAliveCountMax=3', args.ssh_host]
     children = []
@@ -71,6 +74,8 @@ def main():
                 '--freeze', args.freeze, '--baseline-run', args.baseline_run,
                 '--native-reference-freeze', args.native_reference_freeze,
                 '--controller-run', args.controller_run, '--output', remote + '/runs/' + args.name]
+            if args.allow_standard_fallback:
+                command.append('--allow-standard-fallback')
             wire = 'K1_RELAY_TOKEN=$(cat ' + shlex.quote(token_path) + ') ' + shlex.join(command)
             child = subprocess.Popen(ssh + [wire], start_new_session=True)
             children.append(child)

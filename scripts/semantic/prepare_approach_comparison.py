@@ -12,8 +12,10 @@ if __name__ == '__main__':
     parser.add_argument('--manifest', type=Path, required=True)
     parser.add_argument('--provider', type=Path, required=True)
     parser.add_argument('--output', type=Path, required=True)
+    parser.add_argument('--allow-standard-fallback', action='store_true')
     args = parser.parse_args()
-    panel, configs, plan = prepare(load_json(args.manifest), load_json(args.provider))
+    panel, configs, plan = prepare(load_json(args.manifest), load_json(args.provider),
+                                  allow_standard_fallback=args.allow_standard_fallback)
     args.output.mkdir(parents=True, exist_ok=False)
     atomic_json(args.output/'cases.json', panel, exclusive=True)
     for name, config in configs.items():

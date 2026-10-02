@@ -18,6 +18,23 @@ from PIL import Image
 MODEL='openai/gpt-6.1-sol'
 PROVIDER={'only':['openai/flex'],'allow_fallbacks':False,'require_parameters':True,
     'max_price':{'prompt':1.5,'completion':6}}
+STANDARD_PROVIDER={'only':['openai'],'allow_fallbacks':False,'require_parameters':True,
+    'max_price':{'prompt':3,'completion':12}}
+
+
+class FlexCapacityError(RuntimeError):
+    def __init__(self, ident, reserve):
+        super().__init__('explicit Flex capacity rejection; reservation retained')
+        self.ident, self.reserve = ident, reserve
+
+
+def explicit_flex_capacity(raw):
+    error = raw.get('error') or {}
+    return (raw.get('status') == 'failed' and not raw.get('output')
+        and raw.get('usage') is None
+        and raw.get('model') in ('gpt-6.1-sol', MODEL)
+        and error.get('code') in ('server_error', 'resource_unavailable')
+        and str(error.get('message', '')).startswith('Flex processing is temporarily unavailable.'))
 
 
 def trial_limits(profile,max_calls,cap,wall_limit_s):
@@ -28,7 +45,7 @@ def trial_limits(profile,max_calls,cap,wall_limit_s):
         raise ValueError('invalid trial wall limit')
 
 
-def request_bound(body, tool_name='robot_decision'):
+def request_bound(body, tool_name='robot_decision', billing_tier='flex'):
     if tool_name not in ('robot_decision', 'semantic_goal'):
         raise ValueError('unreviewed function contract')
     if body.get('model')!='gpt-6.1-sol' or body.get('service_tier')!='flex':
@@ -58,27 +75,53 @@ def request_bound(body, tool_name='robot_decision'):
     # UTF-8 bytes conservatively bound text; each <=480px image reserves 4096 tokens.
     tokens=len(json.dumps(copy,ensure_ascii=False).encode())+4096*images+2048
     if tokens>100000:raise ValueError('request exceeds conservative context bound')
-    amount=Decimal(tokens)*Decimal('0.0000015')+Decimal(2048)*Decimal('0.000006')
+    if billing_tier not in ('flex','default'):
+        raise ValueError('unreviewed billing tier')
+    multiplier=1 if billing_tier=='flex' else 2
+    amount=(Decimal(tokens)*Decimal('0.0000015')+Decimal(2048)*Decimal('0.000006'))*multiplier
     return amount
 
 
 class Relay:
-    def __init__(self,ledger,key,token,output,name,max_calls,cap,http,tool_name='robot_decision'):
+    def __init__(self,ledger,key,token,output,name,max_calls,cap,http,tool_name='robot_decision',
+                 allow_standard_fallback=False):
         self.ledger=ledger;self.key=key;self.token=token;self.output=output
         self.name=name;self.max_calls=max_calls;self.cap=cap;self.http=http
         self.attempts=0;self.spent=Decimal(0);self.unresolved=False
+        self.allow_standard_fallback=allow_standard_fallback
+        self.standard_active=False;self.capacity_holds={};self.held=Decimal(0)
         if tool_name not in ('robot_decision','semantic_goal'):
             raise ValueError('unreviewed function contract')
         self.tool_name=tool_name
 
     def forward(self,body):
-        reserve=request_bound(body,self.tool_name)
-        if self.unresolved or self.attempts>=self.max_calls or self.spent+reserve>self.cap:
+        tier='default' if self.standard_active else 'flex'
+        try:
+            return self._attempt(body,tier)
+        except FlexCapacityError as exc:
+            if not self.allow_standard_fallback:
+                raise
+            # Only a recognized no-output capacity rejection can cross tiers.
+            # Never release its hold, or replay any robot action.
+            self.capacity_holds[exc.ident]=str(exc.reserve);self.held+=exc.reserve
+            self.ledger.acknowledged_unknown_ids=frozenset(
+                getattr(self.ledger,'acknowledged_unknown_ids',())) | {exc.ident}
+            self.ledger.append({'event':'operator_same_model_standard_fallback','time':time.time(),
+                'failed_flex_id':exc.ident,'hold_retained_usd':str(exc.reserve),
+                'model':MODEL,'service_tier':'default',
+                'authorization':'owner permits regular version whenever Flex is unavailable'})
+            self.unresolved=False;self.standard_active=True
+            return self._attempt(body,'default')
+
+    def _attempt(self,body,tier):
+        reserve=request_bound(body,self.tool_name,tier)
+        if self.unresolved or self.attempts>=self.max_calls or self.spent+self.held+reserve>self.cap:
             raise ValueError('trial budget exhausted or unresolved request; no retry')
         ident=f'{self.name}-{self.attempts}'
         self.ledger.reserve(ident,MODEL,reserve)
         self.attempts+=1;self.unresolved=True
-        wire=dict(body,model=MODEL,provider=PROVIDER)
+        provider=STANDARD_PROVIDER if tier=='default' else PROVIDER
+        wire=dict(body,model=MODEL,provider=provider,service_tier=tier)
         # This provider does not advertise parallel_tool_calls. The recipient
         # still rejects anything except one explicitly selected function call.
         wire.pop('parallel_tool_calls')
@@ -88,21 +131,27 @@ class Relay:
             response=self.http.post('https://openrouter.ai/api/v1/responses',json=wire,
                 headers={'Authorization':'Bearer '+self.key})
             (root/'response.json').write_bytes(response.content)
+            raw=response.json()
+            if tier=='flex' and self.allow_standard_fallback and explicit_flex_capacity(raw):
+                raise FlexCapacityError(ident,reserve)
             if response.status_code!=200:raise RuntimeError(f'provider HTTP {response.status_code}; audit retained')
-            raw=response.json();cost=(raw.get('usage') or {}).get('cost')
+            cost=(raw.get('usage') or {}).get('cost')
             if raw.get('status')!='completed' and cost is None:
                 detail=(raw.get('error') or {}).get('message','incomplete response')
                 raise RuntimeError('provider failed without usage; reservation retained: '+detail)
             if cost is None:raise RuntimeError('missing actual cost; reservation retained')
             self.ledger.settle(ident,cost);self.spent+=Decimal(str(cost))
-            if raw.get('status')!='completed' or raw.get('service_tier')!='flex':
-                raise RuntimeError('response incomplete or served tier not flex; no further requests')
+            if raw.get('status')!='completed' or raw.get('service_tier')!=tier:
+                raise RuntimeError('response incomplete or served tier mismatch; no further requests')
             if raw.get('model') not in ('gpt-6.1-sol',MODEL):
                 raise RuntimeError('served model mismatch; no further requests')
             self.unresolved=False
             (self.output/'summary.json').write_text(json.dumps({
                 'attempts':self.attempts,'cost_usd':str(self.spent),'no_automatic_retry':True,
-                'requested_model':MODEL,'provider':PROVIDER,'service_tier':'flex',
+                'requested_model':MODEL,'provider':provider,'service_tier':tier,
+                'allow_standard_fallback':self.allow_standard_fallback,
+                'standard_active':self.standard_active,'flex_capacity_holds':self.capacity_holds,
+                'charged_with_local_holds_usd':str(self.spent+self.held),
                 'tool_name':self.tool_name},indent=2))
             return raw
         finally:self.ledger.finish_attempt(ident)
@@ -117,6 +166,7 @@ def main():
     p.add_argument('--tool-name',choices=('robot_decision','semantic_goal'),default='robot_decision')
     p.add_argument('--wall-limit-s',type=int,default=2400)
     p.add_argument('--acknowledge-failed-request',action='append',default=[])
+    p.add_argument('--allow-standard-fallback',action='store_true')
     p.add_argument('--offline-request',help='One retained legal request for route qualification only; no motion')
     a=p.parse_args()
     trial_limits(a.profile,a.max_calls,a.cap_usd,a.wall_limit_s)
@@ -139,7 +189,8 @@ def main():
             'paid_ledger_window_s':min(a.wall_limit_s,2400),
             'shared_cap_usd':'85','model':MODEL,'provider':'openai/flex','tool_name':a.tool_name,
             'authorization':'standing low-budget physical-lab approval; owner selected Sol 6.1 Flex'})
-        relay=Relay(ledger,load_key(a.key_file),token,out,a.name,a.max_calls,a.cap_usd,http,a.tool_name)
+        relay=Relay(ledger,load_key(a.key_file),token,out,a.name,a.max_calls,a.cap_usd,http,a.tool_name,
+                    allow_standard_fallback=a.allow_standard_fallback)
         if a.offline_request:
             if a.max_calls!=1:raise ValueError('offline qualification requires exactly one call')
             body=json.loads(Path(a.offline_request).read_text())
@@ -169,6 +220,7 @@ def main():
                 self.end_headers();self.wfile.write(data)
 
         print(json.dumps({'event':'relay_ready','port':a.port,'max_calls':a.max_calls,
+            'allow_standard_fallback':a.allow_standard_fallback,
             'profile':a.profile,'wall_limit_s':a.wall_limit_s,
             'paid_ledger_window_s':min(a.wall_limit_s,2400),
             'local_cap_usd':str(a.cap_usd),'shared_cap_usd':'85'}),flush=True)

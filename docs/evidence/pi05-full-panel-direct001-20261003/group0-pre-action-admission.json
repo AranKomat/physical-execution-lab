@@ -1,0 +1,98 @@
+{
+  "scope": "matched native configuration/layout/horizon and legal reset proprioception",
+  "passed": true,
+  "rows": [
+    {
+      "case_id": "arrange_largest_number__standard__g0__l0",
+      "env_idx": 0,
+      "reset_proprio_max_error": 0.0,
+      "native_instruction_matches": true
+    },
+    {
+      "case_id": "build_tower__standard__g0__l0",
+      "env_idx": 1,
+      "reset_proprio_max_error": 0.0,
+      "native_instruction_matches": true
+    },
+    {
+      "case_id": "classify_objects_by_language__standard__g0__l0",
+      "env_idx": 2,
+      "reset_proprio_max_error": 0.0,
+      "native_instruction_matches": true
+    },
+    {
+      "case_id": "fold_clothes__standard__g0__l0",
+      "env_idx": 3,
+      "reset_proprio_max_error": 0.0,
+      "native_instruction_matches": true
+    }
+  ],
+  "rgb_bitwise_parity_required": false,
+  "rgb_note": "same native camera contract; rendered pixel equality not established",
+  "initial_fk_checks": {
+    "0": {
+      "arms": {
+        "left": {
+          "position_error_m": 6.354013926869758e-08,
+          "rotation_error_rad": 1.7030017616788983e-07,
+          "passed": true
+        },
+        "right": {
+          "position_error_m": 6.354013926869758e-08,
+          "rotation_error_rad": 1.7030017616788983e-07,
+          "passed": true
+        }
+      },
+      "passed": true,
+      "physical_steps": 0
+    },
+    "1": {
+      "arms": {
+        "left": {
+          "position_error_m": 6.354013926869758e-08,
+          "rotation_error_rad": 1.7030017616788983e-07,
+          "passed": true
+        },
+        "right": {
+          "position_error_m": 6.354013926869758e-08,
+          "rotation_error_rad": 1.7030017616788983e-07,
+          "passed": true
+        }
+      },
+      "passed": true,
+      "physical_steps": 0
+    },
+    "2": {
+      "arms": {
+        "left": {
+          "position_error_m": 6.354013926869758e-08,
+          "rotation_error_rad": 1.7030017616788983e-07,
+          "passed": true
+        },
+        "right": {
+          "position_error_m": 6.354013926869758e-08,
+          "rotation_error_rad": 1.7030017616788983e-07,
+          "passed": true
+        }
+      },
+      "passed": true,
+      "physical_steps": 0
+    },
+    "3": {
+      "arms": {
+        "left": {
+          "position_error_m": 6.354013926869758e-08,
+          "rotation_error_rad": 1.7030017616788983e-07,
+          "passed": true
+        },
+        "right": {
+          "position_error_m": 6.354013926869758e-08,
+          "rotation_error_rad": 1.7030017616788983e-07,
+          "passed": true
+        }
+      },
+      "passed": true,
+      "physical_steps": 0
+    }
+  }
+}

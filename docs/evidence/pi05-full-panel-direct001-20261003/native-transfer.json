@@ -1,0 +1,20 @@
+{
+  "baseline_integrity_sha256": "ca6f11dcfc991bcd090324bc01a3b84d34debeb35e57ea015c44ab8e442c40a8",
+  "baseline_report_sha256": "71451a95e84f616f6c750755a8a430db75aefdc06647d5863a8177b52d8fea26",
+  "benchmark_qualified": false,
+  "live_reset_binding_required": true,
+  "native_controller_audit_sha256": "a5e2085b0ddb08dd360b9d0d9bd138ee797138fbc70099ebfeceb3fd42891d46",
+  "native_controller_files_checked": 87,
+  "native_reference_sha256": "fc4047859b31aab8adea03a704b554b1a09e606b053f39f57b03c392c795d710",
+  "native_source_config_files": 2941,
+  "scope": "fixed ten-task matched simulator screen only",
+  "singleton_numerical_parity": false,
+  "transfer_checks_passed": true,
+  "unchanged_core": {
+    "scripts/semantic/serve_pi05_batch.py": "19c0b831e868ce1282fb54a6092b3bd3a913a9c535be9d1ba2b8ab9657c3aee9",
+    "semantic_lab/native_execution.py": "1fe3231a78df48017a82d3f4a6b0b29d64705079ef782018922c5f1ab4339456",
+    "semantic_lab/native_io.py": "c8ee14dcb9785b4c5e3e6714a32d579d51d5e56e32bb33c323144104b45e8872",
+    "semantic_lab/pi05_batch.py": "485b78333eecc46c30a05e8092c8c4bf6e704889d7cd28d53272aa457ac27104",
+    "semantic_lab/task_rows.py": "48f7692fb5116fbad655922ed09e32dbc811fc520d792140dbaaf334971ba11d"
+  }
+}

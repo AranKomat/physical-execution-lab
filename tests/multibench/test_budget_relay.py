@@ -17,10 +17,11 @@ def body():
 
 
 class Ledger:
-    def __init__(self):self.reserved=[];self.settled=[];self.finished=[]
+    def __init__(self):self.reserved=[];self.settled=[];self.finished=[];self.events=[]
     def reserve(self,*args):self.reserved.append(args)
     def settle(self,*args):self.settled.append(args)
     def finish_attempt(self,*args):self.finished.append(args)
+    def append(self,item):self.events.append(item)
 
 
 def test_relay_binds_route_and_accounts_cost(tmp_path):
@@ -100,3 +101,70 @@ def test_extended_comparison_limits_require_explicit_profile():
         ('full_panel1800',1800,Decimal('3.01'),3600),
         ('full_panel1800',1800,Decimal(3),3601)):
         with pytest.raises(ValueError):relay.trial_limits(profile,calls,cap,wall)
+
+
+def capacity_response():
+    return dict(status='failed', model=relay.MODEL, usage=None, output=[],
+        error=dict(code='server_error',
+                   message='Flex processing is temporarily unavailable. Please try again later or use standard processing.'))
+
+
+def test_authorized_capacity_fallback_retains_hold_and_pins_same_model(tmp_path):
+    ledger, calls = Ledger(), []
+    responses = [capacity_response(), dict(status='completed', model=relay.MODEL,
+                                          service_tier='default', usage=dict(cost=.002))]
+
+    def post(url, **kwargs):
+        calls.append(kwargs['json'])
+        raw = responses.pop(0)
+        return SimpleNamespace(status_code=200, content=json.dumps(raw).encode(), json=lambda: raw)
+
+    r = relay.Relay(ledger,'key','token',tmp_path,'trial',3,Decimal(1),SimpleNamespace(post=post),
+                    allow_standard_fallback=True)
+    assert r.forward(body())['service_tier'] == 'default'
+    assert [row['service_tier'] for row in calls] == ['flex', 'default']
+    assert calls[1]['provider']['only'] == ['openai']
+    assert all(row['model'] == relay.MODEL for row in calls)
+    assert len(ledger.reserved) == 2 and len(ledger.settled) == 1
+    assert ledger.reserved[1][2] == ledger.reserved[0][2] * 2
+    assert r.held == ledger.reserved[0][2] and not r.unresolved
+    assert 'trial-0' in ledger.acknowledged_unknown_ids and r.standard_active
+
+
+def test_fallback_hold_counts_against_local_cap(tmp_path):
+    ledger, calls = Ledger(), []
+    raw = capacity_response()
+
+    def post(*args, **kwargs):
+        calls.append(kwargs)
+        return SimpleNamespace(status_code=200, content=json.dumps(raw).encode(), json=lambda: raw)
+
+    reserve = relay.request_bound(body())
+    r = relay.Relay(ledger,'key','token',tmp_path,'trial',3,reserve*Decimal('2.5'),
+                    SimpleNamespace(post=post), allow_standard_fallback=True)
+    with pytest.raises(ValueError, match='budget'):
+        r.forward(body())
+    assert len(calls) == len(ledger.reserved) == 1
+    assert r.held == reserve and not ledger.settled
+
+
+@pytest.mark.parametrize('kind', ['generic_error', 'output_present', 'wrong_model', 'network'])
+def test_fallback_never_retries_other_or_uncertain_failures(tmp_path, kind):
+    ledger, calls = Ledger(), []
+    raw = capacity_response()
+    if kind == 'generic_error':raw['error']['message'] = 'Internal server error'
+    if kind == 'output_present':raw['output'] = [{'type':'function_call'}]
+    if kind == 'wrong_model':raw['model'] = 'another-model'
+
+    def post(*args, **kwargs):
+        calls.append(kwargs)
+        if kind == 'network':raise TimeoutError('uncertain provider request')
+        return SimpleNamespace(status_code=200, content=json.dumps(raw).encode(), json=lambda: raw)
+
+    r = relay.Relay(ledger,'key','token',tmp_path,'trial',3,Decimal(1),SimpleNamespace(post=post),
+                    allow_standard_fallback=True)
+    with pytest.raises((RuntimeError, TimeoutError)):
+        r.forward(body())
+    with pytest.raises(ValueError, match='unresolved'):
+        r.forward(body())
+    assert len(calls) == len(ledger.reserved) == 1 and not r.standard_active

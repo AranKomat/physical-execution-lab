@@ -29,8 +29,10 @@ predictions, as recorded in `../SIMULATOR_BATCH_CAPACITY_20261002.md`.
 - [x] Enable concurrent distinct-task scenes with bounded simulator memory.
 - [ ] Use a consistently defined batched pi0.5 executor across all motor-based
   conditions, retaining per-task prompts, RNG, ACKs and native scoring.
-- [ ] Combine exact-task native reset/support/scoring admission with that runner,
-  rather than another serial preflight sequence.
+- [x] Bind the fixed screened runtime to retained native reset/config/layout,
+  support/control and scoring evidence, with an all-ten live pre-action gate.
+  This is scoped matched-screen admission, not singleton bitwise parity or full
+  benchmark/hardware qualification.
 - [x] Execute original-only across the full task set before the next method.
 - [ ] Execute direct, numeric and semantic conditions, each across the same full
   set, after executor admission/binding.
@@ -91,6 +93,60 @@ after tasks terminate; padded rows never receive simulator actions or scores.
   memory and actions on the GPU host.
 - [x] Complete all ten original-only episodes and inspect their evidence.
 - [ ] Admit the native-equivalent executor and bind all four matched conditions.
+
+### Scoped Admission And Interrupted Direct Trial (2026-10-03 JST)
+
+`cohort_admission.py` verifies the completed baseline's retained integrity audit,
+unchanged task/control/inference core,2,941 native source/config files from the
+controller reference freeze, and all87 native interleaving-evidence files.
+The paid launcher additionally requires each physical group to match its
+baseline's resolved configuration, layout bindings, native horizon, reset
+proprioception (maximum permitted difference1e-5) and original instruction.
+Direct/numeric require both-arm robot-only FK validation on every row. All
+three groups wait for the parent to admit all ten rows before paid decisions.
+Rendering pixel equality is not claimed. The initial sensor read used for the
+gate makes no physical action and sends no evaluator data to the actor.
+
+`pi05-full-panel-direct001` passed all those gates and ran policy-free direct
+with the original Flex-only condition. It made two settled provider calls
+costing$0.007587, then a third provider request failed with explicit Flex
+capacity unavailability. Its$0.042099 reservation remains held. The same paused
+episodes were not retried and no model/tier fallback occurred in this trial.
+All ten episodes were invalid/censored infrastructure outcomes: eight executed
+zero actions, sorting executed one and Mahjong executed five. There are zero
+native terminal outcomes and no available task scores, not0/10 physical SR.
+Twelve client HTTP attempts include local relay rejections after the provider
+lane stopped; there were only three actual provider reservations.
+Total cohort wall time was111.83seconds, with zero motor policy runtimes.
+
+The retained control audit passed for all ten journals and six ACKs. All161
+remote files matched the local backup, aggregate SHA256
+`88c4589582a833aa513973114c40be8a23cc1b9f3606c95c93b495d639acfc0f`.
+The old raw parent report says `completed_full_approach_cohort`; that described
+scheduler return, not valid task completion. Preserve it as raw evidence and
+use the independent audit's censored accounting. The maintained launcher now
+emits `incomplete_full_approach_cohort` unless all ten outcomes are native terminal.
+
+The owner subsequently authorized regular/standard processing whenever Flex
+is unavailable. New named paid conditions retain Sol6.1/medium, prefer Flex,
+and allow one standard-tier substitution only after the exact structured,
+no-output Flex capacity rejection. Unknown network effects, generic errors,
+malformed responses and standard failures still do not retry. A recognized
+Flex hold is acknowledged but never released; it counts against both the
+local$3 cap and shared$85 ceiling. Subsequent requests in that trial stay on
+standard, and actual tiers/costs are retained. Standard reservation/pricing
+bounds are doubled; no automatic provider or model substitution is allowed.
+This tier policy must be explicitly prepared and frozen, not silently applied
+to the historical Flex-only condition. The interrupted trial is not replaced
+or treated as evidence about direct-control quality.
+
+Official transport guidance checked:
+https://developers.openai.com/api/docs/guides/flex-processing
+Public route listing checked2026-10-03 JST: Sol6.1 Flex prompt/completion
+$1/$5 per million versus OpenAI standard$2/$10; cache-write rates$1.25/$2.50.
+The conservative relay reserves at$1.50/$6 and$3/$12 respectively. A fresh
+full-method condition with the authorized policy is next; numeric/semantic
+still have no full-panel outcomes.
 
 429 CPU tests pass, including index isolation, cooperative native lifecycle,
 independent final checks and terminal-score freezing. These are plumbing checks,

@@ -36,3 +36,16 @@ def test_preparation_refuses_roster_replacement_and_inexact_motor():
     with pytest.raises(ContractError): prepare(seal(dict(cases=manifest['cases'][:-1])), provider)
     provider['identity']['execute_steps'] = 16
     with pytest.raises(ContractError): prepare(manifest, provider)
+
+
+def test_authorized_tier_fallback_preserves_baseline_and_names_new_paid_conditions():
+    manifest, provider = inputs()
+    panel, configs, plan = prepare(manifest, provider)
+    new_panel, new_configs, new_plan = prepare(manifest, provider, allow_standard_fallback=True)
+    assert new_panel == panel and new_configs['original_only'] == configs['original_only']
+    assert new_plan['tier_policy'] == 'flex_preferred_same_model_standard_capacity_fallback'
+    for name in ('direct', 'numeric', 'semantic'):
+        assert new_configs[name]['name'] != configs[name]['name']
+        assert new_configs[name]['model']['model'] == configs[name]['model']['model']
+        assert new_configs[name]['model']['reasoning_effort'] == 'medium'
+        assert new_configs[name]['model']['tier_fallback'] == 'same_model_default_after_explicit_flex_capacity'

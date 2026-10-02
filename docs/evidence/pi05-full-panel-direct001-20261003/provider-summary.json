@@ -1,0 +1,75 @@
+{
+  "automatic_retry": false,
+  "provider_reservations": 3,
+  "provider_responses": [
+    {
+      "error": null,
+      "id": "pi05-full-panel-direct001-0",
+      "model": "openai/gpt-6.1-sol",
+      "service_tier": "flex",
+      "status": "completed",
+      "usage": {
+        "cost": 0.003586,
+        "cost_details": {
+          "upstream_inference_cost": 0.003586,
+          "upstream_inference_input_cost": 0.002401,
+          "upstream_inference_output_cost": 0.001185
+        },
+        "input_tokens": 1946,
+        "input_tokens_details": {
+          "cache_write_tokens": 1820,
+          "cached_tokens": 0
+        },
+        "is_byok": false,
+        "output_tokens": 237,
+        "output_tokens_details": {
+          "reasoning_tokens": 29
+        },
+        "total_tokens": 2183
+      }
+    },
+    {
+      "error": null,
+      "id": "pi05-full-panel-direct001-1",
+      "model": "openai/gpt-6.1-sol",
+      "service_tier": "flex",
+      "status": "completed",
+      "usage": {
+        "cost": 0.004001,
+        "cost_details": {
+          "upstream_inference_cost": 0.004001,
+          "upstream_inference_input_cost": 0.002406,
+          "upstream_inference_output_cost": 0.001595
+        },
+        "input_tokens": 1950,
+        "input_tokens_details": {
+          "cache_write_tokens": 1824,
+          "cached_tokens": 0
+        },
+        "is_byok": false,
+        "output_tokens": 319,
+        "output_tokens_details": {
+          "reasoning_tokens": 105
+        },
+        "total_tokens": 2269
+      }
+    },
+    {
+      "error": {
+        "code": "server_error",
+        "message": "Flex processing is temporarily unavailable. Please try again later or use standard processing."
+      },
+      "id": "pi05-full-panel-direct001-2",
+      "model": "openai/gpt-6.1-sol",
+      "service_tier": "flex",
+      "status": "failed",
+      "usage": null
+    }
+  ],
+  "raw_backup_aggregate_sha256": "88c4589582a833aa513973114c40be8a23cc1b9f3606c95c93b495d639acfc0f",
+  "raw_backup_files": 161,
+  "settled_cost_usd": "0.007587",
+  "tier_fallback": false,
+  "unresolved_hold_id": "pi05-full-panel-direct001-2",
+  "unresolved_hold_usd": "0.042099"
+}

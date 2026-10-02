@@ -59,7 +59,9 @@ def test_full_method_cohort_routing(tmp_path, monkeypatch, approach):
             output = Path(command[command.index('--output') + 1])
             cases = json.loads(Path(command[command.index('--cases') + 1]).read_text())
             (output / 'report.json').write_text(json.dumps(dict(
-                status='native_control_wave', paid_calls=0)))
+                status='native_control_wave', paid_calls=0,
+                controller_results={str(i): dict(status='native_completed', success=False)
+                                    for i in range(len(cases))})))
             (output / 'pre-action-admission.json').write_text(json.dumps(dict(
                 passed=True, initial_fk_checks={str(i): dict(passed=True) for i in range(len(cases))})))
         return SimpleNamespace(poll=lambda: 0)
@@ -95,3 +97,11 @@ def test_paid_launch_rejects_unfrozen_sources(tmp_path, monkeypatch):
     with pytest.raises(ContractError, match='source changed'):
         launcher.main()
     assert not (tmp_path / 'runs/out').exists()
+
+
+def test_provider_interruption_is_not_ten_physical_failures():
+    summary = launcher.summarize_cohort_results([dict(controller_results={
+        str(i): dict(status='infrastructure_or_contract_error', success=False) for i in range(10)})])
+    assert summary['native_task_failures'] == summary['native_terminal_cases'] == 0
+    assert summary['censored_or_invalid_cases'] == 10
+    assert not summary['all_rows_native_terminal']

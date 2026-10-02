@@ -1,0 +1,104 @@
+{
+  "benchmark_qualified": false,
+  "client_http_attempts": 12,
+  "distinct_cases": 10,
+  "integrity_passed": true,
+  "motor_policy_loaded": false,
+  "native_actions": 6,
+  "raw_parent_report_sha256": "93ebd1b9eb92d223ae6647dda6e7452fb1489930be8c49789b1080e59424c2d1",
+  "rows": [
+    {
+      "case_id": "arrange_largest_number__standard__g0__l0",
+      "error": "model request failed: HTTPStatusError; inspect archive; no automatic retry",
+      "native_score": null,
+      "native_steps": 0,
+      "status": "infrastructure_or_contract_error",
+      "success": false
+    },
+    {
+      "case_id": "build_tower__standard__g0__l0",
+      "error": "model request failed: HTTPStatusError; inspect archive; no automatic retry",
+      "native_score": null,
+      "native_steps": 0,
+      "status": "infrastructure_or_contract_error",
+      "success": false
+    },
+    {
+      "case_id": "classify_objects_by_language__standard__g0__l0",
+      "error": "model request failed: HTTPStatusError; inspect archive; no automatic retry",
+      "native_score": null,
+      "native_steps": 0,
+      "status": "infrastructure_or_contract_error",
+      "success": false
+    },
+    {
+      "case_id": "fold_clothes__standard__g0__l0",
+      "error": "model request failed: HTTPStatusError; inspect archive; no automatic retry",
+      "native_score": null,
+      "native_steps": 0,
+      "status": "infrastructure_or_contract_error",
+      "success": false
+    },
+    {
+      "case_id": "imitate_sorting_sequence__standard__g0__l0",
+      "error": "model request failed: HTTPStatusError; inspect archive; no automatic retry",
+      "native_score": null,
+      "native_steps": 1,
+      "status": "infrastructure_or_contract_error",
+      "success": false
+    },
+    {
+      "case_id": "make_kong__standard__g0__l0",
+      "error": "model request failed: HTTPStatusError; inspect archive; no automatic retry",
+      "native_score": null,
+      "native_steps": 5,
+      "status": "infrastructure_or_contract_error",
+      "success": false
+    },
+    {
+      "case_id": "classify_objects__standard__g0__l0",
+      "error": "model request failed: HTTPStatusError; inspect archive; no automatic retry",
+      "native_score": null,
+      "native_steps": 0,
+      "status": "infrastructure_or_contract_error",
+      "success": false
+    },
+    {
+      "case_id": "organize_table__standard__g0__l0",
+      "error": "model request failed: HTTPStatusError; inspect archive; no automatic retry",
+      "native_score": null,
+      "native_steps": 0,
+      "status": "infrastructure_or_contract_error",
+      "success": false
+    },
+    {
+      "case_id": "pack_objects_into_box__standard__g0__l0",
+      "error": "model request failed: HTTPStatusError; inspect archive; no automatic retry",
+      "native_score": null,
+      "native_steps": 0,
+      "status": "infrastructure_or_contract_error",
+      "success": false
+    },
+    {
+      "case_id": "put_bottles_into_dustbin__standard__g0__l0",
+      "error": "model request failed: HTTPStatusError; inspect archive; no automatic retry",
+      "native_score": null,
+      "native_steps": 0,
+      "status": "infrastructure_or_contract_error",
+      "success": false
+    }
+  ],
+  "scope": "retained full-panel routing, admission and control ACK integrity",
+  "summary": {
+    "all_rows_native_terminal": false,
+    "censored_or_invalid_cases": 10,
+    "controller_status_counts": {
+      "infrastructure_or_contract_error": 10
+    },
+    "native_task_failures": 0,
+    "native_terminal_cases": 0,
+    "paid_calls_count_scope": "client HTTP attempts, including local relay rejections; not provider reservations or charges",
+    "results_present": 10,
+    "successes": 0
+  }
+}

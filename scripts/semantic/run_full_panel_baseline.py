@@ -1,6 +1,7 @@
 #!/usr/bin/env python3
 """Own one full ten-distinct-task condition, with fused inference when applicable."""
 import argparse
+from collections import Counter
 import json
 import os
 from pathlib import Path
@@ -26,6 +27,18 @@ GROUPS = (
 )
 
 
+def summarize_cohort_results(groups):
+    rows = [row for group in groups for row in group['controller_results'].values()]
+    counts = Counter(row['status'] for row in rows)
+    terminal = sum(row['status'] == 'native_completed' for row in rows)
+    return dict(controller_status_counts=dict(counts), results_present=len(rows),
+        native_terminal_cases=terminal, all_rows_native_terminal=terminal == 10 and len(rows) == 10,
+        successes=sum(row['success'] and row['status'] == 'native_completed' for row in rows),
+        native_task_failures=sum(not row['success'] and row['status'] == 'native_completed' for row in rows),
+        censored_or_invalid_cases=len(rows)-terminal,
+        paid_calls_count_scope='client HTTP attempts, including local relay rejections; not provider reservations or charges')
+
+
 def main():
     p = argparse.ArgumentParser()
     p.add_argument('--prepared', type=Path, required=True)
@@ -37,6 +50,7 @@ def main():
     p.add_argument('--baseline-run', type=Path)
     p.add_argument('--native-reference-freeze', type=Path)
     p.add_argument('--controller-run', type=Path)
+    p.add_argument('--allow-standard-fallback', action='store_true')
     args = p.parse_args()
     panel = load_json(args.prepared / 'cases.json')
     plan = load_json(args.prepared / 'plan.json')
@@ -51,6 +65,9 @@ def main():
         raise ContractError('paid conditions require explicit API enablement; original-only forbids it')
     if args.allow_api and not os.environ.get(treatment['model']['api_key_env']):
         raise ContractError('budget relay token must be configured before simulator startup')
+    if args.allow_standard_fallback != (treatment.get('model', {}).get('tier_fallback') ==
+                                       'same_model_default_after_explicit_flex_capacity'):
+        raise ContractError('tier fallback must match the explicitly prepared condition')
     if args.approach != 'original_only' and args.freeze is None:
         raise ContractError('paid full-panel conditions require a fresh execution-source freeze')
     frozen = load_json(args.freeze) if args.freeze else None
@@ -96,6 +113,7 @@ def main():
                   simulator_processes=3, distinct_tasks=10, source_hashes=source_hashes,
                   simulator_gpu_affinity=[0, 1, 0], policy_gpu=None if direct else 1, jax_memory_fraction=.5,
                   source_freeze_sha256=frozen['sha256'] if frozen else None,
+                  tier_policy=plan.get('tier_policy', 'flex_only'),
                   comparison_plan_sha256=plan['sha256'], cases=[case['case_id'] for case in panel['cases']],
                   native_equivalence_admission_pending=True, automatic_retry=False)
     children, streams = [], []
@@ -192,9 +210,12 @@ def main():
         results = [load_json(wave / 'report.json') for wave in waves]
         if any(row['status'] in ('starting', 'native_ready', 'error_stop_no_retry') for row in results):
             raise RuntimeError('simulator exit is not proof of completed episodes')
+        summary = summarize_cohort_results(results)
         report.update(status=('completed_full_original_only_cohort' if args.approach == 'original_only'
-                              else 'completed_full_approach_cohort'), groups=results,
+                              else 'completed_full_approach_cohort' if summary['all_rows_native_terminal']
+                              else 'incomplete_full_approach_cohort'), groups=results,
                       paid_calls=sum(row['paid_calls'] for row in results))
+        report.update(summary)
     except BaseException as exc:
         report.update(status='error_stop_no_retry', error=f'{type(exc).__name__}: {exc}')
         raise
