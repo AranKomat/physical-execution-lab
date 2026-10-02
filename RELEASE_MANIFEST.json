@@ -1031,7 +1031,7 @@
     "docs/evidence/semantic-pi05-hierarchy-001/task_plus_subtask/result.json": "8a7e7f9cf62099e7585bc0b5c42c1c5e1952cdb7d059fe24cb9277702b82bbbe",
     "docs/evidence/semantic-pi05-hierarchy-001/task_plus_subtask/semantic-decisions.json": "205a4088ac95da694957d08a6a1b81b4c69193bf25c20b423e7430a319efa818",
     "docs/evidence/semantic-pi05-hierarchy-001/task_plus_subtask/source-identity.json": "f5d791db6665ccc59a510b4a75db73a35f4d72da9623cc611336b6c5cd0a3986",
-    "docs/semantic/MATCHED_HIERARCHY_PROGRESS_20261002.md": "ce6889040fdd842e20706a8ea71a61a9364693a099515f5d58ec035e39bf4edf",
+    "docs/semantic/MATCHED_HIERARCHY_PROGRESS_20261002.md": "4b38997ac4f50d1254ee9e5c7f980255efee09ad5b31e31cc2b3f7b00407b97d",
     "docs/evidence/semantic-pi05-hierarchy-001/task_plus_subtask/sort-l2/api-summary.json": "1ed5662dbd32e2bd4ace231d7b559e90c3c61a8e1eb10dac34b03f7aa291a33d",
     "docs/evidence/semantic-pi05-hierarchy-001/task_plus_subtask/sort-l2/initial-observation-fingerprint.json": "e017a3df0bea46e6b9c0d3efd451acd4ba5446062bfa45367a85d5d2276832c8",
     "docs/evidence/semantic-pi05-hierarchy-001/task_plus_subtask/sort-l2/offline-audit.json": "7681ffe88b171ac9093111f0695308f6c85835b11d905cd70d805b34fa951924",
@@ -1223,6 +1223,17 @@
     "docs/evidence/vector-binding-accounting-fix-20261002/operator_run_semantic_multifamily002.py": "8b4b0fab45916d4da929978d4ccb6c52f717bf1855d758b1aa5ed9212b6680db",
     "docs/evidence/vector-binding-accounting-fix-20261002/operator_semantic_vector_native002.py": "1563e4440d4308054b10f11a1beec5c8270ee979ada7f8e4d68582068377a8dc",
     "docs/evidence/vector-binding-accounting-fix-20261002/operator_vector_pi05_rollout002.py": "7b28039233a4201739eb8e0ce6cb55ad722ea0d66ac8241314ddd7d843666c2d",
-    "tests/semantic/test_semantic_wave_accounting.py": "49a308c515fb6c025f5bbf6804c48debdf5aba946d5355716faf7c7e2ef3257a"
+    "tests/semantic/test_semantic_wave_accounting.py": "49a308c515fb6c025f5bbf6804c48debdf5aba946d5355716faf7c7e2ef3257a",
+    "docs/evidence/reference-arrange-motor001-20261002/README.md": "47e4bebe2ed8813cb34d701981674b5746db8648d51ce1c54ca5da9f4015c68a",
+    "docs/evidence/reference-arrange-motor001-20261002/offline-audit.json": "0d3d1b2ff3fce939a232dcca0eaf1f7d7890c7ca8799fce160b8b93f286cf6e0",
+    "docs/evidence/reference-arrange-motor001-20261002/operator_audit_reference_motor001.py": "9f9fd997fdd8a4d1d9d99835cb226c8c259c2120668097eaa5a12af176a0fe14",
+    "docs/evidence/reference-arrange-motor001-20261002/operator_reference_native001.py": "2bdffc061b8b715cfe9fa66dae9796cafecf8caf179a86b1ac32ea2f936ee6a0",
+    "docs/evidence/reference-arrange-motor001-20261002/operator_reference_rollout001.py": "de1a1972796452c004ad613ae582afcd4dbdaf206c7977abb9e9f9e4a337b9cd",
+    "docs/evidence/reference-arrange-motor001-20261002/pre-action-binding.json": "12745dcce08f80b01a76c88bb98c0ed5dbc6417aacf157afd4f67a5664029746",
+    "docs/evidence/reference-arrange-motor001-20261002/reference-motor-original001.json": "44236e77a390a404571219d5a0fc5f6842552000285117144ed67bf9e3bcd453",
+    "docs/evidence/reference-arrange-motor001-20261002/report.json": "41a3b47793ad20116a80f9680ffa0d9086563b09e49690db8eda76f94fd35aa7",
+    "docs/evidence/reference-arrange-motor001-20261002/worker-ready.json": "b14d5f295adb0510c504e01f1b2543589aef09b9c78dad8dc8b3e7df40744750",
+    "semantic_lab/reference.py": "1d5d0a5e70b6a8575bb87be1cf00a978a8482071b78d937ff5dcb06e6d34868c",
+    "tests/semantic/test_reference_wave.py": "3428474ca0b7eac1735197348de9da6779b00238824707f1d909c667cbe07d3a"
   }
 }

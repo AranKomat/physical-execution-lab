@@ -1,0 +1,9 @@
+{
+  "name": "reference_opened_arrange_motor_only001",
+  "mode": "motor_only",
+  "prompt_mode": "original_only",
+  "max_semantic_calls": 0,
+  "wall_limit_s": 2400,
+  "no_task_memory": true,
+  "no_task_demonstrations": true
+}

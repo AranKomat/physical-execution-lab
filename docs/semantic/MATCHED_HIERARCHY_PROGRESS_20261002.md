@@ -17,7 +17,7 @@ are competing explanations, not established diagnoses.
 | B: conditioning | Actual source tokenizer/context/ACK plumbing and responsiveness passed; obedience not established |
 | C: matched hierarchy | Fresh vector cohort: all three conditions across all five cases executed and audited; original-only 3 successes, task-plus-subtask 1, subtask-only 1. Historical serial cohort remains separate and incomplete |
 | D: semantic recovery | Separate five-case panel executed: 3 successes, 1 horizon failure, 1 rejected planner contract. 12 applied recoveries; execution/rejection accounting audited, not all-valid planner or causal recovery qualification |
-| E: held-out/second backend | Not run under V5; opened historical task cannot serve as untouched held-out evidence |
+| E: held-out/second backend | Untouched/second-backend comparison unrun. Reference-bound motor execution now audited on a third, historically opened task family; not untouched qualification |
 
 Use the existing five-case development roster: classify_objects layouts 0, 1,
 2 and build_tower layouts 0, 1. Compare fresh original-only against
@@ -610,3 +610,36 @@ No paid call or native episode was launched for this correction. New source
 bindings and native admission are required before broader task execution;
 this does not complete Phase E. Next priority remains the reference-aligned
 ten-task coverage, not more two-task prompt sweeps or maximum-capacity tests.
+
+## Reference-Bound Third Task Family
+
+The new explicit case-binding path completed arrange_largest_number standard
+group0 layouts0 and1 concurrently, retaining their original test partition and
+marking the family historically opened. These are two selected reference case
+IDs, not repeated capacity rows. `semantic_lab/reference.py` checksum-checks
+the manifest, preserves case order/partition, and rejects duplicate IDs/layouts,
+runtime variant substitution and unbound layout/horizon metadata. Native reset
+path/hash and task horizon are checked before actions. The experimental
+prototype refuses untouched families pending separately qualified execution.
+
+Both native motor-only cases failed at1050 actions: layout0 score0.00, layout1
+score0.15. Total2100 controls,70 H50/15 calls per case, zero API calls and316.48 s
+rollout excluding startup/shutdown. All source prediction/actual ACK, original
+prompt, source RNG, nonblank camera, manifest/layout/variant/horizon and
+nonvacuous native completion checks pass. Zero controller faults/unresolved
+actions; both GPUs idle after exit. All384 repository tests pass.
+
+This is meaningful third-family motor evidence, not a successful hierarchy,
+untouched held-out result, or complete ten-task evaluation. Keep this new
+reference-bound cohort separate from historical serial attempts and the earlier
+two-task vector panel. Its semantic candidate is unrun; retain the same failed
+cases in any future matched comparison. The seven other unopened groups remain
+unopened. Source support-arm setup/stepping remains native, but tasks requiring
+it have not yet been admitted on this vector path.
+
+Evidence, pre-action source/config/case binding and exact executed operators:
+`../evidence/reference-arrange-motor001-20261002/`. Only small reports/evidence
+were downloaded, no weights. Full sensors remain remote pending verified
+backup. Next bind the semantic candidate to this executor and finish native
+qualification before the untouched reference task families; do not run another
+capacity sweep or silently change the grouped split.

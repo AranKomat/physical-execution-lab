@@ -1,0 +1,46 @@
+{
+  "status": "native_semantic_motor_vector_audit_passed",
+  "actual_controls": 2100,
+  "episodes": {
+    "0": {
+      "journal": {
+        "events": 1192,
+        "head_sha256": "601a64577af43b890083f63aa26e07119d2d1026c47e6214da26c93f9bac7d76"
+      },
+      "actual_control_acks": 1050,
+      "policy_proposals": 70,
+      "semantic_epochs_seen_by_motor": [
+        0
+      ],
+      "distinct_effective_prompts": 1,
+      "prefix_cadence_verified": true,
+      "complete_native_result": true,
+      "evidence_kind": "native_unqualified",
+      "robot_competence_claim": false,
+      "source_H50_predictions_equal": true,
+      "source_rng_verified": true
+    },
+    "1": {
+      "journal": {
+        "events": 1192,
+        "head_sha256": "34d810939142ed580576176b35148450971954bef5541d36746f7db0a0cbc64c"
+      },
+      "actual_control_acks": 1050,
+      "policy_proposals": 70,
+      "semantic_epochs_seen_by_motor": [
+        0
+      ],
+      "distinct_effective_prompts": 1,
+      "prefix_cadence_verified": true,
+      "complete_native_result": true,
+      "evidence_kind": "native_unqualified",
+      "robot_competence_claim": false,
+      "source_H50_predictions_equal": true,
+      "source_rng_verified": true
+    }
+  },
+  "paid_calls": 0,
+  "source_predictions_and_native_acks_match": true,
+  "case_layout_variant_horizon_binding_verified": true,
+  "scope": "reference-bound previously opened task; not untouched held-out or hierarchy qualification"
+}
