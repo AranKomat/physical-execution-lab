@@ -6,7 +6,7 @@
 |---|---|
 | A: no-interference | Passed native cadence/prompt audit for synchronous stateless pi0.5; not bitwise trajectory parity |
 | B: conditioning | Actual source tokenizer/context/ACK plumbing and responsiveness passed; obedience not established |
-| C: matched hierarchy | 2/5 primary pairs attempted and audited: tower positive pair, sorting candidate abstention/control failure; three pairs and five subtask-only variants unrun |
+| C: matched hierarchy | 3/5 primary pairs terminal and audited: tower0 positive pair, sorting2 abstention/control failure, tower1 negative pair; two primary pairs and five subtask-only variants unrun |
 | D: semantic recovery | Not run; disabled in current conditions |
 | E: held-out/second backend | Not run under V5; opened historical task cannot serve as untouched held-out evidence |
 
@@ -132,8 +132,8 @@ assets, checkpoints or environments.
 
 The first development pair is terminal. Both source/prefix/ACK/evaluator audits
 pass. All 2,216 control payloads and 1,586 candidate payloads were locally backed
-up and SHA-verified before redundant remote sensor retirement. One full primary
-pair and the second pair's attempts are terminal. Three other pairs and all
+up and SHA-verified before redundant remote sensor retirement. Three primary
+pairs are terminal. Two other primary pairs and all
 five subtask-only episodes remain unrun;
 retain them as missing until actually executed. Do not present 1/1 as a
 full-roster success rate or a causal hierarchy gain. After saving the control,
@@ -143,6 +143,30 @@ untouched held-out/second-backend experiments remain later phases.
 Public records: `docs/evidence/semantic-pi05-hierarchy-001/`.
 Full local backup: `runs/native-evidence/semantic-pi05-hierarchy-001/`.
 Remote configs: `configs/local/semantic-pi05-hierarchy-001/`.
+
+## Tower Layout1 And Parallel Execution
+
+Original-only tower1 succeeded, score 1.0, 729 actions, 49 policy calls,
+433.13 s wall. All 1,553 files are SHA-verified locally and its proposal/ACK/
+scoring audit passes. Its fresh task-plus-subtask candidate failed at the
+1050-action horizon, score 0.0, 70 policy calls, ten GPT calls/$0.05549250,
+674.43 s wall, one prompt change. Zero controller faults, resets, resampling,
+shortening or unresolved actions. Its audit passes; all 2,301 backup files are
+locally SHA-verified before redundant remote observation retirement.
+
+This is a negative pair, reversing the first tower layout's descriptive result.
+It does not establish causality because complete reset-state parity and
+replicated outcomes remain unproven. Candidate reviews retracted a tentative
+left-hand grasp claim and continued the existing goal; semantic recovery was
+disabled. Claims/conditioning plumbing should not be confused with obedience.
+
+GPU1 concurrently completed a separately rebound original-only sorting1
+transport variant: horizon failure, score 0.4, 1100 actions, 74 policy calls,
+zero GPT calls, 622.48 s wall. Audit passes and all 2,323 files are SHA-verified.
+This is not silently included in the original frozen condition report. Its
+matched candidate must use that same binding before claiming a fourth pair.
+See `PARALLEL_EXECUTION_20261002.md` for worker ports, binding provenance,
+shared-model batching limits and the campaign-wide paid-relay lock.
 
 The interim coverage report uses `report-manifest.json`, derived without
 changing any case from the frozen five-case roster. It records the executed

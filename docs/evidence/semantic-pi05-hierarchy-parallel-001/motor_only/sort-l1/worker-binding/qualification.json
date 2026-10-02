@@ -1,0 +1,41 @@
+{
+  "checks": {
+    "context_switch_preserves_ack_history": true,
+    "continue_preserves_cadence": true,
+    "effective_prompt_seen_at_model_boundary": true,
+    "native_motor_only_parity": true,
+    "native_terminal_scoring_separate": true,
+    "source_bound_model_identity": true,
+    "tokenizer_subtask_not_truncated": true
+  },
+  "config_sha256": "81a85b6ca079e8aebd8d9d0b5c64c1a0c1c122dc94052339d0ce0c6891e92078",
+  "evidence": [
+    {
+      "path": "/root/physical-execution-lab/runs/semantic-pi05-dev-001/motor_only/offline-audit.json",
+      "sha256": "f7fb23d0b128b220b5663c25c796096d4702f2485c140577d7e6f173e9b32ef2"
+    },
+    {
+      "path": "/root/physical-execution-lab/runs/semantic-pi05-dev-002/shadow_repaired/offline-audit.json",
+      "sha256": "29462683440d57df3cfdf19e9a0dc91ab0eb5344eb3caf207fb400f0b3931540"
+    },
+    {
+      "path": "/root/physical-execution-lab/runs/semantic-pi05-context-ack-002/report.json",
+      "sha256": "ba13dd6bd112e2383748696cfcb946ff958c5910c3a9f68effb8690782f7c139"
+    },
+    {
+      "path": "/root/physical-execution-lab/runs/semantic-pi05-prompt-probe-001/report.json",
+      "sha256": "ffafb9b0922a7ee54093bd529ad9453a3305ebb11c656b2dec2bb91b4126432b"
+    }
+  ],
+  "schema": "semantic.qualification.v1",
+  "scope": "tested stateless pi0.5 cadence and prompt plumbing; not bitwise trajectory parity, all-prompt token survival or obedience",
+  "source_sha256": "fba009076ad08a155b0631d293ce60a99677264d9b76bf7c2359ffc8c712abc7",
+  "transport_rebinding": {
+    "bridge_port": 19604,
+    "gpu": 1,
+    "original_freeze_sha256": "51c39ccb2c7fe6d920747091848178b9fa4fc0f2c1e62632b81b61aa8cd72e62",
+    "scope": "inherited tested stateless cadence/prompt seam; distinct transport cohort, not new physical parity evidence",
+    "sim_port": 19118,
+    "source_port": 19115
+  }
+}

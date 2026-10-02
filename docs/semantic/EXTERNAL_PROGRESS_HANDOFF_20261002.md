@@ -120,25 +120,25 @@ launch. Stateful backends and held-out evaluation are not qualified by this.
 
 ## Live State And Limits
 
-Two primary development pairs are terminal and audited. Their four episodes
+Three primary development pairs are terminal and audited. The first four episodes
 are backed up and SHA-verified (1586 tower candidate, 2216 tower control,
-723 sorting candidate, 2320 sorting control files). The next tower1 control
-and a separately bound GPU1 sorting1 transport variant are being launched
-concurrently; inspect live process/results rather than treating this snapshot
-as proof of completion. No paid calls are used by these two controls.
+723 sorting candidate, 2320 sorting control files). Concurrent tower1 and GPU1
+sorting1 controls also completed, audited and backed up (1553 and 2323 files).
+The tower1 hierarchy candidate subsequently failed at horizon and passed its
+audit; all 2,301 backup files are SHA-verified. No robot episode remains live.
 SSH: `ssh -p 53210 root@92.180.27.84`; repo `/root/physical-execution-lab`.
 Preserve unrelated CPU work, remote untracked launcher/reports, and old evidence.
 Do not reboot, alter global GPU packages or stop the rental as part of this work.
 
-Latest experiment accounting: $85 ceiling, $77.691227244300 spent plus holds,
-$7.308772755700 remaining, 4731 reservations, 154 old unresolved holds.
-All 23 new shadow/hierarchy calls settled. This is a snapshot, not fresh authorization
+Latest experiment accounting: $85 ceiling, $77.746719744300 spent plus holds,
+$7.253280255700 remaining, 4741 reservations, 154 old unresolved holds.
+All 33 new shadow/hierarchy calls settled. This is a snapshot, not fresh authorization
 accounting: reread the authoritative ledger before making calls.
 
 ## Next Experiments And Stopping Rules
 
 1. Preserve the source/config-bound pi0.5 qualification/freeze and audit records.
-2. Continue the frozen roster: three other primary
+2. Continue the frozen roster: two other primary
    pairs and five subtask-only episodes remain. Keep
    checkpoint, native H50/15 cadence, sensors, horizon and planner route fixed.
 3. Retain failures, abstentions, API/resource/contract stops and missing cases
@@ -147,6 +147,25 @@ accounting: reread the authoritative ledger before making calls.
    are interpretable, not merely after a recovery instruction is emitted.
 5. Freeze development choices before untouched held-out groups and a second
    motor backend. Do not tune on opened arrange_largest_number.
+
+Tower1 supplies a negative counterexample: control succeeded at 729 actions,
+score 1.0, 49 policy calls, 433.13 s; hierarchy failed at 1050 actions, score
+0.0, 70 policy calls, 674.43 s, ten GPT calls/$0.05549250. One prompt change;
+no detected faults, resets, resampling or shortening. Recovery disabled.
+There are now three primary pairs, with one positive, one negative and one
+sorting abstention/control failure. Complete reset parity and causal benefit
+remain unproven. All five subtask-only cases remain unrun.
+
+The GPU1 sorting1 original-only transport variant failed at horizon, score
+0.4, 1100 actions, 74 policy calls, 622.48 s, zero GPT calls. It has explicit
+rebound identity/config/freeze records and is not silently pooled into the
+original condition report. A matching candidate must use the same binding.
+Two independent workers fit at about 15 GB per GPU. Tower1 control spent only
+8.5% of wall time on policy inference; stepping/ACK work dominated. Current
+OpenPI accepts batched inputs but its websocket server does not batch requests
+and shares RNG. The paid relay holds a campaign-wide exclusive lock. Use
+one paid hierarchy worker plus one no-API worker until accounting is revised.
+Details: `PARALLEL_EXECUTION_20261002.md`.
 
 One native hierarchy success versus a failed fresh control is demonstrated;
 reliable causal benefit, recovery success, broad generalization and
