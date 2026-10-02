@@ -1,0 +1,148 @@
+{
+  "scope": "two fixed reference cases from a historically opened task; not untouched held-out or benchmark SR",
+  "checkpoint_and_reference_binding_equal": true,
+  "all_planner_contracts_valid": true,
+  "successes": {
+    "motor_only": 0,
+    "task_plus_recovery": 0
+  },
+  "paid_calls": 20,
+  "rollout_wall_s": {
+    "motor_only": 316.4768286180042,
+    "task_plus_recovery": 514.3175261990109
+  },
+  "counterfactual_trajectory_parity": false,
+  "causal_benefit_established": false,
+  "cases": [
+    {
+      "case_id": "arrange_largest_number__standard__g0__l0",
+      "partition": "test",
+      "historically_opened_family": true,
+      "conditions": {
+        "motor_only": {
+          "status": "native_completed",
+          "success": false,
+          "native_score": 0.0,
+          "native_steps": 1050,
+          "native_terminal_observed": true,
+          "error": null,
+          "metrics": {
+            "policy_calls": 70,
+            "policy_requests": 70,
+            "semantic_calls": 0,
+            "semantic_changes": 0,
+            "motor_prompt_changes": 0,
+            "semantic_recoveries": 0,
+            "shadow_planner_failures": 0,
+            "controller_faults": 0,
+            "native_steps": 1050,
+            "predicted_policy_actions": 3500,
+            "natural_suffix_discards": 2450,
+            "abort_prefix_discards": 0,
+            "unresolved_policy_actions": 0,
+            "natural_prefixes": 70,
+            "completed_prefixes": 70,
+            "gpt_induced_motor_resamples": 0,
+            "gpt_induced_policy_resets": 0,
+            "gpt_induced_prefix_shortening": 0,
+            "corrections": 0
+          }
+        },
+        "task_plus_recovery": {
+          "status": "native_completed",
+          "success": false,
+          "native_score": 0.15,
+          "native_steps": 1050,
+          "native_terminal_observed": true,
+          "error": null,
+          "metrics": {
+            "policy_calls": 70,
+            "policy_requests": 70,
+            "semantic_calls": 10,
+            "semantic_changes": 5,
+            "motor_prompt_changes": 5,
+            "semantic_recoveries": 2,
+            "shadow_planner_failures": 0,
+            "controller_faults": 0,
+            "native_steps": 1050,
+            "predicted_policy_actions": 3500,
+            "natural_suffix_discards": 2450,
+            "abort_prefix_discards": 0,
+            "unresolved_policy_actions": 0,
+            "natural_prefixes": 70,
+            "completed_prefixes": 70,
+            "gpt_induced_motor_resamples": 0,
+            "gpt_induced_policy_resets": 0,
+            "gpt_induced_prefix_shortening": 0,
+            "corrections": 0
+          }
+        }
+      }
+    },
+    {
+      "case_id": "arrange_largest_number__standard__g0__l1",
+      "partition": "test",
+      "historically_opened_family": true,
+      "conditions": {
+        "motor_only": {
+          "status": "native_completed",
+          "success": false,
+          "native_score": 0.15,
+          "native_steps": 1050,
+          "native_terminal_observed": true,
+          "error": null,
+          "metrics": {
+            "policy_calls": 70,
+            "policy_requests": 70,
+            "semantic_calls": 0,
+            "semantic_changes": 0,
+            "motor_prompt_changes": 0,
+            "semantic_recoveries": 0,
+            "shadow_planner_failures": 0,
+            "controller_faults": 0,
+            "native_steps": 1050,
+            "predicted_policy_actions": 3500,
+            "natural_suffix_discards": 2450,
+            "abort_prefix_discards": 0,
+            "unresolved_policy_actions": 0,
+            "natural_prefixes": 70,
+            "completed_prefixes": 70,
+            "gpt_induced_motor_resamples": 0,
+            "gpt_induced_policy_resets": 0,
+            "gpt_induced_prefix_shortening": 0,
+            "corrections": 0
+          }
+        },
+        "task_plus_recovery": {
+          "status": "native_completed",
+          "success": false,
+          "native_score": 0.15,
+          "native_steps": 1050,
+          "native_terminal_observed": true,
+          "error": null,
+          "metrics": {
+            "policy_calls": 70,
+            "policy_requests": 70,
+            "semantic_calls": 10,
+            "semantic_changes": 7,
+            "motor_prompt_changes": 7,
+            "semantic_recoveries": 4,
+            "shadow_planner_failures": 0,
+            "controller_faults": 0,
+            "native_steps": 1050,
+            "predicted_policy_actions": 3500,
+            "natural_suffix_discards": 2450,
+            "abort_prefix_discards": 0,
+            "unresolved_policy_actions": 0,
+            "natural_prefixes": 70,
+            "completed_prefixes": 70,
+            "gpt_induced_motor_resamples": 0,
+            "gpt_induced_policy_resets": 0,
+            "gpt_induced_prefix_shortening": 0,
+            "corrections": 0
+          }
+        }
+      }
+    }
+  ]
+}

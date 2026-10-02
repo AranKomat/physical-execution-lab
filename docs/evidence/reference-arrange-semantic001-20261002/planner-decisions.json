@@ -1,0 +1,1099 @@
+{
+  "summary": {
+    "attempts": 20,
+    "cost_usd": "0.12829000",
+    "no_automatic_retry": true,
+    "requested_model": "openai/gpt-6.1-sol",
+    "provider": {
+      "only": [
+        "openai/flex"
+      ],
+      "allow_fallbacks": false,
+      "require_parameters": true,
+      "max_price": {
+        "prompt": 1.5,
+        "completion": 6
+      }
+    },
+    "service_tier": "flex",
+    "tool_name": "semantic_goal"
+  },
+  "decisions": [
+    {
+      "index": 0,
+      "decision": {
+        "episode": "a75711a24db64ad1975a06e4e64b13a5",
+        "based_on_step": 0,
+        "based_on_stamp": "99b587627d8cf01e9ed069ae317fd3b48bf4dea913f8d527d53f6ec3a5c2e1db",
+        "expected_epoch": 0,
+        "operation": "set_subtask",
+        "subtask": "Place the yellow 7 on the leftmost pad using the left arm.",
+        "assessment": "not_started",
+        "evidence": "At step 0, the RGB views show yellow digits 7, 1, 3, and 0 on the table and four empty circular pads in a horizontal row. The 7 is near the left gripper. Descending order is 7310, so 7 belongs on the leftmost pad.",
+        "completed_claims": [],
+        "uncertain_or_invalidated": []
+      },
+      "served_model": "openai/gpt-6.1-sol",
+      "served_tier": "flex",
+      "usage": {
+        "input_tokens": 2084,
+        "input_tokens_details": {
+          "cached_tokens": 0,
+          "cache_write_tokens": 1958
+        },
+        "output_tokens": 248,
+        "output_tokens_details": {
+          "reasoning_tokens": 46
+        },
+        "total_tokens": 2332,
+        "cost": 0.0038135,
+        "is_byok": false,
+        "cost_details": {
+          "upstream_inference_cost": 0.0038135,
+          "upstream_inference_input_cost": 0.0025735,
+          "upstream_inference_output_cost": 0.00124
+        }
+      }
+    },
+    {
+      "index": 1,
+      "decision": {
+        "episode": "55bbd37706374557baf125a6048ea34d",
+        "based_on_step": 0,
+        "based_on_stamp": "14f76067be5a76faec8376e0b9464012d18707a415e93c18e0337748b732884b",
+        "expected_epoch": 0,
+        "operation": "set_subtask",
+        "subtask": "Place the blue 8 on the leftmost circular pad using the left arm.",
+        "assessment": "not_started",
+        "evidence": "At step 0, the blue digits 0, 7, 8, and 2 are on the table, and four circular pads are empty. Descending digit order is 8720; the 8 is near the left arm.",
+        "completed_claims": [],
+        "uncertain_or_invalidated": []
+      },
+      "served_model": "openai/gpt-6.1-sol",
+      "served_tier": "flex",
+      "usage": {
+        "input_tokens": 2060,
+        "input_tokens_details": {
+          "cached_tokens": 0,
+          "cache_write_tokens": 1934
+        },
+        "output_tokens": 226,
+        "output_tokens_details": {
+          "reasoning_tokens": 45
+        },
+        "total_tokens": 2286,
+        "cost": 0.0036735,
+        "is_byok": false,
+        "cost_details": {
+          "upstream_inference_cost": 0.0036735,
+          "upstream_inference_input_cost": 0.0025435,
+          "upstream_inference_output_cost": 0.00113
+        }
+      }
+    },
+    {
+      "index": 2,
+      "decision": {
+        "episode": "a75711a24db64ad1975a06e4e64b13a5",
+        "based_on_step": 105,
+        "based_on_stamp": "c3b564e1903bf1bfe53f120c1e5842f1cb692ae8f8d639e4cc0aa3d6c7e51aa6",
+        "expected_epoch": 1,
+        "operation": "set_subtask",
+        "subtask": "Place the yellow 3 on the second pad from the left using the right arm.",
+        "assessment": "complete",
+        "evidence": "At step 105, the high and left-wrist RGB views show the yellow 7 resting on the leftmost circular pad, clear of the gripper. The other three pads are empty; the yellow 3 remains on the table in front of them and is visible in the right-wrist view. The largest ordering of the observed digits is 7310, so 3 belongs on the second pad from the left.",
+        "completed_claims": [
+          {
+            "text": "The yellow 7 is on the leftmost pad.",
+            "evidence_steps": [
+              105
+            ]
+          }
+        ],
+        "uncertain_or_invalidated": []
+      },
+      "served_model": "openai/gpt-6.1-sol",
+      "served_tier": "flex",
+      "usage": {
+        "input_tokens": 3190,
+        "input_tokens_details": {
+          "cached_tokens": 0,
+          "cache_write_tokens": 3064
+        },
+        "output_tokens": 246,
+        "output_tokens_details": {
+          "reasoning_tokens": 0
+        },
+        "total_tokens": 3436,
+        "cost": 0.005186,
+        "is_byok": false,
+        "cost_details": {
+          "upstream_inference_cost": 0.005186,
+          "upstream_inference_input_cost": 0.003956,
+          "upstream_inference_output_cost": 0.00123
+        }
+      }
+    },
+    {
+      "index": 3,
+      "decision": {
+        "episode": "55bbd37706374557baf125a6048ea34d",
+        "based_on_step": 105,
+        "based_on_stamp": "9b8500851e125a0128bd640e37846d143c9080af3b41a3aec60367bb71f65ace",
+        "expected_epoch": 1,
+        "operation": "set_subtask",
+        "subtask": "Place the blue 7 on the second circular pad from the left using the left arm.",
+        "assessment": "complete",
+        "evidence": "At step 105, the high camera shows the blue 8 on the leftmost pad, and the left wrist view clearly shows it resting on that pad outside the open gripper. The other three pads are empty; the blue 7 remains on the table nearby. The next digit in descending order 8720 is 7.",
+        "completed_claims": [
+          {
+            "text": "The blue 8 is on the leftmost circular pad.",
+            "evidence_steps": [
+              105
+            ]
+          }
+        ],
+        "uncertain_or_invalidated": []
+      },
+      "served_model": "openai/gpt-6.1-sol",
+      "served_tier": "flex",
+      "usage": {
+        "input_tokens": 3132,
+        "input_tokens_details": {
+          "cached_tokens": 0,
+          "cache_write_tokens": 3006
+        },
+        "output_tokens": 217,
+        "output_tokens_details": {
+          "reasoning_tokens": 0
+        },
+        "total_tokens": 3349,
+        "cost": 0.0049685,
+        "is_byok": false,
+        "cost_details": {
+          "upstream_inference_cost": 0.0049685,
+          "upstream_inference_input_cost": 0.0038835,
+          "upstream_inference_output_cost": 0.001085
+        }
+      }
+    },
+    {
+      "index": 4,
+      "decision": {
+        "episode": "55bbd37706374557baf125a6048ea34d",
+        "based_on_step": 210,
+        "based_on_stamp": "b9efdc0aa479837c582041cb10647b31a8bb3096ea5d232c513d0f3a498abd71",
+        "expected_epoch": 2,
+        "operation": "set_subtask",
+        "subtask": "Place the blue 2 on the third circular pad from the left using the right arm.",
+        "assessment": "complete",
+        "evidence": "At step 210, the high camera shows the blue 8 and 7 resting on the first and second circular pads, respectively, with both hands away from them. The third and fourth pads are empty. The blue 2 remains on the table near the right arm, visible also in the right wrist camera. The next digit in descending order 8720 is 2.",
+        "completed_claims": [
+          {
+            "text": "The blue 8 is on the leftmost circular pad.",
+            "evidence_steps": [
+              105,
+              210
+            ]
+          },
+          {
+            "text": "The blue 7 is on the second circular pad from the left.",
+            "evidence_steps": [
+              210
+            ]
+          }
+        ],
+        "uncertain_or_invalidated": []
+      },
+      "served_model": "openai/gpt-6.1-sol",
+      "served_tier": "flex",
+      "usage": {
+        "input_tokens": 3386,
+        "input_tokens_details": {
+          "cached_tokens": 0,
+          "cache_write_tokens": 3260
+        },
+        "output_tokens": 252,
+        "output_tokens_details": {
+          "reasoning_tokens": 0
+        },
+        "total_tokens": 3638,
+        "cost": 0.005461,
+        "is_byok": false,
+        "cost_details": {
+          "upstream_inference_cost": 0.005461,
+          "upstream_inference_input_cost": 0.004201,
+          "upstream_inference_output_cost": 0.00126
+        }
+      }
+    },
+    {
+      "index": 5,
+      "decision": {
+        "episode": "a75711a24db64ad1975a06e4e64b13a5",
+        "based_on_step": 210,
+        "based_on_stamp": "8572b2579ceeec19d8b67cab67b258cfd153881dd5c6a8a5920db154e724475c",
+        "expected_epoch": 2,
+        "operation": "continue",
+        "subtask": "",
+        "assessment": "not_started",
+        "evidence": "At step 210, the yellow 3 is still resting on the table in front of the pad row, clearly visible in the left-wrist view; it is not visibly held or placed on the second pad. The pad row is partly occluded by the arm. The yellow 7 remains visible at the leftmost pad in the high view. There is no verified placement progress for the current goal and no conclusive evidence that it has failed.",
+        "completed_claims": [
+          {
+            "text": "The yellow 7 is on the leftmost pad.",
+            "evidence_steps": [
+              105,
+              210
+            ]
+          }
+        ],
+        "uncertain_or_invalidated": []
+      },
+      "served_model": "openai/gpt-6.1-sol",
+      "served_tier": "flex",
+      "usage": {
+        "input_tokens": 3444,
+        "input_tokens_details": {
+          "cached_tokens": 0,
+          "cache_write_tokens": 3318
+        },
+        "output_tokens": 276,
+        "output_tokens_details": {
+          "reasoning_tokens": 47
+        },
+        "total_tokens": 3720,
+        "cost": 0.0056535,
+        "is_byok": false,
+        "cost_details": {
+          "upstream_inference_cost": 0.0056535,
+          "upstream_inference_input_cost": 0.0042735,
+          "upstream_inference_output_cost": 0.00138
+        }
+      }
+    },
+    {
+      "index": 6,
+      "decision": {
+        "episode": "55bbd37706374557baf125a6048ea34d",
+        "based_on_step": 315,
+        "based_on_stamp": "4b10eb11e0e63f988d976644f46b0dbdb2380638cff7be36206cff06db6eea27",
+        "expected_epoch": 3,
+        "operation": "continue",
+        "subtask": "",
+        "assessment": "not_started",
+        "evidence": "At step 315, the blue 2 remains on the table to the right of the pads, and the third pad is empty. No grasp or placement is verified. The blue 8 and 7 remain on the first and second pads; the blue 0 remains on the table. Retain the current placement goal.",
+        "completed_claims": [
+          {
+            "text": "The blue 8 is on the leftmost circular pad.",
+            "evidence_steps": [
+              105,
+              210,
+              315
+            ]
+          },
+          {
+            "text": "The blue 7 is on the second circular pad from the left.",
+            "evidence_steps": [
+              210,
+              315
+            ]
+          }
+        ],
+        "uncertain_or_invalidated": []
+      },
+      "served_model": "openai/gpt-6.1-sol",
+      "served_tier": "flex",
+      "usage": {
+        "input_tokens": 3698,
+        "input_tokens_details": {
+          "cached_tokens": 0,
+          "cache_write_tokens": 3572
+        },
+        "output_tokens": 262,
+        "output_tokens_details": {
+          "reasoning_tokens": 34
+        },
+        "total_tokens": 3960,
+        "cost": 0.005901,
+        "is_byok": false,
+        "cost_details": {
+          "upstream_inference_cost": 0.005901,
+          "upstream_inference_input_cost": 0.004591,
+          "upstream_inference_output_cost": 0.00131
+        }
+      }
+    },
+    {
+      "index": 7,
+      "decision": {
+        "episode": "a75711a24db64ad1975a06e4e64b13a5",
+        "based_on_step": 315,
+        "based_on_stamp": "7f0b4ad3cffb430dc470dc2aafaa58601bb94527bb79d7b80f1063651f9aa5b1",
+        "expected_epoch": 2,
+        "operation": "set_subtask",
+        "subtask": "Place the yellow 1 on the third pad from the left using the left arm.",
+        "assessment": "complete",
+        "evidence": "At step 315, the high RGB view shows the yellow 7 on the leftmost pad and the yellow 3 resting on the second pad, clear of both grippers. The third and fourth pads are empty. The left-wrist view clearly shows the yellow 1 on the table between the open gripper fingers, without verified grasp. For the ordering 7310, the 1 belongs on the third pad.",
+        "completed_claims": [
+          {
+            "text": "The yellow 7 is on the leftmost pad.",
+            "evidence_steps": [
+              105,
+              210,
+              315
+            ]
+          },
+          {
+            "text": "The yellow 3 is on the second pad from the left.",
+            "evidence_steps": [
+              315
+            ]
+          }
+        ],
+        "uncertain_or_invalidated": []
+      },
+      "served_model": "openai/gpt-6.1-sol",
+      "served_tier": "flex",
+      "usage": {
+        "input_tokens": 3713,
+        "input_tokens_details": {
+          "cached_tokens": 0,
+          "cache_write_tokens": 3587
+        },
+        "output_tokens": 267,
+        "output_tokens_details": {
+          "reasoning_tokens": 0
+        },
+        "total_tokens": 3980,
+        "cost": 0.00594475,
+        "is_byok": false,
+        "cost_details": {
+          "upstream_inference_cost": 0.00594475,
+          "upstream_inference_input_cost": 0.00460975,
+          "upstream_inference_output_cost": 0.001335
+        }
+      }
+    },
+    {
+      "index": 8,
+      "decision": {
+        "episode": "55bbd37706374557baf125a6048ea34d",
+        "based_on_step": 420,
+        "based_on_stamp": "f4831ee43328d0f1df94cfd0ec1c1e7b87def8edd878ef2b6045ab468f184db3",
+        "expected_epoch": 3,
+        "operation": "recover",
+        "subtask": "Move the blue 2 from the rightmost circular pad to the third circular pad from the left using the right arm.",
+        "assessment": "failed",
+        "evidence": "At step 420, the high camera shows the blue 2 on the rightmost (fourth) pad rather than the intended third pad, which remains empty. The right hand is away from it. The blue 8 and 7 remain on the first two pads, and the blue 0 remains on the table near the left hand. Correct the misplaced 2 before placing 0.",
+        "completed_claims": [
+          {
+            "text": "The blue 8 is on the leftmost circular pad.",
+            "evidence_steps": [
+              105,
+              210,
+              315,
+              420
+            ]
+          },
+          {
+            "text": "The blue 7 is on the second circular pad from the left.",
+            "evidence_steps": [
+              210,
+              315,
+              420
+            ]
+          }
+        ],
+        "uncertain_or_invalidated": [
+          "Placement of the blue 2 on the third pad is not complete; at step 420 it is on the fourth pad."
+        ]
+      },
+      "served_model": "openai/gpt-6.1-sol",
+      "served_tier": "flex",
+      "usage": {
+        "input_tokens": 3960,
+        "input_tokens_details": {
+          "cached_tokens": 0,
+          "cache_write_tokens": 3834
+        },
+        "output_tokens": 368,
+        "output_tokens_details": {
+          "reasoning_tokens": 70
+        },
+        "total_tokens": 4328,
+        "cost": 0.0067585,
+        "is_byok": false,
+        "cost_details": {
+          "upstream_inference_cost": 0.0067585,
+          "upstream_inference_input_cost": 0.0049185,
+          "upstream_inference_output_cost": 0.00184
+        }
+      }
+    },
+    {
+      "index": 9,
+      "decision": {
+        "episode": "a75711a24db64ad1975a06e4e64b13a5",
+        "based_on_step": 420,
+        "based_on_stamp": "dbe9c267eb2242cee59d85e4b1432e52956a9b0ecae94640a8c7a3078ae1fb55",
+        "expected_epoch": 3,
+        "operation": "continue",
+        "subtask": "",
+        "assessment": "progressing",
+        "evidence": "At step 420, the yellow 1 has moved from its step-315 location to directly in front of the pad row. The right-wrist image shows it between the right gripper fingers, but does not establish a secure grasp or placement on the third pad. The left gripper is open and away from the digit. The 7 remains visible on the leftmost pad; the second and third pads are partly occluded. Placement of the 1 is not complete, and failure is not established.",
+        "completed_claims": [
+          {
+            "text": "The yellow 7 is on the leftmost pad.",
+            "evidence_steps": [
+              105,
+              210,
+              315,
+              420
+            ]
+          },
+          {
+            "text": "The yellow 3 is on the second pad from the left.",
+            "evidence_steps": [
+              315
+            ]
+          }
+        ],
+        "uncertain_or_invalidated": [
+          "The 1 is currently between the right gripper fingers despite the goal specifying the left arm; secure grasp is unverified.",
+          "The second and third pads are partly occluded at step 420; placement of the 1 on the third pad is not verified."
+        ]
+      },
+      "served_model": "openai/gpt-6.1-sol",
+      "served_tier": "flex",
+      "usage": {
+        "input_tokens": 4026,
+        "input_tokens_details": {
+          "cached_tokens": 0,
+          "cache_write_tokens": 3900
+        },
+        "output_tokens": 401,
+        "output_tokens_details": {
+          "reasoning_tokens": 77
+        },
+        "total_tokens": 4427,
+        "cost": 0.007006,
+        "is_byok": false,
+        "cost_details": {
+          "upstream_inference_cost": 0.007006,
+          "upstream_inference_input_cost": 0.005001,
+          "upstream_inference_output_cost": 0.002005
+        }
+      }
+    },
+    {
+      "index": 10,
+      "decision": {
+        "episode": "55bbd37706374557baf125a6048ea34d",
+        "based_on_step": 525,
+        "based_on_stamp": "e3df3c178ce10b48d7f9f303c643d3a03afbb1d345e4167dc64d0ae4e1494b82",
+        "expected_epoch": 4,
+        "operation": "continue",
+        "subtask": "",
+        "assessment": "uncertain",
+        "evidence": "At step 525, the right arm obscures the middle and rightmost pads, so the blue 2's location and placement cannot be verified. The right wrist view shows the blue 0 on the table between the fingers, not a verified grasp of 2. The blue 8 remains visible on the leftmost pad. Retain the correction goal because neither its completion nor a new placement failure is observable.",
+        "completed_claims": [
+          {
+            "text": "The blue 8 is on the leftmost circular pad.",
+            "evidence_steps": [
+              105,
+              210,
+              315,
+              420,
+              525
+            ]
+          },
+          {
+            "text": "The blue 7 was on the second circular pad from the left at step 420; its current position is occluded.",
+            "evidence_steps": [
+              210,
+              315,
+              420
+            ]
+          }
+        ],
+        "uncertain_or_invalidated": [
+          "Placement of the blue 2 on the third pad remains unverified: it was on the fourth pad at step 420, and the relevant pads are obscured at step 525.",
+          "The right hand's proximity to the blue 0 does not verify grasping or moving the blue 2."
+        ]
+      },
+      "served_model": "openai/gpt-6.1-sol",
+      "served_tier": "flex",
+      "usage": {
+        "input_tokens": 4136,
+        "input_tokens_details": {
+          "cached_tokens": 0,
+          "cache_write_tokens": 4010
+        },
+        "output_tokens": 361,
+        "output_tokens_details": {
+          "reasoning_tokens": 32
+        },
+        "total_tokens": 4497,
+        "cost": 0.0069435,
+        "is_byok": false,
+        "cost_details": {
+          "upstream_inference_cost": 0.0069435,
+          "upstream_inference_input_cost": 0.0051385,
+          "upstream_inference_output_cost": 0.001805
+        }
+      }
+    },
+    {
+      "index": 11,
+      "decision": {
+        "episode": "a75711a24db64ad1975a06e4e64b13a5",
+        "based_on_step": 525,
+        "based_on_stamp": "e5f7d56276c10bb7b1eb9c59c8d7a5f99ddd05f77ccff500eefba140feca67f5",
+        "expected_epoch": 3,
+        "operation": "recover",
+        "subtask": "Place the yellow 1 on the third pad from the left.",
+        "assessment": "failed",
+        "evidence": "At step 525, the high view shows 7 and 3 on the first two pads. The right-wrist view shows the 0 between the gripper fingers, with the 1 behind it near the left edge of the rightmost pad rather than centered on the third pad. The left gripper remains away from the digits. The previous arm-specific placement has not been achieved; replace it with the same placement target without the unsupported arm constraint. Neither a secure grasp of 0 nor release of 1 is established.",
+        "completed_claims": [
+          {
+            "text": "The yellow 7 is on the leftmost pad.",
+            "evidence_steps": [
+              105,
+              210,
+              315,
+              420,
+              525
+            ]
+          },
+          {
+            "text": "The yellow 3 is on the second pad from the left.",
+            "evidence_steps": [
+              315,
+              525
+            ]
+          }
+        ],
+        "uncertain_or_invalidated": [
+          "The step-420 observation of 1 between the right gripper fingers no longer describes the current view; 0 is now between those fingers.",
+          "The 1 is visible near the rightmost pad, but its precise support and release are uncertain; correct placement on the third pad is not verified.",
+          "Secure grasp of the 0 is not established."
+        ]
+      },
+      "served_model": "openai/gpt-6.1-sol",
+      "served_tier": "flex",
+      "usage": {
+        "input_tokens": 4215,
+        "input_tokens_details": {
+          "cached_tokens": 0,
+          "cache_write_tokens": 4089
+        },
+        "output_tokens": 540,
+        "output_tokens_details": {
+          "reasoning_tokens": 178
+        },
+        "total_tokens": 4755,
+        "cost": 0.00793725,
+        "is_byok": false,
+        "cost_details": {
+          "upstream_inference_cost": 0.00793725,
+          "upstream_inference_input_cost": 0.00523725,
+          "upstream_inference_output_cost": 0.0027
+        }
+      }
+    },
+    {
+      "index": 12,
+      "decision": {
+        "episode": "55bbd37706374557baf125a6048ea34d",
+        "based_on_step": 630,
+        "based_on_stamp": "dd1021a064b9b2007368ce0f31881eca36c14076d248755e17d3005cda9f004a",
+        "expected_epoch": 4,
+        "operation": "continue",
+        "subtask": "",
+        "assessment": "not_started",
+        "evidence": "At step 630, the unobstructed high view shows the blue 2 still on the rightmost circular pad and the third pad empty. The blue 8 and 7 are visible on the first and second pads. Neither hand visibly holds the 2. The correction is not verified; retain the existing goal.",
+        "completed_claims": [
+          {
+            "text": "The blue 8 is on the leftmost circular pad.",
+            "evidence_steps": [
+              105,
+              210,
+              315,
+              420,
+              525,
+              630
+            ]
+          },
+          {
+            "text": "The blue 7 is on the second circular pad from the left.",
+            "evidence_steps": [
+              210,
+              315,
+              420,
+              630
+            ]
+          }
+        ],
+        "uncertain_or_invalidated": [
+          "Placement of the blue 2 on the third pad is not complete: at step 630 it remains on the fourth pad.",
+          "The blue 0's precise position relative to the pads is not clear enough to certify placement."
+        ]
+      },
+      "served_model": "openai/gpt-6.1-sol",
+      "served_tier": "flex",
+      "usage": {
+        "input_tokens": 4280,
+        "input_tokens_details": {
+          "cached_tokens": 0,
+          "cache_write_tokens": 4154
+        },
+        "output_tokens": 344,
+        "output_tokens_details": {
+          "reasoning_tokens": 62
+        },
+        "total_tokens": 4624,
+        "cost": 0.0070385,
+        "is_byok": false,
+        "cost_details": {
+          "upstream_inference_cost": 0.0070385,
+          "upstream_inference_input_cost": 0.0053185,
+          "upstream_inference_output_cost": 0.00172
+        }
+      }
+    },
+    {
+      "index": 13,
+      "decision": {
+        "episode": "a75711a24db64ad1975a06e4e64b13a5",
+        "based_on_step": 630,
+        "based_on_stamp": "b5a5a340b3c9b2d5fb4835f426e2444124e51fccb772f403c5c19ffb05e60f4f",
+        "expected_epoch": 4,
+        "operation": "recover",
+        "subtask": "Move the yellow 0 from the third pad onto the table beside the pads.",
+        "assessment": "failed",
+        "evidence": "At step 630, the unobstructed high view shows the digits resting on the four pads in the order 7301, with both grippers away. The 1 is on the fourth pad, not the third, and the 0 occupies its intended third-pad destination. The current placement goal has not been achieved. Moving the 0 off the third pad clears space for the 1 toward the required order 7310.",
+        "completed_claims": [
+          {
+            "text": "The yellow 7 is on the leftmost pad.",
+            "evidence_steps": [
+              105,
+              210,
+              315,
+              420,
+              525,
+              630
+            ]
+          },
+          {
+            "text": "The yellow 3 is on the second pad from the left.",
+            "evidence_steps": [
+              315,
+              525,
+              630
+            ]
+          }
+        ],
+        "uncertain_or_invalidated": [
+          "Correct placement of the 1 on the third pad is contradicted by step 630: it is on the fourth pad.",
+          "The earlier uncertainty about holding the 0 is superseded: at step 630 it rests on the third pad, away from both grippers."
+        ]
+      },
+      "served_model": "openai/gpt-6.1-sol",
+      "served_tier": "flex",
+      "usage": {
+        "input_tokens": 4383,
+        "input_tokens_details": {
+          "cached_tokens": 0,
+          "cache_write_tokens": 4257
+        },
+        "output_tokens": 436,
+        "output_tokens_details": {
+          "reasoning_tokens": 99
+        },
+        "total_tokens": 4819,
+        "cost": 0.00762725,
+        "is_byok": false,
+        "cost_details": {
+          "upstream_inference_cost": 0.00762725,
+          "upstream_inference_input_cost": 0.00544725,
+          "upstream_inference_output_cost": 0.00218
+        }
+      }
+    },
+    {
+      "index": 14,
+      "decision": {
+        "episode": "55bbd37706374557baf125a6048ea34d",
+        "based_on_step": 735,
+        "based_on_stamp": "fa6a5c79f74a0dd97940d6fa47917056fceebd123592832507e49aa56faa1aa7",
+        "expected_epoch": 4,
+        "operation": "continue",
+        "subtask": "",
+        "assessment": "uncertain",
+        "evidence": "At step 735, the third pad remains empty and the blue 2 is visible over the rightmost pad beneath the right hand. The right wrist view shows overlapping blue shapes between the fingers, but does not establish a secure grasp or lift of the 2. The blue 8 and 7 remain on the first two pads. Retain the correction goal; its completion is not observed.",
+        "completed_claims": [
+          {
+            "text": "The blue 8 is on the leftmost circular pad.",
+            "evidence_steps": [
+              105,
+              210,
+              315,
+              420,
+              525,
+              630,
+              735
+            ]
+          },
+          {
+            "text": "The blue 7 is on the second circular pad from the left.",
+            "evidence_steps": [
+              210,
+              315,
+              420,
+              630,
+              735
+            ]
+          }
+        ],
+        "uncertain_or_invalidated": [
+          "Placement of the blue 2 on the third pad is not complete: the third pad is empty at step 735.",
+          "The overlapping blue shapes near the right fingers do not certify grasping the 2 or the blue 0's placement."
+        ]
+      },
+      "served_model": "openai/gpt-6.1-sol",
+      "served_tier": "flex",
+      "usage": {
+        "input_tokens": 4304,
+        "input_tokens_details": {
+          "cached_tokens": 0,
+          "cache_write_tokens": 4178
+        },
+        "output_tokens": 347,
+        "output_tokens_details": {
+          "reasoning_tokens": 42
+        },
+        "total_tokens": 4651,
+        "cost": 0.0070835,
+        "is_byok": false,
+        "cost_details": {
+          "upstream_inference_cost": 0.0070835,
+          "upstream_inference_input_cost": 0.0053485,
+          "upstream_inference_output_cost": 0.001735
+        }
+      }
+    },
+    {
+      "index": 15,
+      "decision": {
+        "episode": "a75711a24db64ad1975a06e4e64b13a5",
+        "based_on_step": 735,
+        "based_on_stamp": "480c3ff6abd2e52ec66e93104f00b71abb69d312072cdd5a747cc1821d7e9804",
+        "expected_epoch": 5,
+        "operation": "continue",
+        "subtask": "",
+        "assessment": "uncertain",
+        "evidence": "At step 735, the right arm and gripper occlude the middle pads in the high view. The right-wrist view shows portions of yellow digits still on pads, but does not verify that the 0 has been removed or placed on the table. No secure grasp or completed object transfer is established. Retain the current goal; failure is not established.",
+        "completed_claims": [
+          {
+            "text": "The yellow 7 is on the leftmost pad.",
+            "evidence_steps": [
+              105,
+              210,
+              315,
+              420,
+              525,
+              630
+            ]
+          },
+          {
+            "text": "The yellow 3 is on the second pad from the left.",
+            "evidence_steps": [
+              315,
+              525,
+              630
+            ]
+          }
+        ],
+        "uncertain_or_invalidated": [
+          "At step 735 the middle pads are occluded; the current location and grasp status of the 0 cannot be verified.",
+          "The 1 was on the fourth pad at step 630; placement on the third pad remains unverified."
+        ]
+      },
+      "served_model": "openai/gpt-6.1-sol",
+      "served_tier": "flex",
+      "usage": {
+        "input_tokens": 4455,
+        "input_tokens_details": {
+          "cached_tokens": 0,
+          "cache_write_tokens": 4329
+        },
+        "output_tokens": 293,
+        "output_tokens_details": {
+          "reasoning_tokens": 0
+        },
+        "total_tokens": 4748,
+        "cost": 0.00700225,
+        "is_byok": false,
+        "cost_details": {
+          "upstream_inference_cost": 0.00700225,
+          "upstream_inference_input_cost": 0.00553725,
+          "upstream_inference_output_cost": 0.001465
+        }
+      }
+    },
+    {
+      "index": 16,
+      "decision": {
+        "episode": "55bbd37706374557baf125a6048ea34d",
+        "based_on_step": 840,
+        "based_on_stamp": "a7807319931ba253e25755068edb6f59b2b01834b6cca9113c905bfb5ba3dd81",
+        "expected_epoch": 4,
+        "operation": "continue",
+        "subtask": "",
+        "assessment": "not_started",
+        "evidence": "At step 840, the high view shows the third circular pad empty and the blue 8 and 7 on the first two pads. The right wrist view shows the blue 2 still over the fourth pad, overlapped by the blue 0; the fingers are separated from the numbers rather than visibly holding the 2. The required relocation has not been observed, so retain the current correction goal.",
+        "completed_claims": [
+          {
+            "text": "The blue 8 is on the leftmost circular pad.",
+            "evidence_steps": [
+              105,
+              210,
+              315,
+              420,
+              525,
+              630,
+              735,
+              840
+            ]
+          },
+          {
+            "text": "The blue 7 is on the second circular pad from the left.",
+            "evidence_steps": [
+              210,
+              315,
+              420,
+              630,
+              735,
+              840
+            ]
+          }
+        ],
+        "uncertain_or_invalidated": [
+          "Placement of the blue 2 on the third pad is not complete: that pad remains empty at step 840.",
+          "The blue 0 overlaps the blue 2 at the fourth pad; its separate final placement is not verified."
+        ]
+      },
+      "served_model": "openai/gpt-6.1-sol",
+      "served_tier": "flex",
+      "usage": {
+        "input_tokens": 4386,
+        "input_tokens_details": {
+          "cached_tokens": 0,
+          "cache_write_tokens": 4260
+        },
+        "output_tokens": 397,
+        "output_tokens_details": {
+          "reasoning_tokens": 89
+        },
+        "total_tokens": 4783,
+        "cost": 0.007436,
+        "is_byok": false,
+        "cost_details": {
+          "upstream_inference_cost": 0.007436,
+          "upstream_inference_input_cost": 0.005451,
+          "upstream_inference_output_cost": 0.001985
+        }
+      }
+    },
+    {
+      "index": 17,
+      "decision": {
+        "episode": "a75711a24db64ad1975a06e4e64b13a5",
+        "based_on_step": 840,
+        "based_on_stamp": "6e49b8d6a3207da554e0dce34f10ff14b490f7501644dbcf2b57a0e78bf8c937",
+        "expected_epoch": 5,
+        "operation": "recover",
+        "subtask": "Grasp the yellow 0 on the third pad from the left.",
+        "assessment": "failed",
+        "evidence": "At step 840, the unobstructed high view shows the digits still resting on the pads in order 7301, with both grippers away. The 0 has not been moved onto the table, so the current transfer goal is not achieved. Replace it with acquiring the 0 before attempting its relocation.",
+        "completed_claims": [
+          {
+            "text": "The yellow 7 is on the leftmost pad.",
+            "evidence_steps": [
+              105,
+              210,
+              315,
+              420,
+              525,
+              630,
+              840
+            ]
+          },
+          {
+            "text": "The yellow 3 is on the second pad from the left.",
+            "evidence_steps": [
+              315,
+              525,
+              630,
+              840
+            ]
+          }
+        ],
+        "uncertain_or_invalidated": [
+          "The step-735 uncertainty about the 0's location is resolved: at step 840 it remains on the third pad, away from both grippers.",
+          "The 1 remains on the fourth pad at step 840; placement on the third pad has not been achieved."
+        ]
+      },
+      "served_model": "openai/gpt-6.1-sol",
+      "served_tier": "flex",
+      "usage": {
+        "input_tokens": 4509,
+        "input_tokens_details": {
+          "cached_tokens": 0,
+          "cache_write_tokens": 4383
+        },
+        "output_tokens": 355,
+        "output_tokens_details": {
+          "reasoning_tokens": 42
+        },
+        "total_tokens": 4864,
+        "cost": 0.00737975,
+        "is_byok": false,
+        "cost_details": {
+          "upstream_inference_cost": 0.00737975,
+          "upstream_inference_input_cost": 0.00560475,
+          "upstream_inference_output_cost": 0.001775
+        }
+      }
+    },
+    {
+      "index": 18,
+      "decision": {
+        "episode": "55bbd37706374557baf125a6048ea34d",
+        "based_on_step": 945,
+        "based_on_stamp": "e1b1b3240b7d8af26e8e8a28a0765024cf486e2cf605eb9f9aea636496ef1fb1",
+        "expected_epoch": 4,
+        "operation": "recover",
+        "subtask": "Move the blue 0 off the blue 2 onto the table beside the rightmost circular pad using the right arm.",
+        "assessment": "failed",
+        "evidence": "At steps 840 and 945, the third pad remains empty and the blue 2 remains at the rightmost pad with the blue 0 overlapping it. At step 945 the right wrist view shows the fingers separated from both numbers, not holding the 2. The relocation has made no observable progress across repeated reviews. Separate the overlapping 0 to make the 2 accessible.",
+        "completed_claims": [
+          {
+            "text": "The blue 8 is on the leftmost circular pad.",
+            "evidence_steps": [
+              105,
+              210,
+              315,
+              420,
+              525,
+              630,
+              735,
+              840,
+              945
+            ]
+          },
+          {
+            "text": "The blue 7 is on the second circular pad from the left.",
+            "evidence_steps": [
+              210,
+              315,
+              420,
+              630,
+              735,
+              840,
+              945
+            ]
+          }
+        ],
+        "uncertain_or_invalidated": [
+          "Placement of the blue 2 on the third pad is incomplete; that pad remains empty at step 945.",
+          "The blue 0 overlaps the blue 2 at the rightmost pad; separate final placement of the 0 is not verified."
+        ]
+      },
+      "served_model": "openai/gpt-6.1-sol",
+      "served_tier": "flex",
+      "usage": {
+        "input_tokens": 4437,
+        "input_tokens_details": {
+          "cached_tokens": 0,
+          "cache_write_tokens": 4311
+        },
+        "output_tokens": 449,
+        "output_tokens_details": {
+          "reasoning_tokens": 110
+        },
+        "total_tokens": 4886,
+        "cost": 0.00775975,
+        "is_byok": false,
+        "cost_details": {
+          "upstream_inference_cost": 0.00775975,
+          "upstream_inference_input_cost": 0.00551475,
+          "upstream_inference_output_cost": 0.002245
+        }
+      }
+    },
+    {
+      "index": 19,
+      "decision": {
+        "episode": "a75711a24db64ad1975a06e4e64b13a5",
+        "based_on_step": 945,
+        "based_on_stamp": "e4707c6bc1d2c411e673d9778be99c423912c41b273d307de6231a7fcc8eb63e",
+        "expected_epoch": 6,
+        "operation": "recover",
+        "subtask": "Grasp the yellow 1 on the rightmost pad.",
+        "assessment": "failed",
+        "evidence": "At step 945, the unobstructed high view still shows 7301 on the four pads, unchanged from step 840. Both grippers are away from the digits, and the 0 rests on the third pad; the current grasp goal has not been achieved. Switch to acquiring the 1, which also needs relocation to establish the required order 7310.",
+        "completed_claims": [
+          {
+            "text": "The yellow 7 is on the leftmost pad.",
+            "evidence_steps": [
+              105,
+              210,
+              315,
+              420,
+              525,
+              630,
+              840,
+              945
+            ]
+          },
+          {
+            "text": "The yellow 3 is on the second pad from the left.",
+            "evidence_steps": [
+              315,
+              525,
+              630,
+              840,
+              945
+            ]
+          }
+        ],
+        "uncertain_or_invalidated": [
+          "At step 945, the 0 remains on the third pad and is not held.",
+          "At step 945, the 1 remains on the fourth pad; placement on the third pad has not been achieved."
+        ]
+      },
+      "served_model": "openai/gpt-6.1-sol",
+      "served_tier": "flex",
+      "usage": {
+        "input_tokens": 4506,
+        "input_tokens_details": {
+          "cached_tokens": 0,
+          "cache_write_tokens": 4380
+        },
+        "output_tokens": 423,
+        "output_tokens_details": {
+          "reasoning_tokens": 111
+        },
+        "total_tokens": 4929,
+        "cost": 0.007716,
+        "is_byok": false,
+        "cost_details": {
+          "upstream_inference_cost": 0.007716,
+          "upstream_inference_input_cost": 0.005601,
+          "upstream_inference_output_cost": 0.002115
+        }
+      }
+    }
+  ]
+}

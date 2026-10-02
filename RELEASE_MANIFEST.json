@@ -1031,7 +1031,7 @@
     "docs/evidence/semantic-pi05-hierarchy-001/task_plus_subtask/result.json": "8a7e7f9cf62099e7585bc0b5c42c1c5e1952cdb7d059fe24cb9277702b82bbbe",
     "docs/evidence/semantic-pi05-hierarchy-001/task_plus_subtask/semantic-decisions.json": "205a4088ac95da694957d08a6a1b81b4c69193bf25c20b423e7430a319efa818",
     "docs/evidence/semantic-pi05-hierarchy-001/task_plus_subtask/source-identity.json": "f5d791db6665ccc59a510b4a75db73a35f4d72da9623cc611336b6c5cd0a3986",
-    "docs/semantic/MATCHED_HIERARCHY_PROGRESS_20261002.md": "4b38997ac4f50d1254ee9e5c7f980255efee09ad5b31e31cc2b3f7b00407b97d",
+    "docs/semantic/MATCHED_HIERARCHY_PROGRESS_20261002.md": "cd263a431f42f9ed8873f3d84be4dcee4c15c51db672fb927926cdab54b4b06c",
     "docs/evidence/semantic-pi05-hierarchy-001/task_plus_subtask/sort-l2/api-summary.json": "1ed5662dbd32e2bd4ace231d7b559e90c3c61a8e1eb10dac34b03f7aa291a33d",
     "docs/evidence/semantic-pi05-hierarchy-001/task_plus_subtask/sort-l2/initial-observation-fingerprint.json": "e017a3df0bea46e6b9c0d3efd451acd4ba5446062bfa45367a85d5d2276832c8",
     "docs/evidence/semantic-pi05-hierarchy-001/task_plus_subtask/sort-l2/offline-audit.json": "7681ffe88b171ac9093111f0695308f6c85835b11d905cd70d805b34fa951924",
@@ -1234,6 +1234,21 @@
     "docs/evidence/reference-arrange-motor001-20261002/report.json": "41a3b47793ad20116a80f9680ffa0d9086563b09e49690db8eda76f94fd35aa7",
     "docs/evidence/reference-arrange-motor001-20261002/worker-ready.json": "b14d5f295adb0510c504e01f1b2543589aef09b9c78dad8dc8b3e7df40744750",
     "semantic_lab/reference.py": "1d5d0a5e70b6a8575bb87be1cf00a978a8482071b78d937ff5dcb06e6d34868c",
-    "tests/semantic/test_reference_wave.py": "3428474ca0b7eac1735197348de9da6779b00238824707f1d909c667cbe07d3a"
+    "tests/semantic/test_reference_wave.py": "3428474ca0b7eac1735197348de9da6779b00238824707f1d909c667cbe07d3a",
+    "docs/evidence/reference-arrange-semantic001-20261002/README.md": "48dfba74b65339f45be870aa545c179aeee646a8b721f962d06124ab711cf658",
+    "docs/evidence/reference-arrange-semantic001-20261002/config.json": "74b2fcf9979ca15bc5afe437ee1ae226a8909b05fe5cc7ffd935f112d61fad95",
+    "docs/evidence/reference-arrange-semantic001-20261002/offline-audit.json": "e5c0e055bfde698ad28563fe9857087afc7e8c5fbe9272afb676224543f93550",
+    "docs/evidence/reference-arrange-semantic001-20261002/operator_audit_reference_semantic001.py": "4cc423bc29134c6ac219ed69c195f9cebf393f00b84d448699245217cd70aef3",
+    "docs/evidence/reference-arrange-semantic001-20261002/operator_launch_reference_semantic001.py": "6681428d906dace8bfeba8bd1a87b927e8bdeb775b1e9f9ccbacf89e6a3ca1b5",
+    "docs/evidence/reference-arrange-semantic001-20261002/operator_paid_reference_semantic001_local.py": "8b29ce0f2976fd9a9a08316477b1c9d1c1ed2383ad7e6f5a68f5f0d7bbd94470",
+    "docs/evidence/reference-arrange-semantic001-20261002/operator_reference_tokenizer001.py": "41e8b4616439d2f5e06601087d1ceb6c1a42ea061e30a7971b10a70c476fbcbd",
+    "docs/evidence/reference-arrange-semantic001-20261002/operator_summarize_reference_pair001.py": "8f1f724b3f81fd1a983b0b4f2250b6450a3b7f37dec038337ad40892a84fc155",
+    "docs/evidence/reference-arrange-semantic001-20261002/paired-summary.json": "a07818a23ef8c7a45049cfaa0a1b6a0f6c1eeb75bde6c1194a56f1c0025312ce",
+    "docs/evidence/reference-arrange-semantic001-20261002/plan.json": "d449e7b8b3bf4935bfa0d33628c8863454adec07388f094c34518d09e2aa2c1c",
+    "docs/evidence/reference-arrange-semantic001-20261002/planner-decisions.json": "30affca9eca31f6f44193586fa6109272971b6951dbaec51408a4e745fd26520",
+    "docs/evidence/reference-arrange-semantic001-20261002/pre-action-binding.json": "48a4f4c86e620710ffa50247fee4212c5c1b0e72c59347dd1740539e80d3a3c6",
+    "docs/evidence/reference-arrange-semantic001-20261002/report.json": "e786d70f6d923efaafb340fd15129e15b5f2d29c10b19bdd6d976c29921a82cf",
+    "docs/evidence/reference-arrange-semantic001-20261002/tokenizer-replay.json": "a776e528351b122901e7d61a4f9b3304b274162c9c6534b178cb7cd9812e87d8",
+    "docs/evidence/reference-arrange-semantic001-20261002/worker-ready.json": "f45f4c6bf0f619f954da550b9ee7d44e8ff34b2cd9ed42d08d89080b70471027"
   }
 }

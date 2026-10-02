@@ -1,0 +1,29 @@
+{
+  "name": "reference_arrange_task_plus_recovery001",
+  "mode": "semantic_subtask_hierarchy",
+  "prompt_mode": "task_plus_subtask",
+  "max_semantic_calls": 16,
+  "wall_limit_s": 2400,
+  "no_task_memory": true,
+  "no_task_demonstrations": true,
+  "semantic_schedule": {
+    "allow_semantic_recovery": true,
+    "event_cooldown_steps": 30,
+    "minimum_dwell_steps": 30,
+    "review_interval_steps": 100
+  },
+  "model": {
+    "api_key_env": "K1_RELAY_TOKEN",
+    "base_url": "http://127.0.0.1:19861",
+    "history_rounds": 4,
+    "image_max_edge": 480,
+    "max_output_tokens": 2048,
+    "max_requests": 16,
+    "max_total_output_tokens": 32768,
+    "model": "gpt-6.1-sol",
+    "reasoning_effort": "medium",
+    "service_tier": "flex",
+    "timeout_s": 900,
+    "transport": "responses"
+  }
+}

@@ -17,7 +17,7 @@ are competing explanations, not established diagnoses.
 | B: conditioning | Actual source tokenizer/context/ACK plumbing and responsiveness passed; obedience not established |
 | C: matched hierarchy | Fresh vector cohort: all three conditions across all five cases executed and audited; original-only 3 successes, task-plus-subtask 1, subtask-only 1. Historical serial cohort remains separate and incomplete |
 | D: semantic recovery | Separate five-case panel executed: 3 successes, 1 horizon failure, 1 rejected planner contract. 12 applied recoveries; execution/rejection accounting audited, not all-valid planner or causal recovery qualification |
-| E: held-out/second backend | Untouched/second-backend comparison unrun. Reference-bound motor execution now audited on a third, historically opened task family; not untouched qualification |
+| E: held-out/second backend | Untouched/second-backend comparison unrun. Reference-bound motor/candidate pair audited on two cases of a third, historically opened task family; neither condition succeeded; not untouched qualification |
 
 Use the existing five-case development roster: classify_objects layouts 0, 1,
 2 and build_tower layouts 0, 1. Compare fresh original-only against
@@ -643,3 +643,45 @@ were downloaded, no weights. Full sensors remain remote pending verified
 backup. Next bind the semantic candidate to this executor and finish native
 qualification before the untouched reference task families; do not run another
 capacity sweep or silently change the grouped split.
+
+## Third-Family Semantic Result
+
+The matched arrange_largest_number candidate is now terminal and audited on
+the same two standard reference cases, layout hashes, manifest, checkpoint,
+H50/15 cadence, seed0 streams and1050-action horizons as the motor baseline.
+It used the carried-forward task-plus-subtask/recovery configuration, sparse
+100-step reviews and30-step dwell. The baseline ran first; neither complete
+physics-state parity nor a causal gain is established.
+
+| Reference Layout | Motor-Only Score | Candidate Score | Candidate Outcome | Recoveries |
+|---|---:|---:|---|---:|
+| standard g0 l0 | 0.00 | 0.15 | Horizon failure at1050 actions | 2 |
+| standard g0 l1 | 0.15 | 0.15 | Horizon failure at1050 actions | 4 |
+
+Both conditions have zero successes. Candidate rollout514.32 s versus316.48 s
+motor-only, excluding startup/shutdown. Twenty settled Sol6.1 medium/Flex calls
+cost$0.12829000. All twenty bindings/contracts were valid. The audit confirms
+2100 actual ACKs, source predictions, prompt routing, separate RNG streams,
+normal prefix cadence and six applied recoveries. No controller faults,
+unresolved actions, policy resets, extra motor resamples or prefix shortening.
+This is a negative success comparison with one descriptive partial-score
+increase, not a benchmark success rate, proven recovery benefit or broad
+policy ranking. Both GPUs were confirmed idle after the trial.
+
+A CPU-only offline replay of every retained source request through the installed
+input transform chain, including checkpoint normalization and tokenizer, retained
+every entire cleaned effective prompt. No model weights were loaded. Truncation
+does not explain these delivered prompts; this is not live token capture,
+instruction-obedience proof or a general guarantee for future longer prompts.
+The runner remains explicitly `native_unqualified` pending formal source-bound
+admission. Evidence: `../evidence/reference-arrange-semantic001-20261002/`.
+
+Next: source-qualify the frozen reference executor, then evaluate the missing
+reference task groups and cases with matched baselines/candidates, preserving
+the grouped split. Do not respond to these failures with another wording sweep,
+capacity sweep or replacement of failed cases. The two development families and
+historically opened arrange family remain separate from the seven unopened
+groups. Second-backend hierarchy remains unrun. All384 CPU tests pass; tests
+and this two-case audit do not complete Phase E. Unique raw sensors remain on
+the GPU host pending verified backup; this is not shutdown clearance. No weights
+were transferred to the Mac.

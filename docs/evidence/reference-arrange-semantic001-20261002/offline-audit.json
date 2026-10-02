@@ -1,0 +1,66 @@
+{
+  "status": "native_semantic_planner_vector_audit_passed",
+  "actual_controls": 2100,
+  "episodes": {
+    "0": {
+      "journal": {
+        "events": 1202,
+        "head_sha256": "0fdb985df747a0bae26c1962728de26a78001952a8d6b2f134ad87976aa0357a"
+      },
+      "actual_control_acks": 1050,
+      "policy_proposals": 70,
+      "semantic_epochs_seen_by_motor": [
+        1,
+        2,
+        3,
+        4,
+        5
+      ],
+      "distinct_effective_prompts": 5,
+      "prefix_cadence_verified": true,
+      "complete_native_result": true,
+      "evidence_kind": "native_unqualified",
+      "robot_competence_claim": false,
+      "source_H50_predictions_and_effective_request_prompts_equal": true,
+      "planner_episode_bindings_verified": 10,
+      "rejected_planner_contracts": [],
+      "status": "native_completed",
+      "recovery_decisions": 2,
+      "applied_recoveries": 2,
+      "source_rng_verified": true
+    },
+    "1": {
+      "journal": {
+        "events": 1202,
+        "head_sha256": "62eaff5c04e8ae40928433a4ebb6f966330d511fbac7fc25eb6e964ef2814d11"
+      },
+      "actual_control_acks": 1050,
+      "policy_proposals": 70,
+      "semantic_epochs_seen_by_motor": [
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7
+      ],
+      "distinct_effective_prompts": 7,
+      "prefix_cadence_verified": true,
+      "complete_native_result": true,
+      "evidence_kind": "native_unqualified",
+      "robot_competence_claim": false,
+      "source_H50_predictions_and_effective_request_prompts_equal": true,
+      "planner_episode_bindings_verified": 10,
+      "rejected_planner_contracts": [],
+      "status": "native_completed",
+      "recovery_decisions": 4,
+      "applied_recoveries": 4,
+      "source_rng_verified": true
+    }
+  },
+  "paid_calls": 20,
+  "all_planner_contracts_valid": true,
+  "reference_case_binding_verified": true,
+  "scope": "actual execution and rejection accounting; rejected planner contracts are not valid decisions"
+}

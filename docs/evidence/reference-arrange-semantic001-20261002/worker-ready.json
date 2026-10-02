@@ -1,0 +1,42 @@
+{
+  "identity": {
+    "checkpoint": "/root/physical-execution-lab/model-artifacts/pi05-exact/ckpt/RoboDojo/Pi_05/RoboDojo-sim-arx_x5-joint-0/59999",
+    "config": "pi05_base_aloha_full_sim_arx-x5_seed_0",
+    "backend": "OpenPI/JAX",
+    "checkpoint_sha256": "d15fb8bd1d29cb30b69f01b71c66596cb0293c1a8a94111b343c1580dd3e3e5b",
+    "files_sha256": {
+      "params/_METADATA": "f7b1dbf26ce9466c9d444c3a7f60dfe21767b3abc3380a455e841972eae4f274",
+      "params/_sharding": "77b1fa6b2c8d2a16a94d19eb268bed916c6913565421fdf6312453ac6c4fc621",
+      "params/array_metadatas/process_0": "2b650291cb689bb0504470bf03a071c40ae96e203667b89cead0c6adb2d6288f",
+      "params/d/e9268d0868cc79dc08071adee3ba67f5": "9482acdbb1250cf3344fad3c8be7f587ba3770441198e7d60f357702486ac2c8",
+      "params/manifest.ocdbt": "634fea47615fa13f4c0852dc13b05d897ee1694a473d9d0605d02b834fd2befe",
+      "params/ocdbt.process_0/d/0a05b3b4870f64154af3641ef1c1eecf": "429161d8ab2ac9d13b72095d8b5be5ffba8f99302b12bb2cae149d1ee0a148b0",
+      "params/ocdbt.process_0/d/1fbec215d6341f33f041c6145ee3756f": "cdf1415e6f30a9827e52e6d5442b5f819dadbaba7c8e941773290cfc2742f249",
+      "params/ocdbt.process_0/d/3749fcdb2abf24595f8ca06ee208e773": "23ddd7f53b976bd27b1a62a83ad1499925a8a2e90a5b0545affd63c7bbd52bbc",
+      "params/ocdbt.process_0/d/42eb48ef345d0e30b95bc9e2a194adc8": "41eb65bde7e3d16f63ac71ac80bc4547bdcf3107c41af70ac5174992bd38b709",
+      "params/ocdbt.process_0/d/5dd44e9e6c20354d58016a470210b404": "d096237d5373dc120004174e89dc44a341fdffdcc7457d568d0b841700ff2ade",
+      "params/ocdbt.process_0/d/a66e531837010ca0fb32ecd927335e53": "522d9057a70c021327d3c76132377aa0e6c323feb4dea4db0b8ccb16fc7980f4",
+      "params/ocdbt.process_0/d/ce1637cf430319dc033526f7e32d833e": "93e3eb49cbbcae7b3e424c4e19a11262ee118355a4676a62681ec2e26fccbc16",
+      "params/ocdbt.process_0/d/d7a5b27d8a8c4f63cc9dfe9d12d5e2d3": "437c63711361d678a44b06455d0124a50ec79d9ee0bafe2ada78e41d79360fa6",
+      "params/ocdbt.process_0/d/d931aec2d1d586717a28915e6c710676": "1a8834dd2a575ce5f8bfa7be2fbd554cca261cdf997d928c5a719e77174b1d83",
+      "params/ocdbt.process_0/d/fbf78c71d75f5d3cb7ef11cd9cde9ab0": "9c268e5dfc2248b4c75ae5ccbf2f23a196b2cd55ee798707c0bef5d4b3f6b653",
+      "params/ocdbt.process_0/manifest.ocdbt": "b2117af3ce683fba15add35bdd5596df488e816ec4c5bcef1a82161a965115bd",
+      "assets/arx_x5_sim/norm_stats.json": "ad7dea3e3d2bcdb348945fe03422ab1adccd03baf67318b1a1d153dfe8694db5"
+    },
+    "robot_profile": "robodojo",
+    "action_horizon": 50,
+    "action_dim": 14,
+    "action_space": "left_joints6_opening1_right_joints6_opening1",
+    "gripper_execution_threshold": null,
+    "gripper_semantics": "continuous_0_closed_1_open",
+    "internal_action_space": "delta_arm_joints_relative_to_current_state",
+    "cameras": [
+      "cam_high",
+      "cam_left_wrist",
+      "cam_right_wrist"
+    ]
+  },
+  "inference_mode": "native_singleton",
+  "rng": "separate native seed0 streams per env",
+  "memory": "0, 5218, 18864\n1, 8612, 15470\n"
+}
