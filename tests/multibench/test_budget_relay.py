@@ -56,3 +56,15 @@ def test_relay_does_not_retry_uncertain_or_invalid_response(tmp_path,error):
 def test_relay_rejects_tier_fallback_before_reserving(tmp_path):
     b=body();b['service_tier']='default'
     with pytest.raises(ValueError):relay.request_bound(b)
+
+
+def test_extended_comparison_limits_require_explicit_profile():
+    relay.trial_limits('pilot75',75,Decimal(3),2400)
+    relay.trial_limits('comparison180',180,Decimal(3),3600)
+    for profile,calls,cap,wall in (
+        ('pilot75',180,Decimal(3),2400),
+        ('pilot75',75,Decimal(3),3600),
+        ('comparison180',181,Decimal(3),3600),
+        ('comparison180',180,Decimal('3.01'),3600),
+        ('comparison180',180,Decimal(3),3601)):
+        with pytest.raises(ValueError):relay.trial_limits(profile,calls,cap,wall)

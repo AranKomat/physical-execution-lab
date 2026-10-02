@@ -20,6 +20,14 @@ PROVIDER={'only':['openai/flex'],'allow_fallbacks':False,'require_parameters':Tr
     'max_price':{'prompt':1.5,'completion':6}}
 
 
+def trial_limits(profile,max_calls,cap,wall_limit_s):
+    ceiling={'pilot75':75,'comparison180':180}.get(profile)
+    if ceiling is None or not 1<=max_calls<=ceiling or not 0<cap<=3:
+        raise ValueError('invalid trial scope')
+    if not 0<wall_limit_s<=(3600 if profile=='comparison180' else 2400):
+        raise ValueError('invalid trial wall limit')
+
+
 def request_bound(body):
     if body.get('model')!='gpt-6.1-sol' or body.get('service_tier')!='flex':
         raise ValueError('only explicitly selected Sol 6.1 Flex is allowed')
@@ -98,10 +106,13 @@ def main():
     for name in ('campaign-root','key-file','output','name'):p.add_argument('--'+name,required=True)
     p.add_argument('--port',type=int,default=19861);p.add_argument('--expected-calls',type=int,required=True)
     p.add_argument('--max-calls',type=int,default=75);p.add_argument('--cap-usd',type=Decimal,default=Decimal(3))
+    p.add_argument('--profile',choices=('pilot75','comparison180'),default='pilot75')
+    p.add_argument('--wall-limit-s',type=int,default=2400)
     p.add_argument('--acknowledge-failed-request',action='append',default=[])
     p.add_argument('--offline-request',help='One retained legal request for route qualification only; no motion')
     a=p.parse_args()
-    if not 1<=a.max_calls<=75 or not 0<a.cap_usd<=3 or '/' in a.name:raise ValueError('invalid trial scope')
+    trial_limits(a.profile,a.max_calls,a.cap_usd,a.wall_limit_s)
+    if '/' in a.name:raise ValueError('invalid trial name')
     sys.path.insert(0,a.campaign_root)
     from openrouter_pilot import Ledger,RUN,load_key
     out=Path(a.output);out.mkdir(parents=True,exist_ok=False)
@@ -109,13 +120,14 @@ def main():
     with (RUN/'runner.lock').open('a') as lock,httpx.Client(timeout=900,trust_env=False) as http:
         fcntl.flock(lock,fcntl.LOCK_EX|fcntl.LOCK_NB)
         ledger=Ledger(RUN/'budget.jsonl',max_calls=4209,limit_usd=Decimal(85),
-            resumed_at=time.time(),wall_limit_seconds=2400,
+            resumed_at=time.time(),wall_limit_seconds=a.wall_limit_s,
             acknowledged_unknown_ids=a.acknowledge_failed_request)
         count=sum(e['event']=='reserved' for e in ledger.read())
         if count!=a.expected_calls:raise ValueError('shared call count changed; inspect ledger')
         ledger.max_calls=count+a.max_calls
         ledger.append({'event':'operator_robodojo_supervision_scope','time':time.time(),
             'name':a.name,'max_calls':ledger.max_calls,'local_cap_usd':str(a.cap_usd),
+            'trial_profile':a.profile,'trial_call_limit':a.max_calls,'wall_limit_s':a.wall_limit_s,
             'shared_cap_usd':'85','model':MODEL,'provider':'openai/flex',
             'authorization':'standing low-budget physical-lab approval; owner selected Sol 6.1 Flex'})
         relay=Relay(ledger,load_key(a.key_file),token,out,a.name,a.max_calls,a.cap_usd,http)
@@ -148,6 +160,7 @@ def main():
                 self.end_headers();self.wfile.write(data)
 
         print(json.dumps({'event':'relay_ready','port':a.port,'max_calls':a.max_calls,
+            'profile':a.profile,'wall_limit_s':a.wall_limit_s,
             'local_cap_usd':str(a.cap_usd),'shared_cap_usd':'85'}),flush=True)
         HTTPServer(('127.0.0.1',a.port),Handler).serve_forever()
 

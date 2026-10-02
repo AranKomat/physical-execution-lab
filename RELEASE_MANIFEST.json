@@ -817,9 +817,9 @@
     "docs/evidence/g05-supervision-bringup/accounting.json": "80363a5f710fbb80a6afa96ee2cc4d4053350ad2823fb07aa3acd0acdd306fac",
     "docs/evidence/g05-supervision-bringup/attempt-001.json": "2e61b33d3cce8e933bbdf7b0ba80765df1bc2ef953b0f3a5f97acdb87329b431",
     "docs/evidence/g05-supervision-bringup/attempt-002.json": "7d12087f290879c0833633a3dd9ee5229535ae007ed65eedd02c77274cf3852e",
-    "scripts/multibench/budget_responses_relay.py": "ef3a5a3803285e540eb1bb05f832dcd2d32a4d86438005f6b8d7c2c7523d2c2b",
-    "scripts/multibench/prepare_supervision_pilot.py": "f9f97e047ba20aab319e6d4726c226693f2b8376a4f804f738863db9dce2d524",
-    "tests/multibench/test_budget_relay.py": "6be510603e8a7362178c1521e21ccc1c11f370bd7baf12dcf878ab134b9fbf2d",
+    "scripts/multibench/budget_responses_relay.py": "e5af4386d4ad477cc10f6df11e916078e0269c0c1fc59ea4a701540a569ed988",
+    "scripts/multibench/prepare_supervision_pilot.py": "ae10321073c7bb1ec7b49670a996f775fa57543f597d3fed1e44458fbba8c103",
+    "tests/multibench/test_budget_relay.py": "23a8cadbee9535bd8c00e0aeaf35c7da111510950a567646990f45bf07ee8956",
     "docs/evidence/xr1-bringup/preparation.json": "2fa5c9e21c41510a0dede757e62e37316ef81a96d25e747bd42be8c6edd7ef5f",
     "docs/evidence/xr1-bringup/native-stats.json": "5057e2f0cce2c3c4bf129db6c88c55794194ade9d87a38ca61685bdff0cf6088",
     "docs/XR1_DEVELOPMENT_SCREEN_20261002.md": "4cb4136286943942b325e26bafe403a4abc859dd2a61cdd84594fad62ff38c8c",
@@ -835,7 +835,7 @@
     "scripts/multibench/prepare_robocasa_development.py": "7f1fc6b397cd29c8e4d4a7fb55ce856fbc00ff6a533022dac91079e1545c768f",
     "scripts/multibench/verify_xr1_initial_chunk.py": "88b53adce06c6e9e25a4b89458e5efef0ef6eb3a0d306fdeaa67cdd9db6f9505",
     "tests/multibench/test_robocasa_development.py": "d5ad8516411385f89b863768676e54953f10aa7a46196c53e8f3c5b42e6cc1a3",
-    "tests/multibench/test_supervision_preparation.py": "5c0b853c27d9a40bcabd47073c151f219883098269ebcfc28ad3c63816f08267",
+    "tests/multibench/test_supervision_preparation.py": "3f22f8765e5d904814fb45bf182a06b1cdee97e63e2a4d75829e6350889b583c",
     "docs/XR1_NATIVE_QUALIFICATION_20261002.md": "dea8c58c1ff4f7c524fcfb2faa26377cd9a99a3dcf48be4fdfbc803bb175e8bd",
     "docs/evidence/xr1-development-screen/motor-qualification.json": "501078c59523233f5e8c0af8ece85349764fe5b3a162e588391b119568c0f2f5",
     "docs/evidence/xr1-development-screen/motor-freeze.json": "ff0daa296b64b46507464842d46b73e28bbbe89ee339e0e789ce57d413c28748",
@@ -942,6 +942,7 @@
     "docs/evidence/motor-freeze-refresh-002/verification.json": "81b7586ed83099deb5e2f92f2cc6416ac39d06bfb06e3d324b58d466e058d929",
     "docs/evidence/motor-freeze-refresh-002/xr1-freeze.json": "e9a5d74c51ec767b4208b7ac39bbaa82c3daaf3dbd00be06c44f30ef123d9613",
     "docs/evidence/motor-freeze-refresh-002/xr1-qualification.json": "c06d80ac06d35074c6958c2a1c6c7370c6d4a0e903ec978874cb6e3c12eabbf8",
-    "docs/evidence/motor-freeze-refresh-002/xr1-resolved-config.json": "a3bf537405299dd62e7140e2924190d7b22a9bd982f2a95c9931f0908e6557dc"
+    "docs/evidence/motor-freeze-refresh-002/xr1-resolved-config.json": "a3bf537405299dd62e7140e2924190d7b22a9bd982f2a95c9931f0908e6557dc",
+    "docs/PI05_MATCHED_COMPARISON_PLAN_20261002.md": "491fec82df692df946d5b0ef8fce8baceeb15d50b4c25f4236e460b55d7f0c4b"
   }
 }
