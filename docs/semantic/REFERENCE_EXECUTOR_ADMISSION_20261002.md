@@ -185,3 +185,20 @@ historical result relabeled. The remaining work is a scoped qualification
 record with per-check evidence, future-prompt retention enforcement, native
 variant admission and the matched approach panel; no new capacity sweep is
 needed.
+
+### Future-Prompt Retention Guard
+
+`semantic_lab/token_retention.py` wraps the source policy's actual input transform
+once, decodes its active native tokens, verifies the full cleaned incoming
+prompt, records the result and returns the exact same transformed object.
+It does not rewrite text, sample a second prediction or change source RNG.
+The standalone reference worker and shared pi0.5 worker both attach it.
+Prediction metadata retains successful checks; an append-only JSONL records
+checks before rejection so a truncated prompt does not disappear with a worker
+exception. Truncation stops prediction delivery, with no repair/retry.
+
+CPU checks cover pass-through identity, exactly one transform invocation,
+truncation rejection and invalid masks. A separate bounded source-model replay
+is prepared to compare guarded versus original inference on one retained input
+with identical source RNG. No successful robot result or completed phase is
+implied by these checks; results remain pending until the replay actually runs.

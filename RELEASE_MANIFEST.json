@@ -1265,10 +1265,14 @@
     "docs/evidence/reference-arrange-random-motor001-20261002/pre-action-binding.json": "9fe417d674b889960e9e1506cd035395e870f9682221f387a3bb9b82bdab2a54",
     "docs/evidence/reference-arrange-random-motor001-20261002/report.json": "ba97e10083c661ed659129c273bbea8711ccfee303f3f2cc2a2eecd1cae4e8c3",
     "docs/evidence/reference-arrange-random-motor001-20261002/worker-ready.json": "56dadeb81657a51acc8abb235c1cf2135e71616db48fb83476f23ca504557d33",
-    "docs/semantic/REFERENCE_EXECUTOR_ADMISSION_20261002.md": "662054a48715982c2dadf041f9be0022d12087d303d78201601d82252d93dd35",
+    "docs/semantic/REFERENCE_EXECUTOR_ADMISSION_20261002.md": "d5814a7eda4cb72e3869d21c621c35c99f91fc69173bcb0393dc26c0ac81ddb1",
     "scripts/semantic/freeze_executor.py": "e82628d4112407eb2ff3ce5184179d31b5d1af1e7d7c6224640afaf51af1a535",
     "docs/evidence/reference-execution-binding001-20261002/freeze.json": "2b9f20fe1ff739a467a769e9b2ecd67bb603045d77d36ed07c2fb2ef8205b327",
-    "docs/evidence/reference-execution-binding001-20261002/operator_reference_rollout001.py": "ef28b8c8e8b64878d9918295d729e3509449b80ff37d4dcd190320a71ccafa36",
-    "docs/evidence/reference-execution-binding001-20261002/freeze003.json": "8e545eb5665414e598f4bf9b4ea6dddeeb4c77f608d531324ab4742cb35762ca"
+    "docs/evidence/reference-execution-binding001-20261002/operator_reference_rollout001.py": "e544310a30eb40b9a5e42363cc9ae5d968838387ac87bea12b4d195c4c00ccab",
+    "docs/evidence/reference-execution-binding001-20261002/freeze003.json": "8e545eb5665414e598f4bf9b4ea6dddeeb4c77f608d531324ab4742cb35762ca",
+    "docs/evidence/reference-execution-binding001-20261002/operator_live_token_guard_probe001.py": "a69909f30870f0200b0b8e795d3610c3fdfc8ed2083522d1fbad9dc82a0bce34",
+    "docs/evidence/reference-execution-binding001-20261002/operator_pi05_multifamily_worker001.py": "941633354d74dad719eaf5d8331c870703b031a27865337f4188123327150f60",
+    "semantic_lab/token_retention.py": "2755a9a4fae843749a0d1b8e3fe0c48ed703a5cbee1336da655e39f580f1ab7d",
+    "tests/semantic/test_token_retention.py": "2096d5dc6d533b691a47015e257a375ee165526fdbd0cab6014d7ef24d99f22b"
   }
 }

@@ -46,6 +46,16 @@ def worker(out, inference_mode):
     checkpoint = Path(provider['checkpoint_path'])
     cfg, _ = data_contract(checkpoint)
     policy = create_trained_policy(cfg, checkpoint)
+    from openpi.models.tokenizer import PaligemmaTokenizer
+    from semantic_lab.token_retention import PromptRetentionGuard
+    prompt_records = []
+    def record_prompt(row):
+        prompt_records.append(row)
+        with (out / 'live-token-retention.jsonl').open('a') as stream:
+            stream.write(json.dumps(dict(row, prediction_index=index,
+                row_in_request=len(prompt_records)-1)) + '\n')
+    decoder = PaligemmaTokenizer(cfg.model.max_token_len)._tokenizer.decode
+    policy._input_transform = PromptRetentionGuard(policy._input_transform, decoder, record_prompt)
     write_json(out / 'worker-ready.json', {'identity': checkpoint_identity(checkpoint),
         'inference_mode': inference_mode,
         'rng': 'separate native seed0 streams per env' if inference_mode == 'native_singleton'
@@ -61,6 +71,7 @@ def worker(out, inference_mode):
             time.sleep(.05)
             continue
         start = time.perf_counter()
+        prompt_records.clear()
         with np.load(request, allow_pickle=False) as data:
             env_ids = data['env_ids'].copy()
             raws = [{'state': data['states'][i].copy(),
@@ -95,6 +106,7 @@ def worker(out, inference_mode):
             'request_sha256': hashlib.sha256(request.read_bytes()).hexdigest(),
             'env_ids': env_ids.tolist(), 'memory': memory(), 'inference_mode': inference_mode,
             'native_calls_per_env': calls,
+            'live_prompt_retention': list(prompt_records),
             'rng_keys_after': {str(idx): jax.random.key_data(key).tolist() for idx, key in keys.items()}})
         index += 1
 
