@@ -1,0 +1,112 @@
+{
+  "status": "concurrent_semantic_families_audited",
+  "families": {
+    "classify_objects": {
+      "status": "native_semantic_motor_vector_audit_passed",
+      "actual_controls": 2725,
+      "episodes": {
+        "0": {
+          "journal": {
+            "events": 985,
+            "head_sha256": "396ca3e7f525a78bf9fd2c86b38dfd5d7d54614a6aa6a9703e01b647d7d09278"
+          },
+          "actual_control_acks": 867,
+          "policy_proposals": 58,
+          "semantic_epochs_seen_by_motor": [
+            0
+          ],
+          "distinct_effective_prompts": 1,
+          "prefix_cadence_verified": true,
+          "complete_native_result": true,
+          "evidence_kind": "native_unqualified",
+          "robot_competence_claim": false,
+          "source_H50_predictions_equal": true
+        },
+        "1": {
+          "journal": {
+            "events": 862,
+            "head_sha256": "6e409bb9f4fc245470cc3ed9d1332f35a26f5cf718ccc97113d1393c14cefb2d"
+          },
+          "actual_control_acks": 758,
+          "policy_proposals": 51,
+          "semantic_epochs_seen_by_motor": [
+            0
+          ],
+          "distinct_effective_prompts": 1,
+          "prefix_cadence_verified": true,
+          "complete_native_result": true,
+          "evidence_kind": "native_unqualified",
+          "robot_competence_claim": false,
+          "source_H50_predictions_equal": true
+        },
+        "2": {
+          "journal": {
+            "events": 1250,
+            "head_sha256": "9718188ee5c3804ef792154a6fd6be1364dad53d855f1a7d45d0c59316a22f00"
+          },
+          "actual_control_acks": 1100,
+          "policy_proposals": 74,
+          "semantic_epochs_seen_by_motor": [
+            0
+          ],
+          "distinct_effective_prompts": 1,
+          "prefix_cadence_verified": true,
+          "complete_native_result": true,
+          "evidence_kind": "native_unqualified",
+          "robot_competence_claim": false,
+          "source_H50_predictions_equal": true
+        }
+      },
+      "paid_calls": 0,
+      "source_predictions_and_native_acks_match": true,
+      "scope": "motor-only native semantic adapter; not paid planner or hierarchy qualification"
+    },
+    "build_tower": {
+      "status": "native_semantic_motor_vector_audit_passed",
+      "actual_controls": 1783,
+      "episodes": {
+        "0": {
+          "journal": {
+            "events": 833,
+            "head_sha256": "45301f8f3a1666e24384da2753b8f44eb711bec6a724c8fed29b2bdcc5633157"
+          },
+          "actual_control_acks": 733,
+          "policy_proposals": 49,
+          "semantic_epochs_seen_by_motor": [
+            0
+          ],
+          "distinct_effective_prompts": 1,
+          "prefix_cadence_verified": true,
+          "complete_native_result": true,
+          "evidence_kind": "native_unqualified",
+          "robot_competence_claim": false,
+          "source_H50_predictions_equal": true
+        },
+        "1": {
+          "journal": {
+            "events": 1192,
+            "head_sha256": "bc5af8338c25a8ec9307ceba59b4d7827934f594085baa3476ef9f095b62786b"
+          },
+          "actual_control_acks": 1050,
+          "policy_proposals": 70,
+          "semantic_epochs_seen_by_motor": [
+            0
+          ],
+          "distinct_effective_prompts": 1,
+          "prefix_cadence_verified": true,
+          "complete_native_result": true,
+          "evidence_kind": "native_unqualified",
+          "robot_competence_claim": false,
+          "source_H50_predictions_equal": true
+        }
+      },
+      "paid_calls": 0,
+      "source_predictions_and_native_acks_match": true,
+      "scope": "motor-only native semantic adapter; not paid planner or hierarchy qualification"
+    }
+  },
+  "actual_controls": 4508,
+  "paid_calls": 0,
+  "source_rng_and_membership_counts_verified": true,
+  "scope": "fresh vector development cohort; not bitwise serial parity or hierarchy benefit"
+}

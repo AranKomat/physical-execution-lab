@@ -1031,7 +1031,7 @@
     "docs/evidence/semantic-pi05-hierarchy-001/task_plus_subtask/result.json": "8a7e7f9cf62099e7585bc0b5c42c1c5e1952cdb7d059fe24cb9277702b82bbbe",
     "docs/evidence/semantic-pi05-hierarchy-001/task_plus_subtask/semantic-decisions.json": "205a4088ac95da694957d08a6a1b81b4c69193bf25c20b423e7430a319efa818",
     "docs/evidence/semantic-pi05-hierarchy-001/task_plus_subtask/source-identity.json": "f5d791db6665ccc59a510b4a75db73a35f4d72da9623cc611336b6c5cd0a3986",
-    "docs/semantic/MATCHED_HIERARCHY_PROGRESS_20261002.md": "5bb142b8448d6e03d01eba52e95fb3594ccd245dfb4a6e7eca1bd6a0bfbafde3",
+    "docs/semantic/MATCHED_HIERARCHY_PROGRESS_20261002.md": "5fc6efba3907bc9411ed70d2e3652cfe3b72ac38fddd25da9b860e8cfd9f91a9",
     "docs/evidence/semantic-pi05-hierarchy-001/task_plus_subtask/sort-l2/api-summary.json": "1ed5662dbd32e2bd4ace231d7b559e90c3c61a8e1eb10dac34b03f7aa291a33d",
     "docs/evidence/semantic-pi05-hierarchy-001/task_plus_subtask/sort-l2/initial-observation-fingerprint.json": "e017a3df0bea46e6b9c0d3efd451acd4ba5446062bfa45367a85d5d2276832c8",
     "docs/evidence/semantic-pi05-hierarchy-001/task_plus_subtask/sort-l2/offline-audit.json": "7681ffe88b171ac9093111f0695308f6c85835b11d905cd70d805b34fa951924",
@@ -1169,6 +1169,22 @@
     "docs/evidence/semantic-vector-planner-20261002/operator_run_semantic_multifamily001.py": "365b5f9dcbed464a6977a85b0b1e893cedb27d3390a235462fcbd2c85012c5c2",
     "docs/evidence/semantic-vector-planner-20261002/operator_vector_pi05_rollout001.py": "14a7a40161a8d81da3ae3aa57a6e2cb3f20ff9d9bad0ff60cdd9a1e836669ca1",
     "docs/evidence/semantic-vector-planner-20261002/planner-decisions.json": "06bab8fb5c942bb9c6fb905fdb95821fc8c20b36266ca73a21f23f04c97d8c7a",
-    "docs/evidence/semantic-vector-planner-20261002/semantic-vector-planner-pilot001.json": "890ad8395c33f7d8862696699fd376b2a4a948752e30bd3a703bd25e259ffbfa"
+    "docs/evidence/semantic-vector-planner-20261002/semantic-vector-planner-pilot001.json": "890ad8395c33f7d8862696699fd376b2a4a948752e30bd3a703bd25e259ffbfa",
+    "docs/evidence/semantic-vector-matched-dev001-20261002/README.md": "03b017b075eade6f96ea4c8c692a0da17eb44314a9e3fa4b9dfc386f2723c69b",
+    "docs/evidence/semantic-vector-matched-dev001-20261002/motor-audit.json": "2389cda36996786fe9f3a5367ed50abaeabae195d60103a7ebc5d69e0adfe2d0",
+    "docs/evidence/semantic-vector-matched-dev001-20261002/motor-report.json": "0d359bd04e1ee8abbef0932f54316c8c634a08b6fd8e7f6403b35b6a17fac470",
+    "docs/evidence/semantic-vector-matched-dev001-20261002/operator_audit_semantic_multifamily001.py": "7ba74f87e354047ea035b321465fc65f92be3c54071c3ad7f61adb2da9c5aea0",
+    "docs/evidence/semantic-vector-matched-dev001-20261002/operator_freeze_semantic_vector001.py": "383fede02500b35ce1dd8c98ed4d5e632c945b0e2d1beb17dcd5e4dd0280a618",
+    "docs/evidence/semantic-vector-matched-dev001-20261002/operator_launch_paid_semantic_multifamily001.py": "7c8feca961227dc6fe7a85c7f0e5ff61a5e10e50a783cad6ebd245add4037701",
+    "docs/evidence/semantic-vector-matched-dev001-20261002/operator_paid_semantic_multifamily001_local.py": "9720c524698842329346665f364f49856170a4541e1b3449a5ea1e0230e079f3",
+    "docs/evidence/semantic-vector-matched-dev001-20261002/operator_pi05_multifamily_worker001.py": "6af9a3d1339e9f647456d69dfa0d690e32af235f876a67551559c9d9fdac6b15",
+    "docs/evidence/semantic-vector-matched-dev001-20261002/operator_run_semantic_multifamily001.py": "365b5f9dcbed464a6977a85b0b1e893cedb27d3390a235462fcbd2c85012c5c2",
+    "docs/evidence/semantic-vector-matched-dev001-20261002/operator_semantic_vector_coordinator001.py": "a70246b7a63b672b9209946876a1ce68e9abcddef475b154299f919ada513f9b",
+    "docs/evidence/semantic-vector-matched-dev001-20261002/operator_semantic_vector_native001.py": "bf2e3e5b515a53a37e188c9a342c648aa5fd6f07727cdac04f7dcb261650b724",
+    "docs/evidence/semantic-vector-matched-dev001-20261002/operator_vector_pi05_rollout001.py": "14a7a40161a8d81da3ae3aa57a6e2cb3f20ff9d9bad0ff60cdd9a1e836669ca1",
+    "docs/evidence/semantic-vector-matched-dev001-20261002/semantic-vector-matched-dev001-plan.json": "0732de8bcaf0ffc7ef0384e25d9df8cac75b7545756a42d9fff0747418745432",
+    "docs/evidence/semantic-vector-matched-dev001-20261002/semantic-vector-motor-comparison001.json": "e5dfb6105eb0cc9ba9355935fa91ed3b6c8e0bbb13e8e2ec4eb17e8bbac70c1e",
+    "docs/evidence/semantic-vector-matched-dev001-20261002/semantic-vector-subtask-comparison001.json": "9209d0074c2f8dc82b6a9ffeb35e750caba30dab740ebcf985b2b8d16770a910",
+    "docs/evidence/semantic-vector-matched-dev001-20261002/semantic-vector-task-plus-comparison001.json": "9b73aafca73ed32ef1b7b36332e14a1d21dd92403de2c7aaf45f39b3cb506bf0"
   }
 }

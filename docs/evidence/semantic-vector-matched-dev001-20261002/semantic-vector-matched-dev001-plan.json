@@ -1,0 +1,81 @@
+{
+  "cohort": "semantic-vector-matched-dev001",
+  "scope": "fresh concurrent development comparison; not historical serial cohort or held-out",
+  "roster": {
+    "classify_objects": [
+      0,
+      1,
+      2
+    ],
+    "build_tower": [
+      0,
+      1
+    ]
+  },
+  "conditions_in_order": [
+    "motor_only",
+    "task_plus_subtask",
+    "subtask_only"
+  ],
+  "source_sha256": {
+    "operator_vector_pi05_rollout001.py": "14a7a40161a8d81da3ae3aa57a6e2cb3f20ff9d9bad0ff60cdd9a1e836669ca1",
+    "operator_semantic_vector_native001.py": "bf2e3e5b515a53a37e188c9a342c648aa5fd6f07727cdac04f7dcb261650b724",
+    "operator_semantic_vector_coordinator001.py": "a70246b7a63b672b9209946876a1ce68e9abcddef475b154299f919ada513f9b",
+    "operator_run_semantic_multifamily001.py": "365b5f9dcbed464a6977a85b0b1e893cedb27d3390a235462fcbd2c85012c5c2",
+    "operator_pi05_multifamily_worker001.py": "6af9a3d1339e9f647456d69dfa0d690e32af235f876a67551559c9d9fdac6b15"
+  },
+  "provider": {
+    "artifact_dir": "/root/physical-execution-lab/configs/local/pi05-exact-bound-001/policy-proposals",
+    "artifact_manifest": "/root/physical-execution-lab/configs/local/pi05-exact-bound-001/artifacts.json",
+    "backend": "pi05",
+    "checkpoint_path": "/root/physical-execution-lab/model-artifacts/pi05-exact/ckpt/RoboDojo/Pi_05/RoboDojo-sim-arx_x5-joint-0/59999",
+    "gpt_as_policy_root": "/root/physical-execution-lab/external/GPT-as-Policy",
+    "identity": {
+      "action_space": "x5_joint14",
+      "adapter_config_sha256": "6a172d9cb0c9528f3fa6f50d472dac6948b34a9827e6a71816d47adc224d8edf",
+      "benchmark_training": "RoboDojo task/embodiment post-trained",
+      "checkpoint_sha256": "c70c9a59e650d484c8b921d8e17181cacd8e24b20c4cbae8277a1dffe9b69ee9",
+      "execute_steps": 15,
+      "name": "pi05_robodojo",
+      "native_hz": 25.0,
+      "prediction_horizon": 50,
+      "preprocessing_id": "gpt_as_policy_openpi_jax_cam3_joint14",
+      "revision": "8f3d362b077d8efb77e2a7274d5b2c20e2243846",
+      "stateful": false
+    },
+    "native_checkpoint_sha256": "d15fb8bd1d29cb30b69f01b71c66596cb0293c1a8a94111b343c1580dd3e3e5b",
+    "policy": "pi05",
+    "port": 19114
+  },
+  "motor_config": {
+    "name": "semantic_vector_matched_dev001_motor_only",
+    "mode": "motor_only",
+    "prompt_mode": "original_only",
+    "max_semantic_calls": 0,
+    "wall_limit_s": 2400,
+    "no_task_memory": true,
+    "no_task_demonstrations": true
+  },
+  "native_seed": 0,
+  "native_prefix": 15,
+  "prediction_horizon": 50,
+  "planner": {
+    "model": "gpt-6.1-sol",
+    "effort": "medium",
+    "tier": "flex",
+    "max_calls_per_episode": 16,
+    "allow_semantic_recovery": false
+  },
+  "conditions_must_be_bound_before_launch": true,
+  "no_case_replacement_or_automatic_retry": true,
+  "retain_all_stops_missing_cases_and_errors": true,
+  "same_simulator_gpu": 0,
+  "same_shared_policy_gpu": 1,
+  "rng": "source seed0 singleton streams isolated per wave/env",
+  "limits": {
+    "classify_objects": 1100,
+    "build_tower": 1050
+  },
+  "counterfactual_trajectory_parity": false,
+  "memory_and_demonstrations": false
+}

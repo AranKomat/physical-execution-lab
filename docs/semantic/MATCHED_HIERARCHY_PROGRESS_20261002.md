@@ -387,3 +387,31 @@ layouts. Freeze a new vector comparison cohort, then run full matched waves;
 do not resume serial comparisons or count these component gates as Phase C.
 Evidence: `../evidence/semantic-vector-planner-20261002/`. Full unique sensors
 remain remote; backup is required before retirement. D/E remain unrun.
+
+## Fresh Unique-Layout Vector Baseline
+
+A separate cohort was bound before execution: three sorting layouts (0,1,2)
+and two tower layouts (0,1), each exactly once. This is **two task types and
+five unique task-layout cases**, not five or ten distinct task types.
+Full original-only semantic-runner waves completed concurrently with 4,508
+controls, zero paid calls, 529.94 s including startup/shutdown and no unstable
+rows. Source predictions, actual ACKs, H50/15, terminal membership and separate
+source RNG/call accounting passed audit.
+
+| Task/Layout | Motor Outcome | Score | Actions |
+|---|---|---:|---:|
+| Sorting0 | Success | 1.0 | 867 |
+| Sorting1 | Success | 1.0 | 758 |
+| Sorting2 | Native horizon failure | 0.0 | 1100 |
+| Tower0 | Success | 1.0 | 733 |
+| Tower1 | Native horizon failure | 0.1 | 1050 |
+
+Three/five is descriptive development coverage, not whole-benchmark SR. The
+new vector cohort is not pooled with historical serial pairs; reset/rendering
+parity across those execution topologies remains unproven. A broken SSH return
+was followed by read-only confirmation of the terminal report and a passing
+audit, not a rerun. Task-plus-subtask and subtask-only configurations are
+prepared but unrun in this cohort. Next run those full concurrent conditions,
+then interpret C before enabling D/recovery. Evidence and exact operators:
+`../evidence/semantic-vector-matched-dev001-20261002/`. Unique sensors remain
+remote pending full backup; do not retire them based on small public reports.
