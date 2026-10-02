@@ -1,0 +1,42 @@
+{
+  "status": "bounded_wave_incomplete",
+  "scope": "experimental vector motor rollout, separate execution cohort",
+  "paid_calls": 0,
+  "resets": 1,
+  "task": "classify_objects",
+  "requested_envs": 1,
+  "budget_steps_per_env": 150,
+  "physics_of_completed_envs": "continues globally; terminal score frozen",
+  "rng_parity": false,
+  "scored_benchmark_qualified": false,
+  "native_registration": {
+    "registered": true,
+    "source": "native EvalEnv.run_eval preamble",
+    "condition_group_counts": {
+      "check_list": [
+        1
+      ],
+      "final_check_list": [
+        0
+      ],
+      "trigger_check_list": [
+        0
+      ]
+    },
+    "initial_support_arm_query_envs": []
+  },
+  "reset_seeds": [
+    0
+  ],
+  "action_counts": [
+    150
+  ],
+  "predictions": 10,
+  "terminal": {},
+  "memory": "0, 6703, 17379\n1, 8668, 15414\n",
+  "wall_s": 43.45623193600477,
+  "active_envs": [
+    0
+  ],
+  "unstable_envs": []
+}

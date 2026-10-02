@@ -1,0 +1,14 @@
+{
+  "audited_actions": 150,
+  "per_env_actions": [
+    150
+  ],
+  "prediction_and_request_env_routing": true,
+  "source_actions_match_journal": true,
+  "contiguous_native_counter_acks": true,
+  "H50_15_prefix_cadence": true,
+  "post_action_state_matches_ack_payload": true,
+  "nonempty_native_completion_conditions": true,
+  "all_policy_cameras_nonblank": true,
+  "scope": "bounded vector rollout trace, not isolated-trajectory parity or held-out qualification"
+}

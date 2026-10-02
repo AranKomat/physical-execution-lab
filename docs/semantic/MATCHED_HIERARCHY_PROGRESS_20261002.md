@@ -6,7 +6,7 @@
 |---|---|
 | A: no-interference | Passed native cadence/prompt audit for synchronous stateless pi0.5; not bitwise trajectory parity |
 | B: conditioning | Actual source tokenizer/context/ACK plumbing and responsiveness passed; obedience not established |
-| C: matched hierarchy | 3/5 primary pairs terminal and audited: tower0 positive pair, sorting2 abstention/control failure, tower1 negative pair; two primary pairs and five subtask-only variants unrun |
+| C: matched hierarchy | 3/5 primary pairs terminal and audited; sorting0 control succeeded/candidate pending; sorting1 separately rebound GPU1 pair terminal (control failure/candidate success), not merged into primary cohort; all five subtask-only variants unrun |
 | D: semantic recovery | Not run; disabled in current conditions |
 | E: held-out/second backend | Not run under V5; opened historical task cannot serve as untouched held-out evidence |
 
@@ -174,3 +174,42 @@ full-manifest hash and original roster-plan hash. Do not use an old screen's
 different source-panel manifest or all ten development layouts as the report
 denominator. Missing cases remain explicit; partial coverage is not a finished
 success-rate estimate or a basis for significance claims.
+
+## Latest Retained Results And Throughput Work
+
+Sorting0's fresh original-binding motor control succeeded: score 1.0, 800
+actions, 54 policy calls, zero GPT calls and 476.22 s wall. Its audit passed
+and 1,700 files were locally SHA-verified. Its hierarchy candidate is pending.
+
+The separately rebound GPU1 sorting1 candidate subsequently succeeded: score
+1.0, 746 actions, 50 policy calls, eight Sol 6.1 medium/Flex calls and 508.42 s
+wall. It used one prompt change, with zero controller faults, resets,
+resampling, shortening or unresolved actions. Its source/prefix/ACK/scoring
+audit passed. Control and candidate share policy identity
+`60b502ee4857775e4fe84bc03301eab7d35204cd2e0a9d8ba87848349ec671e1`.
+This is a positive descriptive pair in a separate transport cohort; it does
+not complete the primary five-case condition or establish a reliable gain.
+
+The candidate's initial directory backup hit local ENOSPC and is incomplete.
+Its complete compressed backup was then downloaded and all 1,658 original
+file hashes were verified without extraction; archive SHA256 is
+`7e683059561226a2f1f95ad51ee123048a982c01694eaf85ab5dba68b584ca22`.
+No remote sensor retirement is implied by this update.
+
+Batch capacity screens are complete; do not keep searching for maximum batch
+sizes. Five same-family environments passed shared-process reset/render checks
+at 9.24 GiB total simulator memory. The next throughput item is a bounded
+native vector motor rollout and routing/cadence audit, then batch1/batchN
+qualification and wider task waves. It must remain a new execution cohort,
+not a replacement for missing frozen hierarchy cases. See
+`../SIMULATOR_BATCH_CAPACITY_20261002.md`. These component and capacity results
+do not complete Phases C-E.
+
+The bounded vector rollout and action audit subsequently passed: B5 executed
+750 controls in 88.19 s, B1 executed 150 in 43.46 s, with actual contiguous
+per-env ACK counters and matching source proposals/post-action state payloads.
+This is about 2.46x aggregate action throughput in the experimental runner;
+neither wave reached a native terminal outcome. Per-env sampling parity,
+scene/sensor isolation, terminal handling and fixed-panel binding remain
+required before broader scored evaluation. No new hierarchy result or phase
+completion is inferred from this throughput work.

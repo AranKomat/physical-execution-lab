@@ -68,3 +68,58 @@ No additional GPU rental is justified by these capacity results yet. A useful
 first target is five live cases per wave, not finding the maximum possible
 batch size. Existing serial development results remain in their original
 cohorts; new vectorized results need an explicit execution-condition label.
+
+## Native Bounded Rollout Update
+
+An experimental runner now drives native take_action_batch with shared fused
+pi0.5 inference on GPU1 and shared simulation on GPU0. The production semantic
+runner and frozen source fingerprint remain unchanged.
+
+| Wave | Actual Controls | Fused Predictions | Rollout Wall | Simulator MiB | Policy MiB |
+|---|---:|---:|---:|---:|---:|
+| B1, layout0 | 150 | 10 | 43.4562 s | 6,703 | 8,668 |
+| B5, layouts [0,1,2,0,1] | 750 (150/env) | 10 | 88.1929 s | 9,907 | 8,660 |
+
+Both source-action/routing/native-counter/post-action-state/H50-15 audits pass.
+All legal input cameras are nonblank, native task completion checks are
+registered, and neither wave flagged an unstable environment. No paid calls,
+GPT conditioning, recovery or controller-generated task skills were used.
+Both waves stopped at the explicit 150-action budget, with no native terminal
+outcome. They are not successes, failures at the native horizon or five new
+independent cases. Repeated layouts are deliberate capacity rows.
+
+Aggregate action throughput is 8.50/s at B5 versus 3.45/s at B1, about 2.46x.
+This is one short wave at each size, including first inference compilation,
+request/result file exchange and retained evidence IO, but excluding model and
+simulator setup before the rollout timer. It is not a confidence interval,
+completed-episodes/hour measurement or comparison with the production runner.
+Five environments add 3,204 MiB over B1 in this implementation, far below the
+cost of four independent simulator processes.
+
+Attempt001 stopped before executing any action because the experimental worker
+rejected out-of-range raw gripper values. The source Pi05Client explicitly
+clips continuous openings to [0,1], as native execution does. Attempt002
+implements that same conversion, retaining raw and converted arrays. This
+was an operator omission, not a model/backend failure; no failed physical
+episode was silently replaced.
+
+Evidence and operators: [vector rollout](evidence/vector-rollout-20261002/).
+Full sensor/proposal/ACK payloads remain under remote runs/vector-pi05-* and
+local runs/native-evidence/vector-rollout-20261002 after completed download.
+
+### Remaining Gates
+
+- Per-env policy RNG streams and a batch1/batchN preprocessing/sampling check;
+  current fused sampling uses one seed0 stream per wave, not isolated parity.
+- Validate sensor/physics isolation and task/layout asset binding beyond
+  nonblank camera and correct row-routing checks.
+- Test native termination, frozen terminal-score snapshots and the subsequent
+  exclusion of completed rows. Global physics continues for completed envs;
+  that is disclosed, not represented as a paused scene.
+- Bind a fixed broader development roster before full-horizon waves, preserving
+  untouched held-out cases. Integrate semantic conditions without contaminating
+  the original frozen cohort, then resume matched/subtask-only/recovery phases.
+
+These gates are the next runner work, not reasons to revisit maximum batch
+sizes or install additional models. The two GPUs have enough measured headroom
+for the tested five-env pi0.5 configuration.

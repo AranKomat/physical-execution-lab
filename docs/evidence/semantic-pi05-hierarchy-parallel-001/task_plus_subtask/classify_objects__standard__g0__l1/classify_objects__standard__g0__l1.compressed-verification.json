@@ -1,0 +1,9 @@
+{
+  "archive": "/Users/macbookpro/Developer/random/gpu/physical-execution-lab/runs/native-evidence/semantic-pi05-hierarchy-parallel-001/task_plus_subtask/sortl1-candidate-full-001.tar.gz",
+  "sha256": "7e683059561226a2f1f95ad51ee123048a982c01694eaf85ab5dba68b584ca22",
+  "verified_files": 1658,
+  "manifest": "/Users/macbookpro/Developer/random/gpu/physical-execution-lab/runs/native-evidence/semantic-pi05-hierarchy-parallel-001/task_plus_subtask/classify_objects__standard__g0__l1.sha256",
+  "compressed_bytes": 1277288838,
+  "verification": "remote archive checksum and every original per-file SHA256; no extraction",
+  "original_uncompressed_directory_copy": "incomplete due to local ENOSPC; full evidence is in this verified archive"
+}
