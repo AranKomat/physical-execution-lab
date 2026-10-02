@@ -1,0 +1,48 @@
+{
+  "actions_executed": 0,
+  "load_s": 48.0079234060031,
+  "model": "g05",
+  "observation_sha256": "691410cb59e24839b60d29572498db9eae9d36230324626190e329b25670102d",
+  "paid_calls": 0,
+  "provider_file": "/root/physical-execution-lab/configs/local/g05-fla-seed0-ancillary-bound-004/provider.json",
+  "provider_sha256": "bbf09c9f2fc273cd1b85c57c97fb8b50dc0e27045623090c45eaf57d43097541",
+  "repeated_input_caveat": "identical legal RGB/state/text at every batch row; diverse tasks and growing history unmeasured",
+  "rows": [
+    {
+      "first_s": 9.868255419001798,
+      "implementation": "fused_inferencer_batch",
+      "memory": {
+        "0": {
+          "allocated_gib": 6.904247283935547,
+          "reserved_gib": 7.2265625
+        }
+      },
+      "requested_batch": 16,
+      "status": "valid_proposals",
+      "warm_proposals_per_second": 15.35795441874816,
+      "warm_s": [
+        1.0794555219981703,
+        1.0041552980037523
+      ]
+    },
+    {
+      "first_s": 14.701347324997187,
+      "implementation": "fused_inferencer_batch",
+      "memory": {
+        "0": {
+          "allocated_gib": 7.948229789733887,
+          "reserved_gib": 8.5078125
+        }
+      },
+      "requested_batch": 32,
+      "status": "valid_proposals",
+      "warm_proposals_per_second": 18.55956395010911,
+      "warm_s": [
+        1.7184286190022249,
+        1.729928258995642
+      ]
+    }
+  ],
+  "scope": "bounded repeated reset-observation capacity; not native task throughput or recurrent history qualification",
+  "simulators_in_probe": 0
+}

@@ -1,0 +1,77 @@
+{
+  "actions_executed": 0,
+  "load_s": 164.68652647999988,
+  "model": "intern",
+  "observation_sha256": "691410cb59e24839b60d29572498db9eae9d36230324626190e329b25670102d",
+  "paid_calls": 0,
+  "provider_file": "/root/physical-execution-lab/configs/local/intern-two-gpu-bound-001/provider.json",
+  "provider_sha256": "06b0a2d081e847f12aefaef87e8d2d935956ac4b7d4bf77bdca93334615e9faf",
+  "repeated_input_caveat": "identical legal RGB/state/text at every batch row; diverse tasks and growing history unmeasured",
+  "rows": [
+    {
+      "first_s": 2.4827727989977575,
+      "implementation": "sequential_shared_runtime_sessions",
+      "memory": {
+        "0": {
+          "allocated_gib": 14.74222183227539,
+          "reserved_gib": 14.841796875
+        },
+        "1": {
+          "allocated_gib": 13.123888969421387,
+          "reserved_gib": 13.38671875
+        }
+      },
+      "requested_batch": 1,
+      "status": "valid_proposals",
+      "warm_proposals_per_second": 1.0626582641504105,
+      "warm_s": [
+        0.9429917100060266,
+        0.9390808879979886
+      ]
+    },
+    {
+      "first_s": 1.931623443000717,
+      "implementation": "sequential_shared_runtime_sessions",
+      "memory": {
+        "0": {
+          "allocated_gib": 14.74222183227539,
+          "reserved_gib": 14.841796875
+        },
+        "1": {
+          "allocated_gib": 13.123888969421387,
+          "reserved_gib": 13.38671875
+        }
+      },
+      "requested_batch": 2,
+      "status": "valid_proposals",
+      "warm_proposals_per_second": 1.079604599533614,
+      "warm_s": [
+        1.8833768390031764,
+        1.8216833299957216
+      ]
+    },
+    {
+      "first_s": 3.652827507001348,
+      "implementation": "sequential_shared_runtime_sessions",
+      "memory": {
+        "0": {
+          "allocated_gib": 14.74222183227539,
+          "reserved_gib": 14.841796875
+        },
+        "1": {
+          "allocated_gib": 13.123888969421387,
+          "reserved_gib": 13.38671875
+        }
+      },
+      "requested_batch": 4,
+      "status": "valid_proposals",
+      "warm_proposals_per_second": 1.0937929209893247,
+      "warm_s": [
+        3.7110694750008406,
+        3.6029292230014107
+      ]
+    }
+  ],
+  "scope": "bounded repeated reset-observation capacity; not native task throughput or recurrent history qualification",
+  "simulators_in_probe": 0
+}

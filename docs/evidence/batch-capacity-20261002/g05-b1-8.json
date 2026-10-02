@@ -1,0 +1,82 @@
+{
+  "actions_executed": 0,
+  "load_s": 52.24771126899577,
+  "model": "g05",
+  "observation_sha256": "691410cb59e24839b60d29572498db9eae9d36230324626190e329b25670102d",
+  "paid_calls": 0,
+  "provider_file": "/root/physical-execution-lab/configs/local/g05-fla-seed0-ancillary-bound-004/provider.json",
+  "provider_sha256": "bbf09c9f2fc273cd1b85c57c97fb8b50dc0e27045623090c45eaf57d43097541",
+  "repeated_input_caveat": "identical legal RGB/state/text at every batch row; diverse tasks and growing history unmeasured",
+  "rows": [
+    {
+      "first_s": 10.140437858004589,
+      "implementation": "fused_inferencer_batch",
+      "memory": {
+        "0": {
+          "allocated_gib": 6.128284454345703,
+          "reserved_gib": 6.376953125
+        }
+      },
+      "requested_batch": 1,
+      "status": "valid_proposals",
+      "warm_proposals_per_second": 1.6046468325789103,
+      "warm_s": [
+        0.6136809140007244,
+        0.6326992609974695
+      ]
+    },
+    {
+      "first_s": 1.621728140002233,
+      "implementation": "fused_inferencer_batch",
+      "memory": {
+        "0": {
+          "allocated_gib": 6.142446994781494,
+          "reserved_gib": 6.412109375
+        }
+      },
+      "requested_batch": 2,
+      "status": "valid_proposals",
+      "warm_proposals_per_second": 3.142747154568236,
+      "warm_s": [
+        0.6302913850013283,
+        0.6424804299967946
+      ]
+    },
+    {
+      "first_s": 1.497219106000557,
+      "implementation": "fused_inferencer_batch",
+      "memory": {
+        "0": {
+          "allocated_gib": 6.175497055053711,
+          "reserved_gib": 6.51171875
+        }
+      },
+      "requested_batch": 4,
+      "status": "valid_proposals",
+      "warm_proposals_per_second": 5.773494242129232,
+      "warm_s": [
+        0.6927764560023206,
+        0.6928662179998355
+      ]
+    },
+    {
+      "first_s": 1.6837897680015885,
+      "implementation": "fused_inferencer_batch",
+      "memory": {
+        "0": {
+          "allocated_gib": 6.382291316986084,
+          "reserved_gib": 6.69140625
+        }
+      },
+      "requested_batch": 8,
+      "status": "valid_proposals",
+      "warm_proposals_per_second": 10.090451539108631,
+      "warm_s": [
+        0.7716586500027915,
+        0.813998834004451
+      ]
+    }
+  ],
+  "scope": "bounded repeated reset-observation capacity; not native task throughput or recurrent history qualification",
+  "simulators_in_probe": 0
+}

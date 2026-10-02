@@ -1,0 +1,171 @@
+{
+  "num_envs_requested": 5,
+  "before": "0, 0, 24081\n1, 0, 24081\n",
+  "scope": "same-task vector reset/render capacity, not mixed-task evaluation or scored rollout",
+  "control_actions": 0,
+  "paid_calls": 0,
+  "policy_calls": 0,
+  "status": "vector_reset_render_passed",
+  "reset_seeds": [
+    0,
+    1,
+    2,
+    0,
+    1
+  ],
+  "environment_count": 5,
+  "camera_checks": [
+    {
+      "env_idx": 0,
+      "seed": 0,
+      "cameras": {
+        "cam_head": {
+          "shape": [
+            480,
+            640,
+            3
+          ],
+          "std": 61.6699760439508
+        },
+        "cam_left_wrist": {
+          "shape": [
+            480,
+            640,
+            3
+          ],
+          "std": 69.94102353060799
+        },
+        "cam_right_wrist": {
+          "shape": [
+            480,
+            640,
+            3
+          ],
+          "std": 64.88953974030274
+        }
+      }
+    },
+    {
+      "env_idx": 1,
+      "seed": 1,
+      "cameras": {
+        "cam_head": {
+          "shape": [
+            480,
+            640,
+            3
+          ],
+          "std": 59.087528719686816
+        },
+        "cam_left_wrist": {
+          "shape": [
+            480,
+            640,
+            3
+          ],
+          "std": 59.70583708858225
+        },
+        "cam_right_wrist": {
+          "shape": [
+            480,
+            640,
+            3
+          ],
+          "std": 62.19007903124042
+        }
+      }
+    },
+    {
+      "env_idx": 2,
+      "seed": 2,
+      "cameras": {
+        "cam_head": {
+          "shape": [
+            480,
+            640,
+            3
+          ],
+          "std": 59.64731600467612
+        },
+        "cam_left_wrist": {
+          "shape": [
+            480,
+            640,
+            3
+          ],
+          "std": 61.33429512792226
+        },
+        "cam_right_wrist": {
+          "shape": [
+            480,
+            640,
+            3
+          ],
+          "std": 60.41694295905944
+        }
+      }
+    },
+    {
+      "env_idx": 3,
+      "seed": 0,
+      "cameras": {
+        "cam_head": {
+          "shape": [
+            480,
+            640,
+            3
+          ],
+          "std": 57.58646279247164
+        },
+        "cam_left_wrist": {
+          "shape": [
+            480,
+            640,
+            3
+          ],
+          "std": 61.25066413893671
+        },
+        "cam_right_wrist": {
+          "shape": [
+            480,
+            640,
+            3
+          ],
+          "std": 61.22344775344324
+        }
+      }
+    },
+    {
+      "env_idx": 4,
+      "seed": 1,
+      "cameras": {
+        "cam_head": {
+          "shape": [
+            480,
+            640,
+            3
+          ],
+          "std": 58.421573904901535
+        },
+        "cam_left_wrist": {
+          "shape": [
+            480,
+            640,
+            3
+          ],
+          "std": 63.83657837591306
+        },
+        "cam_right_wrist": {
+          "shape": [
+            480,
+            640,
+            3
+          ],
+          "std": 57.02558506833818
+        }
+      }
+    }
+  ],
+  "loaded_memory": "0, 9459, 14623\n1, 1, 24080\n",
+  "elapsed_s": 66.36326789199666
+}

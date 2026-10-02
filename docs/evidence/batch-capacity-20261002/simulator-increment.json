@@ -1,0 +1,355 @@
+{
+  "after": [
+    {
+      "free_mib": 8724,
+      "gpu": 0,
+      "used_mib": 15358
+    },
+    {
+      "free_mib": 8497,
+      "gpu": 1,
+      "used_mib": 15585
+    }
+  ],
+  "before": [
+    {
+      "free_mib": 8726,
+      "gpu": 0,
+      "used_mib": 15356
+    },
+    {
+      "free_mib": 8497,
+      "gpu": 1,
+      "used_mib": 15585
+    }
+  ],
+  "case_id": "classify_objects__standard__g0__l0",
+  "command": [
+    "/root/miniconda3/envs/RoboDojo/bin/python3.11",
+    "-u",
+    "-m",
+    "hybrid_rollout.robodojo.robodojo_server.server",
+    "--task",
+    "classify_objects",
+    "--eval-seed",
+    "0",
+    "--port",
+    "19119",
+    "--output",
+    "/root/physical-execution-lab/runs/parallel-capacity-simonly-001/native",
+    "--eval-manifest",
+    "/root/physical-execution-lab/external/GPT-as-Policy/hybrid_rollout/robodojo/eval_panels/robodojo_panel60_v1.json",
+    "--case-file",
+    "/root/physical-execution-lab/runs/parallel-capacity-simonly-001/source_case.json"
+  ],
+  "control_actions": 0,
+  "gpu": 0,
+  "no_task_success_claim": true,
+  "paid_calls": 0,
+  "policy_calls": 0,
+  "samples": [
+    [
+      {
+        "free_mib": 8726,
+        "gpu": 0,
+        "used_mib": 15356
+      },
+      {
+        "free_mib": 8497,
+        "gpu": 1,
+        "used_mib": 15585
+      }
+    ],
+    [
+      {
+        "free_mib": 8318,
+        "gpu": 0,
+        "used_mib": 15763
+      },
+      {
+        "free_mib": 8497,
+        "gpu": 1,
+        "used_mib": 15585
+      }
+    ],
+    [
+      {
+        "free_mib": 8176,
+        "gpu": 0,
+        "used_mib": 15905
+      },
+      {
+        "free_mib": 8497,
+        "gpu": 1,
+        "used_mib": 15585
+      }
+    ],
+    [
+      {
+        "free_mib": 8152,
+        "gpu": 0,
+        "used_mib": 15930
+      },
+      {
+        "free_mib": 8497,
+        "gpu": 1,
+        "used_mib": 15585
+      }
+    ],
+    [
+      {
+        "free_mib": 8152,
+        "gpu": 0,
+        "used_mib": 15930
+      },
+      {
+        "free_mib": 8497,
+        "gpu": 1,
+        "used_mib": 15585
+      }
+    ],
+    [
+      {
+        "free_mib": 8152,
+        "gpu": 0,
+        "used_mib": 15930
+      },
+      {
+        "free_mib": 8497,
+        "gpu": 1,
+        "used_mib": 15585
+      }
+    ],
+    [
+      {
+        "free_mib": 8152,
+        "gpu": 0,
+        "used_mib": 15930
+      },
+      {
+        "free_mib": 8497,
+        "gpu": 1,
+        "used_mib": 15585
+      }
+    ],
+    [
+      {
+        "free_mib": 8120,
+        "gpu": 0,
+        "used_mib": 15962
+      },
+      {
+        "free_mib": 8497,
+        "gpu": 1,
+        "used_mib": 15585
+      }
+    ],
+    [
+      {
+        "free_mib": 8120,
+        "gpu": 0,
+        "used_mib": 15962
+      },
+      {
+        "free_mib": 8497,
+        "gpu": 1,
+        "used_mib": 15585
+      }
+    ],
+    [
+      {
+        "free_mib": 8078,
+        "gpu": 0,
+        "used_mib": 16004
+      },
+      {
+        "free_mib": 8497,
+        "gpu": 1,
+        "used_mib": 15585
+      }
+    ],
+    [
+      {
+        "free_mib": 8262,
+        "gpu": 0,
+        "used_mib": 15820
+      },
+      {
+        "free_mib": 8497,
+        "gpu": 1,
+        "used_mib": 15585
+      }
+    ],
+    [
+      {
+        "free_mib": 8212,
+        "gpu": 0,
+        "used_mib": 15870
+      },
+      {
+        "free_mib": 8497,
+        "gpu": 1,
+        "used_mib": 15585
+      }
+    ],
+    [
+      {
+        "free_mib": 8230,
+        "gpu": 0,
+        "used_mib": 15852
+      },
+      {
+        "free_mib": 8497,
+        "gpu": 1,
+        "used_mib": 15585
+      }
+    ],
+    [
+      {
+        "free_mib": 8230,
+        "gpu": 0,
+        "used_mib": 15852
+      },
+      {
+        "free_mib": 8497,
+        "gpu": 1,
+        "used_mib": 15585
+      }
+    ],
+    [
+      {
+        "free_mib": 8230,
+        "gpu": 0,
+        "used_mib": 15852
+      },
+      {
+        "free_mib": 8497,
+        "gpu": 1,
+        "used_mib": 15585
+      }
+    ],
+    [
+      {
+        "free_mib": 2904,
+        "gpu": 0,
+        "used_mib": 21177
+      },
+      {
+        "free_mib": 8497,
+        "gpu": 1,
+        "used_mib": 15585
+      }
+    ],
+    [
+      {
+        "free_mib": 2904,
+        "gpu": 0,
+        "used_mib": 21177
+      },
+      {
+        "free_mib": 8497,
+        "gpu": 1,
+        "used_mib": 15585
+      }
+    ],
+    [
+      {
+        "free_mib": 2904,
+        "gpu": 0,
+        "used_mib": 21177
+      },
+      {
+        "free_mib": 8497,
+        "gpu": 1,
+        "used_mib": 15585
+      }
+    ],
+    [
+      {
+        "free_mib": 2904,
+        "gpu": 0,
+        "used_mib": 21177
+      },
+      {
+        "free_mib": 8497,
+        "gpu": 1,
+        "used_mib": 15585
+      }
+    ],
+    [
+      {
+        "free_mib": 2904,
+        "gpu": 0,
+        "used_mib": 21177
+      },
+      {
+        "free_mib": 8497,
+        "gpu": 1,
+        "used_mib": 15585
+      }
+    ],
+    [
+      {
+        "free_mib": 2904,
+        "gpu": 0,
+        "used_mib": 21177
+      },
+      {
+        "free_mib": 8497,
+        "gpu": 1,
+        "used_mib": 15585
+      }
+    ],
+    [
+      {
+        "free_mib": 2904,
+        "gpu": 0,
+        "used_mib": 21177
+      },
+      {
+        "free_mib": 8497,
+        "gpu": 1,
+        "used_mib": 15585
+      }
+    ],
+    [
+      {
+        "free_mib": 2904,
+        "gpu": 0,
+        "used_mib": 21177
+      },
+      {
+        "free_mib": 8497,
+        "gpu": 1,
+        "used_mib": 15585
+      }
+    ],
+    [
+      {
+        "free_mib": 2904,
+        "gpu": 0,
+        "used_mib": 21177
+      },
+      {
+        "free_mib": 8497,
+        "gpu": 1,
+        "used_mib": 15585
+      }
+    ],
+    [
+      {
+        "free_mib": 2904,
+        "gpu": 0,
+        "used_mib": 21177
+      },
+      {
+        "free_mib": 8497,
+        "gpu": 1,
+        "used_mib": 15585
+      }
+    ]
+  ],
+  "scope": "one extra reset/render simulator beside a live policy+sim worker; not five-task throughput",
+  "simulator_port": 19119,
+  "status": "reset_render_completed_no_actions"
+}

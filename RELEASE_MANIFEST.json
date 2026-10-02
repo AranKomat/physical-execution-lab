@@ -1067,6 +1067,18 @@
     "docs/evidence/semantic-pi05-hierarchy-parallel-001/motor_only/sort-l1/source-identity.json": "f5d791db6665ccc59a510b4a75db73a35f4d72da9623cc611336b6c5cd0a3986",
     "docs/evidence/semantic-pi05-hierarchy-parallel-001/motor_only/sort-l1/worker-binding/config.json": "fe06660321d74d95fee73d7011cde6e64ec9578f4a04aedbae1e6879061787d1",
     "docs/evidence/semantic-pi05-hierarchy-parallel-001/motor_only/sort-l1/worker-binding/freeze.json": "499dd72a2bf1edc9c62c19bf91fbd8b40386395fa6106a61d684f45d401d2bce",
-    "docs/evidence/semantic-pi05-hierarchy-parallel-001/motor_only/sort-l1/worker-binding/qualification.json": "316566ce15cac55fdce35e31cdeeab8c2c4811f9e3053cf762740d8866b1c64d"
+    "docs/evidence/semantic-pi05-hierarchy-parallel-001/motor_only/sort-l1/worker-binding/qualification.json": "316566ce15cac55fdce35e31cdeeab8c2c4811f9e3053cf762740d8866b1c64d",
+    "docs/SIMULATOR_BATCH_CAPACITY_20261002.md": "da89fc27d8c5388fc2fb672abbe2d8e1be846a9f1fea21a0dc3401a0450844b8",
+    "docs/evidence/batch-capacity-20261002/g05-b1-8.json": "65421dfb6ea6e76dfc4e716237cad6517abb397fd21871c0678736e1d7e6c639",
+    "docs/evidence/batch-capacity-20261002/g05-b16-32.json": "8d1f713eab5262bbb5d8c539d04b6dc480f6974f863eef8bd79e9cd8955f9ae0",
+    "docs/evidence/batch-capacity-20261002/intern-sessions1-4.json": "25e977aa3b8f09d6e7c6499698ff818cf72a1dda5b55dbf2c14549a11fbd3005",
+    "docs/evidence/batch-capacity-20261002/operator_batch_capacity_pi05001.py": "c84d416bcd48004bc38700f48871fc89d41362e112e5aba6a31d1d15f403183b",
+    "docs/evidence/batch-capacity-20261002/operator_batch_capacity_xpl001.py": "c01a6495cc79a063291a93f25ad5f77c5338fff9622d9b4cfdf9636392894a94",
+    "docs/evidence/batch-capacity-20261002/operator_parallel_sim_capacity001.py": "0e2924e5acfa31ceb2bfa543ca8bd2ed317c5aa57aa5c512ae07c83e2146bb8e",
+    "docs/evidence/batch-capacity-20261002/operator_vector_sim_capacity001.py": "c582fcc9af67f087a6849b2b7d687d88eb038791f8c1ec9242c9c199ccd33121",
+    "docs/evidence/batch-capacity-20261002/pi05-b1-8.json": "1dab20e72c5a5a8fa4e52165f38181a67102c106935c7bc50058afaa8f6f5673",
+    "docs/evidence/batch-capacity-20261002/pi05-b16-32.json": "09bd54460d0b0f11283feb6830e064219ee753bd73556fae133d407c3cc4abea",
+    "docs/evidence/batch-capacity-20261002/simulator-increment.json": "9575e93d4d8ca0ea709903e1f77fb9da419ce168a688cfc0531bbce206ffe507",
+    "docs/evidence/batch-capacity-20261002/vector-sim-5.json": "2bcc3c94acf20ff7b2872b9762e1e7f382dabc3ab5772746822fe972d610f4ee"
   }
 }

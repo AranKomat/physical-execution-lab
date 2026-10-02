@@ -1,0 +1,62 @@
+{
+  "actions_executed": 0,
+  "load_s": 11.455943239998305,
+  "model": "pi05",
+  "observation_sha256": "691410cb59e24839b60d29572498db9eae9d36230324626190e329b25670102d",
+  "paid_calls": 0,
+  "provider_sha256": "65684503026a6f108a2cebad66e63528bc6c5dd39cf2d33b0f7398846f98d7db",
+  "repeated_input_caveat": "identical retained legal RGB/state/text per row; diverse tasks unmeasured",
+  "rng_caveat": "batched seed0 sampling is not per-episode RNG parity",
+  "rows": [
+    {
+      "first_s": 19.392683115998807,
+      "implementation": "per_row_native_transforms_then_fused_model_batch",
+      "jax_memory_stats": {
+        "bytes_in_use": 6974246144,
+        "bytes_limit": 18937970688,
+        "bytes_reserved": 0,
+        "largest_alloc_size": 2415919104,
+        "largest_free_block_bytes": 0,
+        "num_allocs": 3518,
+        "peak_bytes_in_use": 8948038912,
+        "peak_bytes_reserved": 0,
+        "peak_pool_bytes": 17257463808,
+        "pool_bytes": 17257463808
+      },
+      "nvidia_smi_snapshot": "0, 16891, 7191\n1, 0, 24081\n",
+      "requested_batch": 16,
+      "status": "valid_proposals",
+      "warm_proposals_per_second": 20.074826267664793,
+      "warm_s": [
+        0.7971677799941972,
+        0.7968684309962555
+      ]
+    },
+    {
+      "first_s": 20.112878446998366,
+      "implementation": "per_row_native_transforms_then_fused_model_batch",
+      "jax_memory_stats": {
+        "bytes_in_use": 7003305984,
+        "bytes_limit": 18937970688,
+        "bytes_reserved": 0,
+        "largest_alloc_size": 3947373312,
+        "largest_free_block_bytes": 0,
+        "num_allocs": 7316,
+        "peak_bytes_in_use": 10950884096,
+        "peak_bytes_reserved": 0,
+        "peak_pool_bytes": 17257463808,
+        "pool_bytes": 17257463808
+      },
+      "nvidia_smi_snapshot": "0, 16891, 7191\n1, 0, 24081\n",
+      "requested_batch": 32,
+      "status": "valid_proposals",
+      "warm_proposals_per_second": 20.470045282652798,
+      "warm_s": [
+        1.5570725420038798,
+        1.5694471660026466
+      ]
+    }
+  ],
+  "scope": "model-level capacity; native wire server has no batch scheduler",
+  "simulators_in_probe": 0
+}

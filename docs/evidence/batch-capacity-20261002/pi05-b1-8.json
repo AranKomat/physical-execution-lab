@@ -1,0 +1,110 @@
+{
+  "actions_executed": 0,
+  "load_s": 11.134399555005075,
+  "model": "pi05",
+  "observation_sha256": "691410cb59e24839b60d29572498db9eae9d36230324626190e329b25670102d",
+  "paid_calls": 0,
+  "provider_sha256": "65684503026a6f108a2cebad66e63528bc6c5dd39cf2d33b0f7398846f98d7db",
+  "repeated_input_caveat": "identical retained legal RGB/state/text per row; diverse tasks unmeasured",
+  "rng_caveat": "batched seed0 sampling is not per-episode RNG parity",
+  "rows": [
+    {
+      "first_s": 14.888357251998968,
+      "implementation": "per_row_native_transforms_then_fused_model_batch",
+      "jax_memory_stats": {
+        "bytes_in_use": 6948632576,
+        "bytes_limit": 18937970688,
+        "bytes_reserved": 0,
+        "largest_alloc_size": 2415919104,
+        "largest_free_block_bytes": 0,
+        "num_allocs": 2880,
+        "peak_bytes_in_use": 7173622272,
+        "peak_bytes_reserved": 0,
+        "peak_pool_bytes": 8608808960,
+        "pool_bytes": 8608808960
+      },
+      "nvidia_smi_snapshot": "0, 8641, 15441\n1, 0, 24081\n",
+      "requested_batch": 1,
+      "status": "valid_proposals",
+      "warm_proposals_per_second": 10.857793068698705,
+      "warm_s": [
+        0.09139612599392422,
+        0.09280336899973918
+      ]
+    },
+    {
+      "first_s": 13.842055434004578,
+      "implementation": "per_row_native_transforms_then_fused_model_batch",
+      "jax_memory_stats": {
+        "bytes_in_use": 6950446336,
+        "bytes_limit": 18937970688,
+        "bytes_reserved": 0,
+        "largest_alloc_size": 2415919104,
+        "largest_free_block_bytes": 0,
+        "num_allocs": 6031,
+        "peak_bytes_in_use": 7235864320,
+        "peak_bytes_reserved": 0,
+        "peak_pool_bytes": 8608808960,
+        "pool_bytes": 8608808960
+      },
+      "nvidia_smi_snapshot": "0, 8643, 15439\n1, 0, 24081\n",
+      "requested_batch": 2,
+      "status": "valid_proposals",
+      "warm_proposals_per_second": 12.849176739482129,
+      "warm_s": [
+        0.15308167599869194,
+        0.1582223149962374
+      ]
+    },
+    {
+      "first_s": 14.704704653006047,
+      "implementation": "per_row_native_transforms_then_fused_model_batch",
+      "jax_memory_stats": {
+        "bytes_in_use": 6954095872,
+        "bytes_limit": 18937970688,
+        "bytes_reserved": 0,
+        "largest_alloc_size": 2415919104,
+        "largest_free_block_bytes": 0,
+        "num_allocs": 9240,
+        "peak_bytes_in_use": 7403657472,
+        "peak_bytes_reserved": 0,
+        "peak_pool_bytes": 8608808960,
+        "pool_bytes": 8608808960
+      },
+      "nvidia_smi_snapshot": "0, 8643, 15439\n1, 0, 24081\n",
+      "requested_batch": 4,
+      "status": "valid_proposals",
+      "warm_proposals_per_second": 16.54821625858804,
+      "warm_s": [
+        0.24099092399410438,
+        0.24244486600218806
+      ]
+    },
+    {
+      "first_s": 18.0251313330009,
+      "implementation": "per_row_native_transforms_then_fused_model_batch",
+      "jax_memory_stats": {
+        "bytes_in_use": 6961370368,
+        "bytes_limit": 18937970688,
+        "bytes_reserved": 0,
+        "largest_alloc_size": 2415919104,
+        "largest_free_block_bytes": 0,
+        "num_allocs": 12529,
+        "peak_bytes_in_use": 7793393920,
+        "peak_bytes_reserved": 0,
+        "peak_pool_bytes": 17198743552,
+        "pool_bytes": 17198743552
+      },
+      "nvidia_smi_snapshot": "0, 16835, 7247\n1, 395, 23687\n",
+      "requested_batch": 8,
+      "status": "valid_proposals",
+      "warm_proposals_per_second": 18.882560450031423,
+      "warm_s": [
+        0.4222514289940591,
+        0.4250912839997909
+      ]
+    }
+  ],
+  "scope": "model-level capacity; native wire server has no batch scheduler",
+  "simulators_in_probe": 0
+}
