@@ -3,7 +3,6 @@
 import argparse
 import hashlib
 import json
-import os
 from pathlib import Path
 import sys
 import time
@@ -66,6 +65,10 @@ def main():
     batch = 0
     try:
         while not (out / 'stop-service').exists():
+            for wave in waves:
+                report = wave / 'report.json'
+                if report.exists() and json.loads(report.read_text())['status'] == 'error_stop_no_retry':
+                    raise ContractError('failed simulator group invalidates the full cohort')
             active = [wave for wave in waves if not (wave / 'stop-worker').exists()]
             if not active:
                 break

@@ -96,6 +96,21 @@ not completed phase/task results. No paid calls are used by this initial run.
 The native-equivalence admission remains pending; do not claim the 40-slot
 approach comparison complete merely because this launcher exists.
 
+First full-cohort startup (`pi05-full-panel-baseline001`) loaded all ten scenes
+and passed physical-config equality and fixed-layout/horizon checks for the
+four-row datagen and four-row teleop groups. All three simulators occupied about
+17.6GiB on GPU0 while model loading occupied about8.5GiB on GPU1. The support
+group then exposed an adapter bug: native `make_kong` has no partial-score
+registration method, unlike the other selected tasks. Its binary native reward
+must be retained, not replaced with an invented partial score. The cohort was
+stopped, owned processes cleaned up, and both GPUs returned to zero usage.
+This is failed startup evidence, not a completed baseline or task failure.
+
+The router now registers partial scores only where native tasks supply them.
+The parent and fused service also reject an explicit group failure regardless
+of its process exit code: Isaac application shutdown can mask a Python error
+with exit0. No automatic retry or smaller-task substitution is permitted.
+
 Compare approaches first, motor models afterward. This is the next experiment
 priority, not a completed comparison or a substitute for the wider V5 scope.
 Roster selection below is fixed before new outcomes. Exact resolved treatment

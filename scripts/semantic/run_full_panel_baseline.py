@@ -97,6 +97,10 @@ def main():
                 raise RuntimeError('fused model worker failed; no retry')
             if any(child.poll() not in (None, 0) for child in simulators):
                 raise RuntimeError('distinct-task group failed; retain partial cohort evidence')
+            for wave in waves:
+                path = wave / 'report.json'
+                if path.exists() and load_json(path)['status'] == 'error_stop_no_retry':
+                    raise RuntimeError('native group reported failure, regardless of process exit code')
             if time.monotonic() > deadline:
                 raise TimeoutError('full cohort wall limit')
             if shutil.disk_usage(ROOT).free < 1024**3:
@@ -105,8 +109,10 @@ def main():
                 if hashlib.sha256((ROOT / path).read_bytes()).hexdigest() != expected:
                     raise ContractError('executor source changed during cohort execution')
             time.sleep(1)
-        report.update(status='completed_full_original_only_cohort',
-                      groups=[load_json(wave / 'report.json') for wave in waves])
+        results = [load_json(wave / 'report.json') for wave in waves]
+        if any(row['status'] in ('starting', 'native_ready', 'error_stop_no_retry') for row in results):
+            raise RuntimeError('simulator exit is not proof of completed episodes')
+        report.update(status='completed_full_original_only_cohort', groups=results)
     except BaseException as exc:
         report.update(status='error_stop_no_retry', error=f'{type(exc).__name__}: {exc}')
         raise

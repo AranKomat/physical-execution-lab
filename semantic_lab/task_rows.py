@@ -242,7 +242,8 @@ def create_mixed_eval_env(configs, app):
 
         def get_score(self):
             for row in self.task_rows:
-                row.get_score()
+                if hasattr(row, 'get_score'):
+                    row.get_score()
 
         def gen_instruction(self, env_idx):
             return self.task_rows[env_idx].gen_instruction(0)
