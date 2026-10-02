@@ -1031,7 +1031,7 @@
     "docs/evidence/semantic-pi05-hierarchy-001/task_plus_subtask/result.json": "8a7e7f9cf62099e7585bc0b5c42c1c5e1952cdb7d059fe24cb9277702b82bbbe",
     "docs/evidence/semantic-pi05-hierarchy-001/task_plus_subtask/semantic-decisions.json": "205a4088ac95da694957d08a6a1b81b4c69193bf25c20b423e7430a319efa818",
     "docs/evidence/semantic-pi05-hierarchy-001/task_plus_subtask/source-identity.json": "f5d791db6665ccc59a510b4a75db73a35f4d72da9623cc611336b6c5cd0a3986",
-    "docs/semantic/MATCHED_HIERARCHY_PROGRESS_20261002.md": "c196ac88389b0cb857d667b5f2eeb3c7b2ce486ee26dc1365b8df80710a917c2",
+    "docs/semantic/MATCHED_HIERARCHY_PROGRESS_20261002.md": "7107e0624b650631f6807bf4727e57edde0c6f78726acdc33a51040a0f228eee",
     "docs/evidence/semantic-pi05-hierarchy-001/task_plus_subtask/sort-l2/api-summary.json": "1ed5662dbd32e2bd4ace231d7b559e90c3c61a8e1eb10dac34b03f7aa291a33d",
     "docs/evidence/semantic-pi05-hierarchy-001/task_plus_subtask/sort-l2/initial-observation-fingerprint.json": "e017a3df0bea46e6b9c0d3efd451acd4ba5446062bfa45367a85d5d2276832c8",
     "docs/evidence/semantic-pi05-hierarchy-001/task_plus_subtask/sort-l2/offline-audit.json": "7681ffe88b171ac9093111f0695308f6c85835b11d905cd70d805b34fa951924",
@@ -1275,6 +1275,11 @@
     "semantic_lab/token_retention.py": "2755a9a4fae843749a0d1b8e3fe0c48ed703a5cbee1336da655e39f580f1ab7d",
     "tests/semantic/test_token_retention.py": "2096d5dc6d533b691a47015e257a375ee165526fdbd0cab6014d7ef24d99f22b",
     "docs/evidence/reference-execution-binding001-20261002/live-token-guard-probe001.json": "31d762f668e6795fcfb081776aa559e3a62811663fa4acba41071ea4756ca872",
-    "docs/semantic/PI05_APPROACH_COMPARISON_PLAN_20261002.md": "39866ee30d8d507fb36c150468ff2a01e7871c85d7e6705f1217c16da4b4a8a7"
+    "docs/semantic/PI05_APPROACH_COMPARISON_PLAN_20261002.md": "ef022250f10802ecd73c1bfe63d7a2b105cbd70c08d87028fb32d2e24a98134f",
+    "docs/evidence/reference-execution-binding001-20261002/operator_reference_native001.py": "dfb385557ab8be0b01eb6e6728c852b87816f108a16512c9c87f59173e605f56",
+    "semantic_lab/robot_view.py": "4c178b451a1f07d0fcbf1e648e17c9cfef05aee61ba48c2d3207ca3514c7e3a0",
+    "semantic_lab/vector.py": "b5d9a28abb87fcbacd5ac32f1b2ad53651ae6c09d92fd0bf3f4aa0a3323f58b2",
+    "tests/semantic/test_robot_view.py": "a8a1287c18e38d639f003ef83d984e841fd84ddf38d5d1150334eae473f615fc",
+    "tests/semantic/test_vector_controls.py": "6e5259ccd24c05bb1ae878abf2dda142caadd40cba89b1db97c648c594df988a"
   }
 }

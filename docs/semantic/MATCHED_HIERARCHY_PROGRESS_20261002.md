@@ -791,3 +791,13 @@ survived101/200 tokens. This is not a new simulator task result or obedience
 proof. No additional guard/capacity sweep is planned. Source-bound qualification,
 native variant admission and numeric/direct comparison integration remain the
 next substantive items, followed by the fixed ten-task approach screen.
+
+Numeric/direct integration has advanced beyond preparation: the existing
+multibench episode loop runs through the extracted shared coordinator in CPU
+fixtures, with independent inference cadence after shortening and zero motor
+inference in direct mode. Strict semantic prefix barriers remain the default.
+A selected-environment robot view is implemented for the existing source DLS,
+whose singleton implementation otherwise reads environment0. Native indexed
+DLS/previews, controller/variant admission, actor-specific paid relay bindings
+and resolved campaign freeze remain incomplete. No native comparison outcome
+or phase completion is implied; see the approach plan's integration checklist.

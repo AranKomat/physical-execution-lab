@@ -80,3 +80,36 @@ controls/ACKs, success, partial score, wall time including startup separately,
 planner wait, GPT/policy calls and settled/reserved cost. Do not import old
 screen outcomes as fresh matched controls. Publish differences descriptively;
 one run per task cannot establish a reliable hierarchy advantage.
+
+## Execution Integration Progress
+
+The old vector coordinator required all active episodes to request the same
+operation at every barrier. Numeric shortening makes one episode request a new
+prediction while another still requests a native action, so that restriction
+would stop valid numeric/direct experiments rather than batch them.
+
+- [x] Extract the existing coordinator to `semantic_lab/vector.py`, preserving
+  strict semantic barriers by default and adding explicit mixed-operation mode.
+- [x] Route the existing numeric/direct episode loop through per-episode facades
+  in CPU fixtures, without duplicating its actor/governor/controller logic.
+- [x] Resolve read-only preview/inference subsets before native action dispatch;
+  retain separate per-episode inference cadence and contiguous ACK streams.
+- [x] Prepare a robot-only environment-index view for the pinned source DLS.
+- [ ] Wire native indexed source DLS/previews and audit emitted joint commands.
+- [ ] Qualify the native correction path and task variants before paid trials.
+- [ ] Bind `robot_decision` paid review separately from `semantic_goal`, preserving
+  the shared ledger, reservations and no-retry contract.
+- [ ] Freeze resolved conditions/source/cases, then run the matched task waves.
+
+The source `DualKinematics` reads robot queries and limits at local index0.
+Native robot queries return dictionaries keyed by global environment index.
+`SingleEnvironmentRobotManager` requests only its selected native index,
+rekeys that robot-only reply to0, and slices that environment's joint limits.
+It exposes no generic scene/object forwarding. Missing robot values fail rather
+than falling back to environment0. Native FK/DLS qualification remains pending.
+
+CPU integration uses authored synthetic controls, not policies/LLMs or collision
+physics. It demonstrates differing inference/action barriers, policy-free direct
+dispatch, strict-default rejection, uncertain-write no-retry handling, and
+retirement on runner errors. These tests are not approach performance or phase
+completion. No new paid requests or simulator actions were issued for this work.
