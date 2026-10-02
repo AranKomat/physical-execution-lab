@@ -1,0 +1,180 @@
+{
+  "formal": true,
+  "reference_scores_loaded_into_actor": false,
+  "schema": "multibench.manifest.v1",
+  "source_case_file_sha256": "b2ef651cc5d4c90375165a852030a3864b33d9410986dafedde7b04253f1c39a",
+  "source_panel_sha256": "8218ab8a8b3a30d286a58130e8770a169e6133021f01e338ee5c6610ef93021b",
+  "training_examples_loaded": false,
+  "cases": [
+    {
+      "benchmark": "robodojo",
+      "case_id": "classify_objects__standard__g0__l0",
+      "eval_seed": 0,
+      "horizon": 1100,
+      "layout_id": 0,
+      "layout_path": "Assets/Eval_Layout/RoboDojo/arx_x5/0/classify_objects_0.json",
+      "layout_sha256": "5ceb9e18e6d8490a7db85dd001462d63265c297ea6fad0d7438364deb2de3ece",
+      "native_hz": 25.0,
+      "partition": "dev",
+      "runtime_task": "classify_objects",
+      "source_case": {
+        "case_id": "classify_objects__standard__g0__l0",
+        "eval_seed": 0,
+        "layout": {
+          "path": "Assets/Eval_Layout/RoboDojo/arx_x5/0/classify_objects_0.json",
+          "sha256": "5ceb9e18e6d8490a7db85dd001462d63265c297ea6fad0d7438364deb2de3ece"
+        },
+        "layout_id": 0,
+        "native_support_trajectories": [],
+        "policy_rng_seed": 0,
+        "replica_id": 5,
+        "reset_seed": 0,
+        "rollout_index": 0,
+        "runtime_task": "classify_objects",
+        "simulator_initial_seed": 0,
+        "task": "classify_objects",
+        "variant": "standard"
+      },
+      "task": "classify_objects",
+      "task_group": "classify_objects",
+      "variant": "standard"
+    },
+    {
+      "benchmark": "robodojo",
+      "case_id": "build_tower__standard__g0__l0",
+      "eval_seed": 0,
+      "horizon": 1050,
+      "layout_id": 0,
+      "layout_path": "Assets/Eval_Layout/RoboDojo/arx_x5/0/build_tower_0.json",
+      "layout_sha256": "afcf896086392357a8826f84bebe4910dcb7a5f1b84e7be435e16e3d5c3607a4",
+      "native_hz": 25.0,
+      "partition": "dev",
+      "runtime_task": "build_tower",
+      "source_case": {
+        "case_id": "build_tower__standard__g0__l0",
+        "eval_seed": 0,
+        "layout": {
+          "path": "Assets/Eval_Layout/RoboDojo/arx_x5/0/build_tower_0.json",
+          "sha256": "afcf896086392357a8826f84bebe4910dcb7a5f1b84e7be435e16e3d5c3607a4"
+        },
+        "layout_id": 0,
+        "native_support_trajectories": [],
+        "policy_rng_seed": 0,
+        "replica_id": 6,
+        "reset_seed": 0,
+        "rollout_index": 0,
+        "runtime_task": "build_tower",
+        "simulator_initial_seed": 0,
+        "task": "build_tower",
+        "variant": "standard"
+      },
+      "task": "build_tower",
+      "task_group": "build_tower",
+      "variant": "standard"
+    },
+    {
+      "benchmark": "robodojo",
+      "case_id": "classify_objects__standard__g0__l1",
+      "eval_seed": 0,
+      "horizon": 1100,
+      "layout_id": 1,
+      "layout_path": "Assets/Eval_Layout/RoboDojo/arx_x5/0/classify_objects_1.json",
+      "layout_sha256": "013d7141ffc9865d7cccf650301f642e6b83b3eb59f78cf5b1d0caf47158e17a",
+      "native_hz": 25.0,
+      "partition": "dev",
+      "runtime_task": "classify_objects",
+      "source_case": {
+        "case_id": "classify_objects__standard__g0__l1",
+        "eval_seed": 0,
+        "layout": {
+          "path": "Assets/Eval_Layout/RoboDojo/arx_x5/0/classify_objects_1.json",
+          "sha256": "013d7141ffc9865d7cccf650301f642e6b83b3eb59f78cf5b1d0caf47158e17a"
+        },
+        "layout_id": 1,
+        "native_support_trajectories": [],
+        "policy_rng_seed": 0,
+        "replica_id": 5,
+        "reset_seed": 1,
+        "rollout_index": 1,
+        "runtime_task": "classify_objects",
+        "simulator_initial_seed": 0,
+        "task": "classify_objects",
+        "variant": "standard"
+      },
+      "task": "classify_objects",
+      "task_group": "classify_objects",
+      "variant": "standard"
+    },
+    {
+      "benchmark": "robodojo",
+      "case_id": "build_tower__standard__g0__l1",
+      "eval_seed": 0,
+      "horizon": 1050,
+      "layout_id": 1,
+      "layout_path": "Assets/Eval_Layout/RoboDojo/arx_x5/0/build_tower_1.json",
+      "layout_sha256": "c4c67f1c1c2abe8ae32d2686048e61eb6e4396c79025b30779091f14705db18c",
+      "native_hz": 25.0,
+      "partition": "dev",
+      "runtime_task": "build_tower",
+      "source_case": {
+        "case_id": "build_tower__standard__g0__l1",
+        "eval_seed": 0,
+        "layout": {
+          "path": "Assets/Eval_Layout/RoboDojo/arx_x5/0/build_tower_1.json",
+          "sha256": "c4c67f1c1c2abe8ae32d2686048e61eb6e4396c79025b30779091f14705db18c"
+        },
+        "layout_id": 1,
+        "native_support_trajectories": [],
+        "policy_rng_seed": 0,
+        "replica_id": 6,
+        "reset_seed": 1,
+        "rollout_index": 1,
+        "runtime_task": "build_tower",
+        "simulator_initial_seed": 0,
+        "task": "build_tower",
+        "variant": "standard"
+      },
+      "task": "build_tower",
+      "task_group": "build_tower",
+      "variant": "standard"
+    },
+    {
+      "benchmark": "robodojo",
+      "case_id": "classify_objects__standard__g0__l2",
+      "eval_seed": 0,
+      "horizon": 1100,
+      "layout_id": 2,
+      "layout_path": "Assets/Eval_Layout/RoboDojo/arx_x5/0/classify_objects_2.json",
+      "layout_sha256": "6b3a30251bd92a465ffdc82436e14dde84879906eeab3b0e8944865b9eef38f7",
+      "native_hz": 25.0,
+      "partition": "dev",
+      "runtime_task": "classify_objects",
+      "source_case": {
+        "case_id": "classify_objects__standard__g0__l2",
+        "eval_seed": 0,
+        "layout": {
+          "path": "Assets/Eval_Layout/RoboDojo/arx_x5/0/classify_objects_2.json",
+          "sha256": "6b3a30251bd92a465ffdc82436e14dde84879906eeab3b0e8944865b9eef38f7"
+        },
+        "layout_id": 2,
+        "native_support_trajectories": [],
+        "policy_rng_seed": 0,
+        "replica_id": 5,
+        "reset_seed": 2,
+        "rollout_index": 2,
+        "runtime_task": "classify_objects",
+        "simulator_initial_seed": 0,
+        "task": "classify_objects",
+        "variant": "standard"
+      },
+      "task": "classify_objects",
+      "task_group": "classify_objects",
+      "variant": "standard"
+    }
+  ],
+  "report_only_manifest": true,
+  "executed_manifest_sha256": "38d25c3c416151db417794c64d87a4c7a4884a2961dca4a88ae1a125c5c3cb50",
+  "frozen_roster_plan_sha256": "cb560bf8ba7185801763e06f0854e2d37b6c207bc62a2ac8f84f8b0bc0697935",
+  "claim_scope": "interim frozen five-case development coverage, not a complete benchmark estimate",
+  "sha256": "9defd82cf7329690e20c1e214782fadfde9d359701601abed507e6e7a1866061"
+}

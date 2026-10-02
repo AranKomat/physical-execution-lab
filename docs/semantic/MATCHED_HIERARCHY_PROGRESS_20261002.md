@@ -6,7 +6,7 @@
 |---|---|
 | A: no-interference | Passed native cadence/prompt audit for synchronous stateless pi0.5; not bitwise trajectory parity |
 | B: conditioning | Actual source tokenizer/context/ACK plumbing and responsiveness passed; obedience not established |
-| C: matched hierarchy | First pair terminal/audited; sorting layout 2 candidate abstained, fresh control unrun; three other pairs and five subtask-only variants unrun |
+| C: matched hierarchy | 2/5 primary pairs attempted and audited: tower positive pair, sorting candidate abstention/control failure; three pairs and five subtask-only variants unrun |
 | D: semantic recovery | Not run; disabled in current conditions |
 | E: held-out/second backend | Not run under V5; opened historical task cannot serve as untouched held-out evidence |
 
@@ -87,10 +87,22 @@ Its task-plus-subtask episode **abstained at 315 actions**, status
 calls/$0.02077150, 249.24 s wall. Two prompt changes, no controller faults,
 resets, resampling, shortening or unresolved actions. The planner retracted a
 prior claim that the right gripper held a wristwatch; recovery is disabled.
+Retrospective inspection of the exact legal RGB previews shows the watch
+between the right fingers at step 210 and on the table at step 315. A drop or
+insecure grasp is possible; the later image alone does not prove that the
+earlier claim was false. No privileged state was used for this observation.
 It also explicitly noted that category-to-basket labels were not visible and
 its white-for-vehicles/blue-for-watches assignment was a choice, not observed
 ground truth. This exposes both perception/claim and goal-specification
 uncertainty; neither is diagnosed as the sole cause yet.
+
+Evaluator-side source inspection finds that the original task instruction is
+only `Sort the objects by category into the three baskets.` The task's
+`_score_basket_checks` enumerates category alternatives for each basket and
+checks purity/settling. Absence of visible color labels alone is therefore not
+evidence of a wrong required color assignment or an impossible task. This
+inspection is retrospective analysis, not information supplied to the actor;
+no condition or instruction was changed.
 
 The source/prefix/ACK audit passes through the stop. The operator initially
 reported the CLI's nonzero abstention exit as a generic condition error; the
@@ -98,9 +110,17 @@ retained result itself correctly says semantic abstention. Future operator
 handling distinguishes this expected incomplete outcome from a harness fault.
 No retry or condition modification was performed.
 
-The fresh original-only sorting control is still unrun. Do not substitute the
-historical screen for that missing control or assign a native score to the
-stopped candidate. All 723 backup files are SHA-verified locally; 316 redundant
+The fresh original-only sorting control failed at the 1100-action horizon,
+score 0.0, 74 policy calls, zero GPT calls, 645.36 s wall and 44 simulated
+seconds. Its source/prefix/ACK/evaluator audit passes, without controller faults,
+resets, corrections or shortening. The final five-action prefix ended at the
+native horizon, not by GPT intervention. All 2,320 backup files are locally
+SHA-verified.
+
+Both conditions were unsuccessful on this harder case. The candidate's shorter
+time/action count reflects abstention, not more efficient task execution. Do
+not assign a native score to the stopped candidate. All 723 candidate backup
+files are SHA-verified locally; 316 redundant
 remote native observations were retired only after rechecking their hashes.
 The retirement helper initially refused the new semantic-abstention status,
 before deleting anything. It now admits that terminal status only with the
@@ -113,8 +133,8 @@ assets, checkpoints or environments.
 The first development pair is terminal. Both source/prefix/ACK/evaluator audits
 pass. All 2,216 control payloads and 1,586 candidate payloads were locally backed
 up and SHA-verified before redundant remote sensor retirement. One full primary
-pair and the second pair's candidate are terminal; the sorting control is
-unrun. Three other pairs and all five subtask-only episodes remain unrun;
+pair and the second pair's attempts are terminal. Three other pairs and all
+five subtask-only episodes remain unrun;
 retain them as missing until actually executed. Do not present 1/1 as a
 full-roster success rate or a causal hierarchy gain. After saving the control,
 continue the existing roster within disk/API limits. Semantic recovery and
@@ -123,3 +143,10 @@ untouched held-out/second-backend experiments remain later phases.
 Public records: `docs/evidence/semantic-pi05-hierarchy-001/`.
 Full local backup: `runs/native-evidence/semantic-pi05-hierarchy-001/`.
 Remote configs: `configs/local/semantic-pi05-hierarchy-001/`.
+
+The interim coverage report uses `report-manifest.json`, derived without
+changing any case from the frozen five-case roster. It records the executed
+full-manifest hash and original roster-plan hash. Do not use an old screen's
+different source-panel manifest or all ten development layouts as the report
+denominator. Missing cases remain explicit; partial coverage is not a finished
+success-rate estimate or a basis for significance claims.

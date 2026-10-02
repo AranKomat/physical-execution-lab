@@ -1,0 +1,58 @@
+{
+  "conditions": {
+    "robodojo_pi05_robodojo_semantic_v5_motor_matched_dev_001": {
+      "evidence_kinds": [
+        "native_unqualified"
+      ],
+      "gpt_induced_resamples": 0,
+      "missing": 3,
+      "observed": 2,
+      "partial_score_coverage": 2,
+      "partial_score_mean_observed": 0.05,
+      "scheduled": 5,
+      "semantic_calls_observed": 0,
+      "statuses": {
+        "native_completed": 2
+      },
+      "success_rate_full_denominator": 0.0,
+      "successes": 0,
+      "total_native_steps_observed": 2150,
+      "wall_seconds_observed": 1248.9750206810058
+    },
+    "robodojo_pi05_robodojo_semantic_v5_subtask_only_matched_dev_001": {
+      "evidence_kinds": [],
+      "gpt_induced_resamples": 0,
+      "missing": 5,
+      "observed": 0,
+      "partial_score_coverage": 0,
+      "partial_score_mean_observed": null,
+      "scheduled": 5,
+      "semantic_calls_observed": 0,
+      "statuses": {},
+      "success_rate_full_denominator": 0.0,
+      "successes": 0,
+      "total_native_steps_observed": 0,
+      "wall_seconds_observed": 0
+    },
+    "robodojo_pi05_robodojo_semantic_v5_task_plus_subtask_matched_dev_001": {
+      "evidence_kinds": [
+        "native_unqualified"
+      ],
+      "gpt_induced_resamples": 0,
+      "missing": 3,
+      "observed": 2,
+      "partial_score_coverage": 1,
+      "partial_score_mean_observed": 1.0,
+      "scheduled": 5,
+      "semantic_calls_observed": 11,
+      "statuses": {
+        "native_completed": 1,
+        "planner_stop_incomplete": 1
+      },
+      "success_rate_full_denominator": 0.2,
+      "successes": 1,
+      "total_native_steps_observed": 1032,
+      "wall_seconds_observed": 764.8895692000078
+    }
+  }
+}

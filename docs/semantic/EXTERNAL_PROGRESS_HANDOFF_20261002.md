@@ -73,8 +73,12 @@ This is positive development evidence, not a full-roster or causal gain.
 
 Next harder case, sorting layout 2: task-plus-subtask abstained after 315 actions,
 21 policy calls and four GPT calls/$0.02077150; score is missing, not zero or
-success. A false grasp claim was retracted and recovery is disabled. Audit and
-all 723 backup-file checks passed; fresh control is still unrun. The historical
+success. A grasp claim was retracted and recovery is disabled. Retained images
+show the watch between the right fingers at step 210 and on the table at 315;
+a drop or insecure grasp is possible, so a false earlier claim is not proven. Audit and
+all 723 backup-file checks passed. The fresh control subsequently failed at
+1100 actions, native score 0.0, 74 policy calls, zero GPT calls and 645.36 s
+wall. Its audit passed and all 2,320 backup files are SHA-verified. The historical
 screen's failure is not a substitute for that control. Storage cleanup also
 increased free space from about 3.7 to 20 GiB using pip/unused uv caches only.
 
@@ -116,9 +120,12 @@ launch. Stateful backends and held-out evaluation are not qualified by this.
 
 ## Live State And Limits
 
-The first frozen development pair is terminal; no robot episode remains live.
-All three episodes are backed up and SHA-verified (1586 tower candidate, 2216
-tower control, 723 sorting candidate files). Both GPUs are idle.
+Two primary development pairs are terminal and audited. Their four episodes
+are backed up and SHA-verified (1586 tower candidate, 2216 tower control,
+723 sorting candidate, 2320 sorting control files). The next tower1 control
+and a separately bound GPU1 sorting1 transport variant are being launched
+concurrently; inspect live process/results rather than treating this snapshot
+as proof of completion. No paid calls are used by these two controls.
 SSH: `ssh -p 53210 root@92.180.27.84`; repo `/root/physical-execution-lab`.
 Preserve unrelated CPU work, remote untracked launcher/reports, and old evidence.
 Do not reboot, alter global GPU packages or stop the rental as part of this work.
@@ -131,7 +138,7 @@ accounting: reread the authoritative ledger before making calls.
 ## Next Experiments And Stopping Rules
 
 1. Preserve the source/config-bound pi0.5 qualification/freeze and audit records.
-2. Continue the frozen roster: sorting layout 2 control, three other primary
+2. Continue the frozen roster: three other primary
    pairs and five subtask-only episodes remain. Keep
    checkpoint, native H50/15 cadence, sensors, horizon and planner route fixed.
 3. Retain failures, abstentions, API/resource/contract stops and missing cases

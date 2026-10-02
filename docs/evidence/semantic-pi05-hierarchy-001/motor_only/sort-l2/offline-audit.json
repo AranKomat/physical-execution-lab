@@ -1,0 +1,26 @@
+{
+  "actual_control_acks": 1100,
+  "checkpoint_identity_verified": true,
+  "complete_native_result": true,
+  "controller_evaluator_agree": true,
+  "distinct_effective_prompts": 1,
+  "evidence_kind": "native_unqualified",
+  "fresh_inference_indices": true,
+  "journal": {
+    "events": 1250,
+    "head_sha256": "90ec727e8a6e8733ee871899b30443498d72b5617a7f20efb6785575f15a32a4"
+  },
+  "native_completion_nonvacuous": true,
+  "native_prefix": 15,
+  "no_history_reset": true,
+  "policy_proposals": 74,
+  "prediction_horizon": 50,
+  "prefix_cadence_verified": true,
+  "robot_competence_claim": false,
+  "semantic_epochs_seen_by_motor": [
+    0
+  ],
+  "source_npz_proposals_match_journal": true,
+  "source_proposals": 74,
+  "terminal_status": "native_completed"
+}
