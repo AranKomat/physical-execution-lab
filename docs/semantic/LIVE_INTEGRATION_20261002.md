@@ -36,6 +36,10 @@ and updates the active documentation. Old qualifications do not qualify V5.
 - The old held-out motor-only trial completed at 1050 actions with failure,
   score 0.15, 70 policy calls and no GPT calls. The task is now opened; do not
   tune V5 on it or relabel it as untouched/development.
+- All 2,562 baseline payload files were copied locally and SHA-256 verified
+  under `runs/native-evidence/pi05-matched-heldout-001/motor_only/`. Redundant
+  remote native observation payloads were retired only after verification;
+  retained records and local full evidence remain available.
 - Old sparse/every-chunk conditions for that held-out study were not started.
   Their pause is a direction change, not an observed failure or success.
 - A CPU-only motor-freeze refresh failed on relative evidence paths before any

@@ -965,7 +965,7 @@
     "docs/semantic/CPU_TESTS.txt": "d9508145b4f9f1806be8ef3a4617bedfc3a8556bfa95de0d2b2bb4c3de9ff2c8",
     "docs/semantic/CPU_TRACE_AUDITS.json": "955f775aa51d7416a307621049592fbcdbf20c5d89a4daeac0b3f996cfd4b2ad",
     "docs/semantic/LEGACY_RELEASE_MANIFEST_V4.json": "2646c34df271475b5126b1aaf16de0db73c53047aefe45ced448d4e918da0cd5",
-    "docs/semantic/LIVE_INTEGRATION_20261002.md": "b131b9a3a431067a82bfc59feaae41435947345621376d7f4fa00b343fce5588",
+    "docs/semantic/LIVE_INTEGRATION_20261002.md": "fb566a2ed702f6e3f3ae64ce6e6ec1939edf8f2efec846a03abf2cadfa7eb569",
     "docs/semantic/PROVENANCE.md": "5ab6b4a10712b801395d80f0d7fc0896b13ec75db6b1aa05b30e4e89b94faccd",
     "docs/semantic/STATUS.md": "c55cd1df2262d96c70e3731e728d05e40b48fd1892bc69d911a085b620154de2",
     "run_semantic.py": "a5908315a1c9aa7135a1ed29c0b85b74cf61a22e5c86eaefc9119080f9d89ace",
