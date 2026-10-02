@@ -1,0 +1,11 @@
+{
+  "code_sha256": "53da0e6e8f391e9093b3d01f499c528fc078885c3127f8048e7f1b0aad0d8c1a",
+  "configs": {
+    "robodojo_internw0_delta_motor_only": "67e2d947ff0497c0d33724ef9937bfe60949af59ad68a8c4f4324b78b18a687a"
+  },
+  "evidence": "Freeze is preregistration/integrity, NOT proof of real-world safety or generalization.",
+  "manifest_sha256": "38d25c3c416151db417794c64d87a4c7a4884a2961dca4a88ae1a125c5c3cb50",
+  "protocol": "No target-task solutions/demonstrations; current-episode context allowed.",
+  "schema": "multibench.freeze.v1",
+  "sha256": "5779ba84a65680cb96871c76f52a8ee2f79b3d59a5908d653a2fcac3193c5385"
+}

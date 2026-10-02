@@ -1,0 +1,39 @@
+{
+  "checks": {
+    "action_space_verified": true,
+    "controller_timing_verified": true,
+    "current_sensor_only_actor": true,
+    "native_completion_not_vacuous": true,
+    "native_reset_render": true,
+    "policy_observation_ack_verified": true
+  },
+  "config_sha256": "af24908a77cde16230bd25e26e46ef37d17742ec53ff806a0b8cdfb0d7b112f8",
+  "evidence": [
+    {
+      "path": "docs/evidence/pi05-development-screen/report/outcomes.json",
+      "sha256": "43347028a28fd59c42fc881f65e9de300c84515dd26bc05452fbde1584daad1c"
+    },
+    {
+      "path": "docs/evidence/pi05-development-screen/sort-l2/audit.json",
+      "sha256": "64f7ef08c568cecf61d158264308d97113f5a6553c16cd24785f6a131fd80fad"
+    },
+    {
+      "path": "docs/evidence/pi05-development-screen/backup-verification.json",
+      "sha256": "459ffb2d869c2337065d96e5f418e7e7fd2f1af25629dc49ac96202b301f3420"
+    },
+    {
+      "path": "k1lab/multibench/adapters/pi05.py",
+      "sha256": "16cac60a150377ba4f23fbb493ce8579c24f09f1feb532951ae5c034895e0c18"
+    },
+    {
+      "path": "k1lab/multibench/adapters/robodojo.py",
+      "sha256": "dc3897599cee29643cbf7cbd5141ecbaaf496493eb10e0614b2d7f50aa2077ce"
+    },
+    {
+      "path": "docs/ROBODOJO_MOTOR_QUALIFICATION_20261002.md",
+      "sha256": "e5dce57f8b5edfae471b3096f1faf0ffdf7a7f731bbca2d69c57417e29a45ed6"
+    }
+  ],
+  "operator_notes": "Evidence-reviewed 2026-10-02 by Codex, exact motor-only configuration only. No GPT correction/contact qualification, full binary runtime lock, held-out result or harness benefit. Historical results remain native_unqualified/development. See the hashed qualification review for limits and binding differences.",
+  "schema": "multibench.qualification.v1"
+}

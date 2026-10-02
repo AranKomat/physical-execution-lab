@@ -1,6 +1,6 @@
 # Physical Execution Lab: Research Progress Handoff
 
-Snapshot: 2026-10-02 Japan time, updated during Intern's final fixed-roster case. This is a
+Snapshot: 2026-10-02 Japan time, updated after Intern's fixed-roster screen. This is a
 self-contained account of the current project, not the earlier BEHAVIOR,
 EmbodiedSWE assembly, or FLUX branches. Every-chunk 001 ended with a correction
 contract error; fresh 002 ended at review budget without a contract/API error.
@@ -16,17 +16,19 @@ robot-policy-free direct dense versus direct sparse control.
 
 Active RoboDojo policies are **G0.5, the exact released pi0.5 checkpoint, and InternW0-Delta**.
 Xiaomi RoboDojo is deferred. Intern was subsequently reopened for feasibility:
-the two-GPU probe now loads and infers at about 820 ms/10-action chunk, with
-native qualification pending (see `docs/INTERN_TWO_GPU_PROBE_20261002.md`).
+the two-GPU direct probe loaded and inferred at about 820 ms/10-action chunk;
+the matched loopback test subsequently measured 1114 ms p50 (see below).
 The first fresh Intern tower0 motor-only episode completed successfully as
 `runs/intern-two-gpu-native-001`: score 1.0, 727 actions, 73 policy calls,
 489.11 s, zero paid calls. Executed code was commit `a3d4421`; its terminal
 audit verifies all ACKs and native outcome. Both owned GPU workers exited.
 An exact motor-only qualification now verifies; a current-source freeze and
-the final fixed-roster case remains live. Sorting0 and tower1 succeeded;
-sorting1 failed at the full native horizon, score 0.15. Intern is 3/4 on
-completed cases, not yet a complete five-case result. Their full local backups
-verify 2071/1844/2777 payloads respectively.
+all remaining fixed-roster cases are complete. Sorting0 and tower1 succeeded;
+sorting1/sorting2 failed at the full native horizon, scores 0.15/0.0. Intern
+finishes 3/5, with 4470 actions/448 policy calls and zero paid calls. Full local
+backups verify 2071/1844/2777/2777 payloads for these continuation cases.
+See `docs/INTERN_DEVELOPMENT_SCREEN_20261002.md`. Retain pi0.5 as primary and
+G0.5 as secondary for matched supervision; preserve Intern without more screening.
 See `docs/INTERN_NATIVE_PILOT_20261002.md`. The separate
 official Xiaomi Robotics-1 RoboCasa365 track remains active.
 Supervisor: **GPT-6.1 Sol, medium reasoning, Flex-only**. No automatic request
@@ -54,9 +56,12 @@ every-chunk abort remains preserved. A fresh episode was run with this code,
 but requested no correction, so live normalization was not exercised.
 See `docs/CORRECTION_QUATERNION_FIX_20261002.md`.
 Release verification at `a1a73e9` checked 914 files with no missing/changed bytes.
-These checks do not establish robot competence or phase completion. Source
-changes since the retained motor freezes require a fresh freeze before scored
-comparisons; old records remain historical evidence, not current-source approval.
+These checks do not establish robot competence or phase completion. Fresh
+motor-only qualifications/freezes now verify for G0.5/pi0.5/Intern/XR1 at code
+fingerprint `53da0e6e8f391e9093b3d01f499c528fc078885c3127f8048e7f1b0aad0d8c1a`.
+Records: `docs/evidence/motor-freeze-refresh-002/`. Remote artifact/evidence
+hashes verified; copied source/config seals also verify locally. Old records
+remain historical; supervision/direct configurations are not thereby qualified.
 
 ## Scientific Contract
 
@@ -86,6 +91,7 @@ observing outcomes.
 |---|---|---|---|---|---|---|
 | G0.5 | Pass | Pass | Fail, score 0.4 | Pass | Fail, score 0.0 | 3/5 |
 | Exact pi0.5 | Pass | Pass | Pass | Pass | Fail, score 0.0 | 4/5 |
+| InternW0-Delta | Pass | Pass | Fail, score 0.15 | Pass | Fail, score 0.0 | 3/5 |
 
 Pi0.5 case details:
 
@@ -109,7 +115,7 @@ three warmups and 30 measured samples, with no simulator running:
 |---|---:|---:|---:|
 | G0.5 | 801 | 841 | 889 |
 | Pi0.5 | 454 | 488 | 523 |
-| InternW0-Delta, final task case pending | 1114 | 1160 | 1188 |
+| InternW0-Delta | 1114 | 1160 | 1188 |
 
 These are blocking replay-inference measurements, not steady-state trajectory
 timings. Pi0.5's reported 0.2134-second client construction is **not** model
@@ -263,13 +269,14 @@ task failure or a supervision benefit. Report:
 - Exact pi0.5 checkpoint/normalizer access resolved; 18 inference files matched
   publisher hashes. Isolated OpenPI/JAX runtime loads and executes real episodes.
 - Reviewed **motor-only** qualification records and full-manifest freezes exist
-  for G0.5/pi0.5; XR1 motor freeze refreshed. Historical development labels remain.
+  for G0.5/pi0.5/Intern/XR1 at current source. Historical development labels remain.
 - Intern stock BF16 startup exceeded an idle 24 GB GPU at 22.95 GiB allocated
   before model load completed. A subsequent explicit two-GPU component-placement
   probe now loads and completes inference; warm median 820 ms in three repeats,
   peak reserved 15.09/13.39 GiB. Its subsequent native tower0 pilot succeeded
   in 727 actions/73 calls; exact motor-only qualification verifies nine hashed
-  evidence/source files. Remaining four fixed-roster cases are prepared.
+  evidence/source files. Its complete fixed screen is 3/5; matched loopback
+  p50/p90/p99 is 1114/1160/1188 ms, thirty measured samples after three warmups.
   The successful inference probe's report export failed afterward; original
   error and exact completed-inference timings are preserved, not rerun/hidden.
 
@@ -281,15 +288,15 @@ Qualification reports: `docs/ROBODOJO_MOTOR_QUALIFICATION_20261002.md`,
 | Stage | Status |
 |---|---|
 | Pre-GPU | Complete; CPU evidence only |
-| A, native execution | Active RoboDojo motor-only interfaces qualified; supervision/contact remains separate |
-| B, speed/quality screen | Complete for G0.5/pi0.5; added Intern has one success and four roster cases pending |
+| A, native execution | G0.5/pi0.5/Intern/XR1 motor-only interfaces qualified with current-source freezes; supervision/contact remains separate |
+| B, speed/quality screen | Complete: G0.5 3/5, pi0.5 4/5, Intern 3/5, matched warm timing complete |
 | C, matched harness | Partial: complete negative sparse result; every-chunk 001 contract error and 002 review-budget stop; broader matched and robot-policy-free direct comparisons unfinished |
 | D, RoboCasa365 | Motor-only qualification/six-case screen complete; matched supervision unfinished |
 | E, sensing/transfer | Deferred until useful matched physical results |
 
 No held-out task episode has been opened. Eight untouched RoboDojo task groups
-remain test; sorting and tower families are development. Next finish the
-already-defined Intern screen and use predefined matched conditions/subsets,
+remain test; sorting and tower families are development. Next use predefined
+matched conditions/subsets with pi0.5 primary and G0.5 secondary,
 not additional candidate models, component sweeps, or task-specific fixes. Complete
 robot-policy-free direct dense/sparse and XR1 matched supervision separately.
 
@@ -311,9 +318,10 @@ $7.438932005700 remaining**,
 `xr1-supervision-kettle-001-1`. Acknowledgement enabled a new named trial, not a
 retry or release of those holds.
 
-Host storage was 7.3 GB free before this episode, 6.6 GB at an earlier live check.
-Only two redundant remote backup archives were deleted after matching local
-SHA-256s; raw episodes remain. Check disk before additional episodes/backups.
+Host storage is tight. Complete original terminal payloads remain in verified
+local backups. Redundant remote native observation NPZs were retired only after
+local backup verification and a fresh remote-byte hash check; remote results,
+journals and action receipts remain. Check disk before new episodes/backups.
 Preserve unrelated CPU workload and remote untracked `reports/` and
 `launch_robodojo_case.py`. Do not reboot, stop the rental, alter system packages,
 or terminate unrelated processes. Stop only owned workers after termination;

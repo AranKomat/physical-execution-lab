@@ -12,8 +12,8 @@ RoboDojo screen. Xiaomi's separate RoboCasa365 track is unchanged.
 | Stage | Status | Actual evidence / remaining gate |
 |---|---|---|
 | Pre-GPU | Complete | CPU suite, synthetic audit, source inspection and config preparation |
-| A: native qualification | Motor-only contracts qualified; current-source freezes pending | Reset/render/FK/conventions/ACK and complete episodes verified for G0.5/pi0.5; added Intern has an exact motor-only evidence-reviewed record from its successful pilot. Older G0.5/pi0.5 freezes remain historical after source changes. GPT correction/contact integration remains a separate Stage C gate |
-| B: speed/quality screen | Complete for G0.5/pi0.5; added Intern final case live | Same fixed five-case roster: G0.5 3/5, exact pi0.5 4/5; all native-limit failures retained. Same-input 30-sample warm timing: G0.5 p50 801 ms, pi0.5 p50 454 ms, Intern p50 1114 ms. Intern passes tower0/sorting0/tower1 and fails sorting1 at full horizon; sorting2 is live. Development evidence only |
+| A: native qualification | Motor-only contracts and current-source freezes complete | Reset/render/FK/conventions/ACK and complete episodes verified for G0.5/pi0.5/Intern; fresh exact motor-only qualifications/freezes verify, also for XR1. Older freezes remain historical. GPT correction/contact integration remains a separate Stage C gate |
+| B: speed/quality screen | Complete for G0.5/pi0.5/Intern | Same fixed five-case roster: G0.5 3/5, exact pi0.5 4/5, Intern 3/5; all native-limit failures retained. Same-input 30-sample warm timing: G0.5 p50 801 ms, pi0.5 p50 454 ms, Intern p50 1114 ms. Retain pi0.5 as primary and G0.5 secondary for matched supervision; Intern evidence/implementation retained without more screening. Development evidence only |
 | C: matched harness comparison | Development negative/censored evidence; overall incomplete | Pi0.5 tower0 sparse fails at full 1050-action limit, score 0.0, 27 settled reviews/$0.258; nominal motor-only succeeded at 714 actions. Old every-chunk stops at 626 actions on quaternion contract error. Fresh 002 stops at review budget after 658 actions/75 settled calls/$0.712, no API/contract error, native score null. Held-out matched conditions and direct comparisons remain open |
 | D: RoboCasa365 | Motor-only qualified/freeze refreshed; comparison pending | Fixed six-case screen: 2/6 success, no infrastructure errors. Initial official-client chunk matches exactly. Current-source motor freeze verifies; supervision/corrections remain unqualified. Sparse kettle pilot reached 50 steps then Flex capacity failed |
 | E: sensing/transfer | Deferred as specified | Only after useful matched physical results; no RGB-D port claimed |
@@ -145,14 +145,21 @@ CPU suite: 297 passed; this is reporting validation, not phase completion.
 Latest shared ledger: 4708 reservations, $77.561067994300 spent plus holds,
 $7.438932005700 remaining, 154 older unsettled reservations unchanged.
 
-Current Intern screen: original tower0 pilot plus sorting0 success (817 actions,
+Completed Intern screen: original tower0 pilot plus sorting0 success (817 actions,
 82 calls, 538.50 s), sorting1 full-limit failure (1100 actions, 110 calls,
 score 0.15, 725.55 s), and tower1 success (726 actions, 73 calls, 478.47 s).
-The three new terminal cases have passing audits and 2071/2777/1844 verified
-local backup payloads. Sorting2 is the final live case; do not restart it or
-declare the five-case screen complete before terminal evidence is retained.
+Sorting2 failed at full horizon, score 0.0, 1100 actions/110 calls, 717.19 s.
+All four new terminal cases have passing audits and 2071/2777/1844/2777 verified
+local backup payloads. Completed total: 3/5 successes, 4470 actions/448 policy
+calls, zero paid calls. Owned screen/harvest workers exited normally.
 The matched 3-warmup/30-sample loopback test uses the same retained input as
 G0.5/pi0.5: Intern p50/p90/p99 1114/1160/1188 ms, 10 exposed actions.
 Earlier 820 ms direct-probe latency has a different measurement boundary.
-Current-source motor-only qualifications/freezes remain pending; the G0.5
+Current-source motor-only qualifications/freezes now verify; the G0.5
 wrapper carry-forward review is explicit and does not invent another episode.
+See [the completed Intern screen](INTERN_DEVELOPMENT_SCREEN_20261002.md).
+Fresh exact records are under `docs/evidence/motor-freeze-refresh-002/`, binding
+code `53da0e6e8f391e9093b3d01f499c528fc078885c3127f8048e7f1b0aad0d8c1a`.
+Remote artifact/evidence checks and local source/config seals pass; no held-out
+episode or paid call was part of the refresh. Supervision/direct qualification
+and complete matched Stage C/D comparisons remain unfinished.

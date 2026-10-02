@@ -1,0 +1,51 @@
+{
+  "checks": {
+    "action_space_verified": true,
+    "controller_timing_verified": true,
+    "current_sensor_only_actor": true,
+    "native_completion_not_vacuous": true,
+    "native_reset_render": true,
+    "policy_observation_ack_verified": true
+  },
+  "config_sha256": "67e2d947ff0497c0d33724ef9937bfe60949af59ad68a8c4f4324b78b18a687a",
+  "evidence": [
+    {
+      "path": "/root/physical-execution-lab/runs/intern-two-gpu-native-001/episode/controller/result.json",
+      "sha256": "9b563feb34a207fb7bbef752b6dc47fb6fa8bdde63c26da629cb2ab0720ac162"
+    },
+    {
+      "path": "/root/physical-execution-lab/runs/intern-two-gpu-native-001/native-audit.json",
+      "sha256": "85da500f59a909aab5aa195d2832586fda87dbbad77231917d6ca0352cd9b407"
+    },
+    {
+      "path": "/root/physical-execution-lab/runs/intern-two-gpu-native-001/episode/controller/run.json",
+      "sha256": "9c083ce6ce40c7480bc83206193bb777114ebfe304000e07f70aa172f27efb4a"
+    },
+    {
+      "path": "/root/physical-execution-lab/runs/intern-two-gpu-native-001/episode/native/initial_observation_fingerprint.json",
+      "sha256": "7ed52ed60bf420a9cf4c49709c463a4ac743acdfff9e654361719beb5b13ee83"
+    },
+    {
+      "path": "/root/physical-execution-lab/k1lab/multibench/adapters/robodojo.py",
+      "sha256": "dc3897599cee29643cbf7cbd5141ecbaaf496493eb10e0614b2d7f50aa2077ce"
+    },
+    {
+      "path": "/root/physical-execution-lab/k1lab/multibench/adapters/xpolicylab.py",
+      "sha256": "5c052a5d0f0efefb45a548ccc65525eb631d0de5b98ba23bc10bbba8b74ad54c"
+    },
+    {
+      "path": "/root/physical-execution-lab/k1lab/multibench/adapters/intern_placement.py",
+      "sha256": "4d138428f2b6152ff30a0021182c0bc4062e7c089d035c78247e978707d41dc8"
+    },
+    {
+      "path": "/root/physical-execution-lab/external/XPolicyLab/policy/InternW0_delta/model.py",
+      "sha256": "51ec88c6b44226e6bcbb53b307c78a58cf0a9174982e8fcdbc74df85846c1ab6"
+    },
+    {
+      "path": "/root/physical-execution-lab/external/XPolicyLab/policy/InternW0_delta/_adapter_base.py",
+      "sha256": "4e698b5210b639d81d3d838a3006c44225792c53b4d65b436c4ff0d40c3aa05d"
+    }
+  ],
+  "operator_notes": "Evidence-reviewed software-contract qualification for this exact two-GPU BF16 Intern motor-only binding. Three RGB streams, robot joint14 and original instruction only; no object/evaluator state enters to_xpl/_adapt_obs. Actual ACKs feed source pending actions once per step; no fabricated future ACKs. 25 Hz native timing, H32/replan10, source internal gripper clip retained. No claim of pre-source-clip range, hardware safety, GPT correction qualification, published-score reproduction, or multi-case quality. Pilot stays native_unqualified; record is prospective and must be frozen before scored use.",
+  "schema": "multibench.qualification.v1"
+}

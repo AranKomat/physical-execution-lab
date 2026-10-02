@@ -1,0 +1,57 @@
+{
+  "benchmark": "robodojo",
+  "classification": "benchmark_trained_policy_plus_runtime",
+  "controller_qualification_required": true,
+  "environment": {
+    "allow_xiaomi_eef_via_dls": false,
+    "backend": "robodojo_rpc",
+    "gpt_as_policy_root": "external/GPT-as-Policy",
+    "native_outcome_path": "/ABSOLUTE/PATH/SIM_OUTPUT/evaluation_outcome.json",
+    "sim_port": 19113
+  },
+  "max_correction_steps": 5,
+  "max_decision_steps": 16,
+  "max_reviews": 180,
+  "mode": "motor_only",
+  "model": {
+    "api_key_env": "OPENAI_API_KEY",
+    "base_url": "https://api.openai.com/v1",
+    "history_rounds": 4,
+    "image_max_edge": 480,
+    "max_output_tokens": 2048,
+    "max_requests": 180,
+    "max_total_output_tokens": 368640,
+    "model": "gpt-6.1-sol",
+    "reasoning_effort": "medium",
+    "service_tier": "flex",
+    "timeout_s": 900,
+    "transport": "responses"
+  },
+  "monitor": {
+    "max_unreviewed_chunks": 4,
+    "max_unreviewed_steps": 50
+  },
+  "name": "robodojo_g05_motor_only",
+  "no_task_demonstrations": true,
+  "no_task_memory": true,
+  "policy": {
+    "artifact_manifest": "/root/physical-execution-lab/configs/local/g05-prepared/artifacts.json",
+    "backend": "remote",
+    "endpoint": "http://127.0.0.1:19601",
+    "identity": {
+      "action_space": "x5_joint14",
+      "adapter_config_sha256": "53fdebbb5f6e922014d4054008b125b83ef47f4250c20caab4c59d32e3573ba2",
+      "benchmark_training": "RoboDojo task/embodiment post-trained",
+      "checkpoint_sha256": "035cae5e4b8f128f400e9c812e48b1f35a6ec9962bd737c945bf14a249ed3603",
+      "execute_steps": 16,
+      "name": "g05_robodojo_fm",
+      "native_hz": 25.0,
+      "prediction_horizon": 32,
+      "preprocessing_id": "g05_qwen35_fm_bf16_fla051_clip_frequency30_native25_seed0",
+      "revision": "408b99d959a7b2207f5f785528fefcc019d7b131",
+      "stateful": true
+    }
+  },
+  "robot_preview": true,
+  "wall_limit_s": 3600
+}

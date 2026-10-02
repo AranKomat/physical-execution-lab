@@ -1,0 +1,16 @@
+{
+  "controller_evaluator_agree": true,
+  "events": 984,
+  "head_sha256": "2b2a879b3918f478a04318ceaed5e1597ce47dd2d003dc3cb7a5180adbfe5bbe",
+  "max_gripper_clip_delta": 0.0,
+  "native_completion_nonvacuous": true,
+  "policy_rng_seed": 0,
+  "raw_gripper_max": 1.0,
+  "raw_gripper_min": 0.051268935203552246,
+  "scope": "offline bookkeeping/provenance audit, not automatic sensor legality or safety proof",
+  "seed_provenance_scope": "per-proposal diagnostics",
+  "seeded_proposals": 82,
+  "sequential_acks": 817,
+  "source_declared_policy_rng_seed": 0,
+  "success": true
+}

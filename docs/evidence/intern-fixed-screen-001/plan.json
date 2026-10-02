@@ -1,0 +1,20 @@
+{
+  "cases": [
+    "classify_objects__standard__g0__l0",
+    "classify_objects__standard__g0__l1",
+    "build_tower__standard__g0__l1",
+    "classify_objects__standard__g0__l2"
+  ],
+  "code_sha256": "53da0e6e8f391e9093b3d01f499c528fc078885c3127f8048e7f1b0aad0d8c1a",
+  "manifest": "/root/physical-execution-lab/configs/local/g05-dev-screen-5.json",
+  "model_gpu": [
+    0,
+    1
+  ],
+  "no_retry": true,
+  "paid_calls": 0,
+  "previous_case": "build_tower__standard__g0__l0",
+  "previous_result_sha256": "9b563feb34a207fb7bbef752b6dc47fb6fa8bdde63c26da629cb2ab0720ac162",
+  "selection": "remaining original five-case roster in original order",
+  "simulator_gpu": 0
+}

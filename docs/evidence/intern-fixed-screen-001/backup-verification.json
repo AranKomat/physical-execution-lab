@@ -1,0 +1,46 @@
+{
+  "cases": [
+    {
+      "case_id": "classify_objects__standard__g0__l0",
+      "backup_files": 2071,
+      "manifest_sha256": "413adb8ef0ff0854770ced673c2f9ce61bf4998f37ce1846cada24397a1c0742",
+      "success": true,
+      "native_score": 1.0,
+      "native_steps": 817,
+      "policy_calls": 82,
+      "elapsed_s": 538.496710135998
+    },
+    {
+      "case_id": "classify_objects__standard__g0__l1",
+      "backup_files": 2777,
+      "manifest_sha256": "1ea314aeb05433d236fa5a0fdedacb3e393bacaf4a5e8593d9f33701b937bd65",
+      "success": false,
+      "native_score": 0.15,
+      "native_steps": 1100,
+      "policy_calls": 110,
+      "elapsed_s": 725.5517594980047
+    },
+    {
+      "case_id": "build_tower__standard__g0__l1",
+      "backup_files": 1844,
+      "manifest_sha256": "0bbad81da884d3308a7df7eceacc260b84039c7692bdd6a498ffdf7d5edcc343",
+      "success": true,
+      "native_score": 1.0,
+      "native_steps": 726,
+      "policy_calls": 73,
+      "elapsed_s": 478.4740414530024
+    },
+    {
+      "case_id": "classify_objects__standard__g0__l2",
+      "backup_files": 2777,
+      "manifest_sha256": "99e1c95e4a23e039a30b7fece1822f21fd95da217f63f5bfa05203e1c143ade5",
+      "success": false,
+      "native_score": 0.0,
+      "native_steps": 1100,
+      "policy_calls": 110,
+      "elapsed_s": 717.1925518730059
+    }
+  ],
+  "all_payload_hashes_reverified": true,
+  "scope": "terminal result, bookkeeping audit and retained local payload integrity; not safety"
+}

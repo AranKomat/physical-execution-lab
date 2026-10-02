@@ -1,0 +1,57 @@
+{
+  "benchmark": "robodojo",
+  "classification": "benchmark_trained_policy_plus_runtime",
+  "controller_qualification_required": true,
+  "environment": {
+    "allow_xiaomi_eef_via_dls": false,
+    "backend": "robodojo_rpc",
+    "gpt_as_policy_root": "external/GPT-as-Policy",
+    "native_outcome_path": "/ABSOLUTE/PATH/SIM_OUTPUT/evaluation_outcome.json",
+    "sim_port": 19113
+  },
+  "max_correction_steps": 5,
+  "max_decision_steps": 10,
+  "max_reviews": 180,
+  "mode": "motor_only",
+  "model": {
+    "api_key_env": "OPENAI_API_KEY",
+    "base_url": "https://api.openai.com/v1",
+    "history_rounds": 4,
+    "image_max_edge": 480,
+    "max_output_tokens": 2048,
+    "max_requests": 180,
+    "max_total_output_tokens": 368640,
+    "model": "gpt-6.1-sol",
+    "reasoning_effort": "medium",
+    "service_tier": "flex",
+    "timeout_s": 900,
+    "transport": "responses"
+  },
+  "monitor": {
+    "max_unreviewed_chunks": 4,
+    "max_unreviewed_steps": 50
+  },
+  "name": "robodojo_internw0_delta_motor_only",
+  "no_task_demonstrations": true,
+  "no_task_memory": true,
+  "policy": {
+    "artifact_manifest": "/root/physical-execution-lab/configs/local/intern-seed0-prepared/artifacts.json",
+    "backend": "remote",
+    "endpoint": "http://127.0.0.1:19605",
+    "identity": {
+      "action_space": "x5_joint14",
+      "adapter_config_sha256": "11d8dbbac746f818e71cb33b55bc971547e2dfaa690e946f471b181d635eedfc",
+      "benchmark_training": "RoboDojo task/embodiment post-trained",
+      "checkpoint_sha256": "b0d284ad894f883f2b84ab060d5caa8ad264314743196b88cebf7f221eafd71b",
+      "execute_steps": 10,
+      "name": "internw0_delta_robodojo",
+      "native_hz": 25.0,
+      "prediction_horizon": 32,
+      "preprocessing_id": "xpl_wam_three_view_canvas_actual_ack_seed0",
+      "revision": "408b99d959a7b2207f5f785528fefcc019d7b131",
+      "stateful": true
+    }
+  },
+  "robot_preview": true,
+  "wall_limit_s": 3600
+}

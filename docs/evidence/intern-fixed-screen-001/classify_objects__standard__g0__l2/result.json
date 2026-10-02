@@ -1,0 +1,103 @@
+{
+  "benchmark": "robodojo",
+  "case_id": "classify_objects__standard__g0__l2",
+  "case_sha256": "cce17c880dcee7a5ad88b0c4ef8430faae29d955fab8574b06a22390537ec066",
+  "condition": "robodojo_internw0_delta_motor_only",
+  "config_sha256": "67e2d947ff0497c0d33724ef9937bfe60949af59ad68a8c4f4324b78b18a687a",
+  "elapsed_s": 717.1925518730059,
+  "environment_contract_sha256": "c39cbaf9b1d0eb1cb8fefbba3f83d9cb52c1df51c55f5bd537a89e96bb18a595",
+  "error": null,
+  "evidence_kind": "native_unqualified",
+  "group": "classify_objects",
+  "initial_observation_sha256": "9131e43e68376687fe1be706eba98010f062f3356dce6f5eb1aae439538ae3a8",
+  "metrics": {
+    "corrected_steps": 0,
+    "discarded_policy_actions": 0,
+    "gripper_clips": 0,
+    "interruptions": 0,
+    "motor_steps": 1100,
+    "policy_calls": 110,
+    "policy_invalidation_requests": 0,
+    "proposed_policy_actions": 1100,
+    "review_calls": 0,
+    "shortened_chunks": 0,
+    "unresolved_policy_actions": 0
+  },
+  "mode": "motor_only",
+  "native_score": 0.0,
+  "native_steps": 1100,
+  "partition": "dev",
+  "planner_config": null,
+  "planner_model": null,
+  "policy_identity": "394659607b7e3ac495709696825b1e7e27c5c05188bfa15aeceb1c395bbd86bf",
+  "policy_runtime_fingerprint": {
+    "executable": "/root/physical-execution-lab/.venv-intern/bin/python",
+    "gpus": [
+      "NVIDIA GeForce RTX 4090, 580.178.04, 24564 MiB",
+      "NVIDIA GeForce RTX 4090, 580.178.04, 24564 MiB"
+    ],
+    "packages": {
+      "httpx": "0.28.1",
+      "isaaclab": null,
+      "isaacsim": null,
+      "jax": null,
+      "mujoco": null,
+      "numpy": "1.26.4",
+      "robocasa": null,
+      "robosuite": null,
+      "scipy": "1.17.1",
+      "torch": "2.10.0+cu128",
+      "transformers": "5.13.0"
+    },
+    "platform": "Linux-6.8.0-59-generic-x86_64-with-glibc2.35",
+    "python": "3.11.16 (main, Sep 29 2026, 14:59:26) [Clang 22.1.3 ]"
+  },
+  "runtime_fingerprint": {
+    "executable": "/root/physical-execution-lab/.venv/bin/python",
+    "gpus": [
+      "NVIDIA GeForce RTX 4090, 580.178.04, 24564 MiB",
+      "NVIDIA GeForce RTX 4090, 580.178.04, 24564 MiB"
+    ],
+    "packages": {
+      "httpx": "0.28.1",
+      "isaaclab": null,
+      "isaacsim": null,
+      "jax": null,
+      "mujoco": null,
+      "numpy": "2.2.6",
+      "robocasa": null,
+      "robosuite": null,
+      "scipy": "1.15.3",
+      "torch": null,
+      "transformers": null
+    },
+    "platform": "Linux-6.8.0-59-generic-x86_64-with-glibc2.35",
+    "python": "3.10.12 (main, Feb  4 2025, 14:57:36) [GCC 11.4.0]"
+  },
+  "schema": "multibench.result.v1",
+  "simulated_seconds": 44.0,
+  "simulation_advances_during_model_wait": false,
+  "split": null,
+  "status": "native_completed",
+  "success": false,
+  "task": "classify_objects",
+  "task_demonstrations": false,
+  "task_memory": false,
+  "termination": "native_terminal",
+  "timing": {
+    "ack_s": 124.26468786584883,
+    "env_s": 432.7751255629264,
+    "policy_s": 124.94525677197089,
+    "preview_s": 0.0,
+    "review_s": 0.0,
+    "setup_s": 23.104141248993983
+  },
+  "usage": {
+    "api_requests": 0,
+    "cached_input_tokens": 0,
+    "input_tokens": 0,
+    "output_tokens": 0,
+    "reasoning_tokens": 0,
+    "source": "no model used"
+  }
+}
