@@ -817,9 +817,9 @@
     "docs/evidence/g05-supervision-bringup/accounting.json": "80363a5f710fbb80a6afa96ee2cc4d4053350ad2823fb07aa3acd0acdd306fac",
     "docs/evidence/g05-supervision-bringup/attempt-001.json": "2e61b33d3cce8e933bbdf7b0ba80765df1bc2ef953b0f3a5f97acdb87329b431",
     "docs/evidence/g05-supervision-bringup/attempt-002.json": "7d12087f290879c0833633a3dd9ee5229535ae007ed65eedd02c77274cf3852e",
-    "scripts/multibench/budget_responses_relay.py": "08c6ac7ef7876822ed0e687fa54855cbf8e6e3d33ffa82fd3d64895785c92d89",
+    "scripts/multibench/budget_responses_relay.py": "2d756757b3aa9e613de0e7ce885f76f82d712d570e909395391ba17adf4a70e4",
     "scripts/multibench/prepare_supervision_pilot.py": "ae10321073c7bb1ec7b49670a996f775fa57543f597d3fed1e44458fbba8c103",
-    "tests/multibench/test_budget_relay.py": "543b7b5ae084300d555492616492c311935c837dbd0794eb15c3415980130076",
+    "tests/multibench/test_budget_relay.py": "2fdecec0fac7a7be508b73e9c4fea3a2c6f6dc1b274ebe4b75e223cad40aa61e",
     "docs/evidence/xr1-bringup/preparation.json": "2fa5c9e21c41510a0dede757e62e37316ef81a96d25e747bd42be8c6edd7ef5f",
     "docs/evidence/xr1-bringup/native-stats.json": "5057e2f0cce2c3c4bf129db6c88c55794194ade9d87a38ca61685bdff0cf6088",
     "docs/XR1_DEVELOPMENT_SCREEN_20261002.md": "4cb4136286943942b325e26bafe403a4abc859dd2a61cdd84594fad62ff38c8c",
@@ -1275,7 +1275,7 @@
     "semantic_lab/token_retention.py": "2755a9a4fae843749a0d1b8e3fe0c48ed703a5cbee1336da655e39f580f1ab7d",
     "tests/semantic/test_token_retention.py": "2096d5dc6d533b691a47015e257a375ee165526fdbd0cab6014d7ef24d99f22b",
     "docs/evidence/reference-execution-binding001-20261002/live-token-guard-probe001.json": "31d762f668e6795fcfb081776aa559e3a62811663fa4acba41071ea4756ca872",
-    "docs/semantic/PI05_APPROACH_COMPARISON_PLAN_20261002.md": "ae4b17b66cff25b4f491b5309f4ebfa6e0990066bc3a4f795c112ca0d56ed6b5",
+    "docs/semantic/PI05_APPROACH_COMPARISON_PLAN_20261002.md": "adf191318b832354b9b8ba779b5d28bb5bda817d31268d6c3810283bceae2bb7",
     "docs/evidence/reference-execution-binding001-20261002/operator_reference_native001.py": "dfb385557ab8be0b01eb6e6728c852b87816f108a16512c9c87f59173e605f56",
     "semantic_lab/robot_view.py": "4c178b451a1f07d0fcbf1e648e17c9cfef05aee61ba48c2d3207ca3514c7e3a0",
     "semantic_lab/vector.py": "b5d9a28abb87fcbacd5ac32f1b2ad53651ae6c09d92fd0bf3f4aa0a3323f58b2",
@@ -1376,6 +1376,8 @@
     "docs/evidence/pi05-full-panel-direct001-20261003/native-transfer.json": "7514f0df2466cfc21638b18d6af5d6a3fa3da2fec58a5a7039c471fd2145533e",
     "docs/evidence/pi05-full-panel-direct001-20261003/provider-summary.json": "d36695e8153c74239b7f7237e025ae6a2310065b29a7bb0f9a98659a02b74af5",
     "docs/evidence/pi05-full-panel-direct001-20261003/raw-cohort-report.json": "93ebd1b9eb92d223ae6647dda6e7452fb1489930be8c49789b1080e59424c2d1",
+    "docs/evidence/pi05-full-panel-direct002-20261003/REPORT.md": "64ceda9d27ac5fae15c948c45a708fae94364451bc767e1e5e45a84f2dcc708f",
+    "docs/evidence/pi05-full-panel-direct002-20261003/control-audit.json": "de9f3e7b1231531ea0c6f199c7738d46d5183da66e7feacd9e8dcd57fb65027f",
     "scripts/semantic/audit_full_panel_control.py": "c3fcd1e39cd751dd6e4872e2a99abfa8a6cd0a8b7260dc725eee306867192320"
   }
 }
