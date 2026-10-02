@@ -10,6 +10,11 @@ source/ACK/cadence/evaluator audits pass. Read
 `docs/semantic/EXTERNAL_PROGRESS_HANDOFF_20261002.md` for current coverage.
 This is one positive pair, not a reliable causal or full-benchmark gain.
 
+The next harder case, sorting layout 2, abstained at 315 actions after four GPT
+calls/$0.02077150; native score is missing and the fresh control is unrun.
+Source/ACK audit and 723 backup-file hashes pass. Cache housekeeping increased
+free disk space from about 3.7 to 20 GiB; assets/checkpoints/environments remain.
+
 The owner changed direction to semantic language hierarchy. Read
 `HANDOFF_V5.md` and `docs/semantic/NATIVE_QUALIFICATION_PROGRESS_20261002.md`
 before the historical V4 discussion below. The wrapped original-only tower0

@@ -1,0 +1,8 @@
+{
+  "run": "/root/physical-execution-lab/runs/semantic-pi05-hierarchy-001/task_plus_subtask/classify_objects__standard__g0__l2",
+  "removed_redundant_native_sensor_files": 316,
+  "reclaimed_bytes": 495700628,
+  "verified_remote_hashes_before_delete": true,
+  "verified_local_backup_manifest": "semantic-hierarchy-task_plus_subtask-classify_objects__standard__g0__l2.sha256",
+  "retained": "results, journal, action receipts, controller captures, audits, configs and qualification evidence"
+}

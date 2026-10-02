@@ -6,7 +6,7 @@
 |---|---|
 | A: no-interference | Passed native cadence/prompt audit for synchronous stateless pi0.5; not bitwise trajectory parity |
 | B: conditioning | Actual source tokenizer/context/ACK plumbing and responsiveness passed; obedience not established |
-| C: matched hierarchy | First primary development pair terminal and audited; four primary pairs and five subtask-only variants unrun |
+| C: matched hierarchy | First pair terminal/audited; sorting layout 2 candidate abstained, fresh control unrun; three other pairs and five subtask-only variants unrun |
 | D: semantic recovery | Not run; disabled in current conditions |
 | E: held-out/second backend | Not run under V5; opened historical task cannot serve as untouched held-out evidence |
 
@@ -78,11 +78,44 @@ executions or an estimate of a reliable success-rate gain.
 
 ## Current Coverage And Next Work
 
+Sorting layout 2 was prioritized next because it is already in the frozen
+roster and the historical policy-only screen failed at 1100 actions/score 0.0.
+No panel member or frozen configuration was replaced.
+
+Its task-plus-subtask episode **abstained at 315 actions**, status
+`planner_stop_incomplete`, no native score, 21 policy calls, four settled GPT
+calls/$0.02077150, 249.24 s wall. Two prompt changes, no controller faults,
+resets, resampling, shortening or unresolved actions. The planner retracted a
+prior claim that the right gripper held a wristwatch; recovery is disabled.
+It also explicitly noted that category-to-basket labels were not visible and
+its white-for-vehicles/blue-for-watches assignment was a choice, not observed
+ground truth. This exposes both perception/claim and goal-specification
+uncertainty; neither is diagnosed as the sole cause yet.
+
+The source/prefix/ACK audit passes through the stop. The operator initially
+reported the CLI's nonzero abstention exit as a generic condition error; the
+retained result itself correctly says semantic abstention. Future operator
+handling distinguishes this expected incomplete outcome from a harness fault.
+No retry or condition modification was performed.
+
+The fresh original-only sorting control is still unrun. Do not substitute the
+historical screen for that missing control or assign a native score to the
+stopped candidate. All 723 backup files are SHA-verified locally; 316 redundant
+remote native observations were retired only after rechecking their hashes.
+The retirement helper initially refused the new semantic-abstention status,
+before deleting anything. It now admits that terminal status only with the
+explicit abstention termination and zero unresolved actions; all original
+hash/path safeguards remain. See
+`../STORAGE_HOUSEKEEPING_20261002.md` for the concurrent cache cleanup that
+increased free disk space from approximately 3.7 to 20 GiB without deleting
+assets, checkpoints or environments.
+
 The first development pair is terminal. Both source/prefix/ACK/evaluator audits
 pass. All 2,216 control payloads and 1,586 candidate payloads were locally backed
-up and SHA-verified before redundant remote sensor retirement. Four primary
-pairs and all five subtask-only episodes remain
-unrun; retain them as missing until actually executed. Do not present 1/1 as a
+up and SHA-verified before redundant remote sensor retirement. One full primary
+pair and the second pair's candidate are terminal; the sorting control is
+unrun. Three other pairs and all five subtask-only episodes remain unrun;
+retain them as missing until actually executed. Do not present 1/1 as a
 full-roster success rate or a causal hierarchy gain. After saving the control,
 continue the existing roster within disk/API limits. Semantic recovery and
 untouched held-out/second-backend experiments remain later phases.

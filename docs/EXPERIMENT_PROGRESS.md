@@ -187,7 +187,9 @@ score 0.10, unchanged motor prompts/cadence and passing audits. A 30-action
 actual-source context/ACK/tokenizer probe passed. Formal qualification/freeze
 records now exist. The first frozen hierarchy pair is terminal: task-plus-subtask
 tower0 succeeded at 717 actions/score 1.0 (seven GPT calls/$0.04122325); fresh
-original-only failed at 1050 actions/score 0.10. Four primary pairs and all five
+original-only failed at 1050 actions/score 0.10. The harder sorting layout 2
+candidate abstained at 315 actions after four GPT calls/$0.02077150, score
+missing; its fresh control is unrun. Three other primary pairs and all five
 subtask-only variants remain. This is not a reliable causal gain. See
 [matched hierarchy progress](semantic/MATCHED_HIERARCHY_PROGRESS_20261002.md)
 and [latest external handoff](semantic/EXTERNAL_PROGRESS_HANDOFF_20261002.md)

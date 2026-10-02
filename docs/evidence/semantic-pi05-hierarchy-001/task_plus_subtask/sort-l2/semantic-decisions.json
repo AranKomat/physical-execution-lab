@@ -1,0 +1,133 @@
+{
+  "scope": "planner claims, not independently verified task completion",
+  "decisions": [
+    {
+      "step": 0,
+      "reasons": [
+        "initial_semantic_goal"
+      ],
+      "decision": {
+        "episode": "9fd192a58a594c3c9ac2822524cac62f",
+        "based_on_step": 0,
+        "based_on_stamp": "29fb38fea777922b209c2fefa5d87b4e38b4050cd7300ff691947cd553985b8a",
+        "expected_epoch": 0,
+        "operation": "set_subtask",
+        "subtask": "Put the light blue toy car into the white basket.",
+        "assessment": "not_started",
+        "evidence": "At step 0, the light blue toy car is on the table in front of the empty white basket. Other visible objects include toy vehicles, wristwatches, and elongated writing implements; all three baskets appear empty.",
+        "completed_claims": [],
+        "uncertain_or_invalidated": [
+          "No category-to-basket assignment is visibly marked; the white basket is selected for toy vehicles."
+        ]
+      },
+      "effect": {
+        "changed": true,
+        "stop": false,
+        "age_steps": 0,
+        "shadow_only": false
+      },
+      "native_evaluator_information_supplied": false
+    },
+    {
+      "step": 105,
+      "reasons": [
+        "periodic_semantic_check_at_native_boundary"
+      ],
+      "decision": {
+        "episode": "9fd192a58a594c3c9ac2822524cac62f",
+        "based_on_step": 105,
+        "based_on_stamp": "9b0df413935b0a7ceedcdbb9eec1c47319d091e3bc125b291e0660e516cab83b",
+        "expected_epoch": 1,
+        "operation": "continue",
+        "subtask": "",
+        "assessment": "uncertain",
+        "evidence": "At step 105, the left arm obscures much of the white basket. The light blue car is no longer visible at its step-0 tabletop location, but none of the current views clearly shows it inside the basket or held by the gripper. Placement is not yet verified.",
+        "completed_claims": [],
+        "uncertain_or_invalidated": [
+          "The light blue car's current location and placement in the white basket remain unverified at step 105.",
+          "No category-to-basket assignment is visibly marked; the white basket is selected for toy vehicles."
+        ]
+      },
+      "effect": {
+        "changed": false,
+        "stop": false,
+        "age_steps": 0,
+        "shadow_only": false
+      },
+      "native_evaluator_information_supplied": false
+    },
+    {
+      "step": 210,
+      "reasons": [
+        "periodic_semantic_check_at_native_boundary"
+      ],
+      "decision": {
+        "episode": "9fd192a58a594c3c9ac2822524cac62f",
+        "based_on_step": 210,
+        "based_on_stamp": "9ad60d965fda95ef17051e4147feac2aa939f35dd951d8d3729a90c1d80bce94",
+        "expected_epoch": 1,
+        "operation": "set_subtask",
+        "subtask": "Put the silver wristwatch held by the right gripper into the blue basket.",
+        "assessment": "complete",
+        "evidence": "At step 210, the high and left-wrist views show the light blue toy car inside the white basket, verifying the current subtask. The right-wrist view shows the silver wristwatch between the gripper fingers, and the blue basket appears empty. A green wristwatch also appears inside the white basket and will need category correction.",
+        "completed_claims": [
+          {
+            "text": "The light blue toy car is inside the white basket.",
+            "evidence_steps": [
+              210
+            ]
+          }
+        ],
+        "uncertain_or_invalidated": [
+          "The step-105 uncertainty about the light blue car's placement is resolved by step 210.",
+          "No category labels are visible; white is designated for vehicles and blue for wristwatches.",
+          "A green wristwatch appears inside the white vehicle basket at step 210; sorting is not complete."
+        ]
+      },
+      "effect": {
+        "changed": true,
+        "stop": false,
+        "age_steps": 0,
+        "shadow_only": false
+      },
+      "native_evaluator_information_supplied": false
+    },
+    {
+      "step": 315,
+      "reasons": [
+        "periodic_semantic_check_at_native_boundary"
+      ],
+      "decision": {
+        "episode": "9fd192a58a594c3c9ac2822524cac62f",
+        "based_on_step": 315,
+        "based_on_stamp": "cec1b714398329e489dc0f949e5ffa30f61327af52084319297a377b5ccd3567",
+        "expected_epoch": 2,
+        "operation": "stop",
+        "subtask": "",
+        "assessment": "failed",
+        "evidence": "At step 315, the left-wrist view shows the silver wristwatch resting on the tabletop beside the yellow toy vehicle, while the right-wrist view shows empty gripper fingers. The blue basket appears empty in the high view. The watch-placement subtask has not succeeded, and its premise that the right gripper holds the watch is contradicted. Recovery is disabled.",
+        "completed_claims": [
+          {
+            "text": "The light blue toy car is inside the white basket.",
+            "evidence_steps": [
+              210,
+              315
+            ]
+          }
+        ],
+        "uncertain_or_invalidated": [
+          "The step-210 claim that the right gripper held the silver wristwatch is invalidated by step 315; the watch is on the tabletop.",
+          "No category labels are visible; white was designated for vehicles and blue for wristwatches.",
+          "A green wristwatch remains visible inside the white vehicle basket at step 315; sorting is incomplete."
+        ]
+      },
+      "effect": {
+        "changed": false,
+        "stop": true,
+        "age_steps": 0,
+        "shadow_only": false
+      },
+      "native_evaluator_information_supplied": false
+    }
+  ]
+}
