@@ -1,0 +1,64 @@
+{
+  "status": "native_semantic_motor_vector_audit_passed",
+  "actual_controls": 3150,
+  "episodes": {
+    "0": {
+      "journal": {
+        "events": 1192,
+        "head_sha256": "6c08f929731ded06363db31111c8adfc00ffee4a2df9dce1be97021e693992cf"
+      },
+      "actual_control_acks": 1050,
+      "policy_proposals": 70,
+      "semantic_epochs_seen_by_motor": [
+        0
+      ],
+      "distinct_effective_prompts": 1,
+      "prefix_cadence_verified": true,
+      "complete_native_result": true,
+      "evidence_kind": "native_unqualified",
+      "robot_competence_claim": false,
+      "source_H50_predictions_equal": true,
+      "source_rng_verified": true
+    },
+    "1": {
+      "journal": {
+        "events": 1192,
+        "head_sha256": "b3de9213b4c4fc6aa27642fdd0a0b2308344699c8abddb104b29e32917fbd3aa"
+      },
+      "actual_control_acks": 1050,
+      "policy_proposals": 70,
+      "semantic_epochs_seen_by_motor": [
+        0
+      ],
+      "distinct_effective_prompts": 1,
+      "prefix_cadence_verified": true,
+      "complete_native_result": true,
+      "evidence_kind": "native_unqualified",
+      "robot_competence_claim": false,
+      "source_H50_predictions_equal": true,
+      "source_rng_verified": true
+    },
+    "2": {
+      "journal": {
+        "events": 1192,
+        "head_sha256": "3950c35a9e36b894e47b09fe6bc51e56778c6484c2faf9ff5d1e7eed9426a7bc"
+      },
+      "actual_control_acks": 1050,
+      "policy_proposals": 70,
+      "semantic_epochs_seen_by_motor": [
+        0
+      ],
+      "distinct_effective_prompts": 1,
+      "prefix_cadence_verified": true,
+      "complete_native_result": true,
+      "evidence_kind": "native_unqualified",
+      "robot_competence_claim": false,
+      "source_H50_predictions_equal": true,
+      "source_rng_verified": true
+    }
+  },
+  "paid_calls": 0,
+  "source_predictions_and_native_acks_match": true,
+  "case_layout_variant_horizon_binding_verified": true,
+  "scope": "reference-bound previously opened task; not untouched held-out or hierarchy qualification"
+}

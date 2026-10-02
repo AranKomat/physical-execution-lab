@@ -1,0 +1,71 @@
+{
+  "scope": "all five selected reference cases of one historically opened task group; not full benchmark or untouched evaluation",
+  "native_qualified": false,
+  "checkpoint_config_source_bindings_verified": true,
+  "cases_executed": 5,
+  "successes": 0,
+  "mean_native_score": 0.03,
+  "paid_calls": 0,
+  "rollout_wall_s": {
+    "reference-pi05-2-001": 316.4768286180042,
+    "reference-pi05-3-003": 434.38941236698884
+  },
+  "startup_shutdown_excluded_from_rollout_wall": true,
+  "hierarchy_remaining_reference_case_ids": [
+    "arrange_largest_number__random__g0__l0",
+    "arrange_largest_number__random__g0__l1",
+    "arrange_largest_number__random__g0__l2"
+  ],
+  "cases": [
+    {
+      "case_id": "arrange_largest_number__standard__g0__l0",
+      "variant": "standard",
+      "layout_id": 0,
+      "partition": "test",
+      "source_run": "reference-pi05-2-001",
+      "success": false,
+      "native_score": 0.0,
+      "native_steps": 1050
+    },
+    {
+      "case_id": "arrange_largest_number__standard__g0__l1",
+      "variant": "standard",
+      "layout_id": 1,
+      "partition": "test",
+      "source_run": "reference-pi05-2-001",
+      "success": false,
+      "native_score": 0.15,
+      "native_steps": 1050
+    },
+    {
+      "case_id": "arrange_largest_number__random__g0__l0",
+      "variant": "random",
+      "layout_id": 0,
+      "partition": "test",
+      "source_run": "reference-pi05-3-003",
+      "success": false,
+      "native_score": 0.0,
+      "native_steps": 1050
+    },
+    {
+      "case_id": "arrange_largest_number__random__g0__l1",
+      "variant": "random",
+      "layout_id": 1,
+      "partition": "test",
+      "source_run": "reference-pi05-3-003",
+      "success": false,
+      "native_score": 0.0,
+      "native_steps": 1050
+    },
+    {
+      "case_id": "arrange_largest_number__random__g0__l2",
+      "variant": "random",
+      "layout_id": 2,
+      "partition": "test",
+      "source_run": "reference-pi05-3-003",
+      "success": false,
+      "native_score": 0.0,
+      "native_steps": 1050
+    }
+  ]
+}

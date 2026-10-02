@@ -57,3 +57,20 @@ retired, reclaiming 1,323,182,609 bytes. Remote controller captures, action
 journals, model proposals, results and bindings remain. The exact retirement
 manifest is published with that episode's evidence; full historical sensors
 are recoverable from the local archive, not the retired remote directory.
+
+## Later G0.5 Screen Duplicate Retirement
+
+The host again reached approximately3.8 GiB free. Full copies of four historical
+G0.5 screen sensor directories were already local. Rehashing all local and
+remote files plus matching native-completed result hashes allowed retirement
+of3651 remote-only duplicate NPZs, reclaiming5919800799 bytes. Full local native
+sensors, remote controller captures, videos, actions, results and bindings
+remain. No models, assets, environments, unique newer evidence or unrelated
+workload were modified. No new local sensor or weight download was needed.
+
+The manifest and executed guarded operator are in
+`evidence/g05-screen-storage-retirement001-20261002/`. Preserve those existing
+local full sensor copies: the retired remote directory alone is intentionally
+incomplete. Host-wide free space remains dynamic while workloads and new
+experiments write data; gross bytes retired are not a guarantee of equal net
+free-space increase. A later check during the new wave showed5.7 GiB free.

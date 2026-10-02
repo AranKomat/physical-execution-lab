@@ -17,7 +17,7 @@ are competing explanations, not established diagnoses.
 | B: conditioning | Actual source tokenizer/context/ACK plumbing and responsiveness passed; obedience not established |
 | C: matched hierarchy | Fresh vector cohort: all three conditions across all five cases executed and audited; original-only 3 successes, task-plus-subtask 1, subtask-only 1. Historical serial cohort remains separate and incomplete |
 | D: semantic recovery | Separate five-case panel executed: 3 successes, 1 horizon failure, 1 rejected planner contract. 12 applied recoveries; execution/rejection accounting audited, not all-valid planner or causal recovery qualification |
-| E: held-out/second backend | Untouched/second-backend comparison unrun. Reference-bound motor/candidate pair audited on two cases of a third, historically opened task family; neither condition succeeded; not untouched qualification |
+| E: held-out/second backend | Untouched/second-backend comparison unrun. All five reference motor cases audited in historically opened arrange family; zero successes. Candidate pair audited on two standard cases; neither succeeded. Seven unopened groups still gated on executor admission |
 
 Use the existing five-case development roster: classify_objects layouts 0, 1,
 2 and build_tower layouts 0, 1. Compare fresh original-only against
@@ -685,3 +685,45 @@ groups. Second-backend hierarchy remains unrun. All384 CPU tests pass; tests
 and this two-case audit do not complete Phase E. Unique raw sensors remain on
 the GPU host pending verified backup; this is not shutdown clearance. No weights
 were transferred to the Mac.
+
+## Remaining Arrange Motor Cases And Admission Preparation
+
+All three selected random arrange reference layouts0/1/2 now have fresh
+motor-only baselines, executed concurrently with one shared stateless pi0.5
+model and separate source seed0 streams. Each failed at1050 actions/score0.0.
+Total3150 controls,70 policy calls per case,434.39 s rollout excluding native
+startup/reset/shutdown, zero paid calls. The random variant's reset was slow;
+do not describe the rollout timer as total launch-to-exit time. Original
+instructions, exact runtime variant/layout/horizon, nonempty completion checks,
+source predictions, actual ACKs and RNG audit pass. No controller faults or
+unresolved actions; both GPUs idle after exit.
+
+Together with the two standard cases, all five selected reference motor cases
+of this group are now executed: zero successes, mean native partial score0.03
+(3/100 display scale). Exact checkpoint/config/manifest/source bindings were
+checked before combining these two waves. This is one historically opened task
+group, not the full RoboDojo denominator, untouched qualification, or a causal
+hierarchy comparison. The three random semantic candidates remain missing.
+Evidence: `../evidence/reference-arrange-random-motor001-20261002/`.
+
+Static source preparation also checked all50 selected layout hashes,10 task
+groups and13 runtime variants. No simulator, weights or paid requests were
+used for that inventory. The seven unopened groups remain unrun/unadmitted.
+Native batch stepping retains support-arm query/stability/queue behavior; its
+presence in source is not runtime qualification for those workloads. The
+installed native client and worker share camera mapping, ordinary policy
+inference, continuous-opening clipping and default seed0. Full source-bound
+admission and formal semantic checks are still outstanding; see
+`REFERENCE_EXECUTOR_ADMISSION_20261002.md`. Do not flip qualification labels
+from static checks or promote the historical vector panel into reference cases.
+
+Storage was made sufficient for this wave by rehashing existing local full
+G0.5 screen sensor copies and every matching remote NPZ before deleting only
+3651 redundant remote files/5919800799 bytes. Local full sensors, remote
+controller captures/videos/actions/results and all models were retained.
+No new local data/weight download was needed for that cleanup. Small new
+reports/operators only were transferred; newer unique sensors remain remote.
+Retirement evidence: `../evidence/g05-screen-storage-retirement001-20261002/`.
+All384 CPU tests pass. This advances coverage/preparation, not completion of
+Phase E. Next freeze and source-qualify the reference executor, then expand
+matched task diversity without tuning on untouched outcomes.

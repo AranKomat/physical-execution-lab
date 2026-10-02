@@ -1,0 +1,131 @@
+{
+  "report": {
+    "status": "started",
+    "scope": "reference-bound historical-opened task execution; not untouched held-out qualification",
+    "paid_calls": 0,
+    "resets": 1,
+    "task": "arrange_largest_number_random",
+    "requested_envs": 3,
+    "budget_steps_per_env": 1050,
+    "physics_of_completed_envs": "continues globally; terminal score frozen",
+    "rng_parity": false,
+    "inference_mode": "native_singleton",
+    "scored_benchmark_qualified": false,
+    "policy": "pi05",
+    "execute_steps": 15,
+    "returned_action_steps": 50,
+    "native_prediction_horizon": 50,
+    "shared_worker_root": null,
+    "reference_cases": [
+      {
+        "benchmark": "robodojo",
+        "case_id": "arrange_largest_number__random__g0__l0",
+        "eval_seed": 0,
+        "horizon": 1050,
+        "layout_id": 0,
+        "layout_path": "Assets/Eval_Layout/RoboDojo/arx_x5/0/arrange_largest_number_random_0.json",
+        "layout_sha256": "c7897e5204ca76bbd7c6cb3c93a794a4e5218c0c17a4312f047930f5e7e822d5",
+        "native_hz": 25.0,
+        "partition": "test",
+        "runtime_task": "arrange_largest_number_random",
+        "source_case": {
+          "case_id": "arrange_largest_number__random__g0__l0",
+          "eval_seed": 0,
+          "layout": {
+            "path": "Assets/Eval_Layout/RoboDojo/arx_x5/0/arrange_largest_number_random_0.json",
+            "sha256": "c7897e5204ca76bbd7c6cb3c93a794a4e5218c0c17a4312f047930f5e7e822d5"
+          },
+          "layout_id": 0,
+          "native_support_trajectories": [],
+          "policy_rng_seed": 0,
+          "replica_id": 3,
+          "reset_seed": 0,
+          "rollout_index": 3,
+          "runtime_task": "arrange_largest_number_random",
+          "simulator_initial_seed": 0,
+          "task": "arrange_largest_number",
+          "variant": "random"
+        },
+        "task": "arrange_largest_number",
+        "task_group": "arrange_largest_number",
+        "variant": "random"
+      },
+      {
+        "benchmark": "robodojo",
+        "case_id": "arrange_largest_number__random__g0__l1",
+        "eval_seed": 0,
+        "horizon": 1050,
+        "layout_id": 1,
+        "layout_path": "Assets/Eval_Layout/RoboDojo/arx_x5/0/arrange_largest_number_random_1.json",
+        "layout_sha256": "f24eb21ce320f29577217f7cf9fa44e9213435964038ed481bb99e99bb7ae370",
+        "native_hz": 25.0,
+        "partition": "test",
+        "runtime_task": "arrange_largest_number_random",
+        "source_case": {
+          "case_id": "arrange_largest_number__random__g0__l1",
+          "eval_seed": 0,
+          "layout": {
+            "path": "Assets/Eval_Layout/RoboDojo/arx_x5/0/arrange_largest_number_random_1.json",
+            "sha256": "f24eb21ce320f29577217f7cf9fa44e9213435964038ed481bb99e99bb7ae370"
+          },
+          "layout_id": 1,
+          "native_support_trajectories": [],
+          "policy_rng_seed": 0,
+          "replica_id": 3,
+          "reset_seed": 1,
+          "rollout_index": 4,
+          "runtime_task": "arrange_largest_number_random",
+          "simulator_initial_seed": 0,
+          "task": "arrange_largest_number",
+          "variant": "random"
+        },
+        "task": "arrange_largest_number",
+        "task_group": "arrange_largest_number",
+        "variant": "random"
+      },
+      {
+        "benchmark": "robodojo",
+        "case_id": "arrange_largest_number__random__g0__l2",
+        "eval_seed": 0,
+        "horizon": 1050,
+        "layout_id": 2,
+        "layout_path": "Assets/Eval_Layout/RoboDojo/arx_x5/0/arrange_largest_number_random_2.json",
+        "layout_sha256": "b3e22d7d04bdcdbbf00dd498b177ff2b2f463a59df568fc38963009ac6f4707a",
+        "native_hz": 25.0,
+        "partition": "test",
+        "runtime_task": "arrange_largest_number_random",
+        "source_case": {
+          "case_id": "arrange_largest_number__random__g0__l2",
+          "eval_seed": 0,
+          "layout": {
+            "path": "Assets/Eval_Layout/RoboDojo/arx_x5/0/arrange_largest_number_random_2.json",
+            "sha256": "b3e22d7d04bdcdbbf00dd498b177ff2b2f463a59df568fc38963009ac6f4707a"
+          },
+          "layout_id": 2,
+          "native_support_trajectories": [],
+          "policy_rng_seed": 0,
+          "replica_id": 3,
+          "reset_seed": 2,
+          "rollout_index": 5,
+          "runtime_task": "arrange_largest_number_random",
+          "simulator_initial_seed": 0,
+          "task": "arrange_largest_number",
+          "variant": "random"
+        },
+        "task": "arrange_largest_number",
+        "task_group": "arrange_largest_number",
+        "variant": "random"
+      }
+    ],
+    "reference_manifest_file_sha256": "9c335b72fae984e05eda9d56f9465c1afe1c5d4accf29e9d703cf06898cb2fde"
+  },
+  "semantic_config_file_sha256": "44236e77a390a404571219d5a0fc5f6842552000285117144ed67bf9e3bcd453",
+  "sources": {
+    "runs/operator_reference_rollout001.py": "de1a1972796452c004ad613ae582afcd4dbdaf206c7977abb9e9f9e4a337b9cd",
+    "runs/operator_reference_native001.py": "2bdffc061b8b715cfe9fa66dae9796cafecf8caf179a86b1ac32ea2f936ee6a0",
+    "runs/operator_semantic_vector_coordinator001.py": "a70246b7a63b672b9209946876a1ce68e9abcddef475b154299f919ada513f9b",
+    "semantic_lab/reference.py": "1d5d0a5e70b6a8575bb87be1cf00a978a8482071b78d937ff5dcb06e6d34868c",
+    "semantic_lab/planner.py": "188e8073c9e6edf3c6febda28b168ab4326e0688594666b84fa3715e7c057869",
+    "semantic_lab/report.py": "fc04d0dd93c6f44ea3cf4ed79e141fc226e9dc6d9c01606bc185627bec7d4354"
+  }
+}
