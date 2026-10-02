@@ -23,6 +23,7 @@ def main():
     p.add_argument('--allow-api', action='store_true')
     p.add_argument('--freeze', type=Path)
     p.add_argument('--panel', type=Path)
+    p.add_argument('--baseline-group', type=Path)
     from isaaclab.app import AppLauncher
     AppLauncher.add_app_launcher_args(p)
     args = p.parse_args()
@@ -35,7 +36,7 @@ def main():
     direct = treatment['mode'] == 'direct_sparse'
     frozen = panel = None
     if args.allow_api:
-        if args.freeze is None or args.panel is None:
+        if args.freeze is None or args.panel is None or args.baseline_group is None:
             raise ValueError('paid task groups require the complete panel and execution-source freeze')
         from semantic_lab.protocol import verify_binding
         frozen, panel = json.loads(args.freeze.read_text()), json.loads(args.panel.read_text())
@@ -131,6 +132,28 @@ def main():
         args.controller_probe = False
         args.steps = max(case['horizon'] for case in cases)
         args.reference_cases = cases
+        if args.allow_api:
+            import numpy as np
+            from types import SimpleNamespace
+            from semantic_lab.cohort_admission import check_reset
+            observations = {}
+            for raw in env.get_obs_batch(env_idx_list=list(range(len(cases)))):
+                state = raw['state']
+                idx = int(raw['env_idx'])
+                observations[idx] = SimpleNamespace(step=int(env.take_action_cnt[idx]),
+                    instruction=raw['instruction'], state=np.concatenate([
+                        np.r_[state[f'{arm}_arm_joint_state'], state[f'{arm}_ee_joint_state']]
+                        for arm in ('left', 'right')]).astype(np.float32))
+            admission = check_reset(args.baseline_group, cases,
+                [OmegaConf.to_container(cfg, resolve=True) for cfg in configs],
+                bindings, env.step_limits, observations)
+            if treatment['mode'] in ('direct_sparse', 'sparse'):
+                from semantic_lab.robot_controls import SourceRobotControls
+                from hybrid_rollout.robodojo.robodojo_server.kinematics import DualKinematics
+                controls = SourceRobotControls(env.robot_manager, range(len(cases)), DualKinematics)
+                admission['initial_fk_checks'] = controls.initial_fk_checks
+            write_json(out / 'pre-action-admission.json', admission)
+            wait_file(out / 'cohort-admitted.json')
         from semantic_lab.native_execution import run_wave
         run_wave(env, out, args, report, None)
     except BaseException as exc:

@@ -15,6 +15,7 @@ from k1lab.errors import ContractError
 from k1lab.util import atomic_json, digest, load_json
 from scripts.multibench.launch_robodojo_case import stop_child
 from semantic_lab.protocol import verify_binding
+from semantic_lab.cohort_admission import check_transfer
 
 # Native global physics and support-robot configuration determine groups, not
 # task outcomes. All ten cases still share one condition and one inference batch.
@@ -33,6 +34,9 @@ def main():
                    default='original_only')
     p.add_argument('--freeze', type=Path)
     p.add_argument('--allow-api', action='store_true')
+    p.add_argument('--baseline-run', type=Path)
+    p.add_argument('--native-reference-freeze', type=Path)
+    p.add_argument('--controller-run', type=Path)
     args = p.parse_args()
     panel = load_json(args.prepared / 'cases.json')
     plan = load_json(args.prepared / 'plan.json')
@@ -52,6 +56,12 @@ def main():
     frozen = load_json(args.freeze) if args.freeze else None
     if frozen:
         verify_binding(ROOT, frozen, panel, treatment, require_execution_sources=True)
+    admission = None
+    if args.allow_api:
+        if args.baseline_run is None or args.native_reference_freeze is None or args.controller_run is None:
+            raise ContractError('paid matched panel requires retained baseline/native reference admission')
+        admission = check_transfer(ROOT, args.baseline_run,
+                                   load_json(args.native_reference_freeze), panel, args.controller_run)
     cases = {case['task_group']: case for case in panel['cases']}
     if set(cases) != {name for group in GROUPS for name in group}:
         raise ContractError('full cohort must include the fixed ten distinct tasks without replacement')
@@ -65,6 +75,8 @@ def main():
     if not out.is_relative_to(ROOT / 'runs'):
         raise ContractError('cohort output must be inside runs')
     out.mkdir(exist_ok=False)
+    if admission:
+        atomic_json(out / 'native-transfer.json', admission)
     waves = []
     for idx, names in enumerate(GROUPS):
         wave = out / f'group{idx}'
@@ -112,6 +124,7 @@ def main():
                 '--kit_args', f'--/renderer/activeGpu={gpu} --/renderer/multiGpu/enabled=false']
             if args.allow_api:
                 command.append('--allow-api')
+                command.extend(['--baseline-group', str((args.baseline_run / f'group{idx}').resolve())])
             if args.freeze:
                 command.extend(['--freeze', str(args.freeze.resolve()),
                                 '--panel', str((args.prepared / 'cases.json').resolve())])
@@ -124,6 +137,26 @@ def main():
         deadline = time.monotonic() + treatment['wall_limit_s'] + 900
         log_offsets = [0] * len(waves)
         log_tails = [''] * len(waves)
+        admitted = not args.allow_api
+
+        def admit_ready_groups():
+            nonlocal admitted
+            if admitted or not all((wave / 'pre-action-admission.json').exists() for wave in waves):
+                return
+            bindings = [load_json(wave / 'pre-action-admission.json') for wave in waves]
+            if any(not binding.get('passed') for binding in bindings):
+                raise ContractError('a native reset admission failed')
+            if args.approach in ('direct', 'numeric') and any(
+                    len(binding.get('initial_fk_checks', {})) != len(GROUPS[idx])
+                    or any(not check.get('passed') for check in binding['initial_fk_checks'].values())
+                    for idx, binding in enumerate(bindings)):
+                raise ContractError('native robot-only FK admission incomplete')
+            for wave in waves:
+                atomic_json(wave / 'cohort-admitted.json', dict(
+                    scope='matched screened simulator runtime, not full benchmark or real hardware',
+                    source_freeze_sha256=frozen['sha256'], all_ten_reset_bindings_passed=True))
+            admitted = True
+
         while any(child.poll() is None for child in simulators):
             if service is not None and service.poll() not in (None, 0):
                 raise RuntimeError('fused model worker failed; no retry')
@@ -151,7 +184,11 @@ def main():
                     raise ContractError('executor source changed during cohort execution')
             if frozen:
                 verify_binding(ROOT, frozen, panel, treatment, require_execution_sources=True)
+            admit_ready_groups()
             time.sleep(1)
+        admit_ready_groups()
+        if not admitted:
+            raise ContractError('cohort terminated before all-ten native admission; no completed comparison')
         results = [load_json(wave / 'report.json') for wave in waves]
         if any(row['status'] in ('starting', 'native_ready', 'error_stop_no_retry') for row in results):
             raise RuntimeError('simulator exit is not proof of completed episodes')

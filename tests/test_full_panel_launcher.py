@@ -38,7 +38,10 @@ def setup_panel(tmp_path, monkeypatch, approach):
     argv = ['runner', '--prepared', str(prepared), '--output', str(tmp_path / 'runs/out'),
             '--approach', approach]
     if approach != 'original_only':
-        argv += ['--allow-api', '--freeze', str(prepared / 'freeze.json')]
+        argv += ['--allow-api', '--freeze', str(prepared / 'freeze.json'),
+                 '--baseline-run', str(tmp_path / 'baseline'),
+                 '--native-reference-freeze', str(prepared / 'freeze.json'),
+                 '--controller-run', str(tmp_path / 'controller')]
     monkeypatch.setattr('sys.argv', argv)
     return prepared, argv
 
@@ -48,13 +51,17 @@ def test_full_method_cohort_routing(tmp_path, monkeypatch, approach):
     setup_panel(tmp_path, monkeypatch, approach)
     verifications, commands = [], []
     monkeypatch.setattr(launcher, 'verify_binding', lambda *a, **k: verifications.append(k))
+    monkeypatch.setattr(launcher, 'check_transfer', lambda *a: dict(transfer_checks_passed=True))
 
     def launch(command, **kwargs):
         commands.append(command)
         if 'run_distinct_task_group.py' in command[2]:
             output = Path(command[command.index('--output') + 1])
+            cases = json.loads(Path(command[command.index('--cases') + 1]).read_text())
             (output / 'report.json').write_text(json.dumps(dict(
                 status='native_control_wave', paid_calls=0)))
+            (output / 'pre-action-admission.json').write_text(json.dumps(dict(
+                passed=True, initial_fk_checks={str(i): dict(passed=True) for i in range(len(cases))})))
         return SimpleNamespace(poll=lambda: 0)
 
     monkeypatch.setattr(launcher.subprocess, 'Popen', launch)
