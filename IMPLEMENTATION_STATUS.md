@@ -19,8 +19,9 @@ its isolated OpenPI/JAX runtime and native sorting pilot now pass (score 1.0,
 994 actions). Its fixed five-case screen is now complete: 4/5 success, zero
 GPT calls, matched saved-input warm p50 454 ms versus G0.5's 801 ms. See
 `docs/PI05_DEVELOPMENT_SCREEN_20261002.md`.
-Intern and Xiaomi
-RoboDojo are outside the owner's active scope; XR1 RoboCasa365 remains active.
+Intern was reopened by the owner: explicit two-GPU BF16 placement now loads and
+infers at about 820 ms per 10-action chunk; the first native episode is running.
+Xiaomi RoboDojo remains outside active scope; XR1 RoboCasa365 remains active.
 
 Exact motor-only G0.5/pi0.5 native qualifications are now evidence-reviewed;
 fresh G0.5/pi0.5/XR1 motor freezes verify against current source and full grouped

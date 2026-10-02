@@ -4,9 +4,10 @@ Updated 2026-10-02. This tracks the v0.4 handoff sequence, not synthetic success
 Use Sol 6.1 Flex for supervisor comparisons. One paid route check succeeded;
 two G0.5 attempts stopped before motion. XR1's first sparse attempt completed
 one review and 50 steps, then stopped on Flex capacity at request two.
-Owner scope update: RoboDojo candidates are **G0.5 and exact pi0.5 only**.
-Xiaomi R1 and Intern are removed from the active RoboDojo screen; their prior
-code/evidence remain archived. Xiaomi's separate RoboCasa365 track is unchanged.
+Owner scope update: RoboDojo candidates are **G0.5, exact pi0.5, and Intern
+if two-GPU feasibility passes**. Intern feasibility has passed inference;
+its first native episode is in progress. Xiaomi R1 remains outside the active
+RoboDojo screen. Xiaomi's separate RoboCasa365 track is unchanged.
 
 | Stage | Status | Actual evidence / remaining gate |
 |---|---|---|

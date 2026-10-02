@@ -9,7 +9,7 @@ import numpy as np
 from scipy.spatial.transform import Rotation
 from k1lab.errors import ContractError
 from k1lab.model_client import Client
-from .types import Action
+from .types import Action, finite
 
 SYSTEM = '''You supervise one robot episode using current camera images, robot proprioception,
 robot-only proposal previews, and receipts from this episode. No task solutions or cross-episode memory.
@@ -82,7 +82,7 @@ def decode(value, obs, proposal, correction_space, max_steps, *, direct=False,
             raise ContractError('takeover needs observed failure or wrong intent, not uncertainty alone')
         if steps<1 or not isinstance(value['actions'],list) or len(value['actions']) not in (1,steps):
             raise ContractError('correction needs one held target or one action per step')
-        actions=[Action(correction_space,a) for a in value['actions']]
+        actions=[correction_action(correction_space,a) for a in value['actions']]
         if correction_space=='x5_eef16_wxyz':
             for a in actions:
                 for arm,off in (('left',0),('right',8)):
@@ -104,6 +104,19 @@ def decode(value, obs, proposal, correction_space, max_steps, *, direct=False,
         if proposal is None or not 1<=steps<=len(proposal.actions) or value['actions']:
             raise ContractError('accept/shorten must use the fresh unmodified proposal')
     return Decision(mode,steps,actions,value['execution'],value['intent'],value['evidence'],p)
+
+
+def correction_action(space, values):
+    if space=='x5_eef16_wxyz':
+        values=finite(values,(16,),'correction').copy()
+        # Only representation scale changes; geometric bounds below still apply.
+        # Preserve the original values in the model wire-response archive.
+        for offset in (3,11):
+            norm=np.linalg.norm(values[offset:offset+4])
+            if not np.isfinite(norm) or abs(norm-1)>.05:
+                raise ContractError('EEF correction quaternion exceeds 5% normalization bound')
+            values[offset:offset+4]/=norm
+    return Action(space,values)
 
 
 class ModelReviewer:

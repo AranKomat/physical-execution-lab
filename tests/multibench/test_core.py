@@ -106,6 +106,36 @@ def test_uncertainty_not_authority_to_takeover():
     a[0]=1
     with pytest.raises(ContractError):decode(d|{'actions':[a]},o,p,'x5_eef16_wxyz',5)
 
+
+def test_actor_normalizes_small_quaternion_scale_error_without_changing_orientation():
+    from scipy.spatial.transform import Rotation
+    o=obs();a=[0,0,.3,1.013110,0,0,0,1]*2
+    d=decision('correct',1,[a])|{'execution':'failed'}
+    result=decode(d,o,None,'x5_eef16_wxyz',5)
+    assert a[3]==1.013110
+    assert np.linalg.norm(result.actions[0].values[3:7])==pytest.approx(1)
+    assert result.actions[0].values[3:7].tolist()==[1,0,0,0]
+    angle=.36;q=Rotation.from_euler('z',angle).as_quat()[[3,0,1,2]]*1.013110
+    a[3:7]=q.tolist()
+    with pytest.raises(ContractError,match='rotation bound'):
+        decode(d,o,None,'x5_eef16_wxyz',5)
+    a[3:7]=[1.013110,0,0,0];a[0]=.051
+    with pytest.raises(ContractError,match='translation bound'):
+        decode(d,o,None,'x5_eef16_wxyz',5)
+
+
+@pytest.mark.parametrize('norm',[0,.1,.94,1.06,100])
+def test_actor_rejects_gross_quaternion_scale_errors(norm):
+    a=[0,0,.3,norm,0,0,0,1]*2
+    d=decision('correct',1,[a])|{'execution':'failed'}
+    with pytest.raises(ContractError,match='normalization bound'):
+        decode(d,obs(),None,'x5_eef16_wxyz',5)
+
+
+def test_action_unit_validator_remains_strict():
+    with pytest.raises(ContractError,match='unit wxyz'):
+        Action('x5_eef16_wxyz',[0,0,.3,1.013110,0,0,0,1]*2)
+
 def test_robocasa_no_unqualified_base_control():
     o=obs();p=ToyPolicy().propose(o);a=[0]*12;a[11]=-1
     d=decision('correct',1,[a])|{'intent':'misaligned'}

@@ -16,7 +16,11 @@ robot-policy-free direct dense versus direct sparse control.
 Active RoboDojo policies are **G0.5 and the exact released pi0.5 checkpoint**.
 Xiaomi RoboDojo is deferred. Intern was subsequently reopened for feasibility:
 the two-GPU probe now loads and infers at about 820 ms/10-action chunk, with
-native qualification pending (see `docs/INTERN_TWO_GPU_PROBE_20261002.md`). The separate
+native qualification pending (see `docs/INTERN_TWO_GPU_PROBE_20261002.md`).
+The first fresh Intern tower0 motor-only episode is now running as
+`runs/intern-two-gpu-native-001`, with zero paid calls and the original
+1050-action limit. Its running code is commit `a3d4421`; do not restart it or
+inspect evaluator truth to guide control. The separate
 official Xiaomi Robotics-1 RoboCasa365 track remains active.
 Supervisor: **GPT-6.1 Sol, medium reasoning, Flex-only**. No automatic request
 retry, provider/model fallback, or Standard-tier substitution.
@@ -36,7 +40,11 @@ retry, provider/model fallback, or Standard-tier substitution.
 - Large verified backups: local `runs/native-evidence/`, not Git or actor memory.
 - Small public evidence: `docs/evidence/`; detailed reports are linked below.
 
-CPU verification passed 281 tests before the current documentation-only update.
+CPU verification now passes 295 tests, including two-GPU placement and bounded
+EEF quaternion representation normalization. The latter fixes small quaternion
+scale errors without changing translation/rotation/takeover gates; the original
+every-chunk abort remains preserved and no corrected episode has been run.
+See `docs/CORRECTION_QUATERNION_FIX_20261002.md`.
 Release verification at `8ba161d` checked 880 files with no missing/changed bytes.
 These checks do not establish robot competence or phase completion.
 
