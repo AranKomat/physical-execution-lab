@@ -1350,6 +1350,7 @@
     "scripts/semantic/audit_interleaving_probe.py": "80189453e5b37039175dec436097909cd29981cbbd5b1a75f783880a431a86e1",
     "scripts/semantic/prepare_approach_comparison.py": "3c074b31e4b96dce6675b8c9d51e4f1557e8601bff01563ce49a53dbd245d0e4",
     "semantic_lab/comparison.py": "a814696645690f44f174324d1df943bb75f27bc8fa56e1b5fde02a4fcbe46bc3",
-    "tests/semantic/test_comparison.py": "7fae94b4b86bf737a913da6f213cbf03d7bb5d4cadb913bbaa4bcf058c702258"
+    "tests/semantic/test_comparison.py": "7fae94b4b86bf737a913da6f213cbf03d7bb5d4cadb913bbaa4bcf058c702258",
+    "scripts/semantic/run_reference_waves.py": "c993895efa1e560988166473789555597cdb3a3b51a577b0353dbea31dee55d4"
   }
 }
