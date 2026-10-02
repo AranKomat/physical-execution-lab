@@ -182,8 +182,11 @@ V5 native progress: wrapped original-only tower0 completed unsuccessfully at
 1050 actions, score 0.10, 70 policy calls and zero GPT calls. Native prefix,
 source proposal, ACK and evaluator audits pass. Independent real-GPU tokenizer
 probes retain both added prompts; source outputs respond to changed language
-but task obedience is not established. Shadow/full conditioning qualification
-remains pending. See [native V5 progress](semantic/NATIVE_QUALIFICATION_PROGRESS_20261002.md).
+but task obedience is not established. Repaired shadow completed with failure,
+score 0.10, unchanged motor prompts/cadence and passing audits. A 30-action
+actual-source context/ACK/tokenizer probe passed. Formal qualification/freeze
+and matched hierarchy remain pending. See [latest external handoff](semantic/EXTERNAL_PROGRESS_HANDOFF_20261002.md)
+and [native V5 progress](semantic/NATIVE_QUALIFICATION_PROGRESS_20261002.md).
 
 The owner supplied a new semantic-subtask overlay on 2026-10-02. The active
 sequence is now native no-interference/shadow qualification, prompt and tokenizer

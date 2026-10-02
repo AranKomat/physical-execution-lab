@@ -22,11 +22,16 @@ NPZ proposals matching the journal, exact original prompt, fresh contiguous
 source inference indices, bound checkpoint and source seed0. No unresolved
 actions, controller faults, numeric corrections or semantic interventions.
 
-The earlier tower0 screen succeeded at 714 actions, but its reset observation
-hash differs (`71e64ae...` versus this episode's `5a6fbb6...`). The native case,
-policy identity and environment contract match. We cannot attribute the changed
-outcome to a wrapper regression or assert reproducible physical parity from
-these two episodes. Keep both results; do not replace the new failure.
+The earlier tower0 screen succeeded at 714 actions. Observation stamps include
+episode IDs, so different stamps do not establish different physical resets.
+The native case, policy identity and environment contract match, but exact
+physical parity and the cause of the changed outcome are not established.
+Keep both results; do not replace the new failure.
+
+Direct baseline versus repaired-shadow reset field fingerprints, excluding
+episode IDs, match for proprio, EEF positions/quaternions and instruction but
+differ for all three lossless RGB arrays. This establishes an observed visual
+difference, not its cause or a difference in complete simulator physics state.
 
 ## Actual Tokenizer and Conditioning Probe
 
@@ -83,7 +88,21 @@ echo; rephrasing still fails. Offline replay of that retained response passes
 without changing the goal/epoch and without motion or a new API request.
 Shadow planner/parse errors now disable further planner calls and are logged
 separately, rather than stopping the original motor rollout. Active hierarchy
-errors still stop fail-closed. Native verification of these repairs is pending.
+errors still stop fail-closed. The repaired native shadow completed at 1050
+actions with failure/score 0.10, 70 policy calls, ten settled Flex calls
+($0.059665), 718.25 s wall and 112.34 s planner time. Its three semantic changes
+produced zero motor prompt changes. Source/prefix/ACK/evaluator audits pass;
+there were no planner faults, resets, resampling, shortening or unresolved
+actions. All 2,294 payloads were backed up and verified. This supports cadence
+and prompt no-interference, not bitwise trajectory parity or task improvement.
+
+A separate manual context probe executes 30 actions in two natural H50/15
+prefixes. At step 15 the context setter adds `Keep both hands still.` without
+motion, resampling, extra observation ACK or history reset. Passive observation
+of actual source tokenization records 67 then 84 active tokens out of 200;
+the full subtask survives and transform results are returned unchanged.
+All 83 backup files match independently retrieved remote SHA-256 checksums.
+This instrumented manual probe qualifies plumbing only, not task obedience.
 
 The first relay setup error occurred before API/motion: the inherited payment
 ledger rejects a 3600-second window. Actual paid operation used 2400 seconds;
@@ -99,5 +118,5 @@ operator's 16 calls/$1, not inherited 180 calls/$3. Full CPU suite: 374 passed.
 - Matched development hierarchy and separate recovery condition.
 - Freeze choices before unopened held-out task groups.
 
-No native V5 hierarchy gain, full no-interference qualification, asynchronous
-planning or full-benchmark replication is established yet.
+No native V5 hierarchy gain, formal source/config-bound qualification freeze,
+asynchronous planning or full-benchmark replication is established yet.

@@ -768,7 +768,7 @@
     "tests/test_runner.py": "1367ffdeaa9b9c598979e6af98b5c3f9fee3f0bee3256524ad491f3ea14944e9",
     "upstream.lock.json": "553a969210291a8d72a6ae9d0dcd0b49d696e3377125ba400079762a67390a9e",
     "docs/NATIVE_PILOT_20261002.md": "3c481089ade9c7ca93bd0fe1775230966ad8a691d5c805d1751c16edb18acb10",
-    "docs/EXPERIMENT_PROGRESS.md": "21a45cab2cb7e1b93e0841e62d0e51c43c5a06d9ec98305063bfef15afef3b03",
+    "docs/EXPERIMENT_PROGRESS.md": "8321c30e7492c999b58e00e07c32857ffa9573a494bba62243b06f5ac7d48d48",
     "scripts/multibench/prepare_g05_bundle.py": "d976e0a3c611ab8ab660e0c735695d30ab68f310e16ce8510a52d5a593a7e332",
     "docs/evidence/g05-native-002/evaluation_outcome.json": "c9c9756f6697ae64e36d0617ba0ed4d1a36d81c2e2853ab8a7c96d57d43f6024",
     "docs/evidence/g05-native-002/fk_validation.json": "d78c3f14caf685676a9fc9e3c82c74377eb5d4e111afe64d0d7142abb1ba6fe4",
@@ -883,7 +883,7 @@
     "docs/evidence/robodojo-motor-qualification/pi05-freeze.json": "c5906d1f4e6c51ca101fc0cc15fc82dae2ea69ab56b7920f9fac41354dc3e441",
     "docs/evidence/robodojo-motor-qualification/pi05.json": "144bebdb5c7c0665daa11b9d2989ef1bd9966808d54d015f6cbfbcbc4f48fc5e",
     "docs/evidence/robodojo-motor-qualification/xr1-freeze.json": "e77f0d4c29791d2d6ea59038ec423540eedee9cd75f10be7163edd7efe1c5eee",
-    "docs/RESEARCH_PROGRESS_HANDOFF_20261002.md": "3b86092603c33b5e81a29b66ee4a4c58398fcbfe07458a21eb92f386104ea656",
+    "docs/RESEARCH_PROGRESS_HANDOFF_20261002.md": "979127d93693c652e9eb109a2c53dce48774c9bb622ccf5f6fc7053a7837b2e0",
     "docs/evidence/pi05-every-chunk-sol-flex-dev-001/api-summary.json": "78467ebecadb5247bbe9d8363125ba1e42cfbc9fa16f055b386876ea2aaaf54a",
     "docs/evidence/pi05-every-chunk-sol-flex-dev-001/backup-verification.json": "1ffa223d9a84f110e627f76f45a15321ffbf939f06883ec1c22bbf765145828b",
     "docs/evidence/pi05-every-chunk-sol-flex-dev-001/offline-audit.json": "f1cbac3889e0be0c3e46db86cfcddb40b05606d32396dabb23840782505fd29e",
@@ -995,9 +995,13 @@
     "docs/evidence/semantic-pi05-dev-001/motor_only/result.json": "79399e4da91c90c4e8489ad02f1a1e3766ce7ce64add5721246fc52d91c89909",
     "docs/evidence/semantic-pi05-original-replay-001/report.json": "f73a80ef376e31393ce535b358bc1076762e2a8aaefb8c590cac1a5a1704585d",
     "docs/evidence/semantic-pi05-prompt-probe-001/report.json": "ffafb9b0922a7ee54093bd529ad9453a3305ebb11c656b2dec2bb91b4126432b",
-    "docs/semantic/NATIVE_QUALIFICATION_PROGRESS_20261002.md": "b28bb7ee12175377a015ec37c2c20d1fe7943b97e8a22b78e8f4477b7899e02c",
+    "docs/semantic/NATIVE_QUALIFICATION_PROGRESS_20261002.md": "afd38769f49ac546298218d2ec2d965b9663a64bc4104d89dbc5173304650d66",
     "docs/evidence/semantic-pi05-dev-001/shadow/offline-audit.json": "bc246234ac9716c4dae09347a6f2e4627e517213124731e6315c10220fad00f0",
     "docs/evidence/semantic-pi05-dev-001/shadow/result.json": "2e5a16d1977371e87f18b968f4b1dd6a665693f2952b902b08d880d28880c860",
-    "docs/semantic/ORIGINAL_OVERLAY_V5.json": "255d02e40912288f750b6350d72da6422450b488a5711e8fc94e9c553adf9b78"
+    "docs/semantic/ORIGINAL_OVERLAY_V5.json": "255d02e40912288f750b6350d72da6422450b488a5711e8fc94e9c553adf9b78",
+    "docs/evidence/semantic-pi05-dev-002/shadow_repaired/api-summary.json": "03ecc1376fbad1e3a333e573a47207fe0fae46561981c886e7ded4c7974bd19b",
+    "docs/evidence/semantic-pi05-dev-002/shadow_repaired/offline-audit.json": "29462683440d57df3cfdf19e9a0dc91ab0eb5344eb3caf207fb400f0b3931540",
+    "docs/evidence/semantic-pi05-dev-002/shadow_repaired/result.json": "992143b0ae3c52eb8eaca5f9e5da4bb207c107a25f85afc4625106fef30b8481",
+    "docs/semantic/EXTERNAL_PROGRESS_HANDOFF_20261002.md": "c6dc16898137a3a9017dd15c9fc5ce582f7b9c56ffcfeeda94d1846caae5ca35"
   }
 }
