@@ -1,0 +1,26 @@
+{
+  "case_id": "arrange_largest_number__standard__g0__l0",
+  "case_sha256": "e8be50fb6b307022f93e8bf03e9057df47c6c08b817323045f619c76cbff2f5c",
+  "conditions": [
+    "robodojo_pi05_motor_only",
+    "robodojo_pi05_sparse",
+    "robodojo_pi05_review_every_chunk"
+  ],
+  "freeze_sha256": "216d1e9228dd1a3aaa9a5194c6789f7c94223d77d1052c0b4ac0b913350f35a4",
+  "local_paid_cap_usd": 3,
+  "no_case_replacement": true,
+  "no_retry": true,
+  "order": [
+    "motor_only",
+    "sparse",
+    "review_every_chunk"
+  ],
+  "policy_gpu": 0,
+  "qualification_review": "/root/physical-execution-lab/docs/PI05_MATCHED_COMPARISON_PLAN_20261002.md",
+  "review_ceiling": 180,
+  "selection": "first lexical test group, first lexical standard case; fixed before task observation",
+  "shared_paid_cap_usd": 85,
+  "simulator_gpu": 0,
+  "source_restart_per_condition": true,
+  "trial_profile": "comparison180"
+}

@@ -1,0 +1,91 @@
+{
+  "checks": {
+    "action_space_verified": true,
+    "controller_timing_verified": true,
+    "current_sensor_only_actor": true,
+    "native_completion_not_vacuous": true,
+    "native_reset_render": true,
+    "policy_observation_ack_verified": true
+  },
+  "config_sha256": "2969143a00a8cef0d6557a3b8161726263106f532375e44a04b4e1aa77bbc949",
+  "evidence": [
+    {
+      "path": "docs/evidence/pi05-development-screen/report/outcomes.json",
+      "sha256": "43347028a28fd59c42fc881f65e9de300c84515dd26bc05452fbde1584daad1c"
+    },
+    {
+      "path": "docs/evidence/pi05-development-screen/sort-l2/audit.json",
+      "sha256": "64f7ef08c568cecf61d158264308d97113f5a6553c16cd24785f6a131fd80fad"
+    },
+    {
+      "path": "docs/evidence/pi05-development-screen/backup-verification.json",
+      "sha256": "459ffb2d869c2337065d96e5f418e7e7fd2f1af25629dc49ac96202b301f3420"
+    },
+    {
+      "path": "k1lab/multibench/adapters/pi05.py",
+      "sha256": "16cac60a150377ba4f23fbb493ce8579c24f09f1feb532951ae5c034895e0c18"
+    },
+    {
+      "path": "k1lab/multibench/adapters/robodojo.py",
+      "sha256": "dc3897599cee29643cbf7cbd5141ecbaaf496493eb10e0614b2d7f50aa2077ce"
+    },
+    {
+      "path": "docs/ROBODOJO_MOTOR_QUALIFICATION_20261002.md",
+      "sha256": "e5dce57f8b5edfae471b3096f1faf0ffdf7a7f731bbca2d69c57417e29a45ed6"
+    },
+    {
+      "path": "docs/PI05_MATCHED_COMPARISON_PLAN_20261002.md",
+      "sha256": "491fec82df692df946d5b0ef8fce8baceeb15d50b4c25f4236e460b55d7f0c4b"
+    },
+    {
+      "path": "docs/evidence/pi05-sparse-sol-flex-dev-001/result.json",
+      "sha256": "2d9924aa8d5ee8a44b0801b4fa5a85b36afd31b0ba42e77cec5b68e0f90ca594"
+    },
+    {
+      "path": "docs/evidence/pi05-sparse-sol-flex-dev-001/audit.json",
+      "sha256": "11377c97cdbb863222fbce06130e02c8cee8f46c2ecdba57c87e3624eb831fa3"
+    },
+    {
+      "path": "docs/evidence/pi05-sparse-sol-flex-dev-001/proposal-audit.json",
+      "sha256": "eff7dcb5db76e5f24cafefcffac6dba28c2c92cd71bc565b02be6826ec5929f3"
+    },
+    {
+      "path": "docs/evidence/pi05-every-chunk-sol-flex-dev-002/result.json",
+      "sha256": "606fa2384fdea1eafe46a3874403e5e3ae8bdc32ade68a58a6ada6b5e777195b"
+    },
+    {
+      "path": "docs/evidence/pi05-every-chunk-sol-flex-dev-002/offline-audit.json",
+      "sha256": "023c845560622b186f7c1ee990e8818b734ff85a820d6a887c706e847a7ceb20"
+    },
+    {
+      "path": "docs/evidence/pi05-every-chunk-sol-flex-dev-002/proposal-audit.json",
+      "sha256": "39deff26ace9c43b195d1dfac302bf5dabc04935da4f426cb4d849beb27c7059"
+    },
+    {
+      "path": "docs/CORRECTION_QUATERNION_FIX_20261002.md",
+      "sha256": "d93942d12a608b4b857eae8d3c6ac6a85f98acb3bc31051a53e4f6cf86073036"
+    },
+    {
+      "path": "k1lab/multibench/actor.py",
+      "sha256": "80072cd083be766443a12dbb870555fe16b6b270706dc860e81759c13ab1f5c0"
+    },
+    {
+      "path": "k1lab/multibench/runner.py",
+      "sha256": "556863ee6d9bcdb4f1e346434445818af97e2c89217e6bd3fe58750b4a8b3274"
+    },
+    {
+      "path": "k1lab/multibench/types.py",
+      "sha256": "6c786bced6d010ef10c080618ab795af49c2550567fbf6ab1c81a025535cc27b"
+    },
+    {
+      "path": "scripts/multibench/prepare_supervision_pilot.py",
+      "sha256": "ae10321073c7bb1ec7b49670a996f775fa57543f597d3fed1e44458fbba8c103"
+    },
+    {
+      "path": "scripts/multibench/budget_responses_relay.py",
+      "sha256": "e5af4386d4ad477cc10f6df11e916078e0269c0c1fc59ea4a701540a569ed988"
+    }
+  ],
+  "operator_notes": "Exact-config prospective software-contract review under the hashed comparison plan. Native pi0.5 transport/controller evidence and audited development supervision evidence carried forward; no task recipe or outcomes enter actor context. Explicit 180-review resource profile, unchanged action geometry and $3/$85 caps. Not contact competence, safety, real-time behavior or live quaternion-normalization evidence.",
+  "schema": "multibench.qualification.v1"
+}

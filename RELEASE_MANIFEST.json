@@ -768,7 +768,7 @@
     "tests/test_runner.py": "1367ffdeaa9b9c598979e6af98b5c3f9fee3f0bee3256524ad491f3ea14944e9",
     "upstream.lock.json": "553a969210291a8d72a6ae9d0dcd0b49d696e3377125ba400079762a67390a9e",
     "docs/NATIVE_PILOT_20261002.md": "3c481089ade9c7ca93bd0fe1775230966ad8a691d5c805d1751c16edb18acb10",
-    "docs/EXPERIMENT_PROGRESS.md": "3f29d993b1c123502d3c7ff323a529ae531b045bc8d2a7d14d13d092afa9f6aa",
+    "docs/EXPERIMENT_PROGRESS.md": "619b052bae96ee87722545fc4a8cc89ec3a0f97dad660bff1ae1ac255209702e",
     "scripts/multibench/prepare_g05_bundle.py": "d976e0a3c611ab8ab660e0c735695d30ab68f310e16ce8510a52d5a593a7e332",
     "docs/evidence/g05-native-002/evaluation_outcome.json": "c9c9756f6697ae64e36d0617ba0ed4d1a36d81c2e2853ab8a7c96d57d43f6024",
     "docs/evidence/g05-native-002/fk_validation.json": "d78c3f14caf685676a9fc9e3c82c74377eb5d4e111afe64d0d7142abb1ba6fe4",
@@ -883,7 +883,7 @@
     "docs/evidence/robodojo-motor-qualification/pi05-freeze.json": "c5906d1f4e6c51ca101fc0cc15fc82dae2ea69ab56b7920f9fac41354dc3e441",
     "docs/evidence/robodojo-motor-qualification/pi05.json": "144bebdb5c7c0665daa11b9d2989ef1bd9966808d54d015f6cbfbcbc4f48fc5e",
     "docs/evidence/robodojo-motor-qualification/xr1-freeze.json": "e77f0d4c29791d2d6ea59038ec423540eedee9cd75f10be7163edd7efe1c5eee",
-    "docs/RESEARCH_PROGRESS_HANDOFF_20261002.md": "e0757cd32eae66f65ff1cb4fb2c3c4cf8805b4f9d03b2b81ba36e15931c70860",
+    "docs/RESEARCH_PROGRESS_HANDOFF_20261002.md": "01722278bee489503a1f3a348453e698b3c4c3844e3defaf313291ac87f3f2ac",
     "docs/evidence/pi05-every-chunk-sol-flex-dev-001/api-summary.json": "78467ebecadb5247bbe9d8363125ba1e42cfbc9fa16f055b386876ea2aaaf54a",
     "docs/evidence/pi05-every-chunk-sol-flex-dev-001/backup-verification.json": "1ffa223d9a84f110e627f76f45a15321ffbf939f06883ec1c22bbf765145828b",
     "docs/evidence/pi05-every-chunk-sol-flex-dev-001/offline-audit.json": "f1cbac3889e0be0c3e46db86cfcddb40b05606d32396dabb23840782505fd29e",
@@ -943,6 +943,15 @@
     "docs/evidence/motor-freeze-refresh-002/xr1-freeze.json": "e9a5d74c51ec767b4208b7ac39bbaa82c3daaf3dbd00be06c44f30ef123d9613",
     "docs/evidence/motor-freeze-refresh-002/xr1-qualification.json": "c06d80ac06d35074c6958c2a1c6c7370c6d4a0e903ec978874cb6e3c12eabbf8",
     "docs/evidence/motor-freeze-refresh-002/xr1-resolved-config.json": "a3bf537405299dd62e7140e2924190d7b22a9bd982f2a95c9931f0908e6557dc",
-    "docs/PI05_MATCHED_COMPARISON_PLAN_20261002.md": "491fec82df692df946d5b0ef8fce8baceeb15d50b4c25f4236e460b55d7f0c4b"
+    "docs/PI05_MATCHED_COMPARISON_PLAN_20261002.md": "491fec82df692df946d5b0ef8fce8baceeb15d50b4c25f4236e460b55d7f0c4b",
+    "docs/evidence/pi05-matched-heldout-001-configuration/freeze.json": "54b71d56dfd911815d47850b7e8f0a64f183d40e43337d71e42df8b60e04c1cb",
+    "docs/evidence/pi05-matched-heldout-001-configuration/motor_only-qualification.json": "2408097ae32ed36173273a0bec43b5fde8fea7e1518322dd9b32d102d6882592",
+    "docs/evidence/pi05-matched-heldout-001-configuration/plan.json": "1a2c053fe832fc5182d88b5c57aac39035677b4031b9a77987df7c4fb336daf7",
+    "docs/evidence/pi05-matched-heldout-001-configuration/provider.json": "65684503026a6f108a2cebad66e63528bc6c5dd39cf2d33b0f7398846f98d7db",
+    "docs/evidence/pi05-matched-heldout-001-configuration/review_every_chunk-qualification.json": "17754e2a544738d79bea60c5c71014513ae9d029d2edcfe98c86d9bf3910875a",
+    "docs/evidence/pi05-matched-heldout-001-configuration/robodojo_pi05_motor_only.json": "181b6f6379bfc82b345d8b89f629069ae37ce662a95352153c059b9d30a3aa68",
+    "docs/evidence/pi05-matched-heldout-001-configuration/robodojo_pi05_review_every_chunk.json": "ee457e04013835532169b1078f48bc8e6815481730baba91f1b6d1264c8e173b",
+    "docs/evidence/pi05-matched-heldout-001-configuration/robodojo_pi05_sparse.json": "56542b467df2965417e55093059d669c9032379327163b451008cbde9a8519a9",
+    "docs/evidence/pi05-matched-heldout-001-configuration/sparse-qualification.json": "44c162106ef3a10878d840013f7924353f0bde03a72f68b58e68a705530a3cde"
   }
 }

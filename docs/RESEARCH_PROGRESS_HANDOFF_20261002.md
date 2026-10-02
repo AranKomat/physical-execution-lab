@@ -294,9 +294,17 @@ Qualification reports: `docs/ROBODOJO_MOTOR_QUALIFICATION_20261002.md`,
 | D, RoboCasa365 | Motor-only qualification/six-case screen complete; matched supervision unfinished |
 | E, sensing/transfer | Deferred until useful matched physical results |
 
-No held-out task episode has been opened. Eight untouched RoboDojo task groups
-remain test; sorting and tower families are development. Next use predefined
-matched conditions/subsets with pi0.5 primary and G0.5 secondary,
+The first held-out task episode is now open: pi0.5 motor-only on
+`arrange_largest_number__standard__g0__l0`. Sparse/every-chunk configs are
+qualified and frozen prospectively for fresh runs on that same case. Explicit
+comparison180 profile: 180 reviews/3600 s, unchanged $3 per paid condition/$85
+shared ceiling and Flex-only route. Original 75-review pilots are not relabeled.
+Freeze `216d1e9228dd1a3aaa9a5194c6789f7c94223d77d1052c0b4ac0b913350f35a4`
+binds source `aedfbdeaccae697456e138487cad85f5abae1574b31b6e344bbd456d95f904ea`;
+other older motor freezes remain historical after the resource-profile edit.
+No matched result is claimed yet. Seven other RoboDojo test groups remain
+unopened; sorting/tower are development. Use predefined matched conditions
+with pi0.5 primary and G0.5 secondary,
 not additional candidate models, component sweeps, or task-specific fixes. Complete
 robot-policy-free direct dense/sparse and XR1 matched supervision separately.
 

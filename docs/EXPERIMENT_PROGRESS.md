@@ -163,3 +163,16 @@ code `53da0e6e8f391e9093b3d01f499c528fc078885c3127f8048e7f1b0aad0d8c1a`.
 Remote artifact/evidence checks and local source/config seals pass; no held-out
 episode or paid call was part of the refresh. Supervision/direct qualification
 and complete matched Stage C/D comparisons remain unfinished.
+
+Stage C is now running its first frozen held-out pi0.5 comparison on
+`arrange_largest_number__standard__g0__l0`, chosen before task observation.
+Motor-only is first; sparse and every-chunk follow as fresh episodes, without
+cross-episode actor context. All three have exact reviewed software-contract
+qualifications and freeze `216d1e9228dd1a3aaa9a5194c6789f7c94223d77d1052c0b4ac0b913350f35a4`.
+Code `aedfbdeaccae697456e138487cad85f5abae1574b31b6e344bbd456d95f904ea`
+includes the explicit comparison180 resource profile (180 reviews, 3600 s),
+keeping the default 75-review pilot and $3/$85 caps. Older motor freezes are
+historical after this source change. No result is claimed before termination.
+Seven other test groups remain unopened. See
+[the fixed comparison plan](PI05_MATCHED_COMPARISON_PLAN_20261002.md) and
+`docs/evidence/pi05-matched-heldout-001-configuration/`.

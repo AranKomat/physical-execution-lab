@@ -1,0 +1,74 @@
+{
+  "benchmark": "robodojo",
+  "classification": "benchmark_trained_policy_plus_runtime",
+  "controller_qualification_required": true,
+  "environment": {
+    "allow_xiaomi_eef_via_dls": false,
+    "backend": "robodojo_rpc",
+    "gpt_as_policy_root": "/root/physical-execution-lab/external/GPT-as-Policy",
+    "native_outcome_path": "/ABSOLUTE/PATH/SIM_OUTPUT/evaluation_outcome.json",
+    "sim_port": 19113
+  },
+  "max_correction_steps": 5,
+  "max_decision_steps": 15,
+  "max_reviews": 180,
+  "mode": "sparse",
+  "model": {
+    "api_key_env": "K1_RELAY_TOKEN",
+    "base_url": "http://127.0.0.1:19861",
+    "history_rounds": 4,
+    "image_max_edge": 480,
+    "max_output_tokens": 2048,
+    "max_requests": 180,
+    "max_total_output_tokens": 368640,
+    "model": "gpt-6.1-sol",
+    "reasoning_effort": "medium",
+    "service_tier": "flex",
+    "timeout_s": 900,
+    "transport": "responses"
+  },
+  "monitor": {
+    "max_unreviewed_chunks": 4,
+    "max_unreviewed_steps": 50
+  },
+  "name": "robodojo_pi05_sparse",
+  "no_task_demonstrations": true,
+  "no_task_memory": true,
+  "paid_route": {
+    "credentials_location": "operator Mac, never GPU host",
+    "local_cap_usd": "3",
+    "model": "openai/gpt-6.1-sol",
+    "provider": "openai/flex",
+    "request_normalization": {
+      "reason": "not advertised by selected route; local actor requires exactly one function call",
+      "remove": [
+        "parallel_tool_calls"
+      ]
+    },
+    "retry": false,
+    "service_tier": "flex",
+    "shared_ceiling_usd": "85",
+    "trial_call_limit": 180,
+    "trial_profile": "comparison180"
+  },
+  "policy": {
+    "artifact_manifest": "/root/physical-execution-lab/configs/local/pi05-exact-bound-001/artifacts.json",
+    "backend": "remote",
+    "endpoint": "http://127.0.0.1:19603",
+    "identity": {
+      "action_space": "x5_joint14",
+      "adapter_config_sha256": "6a172d9cb0c9528f3fa6f50d472dac6948b34a9827e6a71816d47adc224d8edf",
+      "benchmark_training": "RoboDojo task/embodiment post-trained",
+      "checkpoint_sha256": "c70c9a59e650d484c8b921d8e17181cacd8e24b20c4cbae8277a1dffe9b69ee9",
+      "execute_steps": 15,
+      "name": "pi05_robodojo",
+      "native_hz": 25.0,
+      "prediction_horizon": 50,
+      "preprocessing_id": "gpt_as_policy_openpi_jax_cam3_joint14",
+      "revision": "8f3d362b077d8efb77e2a7274d5b2c20e2243846",
+      "stateful": false
+    }
+  },
+  "robot_preview": true,
+  "wall_limit_s": 3600
+}
