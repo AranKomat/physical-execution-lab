@@ -241,7 +241,7 @@ variant is the already-frozen subtask-only condition, not changing successful
 case definitions or retrospectively improving the task-plus-subtask prompts.
 Operators now accept that condition and preserve the same frozen config,
 qualification, source/prefix audit and singleton paid-relay lock. No
-subtask-only episode has been executed yet.
+subtask-only episode had been executed at that point; the first result follows.
 
 The latest simulator-throughput item is a full-horizon five-env motor wave
 using native single-row pi0.5 inference and separate per-env RNG state. It is
@@ -264,3 +264,20 @@ original file hashes verified without extraction. Archive SHA256:
 No remote source retirement occurred. The next semantic work is the frozen
 subtask-only variant; the next throughput work is integrating that existing
 protocol with the shared native batch executor and an explicitly bound roster.
+
+## First Subtask-Only Result And Co-Location
+
+Sorting2 subtask-only abstained at 840 actual actions, with native score null:
+56 policy calls, nine Sol 6.1 medium/Flex calls, $0.05296150 settled, and
+580.68 s wall time (83.66 s planner wait). Two prompt changes; zero controller
+faults, resets, resampling, shortening, recovery or unresolved actions.
+Source proposal/prefix/ACK audit passed, including fresh inference indices,
+checkpoint identity and preserved history. This is incomplete, not native
+success or horizon failure. Subtask-only coverage is now **1/5**, not phase
+completion. Small evidence is under `../evidence/semantic-pi05-hierarchy-001/subtask_only/classify_objects__standard__g0__l2/`.
+
+Concurrently, five shared simulator environments plus pi0.5 fit GPU1 at
+18.09 GiB during a 750-control bounded motor wave. This frees GPU0 for a
+second experimental wave without another rental; G0.5 co-location and native
+vector integration are still untested. This capacity result does not add a
+hierarchy success or replace any frozen comparison.

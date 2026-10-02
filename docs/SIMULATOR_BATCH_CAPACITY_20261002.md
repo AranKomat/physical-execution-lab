@@ -203,10 +203,33 @@ The next step is a fixed broader development roster and semantic batch
 integration, not more maximum-batch-size sweeps. Frozen single-env hierarchy
 variants still need their own results and are not replaced by this wave.
 
-For parallel model evaluation, the next small resource check should be
-co-location: this native-singleton wave used about 18.13 GiB across its two
-separate devices, so five environments plus one pi0.5 runtime on a single
-4090 is plausible. It is not yet measured as a co-resident configuration;
-load/compile peaks and combined allocator behavior must be checked. If it
-works, the other 4090 can run a second model/task-family wave. This is more
-useful than renting additional GPUs or chasing the largest inference batch.
+## Single-GPU Co-Location Result
+
+Five environments and one shared pi0.5 runtime subsequently ran together on
+physical GPU1, executing 750 controls (150/env) in 92.20 s through ten vector
+request boundaries. Device usage was **18,520 MiB (18.09 GiB)** with 5,562 MiB
+free. Simulator and policy processes were independently observed on GPU1;
+a separate paid single-env hierarchy trial ran concurrently on GPU0. This
+demonstrates co-location during a bounded rollout, not a measured worst-case
+peak or full-horizon co-location qualification.
+
+Routing, source proposals, contiguous actual ACKs, H50/15 cadence, post-action
+states, nonblank cameras and singleton call counts passed audit. No unstable
+environment was flagged. Status is `bounded_wave_incomplete`: no native
+terminal outcome was reached. Layouts remain [0,1,2,0,1], not five independent
+tasks. Evidence: [co-location](evidence/vector-colocation-20261002/).
+
+Simulator sharing is the first scaling lever: five shared environments use
+roughly 9-10 GiB for simulation, whereas one additional independent simulator
+previously added 5.68 GiB. Model weights and simulator runtime are shared;
+episode observations, action counters, policy RNG/history and journals remain
+separate. pi0.5 continues native single-row inference because fused action
+parity has not passed.
+
+The next practical target is two concurrent five-env waves, one per 4090,
+starting with same-family layouts. G0.5 needs its own native vector execution
+and co-location check before claiming that configuration works. Arbitrary
+mixed-family scenes, semantic planning integration and isolated scene/reset
+parity remain open. Prefer expanding a bound development roster over another
+maximum-batch sweep; no new GPU rental is justified yet. Retain original
+benchmark camera settings, physics and horizons while testing this scaling.

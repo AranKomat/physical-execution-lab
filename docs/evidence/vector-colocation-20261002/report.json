@@ -1,0 +1,99 @@
+{
+  "status": "bounded_wave_incomplete",
+  "scope": "experimental vector motor rollout, separate execution cohort",
+  "paid_calls": 0,
+  "resets": 1,
+  "task": "classify_objects",
+  "requested_envs": 5,
+  "budget_steps_per_env": 150,
+  "physics_of_completed_envs": "continues globally; terminal score frozen",
+  "rng_parity": false,
+  "inference_mode": "native_singleton",
+  "scored_benchmark_qualified": false,
+  "native_registration": {
+    "registered": true,
+    "source": "native EvalEnv.run_eval preamble",
+    "condition_group_counts": {
+      "check_list": [
+        1,
+        1,
+        1,
+        1,
+        1
+      ],
+      "final_check_list": [
+        0,
+        0,
+        0,
+        0,
+        0
+      ],
+      "trigger_check_list": [
+        0,
+        0,
+        0,
+        0,
+        0
+      ]
+    },
+    "initial_support_arm_query_envs": []
+  },
+  "reset_seeds": [
+    0,
+    1,
+    2,
+    0,
+    1
+  ],
+  "layout_bindings": [
+    {
+      "env_idx": 0,
+      "layout_id": 0,
+      "path": "/root/physical-execution-lab/external/RoboDojo/env/../Assets/Eval_Layout/RoboDojo/arx_x5/0/classify_objects_0.json",
+      "sha256": "5ceb9e18e6d8490a7db85dd001462d63265c297ea6fad0d7438364deb2de3ece"
+    },
+    {
+      "env_idx": 1,
+      "layout_id": 1,
+      "path": "/root/physical-execution-lab/external/RoboDojo/env/../Assets/Eval_Layout/RoboDojo/arx_x5/0/classify_objects_1.json",
+      "sha256": "013d7141ffc9865d7cccf650301f642e6b83b3eb59f78cf5b1d0caf47158e17a"
+    },
+    {
+      "env_idx": 2,
+      "layout_id": 2,
+      "path": "/root/physical-execution-lab/external/RoboDojo/env/../Assets/Eval_Layout/RoboDojo/arx_x5/0/classify_objects_2.json",
+      "sha256": "6b3a30251bd92a465ffdc82436e14dde84879906eeab3b0e8944865b9eef38f7"
+    },
+    {
+      "env_idx": 3,
+      "layout_id": 0,
+      "path": "/root/physical-execution-lab/external/RoboDojo/env/../Assets/Eval_Layout/RoboDojo/arx_x5/0/classify_objects_0.json",
+      "sha256": "5ceb9e18e6d8490a7db85dd001462d63265c297ea6fad0d7438364deb2de3ece"
+    },
+    {
+      "env_idx": 4,
+      "layout_id": 1,
+      "path": "/root/physical-execution-lab/external/RoboDojo/env/../Assets/Eval_Layout/RoboDojo/arx_x5/0/classify_objects_1.json",
+      "sha256": "013d7141ffc9865d7cccf650301f642e6b83b3eb59f78cf5b1d0caf47158e17a"
+    }
+  ],
+  "action_counts": [
+    150,
+    150,
+    150,
+    150,
+    150
+  ],
+  "predictions": 10,
+  "terminal": {},
+  "memory": "0, 15159, 8923\n1, 18520, 5562\n",
+  "wall_s": 92.19672159000038,
+  "active_envs": [
+    0,
+    1,
+    2,
+    3,
+    4
+  ],
+  "unstable_envs": []
+}
