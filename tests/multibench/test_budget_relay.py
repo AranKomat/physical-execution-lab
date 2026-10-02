@@ -89,10 +89,14 @@ def test_semantic_route_rejects_wrong_tool_before_reservation(tmp_path):
 def test_extended_comparison_limits_require_explicit_profile():
     relay.trial_limits('pilot75',75,Decimal(3),2400)
     relay.trial_limits('comparison180',180,Decimal(3),3600)
+    relay.trial_limits('full_panel1800',1800,Decimal(3),3600)
     for profile,calls,cap,wall in (
         ('pilot75',180,Decimal(3),2400),
         ('pilot75',75,Decimal(3),3600),
         ('comparison180',181,Decimal(3),3600),
         ('comparison180',180,Decimal('3.01'),3600),
-        ('comparison180',180,Decimal(3),3601)):
+        ('comparison180',180,Decimal(3),3601),
+        ('full_panel1800',1801,Decimal(3),3600),
+        ('full_panel1800',1800,Decimal('3.01'),3600),
+        ('full_panel1800',1800,Decimal(3),3601)):
         with pytest.raises(ValueError):relay.trial_limits(profile,calls,cap,wall)

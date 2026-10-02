@@ -21,10 +21,10 @@ PROVIDER={'only':['openai/flex'],'allow_fallbacks':False,'require_parameters':Tr
 
 
 def trial_limits(profile,max_calls,cap,wall_limit_s):
-    ceiling={'pilot75':75,'comparison180':180}.get(profile)
+    ceiling={'pilot75':75,'comparison180':180,'full_panel1800':1800}.get(profile)
     if ceiling is None or not 1<=max_calls<=ceiling or not 0<cap<=3:
         raise ValueError('invalid trial scope')
-    if not 0<wall_limit_s<=(3600 if profile=='comparison180' else 2400):
+    if not 0<wall_limit_s<=(3600 if profile in ('comparison180','full_panel1800') else 2400):
         raise ValueError('invalid trial wall limit')
 
 
@@ -113,7 +113,7 @@ def main():
     for name in ('campaign-root','key-file','output','name'):p.add_argument('--'+name,required=True)
     p.add_argument('--port',type=int,default=19861);p.add_argument('--expected-calls',type=int,required=True)
     p.add_argument('--max-calls',type=int,default=75);p.add_argument('--cap-usd',type=Decimal,default=Decimal(3))
-    p.add_argument('--profile',choices=('pilot75','comparison180'),default='pilot75')
+    p.add_argument('--profile',choices=('pilot75','comparison180','full_panel1800'),default='pilot75')
     p.add_argument('--tool-name',choices=('robot_decision','semantic_goal'),default='robot_decision')
     p.add_argument('--wall-limit-s',type=int,default=2400)
     p.add_argument('--acknowledge-failed-request',action='append',default=[])

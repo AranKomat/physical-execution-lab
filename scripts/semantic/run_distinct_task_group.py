@@ -21,15 +21,28 @@ def main():
     p.add_argument('--config', type=Path, required=True)
     p.add_argument('--output', type=Path, required=True)
     p.add_argument('--allow-api', action='store_true')
+    p.add_argument('--freeze', type=Path)
+    p.add_argument('--panel', type=Path)
     from isaaclab.app import AppLauncher
     AppLauncher.add_app_launcher_args(p)
     args = p.parse_args()
     cases = json.loads(args.cases.read_text())
     treatment = json.loads(args.config.read_text())
-    # Integrate baseline first. Other methods reuse the same native callbacks,
-    # but must not be launched before the full baseline cohort finishes.
-    if treatment['mode'] != 'motor_only' or args.allow_api:
-        raise ValueError('initial distinct-task cohort binds original-only and zero API calls')
+    methods = {'motor_only': 'original_only', 'direct_sparse': 'direct',
+               'sparse': 'numeric', 'semantic_subtask_hierarchy': 'semantic'}
+    if treatment['mode'] not in methods or args.allow_api != (treatment['mode'] != 'motor_only'):
+        raise ValueError('unsupported condition or mismatched explicit API enablement')
+    direct = treatment['mode'] == 'direct_sparse'
+    frozen = panel = None
+    if args.allow_api:
+        if args.freeze is None or args.panel is None:
+            raise ValueError('paid task groups require the complete panel and execution-source freeze')
+        from semantic_lab.protocol import verify_binding
+        frozen, panel = json.loads(args.freeze.read_text()), json.loads(args.panel.read_text())
+        verify_binding(ROOT, frozen, panel, treatment, require_execution_sources=True)
+        fixed = {case['case_id']: case for case in panel['cases']}
+        if any(fixed.get(case['case_id']) != case for case in cases):
+            raise ValueError('task group differs from the frozen panel')
     if not cases or len({case['task_group'] for case in cases}) != len(cases):
         raise ValueError('scene group requires distinct fixed tasks')
     out = args.output.resolve()
@@ -41,7 +54,7 @@ def main():
     os.environ['ROBODOJO_RUN_ID'] = out.name
     app = env = None
     started = time.perf_counter()
-    report = dict(status='starting', method='original_only', paid_calls=0,
+    report = dict(status='starting', method=methods[treatment['mode']], paid_calls=0,
         distinct_tasks=[case['task_group'] for case in cases],
         scope='full fixed-task execution integration; native-equivalence admission pending',
         benchmark_qualified=False, automatic_retry=False)
@@ -109,7 +122,10 @@ def main():
         report.update(status='native_ready', startup_s=time.perf_counter()-started,
                       memory=memory(), native_horizons=env.step_limits, layout_bindings=bindings)
         write_json(out / 'report.json', report)
-        wait_file(out / 'worker-ready.json')
+        if not direct:
+            wait_file(out / 'worker-ready.json')
+        if frozen:
+            verify_binding(ROOT, frozen, panel, treatment, require_execution_sources=True)
         args.semantic_config, args.num_envs = args.config, len(cases)
         args.policy, args.inference_mode = 'pi05', 'vmap_source_singleton_sampling'
         args.controller_probe = False

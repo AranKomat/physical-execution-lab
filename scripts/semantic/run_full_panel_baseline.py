@@ -1,5 +1,5 @@
 #!/usr/bin/env python3
-"""Own a full ten-distinct-task original-policy cohort with one fused worker."""
+"""Own one full ten-distinct-task condition, with fused inference when applicable."""
 import argparse
 import json
 import os
@@ -14,6 +14,7 @@ sys.path.insert(0, str(ROOT))
 from k1lab.errors import ContractError
 from k1lab.util import atomic_json, digest, load_json
 from scripts.multibench.launch_robodojo_case import stop_child
+from semantic_lab.protocol import verify_binding
 
 # Native global physics and support-robot configuration determine groups, not
 # task outcomes. All ten cases still share one condition and one inference batch.
@@ -28,14 +29,29 @@ def main():
     p = argparse.ArgumentParser()
     p.add_argument('--prepared', type=Path, required=True)
     p.add_argument('--output', type=Path, required=True)
+    p.add_argument('--approach', choices=('original_only', 'direct', 'numeric', 'semantic'),
+                   default='original_only')
+    p.add_argument('--freeze', type=Path)
+    p.add_argument('--allow-api', action='store_true')
     args = p.parse_args()
     panel = load_json(args.prepared / 'cases.json')
     plan = load_json(args.prepared / 'plan.json')
-    config_path = (args.prepared / 'original_only.json').resolve()
+    config_path = (args.prepared / (args.approach + '.json')).resolve()
     treatment = load_json(config_path)
+    mode = {'original_only': 'motor_only', 'direct': 'direct_sparse',
+            'numeric': 'sparse', 'semantic': 'semantic_subtask_hierarchy'}[args.approach]
     if (len(panel['cases']) != 10 or panel['sha256'] != plan['manifest_sha256']
-            or treatment['mode'] != 'motor_only' or digest(treatment) != plan['configs']['original_only']):
-        raise ContractError('full cohort does not match the fixed original-only comparison preparation')
+            or treatment['mode'] != mode or digest(treatment) != plan['configs'][args.approach]):
+        raise ContractError('full cohort does not match the fixed comparison preparation')
+    if args.allow_api != (args.approach != 'original_only'):
+        raise ContractError('paid conditions require explicit API enablement; original-only forbids it')
+    if args.allow_api and not os.environ.get(treatment['model']['api_key_env']):
+        raise ContractError('budget relay token must be configured before simulator startup')
+    if args.approach != 'original_only' and args.freeze is None:
+        raise ContractError('paid full-panel conditions require a fresh execution-source freeze')
+    frozen = load_json(args.freeze) if args.freeze else None
+    if frozen:
+        verify_binding(ROOT, frozen, panel, treatment, require_execution_sources=True)
     cases = {case['task_group']: case for case in panel['cases']}
     if set(cases) != {name for group in GROUPS for name in group}:
         raise ContractError('full cohort must include the fixed ten distinct tasks without replacement')
@@ -63,33 +79,43 @@ def main():
                     'scripts/semantic/run_full_panel_baseline.py']
     import hashlib
     source_hashes = {path: hashlib.sha256((ROOT / path).read_bytes()).hexdigest() for path in source_paths}
-    report = dict(status='starting', method='original_only', paid_calls=0, policy_runtimes=1,
+    direct = args.approach == 'direct'
+    report = dict(status='starting', method=args.approach, paid_calls=0, policy_runtimes=0 if direct else 1,
                   simulator_processes=3, distinct_tasks=10, source_hashes=source_hashes,
-                  simulator_gpu_affinity=[0, 1, 0], policy_gpu=1, jax_memory_fraction=.5,
+                  simulator_gpu_affinity=[0, 1, 0], policy_gpu=None if direct else 1, jax_memory_fraction=.5,
+                  source_freeze_sha256=frozen['sha256'] if frozen else None,
                   comparison_plan_sha256=plan['sha256'], cases=[case['case_id'] for case in panel['cases']],
                   native_equivalence_admission_pending=True, automatic_retry=False)
     children, streams = [], []
     started = time.monotonic()
     try:
         # Start model loading and scene construction concurrently.
-        stream = (out / 'worker.log').open('x'); streams.append(stream)
-        service = subprocess.Popen([str(ROOT / '.venv-pi05/bin/python'), '-u',
-            str(ROOT / 'scripts/semantic/serve_pi05_batch.py'), '--cohort', str(out / 'cohort.json'),
-            '--output', str(out / 'worker'), '--capacity', '10'], cwd=ROOT,
-            env=dict(os.environ, CUDA_VISIBLE_DEVICES='1', XLA_PYTHON_CLIENT_PREALLOCATE='false',
-                     XLA_PYTHON_CLIENT_MEM_FRACTION='.5',
-                     OMP_NUM_THREADS='4', MKL_NUM_THREADS='4'), stdout=stream, stderr=subprocess.STDOUT,
-            start_new_session=True)
-        children.append(service)
+        service = None
+        if not direct:
+            stream = (out / 'worker.log').open('x'); streams.append(stream)
+            service = subprocess.Popen([str(ROOT / '.venv-pi05/bin/python'), '-u',
+                str(ROOT / 'scripts/semantic/serve_pi05_batch.py'), '--cohort', str(out / 'cohort.json'),
+                '--output', str(out / 'worker'), '--capacity', '10'], cwd=ROOT,
+                env=dict(os.environ, CUDA_VISIBLE_DEVICES='1', XLA_PYTHON_CLIENT_PREALLOCATE='false',
+                         XLA_PYTHON_CLIENT_MEM_FRACTION='.5',
+                         OMP_NUM_THREADS='4', MKL_NUM_THREADS='4'), stdout=stream, stderr=subprocess.STDOUT,
+                start_new_session=True)
+            children.append(service)
         simulators = []
         for idx, wave in enumerate(waves):
             gpu = 1 if idx == 1 else 0
             stream = (out / f'group{idx}.log').open('x'); streams.append(stream)
-            child = subprocess.Popen(['/root/miniconda3/envs/RoboDojo/bin/python3.11', '-u',
+            command = ['/root/miniconda3/envs/RoboDojo/bin/python3.11', '-u',
                 str(ROOT / 'scripts/semantic/run_distinct_task_group.py'),
                 '--cases', str(out / f'group{idx}-cases.json'), '--config', str(config_path),
                 '--output', str(wave),
-                '--kit_args', f'--/renderer/activeGpu={gpu} --/renderer/multiGpu/enabled=false'], cwd=ROOT,
+                '--kit_args', f'--/renderer/activeGpu={gpu} --/renderer/multiGpu/enabled=false']
+            if args.allow_api:
+                command.append('--allow-api')
+            if args.freeze:
+                command.extend(['--freeze', str(args.freeze.resolve()),
+                                '--panel', str((args.prepared / 'cases.json').resolve())])
+            child = subprocess.Popen(command, cwd=ROOT,
                 env=dict(os.environ, CUDA_VISIBLE_DEVICES=str(gpu), OMNI_KIT_ACCEPT_EULA='YES',
                          OMP_NUM_THREADS='4', MKL_NUM_THREADS='4'),
                 stdout=stream, stderr=subprocess.STDOUT, start_new_session=True)
@@ -99,7 +125,7 @@ def main():
         log_offsets = [0] * len(waves)
         log_tails = [''] * len(waves)
         while any(child.poll() is None for child in simulators):
-            if service.poll() not in (None, 0):
+            if service is not None and service.poll() not in (None, 0):
                 raise RuntimeError('fused model worker failed; no retry')
             if any(child.poll() not in (None, 0) for child in simulators):
                 raise RuntimeError('distinct-task group failed; retain partial cohort evidence')
@@ -123,11 +149,15 @@ def main():
             for path, expected in source_hashes.items():
                 if hashlib.sha256((ROOT / path).read_bytes()).hexdigest() != expected:
                     raise ContractError('executor source changed during cohort execution')
+            if frozen:
+                verify_binding(ROOT, frozen, panel, treatment, require_execution_sources=True)
             time.sleep(1)
         results = [load_json(wave / 'report.json') for wave in waves]
         if any(row['status'] in ('starting', 'native_ready', 'error_stop_no_retry') for row in results):
             raise RuntimeError('simulator exit is not proof of completed episodes')
-        report.update(status='completed_full_original_only_cohort', groups=results)
+        report.update(status=('completed_full_original_only_cohort' if args.approach == 'original_only'
+                              else 'completed_full_approach_cohort'), groups=results,
+                      paid_calls=sum(row['paid_calls'] for row in results))
     except BaseException as exc:
         report.update(status='error_stop_no_retry', error=f'{type(exc).__name__}: {exc}')
         raise

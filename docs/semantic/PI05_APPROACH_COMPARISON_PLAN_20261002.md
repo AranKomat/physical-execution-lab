@@ -268,15 +268,39 @@ existing$85 shared reservation ledger; unresolved holds remain charged.
 ## Execution And Reporting
 
 Finish scoped executor qualification and native variant admission before new
-held-out controls. The vector semantic runner does not currently implement a
-matched numeric/direct wave: integrate those existing controller/actor paths
-without inventing task skills, or explicitly document identical contracts
-across the separate execution paths before freezing their comparison.
+held-out controls. The full-panel launcher now selects original-only, direct,
+numeric or semantic via `--approach`, reusing the existing episode loops rather
+than inventing task skills. All conditions preserve the same ten-case roster
+and three native physical groups. Direct starts no motor worker and bypasses
+worker readiness; numeric/semantic share the same B10 worker as original-only.
+Paid conditions require explicit `--allow-api`, an inherited relay token and
+`--freeze` binding the entire panel, treatment and reviewed execution sources.
+Each group verifies that binding before startup and before entering its loop;
+the parent watches source drift during execution. These guards bind bytes,
+not native-equivalence admission. Do not launch paid held-out controls solely
+because these orchestration fixtures pass. The three additional approaches
+still have no completed full-panel outcomes.
+
+The relay adds explicit `full_panel1800` capacity (ten episodes times180
+maximum requests), retaining its local$3 cap, shared$85 ceiling, all unresolved
+holds, serialized provider access and no automatic retries/fallback. The old
+`comparison180` remains unchanged for single-episode work. Completing all native
+horizons in direct mode would require at least254 decisions with40 actions
+each, even without early arrival returns; a global180-call cap would truncate
+that cohort. A larger call allowance does not guarantee affordable completion.
+The existing paid-ledger window is still capped at2400seconds independently
+of the simulator3600second wall bound; exhausted budget/time remains censored.
+Fresh ledger inspection found4945 reserved requests,154 unresolved holds,
+$78.958224994300 charged including holds, and$6.041775005700 remaining under85.
+No paid calls were made for this launcher work.
 
 Use shared pi0.5 inference and concurrent task-family waves where admitted and
-memory-safe. No more maximum-batch search is required. With5.5GiB disk free,
+memory-safe. No more maximum-batch search is required. With3.3GiB disk free,
 plan sensor retention before launching a full campaign; do not download weights
-to the Mac or delete unique evidence/unrelated workloads.
+to the Mac or delete unique evidence/unrelated workloads. The completed baseline's
+full archive was backed up locally with matching SHA256
+`aaf1d2d4a8821f9a6bbe90ebaf375b85d2db7b9a0b9eeffe4d58ea2782b448d2`;
+only that duplicate remote archive was removed. Unique raw evidence remains.
 
 Report all40 planned condition/case slots, including missing entries, actual
 controls/ACKs, success, partial score, wall time including startup separately,
