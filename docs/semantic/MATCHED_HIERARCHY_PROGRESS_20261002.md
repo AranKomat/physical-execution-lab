@@ -6,7 +6,7 @@
 |---|---|
 | A: no-interference | Passed native cadence/prompt audit for synchronous stateless pi0.5; not bitwise trajectory parity |
 | B: conditioning | Actual source tokenizer/context/ACK plumbing and responsiveness passed; obedience not established |
-| C: matched hierarchy | 4/5 primary pairs terminal and audited; sorting0 is negative (control success/candidate abstention); sorting1 separately rebound GPU1 pair terminal (control failure/candidate success), not merged into primary cohort; all five subtask-only variants unrun |
+| C: matched hierarchy | 4/5 primary pairs terminal and audited; sorting1 separately rebound GPU1 pair terminal, not merged into primary cohort; subtask-only sorting2 and tower0 audited (2/5), both abstentions; three other subtask-only variants unrun |
 | D: semantic recovery | Not run; disabled in current conditions |
 | E: held-out/second backend | Not run under V5; opened historical task cannot serve as untouched held-out evidence |
 
@@ -281,3 +281,25 @@ Concurrently, five shared simulator environments plus pi0.5 fit GPU1 at
 second experimental wave without another rental; G0.5 co-location and native
 vector integration are still untested. This capacity result does not add a
 hierarchy success or replace any frozen comparison.
+
+## Tower0 Subtask-Only Result
+
+Tower0 subtask-only **abstained at 735 actions**, native score null, after
+49 policy calls and eight Sol 6.1 medium/Flex calls costing **$0.04826175**.
+Wall time was 501.03 s; planner wait was 72.02 s. Four prompt changes and
+zero faults, policy resets/resampling, prefix shortening, recovery or
+unresolved actions. Source NPZ equality, fresh inference indices, checkpoint
+identity, H50/15 cadence and 735 actual ACKs passed audit.
+
+The planner stopped because the requested board grasp/location remained
+unverified and recovery was disabled. Its historical placement claims remain
+model assessments, not privileged object truth or independent certification.
+Do not classify the episode as native success or full-horizon failure.
+This contrasts descriptively with the retained same-binding tower0 motor
+failure (0.10 at 1050) and task-plus-subtask success (1.0 at 717), but one
+three-condition case does not establish a reliable prompt-mode effect.
+
+Subtask-only coverage is now **2/5**. Tower1, sorting0 and sorting1 remain
+unrun; sorting1 must retain its explicit rebound transport cohort. Recovery,
+held-out and V5 second-backend evaluation remain unrun. G0.5's concurrently
+completed five-env bounded motor rollout advances infrastructure, not Phase E.

@@ -233,3 +233,60 @@ mixed-family scenes, semantic planning integration and isolated scene/reset
 parity remain open. Prefer expanding a bound development roster over another
 maximum-batch sweep; no new GPU rental is justified yet. Retain original
 benchmark camera settings, physics and horizons while testing this scaling.
+
+## G0.5 Co-Location And Native Cadence
+
+The same simulator executor now also supports the pinned G0.5 FM provider.
+A five-env bounded wave completed **800 actual controls in 114.38 s**, with
+ten source prediction boundaries and 160 controls per env. Observed device
+usage at the end was **22,412 MiB (21.89 GiB)**, leaving **1,670 MiB** free.
+Both model and simulator were observed on physical GPU1, while the frozen
+subtask-only tower0 trial ran on GPU0. No paid calls were made by this wave.
+
+The worker shares weights but calls the source single-row adapter, restoring
+separate Python/NumPy/Torch CPU/CUDA seed0 RNG streams per env. Source history
+keys remain env-specific; the loaded checkpoint reports num_obs_steps=1.
+There are no within-episode model resets. It preserves the source's returned
+16-action chunks and executes all 16; the underlying prediction horizon is
+32, but the native adapter exposes only 16. This is not pi0.5's H50/15 cadence
+and is not a fused-inference speed measurement.
+
+Source proposal equality, gripper conversion, row routing, contiguous actual
+ACKs, 16-action prefix cadence, post-action states, camera nonblank checks and
+per-env singleton call counts all passed. All five rows remained active at
+the explicit budget; no native outcome or unstable environment was reported.
+The shared layouts [0,1,2,0,1] are capacity rows, not broader task coverage.
+Evidence and reproduction operators:
+[G0.5 co-location](evidence/vector-g05-colocation-20261002/).
+
+Both policy runtimes therefore fit with five environments on separate single
+4090s during bounded runs. Two simultaneous five-env model waves have not yet
+been tested. G0.5's smaller headroom argues against increasing environment
+count before full-horizon measurement. Native-singleton RNG isolation is
+implemented, but isolated-trajectory equivalence, arbitrary task-family mixing
+and scored benchmark qualification remain unproven. This implementation does
+not alter the frozen semantic production runtime or complete V5 Phase E.
+
+## Choosing The Two-GPU Topology
+
+Sharing environments inside one simulator is the memory optimization;
+co-locating that process with inference is a placement choice, not additional
+sharing or pooled VRAM. Each device still has an independent 24 GiB limit.
+
+- **One model, larger task/layout wave:** default to simulator on one GPU and
+  inference on the other. This removes the combined allocation constraint and
+  avoids local renderer/inference contention. Optimal environment count and
+  end-to-end throughput still need measurement.
+- **Two independent model comparisons:** co-location permits one shared
+  simulator/model pair per GPU. Five-env bounded checks now pass separately
+  for pi0.5 and G0.5, but a concurrent five-plus-five comparison and any speed
+  advantage over the split topology remain unmeasured.
+- **InternW0-Delta:** its tested component placement already spans both GPUs
+  (roughly 14.84/13.39 GiB reserved in the model screen). Simulator coexistence
+  and growing policy history remain untested. Neither the single-GPU model
+  pairing nor the dedicated inference-GPU plan applies unchanged. Measure
+  simulator placement alongside this exact loader before selecting env count;
+  isolated allocator reservations are not proof that the live workload fits.
+
+Prioritize simulator sharing in either topology. Do not lower camera quality,
+change action cadence or merge episode histories to make a capacity test pass.

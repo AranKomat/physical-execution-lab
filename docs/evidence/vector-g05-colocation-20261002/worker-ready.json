@@ -1,0 +1,20 @@
+{
+  "identity": {
+    "action_space": "x5_joint14",
+    "adapter_config_sha256": "53fdebbb5f6e922014d4054008b125b83ef47f4250c20caab4c59d32e3573ba2",
+    "benchmark_training": "RoboDojo task/embodiment post-trained",
+    "checkpoint_sha256": "035cae5e4b8f128f400e9c812e48b1f35a6ec9962bd737c945bf14a249ed3603",
+    "execute_steps": 16,
+    "name": "g05_robodojo_fm",
+    "native_hz": 25.0,
+    "prediction_horizon": 32,
+    "preprocessing_id": "g05_qwen35_fm_bf16_fla051_clip_frequency30_native25_seed0",
+    "revision": "408b99d959a7b2207f5f785528fefcc019d7b131",
+    "stateful": true
+  },
+  "provider_sha256": "bbf09c9f2fc273cd1b85c57c97fb8b50dc0e27045623090c45eaf57d43097541",
+  "inference_mode": "native_singleton",
+  "rng": "separate source seed0 streams per env",
+  "history": "source buffers keyed by env_idx; no within-episode reset",
+  "memory": "0, 15243, 8839\n1, 21321, 2760\n"
+}

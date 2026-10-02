@@ -1,0 +1,436 @@
+{
+  "summary": {
+    "attempts": 9,
+    "cost_usd": "0.05296150",
+    "no_automatic_retry": true,
+    "requested_model": "openai/gpt-6.1-sol",
+    "provider": {
+      "only": [
+        "openai/flex"
+      ],
+      "allow_fallbacks": false,
+      "require_parameters": true,
+      "max_price": {
+        "prompt": 1.5,
+        "completion": 6
+      }
+    },
+    "service_tier": "flex",
+    "tool_name": "semantic_goal"
+  },
+  "decisions": [
+    {
+      "index": 0,
+      "decision": {
+        "episode": "bd267292757142369218a99fec5b4e14",
+        "based_on_step": 0,
+        "based_on_stamp": "b0b2b95b9f05f3bb871405f9974f425966b7fc333215d05fa6e5be38186b4091",
+        "expected_epoch": 0,
+        "operation": "set_subtask",
+        "subtask": "Grasp the light blue toy car with the left gripper.",
+        "assessment": "not_started",
+        "evidence": "At step 0, a light blue toy car rests on the table in front of the white basket, near the left gripper. All three baskets appear empty; no object is visibly held.",
+        "completed_claims": [],
+        "uncertain_or_invalidated": [
+          "The category-to-basket assignment is not specified or visibly labeled."
+        ]
+      },
+      "served_model": "openai/gpt-6.1-sol",
+      "served_tier": "flex",
+      "usage": {
+        "input_tokens": 2000,
+        "input_tokens_details": {
+          "cached_tokens": 0,
+          "cache_write_tokens": 1874
+        },
+        "output_tokens": 206,
+        "output_tokens_details": {
+          "reasoning_tokens": 23
+        },
+        "total_tokens": 2206,
+        "cost": 0.0034985,
+        "is_byok": false,
+        "cost_details": {
+          "upstream_inference_cost": 0.0034985,
+          "upstream_inference_input_cost": 0.0024685,
+          "upstream_inference_output_cost": 0.00103
+        }
+      }
+    },
+    {
+      "index": 1,
+      "decision": {
+        "episode": "bd267292757142369218a99fec5b4e14",
+        "based_on_step": 105,
+        "based_on_stamp": "52768871b4d897e8f0d0f9009632553d22375699a2506fb8f0029f72f4cdf556",
+        "expected_epoch": 1,
+        "operation": "continue",
+        "subtask": "",
+        "assessment": "uncertain",
+        "evidence": "At step 105, the left arm obscures much of the white basket and the light blue car is no longer clearly visible at its step-0 table location. Neither wrist view clearly shows the car held by the left gripper. The open-gripper command and arm motion do not establish a successful grasp or basket placement.",
+        "completed_claims": [],
+        "uncertain_or_invalidated": [
+          "The light blue car's current location and whether it was successfully grasped are not clearly verified at step 105.",
+          "The category-to-basket assignment is not specified or visibly labeled."
+        ]
+      },
+      "served_model": "openai/gpt-6.1-sol",
+      "served_tier": "flex",
+      "usage": {
+        "input_tokens": 3084,
+        "input_tokens_details": {
+          "cached_tokens": 0,
+          "cache_write_tokens": 2958
+        },
+        "output_tokens": 410,
+        "output_tokens_details": {
+          "reasoning_tokens": 195
+        },
+        "total_tokens": 3494,
+        "cost": 0.0058735,
+        "is_byok": false,
+        "cost_details": {
+          "upstream_inference_cost": 0.0058735,
+          "upstream_inference_input_cost": 0.0038235,
+          "upstream_inference_output_cost": 0.00205
+        }
+      }
+    },
+    {
+      "index": 2,
+      "decision": {
+        "episode": "bd267292757142369218a99fec5b4e14",
+        "based_on_step": 210,
+        "based_on_stamp": "edaa1946c456638e2863ded21ea401ad7fb4b37e82685c41f5ff40d33a7e5a92",
+        "expected_epoch": 1,
+        "operation": "set_subtask",
+        "subtask": "Grasp the yellow toy car with the left gripper.",
+        "assessment": "complete",
+        "evidence": "At step 210, the light blue toy car is visible inside the white basket rather than on the table; it is not currently held. The yellow toy car remains on the table in front of the baskets, accessible from the left side. A green loop-shaped object is also visible in the white basket, so that basket is not yet verified as correctly sorted.",
+        "completed_claims": [
+          {
+            "text": "The light blue toy car is inside the white basket.",
+            "evidence_steps": [
+              210
+            ]
+          }
+        ],
+        "uncertain_or_invalidated": [
+          "The earlier uncertainty about the light blue car's location is resolved at step 210, but the grasp itself was not directly verified.",
+          "The category-to-basket assignment is not specified or visibly labeled.",
+          "The white basket appears to contain objects from more than one category; correct sorting is not established."
+        ]
+      },
+      "served_model": "openai/gpt-6.1-sol",
+      "served_tier": "flex",
+      "usage": {
+        "input_tokens": 3342,
+        "input_tokens_details": {
+          "cached_tokens": 0,
+          "cache_write_tokens": 3216
+        },
+        "output_tokens": 360,
+        "output_tokens_details": {
+          "reasoning_tokens": 82
+        },
+        "total_tokens": 3702,
+        "cost": 0.005946,
+        "is_byok": false,
+        "cost_details": {
+          "upstream_inference_cost": 0.005946,
+          "upstream_inference_input_cost": 0.004146,
+          "upstream_inference_output_cost": 0.0018
+        }
+      }
+    },
+    {
+      "index": 3,
+      "decision": {
+        "episode": "bd267292757142369218a99fec5b4e14",
+        "based_on_step": 315,
+        "based_on_stamp": "70cd225d1535bf7028e1d7264be2da743f422f48bd5933cce39c50958bb33327",
+        "expected_epoch": 2,
+        "operation": "continue",
+        "subtask": "",
+        "assessment": "not_started",
+        "evidence": "At step 315, the left wrist image shows the yellow toy car still resting on the table beside a metal loop, outside the open gripper. No secure grasp of the car is visible. The overhead view still shows the light blue car inside the white basket. Arm motion alone does not establish grasp progress.",
+        "completed_claims": [
+          {
+            "text": "The light blue toy car is inside the white basket.",
+            "evidence_steps": [
+              210,
+              315
+            ]
+          }
+        ],
+        "uncertain_or_invalidated": [
+          "The yellow toy car has not been visibly grasped at step 315.",
+          "The category-to-basket assignment is not specified or visibly labeled.",
+          "The white basket appears to contain objects from more than one category; correct sorting is not established."
+        ]
+      },
+      "served_model": "openai/gpt-6.1-sol",
+      "served_tier": "flex",
+      "usage": {
+        "input_tokens": 3660,
+        "input_tokens_details": {
+          "cached_tokens": 0,
+          "cache_write_tokens": 3534
+        },
+        "output_tokens": 241,
+        "output_tokens_details": {
+          "reasoning_tokens": 0
+        },
+        "total_tokens": 3901,
+        "cost": 0.0057485,
+        "is_byok": false,
+        "cost_details": {
+          "upstream_inference_cost": 0.0057485,
+          "upstream_inference_input_cost": 0.0045435,
+          "upstream_inference_output_cost": 0.001205
+        }
+      }
+    },
+    {
+      "index": 4,
+      "decision": {
+        "episode": "bd267292757142369218a99fec5b4e14",
+        "based_on_step": 420,
+        "based_on_stamp": "e4ac839bd7108d7215717000f72db1375228ecc81568a64ee8d0f651eb176aea",
+        "expected_epoch": 2,
+        "operation": "continue",
+        "subtask": "",
+        "assessment": "not_started",
+        "evidence": "At step 420, the yellow toy car remains on the tabletop in the overhead view. The left wrist view shows it outside the open gripper, with no visible grasp. The white basket is partly obscured, so its contents are not newly verified. Robot motion does not establish object progress.",
+        "completed_claims": [
+          {
+            "text": "The light blue toy car was visible inside the white basket at steps 210 and 315.",
+            "evidence_steps": [
+              210,
+              315
+            ]
+          }
+        ],
+        "uncertain_or_invalidated": [
+          "The yellow toy car has not been visibly grasped at step 420.",
+          "The category-to-basket assignment is not specified or visibly labeled.",
+          "The white basket previously appeared to contain objects from more than one category; correct sorting remains unverified."
+        ]
+      },
+      "served_model": "openai/gpt-6.1-sol",
+      "served_tier": "flex",
+      "usage": {
+        "input_tokens": 3923,
+        "input_tokens_details": {
+          "cached_tokens": 0,
+          "cache_write_tokens": 3797
+        },
+        "output_tokens": 245,
+        "output_tokens_details": {
+          "reasoning_tokens": 0
+        },
+        "total_tokens": 4168,
+        "cost": 0.00609725,
+        "is_byok": false,
+        "cost_details": {
+          "upstream_inference_cost": 0.00609725,
+          "upstream_inference_input_cost": 0.00487225,
+          "upstream_inference_output_cost": 0.001225
+        }
+      }
+    },
+    {
+      "index": 5,
+      "decision": {
+        "episode": "bd267292757142369218a99fec5b4e14",
+        "based_on_step": 525,
+        "based_on_stamp": "f17e01daaf97c7a9385815086d0d4d47452e4b648cd66fb234a16689592c6b21",
+        "expected_epoch": 2,
+        "operation": "continue",
+        "subtask": "",
+        "assessment": "not_started",
+        "evidence": "At step 525, the yellow toy car remains on the tabletop in the overhead image and appears outside the open left gripper in the wrist image. No grasp or object lift is visible. The white basket is partly obscured; its contents are not newly verified. The execution receipt certifies no object effect.",
+        "completed_claims": [
+          {
+            "text": "The light blue toy car was visible inside the white basket at steps 210 and 315.",
+            "evidence_steps": [
+              210,
+              315
+            ]
+          }
+        ],
+        "uncertain_or_invalidated": [
+          "The yellow toy car has not been visibly grasped at step 525.",
+          "The category-to-basket assignment is not specified or visibly labeled.",
+          "The white basket previously appeared to contain objects from more than one category; correct sorting remains unverified."
+        ]
+      },
+      "served_model": "openai/gpt-6.1-sol",
+      "served_tier": "flex",
+      "usage": {
+        "input_tokens": 4013,
+        "input_tokens_details": {
+          "cached_tokens": 0,
+          "cache_write_tokens": 3887
+        },
+        "output_tokens": 253,
+        "output_tokens_details": {
+          "reasoning_tokens": 0
+        },
+        "total_tokens": 4266,
+        "cost": 0.00624975,
+        "is_byok": false,
+        "cost_details": {
+          "upstream_inference_cost": 0.00624975,
+          "upstream_inference_input_cost": 0.00498475,
+          "upstream_inference_output_cost": 0.001265
+        }
+      }
+    },
+    {
+      "index": 6,
+      "decision": {
+        "episode": "bd267292757142369218a99fec5b4e14",
+        "based_on_step": 630,
+        "based_on_stamp": "537249e63a4a9111aa279a6f7a4916b0b3c06d4a9c827d5783e9df8772739374",
+        "expected_epoch": 2,
+        "operation": "continue",
+        "subtask": "",
+        "assessment": "not_started",
+        "evidence": "At step 630, the yellow toy car remains on the tabletop beside the red toy car. The left wrist view shows the yellow car at the image edge, outside the open gripper; no secure grasp or lift is visible. The white basket is obscured, so its contents are not newly verified. The execution receipt does not certify an object effect.",
+        "completed_claims": [
+          {
+            "text": "The light blue toy car was visible inside the white basket at steps 210 and 315.",
+            "evidence_steps": [
+              210,
+              315
+            ]
+          }
+        ],
+        "uncertain_or_invalidated": [
+          "The yellow toy car has not been visibly grasped at step 630.",
+          "The category-to-basket assignment is not specified or visibly labeled.",
+          "The white basket previously appeared to contain objects from more than one category; correct sorting remains unverified."
+        ]
+      },
+      "served_model": "openai/gpt-6.1-sol",
+      "served_tier": "flex",
+      "usage": {
+        "input_tokens": 4040,
+        "input_tokens_details": {
+          "cached_tokens": 0,
+          "cache_write_tokens": 3914
+        },
+        "output_tokens": 265,
+        "output_tokens_details": {
+          "reasoning_tokens": 0
+        },
+        "total_tokens": 4305,
+        "cost": 0.0063435,
+        "is_byok": false,
+        "cost_details": {
+          "upstream_inference_cost": 0.0063435,
+          "upstream_inference_input_cost": 0.0050185,
+          "upstream_inference_output_cost": 0.001325
+        }
+      }
+    },
+    {
+      "index": 7,
+      "decision": {
+        "episode": "bd267292757142369218a99fec5b4e14",
+        "based_on_step": 735,
+        "based_on_stamp": "8a0b160c2fb467e91ba8ec711eaa28f77f8518c831e53bd1e8f6d9f00c84d700",
+        "expected_epoch": 2,
+        "operation": "continue",
+        "subtask": "",
+        "assessment": "not_started",
+        "evidence": "At step 735, the yellow toy car is still resting on the tabletop. The left wrist image shows it between widely separated gripper fingers, without visible contact or lift. A secure grasp is not established. The white basket is obscured, so its contents are not newly verified; the execution receipt certifies no object effect.",
+        "completed_claims": [
+          {
+            "text": "The light blue toy car was visible inside the white basket at steps 210 and 315.",
+            "evidence_steps": [
+              210,
+              315
+            ]
+          }
+        ],
+        "uncertain_or_invalidated": [
+          "The yellow toy car has not been visibly grasped at step 735.",
+          "The category-to-basket assignment is not specified or visibly labeled.",
+          "The white basket previously appeared to contain objects from more than one category; correct sorting remains unverified."
+        ]
+      },
+      "served_model": "openai/gpt-6.1-sol",
+      "served_tier": "flex",
+      "usage": {
+        "input_tokens": 4033,
+        "input_tokens_details": {
+          "cached_tokens": 0,
+          "cache_write_tokens": 3907
+        },
+        "output_tokens": 261,
+        "output_tokens_details": {
+          "reasoning_tokens": 0
+        },
+        "total_tokens": 4294,
+        "cost": 0.00631475,
+        "is_byok": false,
+        "cost_details": {
+          "upstream_inference_cost": 0.00631475,
+          "upstream_inference_input_cost": 0.00500975,
+          "upstream_inference_output_cost": 0.001305
+        }
+      }
+    },
+    {
+      "index": 8,
+      "decision": {
+        "episode": "bd267292757142369218a99fec5b4e14",
+        "based_on_step": 840,
+        "based_on_stamp": "2f7c3d1cf32c1c50ce2883bc20f3995afc27dddab0d1ddabb3a7be1ec66f2814",
+        "expected_epoch": 2,
+        "operation": "stop",
+        "subtask": "",
+        "assessment": "failed",
+        "evidence": "At step 840, the yellow toy car remains on the tabletop in front of the blue basket, while the open left gripper is away from it. The right wrist view instead shows a black pen between the fingers; secure holding is unverified. Reviews at steps 420, 525, 630 and 735 also showed no completed yellow-car grasp. The current subtask has not succeeded, and semantic recovery is disabled. Stopping incomplete.",
+        "completed_claims": [
+          {
+            "text": "The light blue toy car was visible inside the white basket at steps 210 and 315.",
+            "evidence_steps": [
+              210,
+              315
+            ]
+          }
+        ],
+        "uncertain_or_invalidated": [
+          "The yellow toy car has not been visibly grasped at step 840.",
+          "The category-to-basket assignment is not specified or visibly labeled.",
+          "The white basket previously appeared to contain objects from more than one category; correct sorting remains unverified.",
+          "The black pen's placement between right-gripper fingers at step 840 does not establish a secure grasp."
+        ]
+      },
+      "served_model": "openai/gpt-6.1-sol",
+      "served_tier": "flex",
+      "usage": {
+        "input_tokens": 4073,
+        "input_tokens_details": {
+          "cached_tokens": 0,
+          "cache_write_tokens": 3947
+        },
+        "output_tokens": 366,
+        "output_tokens_details": {
+          "reasoning_tokens": 59
+        },
+        "total_tokens": 4439,
+        "cost": 0.00688975,
+        "is_byok": false,
+        "cost_details": {
+          "upstream_inference_cost": 0.00688975,
+          "upstream_inference_input_cost": 0.00505975,
+          "upstream_inference_output_cost": 0.00183
+        }
+      }
+    }
+  ]
+}

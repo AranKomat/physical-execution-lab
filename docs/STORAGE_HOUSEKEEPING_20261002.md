@@ -38,3 +38,14 @@ only after checking bindings, exact byte identity and model dependency paths.
 Keep the existing per-episode free-disk preflight and SHA-verified local backup
 before retiring redundant remote observations. Do not automatically purge
 benchmark or Hugging Face model caches by directory name.
+
+## Local Duplicate Retirement
+
+The incomplete local sorting1 GPU1 candidate directory contained 611 NPZ
+files also present in its complete compressed backup. The archive digest and
+all 1,658 original file hashes were reverified, then only individually
+checksum-matching duplicates were retired, freeing 964,896,121 bytes.
+Archive SHA256: `7e683059561226a2f1f95ad51ee123048a982c01694eaf85ab5dba68b584ca22`.
+The verified archive, metadata and remote source were retained. The local
+per-file directory is intentionally incomplete; use the verified archive
+when retrieving full evidence. No unique historical payload was deleted.
