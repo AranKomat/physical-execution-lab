@@ -3,9 +3,17 @@
 ## Current V5 Status (2026-10-03)
 
 Semantic language supervision is the active priority; the V4 table below is
-historical. Pi0.5 is the motor for the approach comparison. G0.5/Intern weights
-are provisioned on the current GPU host for later comparisons, not substituted
-for pi0.5 and not downloaded to the Mac.
+historical. Pi0.5 remains the motor for the completed approach screen. The owner
+now requested a separate G0.5 original-only versus sparse GPT-6 subtask screen;
+this does not replace or merge the pi0.5 results. G0.5/Intern weights are on the
+GPU host, not downloaded to the Mac.
+
+Fresh G0.5 original-only baseline002 completed: 5/10 successes, mean native
+score 0.62, all ten native terminal scores, 8,182 actions, zero paid calls,
+790.30 seconds including startup. Shared source-fused B10 inference and
+prompt/prefix/ACK integrity passed. The separately frozen subtask-only/recovery
+condition is running, not yet a result. See
+[the G0.5 paper review and checklist](semantic/G05_PAPER_AND_COMPARISON_20261003.md).
 
 All-ten distinct-task shared inference now runs, one method at a time. Retained
 original-only baseline003: 3/10 successes, mean native score 0.44. Numeric005:
@@ -34,8 +42,11 @@ the shoe despite a car-only instruction. All ten visual sheets were reviewed;
 motor prompt evidence exists for nine tasks because imitation stops at reset.
 Keep task-plus-subtask as the working format, not subtask-only. See
 [the format-ablation report](evidence/pi05-full-panel-subtask001-20261003/REPORT.md).
-A separately named full-ten recovery condition is prepared/frozen, changing only
-`allow_semantic_recovery` to true; it has not run. Numeric reproduction is deferred
+A separately named full-ten pi0.5 recovery condition completed: 2 successes,
+6 native failures, 1 planner stop and 1 contract rejection; enabling recovery
+extended execution but did not improve the success count. See
+[the instruction-following review](semantic/PI05_INSTRUCTION_FOLLOWING_REVIEW_20261003.md).
+Numeric reproduction is deferred
 at the owner's direction. See
 [the active checklist](semantic/PI05_APPROACH_COMPARISON_PLAN_20261002.md),
 [semantic001 report](evidence/pi05-full-panel-semantic001-20261003/REPORT.md), and

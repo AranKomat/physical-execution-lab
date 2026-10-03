@@ -85,7 +85,8 @@ this single-screen comparison can prove necessary.
   actual model-token-boundary retention checks and native H16 ACK routing.
 - [x] Clarify recover/failed versus ordinary uncertain replanning; keep gates intact.
 - [x] Freeze original-only and subtask-only/recovery conditions before outcomes.
-- [ ] Complete/audit/back up original-only across ten distinct tasks concurrently.
+- [x] Complete/audit original-only across ten distinct tasks concurrently.
+- [ ] Independently verify the complete local original-only backup.
 - [ ] Complete/audit/back up the separate semantic candidate under existing budgets.
 - [ ] Review actual goal epochs and physical behavior; report scores with coverage,
   censoring, latency, GPT calls/cost and all negative outcomes.
@@ -105,3 +106,22 @@ all three original ancillary hashes exactly; no source config was rewritten.
 The separately named baseline002 uses the same frozen motor condition and the
 previously successful simulator-only libstdc++6.0.36 preload. Keep baseline001
 as infrastructure evidence, not ten physical failures or a scored retry.
+
+## Original-Only Result And Active Candidate
+
+Baseline002 reached all ten native terminal states: five successes, five
+failures, mean native score0.62, 8,182 actions and516 motor predictions in
+790.30 seconds including startup. Its82 fused batches included real B10;
+warm full-B10 median was2.086 seconds. Prompt routing, source predictions and
+native ACK audit passed, with no controller errors or unstable environments.
+Successes: tower, folding, Kong, classification and bottles. Failures: number
+arrangement0.15, language classification0, imitation0.05, table0.75, packing0.25.
+These are one attempt/layout per opened task, not official RoboDojo SR.
+
+Subtask-only/recovery001 is running with GPT-6.1 Sol/medium, Flex preferred
+and the approved same-model Standard capacity fallback; $3 local/$95 shared
+reservation caps remain. The original pre-outcome freeze is retained. Adding
+only the offline semantic audit/renderer required a fresh source snapshot
+`7c4f42c2344fca33f8ed5be4166e5c570b972a6dd909d2803b2f173f08d3f468`;
+the frozen comparison conditions and baseline-admission core are unchanged.
+Do not report candidate performance until it reaches an authoritative outcome.
