@@ -500,3 +500,18 @@ the resolved library path and SHA-256 in the cohort report. It affects simulator
 children only, not the policy worker, paid relay or model configuration. This
 host-runtime difference is explicit; it is not proof of old/new runtime parity.
 Retain numeric003 as a startup failure, never a physical 0/10 result.
+
+`pi05-full-panel-numeric004` constructed simulator scenes and loaded the policy
+worker, but stopped before actor calls/actions when `nvidia-smi` failed with
+driver/library mismatch (exit 18). Ubuntu unattended upgrades changed NVIDIA
+libraries while the old kernel module was loaded. This is a host failure, not
+evidence against the numeric controller. All 43 files from numeric003/004 were
+copied locally and hash-matched. The owner approved a reboot after updates,
+downloads and backup checks; no automatic-update settings will be changed.
+
+Secondary model provisioning was overlapped with that work, without loading
+either model on GPU. Both G0.5 archives match their retained publisher hashes;
+all 16 Intern checkpoint/base-asset files match the retained manifest. Revisions
+are those in `G05_BRINGUP_20261002.md` and `NATIVE_PILOT_20261002.md`.
+G0.5 still needs processor extraction and inference-container preparation;
+download verification does not qualify either model's runtime on this host.
