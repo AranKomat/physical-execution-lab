@@ -5,7 +5,7 @@ import math
 from k1lab.errors import ContractError
 from k1lab.util import digest
 
-PROMPT_MODES = ('original_only', 'task_plus_subtask', 'subtask_only')
+PROMPT_MODES = ('original_only', 'task_plus_subtask', 'subtask_only', 'task_plus_correction')
 MODES = ('motor_only', 'semantic_shadow', 'semantic_subtask_hierarchy')
 
 
@@ -39,6 +39,8 @@ class SemanticContext:
             return self.original_task
         if self.prompt_mode == 'subtask_only':
             return self.subtask
+        if self.prompt_mode == 'task_plus_correction':
+            return f'{self.original_task}\n\nCorrection:\n{self.subtask}'
         return f'Overall task:\n{self.original_task}\n\nCurrent subtask:\n{self.subtask}'
 
     @property
@@ -78,7 +80,7 @@ class SemanticDecision:
             raise ContractError('invalid decision epoch')
         if not isinstance(self.based_on_stamp, str) or len(self.based_on_stamp) != 64:
             raise ContractError('decision requires observation SHA256')
-        if self.operation not in ('continue', 'set_subtask', 'recover', 'stop'):
+        if self.operation not in ('continue', 'set_subtask', 'recover', 'clear_feedback', 'stop'):
             raise ContractError('no action arrays, shortening, or executable skill calls are accepted')
         if self.assessment not in ('not_started', 'progressing', 'complete', 'failed', 'uncertain'):
             raise ContractError('invalid semantic assessment')
@@ -86,8 +88,8 @@ class SemanticDecision:
         bounded_text(self.subtask, 'subtask', 600, empty=True)
         if self.operation in ('set_subtask', 'recover') and not self.subtask.strip():
             raise ContractError('a semantic goal is required')
-        if self.operation == 'stop' and self.subtask:
-            raise ContractError('stop cannot silently change the goal')
+        if self.operation in ('stop', 'clear_feedback') and self.subtask:
+            raise ContractError('stop/clear_feedback requires empty goal')
         if len(self.completed_claims) > 12 or any(not isinstance(c, Claim) for c in self.completed_claims):
             raise ContractError('invalid completed claims')
         if len(self.uncertain_or_invalidated) > 12:
@@ -128,13 +130,16 @@ class ScheduleConfig:
     event_cooldown_steps: int = 30
     max_decision_age_steps: int = 100
     allow_semantic_recovery: bool = False
+    mistake_only_coaching: bool = False
 
     def __post_init__(self):
         for k in ('review_interval_steps', 'minimum_dwell_steps', 'event_cooldown_steps', 'max_decision_age_steps'):
             if type(getattr(self, k)) is not int or getattr(self, k) < 1:
                 raise ContractError(f'{k}: positive integer required')
-        if type(self.allow_semantic_recovery) is not bool:
+        if type(self.allow_semantic_recovery) is not bool or type(self.mistake_only_coaching) is not bool:
             raise ContractError('schedule switches are booleans')
+        if self.mistake_only_coaching and not self.allow_semantic_recovery:
+            raise ContractError('mistake-only coaching requires recovery enabled')
 
 
 def check_decision(d, obs, context, *, max_age_steps=0):

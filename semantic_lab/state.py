@@ -11,6 +11,8 @@ class SemanticState:
     def __init__(self, original_task, prompt_mode, schedule=None):
         self.context = SemanticContext(original_task, prompt_mode=prompt_mode)
         self.schedule = schedule or ScheduleConfig()
+        if (prompt_mode == 'task_plus_correction') != self.schedule.mistake_only_coaching:
+            raise ContractError('correction prompt mode requires mistake-only coaching and vice versa')
         self.memory = {'completed_claims': [], 'uncertain_or_invalidated': [], 'claims_not_verified_truth': True}
         self.last_review = None
         self.goal_started_at = 0
@@ -45,6 +47,13 @@ class SemanticState:
         self.pending_events.clear()
         if any(s not in self.visited_evidence for c in d.completed_claims for s in c.evidence_steps):
             raise ContractError('claim cites evidence not observed in this episode')
+        if self.schedule.mistake_only_coaching:
+            if d.operation == 'set_subtask':
+                raise ContractError('mistake-only coaching forbids proactive stage assignment')
+            if d.operation == 'clear_feedback' and (not self.context.subtask or d.assessment != 'complete'):
+                raise ContractError('clear_feedback needs active correction and observed completion')
+        elif d.operation == 'clear_feedback':
+            raise ContractError('clear_feedback is restricted to mistake-only coaching')
         self.memory = {'completed_claims': [dict(text=c.text, evidence_steps=list(c.evidence_steps)) for c in d.completed_claims],
                        'uncertain_or_invalidated': list(d.uncertain_or_invalidated),
                        'claims_not_verified_truth': True}
@@ -61,7 +70,7 @@ class SemanticState:
         if d.subtask == self.context.subtask:
             return {'changed': False, 'stop': False, 'age_steps': age}
         if self.context.subtask and obs.step - self.goal_started_at < self.schedule.minimum_dwell_steps:
-            if d.operation != 'recover':
+            if d.operation not in ('recover', 'clear_feedback'):
                 # Defer a too-early switch without touching the motor stream.
                 return {'changed': False, 'stop': False, 'deferred': 'minimum_semantic_dwell', 'age_steps': age}
         self.context = SemanticContext(self.context.original_task, d.subtask,

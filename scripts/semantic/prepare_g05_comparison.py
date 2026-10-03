@@ -21,6 +21,7 @@ def main():
     p.add_argument('--source-provider', type=Path, required=True)
     p.add_argument('--artifacts', type=Path, required=True)
     p.add_argument('--output', type=Path, required=True)
+    p.add_argument('--mistake-only-coaching', action='store_true')
     args = p.parse_args()
     contract = motor_contract('g05')
     destination = ROOT / contract['provider']
@@ -42,6 +43,9 @@ def main():
     semantic = deepcopy(load_json(args.source_preparation / 'semantic.json'))
     semantic.update(name='g05_full_ten_subtask_only_recovery001', prompt_mode='subtask_only')
     semantic['semantic_schedule']['allow_semantic_recovery'] = True
+    if args.mistake_only_coaching:
+        semantic.update(name='g05_full_ten_mistake_only_coaching001', prompt_mode='task_plus_correction')
+        semantic['semantic_schedule']['mistake_only_coaching'] = True
     configs = dict(original_only=original, semantic=semantic)
     plan = seal(dict(schema='semantic.g05_screen.v1', manifest_sha256=panel['sha256'],
         motor_identity=provider['identity'], provider_sha256=digest(provider),

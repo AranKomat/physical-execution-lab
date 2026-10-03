@@ -35,7 +35,30 @@ the minimum-dwell rule permits it; do not use RECOVER. Disabled recovery stays d
 '''
 
 
-def tool_schema(binding=None):
+COACHING_SYSTEM = '''You monitor a frozen robot policy performing its immutable original task.
+Use only current RGB, previous review RGB, proprioception and current-episode receipts/memory.
+Do NOT routinely assign subtasks or impose your preferred stage order. Another valid task
+stage is not an error. CONTINUE preserves the original task or active correction exactly.
+RECOVER adds one short temporary correction to the original task only after an OBSERVED
+original-task violation, lost grasp, repeated failed placement or clear sustained stall.
+It requires assessment exactly "failed" and concrete observed evidence of that error.
+Uncertainty or prediction of a future mistake is NOT an observed failure: use CONTINUE.
+At reset, normally CONTINUE; do not begin by replacing the policy's own task planning.
+Keep corrections concise, naming the mistaken object/relation and desired correction.
+Avoid unnecessary arm assignments, low-level motions, coordinates, task recipes or code.
+When an active correction is visibly achieved, CLEAR_FEEDBACK with assessment "complete"
+and empty subtask restores the exact original task. This is not overall task success.
+If the correction is still needed, CONTINUE with empty or exact unchanged subtask.
+STOP is reserved for evidence-supported inability to safely continue, not apparent success
+or doing a different valid stage. It is abstention, never benchmark success.
+A closed gripper does not prove a grasp. Retract contradicted progress claims and cite
+only available observation steps. Do not use evaluator scores, hidden simulator state,
+previous-episode solutions or demonstrations. Give a compact public evidence summary.
+The motor policy may not reliably follow feedback; do not claim success from an instruction.
+'''
+
+
+def tool_schema(binding=None, *, mistake_only_coaching=False):
     claim = {'type': 'object', 'additionalProperties': False,
              'properties': {'text': {'type': 'string', 'maxLength': 400},
                             'evidence_steps': {'type': 'array', 'minItems': 1, 'maxItems': 12,
@@ -55,6 +78,9 @@ def tool_schema(binding=None):
         'completed_claims': {'type': 'array', 'maxItems': 12, 'items': claim},
         'uncertain_or_invalidated': {'type': 'array', 'maxItems': 12, 'items': {'type': 'string', 'maxLength': 400}},
     }
+    if mistake_only_coaching:
+        props['operation'].update(enum=['continue', 'recover', 'clear_feedback', 'stop'],
+            description='recover only for observed failure (assessment=failed); clear_feedback only for visibly completed active correction (assessment=complete); no proactive staging.')
     if binding is not None:
         if set(binding) != {'episode', 'based_on_step', 'based_on_stamp', 'expected_epoch'}:
             raise ContractError('semantic tool binding requires all request identity fields')
@@ -82,7 +108,8 @@ class SemanticPlanner:
                   'request_binding': {'episode': obs.episode, 'based_on_step': obs.step,
                                       'based_on_stamp': obs.stamp, 'expected_epoch': state.context.epoch},
                   'reasons': reasons, 'last_execution_receipt': receipt,
-                  'schedule': {'allow_semantic_recovery': state.schedule.allow_semantic_recovery},
+                  'schedule': {'allow_semantic_recovery': state.schedule.allow_semantic_recovery,
+                               'mistake_only_coaching': state.schedule.mistake_only_coaching},
                   'previous_reviews': list(self.history),
                   'depth_available': False,
                   'model_progress_is_not_native_success': True}
@@ -101,8 +128,10 @@ class SemanticPlanner:
                         f'sensor pixels={arr.shape[1]}x{arr.shape[0]}; preview={image.width}x{image.height}; RGB only'},
                        {'type': 'image_url', 'image_url': {'url': 'data:image/jpeg;base64,' + base64.b64encode(buf.getvalue()).decode()}}]
         payload = {'model': self.config['model'],
-                   'messages': [{'role': 'system', 'content': SYSTEM}, {'role': 'user', 'content': blocks}],
-                   'tools': [tool_schema(packet['request_binding'])], 'tool_choice': 'required'}
+                   'messages': [{'role': 'system', 'content': COACHING_SYSTEM if state.schedule.mistake_only_coaching else SYSTEM},
+                                {'role': 'user', 'content': blocks}],
+                   'tools': [tool_schema(packet['request_binding'],
+                              mistake_only_coaching=state.schedule.mistake_only_coaching)], 'tool_choice': 'required'}
         response = self.client.post('', headers={}, json=payload).json()
         calls = response['choices'][0]['message'].get('tool_calls', [])
         if len(calls) != 1 or calls[0]['function']['name'] != 'semantic_goal':

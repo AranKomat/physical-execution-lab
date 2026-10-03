@@ -9,7 +9,7 @@ import numpy as np
 ROOT = Path(__file__).resolve().parents[2]
 sys.path.insert(0, str(ROOT))
 from semantic_lab.audit import audit
-from semantic_lab.contracts import SemanticContext
+from semantic_lab.contracts import SemanticContext, SemanticDecision, ScheduleConfig
 from k1lab.util import digest, file_sha
 from semantic_lab.motor_contract import motor_contract
 
@@ -18,7 +18,8 @@ parent = json.loads((run / 'report.json').read_text())
 assert parent['method'] == 'semantic'
 contract = motor_contract(parent.get('policy', 'pi05'))
 prefix, returned = contract['execute'], contract['returned']
-prompt_mode = 'subtask_only' if parent.get('policy') == 'g05' else 'task_plus_subtask'
+prompt_mode = None
+coaching = None
 rows = []
 seen = set()
 for group in sorted(run.glob('group[0-9]')):
@@ -35,9 +36,41 @@ for group in sorted(run.glob('group[0-9]')):
         assert result['case_id'] not in seen
         seen.add(result['case_id'])
         assert result['policy_identity'] is not None
-        assert metadata['config']['prompt_mode'] == prompt_mode
-        assert metadata['config']['semantic_schedule']['allow_semantic_recovery'] is True
+        config = metadata['config']
+        schedule = ScheduleConfig(**config['semantic_schedule'])
+        if prompt_mode is None:
+            prompt_mode, coaching = config['prompt_mode'], schedule.mistake_only_coaching
+        assert config['prompt_mode'] == prompt_mode
+        assert schedule.mistake_only_coaching == coaching
+        assert schedule.allow_semantic_recovery is True
         events = [json.loads(s) for s in (controller / 'events.jsonl').read_text().splitlines()]
+        if coaching:
+            assert prompt_mode == 'task_plus_correction'
+            current = SemanticContext(metadata['original_task'], prompt_mode=prompt_mode)
+            for event in events:
+                data = event['data']
+                if event['event'] == 'semantic_decision':
+                    decision = SemanticDecision.from_wire(data['decision'])
+                    assert decision.based_on_step == data['step']
+                    assert decision.expected_epoch == current.epoch
+                    assert decision.operation in ('continue', 'recover', 'clear_feedback', 'stop')
+                    assert data['native_evaluator_information_supplied'] is False
+                    if decision.operation == 'recover':
+                        assert decision.assessment == 'failed'
+                    if decision.operation == 'clear_feedback':
+                        assert current.subtask and decision.assessment == 'complete'
+                    if decision.operation in ('recover', 'clear_feedback'):
+                        changed = decision.subtask != current.subtask
+                        assert data['effect']['changed'] == changed
+                        if changed:
+                            current = SemanticContext(current.original_task, decision.subtask,
+                                current.epoch + 1, prompt_mode)
+                    else:
+                        assert not data['effect']['changed']
+                        if decision.operation == 'continue':
+                            assert decision.subtask in ('', current.subtask)
+                if event['event'] == 'policy_proposal':
+                    assert SemanticContext(**data['diagnostics']['semantic']['context']) == current
         proposals = [e['data'] for e in events if e['event'] == 'policy_proposal']
         acks = [e['data'] for e in events if e['event'] == 'control_ack']
         emitted = [c for c in commands if c['env_idx'] == int(idx)]
@@ -106,6 +139,9 @@ for group in sorted(run.glob('group[0-9]')):
                                 'control_hz', 'sensor_signals', 'observation_sha256'}
             assert request['tools'][0]['function']['name'] == 'semantic_goal'
             props = request['tools'][0]['function']['parameters']['properties']
+            if coaching:
+                assert packet['schedule']['mistake_only_coaching'] is True
+                assert props['operation']['enum'] == ['continue', 'recover', 'clear_feedback', 'stop']
             assert all(props[k]['enum'] == [v] for k, v in packet['request_binding'].items())
             response_path = path.with_name('chat_response.json')
             if response_path.exists():
@@ -138,12 +174,14 @@ for group in sorted(run.glob('group[0-9]')):
             semantic_recovery_goal_changes=len(changed_recoveries),
             recovery_evidence=[dict(step=d['step'], subtask=d['decision']['subtask'],
                 changed=d['effect']['changed'], evidence=d['decision']['evidence']) for d in recoveries],
+            feedback_clear_decisions=sum(d['decision']['operation'] == 'clear_feedback' for d in decisions),
             actual_model_request_prompts_verified=bool(proposals),
             source_predictions_and_native_acks_equal=True))
 assert seen == set(parent['cases']) and len(rows) == 10
 value = dict(integrity_passed=True, benchmark_qualified=False, prompt_mode=prompt_mode,
     policy=parent.get('policy', 'pi05'), returned_horizon=returned, executed_prefix=prefix,
     semantic_recovery_enabled=True,
+    mistake_only_coaching=coaching,
     scope='all-ten admission, prompt boundary, prefix cadence, source predictions and native ACK integrity',
     raw_parent_report_sha256=file_sha(run / 'report.json'), rows=rows,
     native_actions=sum(r['native_steps'] for r in rows),

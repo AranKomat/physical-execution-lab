@@ -8,6 +8,12 @@ now requested a separate G0.5 original-only versus sparse GPT-6 subtask screen;
 this does not replace or merge the pi0.5 results. G0.5/Intern weights are on the
 GPU host, not downloaded to the Mac.
 
+Next bounded condition: original task plus temporary observed-error coaching,
+not routine subtask assignment or preventive feedback. Interface and CPU
+no-error parity/correction-clear tests pass; native experiment remains pending.
+Track its active checklist in
+[mistake-only coaching](semantic/G05_MISTAKE_ONLY_COACHING_20261003.md).
+
 Fresh G0.5 original-only baseline002 completed: 5/10 successes, mean native
 score 0.62, all ten native terminal scores, 8,182 actions, zero paid calls,
 790.30 seconds including startup. Shared source-fused B10 inference and
