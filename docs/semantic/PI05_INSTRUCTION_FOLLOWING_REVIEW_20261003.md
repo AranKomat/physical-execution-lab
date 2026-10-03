@@ -75,13 +75,16 @@ Derived sampled-frame MP4s and their epoch/step indices are retained locally in
 `runs/pi05-semantic001-visual-audit001/` and
 `runs/pi05-subtask001-visual-audit001/`. No generated world-model images are used.
 
-The separately frozen recovery-only full-ten run is in progress at the time of
-this review. It tests evidence-triggered replanning and premature stopping,
-not causal instruction following. In its bottle episode, the planner emitted
+The separately frozen recovery-only full-ten run subsequently completed with
+two successes, six native failures, one planner stop and one contract rejection.
+It tests evidence-triggered replanning and premature stopping, not causal
+instruction following. In its bottle episode, the planner emitted
 `recover` with assessment `uncertain`; the existing contract requires `failed`,
 so the goal was rejected at step 105. This is a contract-censored outcome,
-not an accepted recovery or physical failure. Other tasks have accepted recovery
-goal changes; their physical effect must be assessed after completion.
+not an accepted recovery or physical failure. Fourteen recovery goal changes
+were accepted across the other tasks, but useful physical recovery or a reliable
+hierarchy gain is not established. See
+[the separate recovery report](../evidence/pi05-full-panel-semantic-recovery001-20261003/REPORT.md).
 
 A same-state contrasting-goal diagnostic would be required for a stronger
 causal steerability claim. It is not a prerequisite to reporting the clear

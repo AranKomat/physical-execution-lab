@@ -57,14 +57,43 @@ question. See
 - [x] Publish same-host descriptive contrast without importing historical controls.
 - [ ] Run a bounded matched-state original/task-plus-subtask/subtask-only response
   check with visible physical effects; prediction differences alone do not qualify.
-- [ ] Complete and audit the separately frozen full-ten recovery-only run,
-  currently active as `pi05-full-panel-semantic-recovery001`. It does not by
+- [x] Complete and audit the separately frozen full-ten recovery-only run,
+  `pi05-full-panel-semantic-recovery001`. It does not by
   itself fix exclusive motor steerability; issued and accepted recoveries differ.
 
 No new episode, training or paid call was launched for the visual review.
 The consolidated observational answer across both semantic formats is
 `PI05_INSTRUCTION_FOLLOWING_REVIEW_20261003.md`. The separately launched recovery
 condition retains the frozen source/config, all ten tasks and $3 cohort cap.
+
+### Full-Ten Recovery Continuation
+
+- [x] Complete the recovery-only toggle without changing the frozen motor path.
+- [x] Audit issued versus accepted recoveries, all-ten prompts/native ACKs,
+  native outcomes and censored cases.
+- [x] Finish the remote audit before archival; match the downloaded archive hash
+  and independently match local/remote audit receipts.
+- [x] Inspect all ten retained RGB epoch sheets and preserve sampled-frame MP4s.
+- [x] Report descriptive same-host outcomes without attributing matching actions
+  or accepted goals to causal recovery benefit.
+
+Recovery001 has two successes, six native failures, one planner stop and one
+contract rejection, 7,647 actions, 512 motor calls and 40 prompt changes.
+Fifteen recoveries were issued; fourteen goal changes were accepted. Bottles
+issued `recover` with assessment `uncertain`, rejected by the existing failed-only
+contract. It is not a physical failure or accepted recovery. Native score
+coverage is 8/10, full-panel bounds [0.265, 0.465]. Cost is $0.851775 settled plus
+a retained $0.064368 Flex capacity hold; 19 responses served Flex, 58 Standard
+on the same Sol6.1 model under the authorized fallback. Wall including startup
+is 23.82 minutes. Both GPUs are idle, with no new experiment launched afterward.
+
+Repeated wrong-object/destination actions and late nonresponse to replacement
+goals remain visible. Classification succeeds again, but already succeeded
+without recovery; useful semantic steerability is not established. See
+`../evidence/pi05-full-panel-semantic-recovery001-20261003/REPORT.md`.
+Do not expand layout/backend claims or spend on minor prompt sweeps merely
+because more language updates now pass. Scoped A/B development qualification
+already passed; held-out/second-backend E and causal language control remain open.
 
 ### Prompt-Format Continuation
 

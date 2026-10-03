@@ -9,7 +9,10 @@ obedience were not established. Earlier five-case hierarchy and recovery panels
 completed, followed by full-ten same-host original-only, task-plus-subtask and
 subtask-only screens using shared fused-vmap inference. All-ten visual reviews
 find mixed, nonexclusive subtask following, not a reliable hierarchy gain.
-The separately frozen full-ten recovery-only run is currently active.
+The separately frozen full-ten recovery-only run also completed: two successes,
+six native failures, one planner stop and one contract rejection; 14 accepted
+recovery goal changes do not establish useful physical recovery. See
+[its report](../evidence/pi05-full-panel-semantic-recovery001-20261003/REPORT.md).
 
 Read [the all-ten instruction review](PI05_INSTRUCTION_FOLLOWING_REVIEW_20261003.md)
 and [the active comparison checklist](PI05_APPROACH_COMPARISON_PLAN_20261002.md).

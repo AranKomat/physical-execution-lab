@@ -8,8 +8,10 @@ scope. Subsequent full-ten fused-runtime screens are documented in
 task-plus-subtask 2 successes/3 planner stops, subtask-only 1 success/4 planner
 stops. Missing native scores remain missing, not physical failures. All-ten
 visual reviews find mixed nonexclusive following; prompt delivery passes but
-language causality is unestablished. The full-ten recovery-only condition is
-currently running. Phase E remains unrun as an untouched/second-backend comparison;
+language causality is unestablished. The full-ten recovery-only condition ended
+with two successes, six native failures, one planner stop and one contract
+rejection. Fourteen accepted recovery goal changes were audited, not qualified
+as useful physical recoveries. Phase E remains unrun as an untouched/second-backend comparison;
 the now-open ten-task screen cannot be relabeled untouched evaluation.
 
 The original historical checklist below is not a current run queue. Use the

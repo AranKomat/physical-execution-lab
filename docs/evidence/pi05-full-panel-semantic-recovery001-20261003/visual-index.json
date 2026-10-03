@@ -1,0 +1,1064 @@
+[
+  {
+    "task": "arrange_largest_number",
+    "group": "group0",
+    "env_idx": 0,
+    "native_result": "native_completed",
+    "epochs": [
+      {
+        "epoch": 1,
+        "start": 0,
+        "subtask": "Place the blue 8 on the leftmost circular pad using the left arm.",
+        "inspected_sheet_steps": [
+          0,
+          45,
+          105
+        ]
+      },
+      {
+        "epoch": 2,
+        "start": 105,
+        "subtask": "Place the blue 7 on the second circular pad from the left using the left arm.",
+        "inspected_sheet_steps": [
+          105,
+          150,
+          210
+        ]
+      },
+      {
+        "epoch": 3,
+        "start": 210,
+        "subtask": "Place the blue 2 on the third circular pad from the left using the right arm.",
+        "inspected_sheet_steps": [
+          210,
+          255,
+          315
+        ]
+      },
+      {
+        "epoch": 4,
+        "start": 315,
+        "subtask": "Grasp the blue 2 on the table using the right arm.",
+        "inspected_sheet_steps": [
+          315,
+          360,
+          735
+        ]
+      },
+      {
+        "epoch": 5,
+        "start": 735,
+        "subtask": "Move the blue 0 from the third circular pad onto the table beside the pads using the right arm.",
+        "inspected_sheet_steps": [
+          735,
+          780,
+          1035
+        ]
+      }
+    ],
+    "sheet": "runs/pi05-semantic-recovery001-visual-audit001/arrange_largest_number.jpg",
+    "video": "runs/pi05-semantic-recovery001-visual-audit001/arrange_largest_number.mp4",
+    "sampled_steps": [
+      0,
+      15,
+      30,
+      45,
+      60,
+      75,
+      90,
+      105,
+      120,
+      135,
+      150,
+      165,
+      180,
+      195,
+      210,
+      225,
+      240,
+      255,
+      270,
+      285,
+      300,
+      315,
+      330,
+      345,
+      360,
+      375,
+      390,
+      405,
+      420,
+      435,
+      450,
+      465,
+      480,
+      495,
+      510,
+      525,
+      540,
+      555,
+      570,
+      585,
+      600,
+      615,
+      630,
+      645,
+      660,
+      675,
+      690,
+      705,
+      720,
+      735,
+      750,
+      765,
+      780,
+      795,
+      810,
+      825,
+      840,
+      855,
+      870,
+      885,
+      900,
+      915,
+      930,
+      945,
+      960,
+      975,
+      990,
+      1005,
+      1020,
+      1035
+    ],
+    "sampling": "one retained policy input per native H15 prefix; no interpolation",
+    "final_native_steps": 1050
+  },
+  {
+    "task": "build_tower",
+    "group": "group0",
+    "env_idx": 1,
+    "native_result": "native_completed",
+    "epochs": [
+      {
+        "epoch": 1,
+        "start": 0,
+        "subtask": "Grasp the nearer wooden block on the left with the left gripper.",
+        "inspected_sheet_steps": [
+          0,
+          45,
+          315
+        ]
+      },
+      {
+        "epoch": 2,
+        "start": 315,
+        "subtask": "Place the block held by the left gripper on the nearer flat wooden board.",
+        "inspected_sheet_steps": [
+          315,
+          360,
+          420
+        ]
+      },
+      {
+        "epoch": 3,
+        "start": 420,
+        "subtask": "Place the block held by the right gripper on the nearer flat wooden board.",
+        "inspected_sheet_steps": [
+          420,
+          465,
+          525
+        ]
+      },
+      {
+        "epoch": 4,
+        "start": 525,
+        "subtask": "Grasp the loose rectangular block beside the front-right end of the crossed wooden boards with the right gripper.",
+        "inspected_sheet_steps": [
+          525,
+          570,
+          840
+        ]
+      },
+      {
+        "epoch": 5,
+        "start": 840,
+        "subtask": "Grasp the upright brown wooden block at the junction of the two wooden boards with the right gripper.",
+        "inspected_sheet_steps": [
+          840,
+          885,
+          1035
+        ]
+      }
+    ],
+    "sheet": "runs/pi05-semantic-recovery001-visual-audit001/build_tower.jpg",
+    "video": "runs/pi05-semantic-recovery001-visual-audit001/build_tower.mp4",
+    "sampled_steps": [
+      0,
+      15,
+      30,
+      45,
+      60,
+      75,
+      90,
+      105,
+      120,
+      135,
+      150,
+      165,
+      180,
+      195,
+      210,
+      225,
+      240,
+      255,
+      270,
+      285,
+      300,
+      315,
+      330,
+      345,
+      360,
+      375,
+      390,
+      405,
+      420,
+      435,
+      450,
+      465,
+      480,
+      495,
+      510,
+      525,
+      540,
+      555,
+      570,
+      585,
+      600,
+      615,
+      630,
+      645,
+      660,
+      675,
+      690,
+      705,
+      720,
+      735,
+      750,
+      765,
+      780,
+      795,
+      810,
+      825,
+      840,
+      855,
+      870,
+      885,
+      900,
+      915,
+      930,
+      945,
+      960,
+      975,
+      990,
+      1005,
+      1020,
+      1035
+    ],
+    "sampling": "one retained policy input per native H15 prefix; no interpolation",
+    "final_native_steps": 1050
+  },
+  {
+    "task": "classify_objects_by_language",
+    "group": "group0",
+    "env_idx": 2,
+    "native_result": "native_completed",
+    "epochs": [
+      {
+        "epoch": 1,
+        "start": 0,
+        "subtask": "Put the yellow car into the left white basket using the left arm.",
+        "inspected_sheet_steps": [
+          0,
+          45,
+          210
+        ]
+      },
+      {
+        "epoch": 2,
+        "start": 210,
+        "subtask": "Put the green car into the left white basket using the left arm.",
+        "inspected_sheet_steps": [
+          210,
+          255,
+          525
+        ]
+      },
+      {
+        "epoch": 3,
+        "start": 525,
+        "subtask": "Grasp the green car with the left arm.",
+        "inspected_sheet_steps": [
+          525,
+          570,
+          840
+        ]
+      },
+      {
+        "epoch": 4,
+        "start": 840,
+        "subtask": "Put the wooden lion beside the right gripper into the right red basket with the right arm.",
+        "inspected_sheet_steps": [
+          840,
+          885,
+          945
+        ]
+      },
+      {
+        "epoch": 5,
+        "start": 945,
+        "subtask": "Put the green car between the right fingers into the left white basket with the right arm.",
+        "inspected_sheet_steps": [
+          945,
+          990,
+          1050
+        ]
+      },
+      {
+        "epoch": 6,
+        "start": 1050,
+        "subtask": "Put the green car from the middle blue basket into the left white basket.",
+        "inspected_sheet_steps": [
+          1050,
+          1095,
+          1095
+        ]
+      }
+    ],
+    "sheet": "runs/pi05-semantic-recovery001-visual-audit001/classify_objects_by_language.jpg",
+    "video": "runs/pi05-semantic-recovery001-visual-audit001/classify_objects_by_language.mp4",
+    "sampled_steps": [
+      0,
+      15,
+      30,
+      45,
+      60,
+      75,
+      90,
+      105,
+      120,
+      135,
+      150,
+      165,
+      180,
+      195,
+      210,
+      225,
+      240,
+      255,
+      270,
+      285,
+      300,
+      315,
+      330,
+      345,
+      360,
+      375,
+      390,
+      405,
+      420,
+      435,
+      450,
+      465,
+      480,
+      495,
+      510,
+      525,
+      540,
+      555,
+      570,
+      585,
+      600,
+      615,
+      630,
+      645,
+      660,
+      675,
+      690,
+      705,
+      720,
+      735,
+      750,
+      765,
+      780,
+      795,
+      810,
+      825,
+      840,
+      855,
+      870,
+      885,
+      900,
+      915,
+      930,
+      945,
+      960,
+      975,
+      990,
+      1005,
+      1020,
+      1035,
+      1050,
+      1065,
+      1080,
+      1095
+    ],
+    "sampling": "one retained policy input per native H15 prefix; no interpolation",
+    "final_native_steps": 1100
+  },
+  {
+    "task": "fold_clothes",
+    "group": "group0",
+    "env_idx": 3,
+    "native_result": "native_completed",
+    "epochs": [
+      {
+        "epoch": 1,
+        "start": 0,
+        "subtask": "Fold the pink shirt's sleeve on the left side of the image inward across the torso using the left arm.",
+        "inspected_sheet_steps": [
+          0,
+          45,
+          105
+        ]
+      },
+      {
+        "epoch": 2,
+        "start": 105,
+        "subtask": "Fold the pink shirt's sleeve on the right side of the image inward across the torso using the right arm.",
+        "inspected_sheet_steps": [
+          105,
+          150,
+          210
+        ]
+      },
+      {
+        "epoch": 3,
+        "start": 210,
+        "subtask": "Fold the pink shirt's bottom hem upward over the torso toward the neckline.",
+        "inspected_sheet_steps": [
+          210,
+          255,
+          285
+        ]
+      }
+    ],
+    "sheet": "runs/pi05-semantic-recovery001-visual-audit001/fold_clothes.jpg",
+    "video": "runs/pi05-semantic-recovery001-visual-audit001/fold_clothes.mp4",
+    "sampled_steps": [
+      0,
+      15,
+      30,
+      45,
+      60,
+      75,
+      90,
+      105,
+      120,
+      135,
+      150,
+      165,
+      180,
+      195,
+      210,
+      225,
+      240,
+      255,
+      270,
+      285
+    ],
+    "sampling": "one retained policy input per native H15 prefix; no interpolation",
+    "final_native_steps": 300
+  },
+  {
+    "task": "imitate_sorting_sequence",
+    "group": "group1",
+    "env_idx": 0,
+    "native_result": "native_completed",
+    "epochs": [
+      {
+        "epoch": 0,
+        "start": 0,
+        "subtask": "[Original task only]",
+        "inspected_sheet_steps": [
+          0,
+          45,
+          525
+        ]
+      },
+      {
+        "epoch": 1,
+        "start": 525,
+        "subtask": "Grasp the blue remote on the table, the first object in the observed placement order.",
+        "inspected_sheet_steps": [
+          525,
+          570,
+          615
+        ]
+      }
+    ],
+    "sheet": "runs/pi05-semantic-recovery001-visual-audit001/imitate_sorting_sequence.jpg",
+    "video": "runs/pi05-semantic-recovery001-visual-audit001/imitate_sorting_sequence.mp4",
+    "sampled_steps": [
+      0,
+      15,
+      30,
+      45,
+      60,
+      75,
+      90,
+      105,
+      120,
+      135,
+      150,
+      165,
+      180,
+      195,
+      210,
+      225,
+      240,
+      255,
+      270,
+      285,
+      300,
+      315,
+      330,
+      345,
+      360,
+      375,
+      390,
+      405,
+      420,
+      435,
+      450,
+      465,
+      480,
+      495,
+      510,
+      525,
+      540,
+      555,
+      570,
+      585,
+      600,
+      615
+    ],
+    "sampling": "one retained policy input per native H15 prefix; no interpolation",
+    "final_native_steps": 620
+  },
+  {
+    "task": "make_kong",
+    "group": "group1",
+    "env_idx": 1,
+    "native_result": "native_completed",
+    "epochs": [
+      {
+        "epoch": 1,
+        "start": 0,
+        "subtask": "Wait for the opponent to discard a tile onto the table.",
+        "inspected_sheet_steps": [
+          0,
+          45,
+          105
+        ]
+      },
+      {
+        "epoch": 2,
+        "start": 105,
+        "subtask": "Grasp the opponent's face-up discarded tile near the center of the table.",
+        "inspected_sheet_steps": [
+          105,
+          150,
+          585
+        ]
+      }
+    ],
+    "sheet": "runs/pi05-semantic-recovery001-visual-audit001/make_kong.jpg",
+    "video": "runs/pi05-semantic-recovery001-visual-audit001/make_kong.mp4",
+    "sampled_steps": [
+      0,
+      15,
+      30,
+      45,
+      60,
+      75,
+      90,
+      105,
+      120,
+      135,
+      150,
+      165,
+      180,
+      195,
+      210,
+      225,
+      240,
+      255,
+      270,
+      285,
+      300,
+      315,
+      330,
+      345,
+      360,
+      375,
+      390,
+      405,
+      420,
+      435,
+      450,
+      465,
+      480,
+      495,
+      510,
+      525,
+      540,
+      555,
+      570,
+      585
+    ],
+    "sampling": "one retained policy input per native H15 prefix; no interpolation",
+    "final_native_steps": 600
+  },
+  {
+    "task": "classify_objects",
+    "group": "group2",
+    "env_idx": 0,
+    "native_result": "native_completed",
+    "epochs": [
+      {
+        "epoch": 1,
+        "start": 0,
+        "subtask": "Grasp the rightmost of the two plush dolls in front of the white basket with the left arm.",
+        "inspected_sheet_steps": [
+          0,
+          45,
+          210
+        ]
+      },
+      {
+        "epoch": 2,
+        "start": 210,
+        "subtask": "Grasp the remaining plush doll on the right side of the table with the right arm.",
+        "inspected_sheet_steps": [
+          210,
+          255,
+          315
+        ]
+      },
+      {
+        "epoch": 3,
+        "start": 315,
+        "subtask": "Put the remaining plush doll into the white basket with the left arm.",
+        "inspected_sheet_steps": [
+          315,
+          360,
+          420
+        ]
+      },
+      {
+        "epoch": 4,
+        "start": 420,
+        "subtask": "Grasp the silver wristwatch on the tabletop with the right arm.",
+        "inspected_sheet_steps": [
+          420,
+          465,
+          630
+        ]
+      },
+      {
+        "epoch": 5,
+        "start": 630,
+        "subtask": "Put the long white utensil between the right gripper fingers into the red basket.",
+        "inspected_sheet_steps": [
+          630,
+          675,
+          735
+        ]
+      },
+      {
+        "epoch": 6,
+        "start": 735,
+        "subtask": "Put the black-and-gold pen between the right gripper fingers into the red basket.",
+        "inspected_sheet_steps": [
+          735,
+          765,
+          765
+        ]
+      }
+    ],
+    "sheet": "runs/pi05-semantic-recovery001-visual-audit001/classify_objects.jpg",
+    "video": "runs/pi05-semantic-recovery001-visual-audit001/classify_objects.mp4",
+    "sampled_steps": [
+      0,
+      15,
+      30,
+      45,
+      60,
+      75,
+      90,
+      105,
+      120,
+      135,
+      150,
+      165,
+      180,
+      195,
+      210,
+      225,
+      240,
+      255,
+      270,
+      285,
+      300,
+      315,
+      330,
+      345,
+      360,
+      375,
+      390,
+      405,
+      420,
+      435,
+      450,
+      465,
+      480,
+      495,
+      510,
+      525,
+      540,
+      555,
+      570,
+      585,
+      600,
+      615,
+      630,
+      645,
+      660,
+      675,
+      690,
+      705,
+      720,
+      735,
+      750,
+      765
+    ],
+    "sampling": "one retained policy input per native H15 prefix; no interpolation",
+    "final_native_steps": 772
+  },
+  {
+    "task": "organize_table",
+    "group": "group2",
+    "env_idx": 1,
+    "native_result": "native_completed",
+    "epochs": [
+      {
+        "epoch": 1,
+        "start": 0,
+        "subtask": "Place the mouse on the black mouse pad using the right arm.",
+        "inspected_sheet_steps": [
+          0,
+          45,
+          315
+        ]
+      },
+      {
+        "epoch": 2,
+        "start": 315,
+        "subtask": "Push the keyboard into the outlined frame on the tabletop.",
+        "inspected_sheet_steps": [
+          315,
+          360,
+          525
+        ]
+      },
+      {
+        "epoch": 3,
+        "start": 525,
+        "subtask": "Place the cactus figurine on the stand at the front of the tabletop.",
+        "inspected_sheet_steps": [
+          525,
+          570,
+          735
+        ]
+      },
+      {
+        "epoch": 4,
+        "start": 735,
+        "subtask": "Grasp the cactus figurine beside the drawer.",
+        "inspected_sheet_steps": [
+          735,
+          780,
+          990
+        ]
+      }
+    ],
+    "sheet": "runs/pi05-semantic-recovery001-visual-audit001/organize_table.jpg",
+    "video": "runs/pi05-semantic-recovery001-visual-audit001/organize_table.mp4",
+    "sampled_steps": [
+      0,
+      15,
+      30,
+      45,
+      60,
+      75,
+      90,
+      105,
+      120,
+      135,
+      150,
+      165,
+      180,
+      195,
+      210,
+      225,
+      240,
+      255,
+      270,
+      285,
+      300,
+      315,
+      330,
+      345,
+      360,
+      375,
+      390,
+      405,
+      420,
+      435,
+      450,
+      465,
+      480,
+      495,
+      510,
+      525,
+      540,
+      555,
+      570,
+      585,
+      600,
+      615,
+      630,
+      645,
+      660,
+      675,
+      690,
+      705,
+      720,
+      735,
+      750,
+      765,
+      780,
+      795,
+      810,
+      825,
+      840,
+      855,
+      870,
+      885,
+      900,
+      915,
+      930,
+      945,
+      960,
+      975,
+      990
+    ],
+    "sampling": "one retained policy input per native H15 prefix; no interpolation",
+    "final_native_steps": 1000
+  },
+  {
+    "task": "pack_objects_into_box",
+    "group": "group2",
+    "env_idx": 2,
+    "native_result": "planner_stop_incomplete",
+    "epochs": [
+      {
+        "epoch": 1,
+        "start": 0,
+        "subtask": "Grasp the silver toy car to the right of the box with the right gripper.",
+        "inspected_sheet_steps": [
+          0,
+          45,
+          315
+        ]
+      },
+      {
+        "epoch": 2,
+        "start": 315,
+        "subtask": "Grasp the white sneaker to the right of the box with the right gripper.",
+        "inspected_sheet_steps": [
+          315,
+          360,
+          420
+        ]
+      },
+      {
+        "epoch": 3,
+        "start": 420,
+        "subtask": "Grasp the silver toy car to the right of the box with the right gripper.",
+        "inspected_sheet_steps": [
+          420,
+          465,
+          630
+        ]
+      },
+      {
+        "epoch": 4,
+        "start": 630,
+        "subtask": "Place the silver toy car into the box with its front facing left using the right gripper.",
+        "inspected_sheet_steps": [
+          630,
+          675,
+          735
+        ]
+      },
+      {
+        "epoch": 5,
+        "start": 735,
+        "subtask": "Place the hammer into the box with its head facing left using the left gripper.",
+        "inspected_sheet_steps": [
+          735,
+          780,
+          840
+        ]
+      },
+      {
+        "epoch": 6,
+        "start": 840,
+        "subtask": "Orient the toothbrush inside the box with its brush head facing left.",
+        "inspected_sheet_steps": [
+          840,
+          885,
+          945
+        ]
+      },
+      {
+        "epoch": 7,
+        "start": 945,
+        "subtask": "Grasp the toothbrush resting inside the box.",
+        "inspected_sheet_steps": [
+          945,
+          990,
+          1035
+        ]
+      }
+    ],
+    "sheet": "runs/pi05-semantic-recovery001-visual-audit001/pack_objects_into_box.jpg",
+    "video": "runs/pi05-semantic-recovery001-visual-audit001/pack_objects_into_box.mp4",
+    "sampled_steps": [
+      0,
+      15,
+      30,
+      45,
+      60,
+      75,
+      90,
+      105,
+      120,
+      135,
+      150,
+      165,
+      180,
+      195,
+      210,
+      225,
+      240,
+      255,
+      270,
+      285,
+      300,
+      315,
+      330,
+      345,
+      360,
+      375,
+      390,
+      405,
+      420,
+      435,
+      450,
+      465,
+      480,
+      495,
+      510,
+      525,
+      540,
+      555,
+      570,
+      585,
+      600,
+      615,
+      630,
+      645,
+      660,
+      675,
+      690,
+      705,
+      720,
+      735,
+      750,
+      765,
+      780,
+      795,
+      810,
+      825,
+      840,
+      855,
+      870,
+      885,
+      900,
+      915,
+      930,
+      945,
+      960,
+      975,
+      990,
+      1005,
+      1020,
+      1035
+    ],
+    "sampling": "one retained policy input per native H15 prefix; no interpolation",
+    "final_native_steps": 1050
+  },
+  {
+    "task": "put_bottles_into_dustbin",
+    "group": "group2",
+    "env_idx": 3,
+    "native_result": "infrastructure_or_contract_error",
+    "epochs": [
+      {
+        "epoch": 1,
+        "start": 0,
+        "subtask": "Pick up the upright pink bottle with the left hand.",
+        "inspected_sheet_steps": [
+          0,
+          45,
+          90
+        ]
+      }
+    ],
+    "sheet": "runs/pi05-semantic-recovery001-visual-audit001/put_bottles_into_dustbin.jpg",
+    "video": "runs/pi05-semantic-recovery001-visual-audit001/put_bottles_into_dustbin.mp4",
+    "sampled_steps": [
+      0,
+      15,
+      30,
+      45,
+      60,
+      75,
+      90
+    ],
+    "sampling": "one retained policy input per native H15 prefix; no interpolation",
+    "final_native_steps": 105
+  }
+]

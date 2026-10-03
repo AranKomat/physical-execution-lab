@@ -1,0 +1,508 @@
+{
+  "integrity_passed": true,
+  "benchmark_qualified": false,
+  "prompt_mode": "task_plus_subtask",
+  "semantic_recovery_enabled": true,
+  "scope": "all-ten admission, prompt boundary, prefix cadence, source predictions and native ACK integrity",
+  "raw_parent_report_sha256": "e8c6c4a8151227fa2f6c1d013358749d1ef417fe789244d8766c0c80c25eed2c",
+  "rows": [
+    {
+      "case_id": "arrange_largest_number__standard__g0__l0",
+      "status": "native_completed",
+      "termination": "native_terminal",
+      "native_steps": 1050,
+      "native_score": 0.15,
+      "success": false,
+      "error": null,
+      "journal_checks": {
+        "journal": {
+          "events": 1202,
+          "head_sha256": "9dbbda952f7b57c5abe1c799a86eefca1ceb1d73b10c85c46e544aa950fde7ab"
+        },
+        "actual_control_acks": 1050,
+        "policy_proposals": 70,
+        "semantic_epochs_seen_by_motor": [
+          1,
+          2,
+          3,
+          4,
+          5
+        ],
+        "distinct_effective_prompts": 5,
+        "prefix_cadence_verified": true,
+        "complete_native_result": true,
+        "evidence_kind": "native_unqualified",
+        "robot_competence_claim": false
+      },
+      "planner_requests": 10,
+      "motor_predictions_checked": 70,
+      "issued_recovery_decisions": 2,
+      "accepted_recovery_decisions": 2,
+      "rejected_recovery_decisions": 0,
+      "rejected_recovery_evidence": [],
+      "semantic_recovery_decisions": 2,
+      "semantic_recovery_goal_changes": 2,
+      "recovery_evidence": [
+        {
+          "step": 315,
+          "subtask": "Grasp the blue 2 on the table using the right arm.",
+          "changed": true,
+          "evidence": "At step 315, the blue 2 remains on the table to the right of the pads, as at step 210. The third pad is empty in both the high and right wrist views, and the right gripper is above the pads without a visible digit. The attempted placement has not occurred. The 8 and 7 remain on the first and second pads; the 0 remains on the table at left."
+        },
+        {
+          "step": 735,
+          "subtask": "Move the blue 0 from the third circular pad onto the table beside the pads using the right arm.",
+          "changed": true,
+          "evidence": "At step 735, the high view shows 8 and 7 on the first two pads, 0 on the third, and 2 lying sideways across the rightmost pad near 0. Both wrist views show empty open grippers, so the current grasp goal has not resulted in a retained grasp. Clear the incorrectly placed 0 from the third pad to make room for 2 in the required ordering 8720."
+        }
+      ],
+      "actual_model_request_prompts_verified": true,
+      "source_predictions_and_native_acks_equal": true
+    },
+    {
+      "case_id": "build_tower__standard__g0__l0",
+      "status": "native_completed",
+      "termination": "native_terminal",
+      "native_steps": 1050,
+      "native_score": 0.0,
+      "success": false,
+      "error": null,
+      "journal_checks": {
+        "journal": {
+          "events": 1202,
+          "head_sha256": "ad71e1bfe7c17699043e9e032a795a707ea576ece176f44f760909ac6e017c9a"
+        },
+        "actual_control_acks": 1050,
+        "policy_proposals": 70,
+        "semantic_epochs_seen_by_motor": [
+          1,
+          2,
+          3,
+          4,
+          5
+        ],
+        "distinct_effective_prompts": 5,
+        "prefix_cadence_verified": true,
+        "complete_native_result": true,
+        "evidence_kind": "native_unqualified",
+        "robot_competence_claim": false
+      },
+      "planner_requests": 10,
+      "motor_predictions_checked": 70,
+      "issued_recovery_decisions": 3,
+      "accepted_recovery_decisions": 3,
+      "rejected_recovery_decisions": 0,
+      "rejected_recovery_evidence": [],
+      "semantic_recovery_decisions": 3,
+      "semantic_recovery_goal_changes": 3,
+      "recovery_evidence": [
+        {
+          "step": 420,
+          "subtask": "Place the block held by the right gripper on the nearer flat wooden board.",
+          "changed": true,
+          "evidence": "At step 420, the nearer flat board is visibly empty. The left wrist image shows empty open fingers, while the right wrist image shows a rectangular block between the right fingers. The previous left-held-block placement is not achieved; the observed right-held block provides a supported replacement placement goal."
+        },
+        {
+          "step": 525,
+          "subtask": "Grasp the loose rectangular block beside the front-right end of the crossed wooden boards with the right gripper.",
+          "changed": true,
+          "evidence": "At step 525, the boards overlap diagonally rather than remaining separated and flat as at step 420. The right wrist view shows open fingers and loose rectangular blocks beside the boards, not a block secured between the fingers. No completed placement of the previously held block on the nearer board is visible. A loose block beside the front-right end of the boards provides an observable new grasp target."
+        },
+        {
+          "step": 840,
+          "subtask": "Grasp the upright brown wooden block at the junction of the two wooden boards with the right gripper.",
+          "changed": true,
+          "evidence": "At steps 735 and 840, the right wrist view shows empty, separated fingers away from the blocks. At step 840, the loose light-colored block remains beside the boards, so the current grasp has not been achieved. The overhead view shows an upright brown wooden block at the boards' junction, providing a visible replacement grasp target. The green object near the left fingers is not evidence of completing the right-gripper goal."
+        }
+      ],
+      "actual_model_request_prompts_verified": true,
+      "source_predictions_and_native_acks_equal": true
+    },
+    {
+      "case_id": "classify_objects_by_language__standard__g0__l0",
+      "status": "native_completed",
+      "termination": "native_terminal",
+      "native_steps": 1100,
+      "native_score": 0.0,
+      "success": false,
+      "error": null,
+      "journal_checks": {
+        "journal": {
+          "events": 1261,
+          "head_sha256": "b2df5919bcf15c411a050addb1b99b761d794651abecf9d8f31748b415aaa583"
+        },
+        "actual_control_acks": 1100,
+        "policy_proposals": 74,
+        "semantic_epochs_seen_by_motor": [
+          1,
+          2,
+          3,
+          4,
+          5,
+          6
+        ],
+        "distinct_effective_prompts": 6,
+        "prefix_cadence_verified": true,
+        "complete_native_result": true,
+        "evidence_kind": "native_unqualified",
+        "robot_competence_claim": false
+      },
+      "planner_requests": 11,
+      "motor_predictions_checked": 74,
+      "issued_recovery_decisions": 4,
+      "accepted_recovery_decisions": 4,
+      "rejected_recovery_decisions": 0,
+      "rejected_recovery_evidence": [],
+      "semantic_recovery_decisions": 4,
+      "semantic_recovery_goal_changes": 4,
+      "recovery_evidence": [
+        {
+          "step": 525,
+          "subtask": "Grasp the green car with the left arm.",
+          "changed": true,
+          "evidence": "At step 525, the green car is still on the tabletop outside the left white basket. The left-wrist image shows the fingers beside the car without an established secure grasp or lift. Placement has remained unachieved across reviews at steps 315, 420 and 525 despite a change in the car's orientation. Replace the stalled placement goal with acquiring the car. The left basket is obscured at step 525; yellow-car placement is supported by earlier observations only."
+        },
+        {
+          "step": 840,
+          "subtask": "Put the wooden lion beside the right gripper into the right red basket with the right arm.",
+          "changed": true,
+          "evidence": "At step 840, the green car remains on the tabletop, separated from the open left gripper. Its acquisition has not been achieved across steps 630, 735 and 840. The right-wrist image shows a wooden lion between the right fingers near the right red basket, but does not establish a secure grasp or lift. Replace the stalled green-car acquisition with placing this visible wooden toy in its designated basket. The yellow car is visible again in the left white basket."
+        },
+        {
+          "step": 945,
+          "subtask": "Put the green car between the right fingers into the left white basket with the right arm.",
+          "changed": true,
+          "evidence": "At step 945, the wooden lion remains on the tabletop in front of the right red basket, so its placement is not achieved. The right-wrist view shows the green car between the right fingers, and the overhead view locates it at the red basket rather than the designated left white basket. Replace the unsuccessful lion-placement goal with placing this car in its correct basket. Secure retention of the car is not independently established."
+        },
+        {
+          "step": 1050,
+          "subtask": "Put the green car from the middle blue basket into the left white basket.",
+          "changed": true,
+          "evidence": "At step 1050, the overhead image shows the green car inside the middle blue basket, not the left white basket. It is no longer between the right fingers; the right-wrist image shows a wooden lion inside the red basket beneath open fingers. Replace the failed placement goal with transferring the visible misplaced car to its designated basket."
+        }
+      ],
+      "actual_model_request_prompts_verified": true,
+      "source_predictions_and_native_acks_equal": true
+    },
+    {
+      "case_id": "fold_clothes__standard__g0__l0",
+      "status": "native_completed",
+      "termination": "native_terminal",
+      "native_steps": 300,
+      "native_score": 1.0,
+      "success": true,
+      "error": null,
+      "journal_checks": {
+        "journal": {
+          "events": 345,
+          "head_sha256": "d7328eaf25112cc8028be8ba5f17a4cc825d63be3fca231229d1ea80fa03b60b"
+        },
+        "actual_control_acks": 300,
+        "policy_proposals": 20,
+        "semantic_epochs_seen_by_motor": [
+          1,
+          2,
+          3
+        ],
+        "distinct_effective_prompts": 3,
+        "prefix_cadence_verified": true,
+        "complete_native_result": true,
+        "evidence_kind": "native_unqualified",
+        "robot_competence_claim": false
+      },
+      "planner_requests": 3,
+      "motor_predictions_checked": 20,
+      "issued_recovery_decisions": 0,
+      "accepted_recovery_decisions": 0,
+      "rejected_recovery_decisions": 0,
+      "rejected_recovery_evidence": [],
+      "semantic_recovery_decisions": 0,
+      "semantic_recovery_goal_changes": 0,
+      "recovery_evidence": [],
+      "actual_model_request_prompts_verified": true,
+      "source_predictions_and_native_acks_equal": true
+    },
+    {
+      "case_id": "imitate_sorting_sequence__standard__g0__l0",
+      "status": "native_completed",
+      "termination": "native_terminal",
+      "native_steps": 620,
+      "native_score": 0.0,
+      "success": false,
+      "error": null,
+      "journal_checks": {
+        "journal": {
+          "events": 712,
+          "head_sha256": "91fa7988a4e55158c565943aba17fdffacd06bf40159f158f245b9d20d94eb72"
+        },
+        "actual_control_acks": 620,
+        "policy_proposals": 42,
+        "semantic_epochs_seen_by_motor": [
+          0,
+          1
+        ],
+        "distinct_effective_prompts": 2,
+        "prefix_cadence_verified": true,
+        "complete_native_result": true,
+        "evidence_kind": "native_unqualified",
+        "robot_competence_claim": false
+      },
+      "planner_requests": 6,
+      "motor_predictions_checked": 42,
+      "issued_recovery_decisions": 0,
+      "accepted_recovery_decisions": 0,
+      "rejected_recovery_decisions": 0,
+      "rejected_recovery_evidence": [],
+      "semantic_recovery_decisions": 0,
+      "semantic_recovery_goal_changes": 0,
+      "recovery_evidence": [],
+      "actual_model_request_prompts_verified": true,
+      "source_predictions_and_native_acks_equal": true
+    },
+    {
+      "case_id": "make_kong__standard__g0__l0",
+      "status": "native_completed",
+      "termination": "native_terminal",
+      "native_steps": 600,
+      "native_score": 0.0,
+      "success": false,
+      "error": null,
+      "journal_checks": {
+        "journal": {
+          "events": 688,
+          "head_sha256": "73894a317cd5b3c7c836940da320dafd315fa62e3cf29fadbe17a4b876b63410"
+        },
+        "actual_control_acks": 600,
+        "policy_proposals": 40,
+        "semantic_epochs_seen_by_motor": [
+          1,
+          2
+        ],
+        "distinct_effective_prompts": 2,
+        "prefix_cadence_verified": true,
+        "complete_native_result": true,
+        "evidence_kind": "native_unqualified",
+        "robot_competence_claim": false
+      },
+      "planner_requests": 6,
+      "motor_predictions_checked": 40,
+      "issued_recovery_decisions": 0,
+      "accepted_recovery_decisions": 0,
+      "rejected_recovery_decisions": 0,
+      "rejected_recovery_evidence": [],
+      "semantic_recovery_decisions": 0,
+      "semantic_recovery_goal_changes": 0,
+      "recovery_evidence": [],
+      "actual_model_request_prompts_verified": true,
+      "source_predictions_and_native_acks_equal": true
+    },
+    {
+      "case_id": "classify_objects__standard__g0__l0",
+      "status": "native_completed",
+      "termination": "native_terminal",
+      "native_steps": 772,
+      "native_score": 1.0,
+      "success": true,
+      "error": null,
+      "journal_checks": {
+        "journal": {
+          "events": 886,
+          "head_sha256": "966052ef19c66dc36c841590101c09671000e7004dc4cdc42caae741b0654975"
+        },
+        "actual_control_acks": 772,
+        "policy_proposals": 52,
+        "semantic_epochs_seen_by_motor": [
+          1,
+          2,
+          3,
+          4,
+          5,
+          6
+        ],
+        "distinct_effective_prompts": 6,
+        "prefix_cadence_verified": true,
+        "complete_native_result": true,
+        "evidence_kind": "native_unqualified",
+        "robot_competence_claim": false
+      },
+      "planner_requests": 8,
+      "motor_predictions_checked": 52,
+      "issued_recovery_decisions": 2,
+      "accepted_recovery_decisions": 2,
+      "rejected_recovery_decisions": 0,
+      "rejected_recovery_evidence": [],
+      "semantic_recovery_decisions": 2,
+      "semantic_recovery_goal_changes": 2,
+      "recovery_evidence": [
+        {
+          "step": 315,
+          "subtask": "Put the remaining plush doll into the white basket with the left arm.",
+          "changed": true,
+          "evidence": "At step 315, the right wrist view shows empty fingers, while the remaining doll is between the left gripper fingers in the left wrist view and beneath that gripper near the white basket in the overhead view. The right-arm grasp goal is not achieved and no longer matches the doll's visible location. Two dolls remain visible in the white basket; use the left arm to place the remaining doll with them."
+        },
+        {
+          "step": 630,
+          "subtask": "Put the long white utensil between the right gripper fingers into the red basket.",
+          "changed": true,
+          "evidence": "At step 630, the right wrist view shows a long white utensil between the fingers rather than the silver wristwatch. The overhead view shows a watch-shaped silver band inside the blue basket; the previous tabletop watch-grasp goal no longer matches the visible arrangement. The red basket appears empty, and the left wrist view confirms three plush dolls remain inside the white basket. Secure retention of the utensil is not independently verified."
+        }
+      ],
+      "actual_model_request_prompts_verified": true,
+      "source_predictions_and_native_acks_equal": true
+    },
+    {
+      "case_id": "organize_table__standard__g0__l0",
+      "status": "native_completed",
+      "termination": "native_terminal",
+      "native_steps": 1000,
+      "native_score": 0.5,
+      "success": false,
+      "error": null,
+      "journal_checks": {
+        "journal": {
+          "events": 1146,
+          "head_sha256": "edf433439c198294b2d32f123248c268cf319249c413b629405106310cfede4a"
+        },
+        "actual_control_acks": 1000,
+        "policy_proposals": 67,
+        "semantic_epochs_seen_by_motor": [
+          1,
+          2,
+          3,
+          4
+        ],
+        "distinct_effective_prompts": 4,
+        "prefix_cadence_verified": true,
+        "complete_native_result": true,
+        "evidence_kind": "native_unqualified",
+        "robot_competence_claim": false
+      },
+      "planner_requests": 10,
+      "motor_predictions_checked": 67,
+      "issued_recovery_decisions": 1,
+      "accepted_recovery_decisions": 1,
+      "rejected_recovery_decisions": 0,
+      "rejected_recovery_evidence": [],
+      "semantic_recovery_decisions": 1,
+      "semantic_recovery_goal_changes": 1,
+      "recovery_evidence": [
+        {
+          "step": 735,
+          "subtask": "Grasp the cactus figurine beside the drawer.",
+          "changed": true,
+          "evidence": "At step 735, the high and left-wrist views show the cactus still upright beside the drawer, separate from the front stand, as at steps 525 and 630. Neither gripper is contacting it; the placement attempt has produced no visible object change across these reviews. Recover with the prerequisite grasp. The mouse remains on the pad and the keyboard remains at the frame location."
+        }
+      ],
+      "actual_model_request_prompts_verified": true,
+      "source_predictions_and_native_acks_equal": true
+    },
+    {
+      "case_id": "pack_objects_into_box__standard__g0__l0",
+      "status": "planner_stop_incomplete",
+      "termination": "semantic_abstention_not_native_success",
+      "native_steps": 1050,
+      "native_score": null,
+      "success": false,
+      "error": null,
+      "journal_checks": {
+        "journal": {
+          "events": 1203,
+          "head_sha256": "ae1f34d3185b1ceb48bc224ca1787be8bb1cab7ab00058d6d4ca8a21008ac2b8"
+        },
+        "actual_control_acks": 1050,
+        "policy_proposals": 70,
+        "semantic_epochs_seen_by_motor": [
+          1,
+          2,
+          3,
+          4,
+          5,
+          6,
+          7
+        ],
+        "distinct_effective_prompts": 6,
+        "prefix_cadence_verified": true,
+        "complete_native_result": false,
+        "evidence_kind": "native_unqualified",
+        "robot_competence_claim": false
+      },
+      "planner_requests": 11,
+      "motor_predictions_checked": 70,
+      "issued_recovery_decisions": 2,
+      "accepted_recovery_decisions": 2,
+      "rejected_recovery_decisions": 0,
+      "rejected_recovery_evidence": [],
+      "semantic_recovery_decisions": 2,
+      "semantic_recovery_goal_changes": 2,
+      "recovery_evidence": [
+        {
+          "step": 315,
+          "subtask": "Grasp the white sneaker to the right of the box with the right gripper.",
+          "changed": true,
+          "evidence": "At steps 105 and 210 the car remained ungrasped. At step 315 the car is still on the tabletop, partly obscured by the box's right flap, while the right-wrist view shows the white sneaker between the gripper fingers. No secure grasp or lift is established. Replace the unsuccessful car-grasp goal with grasping the nearby sneaker."
+        },
+        {
+          "step": 945,
+          "subtask": "Grasp the toothbrush resting inside the box.",
+          "changed": true,
+          "evidence": "At step 945, the box contents appear unchanged from step 840: the toothbrush's colored brush end remains toward the upper right, not left. Both grippers remain withdrawn and visibly empty. No grasp or reorientation is observable after 105 steps under the orientation goal; recover with a grasp goal."
+        }
+      ],
+      "actual_model_request_prompts_verified": true,
+      "source_predictions_and_native_acks_equal": true
+    },
+    {
+      "case_id": "put_bottles_into_dustbin__standard__g0__l0",
+      "status": "infrastructure_or_contract_error",
+      "termination": "ContractError",
+      "native_steps": 105,
+      "native_score": null,
+      "success": false,
+      "error": "semantic recovery must be enabled and evidence-supported",
+      "journal_checks": {
+        "journal": {
+          "events": 123,
+          "head_sha256": "873f7e61c1bf87667561ac0431c920edcb54df5093ae61e7e55923419ab39472"
+        },
+        "actual_control_acks": 105,
+        "policy_proposals": 7,
+        "semantic_epochs_seen_by_motor": [
+          1
+        ],
+        "distinct_effective_prompts": 1,
+        "prefix_cadence_verified": true,
+        "complete_native_result": false,
+        "evidence_kind": "native_unqualified",
+        "robot_competence_claim": false
+      },
+      "planner_requests": 2,
+      "motor_predictions_checked": 7,
+      "issued_recovery_decisions": 1,
+      "accepted_recovery_decisions": 0,
+      "rejected_recovery_decisions": 1,
+      "rejected_recovery_evidence": [
+        {
+          "step": 105,
+          "subtask": "Put the yellow bottle into the dustbin with the right hand.",
+          "assessment": "uncertain",
+          "evidence": "At step 105 the left gripper is visibly empty and open, and the pink bottle seen on the table at step 0 is no longer visible; its pickup or disposal cannot be verified. The yellow bottle is between the right gripper fingers in the overhead view, with its cap close to the right wrist camera. The open dustbin is on the left. Redirect to disposal of the visible yellow bottle; a secure grasp is not yet certified."
+        }
+      ],
+      "semantic_recovery_decisions": 0,
+      "semantic_recovery_goal_changes": 0,
+      "recovery_evidence": [],
+      "actual_model_request_prompts_verified": true,
+      "source_predictions_and_native_acks_equal": true
+    }
+  ],
+  "native_actions": 7647,
+  "semantic_calls": 77,
+  "native_terminal_cases": 8,
+  "episodes_with_motor_prompt_evidence": 10,
+  "issued_recovery_decisions": 15,
+  "accepted_recovery_decisions": 14,
+  "rejected_recovery_decisions": 1,
+  "accepted_recovery_goal_changes": 14,
+  "successes": 2,
+  "missing_native_scores": 2
+}
