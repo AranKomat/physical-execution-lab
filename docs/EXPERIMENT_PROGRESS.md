@@ -1,5 +1,38 @@
 # Experiment Progress
 
+## Current V5 Status (2026-10-03)
+
+Semantic language supervision is the active priority; the V4 table below is
+historical. Pi0.5 is the motor for the approach comparison. G0.5/Intern weights
+are provisioned on the current GPU host for later comparisons, not substituted
+for pi0.5 and not downloaded to the Mac.
+
+All-ten distinct-task shared inference now runs, one method at a time. Retained
+original-only baseline003: 3/10 successes, mean native score 0.44. Numeric005:
+3 native successes, 2 native failures, 5 GPT-directed stops (score coverage 5/10).
+Semantic001: 2 successes, 5 native failures, 3 planner stops (score coverage 7/10),
+7,209 actions, 74 settled Flex calls / $0.44593025. Prompt retention, native
+prefix cadence and physical ACK integrity passed on all ten semantic streams.
+Neither hybrid has demonstrated improvement; direct002 remains censored/invalid,
+not physical 0/10. One attempt per task is not a benchmark SR estimate.
+
+Full semantic evidence is locally backed up, archive hash-matched and independently
+audited. Current same-host original-only baseline004 is live and zero-API. A
+separately named full-ten recovery condition is prepared/frozen, changing only
+`allow_semantic_recovery` to true; it has not run. Numeric reproduction is deferred
+at the owner's direction. See
+[the active checklist](semantic/PI05_APPROACH_COMPARISON_PLAN_20261002.md),
+[semantic001 report](evidence/pi05-full-panel-semantic001-20261003/REPORT.md), and
+[the fidelity review](semantic/GPT_AS_POLICY_FIDELITY_REVIEW_20261003.md).
+
+The owner authorized a $95 shared reservation ceiling and same-model standard
+processing after explicit no-output Flex capacity rejection. The $3 cohort limit,
+Sol6.1/medium, prior holds and no generic/uncertain retry remain unchanged.
+Semantic001 used Flex throughout and added no unresolved hold. Native phase E
+generalization/second-backend results and useful recovery gains remain unfinished.
+
+## Historical V4 Progress
+
 Updated 2026-10-02. This tracks the v0.4 handoff sequence, not synthetic success.
 Use Sol 6.1 Flex for supervisor comparisons. One paid route check succeeded;
 two G0.5 attempts stopped before motion. XR1's first sparse attempt completed
