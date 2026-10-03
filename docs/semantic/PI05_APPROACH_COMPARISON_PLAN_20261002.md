@@ -479,7 +479,11 @@ completion. No new paid requests or simulator actions were issued for this work.
   retained controller evidence files. The baseline integrity audit was regenerated
   from its archived 8,497 action records. This is not new physical qualification;
   live reset and installed-runtime behavior remain to be checked during startup.
-- [ ] Freeze updated source and run the fresh full-ten numeric condition.
+- [x] Freeze updated source and run the fresh full-ten bounded numeric condition.
+  Numeric005 finished all scheduled controllers: 3 native successes, 2 native
+  failures and 5 model-directed early stops. Native score coverage is 5/10;
+  full-panel scored comparison remains incomplete. See
+  `../evidence/pi05-full-panel-numeric005-20261003/REPORT.md`.
 - [ ] Run the fresh full-ten semantic condition, separately from numeric.
 
 The new host has a 372 GiB root disk. Simulator dependencies outside the frozen
@@ -530,7 +534,8 @@ the complete CPU suite is 455 passed, not additional robotics phase completion.
   with working NVML and zero initial GPU allocation. Disk free: 121 GiB.
 - [x] Restored G0.5 bundle matches all 13 retained artifact hashes. This does
   not replace model/runtime qualification on the rebuilt host.
-- [ ] `pi05-full-panel-numeric005`: launched after reboot with freeze004,
+- [x] `pi05-full-panel-numeric005`: finished after reboot with freeze004,
   explicit simulator C++ runtime, $95 shared ceiling and $3 cohort cap.
-  Startup/live motion/terminal task results remain to be verified; do not count
-  launch as a completed comparison.
+  All 6,390 actions/ACKs passed the retained integrity audit. Wall 35.29 minutes;
+  settled cost $2.7378600 plus retained Flex hold $0.0538185. Five incomplete
+  model stops are not native-scored failures. No demonstrated hierarchy benefit.

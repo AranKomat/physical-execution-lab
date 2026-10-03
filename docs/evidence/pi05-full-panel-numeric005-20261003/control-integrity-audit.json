@@ -1,0 +1,105 @@
+{
+  "benchmark_qualified": false,
+  "client_http_attempts": 145,
+  "distinct_cases": 10,
+  "integrity_passed": true,
+  "motor_policy_loaded": true,
+  "native_actions": 6390,
+  "raw_parent_report_sha256": "a292263d2c876157fb10a5061512d0c941ac0269c0d09afd36befc19fd3b7ead",
+  "rows": [
+    {
+      "case_id": "arrange_largest_number__standard__g0__l0",
+      "error": null,
+      "native_score": 0.15,
+      "native_steps": 1050,
+      "status": "native_completed",
+      "success": false
+    },
+    {
+      "case_id": "build_tower__standard__g0__l0",
+      "error": null,
+      "native_score": null,
+      "native_steps": 685,
+      "status": "incomplete",
+      "success": false
+    },
+    {
+      "case_id": "classify_objects_by_language__standard__g0__l0",
+      "error": null,
+      "native_score": null,
+      "native_steps": 994,
+      "status": "incomplete",
+      "success": false
+    },
+    {
+      "case_id": "fold_clothes__standard__g0__l0",
+      "error": null,
+      "native_score": 1.0,
+      "native_steps": 298,
+      "status": "native_completed",
+      "success": true
+    },
+    {
+      "case_id": "imitate_sorting_sequence__standard__g0__l0",
+      "error": null,
+      "native_score": 0.0,
+      "native_steps": 636,
+      "status": "native_completed",
+      "success": false
+    },
+    {
+      "case_id": "make_kong__standard__g0__l0",
+      "error": null,
+      "native_score": null,
+      "native_steps": 513,
+      "status": "incomplete",
+      "success": false
+    },
+    {
+      "case_id": "classify_objects__standard__g0__l0",
+      "error": null,
+      "native_score": 1.0,
+      "native_steps": 800,
+      "status": "native_completed",
+      "success": true
+    },
+    {
+      "case_id": "organize_table__standard__g0__l0",
+      "error": null,
+      "native_score": null,
+      "native_steps": 560,
+      "status": "incomplete",
+      "success": false
+    },
+    {
+      "case_id": "pack_objects_into_box__standard__g0__l0",
+      "error": null,
+      "native_score": null,
+      "native_steps": 344,
+      "status": "incomplete",
+      "success": false
+    },
+    {
+      "case_id": "put_bottles_into_dustbin__standard__g0__l0",
+      "error": null,
+      "native_score": 1.0,
+      "native_steps": 510,
+      "status": "native_completed",
+      "success": true
+    }
+  ],
+  "scope": "retained full-panel routing, admission and control ACK integrity",
+  "summary": {
+    "all_rows_native_terminal": false,
+    "censored_or_invalid_cases": 5,
+    "controller_status_counts": {
+      "incomplete": 5,
+      "native_completed": 5
+    },
+    "native_task_failures": 2,
+    "native_terminal_cases": 5,
+    "paid_calls_count_scope": "client HTTP attempts, including local relay rejections; not provider reservations or charges",
+    "results_present": 10,
+    "successes": 3
+  }
+}
