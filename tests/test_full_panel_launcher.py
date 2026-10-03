@@ -47,14 +47,21 @@ def setup_panel(tmp_path, monkeypatch, approach):
 
 
 @pytest.mark.parametrize('approach', ['original_only', 'direct', 'numeric', 'semantic'])
-def test_full_method_cohort_routing(tmp_path, monkeypatch, approach):
-    setup_panel(tmp_path, monkeypatch, approach)
-    verifications, commands = [], []
+@pytest.mark.parametrize('preload', [False, True])
+def test_full_method_cohort_routing(tmp_path, monkeypatch, approach, preload):
+    _, argv = setup_panel(tmp_path, monkeypatch, approach)
+    monkeypatch.delenv('LD_PRELOAD', raising=False)
+    library = tmp_path / 'libstdc++.so.6'
+    if preload:
+        library.write_bytes(b'fixture library; never loaded')
+        argv.extend(['--simulator-libstdcxx', str(library)])
+    verifications, commands, environments = [], [], []
     monkeypatch.setattr(launcher, 'verify_binding', lambda *a, **k: verifications.append(k))
     monkeypatch.setattr(launcher, 'check_transfer', lambda *a: dict(transfer_checks_passed=True))
 
     def launch(command, **kwargs):
         commands.append(command)
+        environments.append(kwargs['env'])
         if 'run_distinct_task_group.py' in command[2]:
             output = Path(command[command.index('--output') + 1])
             cases = json.loads(Path(command[command.index('--cases') + 1]).read_text())
@@ -77,6 +84,14 @@ def test_full_method_cohort_routing(tmp_path, monkeypatch, approach):
     assert report['method'] == approach
     assert all(('--allow-api' in c) == (approach != 'original_only') for c in groups)
     assert bool(verifications) == (approach != 'original_only')
+    for command, env in zip(commands, environments):
+        expected = str(library) if preload and 'run_distinct_task_group.py' in command[2] else None
+        assert env.get('LD_PRELOAD') == expected
+    if preload:
+        from k1lab.util import file_sha
+        assert report['simulator_libstdcxx'] == dict(path=str(library), sha256=file_sha(library))
+    else:
+        assert 'simulator_libstdcxx' not in report
 
 
 def test_paid_launch_requires_relay_before_startup(tmp_path, monkeypatch):

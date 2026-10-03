@@ -513,5 +513,9 @@ Secondary model provisioning was overlapped with that work, without loading
 either model on GPU. Both G0.5 archives match their retained publisher hashes;
 all 16 Intern checkpoint/base-asset files match the retained manifest. Revisions
 are those in `G05_BRINGUP_20261002.md` and `NATIVE_PILOT_20261002.md`.
-G0.5 still needs processor extraction and inference-container preparation;
-download verification does not qualify either model's runtime on this host.
+G0.5 processor extraction and CPU inference export completed. The export hash
+`3332c28a6feefbb8eec0309cda20b343e30566b40574fef5723f4351390ad799`
+matches the previous host; 946 FP32 policy tensors are retained without weight
+transformation. Download/export verification does not qualify either model's
+runtime on this host. Launcher preload isolation/provenance tests also pass;
+the complete CPU suite is 455 passed, not additional robotics phase completion.
