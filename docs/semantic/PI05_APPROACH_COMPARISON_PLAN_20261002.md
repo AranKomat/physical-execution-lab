@@ -2,6 +2,33 @@
 
 ## Scope And Status
 
+### G0.5 Continuation (2026-10-03)
+
+The owner selected G0.5 original-only versus sparse GPT-6 semantic subtasks,
+not denser GPT control or Intern. The candidate uses subtask-only motor text
+with recovery enabled; GPT retains the original task. Review frequency stays
+target100 at a drained native H16 boundary. This is an opened-task second-motor
+screen, not completion of untouched-task phase E.
+
+- [x] Review the G0.5 paper's native subtask/box interfaces and distinguish its
+  AR-plus-reasoning probes from the released FM-only RoboDojo provider.
+- [x] Add G0.5 to the existing full-ten fused service/runner/source audit,
+  preserving exposed/executed16 and underlying32 horizons.
+- [x] Restore isolated GPU-host runtime and verify unchanged artifact/ancillary
+  bytes; no Mac weight downloads or global package changes.
+- [x] Explain the recover/failed dependency in the prompt/schema without
+  accepting uncertain recovery or changing the frozen pi0.5 evidence.
+- [x] Prepare/freeze both G0.5 conditions before outcomes.
+- [ ] Complete/audit/preserve G0.5 original-only002. Setup001 stopped before
+  policy actions on a missing ancillary path alias and remains negative evidence.
+- [ ] Run/audit/preserve G0.5 subtask-only/recovery on all ten tasks concurrently
+  after same-model baseline admission, within $3 cohort/$95 shared ceilings.
+- [ ] Inspect actual instruction following and physical effects; publish full
+  outcomes/score coverage, censored cases, latency and cost.
+
+See [the paper review and condition checklist](G05_PAPER_AND_COMPARISON_20261003.md).
+Do not interpret intermediate CPU tests or running episodes as completed phases.
+
 ### Fidelity Correction (2026-10-03)
 
 The owner requested clarification against the published GPT-as-Policy gain.

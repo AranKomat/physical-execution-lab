@@ -8,8 +8,12 @@ the old evidence and runners remain intact. Qualify unchanged motor cadence and
 shadow parity, then model-boundary prompt/tokenizer plumbing, before comparing
 original-only, task-plus-subtask and subtask-only. Preserve actual ACK history.
 Do not resume the old interruptive-review sequence automatically or tune on the
-opened held-out arrange_largest_number case. Use Sol/medium/Flex-only and the
-existing budget-enforced relay. No native V5 qualification is implied by CPU tests.
+opened held-out arrange_largest_number case. Use Sol6.1/medium/Flex preferred and
+the existing budget-enforced relay. The owner authorizes same-model Standard
+fallback only after explicit no-output Flex capacity rejection, with all holds
+retained, a $95 shared ceiling and $3 per cohort. No native V5 qualification is
+implied by CPU tests. Current status/checklists in docs/semantic supersede the
+handoff's stale scoped-phase status, $85 ceiling and Flex-only restriction.
 
 Read HANDOFF.md and IMPLEMENTATION_STATUS.md before editing. This v0.4 scope
 supersedes earlier benchmark prioritization; original K1/LIBERO code remains.

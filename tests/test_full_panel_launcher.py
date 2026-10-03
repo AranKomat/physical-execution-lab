@@ -10,7 +10,7 @@ from k1lab.util import digest
 from scripts.semantic import run_full_panel_baseline as launcher
 
 
-def setup_panel(tmp_path, monkeypatch, approach):
+def setup_panel(tmp_path, monkeypatch, approach, policy='pi05'):
     monkeypatch.setattr(launcher, 'ROOT', tmp_path)
     (tmp_path / 'runs').mkdir()
     prepared = tmp_path / 'prepared'
@@ -20,12 +20,14 @@ def setup_panel(tmp_path, monkeypatch, approach):
     modes = dict(original_only='motor_only', direct='direct_sparse', numeric='sparse',
                  semantic='semantic_subtask_hierarchy')
     config = dict(mode=modes[approach], wall_limit_s=1, model=dict(api_key_env='TEST_RELAY_TOKEN'))
-    plan = dict(manifest_sha256='panel', sha256='plan', configs={approach: digest(config)})
+    plan = dict(manifest_sha256='panel', sha256='plan', configs={approach: digest(config)},
+                motor_identity=dict(name=launcher.motor_contract(policy)['name']))
     for name, value in [('cases', panel), ('plan', plan), (approach, config),
                         ('freeze', dict(sha256='freeze'))]:
         (prepared / (name + '.json')).write_text(json.dumps(value))
     for name in ('semantic_lab/task_rows.py', 'semantic_lab/native_execution.py',
                  'semantic_lab/native_io.py', 'semantic_lab/pi05_batch.py',
+                 'semantic_lab/g05_batch.py', 'semantic_lab/motor_contract.py', 'semantic_lab/policy.py',
                  'scripts/semantic/serve_pi05_batch.py', 'scripts/semantic/run_distinct_task_group.py',
                  'scripts/semantic/run_full_panel_baseline.py'):
         path = tmp_path / name
@@ -36,7 +38,7 @@ def setup_panel(tmp_path, monkeypatch, approach):
     monkeypatch.setattr(launcher, 'stop_child', lambda child: None)
     monkeypatch.setenv('TEST_RELAY_TOKEN', 'fixture-not-a-real-token')
     argv = ['runner', '--prepared', str(prepared), '--output', str(tmp_path / 'runs/out'),
-            '--approach', approach]
+            '--approach', approach, '--policy', policy]
     if approach != 'original_only':
         argv += ['--allow-api', '--freeze', str(prepared / 'freeze.json'),
                  '--baseline-run', str(tmp_path / 'baseline'),
@@ -46,10 +48,11 @@ def setup_panel(tmp_path, monkeypatch, approach):
     return prepared, argv
 
 
-@pytest.mark.parametrize('approach', ['original_only', 'direct', 'numeric', 'semantic'])
+@pytest.mark.parametrize('policy,approach', [('pi05', 'original_only'), ('pi05', 'direct'),
+    ('pi05', 'numeric'), ('pi05', 'semantic'), ('g05', 'original_only'), ('g05', 'semantic')])
 @pytest.mark.parametrize('preload', [False, True])
-def test_full_method_cohort_routing(tmp_path, monkeypatch, approach, preload):
-    _, argv = setup_panel(tmp_path, monkeypatch, approach)
+def test_full_method_cohort_routing(tmp_path, monkeypatch, policy, approach, preload):
+    _, argv = setup_panel(tmp_path, monkeypatch, approach, policy)
     monkeypatch.delenv('LD_PRELOAD', raising=False)
     library = tmp_path / 'libstdc++.so.6'
     if preload:
@@ -82,6 +85,10 @@ def test_full_method_cohort_routing(tmp_path, monkeypatch, approach, preload):
     assert report['policy_runtimes'] == (0 if approach == 'direct' else 1)
     assert len(commands) == (3 if approach == 'direct' else 4)
     assert report['method'] == approach
+    assert report['policy'] == policy
+    assert all(c[c.index('--policy') + 1] == policy for c in commands)
+    if approach != 'direct':
+        assert commands[0][0] == str(tmp_path / launcher.motor_contract(policy)['python'])
     assert all(('--allow-api' in c) == (approach != 'original_only') for c in groups)
     assert bool(verifications) == (approach != 'original_only')
     for command, env in zip(commands, environments):

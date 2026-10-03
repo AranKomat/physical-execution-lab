@@ -13,7 +13,8 @@ from k1lab.util import file_sha, load_json
 
 CORE = ('semantic_lab/task_rows.py', 'semantic_lab/native_execution.py',
         'semantic_lab/native_io.py', 'semantic_lab/pi05_batch.py',
-        'scripts/semantic/serve_pi05_batch.py')
+        'semantic_lab/g05_batch.py', 'semantic_lab/motor_contract.py',
+        'semantic_lab/policy.py', 'scripts/semantic/serve_pi05_batch.py')
 
 
 def check_transfer(root, baseline, native_reference, panel, controller_run):

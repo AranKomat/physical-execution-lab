@@ -14,6 +14,7 @@ from semantic_lab.report import summarize_wave_results
 from semantic_lab.vector import Coordinator
 from semantic_lab.control_review import CalibrationReviewer, InterleavingReviewer, SerializedReviewer
 from semantic_lab.native_io import wait_file, write_json, memory
+from semantic_lab.motor_contract import motor_contract, validate_identity
 
 
 class SerializedPlanner:
@@ -46,17 +47,24 @@ def run_wave(env, out, args, report, child):
     probe = config.get('controller_probe', False)
     assert type(probe) is bool and probe == args.controller_probe
     assert numeric or config['mode'] in ('motor_only', 'semantic_shadow', 'semantic_subtask_hierarchy')
-    assert args.policy == 'pi05' and args.inference_mode == 'vmap_source_singleton_sampling'
+    contract = motor_contract(args.policy)
+    assert args.inference_mode == contract['mode']
+    assert args.policy == 'pi05' or not numeric, 'G05 numeric control not qualified'
     assert config['mode'] == 'motor_only' or args.allow_api or probe
     interleaving = probe and config.get('probe_kind') == 'source_interleaving'
     assert not probe or (not args.allow_api and (
         direct and args.steps <= 30 or interleaving and config['mode'] == 'review_every_chunk' and args.steps <= 45))
-    provider = json.loads((root / 'configs/local/pi05-exact-bound-001/provider.json').read_text())
+    provider = json.loads((root / contract['provider']).read_text())
     identity = PolicyIdentity(**provider['identity'])
-    assert identity.execute_steps == 15 and identity.prediction_horizon == 50 and not identity.stateful
+    validate_identity(identity, args.policy)
     if not direct:
         ready = json.loads((out / 'worker-ready.json').read_text())
-        assert ready['identity']['checkpoint_sha256'] == provider['native_checkpoint_sha256']
+        assert ready['identity']['checkpoint_sha256'] == (provider['native_checkpoint_sha256']
+            if args.policy == 'pi05' else identity.checkpoint_sha256)
+        assert ready['inference_mode'] == args.inference_mode
+        if args.policy == 'g05':
+            assert ready['observation_history_steps'] == 1
+            assert ready['provider_sha256'] == hashlib.sha256((root / contract['provider']).read_bytes()).hexdigest()
     episodes = {idx: uuid.uuid4().hex for idx in range(args.num_envs)}
     limits = getattr(env, 'step_limits', [env.step_lim] * args.num_envs)
     call_counts = {idx: 0 for idx in episodes}
@@ -173,6 +181,13 @@ def run_wave(env, out, args, report, child):
             SemanticPlanner(config['model'], out / 'episodes' / str(idx) / 'planner', allow_api=args.allow_api),
             root / 'runs/semantic-vector-planner.lock') for idx in episodes}
         runner_args = {}
+        if args.policy == 'g05':
+            from semantic_lab.vector import EpisodePolicy
+            from semantic_lab.policy import InstructionPolicy
+            # Source G05 with num_obs_steps=1 has no observation history to
+            # refresh; all real ACKs remain in the episode wrapper/journal.
+            runner_args['policy_factory'] = lambda owner, idx: InstructionPolicy(
+                EpisodePolicy(owner, idx), kind='batch_observation1')
     coordinator = Coordinator(initial, identity,
         {idx: min(args.steps, limits[idx]) for idx in episodes},
         lambda idx: {'simulator': 'RoboDojo', 'robot': 'dual_arx_x5', 'env_idx': idx,

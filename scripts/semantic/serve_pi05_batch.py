@@ -1,5 +1,5 @@
 #!/usr/bin/env python3
-"""One fused pi0.5 service for a fixed cohort of concurrent simulator groups."""
+"""One source-backed fused motor service for concurrent simulator groups."""
 import argparse
 import hashlib
 import json
@@ -24,15 +24,11 @@ def main():
     p.add_argument('--output', type=Path, required=True)
     p.add_argument('--capacity', type=int, default=10)
     p.add_argument('--wait-seconds', type=float, default=900)
+    p.add_argument('--policy', choices=('pi05', 'g05'), default='pi05')
     args = p.parse_args()
-    import jax
     import numpy as np
-    from openpi.models.model import Observation
-    from openpi.models.tokenizer import PaligemmaTokenizer
-    from openpi.policies.policy_config import create_trained_policy
-    from hybrid_rollout.robodojo.pi05_server.checkpoint import data_contract, checkpoint_identity
-    from semantic_lab.pi05_batch import Pi05Batch
-    from semantic_lab.token_retention import PromptRetentionGuard
+    from semantic_lab.motor_contract import motor_contract, validate_identity
+    from k1lab.multibench.types import PolicyIdentity
     from k1lab.errors import ContractError
 
     waves = [Path(path).resolve() for path in json.loads(args.cohort.read_text())]
@@ -43,18 +39,47 @@ def main():
     if not out.is_relative_to(ROOT / 'runs'):
         raise ContractError('worker output must be inside runs')
     out.mkdir(exist_ok=False)
-    provider = json.loads((ROOT / 'configs/local/pi05-exact-bound-001/provider.json').read_text())
-    checkpoint = Path(provider['checkpoint_path'])
-    cfg, _ = data_contract(checkpoint)
-    policy = create_trained_policy(cfg, checkpoint)
+    contract = motor_contract(args.policy)
+    provider_path = ROOT / contract['provider']
+    provider = json.loads(provider_path.read_text())
+    validate_identity(PolicyIdentity(**provider['identity']), args.policy)
     prompt_records = []
-    decoder = PaligemmaTokenizer(cfg.model.max_token_len)._tokenizer.decode
-    policy._input_transform = PromptRetentionGuard(policy._input_transform, decoder, prompt_records.append)
-    executor = Pi05Batch(policy, Observation)
-    ready = dict(identity=checkpoint_identity(checkpoint), inference_mode='vmap_source_singleton_sampling',
+    if args.policy == 'pi05':
+        import jax
+        from openpi.models.model import Observation
+        from openpi.models.tokenizer import PaligemmaTokenizer
+        from openpi.policies.policy_config import create_trained_policy
+        from hybrid_rollout.robodojo.pi05_server.checkpoint import data_contract, checkpoint_identity
+        from semantic_lab.pi05_batch import Pi05Batch
+        from semantic_lab.token_retention import PromptRetentionGuard
+        checkpoint = Path(provider['checkpoint_path'])
+        cfg, _ = data_contract(checkpoint)
+        policy = create_trained_policy(cfg, checkpoint)
+        decoder = PaligemmaTokenizer(cfg.model.max_token_len)._tokenizer.decode
+        policy._input_transform = PromptRetentionGuard(policy._input_transform, decoder, prompt_records.append)
+        executor = Pi05Batch(policy, Observation)
+        ready_identity = checkpoint_identity(checkpoint)
+    else:
+        import os
+        import torch
+        from k1lab.multibench.manifest import resolved_config
+        from k1lab.multibench.adapters.xpolicylab import XPolicyModel
+        from semantic_lab.g05_batch import G05Batch
+        os.environ.update(HF_HUB_OFFLINE='1', TRANSFORMERS_OFFLINE='1',
+            ROBODOJO_LEROBOT_V30_ROOT='/nonexistent/inference-does-not-load-datasets')
+        resolved_config({'policy': provider})
+        adapter = XPolicyModel(provider)
+        executor = G05Batch(adapter.model, provider, args.capacity, prompt_records.append)
+        ready_identity = provider['identity']
+    ready = dict(identity=ready_identity, inference_mode=contract['mode'], policy=args.policy,
                  capacity=args.capacity, cohort=[str(path) for path in waves],
-                 rng='independent source seed0 streams per wave/environment',
+                 rng=('independent source seed0 streams per wave/environment' if args.policy == 'pi05'
+                      else 'one source seed0 fused RNG stream; row order and inference-only padding matter'),
                  numerical_singleton_parity=False, padding='inference-only; no simulator actions')
+    if args.policy == 'g05':
+        ready.update(observation_history_steps=1, underlying_prediction_horizon=32, exposed_horizon=16,
+            provider_sha256=hashlib.sha256(provider_path.read_bytes()).hexdigest(),
+            independent_per_env_rng=False)
     for wave in waves:
         if (wave / 'worker-ready.json').exists():
             raise ContractError('cohort already has worker output; no automatic restart')
@@ -107,6 +132,8 @@ def main():
                 raws.append(raws[0])
             prompt_records.clear()
             result = executor.infer(episode_ids, raws)
+            if args.policy == 'g05':
+                torch.cuda.synchronize()
             elapsed = time.perf_counter() - started
             for wave, (selection, ids) in slices.items():
                 index = indices[wave]
@@ -115,14 +142,18 @@ def main():
                     np.savez_compressed(stream, actions=result['actions'][selection],
                         raw_actions=result['raw_actions'][selection], env_ids=np.array(ids))
                 prediction.with_suffix('.tmp').replace(prediction)
+                extra = (dict(rng_keys_after={str(idx): jax.random.key_data(executor.keys[f'{wave.name}/{idx}']).tolist()
+                                    for idx in ids}) if args.policy == 'pi05' else
+                         dict(cuda_rng_sha256_after=hashlib.sha256(torch.cuda.get_rng_state().cpu().numpy().tobytes()).hexdigest(),
+                              gripper_clips=result['gripper_clips'][selection],
+                              history_resets_during_episode=0, observation_history_steps=1))
                 write_json(wave / f'prediction-{index:04d}.json', dict(
                     inference_s=elapsed, cohort_batch_index=batch, cohort_active_rows=count,
                     padded_rows=args.capacity-count, env_ids=ids,
                     request_sha256=hashlib.sha256(paths[wave].read_bytes()).hexdigest(),
                     inference_mode=ready['inference_mode'],
                     native_calls_per_env={str(idx): executor.calls[f'{wave.name}/{idx}'] for idx in ids},
-                    rng_keys_after={str(idx): jax.random.key_data(executor.keys[f'{wave.name}/{idx}']).tolist()
-                                    for idx in ids}, live_prompt_retention=prompt_records[selection]))
+                    live_prompt_retention=prompt_records[selection], **extra))
                 indices[wave] += 1
             with (out / 'batches.jsonl').open('a') as stream:
                 stream.write(json.dumps(dict(batch=batch, active_rows=count, padded_rows=args.capacity-count,

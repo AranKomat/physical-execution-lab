@@ -11,10 +11,13 @@ sys.path.insert(0, str(ROOT))
 import numpy as np
 from k1lab.errors import ContractError
 from semantic_lab.native_io import write_json
+from semantic_lab.motor_contract import motor_contract
 
 
 def audit(root):
     parent = json.loads((root / 'report.json').read_text())
+    contract = motor_contract(parent.get('policy', 'pi05'))
+    prefix, returned = contract['execute'], contract['returned']
     if parent['status'] != 'completed_full_original_only_cohort' or parent['paid_calls'] != 0:
         raise ContractError('requires a completed no-API original-only cohort')
     results, total_predictions, total_actions = [], 0, 0
@@ -30,7 +33,7 @@ def audit(root):
             if idx not in actions or row['step'] != len(actions[idx]) + 1 or row['correction']:
                 raise ContractError('noncontiguous, misrouted or corrected baseline ACK')
             actions[idx].append(row)
-            proposal_index, offset = divmod(row['step'] - 1, 15)
+            proposal_index, offset = divmod(row['step'] - 1, prefix)
             path = group / f'source-policy-proposals/{idx}/proposal_{proposal_index:06d}.npz'
             with np.load(path, allow_pickle=False) as data:
                 expected = data['actions'][offset]
@@ -52,11 +55,19 @@ def audit(root):
                 if set(inputs.files) != {'env_ids', 'steps', 'states', 'prompts',
                                         'cam_high', 'cam_left_wrist', 'cam_right_wrist'}:
                     raise ContractError('unexpected actor input fields')
-                if (output['actions'].shape != (len(ids), 50, 14)
+                if (output['actions'].shape != (len(ids), returned, 14)
                         or not np.isfinite(output['actions']).all()):
-                    raise ContractError('invalid H50 joint14 output')
+                    raise ContractError('invalid source-native joint14 output horizon')
+                retained = metadata.get('live_prompt_retention', [])
+                if len(retained) != len(ids):
+                    raise ContractError('model-boundary prompt retention coverage incomplete')
                 for local, idx in enumerate(ids):
-                    proposal_index = int(inputs['steps'][local]) // 15
+                    prompt = str(inputs['prompts'][local])
+                    if (not retained[local]['entire_cleaned_prompt_present']
+                            or retained[local]['prompt_sha256'] != hashlib.sha256(prompt.encode()).hexdigest()
+                            or metadata['inference_mode'] != contract['mode']):
+                        raise ContractError('source prompt/token/inference mode does not match request')
+                    proposal_index = int(inputs['steps'][local]) // prefix
                     with np.load(group / f'source-policy-proposals/{idx}/proposal_{proposal_index:06d}.npz', allow_pickle=False) as saved:
                         if not np.array_equal(saved['actions'], output['actions'][local]):
                             raise ContractError('episode proposal was rekeyed to another task')
@@ -80,6 +91,7 @@ def audit(root):
         fused_batches=len(batches), policy_calls=sum(g['controller_results'][idx]['metrics']['policy_calls']
             for g in parent['groups'] for idx in g['controller_results']),
         successes=sum(row['success'] for row in results), paid_calls=0,
+        policy=parent.get('policy', 'pi05'), returned_horizon=returned, executed_prefix=prefix,
         wall_including_startup_s=parent['wall_including_startup_s'],
         warm_b10_median_s=float(np.median([row['inference_s'] for row in batches[1:] if row['active_rows'] == 10])),
         rows=results)

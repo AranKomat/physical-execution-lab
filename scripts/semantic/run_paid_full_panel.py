@@ -18,6 +18,7 @@ def main():
     p = argparse.ArgumentParser(description=__doc__)
     p.add_argument('--approach', choices=('direct', 'numeric', 'semantic'), required=True)
     p.add_argument('--name', required=True)
+    p.add_argument('--policy', choices=('pi05', 'g05'), default='pi05')
     p.add_argument('--campaign-root', type=Path, required=True)
     p.add_argument('--key-file', type=Path, required=True)
     p.add_argument('--ledger', type=Path, required=True)
@@ -73,6 +74,7 @@ def main():
             command = [remote + '/.venv-pi05/bin/python', '-u',
                 remote + '/scripts/semantic/run_full_panel_baseline.py',
                 '--approach', args.approach, '--allow-api', '--prepared', args.prepared,
+                '--policy', args.policy,
                 '--freeze', args.freeze, '--baseline-run', args.baseline_run,
                 '--native-reference-freeze', args.native_reference_freeze,
                 '--controller-run', args.controller_run, '--output', remote + '/runs/' + args.name]

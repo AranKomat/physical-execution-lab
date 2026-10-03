@@ -16,7 +16,7 @@ class InstructionPolicy:
     semantic_protocol = 'semantic-policy.v1'
 
     def __init__(self, base, *, kind):
-        if kind not in ('pi05', 'xpolicylab', 'xiaomi_robocasa', 'test'):
+        if kind not in ('pi05', 'xpolicylab', 'xiaomi_robocasa', 'test', 'batch_observation1'):
             raise ContractError('unsupported source conditioning seam')
         self.base = base
         self.identity = base.identity
@@ -125,7 +125,7 @@ class InstructionPolicy:
             raise ContractError('policy returned less than its native execution prefix')
         # XPolicyModel.pending counts all exposed actions, not just a caller slice.
         # Never silently reset a stateful source to imitate full cadence.
-        if self.kind == 'xpolicylab' and len(p.actions) != n:
+        if self.kind in ('xpolicylab', 'batch_observation1') and len(p.actions) != n:
             raise ContractError('XPolicyLab exposed-prefix contract changed; qualify explicitly')
         self.open_prefix = {'start_step': obs.step, 'predicted': len(p.actions), 'execute_steps': n}
         self.ack_count = 0

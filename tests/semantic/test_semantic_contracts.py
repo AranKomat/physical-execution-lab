@@ -91,6 +91,17 @@ def test_recovery_default_disabled():
     with pytest.raises(ContractError): s.apply(decision(obs, operation='recover', assessment='failed'), obs)
 
 
+def test_uncertain_replanning_is_not_failed_recovery():
+    obs = ToyEnvironment().obs()
+    s = SemanticState(obs.instruction, 'subtask_only', ScheduleConfig(allow_semantic_recovery=True))
+    s.observe(obs)
+    with pytest.raises(ContractError):
+        s.apply(decision(obs, operation='recover', assessment='uncertain'), obs)
+    assert s.context.epoch == 0
+    assert s.apply(decision(obs, operation='set_subtask', assessment='uncertain'), obs)['changed']
+    assert s.context.epoch == 1
+
+
 def test_memory_retractable_not_append_only():
     env = ToyEnvironment(); obs = env.obs(); s = SemanticState(obs.instruction, 'subtask_only')
     s.observe(obs); s.apply(decision(obs, completed_claims=(Claim('Object held', (0,)),)), obs)

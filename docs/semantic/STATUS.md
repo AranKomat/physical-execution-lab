@@ -2,6 +2,14 @@
 
 ## Live Evidence Update: 2026-10-03
 
+Active continuation: G0.5 original-only versus subtask-only/recovery, all ten
+distinct tasks concurrently through a shared source-fused B10 service. Source
+exposed/executed16 is retained (underlying32); actual token-boundary retention
+is recorded. Both conditions were frozen before outcomes. Baseline002 is
+executing; setup001 stopped before policy actions because the retained
+ancillary path alias was absent. No hierarchy result is claimed yet. See
+[the condition/paper checklist](G05_PAPER_AND_COMPARISON_20261003.md).
+
 The build-package status below is historical. Native synchronous pi0.5
 cadence/prompt no-interference and actual tokenizer/context/ACK qualification
 passed on the scoped development setup; bitwise trajectory parity and language

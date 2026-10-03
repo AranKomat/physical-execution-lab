@@ -30,6 +30,8 @@ def test_planner_exact_tool_contract_and_no_lowlevel_actions(tmp_path):
     schema = tool_schema()['function']['parameters']['properties']
     assert 'actions' not in schema and 'steps' not in schema
     assert schema['operation']['enum'] == ['continue', 'set_subtask', 'recover', 'stop']
+    assert 'assessment=failed' in schema['operation']['description']
+    assert 'never uncertain' in schema['assessment']['description']
     assert len([b for b in client.payload['messages'][1]['content'] if b['type'] == 'image_url']) == 1
     bound = client.payload['tools'][0]['function']['parameters']['properties']
     for name, value in {'episode': obs.episode, 'based_on_step': obs.step,

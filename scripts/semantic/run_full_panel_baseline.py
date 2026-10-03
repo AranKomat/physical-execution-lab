@@ -17,6 +17,7 @@ from k1lab.util import atomic_json, digest, load_json
 from scripts.multibench.launch_robodojo_case import stop_child
 from semantic_lab.protocol import verify_binding
 from semantic_lab.cohort_admission import check_transfer
+from semantic_lab.motor_contract import motor_contract
 
 # Native global physics and support-robot configuration determine groups, not
 # task outcomes. All ten cases still share one condition and one inference batch.
@@ -45,6 +46,7 @@ def main():
     p.add_argument('--output', type=Path, required=True)
     p.add_argument('--approach', choices=('original_only', 'direct', 'numeric', 'semantic'),
                    default='original_only')
+    p.add_argument('--policy', choices=('pi05', 'g05'), default='pi05')
     p.add_argument('--freeze', type=Path)
     p.add_argument('--allow-api', action='store_true')
     p.add_argument('--baseline-run', type=Path)
@@ -54,6 +56,9 @@ def main():
     p.add_argument('--simulator-libstdcxx', type=Path,
                    help='Explicit host C++ runtime preload for native simulator processes only')
     args = p.parse_args()
+    contract = motor_contract(args.policy)
+    if args.policy == 'g05' and args.approach not in ('original_only', 'semantic'):
+        raise ContractError('G05 full-panel numeric/direct variants not qualified')
     simulator_env = dict(os.environ)
     if args.simulator_libstdcxx is not None:
         library = args.simulator_libstdcxx.resolve(strict=True)
@@ -64,6 +69,8 @@ def main():
     plan = load_json(args.prepared / 'plan.json')
     config_path = (args.prepared / (args.approach + '.json')).resolve()
     treatment = load_json(config_path)
+    if plan['motor_identity']['name'] != contract['name']:
+        raise ContractError('prepared panel binds another motor policy')
     mode = {'original_only': 'motor_only', 'direct': 'direct_sparse',
             'numeric': 'sparse', 'semantic': 'semantic_subtask_hierarchy'}[args.approach]
     if (len(panel['cases']) != 10 or panel['sha256'] != plan['manifest_sha256']
@@ -111,6 +118,8 @@ def main():
     atomic_json(out / 'cohort.json', [str(wave) for wave in waves])
     source_paths = ['semantic_lab/task_rows.py', 'semantic_lab/native_execution.py',
                     'semantic_lab/native_io.py', 'semantic_lab/pi05_batch.py',
+                    'semantic_lab/g05_batch.py', 'semantic_lab/motor_contract.py',
+                    'semantic_lab/policy.py',
                     'scripts/semantic/serve_pi05_batch.py',
                     'scripts/semantic/run_distinct_task_group.py',
                     'scripts/semantic/run_full_panel_baseline.py']
@@ -119,7 +128,9 @@ def main():
     direct = args.approach == 'direct'
     report = dict(status='starting', method=args.approach, paid_calls=0, policy_runtimes=0 if direct else 1,
                   simulator_processes=3, distinct_tasks=10, source_hashes=source_hashes,
-                  simulator_gpu_affinity=[0, 1, 0], policy_gpu=None if direct else 1, jax_memory_fraction=.5,
+                  simulator_gpu_affinity=[0, 1, 0], policy_gpu=None if direct else 1,
+                  policy=args.policy, motor_contract=contract,
+                  jax_memory_fraction=.5 if args.policy == 'pi05' else None,
                   source_freeze_sha256=frozen['sha256'] if frozen else None,
                   tier_policy=plan.get('tier_policy', 'flex_only'),
                   comparison_plan_sha256=plan['sha256'], cases=[case['case_id'] for case in panel['cases']],
@@ -134,9 +145,9 @@ def main():
         service = None
         if not direct:
             stream = (out / 'worker.log').open('x'); streams.append(stream)
-            service = subprocess.Popen([str(ROOT / '.venv-pi05/bin/python'), '-u',
+            service = subprocess.Popen([str(ROOT / contract['python']), '-u',
                 str(ROOT / 'scripts/semantic/serve_pi05_batch.py'), '--cohort', str(out / 'cohort.json'),
-                '--output', str(out / 'worker'), '--capacity', '10'], cwd=ROOT,
+                '--output', str(out / 'worker'), '--capacity', '10', '--policy', args.policy], cwd=ROOT,
                 env=dict(os.environ, CUDA_VISIBLE_DEVICES='1', XLA_PYTHON_CLIENT_PREALLOCATE='false',
                          XLA_PYTHON_CLIENT_MEM_FRACTION='.5',
                          OMP_NUM_THREADS='4', MKL_NUM_THREADS='4'), stdout=stream, stderr=subprocess.STDOUT,
@@ -149,6 +160,7 @@ def main():
             command = ['/root/miniconda3/envs/RoboDojo/bin/python3.11', '-u',
                 str(ROOT / 'scripts/semantic/run_distinct_task_group.py'),
                 '--cases', str(out / f'group{idx}-cases.json'), '--config', str(config_path),
+                '--policy', args.policy,
                 '--output', str(wave),
                 '--kit_args', f'--/renderer/activeGpu={gpu} --/renderer/multiGpu/enabled=false']
             if args.allow_api:

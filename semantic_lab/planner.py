@@ -28,6 +28,10 @@ Use uncertainty honestly: a moving hand or robot FK is not task progress or futu
 Do not use hidden simulator state, scoring predicates, previous-episode solutions or demos.
 The underlying motor policy may not understand added prompt fields; do not assume it does.
 Return a compact public evidence summary, not private chain-of-thought.
+RECOVER requires assessment exactly "failed", evidence identifying that failure, and
+allow_semantic_recovery=true. Never convert uncertainty into failure to pass this gate.
+If assessment is "uncertain", use CONTINUE or ordinary SET_SUBTASK replanning where
+the minimum-dwell rule permits it; do not use RECOVER. Disabled recovery stays disabled.
 '''
 
 
@@ -42,9 +46,11 @@ def tool_schema(binding=None):
         'based_on_step': {'type': 'integer', 'minimum': 0},
         'based_on_stamp': {'type': 'string', 'minLength': 64, 'maxLength': 64},
         'expected_epoch': {'type': 'integer', 'minimum': 0},
-        'operation': {'type': 'string', 'enum': ['continue', 'set_subtask', 'recover', 'stop']},
+        'operation': {'type': 'string', 'enum': ['continue', 'set_subtask', 'recover', 'stop'],
+                      'description': 'recover requires assessment=failed and recovery enabled; uncertain replanning uses set_subtask subject to minimum dwell, or continue.'},
         'subtask': {'type': 'string', 'maxLength': 600},
-        'assessment': {'type': 'string', 'enum': ['not_started', 'progressing', 'complete', 'failed', 'uncertain']},
+        'assessment': {'type': 'string', 'enum': ['not_started', 'progressing', 'complete', 'failed', 'uncertain'],
+                       'description': 'Honest observed assessment. recover is legal only with failed, never uncertain.'},
         'evidence': {'type': 'string', 'maxLength': 1800},
         'completed_claims': {'type': 'array', 'maxItems': 12, 'items': claim},
         'uncertain_or_invalidated': {'type': 'array', 'maxItems': 12, 'items': {'type': 'string', 'maxLength': 400}},

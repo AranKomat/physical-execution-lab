@@ -24,11 +24,14 @@ def main():
     p.add_argument('--freeze', type=Path)
     p.add_argument('--panel', type=Path)
     p.add_argument('--baseline-group', type=Path)
+    p.add_argument('--policy', choices=('pi05', 'g05'), default='pi05')
     from isaaclab.app import AppLauncher
     AppLauncher.add_app_launcher_args(p)
     args = p.parse_args()
     cases = json.loads(args.cases.read_text())
     treatment = json.loads(args.config.read_text())
+    from semantic_lab.motor_contract import motor_contract
+    contract = motor_contract(args.policy)
     methods = {'motor_only': 'original_only', 'direct_sparse': 'direct',
                'sparse': 'numeric', 'semantic_subtask_hierarchy': 'semantic'}
     if treatment['mode'] not in methods or args.allow_api != (treatment['mode'] != 'motor_only'):
@@ -75,11 +78,11 @@ def main():
         for case in cases:
             evaluation = load_yaml(str(config_root / 'arx_x5.yml'))
             evaluation.update(task_name=case['runtime_task'], num_envs=len(cases), device_id=0,
-                eval_batch=True, policy_name='Pi_05', additional_info='distinct_task_cohort',
+                eval_batch=True, policy_name=contract['policy_name'], additional_info='distinct_task_cohort',
                 seed=case['eval_seed'], physx_monitor_enabled=True)
             values = {key: load_yaml(str(config_root / key / (evaluation['config'][key] + '.yml')))
                       for key in ('sim', 'scene', 'camera', 'robot')}
-            values.update(eval_cfg=evaluation, deploy_cfg=dict(port=1, policy_name='Pi_05'),
+            values.update(eval_cfg=evaluation, deploy_cfg=dict(port=1, policy_name=contract['policy_name']),
                 task_env=load_yaml(registry.task_config_path(
                     str(Path(ROOT_DIR) / 'task' / BENCHMARK / 'config'), case['runtime_task'])))
             cfg = OmegaConf.create(values)
@@ -128,7 +131,7 @@ def main():
         if frozen:
             verify_binding(ROOT, frozen, panel, treatment, require_execution_sources=True)
         args.semantic_config, args.num_envs = args.config, len(cases)
-        args.policy, args.inference_mode = 'pi05', 'vmap_source_singleton_sampling'
+        args.inference_mode = contract['mode']
         args.controller_probe = False
         args.steps = max(case['horizon'] for case in cases)
         args.reference_cases = cases
