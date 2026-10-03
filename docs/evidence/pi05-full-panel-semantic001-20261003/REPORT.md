@@ -77,6 +77,14 @@ unobservable placement does not establish physical failure. Recovery-disabled
 abstention is a clear treatment limitation; it does not establish that language
 hierarchy cannot work or that the policy ignored every subtask.
 
+Post-trial inspection of the exact actor-visible bottle frames confirms that the
+pink bottle is visible on the table at step 0 but not at step 105; the current
+overhead view shows the right fingers around the yellow bottle. The left wrist
+view is empty, and the bin interior is not adequately visible. This is compatible
+with ongoing object handling but does not prove pink-bottle placement, a stable
+yellow grasp, or successful task completion. The model's inability to verify the
+active pink-bottle goal is not enough to certify physical failure.
+
 Prompt plumbing and native cadence are now verified for this full-ten condition.
 Reliable steerability and useful semantic recovery remain unproven. Do not
 substitute more component tests for those experiments.

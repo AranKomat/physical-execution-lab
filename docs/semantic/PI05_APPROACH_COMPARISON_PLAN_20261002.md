@@ -529,6 +529,24 @@ was uncertainty about placement, not established failure. A fresh recovery-enabl
 condition is next after the same-host original-only control. Preserve this trial;
 it cannot be retroactively changed into a recovery-enabled or native-only run.
 
+### Same-Host Control And Recovery Preparation
+
+- [ ] `pi05-full-panel-baseline004`: separate same-host original-only repeat,
+  live under freeze004, zero paid calls, all ten distinct tasks concurrently.
+  Preserve baseline003 and do not choose cases from the repeat's outcomes.
+- [x] Prepare the full-ten recovery ablation without executable changes:
+  `runs/pi05-approach-semantic-recovery-preparation001/` on the GPU host and Mac.
+  The only behavioral delta from semantic001 is
+  `semantic_schedule.allow_semantic_recovery=false -> true`; condition name and
+  sealed plan hashes change as metadata. Prompt mode, cadence, model/effort/tier,
+  schemas, stopping behavior, sensors, budgets and tasks remain unchanged.
+  Fresh freeze: `91f5bf8cac215e420986f77756e0c1c7787962786b6ac0fce5ca744bfea46548`.
+  Preparation is not a native recovery result or phase completion.
+- [ ] Audit baseline004, then run the separately named semantic recovery cohort
+  with live matched-reset admission and the existing ledger limits. Do not
+  assume enabling recovery will prevent uncertainty-based abstention; the stop
+  option remains available and must be reported.
+
 - [x] Download the complete numeric005 evidence archive and match its remote
   SHA-256; extract and independently re-audit all ten streams and 6,390 ACKs.
   See the numeric005 report's Independent Local Backup section. No model weights
