@@ -1275,7 +1275,7 @@
     "semantic_lab/token_retention.py": "2755a9a4fae843749a0d1b8e3fe0c48ed703a5cbee1336da655e39f580f1ab7d",
     "tests/semantic/test_token_retention.py": "2096d5dc6d533b691a47015e257a375ee165526fdbd0cab6014d7ef24d99f22b",
     "docs/evidence/reference-execution-binding001-20261002/live-token-guard-probe001.json": "31d762f668e6795fcfb081776aa559e3a62811663fa4acba41071ea4756ca872",
-    "docs/semantic/PI05_APPROACH_COMPARISON_PLAN_20261002.md": "aebf8be04339c1506202cd4cf5e3b25d4256affc915a856172c0c33f745170d3",
+    "docs/semantic/PI05_APPROACH_COMPARISON_PLAN_20261002.md": "2efc6222e36a105d49bde3149957dec36312d04db7c23a52bb9a555145293046",
     "docs/semantic/INSTANCE_SHUTDOWN_HANDOFF_20261003.md": "8512374fcb32f698f0a21ad43679a991507f8f661e2848e36fe5b931d7e6e3fb",
     "docs/evidence/pi05-full-panel-numeric002-20261003/backup-verification.json": "b3b1d8f0f40a9ddfede3006bcf412941ca9e9b706b9b9d99a7933749e7e63dfb",
     "docs/evidence/pi05-full-panel-numeric002-20261003/numeric-partial-control-audit.json": "b073b3ba0866995265d9e4f5940069ab5fef28ae3e9b552177f41df031394baa",
@@ -1385,6 +1385,6 @@
     "scripts/semantic/audit_full_panel_control.py": "c3fcd1e39cd751dd6e4872e2a99abfa8a6cd0a8b7260dc725eee306867192320",
     "docs/evidence/pi05-full-panel-numeric005-20261003/REPORT.md": "fda2b825398f019f79800bdb7a936c1a7d227c2b5bbcce898ab720146449b347",
     "docs/evidence/pi05-full-panel-numeric005-20261003/control-integrity-audit.json": "79ca1be5486fe561e4462996ec71a90c365ddb846eeb734586d03f38caa65f91",
-    "docs/semantic/GPT_AS_POLICY_FIDELITY_REVIEW_20261003.md": "374ec3f8cb4c86102d7086cfae858c14e13e961fd1f5981393fe5b727827c4f8"
+    "docs/semantic/GPT_AS_POLICY_FIDELITY_REVIEW_20261003.md": "be6897ff7778be0a1ce5044b929d6ed9fb065fad605259138f03dbc81f4771e8"
   }
 }

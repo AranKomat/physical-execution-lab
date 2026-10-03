@@ -11,8 +11,28 @@ uses a persistent Astra/xhigh tool agent, and forbids model-directed early stops
 on benchmark cases. Our five accepted stops and sparse cadence are material
 differences. Read `GPT_AS_POLICY_FIDELITY_REVIEW_20261003.md` for pinned evidence
 and the added reference-style control checklist. Finish semantic001 unchanged,
-then obtain a same-host baseline and prepare that control before further sparse
-tuning. Preserve all ten distinct tasks concurrently and the existing budgets.
+then obtain a same-host baseline. Preserve all ten distinct tasks concurrently
+and the existing budgets.
+
+### Owner Direction: Semantic First
+
+The owner subsequently chose sparse high-level language supervision as the main
+path, rather than spending on a faithful high-frequency numeric reproduction.
+The fidelity review remains necessary to interpret numeric005, but its proposed
+reference-style control is deferred, not the next mandatory paid experiment.
+
+- [ ] Finish semantic001 and audit prompt routing, normal motor cadence and all
+  ten outcomes before changing its condition.
+- [ ] Inspect failures separately as wrong semantic goal, weak motor response,
+  planner abstention, or infrastructure/contract error. A routed prompt does not
+  prove subtask obedience, and a visual judgment is not hidden physical truth.
+- [ ] Select a fresh semantic condition from retained evidence, emphasizing
+  coherent subtasks, meaningful completion checks and evidence-triggered
+  replanning without motor-prefix interruption. Do not tune during semantic001.
+- [ ] Keep a matched same-host original-only full-ten control; retain baseline003.
+- [ ] Defer reference-style numeric reproduction and further numeric cadence
+  sweeps. Numeric corrections are a possible later narrowly scoped fallback,
+  not the central architecture. No published gain is imported as our result.
 
 ### Owner Scheduling Correction
 

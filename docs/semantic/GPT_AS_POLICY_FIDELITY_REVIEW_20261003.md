@@ -62,6 +62,14 @@ Premature stopping itself is a policy treatment, not missing infrastructure.
 
 ## Next Sequence
 
+**Owner superseding direction:** after this review, the owner prioritized sparse
+semantic subtasks and deferred the reference-style numeric reproduction. Items
+below concerning that reproduction describe a possible later control, not the
+next required paid experiment. Finish semantic001, diagnose routing/steerability,
+abstention and replanning, and retain a matched same-host original-only control.
+Do not spend on high-frequency numerical intervention merely to chase the
+published gain.
+
 - [ ] Finish and independently audit semantic001 without changing its frozen
   task-plus-subtask condition. Preserve all native results, abstentions and errors.
 - [ ] Complete a separate original-only full-ten repeat on the rebuilt host
