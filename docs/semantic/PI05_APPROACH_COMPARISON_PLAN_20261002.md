@@ -519,3 +519,18 @@ matches the previous host; 946 FP32 policy tensors are retained without weight
 transformation. Download/export verification does not qualify either model's
 runtime on this host. Launcher preload isolation/provenance tests also pass;
 the complete CPU suite is 455 passed, not additional robotics phase completion.
+
+### Approved Reboot And Resumption
+
+- [x] Automatic updates exited; `dpkg --audit` returned clean. No update settings
+  were changed and no benchmark workers remained live.
+- [x] Approved reboot completed. Boot ID changed from
+  `18415b34-a17f-4c48-8e46-faca217f1468` to
+  `eb851cf8-e436-44f5-8d55-e32581ff77f8`; both 4090s report driver 580.178.04
+  with working NVML and zero initial GPU allocation. Disk free: 121 GiB.
+- [x] Restored G0.5 bundle matches all 13 retained artifact hashes. This does
+  not replace model/runtime qualification on the rebuilt host.
+- [ ] `pi05-full-panel-numeric005`: launched after reboot with freeze004,
+  explicit simulator C++ runtime, $95 shared ceiling and $3 cohort cap.
+  Startup/live motion/terminal task results remain to be verified; do not count
+  launch as a completed comparison.
