@@ -2,6 +2,12 @@
 
 ## Live Evidence Update: 2026-10-03
 
+Owner-requested shutdown preparation is complete: all23,166 inventoried remote
+run/config files match local hashes, frozen native source is archived, both GPUs
+are idle, owned experiment workers and relay tunnel are absent. No weights were
+downloaded to the Mac or instance lifecycle actions taken. Do not launch new work
+under the shutdown request. See [the current shutdown/restart handoff](INSTANCE_SHUTDOWN_COACHING_20261003.md).
+
 Owner-requested fresh coaching006 completed after an OpenRouter credit top-up:
 5/10 successes, mean0.605 versus baseline5/10,0.620. All ten native scores,
 8,238 actions, three correction changes, no feedback clears or rescued successes.

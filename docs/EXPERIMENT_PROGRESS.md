@@ -2,6 +2,12 @@
 
 ## Current V5 Status (2026-10-03)
 
+Shutdown preparation is complete at the owner's request:23,166 remote run/config
+files independently hash-verified locally, zero missing/changed, native source
+snapshot preserved, both GPUs idle with no owned workers/tunnel. No weights were
+copied to the Mac and no instance lifecycle action was taken. See
+[the current restart handoff](semantic/INSTANCE_SHUTDOWN_COACHING_20261003.md).
+
 Fresh coaching006 completed after the owner's API credit top-up:5/10 successes,
 mean0.605 versus baseline5/10,0.620. All ten native scores,8,238 audited actions,
 three correction changes, zero feedback clears/no observed correction completion.
