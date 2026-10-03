@@ -166,6 +166,7 @@ def main():
     for name in ('campaign-root','key-file','output','name'):p.add_argument('--'+name,required=True)
     p.add_argument('--port',type=int,default=19861);p.add_argument('--expected-calls',type=int,required=True)
     p.add_argument('--max-calls',type=int,default=75);p.add_argument('--cap-usd',type=Decimal,default=Decimal(3))
+    p.add_argument('--shared-cap-usd',type=Decimal,choices=(Decimal(85),Decimal(95)),default=Decimal(85))
     p.add_argument('--profile',choices=('pilot75','comparison180','full_panel1800'),default='pilot75')
     p.add_argument('--tool-name',choices=('robot_decision','semantic_goal'),default='robot_decision')
     p.add_argument('--wall-limit-s',type=int,default=2400)
@@ -181,7 +182,7 @@ def main():
     token=secrets.token_urlsafe(32);path=out/'relay-token';path.write_text(token);path.chmod(0o600)
     with (RUN/'runner.lock').open('a') as lock,httpx.Client(timeout=900,trust_env=False) as http:
         fcntl.flock(lock,fcntl.LOCK_EX|fcntl.LOCK_NB)
-        ledger=Ledger(RUN/'budget.jsonl',max_calls=4209,limit_usd=Decimal(85),
+        ledger=Ledger(RUN/'budget.jsonl',max_calls=4209,limit_usd=a.shared_cap_usd,
             resumed_at=time.time(),wall_limit_seconds=min(a.wall_limit_s,2400),
             acknowledged_unknown_ids=a.acknowledge_failed_request)
         count=sum(e['event']=='reserved' for e in ledger.read())
@@ -191,7 +192,7 @@ def main():
             'name':a.name,'max_calls':ledger.max_calls,'local_cap_usd':str(a.cap_usd),
             'trial_profile':a.profile,'trial_call_limit':a.max_calls,'wall_limit_s':a.wall_limit_s,
             'paid_ledger_window_s':min(a.wall_limit_s,2400),
-            'shared_cap_usd':'85','model':MODEL,'provider':'openai/flex','tool_name':a.tool_name,
+            'shared_cap_usd':str(a.shared_cap_usd),'model':MODEL,'provider':'openai/flex','tool_name':a.tool_name,
             'authorization':'standing low-budget physical-lab approval; owner selected Sol 6.1 Flex'})
         relay=Relay(ledger,load_key(a.key_file),token,out,a.name,a.max_calls,a.cap_usd,http,a.tool_name,
                     allow_standard_fallback=a.allow_standard_fallback)
@@ -227,7 +228,7 @@ def main():
             'allow_standard_fallback':a.allow_standard_fallback,
             'profile':a.profile,'wall_limit_s':a.wall_limit_s,
             'paid_ledger_window_s':min(a.wall_limit_s,2400),
-            'local_cap_usd':str(a.cap_usd),'shared_cap_usd':'85'}),flush=True)
+            'local_cap_usd':str(a.cap_usd),'shared_cap_usd':str(a.shared_cap_usd)}),flush=True)
         HTTPServer(('127.0.0.1',a.port),Handler).serve_forever()
 
 

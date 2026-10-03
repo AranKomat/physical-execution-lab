@@ -463,3 +463,21 @@ physics. It demonstrates differing inference/action barriers, policy-free direct
 dispatch, strict-default rejection, uncertain-write no-retry handling, and
 retirement on runner errors. These tests are not approach performance or phase
 completion. No new paid requests or simulator actions were issued for this work.
+
+## New Host And Authorized Budget (2026-10-03)
+
+- [x] Owner authorized a $95 shared ceiling for the full-ten numeric and semantic
+  comparisons. Launch with `--shared-cap-usd 95`; the default remains $85.
+  The $3 per-cohort cap and every unresolved hold remain unchanged.
+- [x] New Romania endpoint: port 53786 on 92.180.27.84, two 24 GB RTX 4090s.
+  Pinned source revisions and the exact released pi0.5 checkpoint are restored.
+  Model weights remain on the GPU host, not the Mac.
+- [x] New-host CPU suite: 449 passed before the budget-option change.
+- [ ] Complete pinned simulator asset transfer and verify retained layout bindings.
+- [ ] Freeze updated source and run the fresh full-ten numeric condition.
+- [ ] Run the fresh full-ten semantic condition, separately from numeric.
+
+The new host has a 372 GiB root disk. Simulator dependencies outside the frozen
+OpenPI environment were resolved during installation; exact transitive runtime
+equivalence to the old host is not claimed. Prior numeric002 remains an
+owner-interrupted trial, not a completed panel or a resumable live episode.

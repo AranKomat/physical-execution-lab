@@ -3,10 +3,25 @@ from decimal import Decimal
 from pathlib import Path
 from types import SimpleNamespace
 import json
+import subprocess
+import sys
 import pytest
 
 spec=importlib.util.spec_from_file_location('budget_relay',Path(__file__).resolve().parents[2]/'scripts/multibench/budget_responses_relay.py')
 relay=importlib.util.module_from_spec(spec);spec.loader.exec_module(relay)
+
+
+@pytest.mark.parametrize('script', ['scripts/multibench/budget_responses_relay.py',
+                                  'scripts/semantic/run_paid_full_panel.py'])
+def test_shared_ceiling_cli_is_explicit_and_bounded(script):
+    path = Path(__file__).resolve().parents[2] / script
+    help_result = subprocess.run([sys.executable, str(path), '--help'], capture_output=True, text=True)
+    assert help_result.returncode == 0
+    assert '--shared-cap-usd {85,95}' in help_result.stdout
+    result = subprocess.run([sys.executable, str(path), '--shared-cap-usd', '96'],
+                            capture_output=True, text=True)
+    assert result.returncode == 2
+    assert 'invalid choice' in result.stderr
 
 
 def body():

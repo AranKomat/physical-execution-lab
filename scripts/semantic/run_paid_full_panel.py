@@ -31,6 +31,7 @@ def main():
     p.add_argument('--controller-run', required=True)
     p.add_argument('--acknowledge-failed-request', action='append', default=[])
     p.add_argument('--allow-standard-fallback', action='store_true')
+    p.add_argument('--shared-cap-usd', choices=('85', '95'), default='85')
     args = p.parse_args()
     if not args.name or any(c not in 'abcdefghijklmnopqrstuvwxyz0123456789-_' for c in args.name):
         raise ValueError('name must be a fresh lowercase run identifier')
@@ -44,7 +45,7 @@ def main():
         '--output', str(out), '--name', args.name, '--expected-calls', str(count),
         '--tool-name', 'semantic_goal' if args.approach == 'semantic' else 'robot_decision',
         '--max-calls', '1800', '--profile', 'full_panel1800',
-        '--wall-limit-s', '3600', '--cap-usd', '3']
+        '--wall-limit-s', '3600', '--cap-usd', '3', '--shared-cap-usd', args.shared_cap_usd]
     for ident in args.acknowledge_failed_request:
         relay.extend(['--acknowledge-failed-request', ident])
     if args.allow_standard_fallback:
