@@ -486,3 +486,17 @@ The new host has a 372 GiB root disk. Simulator dependencies outside the frozen
 OpenPI environment were resolved during installation; exact transitive runtime
 equivalence to the old host is not claimed. Prior numeric002 remains an
 owner-interrupted trial, not a completed panel or a resumable live episode.
+
+### New-Host Startup Failure
+
+`pi05-full-panel-numeric003` stopped in simulator startup after 15.61 seconds,
+before paid calls or native actions. Concurrent first-use Kit extension pulls
+collided while extracting `omni.kit.pip_archive`. Its incomplete cached files
+were quarantined, not treated as valid installed binaries. A single-simulator
+cache warmup also exposed a conda ICU/system libstdc++ ABI mismatch.
+
+The launcher now accepts an explicit `--simulator-libstdcxx` path and records
+the resolved library path and SHA-256 in the cohort report. It affects simulator
+children only, not the policy worker, paid relay or model configuration. This
+host-runtime difference is explicit; it is not proof of old/new runtime parity.
+Retain numeric003 as a startup failure, never a physical 0/10 result.

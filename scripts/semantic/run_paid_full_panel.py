@@ -32,6 +32,7 @@ def main():
     p.add_argument('--acknowledge-failed-request', action='append', default=[])
     p.add_argument('--allow-standard-fallback', action='store_true')
     p.add_argument('--shared-cap-usd', choices=('85', '95'), default='85')
+    p.add_argument('--simulator-libstdcxx', help='Remote host runtime library; simulator-only preload')
     args = p.parse_args()
     if not args.name or any(c not in 'abcdefghijklmnopqrstuvwxyz0123456789-_' for c in args.name):
         raise ValueError('name must be a fresh lowercase run identifier')
@@ -77,6 +78,8 @@ def main():
                 '--controller-run', args.controller_run, '--output', remote + '/runs/' + args.name]
             if args.allow_standard_fallback:
                 command.append('--allow-standard-fallback')
+            if args.simulator_libstdcxx:
+                command.extend(['--simulator-libstdcxx', args.simulator_libstdcxx])
             wire = 'K1_RELAY_TOKEN=$(cat ' + shlex.quote(token_path) + ') ' + shlex.join(command)
             child = subprocess.Popen(ssh + [wire], start_new_session=True)
             children.append(child)

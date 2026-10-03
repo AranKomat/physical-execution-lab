@@ -51,7 +51,15 @@ def main():
     p.add_argument('--native-reference-freeze', type=Path)
     p.add_argument('--controller-run', type=Path)
     p.add_argument('--allow-standard-fallback', action='store_true')
+    p.add_argument('--simulator-libstdcxx', type=Path,
+                   help='Explicit host C++ runtime preload for native simulator processes only')
     args = p.parse_args()
+    simulator_env = dict(os.environ)
+    if args.simulator_libstdcxx is not None:
+        library = args.simulator_libstdcxx.resolve(strict=True)
+        if not library.is_file():
+            raise ContractError('simulator C++ runtime must be a file')
+        simulator_env['LD_PRELOAD'] = str(library)
     panel = load_json(args.prepared / 'cases.json')
     plan = load_json(args.prepared / 'plan.json')
     config_path = (args.prepared / (args.approach + '.json')).resolve()
@@ -116,6 +124,9 @@ def main():
                   tier_policy=plan.get('tier_policy', 'flex_only'),
                   comparison_plan_sha256=plan['sha256'], cases=[case['case_id'] for case in panel['cases']],
                   native_equivalence_admission_pending=True, automatic_retry=False)
+    if args.simulator_libstdcxx is not None:
+        from k1lab.util import file_sha
+        report['simulator_libstdcxx'] = dict(path=str(library), sha256=file_sha(library))
     children, streams = [], []
     started = time.monotonic()
     try:
@@ -147,7 +158,7 @@ def main():
                 command.extend(['--freeze', str(args.freeze.resolve()),
                                 '--panel', str((args.prepared / 'cases.json').resolve())])
             child = subprocess.Popen(command, cwd=ROOT,
-                env=dict(os.environ, CUDA_VISIBLE_DEVICES=str(gpu), OMNI_KIT_ACCEPT_EULA='YES',
+                env=dict(simulator_env, CUDA_VISIBLE_DEVICES=str(gpu), OMNI_KIT_ACCEPT_EULA='YES',
                          OMP_NUM_THREADS='4', MKL_NUM_THREADS='4'),
                 stdout=stream, stderr=subprocess.STDOUT, start_new_session=True)
             children.append(child); simulators.append(child)
