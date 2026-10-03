@@ -13,7 +13,7 @@
     "docs/semantic/CPU_TRACE_AUDITS.json": "955f775aa51d7416a307621049592fbcdbf20c5d89a4daeac0b3f996cfd4b2ad",
     "docs/semantic/LEGACY_RELEASE_MANIFEST_V4.json": "2646c34df271475b5126b1aaf16de0db73c53047aefe45ced448d4e918da0cd5",
     "docs/semantic/PROVENANCE.md": "5ab6b4a10712b801395d80f0d7fc0896b13ec75db6b1aa05b30e4e89b94faccd",
-    "docs/semantic/STATUS.md": "c55cd1df2262d96c70e3731e728d05e40b48fd1892bc69d911a085b620154de2",
+    "docs/semantic/STATUS.md": "4b5fe917bc119973af3894edabed3aabace00ee4b53be828c894e478f14a28db",
     "run_semantic.py": "a5908315a1c9aa7135a1ed29c0b85b74cf61a22e5c86eaefc9119080f9d89ace",
     "scripts/semantic/apply_overlay.py": "c40d737d6539ad22c7c3b58d88b3ba2a3ee2dec00d2a0004034fbd398c50d077",
     "scripts/semantic/launch_robodojo.py": "58021e5f1f252d149e914b58a730d96c89689bb844565e23ae627f583d7254b0",

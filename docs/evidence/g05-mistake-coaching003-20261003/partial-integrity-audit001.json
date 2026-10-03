@@ -1,0 +1,2618 @@
+{
+  "retained_trace_integrity_passed": true,
+  "completed_comparison": false,
+  "scope": "retained source predictions, actual model prompts, observed ACKs and decision gates only",
+  "parent_report_sha256": "b1ef8f93ef82edb2158ec95f9f28bc75d19249bf96c786bece5a894f3c2c619b",
+  "rows": [
+    {
+      "case_id": "arrange_largest_number__standard__g0__l0",
+      "task": "arrange_largest_number",
+      "journal": {
+        "events": 1144,
+        "head_sha256": "06b7573cb566e5f675087d956981a84ab7a1f684cdbc4b61acf327f41fc9822c"
+      },
+      "native_actions": 1008,
+      "proposals": 63,
+      "prefix_open_at_end": false,
+      "completed_native_result": false,
+      "result_status": "missing",
+      "success": null,
+      "native_score": null,
+      "decisions": 9,
+      "correction_changes": 1,
+      "feedback_clears": 0,
+      "decisions_evidence": [
+        {
+          "step": 0,
+          "reasons": [
+            "initial_semantic_goal"
+          ],
+          "decision": {
+            "episode": "4b3689aa38ba4150a6a9140427f525d8",
+            "based_on_step": 0,
+            "based_on_stamp": "044f40525467deb42c53195b7e2ac97041a03e3b1a9be51e4e84ed53ccb8194a",
+            "expected_epoch": 0,
+            "operation": "continue",
+            "subtask": "",
+            "assessment": "not_started",
+            "evidence": "Initial RGB shows blue digits 0, 7, 8 and 2 scattered on the table, with four empty circular pads in a row. No manipulation or original-task violation is observed.",
+            "completed_claims": [],
+            "uncertain_or_invalidated": []
+          },
+          "effect": {
+            "changed": false,
+            "stop": false,
+            "age_steps": 0,
+            "shadow_only": false
+          },
+          "native_evaluator_information_supplied": false
+        },
+        {
+          "step": 112,
+          "reasons": [
+            "periodic_semantic_check_at_native_boundary"
+          ],
+          "decision": {
+            "episode": "4b3689aa38ba4150a6a9140427f525d8",
+            "based_on_step": 112,
+            "based_on_stamp": "1e2bfdeb97166e2b4e27be9e2bc04be0f0fbc36dd06a8b1f37f44f90ad6ee4ae",
+            "expected_epoch": 0,
+            "operation": "continue",
+            "subtask": "",
+            "assessment": "progressing",
+            "evidence": "Compared with step 0, step 112 shows digit 8 on the leftmost pad, consistent with the largest-number arrangement 8720. The other three pads remain empty; 7, 2 and 0 are still on the table. No misplaced digit, lost grasp or sustained stall is established by these observations.",
+            "completed_claims": [
+              {
+                "text": "Digit 8 is on the leftmost pad.",
+                "evidence_steps": [
+                  112
+                ]
+              }
+            ],
+            "uncertain_or_invalidated": []
+          },
+          "effect": {
+            "changed": false,
+            "stop": false,
+            "age_steps": 0,
+            "shadow_only": false
+          },
+          "native_evaluator_information_supplied": false
+        },
+        {
+          "step": 224,
+          "reasons": [
+            "periodic_semantic_check_at_native_boundary"
+          ],
+          "decision": {
+            "episode": "4b3689aa38ba4150a6a9140427f525d8",
+            "based_on_step": 224,
+            "based_on_stamp": "687ee19728ada867a1815610ecd6c89c143897b5f9751e23f9179624ceff9236",
+            "expected_epoch": 0,
+            "operation": "continue",
+            "subtask": "",
+            "assessment": "uncertain",
+            "evidence": "At step 224 the left wrist view shows digit 2 beside the gripper near the table; a secure grasp or placement is not established. The arm obscures most pads in the overhead view, while the rightmost pad is visible and empty. Step 112 showed 8 on the leftmost pad. No wrong placement, lost grasp, or sustained stall is established.",
+            "completed_claims": [
+              {
+                "text": "Digit 8 was on the leftmost pad at step 112.",
+                "evidence_steps": [
+                  112
+                ]
+              }
+            ],
+            "uncertain_or_invalidated": [
+              "The current position of digit 8 and occupancy of the obscured pads cannot be verified at step 224.",
+              "Digit 2 is near the left gripper, but a secure grasp is unverified."
+            ]
+          },
+          "effect": {
+            "changed": false,
+            "stop": false,
+            "age_steps": 0,
+            "shadow_only": false
+          },
+          "native_evaluator_information_supplied": false
+        },
+        {
+          "step": 336,
+          "reasons": [
+            "periodic_semantic_check_at_native_boundary"
+          ],
+          "decision": {
+            "episode": "4b3689aa38ba4150a6a9140427f525d8",
+            "based_on_step": 336,
+            "based_on_stamp": "eb8b1a3e4e0bc0150db876ca253109460e175132ec7be458004e0064b5195940",
+            "expected_epoch": 0,
+            "operation": "continue",
+            "subtask": "",
+            "assessment": "uncertain",
+            "evidence": "At step 336, digit 8 is visible on the leftmost pad, and 0 and 7 remain on the table. Digit 2 is between the right gripper fingers near the tabletop; secure grasp or placement is not established. Other pad occupancy is partly obscured. The change from the left gripper at step 224 to the right gripper does not establish a lost grasp or sustained stall. No observed task violation warrants correction.",
+            "completed_claims": [
+              {
+                "text": "Digit 8 is on the leftmost pad.",
+                "evidence_steps": [
+                  112,
+                  336
+                ]
+              }
+            ],
+            "uncertain_or_invalidated": [
+              "Digit 2 is now between the right gripper fingers, but a secure grasp or completed placement remains unverified.",
+              "Occupancy of the obscured pads cannot be fully verified at step 336."
+            ]
+          },
+          "effect": {
+            "changed": false,
+            "stop": false,
+            "age_steps": 0,
+            "shadow_only": false
+          },
+          "native_evaluator_information_supplied": false
+        },
+        {
+          "step": 448,
+          "reasons": [
+            "periodic_semantic_check_at_native_boundary"
+          ],
+          "decision": {
+            "episode": "4b3689aa38ba4150a6a9140427f525d8",
+            "based_on_step": 448,
+            "based_on_stamp": "2f8befca43f7cc030c0f4701b0389e542110b6353e83e60289a5778e7b613fb1",
+            "expected_epoch": 0,
+            "operation": "recover",
+            "subtask": "Correct digit 2's placement: put it on the third pad from the left, leaving the second pad for 7 to form 8720.",
+            "assessment": "failed",
+            "evidence": "Step 448 overhead and left-wrist RGB show digit 8 on the leftmost pad and digit 2 resting across the front of the second pad, outside the open gripper. The third and fourth pads are empty and 7 remains on the table. This is an observed wrong placement: the largest-number order is 8720, so 2 belongs on the third pad, not the second.",
+            "completed_claims": [
+              {
+                "text": "Digit 8 is on the leftmost pad.",
+                "evidence_steps": [
+                  112,
+                  336,
+                  448
+                ]
+              }
+            ],
+            "uncertain_or_invalidated": [
+              "The earlier uncertainty about digit 2's placement is resolved: it is at the second pad, which is incorrect for 8720.",
+              "Digit 0's current location is obscured in the overhead view."
+            ]
+          },
+          "effect": {
+            "changed": true,
+            "stop": false,
+            "age_steps": 0,
+            "shadow_only": false
+          },
+          "native_evaluator_information_supplied": false
+        },
+        {
+          "step": 560,
+          "reasons": [
+            "periodic_semantic_check_at_native_boundary"
+          ],
+          "decision": {
+            "episode": "4b3689aa38ba4150a6a9140427f525d8",
+            "based_on_step": 560,
+            "based_on_stamp": "8c2756fb19bbad8fbac9a0a7ebceea9c6b0d733aa752b2112554eac6e963c136",
+            "expected_epoch": 1,
+            "operation": "continue",
+            "subtask": "",
+            "assessment": "uncertain",
+            "evidence": "At step 560, 8 remains visible on the leftmost pad and 0 is on the table. The right wrist view shows 7 on the tabletop near the open gripper. The arm obscures digit 2 and much of the middle pads, so moving 2 from the second to the third pad cannot be verified. The active correction is not visibly complete; no new failure is established.",
+            "completed_claims": [
+              {
+                "text": "Digit 8 is on the leftmost pad.",
+                "evidence_steps": [
+                  112,
+                  336,
+                  448,
+                  560
+                ]
+              }
+            ],
+            "uncertain_or_invalidated": [
+              "Digit 2's current position and completion of its placement correction are obscured at step 560.",
+              "Digit 0 is now visible on the table; its earlier location uncertainty is resolved.",
+              "Proximity of digit 7 to the right gripper does not establish a grasp."
+            ]
+          },
+          "effect": {
+            "changed": false,
+            "stop": false,
+            "age_steps": 0,
+            "shadow_only": false
+          },
+          "native_evaluator_information_supplied": false
+        },
+        {
+          "step": 672,
+          "reasons": [
+            "periodic_semantic_check_at_native_boundary"
+          ],
+          "decision": {
+            "episode": "4b3689aa38ba4150a6a9140427f525d8",
+            "based_on_step": 672,
+            "based_on_stamp": "6ebff434feec13bc58c9744fd3fe311949f31c05c983339fddeb9e5010400b9c",
+            "expected_epoch": 1,
+            "operation": "continue",
+            "subtask": "",
+            "assessment": "failed",
+            "evidence": "Step 672 overhead RGB shows 8 on the first pad, 2 on the second pad, and 7 on the third pad; the fourth pad is empty. Thus 2 has not been corrected to the third pad, and the visible order is not the required 8720. Keep the existing correction unchanged. The left wrist shows 0 between the fingers near the tabletop, but a secure grasp is not established.",
+            "completed_claims": [
+              {
+                "text": "Digit 8 is on the leftmost pad.",
+                "evidence_steps": [
+                  112,
+                  336,
+                  448,
+                  560,
+                  672
+                ]
+              }
+            ],
+            "uncertain_or_invalidated": [
+              "Digit 2's placement uncertainty at step 560 is resolved: at step 672 it remains on the second pad, so the active correction is not complete.",
+              "Digit 7 is on the third pad rather than the required second pad.",
+              "Digit 0 is between the left gripper fingers; secure grasp is unverified."
+            ]
+          },
+          "effect": {
+            "changed": false,
+            "stop": false,
+            "age_steps": 0,
+            "shadow_only": false
+          },
+          "native_evaluator_information_supplied": false
+        },
+        {
+          "step": 784,
+          "reasons": [
+            "periodic_semantic_check_at_native_boundary"
+          ],
+          "decision": {
+            "episode": "4b3689aa38ba4150a6a9140427f525d8",
+            "based_on_step": 784,
+            "based_on_stamp": "ee85aecbc0215348dc656f9e4297f2ba102a7376ed3415b12d1178b28fbe8ee4",
+            "expected_epoch": 1,
+            "operation": "continue",
+            "subtask": "",
+            "assessment": "uncertain",
+            "evidence": "At step 784, digit 8 remains visible on the leftmost pad. The right arm and gripper obscure the middle pads and digits 2 and 7, so completion of the active placement correction cannot be verified. Digit 0 is visibly on the tabletop left of the pads, outside the open left gripper; its previously uncertain grasp was not established. Keep the existing correction unchanged; the current occlusion does not establish a new failure or sustained stall.",
+            "completed_claims": [
+              {
+                "text": "Digit 8 is on the leftmost pad.",
+                "evidence_steps": [
+                  112,
+                  336,
+                  448,
+                  560,
+                  672,
+                  784
+                ]
+              }
+            ],
+            "uncertain_or_invalidated": [
+              "Digit 2 was on the second pad at step 672; its current placement is obscured, so the active correction is not visibly complete.",
+              "Digit 7 was on the third pad at step 672; its current placement is obscured.",
+              "Digit 0 is on the tabletop at step 784, not held by the left gripper. The earlier possible grasp remains unverified, not a confirmed lost grasp."
+            ]
+          },
+          "effect": {
+            "changed": false,
+            "stop": false,
+            "age_steps": 0,
+            "shadow_only": false
+          },
+          "native_evaluator_information_supplied": false
+        },
+        {
+          "step": 896,
+          "reasons": [
+            "periodic_semantic_check_at_native_boundary"
+          ],
+          "decision": {
+            "episode": "4b3689aa38ba4150a6a9140427f525d8",
+            "based_on_step": 896,
+            "based_on_stamp": "c8888766b1f696581b6b1f4598ee2c5c02682a9e7c06687ab5afd13a511a3656",
+            "expected_epoch": 1,
+            "operation": "continue",
+            "subtask": "",
+            "assessment": "uncertain",
+            "evidence": "At step 896 the left arm and gripper obscure the digit placements and most of the pad row. The wrist views do not expose identifiable digits or verify a grasp. Compared with step 784, the arms have changed positions, but digit 2's move to the third pad cannot be verified. No new placement failure or sustained stall is established; preserve the active correction.",
+            "completed_claims": [
+              {
+                "text": "Digit 8 was visible on the leftmost pad through step 784; its current placement is obscured.",
+                "evidence_steps": [
+                  112,
+                  336,
+                  448,
+                  560,
+                  672,
+                  784
+                ]
+              }
+            ],
+            "uncertain_or_invalidated": [
+              "Digit 2's current placement is obscured; the active correction is not visibly complete.",
+              "Digit 7's current placement is obscured; it was on the third pad at step 672.",
+              "Digit 0 was on the tabletop at step 784; its current location and any grasp are unverified."
+            ]
+          },
+          "effect": {
+            "changed": false,
+            "stop": false,
+            "age_steps": 0,
+            "shadow_only": false
+          },
+          "native_evaluator_information_supplied": false
+        }
+      ]
+    },
+    {
+      "case_id": "build_tower__standard__g0__l0",
+      "task": "build_tower",
+      "journal": {
+        "events": 1144,
+        "head_sha256": "03df87a7f89351665630b1c8fb5e2df63f49ec26267ef0cf78d18653aeacbae5"
+      },
+      "native_actions": 1008,
+      "proposals": 63,
+      "prefix_open_at_end": false,
+      "completed_native_result": false,
+      "result_status": "missing",
+      "success": null,
+      "native_score": null,
+      "decisions": 9,
+      "correction_changes": 0,
+      "feedback_clears": 0,
+      "decisions_evidence": [
+        {
+          "step": 0,
+          "reasons": [
+            "initial_semantic_goal"
+          ],
+          "decision": {
+            "episode": "c9df7f4fef584881810a2057fbe0feb4",
+            "based_on_step": 0,
+            "based_on_stamp": "dfc8eaceea95289dee2dd49c48009926d71073ed3d3578c3ca645670be4ca1c2",
+            "expected_epoch": 0,
+            "operation": "continue",
+            "subtask": "",
+            "assessment": "not_started",
+            "evidence": "Initial RGB shows separate blocks and boards resting on the table and open grippers. No attempted placement or observed task violation; preserve the original tower-building task.",
+            "completed_claims": [],
+            "uncertain_or_invalidated": []
+          },
+          "effect": {
+            "changed": false,
+            "stop": false,
+            "age_steps": 0,
+            "shadow_only": false
+          },
+          "native_evaluator_information_supplied": false
+        },
+        {
+          "step": 112,
+          "reasons": [
+            "periodic_semantic_check_at_native_boundary"
+          ],
+          "decision": {
+            "episode": "c9df7f4fef584881810a2057fbe0feb4",
+            "based_on_step": 112,
+            "based_on_stamp": "c875895c6e5f6cfaf79d457c756185f3aba7cb374901564e843d3bad54f9fa19",
+            "expected_epoch": 0,
+            "operation": "continue",
+            "subtask": "",
+            "assessment": "uncertain",
+            "evidence": "Compared with step 0, the right gripper is now positioned above a white block, visible between its open fingers in the wrist view. Both boards remain flat on the table. No secure grasp or tower placement is verified, but there is no observed failed placement, lost grasp, or sustained stall; preserve the original task.",
+            "completed_claims": [],
+            "uncertain_or_invalidated": [
+              "A grasp or completed tower placement cannot be confirmed from the current RGB."
+            ]
+          },
+          "effect": {
+            "changed": false,
+            "stop": false,
+            "age_steps": 0,
+            "shadow_only": false
+          },
+          "native_evaluator_information_supplied": false
+        },
+        {
+          "step": 224,
+          "reasons": [
+            "periodic_semantic_check_at_native_boundary"
+          ],
+          "decision": {
+            "episode": "c9df7f4fef584881810a2057fbe0feb4",
+            "based_on_step": 224,
+            "based_on_stamp": "3d15035c02fcb41ea0a4c670e04fc8170c73d844eb18e075b4bc6c68f80eab61",
+            "expected_epoch": 0,
+            "operation": "continue",
+            "subtask": "",
+            "assessment": "uncertain",
+            "evidence": "At step 224 both grippers are positioned at opposite ends of the longer board, which fills both wrist views; this differs from the block approach at step 112. The shorter board remains on the table. A secure board grasp, lift, or stacked placement is not confirmed. No observed lost grasp, failed placement, task violation, or sustained stall warrants correction.",
+            "completed_claims": [],
+            "uncertain_or_invalidated": [
+              "A secure grasp or completed tower placement cannot be confirmed from the current RGB."
+            ]
+          },
+          "effect": {
+            "changed": false,
+            "stop": false,
+            "age_steps": 0,
+            "shadow_only": false
+          },
+          "native_evaluator_information_supplied": false
+        },
+        {
+          "step": 336,
+          "reasons": [
+            "periodic_semantic_check_at_native_boundary"
+          ],
+          "decision": {
+            "episode": "c9df7f4fef584881810a2057fbe0feb4",
+            "based_on_step": 336,
+            "based_on_stamp": "50e7f0c4ebf309c2ada557d8f200c64e7a3c14ada2bbdb5a1c5422f4b6f4058d",
+            "expected_epoch": 0,
+            "operation": "continue",
+            "subtask": "",
+            "assessment": "progressing",
+            "evidence": "Compared with step 224, the long board is now farther back and appears above white supports in the high view. The left wrist view shows a white block between the fingers near the board; the right gripper is open away from it. The shorter board remains on the table. No observed lost grasp, failed placement, or sustained stall warrants correction.",
+            "completed_claims": [],
+            "uncertain_or_invalidated": [
+              "Secure grasp of the block and stable support of the long board cannot be conclusively verified from these RGB views."
+            ]
+          },
+          "effect": {
+            "changed": false,
+            "stop": false,
+            "age_steps": 0,
+            "shadow_only": false
+          },
+          "native_evaluator_information_supplied": false
+        },
+        {
+          "step": 448,
+          "reasons": [
+            "periodic_semantic_check_at_native_boundary"
+          ],
+          "decision": {
+            "episode": "c9df7f4fef584881810a2057fbe0feb4",
+            "based_on_step": 448,
+            "based_on_stamp": "c01f1e30dadf4e05d99b7be5f902644f9f0a5396227cd90cd94a4d60fbdbf7a4",
+            "expected_epoch": 0,
+            "operation": "continue",
+            "subtask": "",
+            "assessment": "progressing",
+            "evidence": "Compared with step 336, a white block is now visibly on the left portion of the long board, and the left gripper has withdrawn. The right wrist view shows another white block between open fingers above the board. The shorter board remains on the table. No observed lost grasp, failed placement, or sustained stall warrants correction.",
+            "completed_claims": [],
+            "uncertain_or_invalidated": [
+              "A secure grasp of the block near the right gripper and stability of the board-and-block assembly cannot be conclusively verified from RGB."
+            ]
+          },
+          "effect": {
+            "changed": false,
+            "stop": false,
+            "age_steps": 0,
+            "shadow_only": false
+          },
+          "native_evaluator_information_supplied": false
+        },
+        {
+          "step": 560,
+          "reasons": [
+            "periodic_semantic_check_at_native_boundary"
+          ],
+          "decision": {
+            "episode": "c9df7f4fef584881810a2057fbe0feb4",
+            "based_on_step": 560,
+            "based_on_stamp": "67bf5f233c637b7a68d30866048f451b18700d3a980cbfde4a3d2976a6f12f3e",
+            "expected_epoch": 0,
+            "operation": "continue",
+            "subtask": "",
+            "assessment": "progressing",
+            "evidence": "Compared with step 448, the shorter board is now visibly atop white blocks on the long board; both grippers are away from the assembly. The left wrist view shows a white support between the boards. The right wrist view shows a separate wooden block on the table between open fingers, not a verified grasp. No observed collapse, lost grasp, failed placement, or sustained stall warrants correction.",
+            "completed_claims": [
+              {
+                "text": "The shorter board is visibly stacked above the long board with white blocks between them.",
+                "evidence_steps": [
+                  560
+                ]
+              }
+            ],
+            "uncertain_or_invalidated": [
+              "Long-term stability and overall task completion are not established by this RGB snapshot.",
+              "A secure grasp of the separate wooden block near the right gripper is not verified."
+            ]
+          },
+          "effect": {
+            "changed": false,
+            "stop": false,
+            "age_steps": 0,
+            "shadow_only": false
+          },
+          "native_evaluator_information_supplied": false
+        },
+        {
+          "step": 672,
+          "reasons": [
+            "periodic_semantic_check_at_native_boundary"
+          ],
+          "decision": {
+            "episode": "c9df7f4fef584881810a2057fbe0feb4",
+            "based_on_step": 672,
+            "based_on_stamp": "1a3310fce46069185db8807918a2e1307474f038bd79a7602d02255b787a5ca6",
+            "expected_epoch": 0,
+            "operation": "continue",
+            "subtask": "",
+            "assessment": "progressing",
+            "evidence": "Compared with step 560, the separate wooden block is now visibly resting on the upper board, and the board-and-white-block assembly remains upright. The left wrist view shows a green block between the fingers near the tabletop; a secure grasp or lift is not established. The right gripper is away from the tower. No observed collapse, lost grasp, repeated failed placement, or sustained stall warrants correction.",
+            "completed_claims": [
+              {
+                "text": "The shorter board is visibly stacked above the long board with white blocks between them.",
+                "evidence_steps": [
+                  560,
+                  672
+                ]
+              },
+              {
+                "text": "A wooden block is visibly resting on the upper board.",
+                "evidence_steps": [
+                  672
+                ]
+              }
+            ],
+            "uncertain_or_invalidated": [
+              "A secure grasp or lift of the green block is not verified.",
+              "Long-term stability and overall task completion are not established by this RGB snapshot."
+            ]
+          },
+          "effect": {
+            "changed": false,
+            "stop": false,
+            "age_steps": 0,
+            "shadow_only": false
+          },
+          "native_evaluator_information_supplied": false
+        },
+        {
+          "step": 784,
+          "reasons": [
+            "periodic_semantic_check_at_native_boundary"
+          ],
+          "decision": {
+            "episode": "c9df7f4fef584881810a2057fbe0feb4",
+            "based_on_step": 784,
+            "based_on_stamp": "cb99a08d039e27a9396b01a5e7338d1892e772efbfd6de76aa4ea796eac412b8",
+            "expected_epoch": 0,
+            "operation": "continue",
+            "subtask": "",
+            "assessment": "progressing",
+            "evidence": "Compared with step 672, the green block now visibly rests on the upper board beside the wooden block. Both grippers are withdrawn, and the board-and-white-block assembly remains upright. No observed collapse, lost grasp, repeated failed placement, or sustained stall warrants correction.",
+            "completed_claims": [
+              {
+                "text": "The shorter board is visibly stacked above the long board with white blocks between them.",
+                "evidence_steps": [
+                  560,
+                  672,
+                  784
+                ]
+              },
+              {
+                "text": "A wooden block is visibly resting on the upper board.",
+                "evidence_steps": [
+                  672,
+                  784
+                ]
+              },
+              {
+                "text": "The green block is visibly resting on the upper board with the grippers withdrawn.",
+                "evidence_steps": [
+                  784
+                ]
+              }
+            ],
+            "uncertain_or_invalidated": [
+              "Long-term stability and overall task completion are not established by this RGB snapshot."
+            ]
+          },
+          "effect": {
+            "changed": false,
+            "stop": false,
+            "age_steps": 0,
+            "shadow_only": false
+          },
+          "native_evaluator_information_supplied": false
+        },
+        {
+          "step": 896,
+          "reasons": [
+            "periodic_semantic_check_at_native_boundary"
+          ],
+          "decision": {
+            "episode": "c9df7f4fef584881810a2057fbe0feb4",
+            "based_on_step": 896,
+            "based_on_stamp": "a2f8e6c62936acad452555132b15a4ba772338b8139a21f912b6ee449a850b37",
+            "expected_epoch": 0,
+            "operation": "continue",
+            "subtask": "",
+            "assessment": "progressing",
+            "evidence": "The tower remains visibly upright and unchanged from step 784: the shorter board sits above the long board on white supports, with the wooden and green blocks resting on the upper board. Both grippers are withdrawn. No collapse, lost grasp, repeated failed placement, or clear sustained stall is observed; the unchanged assembly alone does not establish a stall.",
+            "completed_claims": [
+              {
+                "text": "The shorter board is visibly stacked above the long board with white blocks between them.",
+                "evidence_steps": [
+                  560,
+                  672,
+                  784,
+                  896
+                ]
+              },
+              {
+                "text": "A wooden block is visibly resting on the upper board.",
+                "evidence_steps": [
+                  672,
+                  784,
+                  896
+                ]
+              },
+              {
+                "text": "The green block is visibly resting on the upper board with the grippers withdrawn.",
+                "evidence_steps": [
+                  784,
+                  896
+                ]
+              }
+            ],
+            "uncertain_or_invalidated": [
+              "Long-term stability and overall task completion are not established by these RGB observations."
+            ]
+          },
+          "effect": {
+            "changed": false,
+            "stop": false,
+            "age_steps": 0,
+            "shadow_only": false
+          },
+          "native_evaluator_information_supplied": false
+        }
+      ]
+    },
+    {
+      "case_id": "classify_objects_by_language__standard__g0__l0",
+      "task": "classify_objects_by_language",
+      "journal": {
+        "events": 1144,
+        "head_sha256": "18c226b4e36da2afcfb5f19e9dd1ffb2aaabbb0720af506a270a703ab5c8e7d2"
+      },
+      "native_actions": 1008,
+      "proposals": 63,
+      "prefix_open_at_end": false,
+      "completed_native_result": false,
+      "result_status": "missing",
+      "success": null,
+      "native_score": null,
+      "decisions": 9,
+      "correction_changes": 4,
+      "feedback_clears": 0,
+      "decisions_evidence": [
+        {
+          "step": 0,
+          "reasons": [
+            "initial_semantic_goal"
+          ],
+          "decision": {
+            "episode": "cc769907a4464f61a83954e6574bde9b",
+            "based_on_step": 0,
+            "based_on_stamp": "60e2126708cb416bb60c31739313484de4779f588d5dbc2e3ea4aced7f787714",
+            "expected_epoch": 0,
+            "operation": "continue",
+            "subtask": "",
+            "assessment": "not_started",
+            "evidence": "Initial RGB shows three empty baskets (left white, middle blue, right red), with two cars, two watches, and two wooden toys on the table. Both arms are at their initial positions. No observed task violation or failed action.",
+            "completed_claims": [],
+            "uncertain_or_invalidated": []
+          },
+          "effect": {
+            "changed": false,
+            "stop": false,
+            "age_steps": 0,
+            "shadow_only": false
+          },
+          "native_evaluator_information_supplied": false
+        },
+        {
+          "step": 112,
+          "reasons": [
+            "periodic_semantic_check_at_native_boundary"
+          ],
+          "decision": {
+            "episode": "cc769907a4464f61a83954e6574bde9b",
+            "based_on_step": 112,
+            "based_on_stamp": "b3e3dee803e421e41a276776b17c0da1b8c8b5b7759b499c28e7e493798dac94",
+            "expected_epoch": 0,
+            "operation": "continue",
+            "subtask": "",
+            "assessment": "progressing",
+            "evidence": "Compared with step 0, the left arm has moved over the tabletop watch area; its wrist view shows a watch still on the table. The green car and right wooden toy remain on the table, and the middle and right baskets appear empty. The left basket and yellow-car area are partly occluded. No incorrect placement, lost grasp, repeated failed placement, or sustained stall is established by these observations.",
+            "completed_claims": [],
+            "uncertain_or_invalidated": [
+              "Placement of the yellow car cannot be verified because the left basket and its prior tabletop location are partly occluded."
+            ]
+          },
+          "effect": {
+            "changed": false,
+            "stop": false,
+            "age_steps": 0,
+            "shadow_only": false
+          },
+          "native_evaluator_information_supplied": false
+        },
+        {
+          "step": 224,
+          "reasons": [
+            "periodic_semantic_check_at_native_boundary"
+          ],
+          "decision": {
+            "episode": "cc769907a4464f61a83954e6574bde9b",
+            "based_on_step": 224,
+            "based_on_stamp": "eba95604a2b40941e895f90d261e9f8afdeb5459a3ef1a638e2f8aae4e3c48d4",
+            "expected_epoch": 0,
+            "operation": "continue",
+            "subtask": "",
+            "assessment": "progressing",
+            "evidence": "The yellow car is now visible inside the left white basket. The left wrist view shows a wooden toy between the fingers above the middle blue basket, but does not establish release or placement there. The green car, a watch, and the other wooden toy remain on the table. No lost grasp, completed incorrect placement, repeated failed placement, or sustained stall is established.",
+            "completed_claims": [
+              {
+                "text": "The yellow car is in the left basket.",
+                "evidence_steps": [
+                  224
+                ]
+              }
+            ],
+            "uncertain_or_invalidated": [
+              "The held wooden toy's final basket placement is not yet verified; its position above the middle basket does not establish a released incorrect placement.",
+              "Placement of the other watch is not clearly visible."
+            ]
+          },
+          "effect": {
+            "changed": false,
+            "stop": false,
+            "age_steps": 0,
+            "shadow_only": false
+          },
+          "native_evaluator_information_supplied": false
+        },
+        {
+          "step": 336,
+          "reasons": [
+            "periodic_semantic_check_at_native_boundary"
+          ],
+          "decision": {
+            "episode": "cc769907a4464f61a83954e6574bde9b",
+            "based_on_step": 336,
+            "based_on_stamp": "13680138ee0a0513b63bdf4a88cbdd7e8e89b893f77eea6fc93ebaa661220f42",
+            "expected_epoch": 0,
+            "operation": "recover",
+            "subtask": "Move the wooden toy incorrectly placed in the middle blue basket into the right red basket.",
+            "assessment": "failed",
+            "evidence": "At step 336, the high and left-wrist RGB views show the wooden toy resting inside the middle blue basket, with the left gripper withdrawn. At step 224 it was held above that basket; its incorrect placement is now visible. Wooden toys belong in the right red basket. The yellow car remains in the left white basket. The green car, a watch, and another wooden toy remain on the table.",
+            "completed_claims": [
+              {
+                "text": "The yellow car is in the left basket.",
+                "evidence_steps": [
+                  224,
+                  336
+                ]
+              }
+            ],
+            "uncertain_or_invalidated": [
+              "The previous uncertainty about the held wooden toy's placement is resolved: it is incorrectly in the middle basket.",
+              "Placement of the other watch is not clearly visible."
+            ]
+          },
+          "effect": {
+            "changed": true,
+            "stop": false,
+            "age_steps": 0,
+            "shadow_only": false
+          },
+          "native_evaluator_information_supplied": false
+        },
+        {
+          "step": 448,
+          "reasons": [
+            "periodic_semantic_check_at_native_boundary"
+          ],
+          "decision": {
+            "episode": "cc769907a4464f61a83954e6574bde9b",
+            "based_on_step": 448,
+            "based_on_stamp": "511ac3bd8e5495c8a7b48489fe3b8800562e3e42cace208496cac8d509690b07",
+            "expected_epoch": 1,
+            "operation": "continue",
+            "subtask": "",
+            "assessment": "failed",
+            "evidence": "The wooden toy remains visibly inside the middle blue basket at step 448, as at step 336; the active correction is not complete. The right wrist view now shows the green car between the fingers near the tabletop, but does not establish a lifted grasp or placement. This other valid task activity is not a new violation. The yellow car remains visible in the left white basket.",
+            "completed_claims": [
+              {
+                "text": "The yellow car is in the left basket.",
+                "evidence_steps": [
+                  224,
+                  336,
+                  448
+                ]
+              }
+            ],
+            "uncertain_or_invalidated": [
+              "The wooden toy remains incorrectly in the middle basket; its transfer to the right basket is not complete.",
+              "Placement of the other watch is not clearly visible.",
+              "A secure lifted grasp of the green car is not established by these views."
+            ]
+          },
+          "effect": {
+            "changed": false,
+            "stop": false,
+            "age_steps": 0,
+            "shadow_only": false
+          },
+          "native_evaluator_information_supplied": false
+        },
+        {
+          "step": 560,
+          "reasons": [
+            "periodic_semantic_check_at_native_boundary"
+          ],
+          "decision": {
+            "episode": "cc769907a4464f61a83954e6574bde9b",
+            "based_on_step": 560,
+            "based_on_stamp": "6e03f13a254711f49bc30d719e76945f118b07766e45e9bd13651be5e0a8fed8",
+            "expected_epoch": 1,
+            "operation": "continue",
+            "subtask": "",
+            "assessment": "failed",
+            "evidence": "The wooden toy is still visibly resting in the middle blue basket at step 560, as at step 448, so the active correction remains needed. The yellow car remains in the left white basket. The green car is on the tabletop with the right fingers open above it; no grasp or placement is established. A watch and another wooden toy also remain on the table. These views do not establish completion of the correction or a new incorrect placement.",
+            "completed_claims": [
+              {
+                "text": "The yellow car is in the left basket.",
+                "evidence_steps": [
+                  224,
+                  336,
+                  448,
+                  560
+                ]
+              }
+            ],
+            "uncertain_or_invalidated": [
+              "The wooden toy remains incorrectly in the middle basket; its transfer to the right basket is not complete.",
+              "Placement of the other watch is not clearly visible.",
+              "The green car is on the table at step 560; a secure grasp or basket placement is not established."
+            ]
+          },
+          "effect": {
+            "changed": false,
+            "stop": false,
+            "age_steps": 0,
+            "shadow_only": false
+          },
+          "native_evaluator_information_supplied": false
+        },
+        {
+          "step": 672,
+          "reasons": [
+            "periodic_semantic_check_at_native_boundary"
+          ],
+          "decision": {
+            "episode": "cc769907a4464f61a83954e6574bde9b",
+            "based_on_step": 672,
+            "based_on_stamp": "c78dc8b4853702d5912872a3cddfc086b213fbf5d51db4ba45bebbb97c724f04",
+            "expected_epoch": 1,
+            "operation": "recover",
+            "subtask": "Correct the misplaced objects in the middle blue basket: move the green car to the left basket and the wooden toy to the right basket.",
+            "assessment": "failed",
+            "evidence": "At step 560 the green car was on the table. At step 672 the high and left-wrist views show it inside the middle blue basket, with the right fingers open and withdrawn in front of the basket. This is a new incorrect car placement; cars belong in the left basket. The wooden toy also remains visible in the middle basket, so the existing correction is not achieved. The yellow car remains in the left basket; a watch and another wooden toy remain on the table.",
+            "completed_claims": [
+              {
+                "text": "The yellow car is in the left basket.",
+                "evidence_steps": [
+                  224,
+                  336,
+                  448,
+                  560,
+                  672
+                ]
+              }
+            ],
+            "uncertain_or_invalidated": [
+              "The green car's previously unverified placement is now visibly incorrect: it is in the middle basket, not the left basket.",
+              "The wooden toy remains incorrectly in the middle basket; transfer to the right basket is not complete.",
+              "Placement of the other watch is not clearly visible."
+            ]
+          },
+          "effect": {
+            "changed": true,
+            "stop": false,
+            "age_steps": 0,
+            "shadow_only": false
+          },
+          "native_evaluator_information_supplied": false
+        },
+        {
+          "step": 784,
+          "reasons": [
+            "periodic_semantic_check_at_native_boundary"
+          ],
+          "decision": {
+            "episode": "cc769907a4464f61a83954e6574bde9b",
+            "based_on_step": 784,
+            "based_on_stamp": "6462c07c55034bab004685a7ee8423db5286b9f28f05c088ae6e7c437d7ffbb3",
+            "expected_epoch": 2,
+            "operation": "recover",
+            "subtask": "Move the watch incorrectly in the left basket to the middle basket; move the green car from the middle basket to the left basket and the wooden toy there to the right basket.",
+            "assessment": "failed",
+            "evidence": "At step 784 the left-wrist RGB clearly shows a gray watch resting in the left white basket beside the yellow car; watches belong in the middle basket. This resolves previously uncertain watch placement as incorrect. The green car and wooden toy remain visibly in the middle blue basket, so the active correction is still needed. The right basket is visibly empty, and another wooden toy remains on the table in the right-wrist view. No grasp is established.",
+            "completed_claims": [
+              {
+                "text": "The yellow car is in the left basket.",
+                "evidence_steps": [
+                  224,
+                  336,
+                  448,
+                  560,
+                  672,
+                  784
+                ]
+              }
+            ],
+            "uncertain_or_invalidated": [
+              "A watch is visibly incorrectly placed in the left basket at step 784; prior uncertainty about its placement is resolved.",
+              "The green car and wooden toy remain incorrectly in the middle basket; their corrective transfers are not complete.",
+              "Placement of the second watch is not established by the current views."
+            ]
+          },
+          "effect": {
+            "changed": true,
+            "stop": false,
+            "age_steps": 0,
+            "shadow_only": false
+          },
+          "native_evaluator_information_supplied": false
+        },
+        {
+          "step": 896,
+          "reasons": [
+            "periodic_semantic_check_at_native_boundary"
+          ],
+          "decision": {
+            "episode": "cc769907a4464f61a83954e6574bde9b",
+            "based_on_step": 896,
+            "based_on_stamp": "15c0d027933625d626972ad74826af94e970256f617d15b95e52fda4987df72e",
+            "expected_epoch": 3,
+            "operation": "recover",
+            "subtask": "Move the watch from the left basket to the middle basket, the green car from the middle basket to the left basket, and both wooden toys from the middle basket to the right basket.",
+            "assessment": "failed",
+            "evidence": "At step 896 the overhead RGB shows two wooden toys in the middle blue basket alongside the green car; at step 784 one wooden toy was there and another was on the table. The additional toy placement is incorrect: wooden toys belong in the right basket, which remains visibly empty. The watch and yellow car remain in the left basket. The arms are retracted with open gripper commands, but none of the corrective transfers is visibly achieved.",
+            "completed_claims": [
+              {
+                "text": "The yellow car is in the left basket.",
+                "evidence_steps": [
+                  224,
+                  336,
+                  448,
+                  560,
+                  672,
+                  784,
+                  896
+                ]
+              }
+            ],
+            "uncertain_or_invalidated": [
+              "The watch remains incorrectly in the left basket.",
+              "The green car and both wooden toys are incorrectly in the middle basket; their corrective transfers are not complete.",
+              "Placement of the second watch is not established by the current views."
+            ]
+          },
+          "effect": {
+            "changed": true,
+            "stop": false,
+            "age_steps": 0,
+            "shadow_only": false
+          },
+          "native_evaluator_information_supplied": false
+        }
+      ]
+    },
+    {
+      "case_id": "fold_clothes__standard__g0__l0",
+      "task": "fold_clothes",
+      "journal": {
+        "events": 342,
+        "head_sha256": "ead4083752943f80d3b69d209802ca6d9474a224e1c93ef44654bbd27e9d0a16"
+      },
+      "native_actions": 299,
+      "proposals": 19,
+      "prefix_open_at_end": false,
+      "completed_native_result": true,
+      "result_status": "native_completed",
+      "success": true,
+      "native_score": 1.0,
+      "decisions": 3,
+      "correction_changes": 0,
+      "feedback_clears": 0,
+      "decisions_evidence": [
+        {
+          "step": 0,
+          "reasons": [
+            "initial_semantic_goal"
+          ],
+          "decision": {
+            "episode": "b6283d56c6a44422b1955ea0b906b56d",
+            "based_on_step": 0,
+            "based_on_stamp": "8394cbe28a3019d9991aaf60c2fc9bddec9a497187c9cc45da7b1f771353468f",
+            "expected_epoch": 0,
+            "operation": "continue",
+            "subtask": "",
+            "assessment": "not_started",
+            "evidence": "Initial observation shows a pink long-sleeved garment spread on the table and both grippers away from it. No folding action or task violation has been observed.",
+            "completed_claims": [],
+            "uncertain_or_invalidated": []
+          },
+          "effect": {
+            "changed": false,
+            "stop": false,
+            "age_steps": 0,
+            "shadow_only": false
+          },
+          "native_evaluator_information_supplied": false
+        },
+        {
+          "step": 112,
+          "reasons": [
+            "periodic_semantic_check_at_native_boundary"
+          ],
+          "decision": {
+            "episode": "b6283d56c6a44422b1955ea0b906b56d",
+            "based_on_step": 112,
+            "based_on_stamp": "585bbd259503a2073e3b4a59d39eb7b99130e555deeef674534965695efb4d6d",
+            "expected_epoch": 0,
+            "operation": "continue",
+            "subtask": "",
+            "assessment": "progressing",
+            "evidence": "Compared with step 0, the sleeve on the image-left is now folded inward across the upper torso at step 112. The other sleeve remains extended and the garment body remains on the table. This is visible folding progress, with no observed task violation or sustained stall.",
+            "completed_claims": [
+              {
+                "text": "The image-left sleeve has been folded inward onto the garment's upper torso.",
+                "evidence_steps": [
+                  0,
+                  112
+                ]
+              }
+            ],
+            "uncertain_or_invalidated": []
+          },
+          "effect": {
+            "changed": false,
+            "stop": false,
+            "age_steps": 0,
+            "shadow_only": false
+          },
+          "native_evaluator_information_supplied": false
+        },
+        {
+          "step": 224,
+          "reasons": [
+            "periodic_semantic_check_at_native_boundary"
+          ],
+          "decision": {
+            "episode": "b6283d56c6a44422b1955ea0b906b56d",
+            "based_on_step": 224,
+            "based_on_stamp": "e2c38021a972289d9075f1de7ac37c7854e0e9a1933693e57ecec67ff13e6c5a",
+            "expected_epoch": 0,
+            "operation": "continue",
+            "subtask": "",
+            "assessment": "progressing",
+            "evidence": "At step 224 the previously folded image-left sleeve remains across the upper garment. Both grippers are now near the lower garment edges, which are visible on the table in the wrist views. The arms obscure the image-right sleeve, so its fold status is not confirmed. No clear failed placement, lost grasp, or sustained stall is observed.",
+            "completed_claims": [
+              {
+                "text": "The image-left sleeve has been folded inward onto the garment's upper torso.",
+                "evidence_steps": [
+                  0,
+                  112
+                ]
+              }
+            ],
+            "uncertain_or_invalidated": [
+              "The image-right sleeve's current fold status is obscured by the arms; full garment folding is not verified."
+            ]
+          },
+          "effect": {
+            "changed": false,
+            "stop": false,
+            "age_steps": 0,
+            "shadow_only": false
+          },
+          "native_evaluator_information_supplied": false
+        }
+      ]
+    },
+    {
+      "case_id": "imitate_sorting_sequence__standard__g0__l0",
+      "task": "imitate_sorting_sequence",
+      "journal": {
+        "events": 725,
+        "head_sha256": "a2978260bd1cb4fb7673ef40d8a15a48765b070daf38f82726146d88b9b59dbb"
+      },
+      "native_actions": 637,
+      "proposals": 40,
+      "prefix_open_at_end": false,
+      "completed_native_result": true,
+      "result_status": "native_completed",
+      "success": false,
+      "native_score": 0.0,
+      "decisions": 6,
+      "correction_changes": 0,
+      "feedback_clears": 0,
+      "decisions_evidence": [
+        {
+          "step": 0,
+          "reasons": [
+            "initial_semantic_goal"
+          ],
+          "decision": {
+            "episode": "7f526eb76be84966a70f141e91ae3734",
+            "based_on_step": 0,
+            "based_on_stamp": "8e49bf13b4ceefacb02cd767bdf46aa10fb4a5387f580ca744f29225e2825198",
+            "expected_epoch": 0,
+            "operation": "continue",
+            "subtask": "",
+            "assessment": "not_started",
+            "evidence": "Initial RGB views show objects on the table and two empty baskets. No placement sequence or robot placement has yet been observed; there is no observed task violation.",
+            "completed_claims": [],
+            "uncertain_or_invalidated": [
+              "The required object placement order is not established by this initial observation."
+            ]
+          },
+          "effect": {
+            "changed": false,
+            "stop": false,
+            "age_steps": 0,
+            "shadow_only": false
+          },
+          "native_evaluator_information_supplied": false
+        },
+        {
+          "step": 112,
+          "reasons": [
+            "periodic_semantic_check_at_native_boundary"
+          ],
+          "decision": {
+            "episode": "7f526eb76be84966a70f141e91ae3734",
+            "based_on_step": 112,
+            "based_on_stamp": "22018d44e09c305ffeec6c4c9254a622dd954a4fae0f74510592025565cf177d",
+            "expected_epoch": 0,
+            "operation": "continue",
+            "subtask": "",
+            "assessment": "progressing",
+            "evidence": "At step 112, a remote-shaped object is visible inside the rear basket; that basket was empty at step 0. The overhead gripper is now near the rear green watch. The foreground objects remain on the table and the foreground basket is empty. These observations support ongoing sequence presentation, not an observed task violation; they do not establish the complete placement order.",
+            "completed_claims": [],
+            "uncertain_or_invalidated": [
+              "The complete required placement order is not established by the available review images.",
+              "Contact near the rear watch does not establish a successful grasp or placement."
+            ]
+          },
+          "effect": {
+            "changed": false,
+            "stop": false,
+            "age_steps": 0,
+            "shadow_only": false
+          },
+          "native_evaluator_information_supplied": false
+        },
+        {
+          "step": 224,
+          "reasons": [
+            "periodic_semantic_check_at_native_boundary"
+          ],
+          "decision": {
+            "episode": "7f526eb76be84966a70f141e91ae3734",
+            "based_on_step": 224,
+            "based_on_stamp": "9f29928d10e069e1f12832306a076ace7a2ce1f6beb3937b838abec97a4aad39",
+            "expected_epoch": 0,
+            "operation": "continue",
+            "subtask": "",
+            "assessment": "progressing",
+            "evidence": "At step 224, the rear basket visibly contains the remote-shaped object and a green watch; at step 112 only the remote was visible there and the rear watch was outside. The overhead gripper is now above the rear basket with a black object beneath it, but release is not established. The foreground basket remains empty and the foreground objects remain on the table. This supports ongoing sequence presentation, with no observed task violation.",
+            "completed_claims": [],
+            "uncertain_or_invalidated": [
+              "The complete required placement order is not established by the available review images.",
+              "The black object beneath the overhead gripper is not confirmed released into the rear basket.",
+              "No foreground object placement is yet observed."
+            ]
+          },
+          "effect": {
+            "changed": false,
+            "stop": false,
+            "age_steps": 0,
+            "shadow_only": false
+          },
+          "native_evaluator_information_supplied": false
+        },
+        {
+          "step": 336,
+          "reasons": [
+            "periodic_semantic_check_at_native_boundary"
+          ],
+          "decision": {
+            "episode": "7f526eb76be84966a70f141e91ae3734",
+            "based_on_step": 336,
+            "based_on_stamp": "a5c1d7f51b48cce547ed3d46cfa6a0eb56d27aa230b6a9fb2322e2176d7f01ce",
+            "expected_epoch": 0,
+            "operation": "continue",
+            "subtask": "",
+            "assessment": "progressing",
+            "evidence": "At step 336, the rear basket visibly contains the remote, green watch, black object and now the plush object beneath the open overhead gripper. At step 224 the plush was still on the rear tabletop and the black object was beneath the gripper. The rear gold vehicle remains outside. Foreground objects remain on the table and the foreground basket is empty. Sequence presentation appears ongoing; no task violation is observed.",
+            "completed_claims": [],
+            "uncertain_or_invalidated": [
+              "The complete required placement order is not established by the available review images.",
+              "The earlier uncertainty about the black object being in the rear basket is resolved by its current visible presence there; its exact release time is not observed.",
+              "No foreground object placement is yet observed."
+            ]
+          },
+          "effect": {
+            "changed": false,
+            "stop": false,
+            "age_steps": 0,
+            "shadow_only": false
+          },
+          "native_evaluator_information_supplied": false
+        },
+        {
+          "step": 448,
+          "reasons": [
+            "periodic_semantic_check_at_native_boundary"
+          ],
+          "decision": {
+            "episode": "7f526eb76be84966a70f141e91ae3734",
+            "based_on_step": 448,
+            "based_on_stamp": "a083ec0aecf2c2ba9f6a9e27bad8b657a65e2b81e0b9cf5b82fa2863d666d347",
+            "expected_epoch": 0,
+            "operation": "continue",
+            "subtask": "",
+            "assessment": "progressing",
+            "evidence": "At step 448 the gold vehicle is visible inside the rear basket with the remote, watch, black object and plush; at step 336 it was outside on the rear tabletop. The overhead gripper is open above the basket. Foreground objects remain outside their empty basket. This supports further sequence presentation, not an observed violation or sustained stall.",
+            "completed_claims": [
+              {
+                "text": "The rear gold vehicle has joined the previously observed objects in the rear basket.",
+                "evidence_steps": [
+                  336,
+                  448
+                ]
+              }
+            ],
+            "uncertain_or_invalidated": [
+              "The sampled reviews support the apparent presentation order remote, watch, black object, plush, gold vehicle, but exact release times and any intervening actions are not observed.",
+              "No foreground object placement is yet observed; reproduction of the order is not verified."
+            ]
+          },
+          "effect": {
+            "changed": false,
+            "stop": false,
+            "age_steps": 0,
+            "shadow_only": false
+          },
+          "native_evaluator_information_supplied": false
+        },
+        {
+          "step": 560,
+          "reasons": [
+            "periodic_semantic_check_at_native_boundary"
+          ],
+          "decision": {
+            "episode": "7f526eb76be84966a70f141e91ae3734",
+            "based_on_step": 560,
+            "based_on_stamp": "53da8b612bbf2b464debc1f32dd38e97c4ecef3d5d05ae21d07a261275f36d90",
+            "expected_epoch": 0,
+            "operation": "continue",
+            "subtask": "",
+            "assessment": "uncertain",
+            "evidence": "At step 560 the rear basket still contains the presented objects. The foreground remote, gold vehicle, plush, black object and watch remain on the tabletop, and the foreground basket remains empty. The left gripper has changed position near the basket since step 448, but no grasp or placement is visible. These observations do not establish an order violation or clear sustained stall.",
+            "completed_claims": [
+              {
+                "text": "The rear gold vehicle has joined the previously observed objects in the rear basket.",
+                "evidence_steps": [
+                  336,
+                  448
+                ]
+              }
+            ],
+            "uncertain_or_invalidated": [
+              "The sampled reviews support the apparent presentation order remote, watch, black object, plush, gold vehicle, but exact release times and any intervening actions are not observed.",
+              "No foreground object placement is yet observed; reproduction of the order is not verified."
+            ]
+          },
+          "effect": {
+            "changed": false,
+            "stop": false,
+            "age_steps": 0,
+            "shadow_only": false
+          },
+          "native_evaluator_information_supplied": false
+        }
+      ]
+    },
+    {
+      "case_id": "make_kong__standard__g0__l0",
+      "task": "make_kong",
+      "journal": {
+        "events": 444,
+        "head_sha256": "86c3194129b6cee8ca2d797d34f74cf93ed4a60d40e77d9b307386e183884607"
+      },
+      "native_actions": 388,
+      "proposals": 25,
+      "prefix_open_at_end": false,
+      "completed_native_result": true,
+      "result_status": "native_completed",
+      "success": true,
+      "native_score": 1.0,
+      "decisions": 4,
+      "correction_changes": 0,
+      "feedback_clears": 0,
+      "decisions_evidence": [
+        {
+          "step": 0,
+          "reasons": [
+            "initial_semantic_goal"
+          ],
+          "decision": {
+            "episode": "ce8ee238f7f44a728607d7105c49dedf",
+            "based_on_step": 0,
+            "based_on_stamp": "5f881eb53190ee7fd18fb30d6ad737ced296d523e5653079bbae93e3a9de38a9",
+            "expected_epoch": 0,
+            "operation": "continue",
+            "subtask": "",
+            "assessment": "not_started",
+            "evidence": "Initial view shows a row of face-up tiles near the robot and green-backed tiles across the table. No opponent discard or kong declaration is yet observed; no task violation is evident.",
+            "completed_claims": [],
+            "uncertain_or_invalidated": []
+          },
+          "effect": {
+            "changed": false,
+            "stop": false,
+            "age_steps": 0,
+            "shadow_only": false
+          },
+          "native_evaluator_information_supplied": false
+        },
+        {
+          "step": 112,
+          "reasons": [
+            "periodic_semantic_check_at_native_boundary"
+          ],
+          "decision": {
+            "episode": "ce8ee238f7f44a728607d7105c49dedf",
+            "based_on_step": 112,
+            "based_on_stamp": "a83e4486a7cc6cafcca55e53816237d816097a3a30d78825965f6dff8038996c",
+            "expected_epoch": 0,
+            "operation": "continue",
+            "subtask": "",
+            "assessment": "progressing",
+            "evidence": "Compared with step 0, the opponent's row now has a gap and a face-up circle tile is visible toward the center. A two-circle tile is also separated from the robot's row near the left gripper. This is consistent with discard and matching-tile handling; no wrong-tile action, lost grasp, or sustained stall is established. A completed kong is not yet visible.",
+            "completed_claims": [],
+            "uncertain_or_invalidated": [
+              "The full matching set and completed kong declaration are not verified by the available views."
+            ]
+          },
+          "effect": {
+            "changed": false,
+            "stop": false,
+            "age_steps": 0,
+            "shadow_only": false
+          },
+          "native_evaluator_information_supplied": false
+        },
+        {
+          "step": 224,
+          "reasons": [
+            "periodic_semantic_check_at_native_boundary"
+          ],
+          "decision": {
+            "episode": "ce8ee238f7f44a728607d7105c49dedf",
+            "based_on_step": 224,
+            "based_on_stamp": "61736776a0019ab2385e0b31765070cdc28c3f7f75a3d9e999edbd6bbdcc4653",
+            "expected_epoch": 0,
+            "operation": "continue",
+            "subtask": "",
+            "assessment": "progressing",
+            "evidence": "Compared with step 112, three face-up two-circle tiles are now grouped in front of the robot's remaining row. A fourth matching face-up tile remains nearer the opponent's row, visible in both the overhead and right-wrist views. This supports matching-tile staging after the discard. No wrong-tile action, lost grasp, or sustained stall is visible; the completed kong declaration is not established.",
+            "completed_claims": [
+              {
+                "text": "Three matching two-circle tiles are visibly grouped near the robot, with a fourth matching tile nearer the opponent's row.",
+                "evidence_steps": [
+                  224
+                ]
+              }
+            ],
+            "uncertain_or_invalidated": [
+              "A completed kong declaration and incorporation of the opponent's discarded tile into the declared set remain unverified."
+            ]
+          },
+          "effect": {
+            "changed": false,
+            "stop": false,
+            "age_steps": 0,
+            "shadow_only": false
+          },
+          "native_evaluator_information_supplied": false
+        },
+        {
+          "step": 336,
+          "reasons": [
+            "periodic_semantic_check_at_native_boundary"
+          ],
+          "decision": {
+            "episode": "ce8ee238f7f44a728607d7105c49dedf",
+            "based_on_step": 336,
+            "based_on_stamp": "4dd7e6296427f1b27ac178692340d94b7349ad1364f957e0078e24869f11f4b6",
+            "expected_epoch": 0,
+            "operation": "continue",
+            "subtask": "",
+            "assessment": "uncertain",
+            "evidence": "Three face-up two-circle tiles remain visible in the right-wrist view. Both hands are now over the tile area, with green-backed tiles close to the grippers and substantial occlusion. Their identities and whether a tile is securely grasped cannot be established. These views do not establish a wrong-tile action, lost grasp, repeated failed placement, or sustained stall. The fourth tile's incorporation and a completed kong declaration remain unverified.",
+            "completed_claims": [
+              {
+                "text": "Three matching two-circle tiles were visibly grouped near the robot, with a fourth matching tile nearer the opponent's row at step 224.",
+                "evidence_steps": [
+                  224
+                ]
+              }
+            ],
+            "uncertain_or_invalidated": [
+              "The identities and grasp status of the green-backed tiles near the grippers at step 336 are uncertain.",
+              "A completed kong declaration and incorporation of the opponent's discarded tile into the declared set remain unverified."
+            ]
+          },
+          "effect": {
+            "changed": false,
+            "stop": false,
+            "age_steps": 0,
+            "shadow_only": false
+          },
+          "native_evaluator_information_supplied": false
+        }
+      ]
+    },
+    {
+      "case_id": "classify_objects__standard__g0__l0",
+      "task": "classify_objects",
+      "journal": {
+        "events": 961,
+        "head_sha256": "ae3e18909ad92b7674f9e5595ef9c56e6e462e2278470535159abbdd1cc58e8a"
+      },
+      "native_actions": 845,
+      "proposals": 53,
+      "prefix_open_at_end": false,
+      "completed_native_result": true,
+      "result_status": "native_completed",
+      "success": true,
+      "native_score": 1.0,
+      "decisions": 8,
+      "correction_changes": 0,
+      "feedback_clears": 0,
+      "decisions_evidence": [
+        {
+          "step": 0,
+          "reasons": [
+            "initial_semantic_goal"
+          ],
+          "decision": {
+            "episode": "b745a657ab524e9f963edda4c38cf1e4",
+            "based_on_step": 0,
+            "based_on_stamp": "80adb1e7a0c40b1da408a101bf1faa3a6496a0cfaea89278ce8aadda18723b11",
+            "expected_epoch": 0,
+            "operation": "continue",
+            "subtask": "",
+            "assessment": "not_started",
+            "evidence": "Initial views show three empty baskets and assorted objects on the table. No placement, grasp, or task violation has been observed. Preserve the original sorting task.",
+            "completed_claims": [],
+            "uncertain_or_invalidated": []
+          },
+          "effect": {
+            "changed": false,
+            "stop": false,
+            "age_steps": 0,
+            "shadow_only": false
+          },
+          "native_evaluator_information_supplied": false
+        },
+        {
+          "step": 112,
+          "reasons": [
+            "periodic_semantic_check_at_native_boundary"
+          ],
+          "decision": {
+            "episode": "b745a657ab524e9f963edda4c38cf1e4",
+            "based_on_step": 112,
+            "based_on_stamp": "25bbaa658cc620db1a46ae3813aa103c3b3ebb741fcc23c86153898ab4e11165",
+            "expected_epoch": 0,
+            "operation": "continue",
+            "subtask": "",
+            "assessment": "progressing",
+            "evidence": "Compared with step 0, the left gripper has moved above the left-side doll near the white basket. The wrist view shows the doll beneath the gripper, but does not confirm a grasp or completed placement. Other objects remain on the table; no incorrect sorting, lost grasp, or sustained stall is established by these views.",
+            "completed_claims": [],
+            "uncertain_or_invalidated": [
+              "No grasp or basket placement is visually confirmed at step 112."
+            ]
+          },
+          "effect": {
+            "changed": false,
+            "stop": false,
+            "age_steps": 0,
+            "shadow_only": false
+          },
+          "native_evaluator_information_supplied": false
+        },
+        {
+          "step": 224,
+          "reasons": [
+            "periodic_semantic_check_at_native_boundary"
+          ],
+          "decision": {
+            "episode": "b745a657ab524e9f963edda4c38cf1e4",
+            "based_on_step": 224,
+            "based_on_stamp": "26f5b3645d6253ce3ed610ce748319673adc9f808fbacd8cd03ba1e4a45c3c4f",
+            "expected_epoch": 0,
+            "operation": "continue",
+            "subtask": "",
+            "assessment": "progressing",
+            "evidence": "Current high and left-wrist views show two dolls inside the white basket, unlike the previous review. A third doll is adjacent to the right gripper, but a secure grasp is not confirmed by these static views. The blue and red baskets appear empty and other objects remain on the table. No incorrect category placement, lost grasp, or sustained stall is observed.",
+            "completed_claims": [
+              {
+                "text": "Two dolls are visibly inside the white basket.",
+                "evidence_steps": [
+                  224
+                ]
+              }
+            ],
+            "uncertain_or_invalidated": [
+              "A secure grasp of the doll adjacent to the right gripper is not confirmed at step 224."
+            ]
+          },
+          "effect": {
+            "changed": false,
+            "stop": false,
+            "age_steps": 0,
+            "shadow_only": false
+          },
+          "native_evaluator_information_supplied": false
+        },
+        {
+          "step": 336,
+          "reasons": [
+            "periodic_semantic_check_at_native_boundary"
+          ],
+          "decision": {
+            "episode": "b745a657ab524e9f963edda4c38cf1e4",
+            "based_on_step": 336,
+            "based_on_stamp": "df8e73cabf3c2bf502f991b478517cf29f28fa2feac5e0622d5a7392910643e2",
+            "expected_epoch": 0,
+            "operation": "continue",
+            "subtask": "",
+            "assessment": "progressing",
+            "evidence": "At step 336 a doll is between the left gripper fingers near the white basket; these static views do not establish a secure grasp or completed placement. The white basket is partially occluded, while the blue and red baskets appear empty and other objects remain on the table. The change from the right-side doll at step 224 does not establish a lost grasp or sorting violation. No sustained stall is demonstrated.",
+            "completed_claims": [
+              {
+                "text": "Two dolls were visibly inside the white basket at step 224.",
+                "evidence_steps": [
+                  224
+                ]
+              }
+            ],
+            "uncertain_or_invalidated": [
+              "The white basket's full current contents are occluded at step 336.",
+              "A secure grasp or placement of the doll between the left gripper fingers is not confirmed at step 336."
+            ]
+          },
+          "effect": {
+            "changed": false,
+            "stop": false,
+            "age_steps": 0,
+            "shadow_only": false
+          },
+          "native_evaluator_information_supplied": false
+        },
+        {
+          "step": 448,
+          "reasons": [
+            "periodic_semantic_check_at_native_boundary"
+          ],
+          "decision": {
+            "episode": "b745a657ab524e9f963edda4c38cf1e4",
+            "based_on_step": 448,
+            "based_on_stamp": "f021103d8490f24ad0658b16a693cd2560b6f1081d0a9509745528842c30eae9",
+            "expected_epoch": 0,
+            "operation": "continue",
+            "subtask": "",
+            "assessment": "progressing",
+            "evidence": "The current left-wrist view clearly shows three dolls inside the white basket, confirming additional placement since the previous review. The blue and red baskets appear empty; a pen-like object, a white slender object and two loop-shaped objects remain on the table. No wrong-category placement, lost grasp, repeated failed placement or sustained stall is observed.",
+            "completed_claims": [
+              {
+                "text": "Three dolls are visibly inside the white basket.",
+                "evidence_steps": [
+                  448
+                ]
+              }
+            ],
+            "uncertain_or_invalidated": [
+              "Sorting of the remaining tabletop objects is not yet complete; their intended basket assignments are not established by current views."
+            ]
+          },
+          "effect": {
+            "changed": false,
+            "stop": false,
+            "age_steps": 0,
+            "shadow_only": false
+          },
+          "native_evaluator_information_supplied": false
+        },
+        {
+          "step": 560,
+          "reasons": [
+            "periodic_semantic_check_at_native_boundary"
+          ],
+          "decision": {
+            "episode": "b745a657ab524e9f963edda4c38cf1e4",
+            "based_on_step": 560,
+            "based_on_stamp": "8ac24b1a7c5eff19286ebbd0edaa7fb5a4c6e484bdac70ebcf9aa392364c3b79",
+            "expected_epoch": 0,
+            "operation": "continue",
+            "subtask": "",
+            "assessment": "progressing",
+            "evidence": "Compared with step 448, a dark loop-shaped object is now visible inside the blue basket. Dolls remain in the white basket. The metallic loop, white slender object and dark pen-like object remain on the table; the right gripper is nearby without a confirmed grasp. The red basket is largely occluded. No incorrect category placement, lost grasp, repeated failed placement or sustained stall is established.",
+            "completed_claims": [
+              {
+                "text": "Three dolls were visibly inside the white basket at step 448; dolls remain visible there at step 560.",
+                "evidence_steps": [
+                  448,
+                  560
+                ]
+              },
+              {
+                "text": "A dark loop-shaped object is visible inside the blue basket.",
+                "evidence_steps": [
+                  560
+                ]
+              }
+            ],
+            "uncertain_or_invalidated": [
+              "The red basket's current contents are occluded.",
+              "Sorting is not complete; basket assignments of the remaining tabletop objects are not yet established.",
+              "No secure grasp is confirmed at step 560."
+            ]
+          },
+          "effect": {
+            "changed": false,
+            "stop": false,
+            "age_steps": 0,
+            "shadow_only": false
+          },
+          "native_evaluator_information_supplied": false
+        },
+        {
+          "step": 672,
+          "reasons": [
+            "periodic_semantic_check_at_native_boundary"
+          ],
+          "decision": {
+            "episode": "b745a657ab524e9f963edda4c38cf1e4",
+            "based_on_step": 672,
+            "based_on_stamp": "364a07b2266680ccf154111dd970f8a3400e3bcd15c6b625cd236479256895c7",
+            "expected_epoch": 0,
+            "operation": "continue",
+            "subtask": "",
+            "assessment": "progressing",
+            "evidence": "Compared with step 560, a metallic loop-shaped object is now visible alongside the dark loop in the blue basket. Dolls remain visible in the white basket. The white slender object is visible near the right gripper, but these views do not confirm a secure grasp. The red basket appears empty in its visible portion; the dark pen-like object's location is obscured. No wrong-category placement, lost grasp, repeated failed placement or sustained stall is established.",
+            "completed_claims": [
+              {
+                "text": "Three dolls were visibly inside the white basket at step 448; dolls remain visible there at steps 560 and 672.",
+                "evidence_steps": [
+                  448,
+                  560,
+                  672
+                ]
+              },
+              {
+                "text": "Dark and metallic loop-shaped objects are visible inside the blue basket at step 672.",
+                "evidence_steps": [
+                  672
+                ]
+              }
+            ],
+            "uncertain_or_invalidated": [
+              "A secure grasp of the white slender object is not confirmed at step 672.",
+              "The dark pen-like object's current location is obscured.",
+              "Sorting completion is not established."
+            ]
+          },
+          "effect": {
+            "changed": false,
+            "stop": false,
+            "age_steps": 0,
+            "shadow_only": false
+          },
+          "native_evaluator_information_supplied": false
+        },
+        {
+          "step": 784,
+          "reasons": [
+            "periodic_semantic_check_at_native_boundary"
+          ],
+          "decision": {
+            "episode": "b745a657ab524e9f963edda4c38cf1e4",
+            "based_on_step": 784,
+            "based_on_stamp": "b582bd19e27bd679666f4888a6cd827d91bcb9533409df0e357e18b34e1dd371",
+            "expected_epoch": 0,
+            "operation": "continue",
+            "subtask": "",
+            "assessment": "progressing",
+            "evidence": "Dolls remain visible in the white basket, and dark and metallic loop-shaped objects remain visible in the blue basket. A white slender shape appears in the partially occluded red basket. The dark pen-like object is now clearly visible on the tabletop beneath the right gripper; a secure grasp is not established. The changed object interaction since step 672 does not demonstrate a lost grasp, incorrect sorting, repeated failed placement or sustained stall.",
+            "completed_claims": [
+              {
+                "text": "Three dolls were visibly inside the white basket at step 448; dolls remain visible at steps 672 and 784.",
+                "evidence_steps": [
+                  448,
+                  672,
+                  784
+                ]
+              },
+              {
+                "text": "Dark and metallic loop-shaped objects are visible inside the blue basket.",
+                "evidence_steps": [
+                  672,
+                  784
+                ]
+              }
+            ],
+            "uncertain_or_invalidated": [
+              "The white slender object's completed placement in the red basket is not fully confirmed because of occlusion.",
+              "The dark pen-like object is visible on the tabletop at step 784; its previously obscured location is no longer uncertain.",
+              "A secure grasp of the dark pen-like object and overall sorting completion are not established."
+            ]
+          },
+          "effect": {
+            "changed": false,
+            "stop": false,
+            "age_steps": 0,
+            "shadow_only": false
+          },
+          "native_evaluator_information_supplied": false
+        }
+      ]
+    },
+    {
+      "case_id": "organize_table__standard__g0__l0",
+      "task": "organize_table",
+      "journal": {
+        "events": 1137,
+        "head_sha256": "167be0839e86f47e9507f759c749eb928a48416218ffb7d4fce2653d07af4b6f"
+      },
+      "native_actions": 1000,
+      "proposals": 63,
+      "prefix_open_at_end": false,
+      "completed_native_result": true,
+      "result_status": "native_completed",
+      "success": false,
+      "native_score": 0.0,
+      "decisions": 9,
+      "correction_changes": 1,
+      "feedback_clears": 0,
+      "decisions_evidence": [
+        {
+          "step": 0,
+          "reasons": [
+            "initial_semantic_goal"
+          ],
+          "decision": {
+            "episode": "07681ecb381c4e68880e8c3dfdb5872f",
+            "based_on_step": 0,
+            "based_on_stamp": "dcbcf73ef9abe20b054347cd418e7514b0c3c9b09526577d8ab00dc64a8c5562",
+            "expected_epoch": 0,
+            "operation": "continue",
+            "subtask": "",
+            "assessment": "not_started",
+            "evidence": "Initial observation at step 0: mouse is beside the mouse pad, keyboard is in front of the outlined frame, alarm clock is on the desk beside the drawer, and figurine is on the desk. No execution or observed failure yet; preserve the original task.",
+            "completed_claims": [],
+            "uncertain_or_invalidated": []
+          },
+          "effect": {
+            "changed": false,
+            "stop": false,
+            "age_steps": 0,
+            "shadow_only": false
+          },
+          "native_evaluator_information_supplied": false
+        },
+        {
+          "step": 112,
+          "reasons": [
+            "periodic_semantic_check_at_native_boundary"
+          ],
+          "decision": {
+            "episode": "07681ecb381c4e68880e8c3dfdb5872f",
+            "based_on_step": 112,
+            "based_on_stamp": "3d261278fc9c1446695d99244db279466882a9d84ed1fec6e8b9cc74d4a96e5f",
+            "expected_epoch": 0,
+            "operation": "continue",
+            "subtask": "",
+            "assessment": "progressing",
+            "evidence": "Compared with step 0, the figurine is now upright beside the keyboard and the left gripper is nearby. The mouse remains beside the pad and the keyboard remains in front of the frame. No observed lost grasp, repeated placement failure, or sustained stall is established by these two views; preserve the original task.",
+            "completed_claims": [],
+            "uncertain_or_invalidated": [
+              "Figurine placement on the stand is not verified.",
+              "The alarm clock is obscured in the current overview; its placement on the drawer is not verified."
+            ]
+          },
+          "effect": {
+            "changed": false,
+            "stop": false,
+            "age_steps": 0,
+            "shadow_only": false
+          },
+          "native_evaluator_information_supplied": false
+        },
+        {
+          "step": 224,
+          "reasons": [
+            "periodic_semantic_check_at_native_boundary"
+          ],
+          "decision": {
+            "episode": "07681ecb381c4e68880e8c3dfdb5872f",
+            "based_on_step": 224,
+            "based_on_stamp": "41894a1c1e4fa8c6d24cc263f923452abd7d7b9cdefee7c4e15251e8ab0cb122",
+            "expected_epoch": 0,
+            "operation": "continue",
+            "subtask": "",
+            "assessment": "progressing",
+            "evidence": "At step 224 the alarm clock is visible beside the left gripper over the drawer top, unlike the previous review; release and stable placement are not verified. The mouse remains beside the pad and the keyboard remains in front of the frame. The cactus-shaped item is now tipped on the desk, but these views do not establish a failed required placement or sustained stall. Preserve the original task without correction.",
+            "completed_claims": [],
+            "uncertain_or_invalidated": [
+              "Figurine placement on the stand is not verified.",
+              "The alarm clock is visible at the drawer top, but release and stable placement are not verified."
+            ]
+          },
+          "effect": {
+            "changed": false,
+            "stop": false,
+            "age_steps": 0,
+            "shadow_only": false
+          },
+          "native_evaluator_information_supplied": false
+        },
+        {
+          "step": 336,
+          "reasons": [
+            "periodic_semantic_check_at_native_boundary"
+          ],
+          "decision": {
+            "episode": "07681ecb381c4e68880e8c3dfdb5872f",
+            "based_on_step": 336,
+            "based_on_stamp": "0eca3174b409a3b1e1a8d92dfb104e59318ecf7564a2ea7cf955cc013f0a6b2c",
+            "expected_epoch": 0,
+            "operation": "continue",
+            "subtask": "",
+            "assessment": "progressing",
+            "evidence": "At step 336 the left wrist view is near the tipped cactus-shaped item, rather than the alarm clock seen at step 224. The clock is partly obscured at the drawer top. The mouse remains beside the pad and the keyboard remains in front of the frame. These views do not establish a lost grasp, failed placement, or sustained stall; preserve the original task.",
+            "completed_claims": [],
+            "uncertain_or_invalidated": [
+              "Figurine placement on the stand is not verified.",
+              "The alarm clock is partly obscured at the drawer top; release and stable placement are not verified.",
+              "Drawer opening and placement of miscellaneous items inside are not verified."
+            ]
+          },
+          "effect": {
+            "changed": false,
+            "stop": false,
+            "age_steps": 0,
+            "shadow_only": false
+          },
+          "native_evaluator_information_supplied": false
+        },
+        {
+          "step": 448,
+          "reasons": [
+            "periodic_semantic_check_at_native_boundary"
+          ],
+          "decision": {
+            "episode": "07681ecb381c4e68880e8c3dfdb5872f",
+            "based_on_step": 448,
+            "based_on_stamp": "d485334967754f89a24937bdb1e163c953fc3c52c995abade2987f76688dd5e2",
+            "expected_epoch": 0,
+            "operation": "continue",
+            "subtask": "",
+            "assessment": "uncertain",
+            "evidence": "At step 448 the left wrist remains near the tipped cactus-shaped item, which has changed orientation since step 336 but remains on the desk. A successful grasp or failed placement is not established. The mouse remains beside the pad and the keyboard remains in front of the frame. These observations do not establish repeated failed placement or a clear sustained stall; preserve the original task.",
+            "completed_claims": [],
+            "uncertain_or_invalidated": [
+              "Figurine placement on the stand is not verified.",
+              "The alarm clock is partly obscured at the drawer top; release and stable placement are not verified.",
+              "Drawer opening and placement of miscellaneous items inside are not verified.",
+              "Grasp of the tipped cactus-shaped item is not verified."
+            ]
+          },
+          "effect": {
+            "changed": false,
+            "stop": false,
+            "age_steps": 0,
+            "shadow_only": false
+          },
+          "native_evaluator_information_supplied": false
+        },
+        {
+          "step": 560,
+          "reasons": [
+            "periodic_semantic_check_at_native_boundary"
+          ],
+          "decision": {
+            "episode": "07681ecb381c4e68880e8c3dfdb5872f",
+            "based_on_step": 560,
+            "based_on_stamp": "7691a227f14e4cc8b8109846baa5e12063efc66331ca37ec91973d9cac3b76dd",
+            "expected_epoch": 0,
+            "operation": "recover",
+            "subtask": "Put the tipped cactus-shaped item inside the drawer.",
+            "assessment": "failed",
+            "evidence": "The reviews at steps 336 and 448 reported the left gripper working near the tipped cactus-shaped item without verified pickup. At step 560, the cactus remains tipped in the same desk location as at 448, with the gripper still beside its pot and no visible transport. Across these reviews, continued engagement with this item has produced no pickup or placement, supporting a sustained stall rather than a different valid task stage.",
+            "completed_claims": [],
+            "uncertain_or_invalidated": [
+              "Grasp of the tipped cactus-shaped item is not verified; it remains on the desk.",
+              "Figurine placement on the stand is not verified.",
+              "The alarm clock is partly obscured at the drawer top; release and stable placement are not verified.",
+              "Drawer opening and placement of miscellaneous items inside are not verified."
+            ]
+          },
+          "effect": {
+            "changed": true,
+            "stop": false,
+            "age_steps": 0,
+            "shadow_only": false
+          },
+          "native_evaluator_information_supplied": false
+        },
+        {
+          "step": 672,
+          "reasons": [
+            "periodic_semantic_check_at_native_boundary"
+          ],
+          "decision": {
+            "episode": "07681ecb381c4e68880e8c3dfdb5872f",
+            "based_on_step": 672,
+            "based_on_stamp": "9dbea01bf6d09700bba60f8a809e1d99a96cf853f67187dc27e8495ec2f31f99",
+            "expected_epoch": 1,
+            "operation": "continue",
+            "subtask": "Put the tipped cactus-shaped item inside the drawer.",
+            "assessment": "failed",
+            "evidence": "At step 672 the cactus-shaped item remains tipped on the desk in the same location seen at step 560. The left wrist view shows the gripper beside the pot, but no verified pickup or transport into the drawer. The active correction is still needed; preserve it unchanged.",
+            "completed_claims": [],
+            "uncertain_or_invalidated": [
+              "Grasp of the tipped cactus-shaped item is not verified; it remains on the desk.",
+              "Figurine placement on the stand is not verified.",
+              "The alarm clock is partly obscured at the drawer top; release and stable placement are not verified.",
+              "Drawer opening and placement of miscellaneous items inside are not verified."
+            ]
+          },
+          "effect": {
+            "changed": false,
+            "stop": false,
+            "age_steps": 0,
+            "shadow_only": false
+          },
+          "native_evaluator_information_supplied": false
+        },
+        {
+          "step": 784,
+          "reasons": [
+            "periodic_semantic_check_at_native_boundary"
+          ],
+          "decision": {
+            "episode": "07681ecb381c4e68880e8c3dfdb5872f",
+            "based_on_step": 784,
+            "based_on_stamp": "053cfeea660a5b43309b2296854995dfd1879460f03d44919bb4fe0934e49fba",
+            "expected_epoch": 1,
+            "operation": "continue",
+            "subtask": "Put the tipped cactus-shaped item inside the drawer.",
+            "assessment": "failed",
+            "evidence": "At step 784 the cactus-shaped item remains tipped on the desk in the same location as at step 672. The left wrist is still beside the item; neither pickup nor transport into the drawer is visible. The previously observed stall persists, and the active correction has not been visibly achieved. Preserve it unchanged.",
+            "completed_claims": [],
+            "uncertain_or_invalidated": [
+              "Grasp of the tipped cactus-shaped item is not verified; it remains on the desk.",
+              "Figurine placement on the stand is not verified.",
+              "The alarm clock is partly obscured at the drawer top; release and stable placement are not verified.",
+              "Drawer opening and placement of miscellaneous items inside are not verified."
+            ]
+          },
+          "effect": {
+            "changed": false,
+            "stop": false,
+            "age_steps": 0,
+            "shadow_only": false
+          },
+          "native_evaluator_information_supplied": false
+        },
+        {
+          "step": 896,
+          "reasons": [
+            "periodic_semantic_check_at_native_boundary"
+          ],
+          "decision": {
+            "episode": "07681ecb381c4e68880e8c3dfdb5872f",
+            "based_on_step": 896,
+            "based_on_stamp": "e30263016665834a73b2392a7951136f4846fff3ae47f4f4a16325af4b7782e9",
+            "expected_epoch": 1,
+            "operation": "continue",
+            "subtask": "Put the tipped cactus-shaped item inside the drawer.",
+            "assessment": "failed",
+            "evidence": "At step 896 the cactus-shaped item is still tipped on the desk at the location visible at step 784. The left wrist view shows the item outside the gripper, with no visible pickup or drawer placement. The previously observed stall remains unresolved; retain the active correction unchanged.",
+            "completed_claims": [],
+            "uncertain_or_invalidated": [
+              "Grasp of the tipped cactus-shaped item is not verified; it remains on the desk.",
+              "Figurine placement on the stand is not verified.",
+              "The alarm clock is partly obscured at the drawer top; release and stable placement are not verified.",
+              "Drawer opening and placement of miscellaneous items inside are not verified."
+            ]
+          },
+          "effect": {
+            "changed": false,
+            "stop": false,
+            "age_steps": 0,
+            "shadow_only": false
+          },
+          "native_evaluator_information_supplied": false
+        }
+      ]
+    },
+    {
+      "case_id": "pack_objects_into_box__standard__g0__l0",
+      "task": "pack_objects_into_box",
+      "journal": {
+        "events": 1144,
+        "head_sha256": "498502d4c656d507c00c6c7bf7e088685e50f3a03e1d9464697668a1a8a400ad"
+      },
+      "native_actions": 1008,
+      "proposals": 63,
+      "prefix_open_at_end": false,
+      "completed_native_result": false,
+      "result_status": "missing",
+      "success": null,
+      "native_score": null,
+      "decisions": 9,
+      "correction_changes": 0,
+      "feedback_clears": 0,
+      "decisions_evidence": [
+        {
+          "step": 0,
+          "reasons": [
+            "initial_semantic_goal"
+          ],
+          "decision": {
+            "episode": "38d3ef033d3d4ec2bb16791428b75a2d",
+            "based_on_step": 0,
+            "based_on_stamp": "5a0d1b9893e027391aabfdf10c07071722168f2e52dda15b0b470bc8d0acbece",
+            "expected_epoch": 0,
+            "operation": "continue",
+            "subtask": "",
+            "assessment": "not_started",
+            "evidence": "Initial views show an open box and objects on the table outside it. No attempted grasp or placement, task violation, or stall is observed. Preserve the original task.",
+            "completed_claims": [],
+            "uncertain_or_invalidated": []
+          },
+          "effect": {
+            "changed": false,
+            "stop": false,
+            "age_steps": 0,
+            "shadow_only": false
+          },
+          "native_evaluator_information_supplied": false
+        },
+        {
+          "step": 112,
+          "reasons": [
+            "periodic_semantic_check_at_native_boundary"
+          ],
+          "decision": {
+            "episode": "38d3ef033d3d4ec2bb16791428b75a2d",
+            "based_on_step": 112,
+            "based_on_stamp": "713e38a5582def1f0f0886e1703562728ca3c97a307721c33cec933b4cb41ca5",
+            "expected_epoch": 0,
+            "operation": "continue",
+            "subtask": "",
+            "assessment": "uncertain",
+            "evidence": "At step 112 the box is open and appears empty; the toothbrush, hammer, toy car and shoe remain outside it. The right wrist view centers on the shoe between open fingers, but does not establish a grasp. Relative to step 0, the box and arms have moved. These sparse views do not establish a failed placement, lost grasp, task violation or sustained stall; preserve the original task.",
+            "completed_claims": [],
+            "uncertain_or_invalidated": [
+              "No object placement or left-facing orientation inside the box is yet verified."
+            ]
+          },
+          "effect": {
+            "changed": false,
+            "stop": false,
+            "age_steps": 0,
+            "shadow_only": false
+          },
+          "native_evaluator_information_supplied": false
+        },
+        {
+          "step": 224,
+          "reasons": [
+            "periodic_semantic_check_at_native_boundary"
+          ],
+          "decision": {
+            "episode": "38d3ef033d3d4ec2bb16791428b75a2d",
+            "based_on_step": 224,
+            "based_on_stamp": "b3a2a6f83565fdabfff4be274dad1e5fcaa4f24cd24dcd60dd052e6d0b468069",
+            "expected_epoch": 0,
+            "operation": "continue",
+            "subtask": "",
+            "assessment": "progressing",
+            "evidence": "Compared with step 112, the shoe has moved from the tabletop beside the box to within or immediately over the box interior beneath the right gripper. The high view suggests its toe points left, but the gripper and box obscure final release and settled orientation. The toothbrush, hammer and toy car remain outside. No lost grasp, failed placement, sustained stall or original-task violation is established; preserve the original task.",
+            "completed_claims": [],
+            "uncertain_or_invalidated": [
+              "The shoe's final release and settled left-facing placement are not yet verified; no completed object placement is claimed."
+            ]
+          },
+          "effect": {
+            "changed": false,
+            "stop": false,
+            "age_steps": 0,
+            "shadow_only": false
+          },
+          "native_evaluator_information_supplied": false
+        },
+        {
+          "step": 336,
+          "reasons": [
+            "periodic_semantic_check_at_native_boundary"
+          ],
+          "decision": {
+            "episode": "38d3ef033d3d4ec2bb16791428b75a2d",
+            "based_on_step": 336,
+            "based_on_stamp": "0fa5afca58ed4f8426aa735f54118c797efad9d8a240eceb92802aeda649acba",
+            "expected_epoch": 0,
+            "operation": "continue",
+            "subtask": "",
+            "assessment": "progressing",
+            "evidence": "At step 336 the shoe is visibly resting inside the box with its toe facing left, clear of the raised right gripper. Compared with step 224, release is now visible. The right wrist view shows the toy car close between the fingers above the box, but does not verify its final placement or orientation. The toothbrush and hammer remain outside. No observed task violation, lost grasp, repeated failed placement or sustained stall warrants correction.",
+            "completed_claims": [
+              {
+                "text": "The shoe is resting inside the box with its front/toe facing left.",
+                "evidence_steps": [
+                  336
+                ]
+              }
+            ],
+            "uncertain_or_invalidated": [
+              "The toy car's secure grasp, final placement and left-facing orientation are not yet verified; placement of the remaining objects is incomplete."
+            ]
+          },
+          "effect": {
+            "changed": false,
+            "stop": false,
+            "age_steps": 0,
+            "shadow_only": false
+          },
+          "native_evaluator_information_supplied": false
+        },
+        {
+          "step": 448,
+          "reasons": [
+            "periodic_semantic_check_at_native_boundary"
+          ],
+          "decision": {
+            "episode": "38d3ef033d3d4ec2bb16791428b75a2d",
+            "based_on_step": 448,
+            "based_on_stamp": "1a383ae6676238e222b19d75914618e2ddfb1163c7200d97d74fa3814ec0e9ff",
+            "expected_epoch": 0,
+            "operation": "continue",
+            "subtask": "",
+            "assessment": "progressing",
+            "evidence": "The shoe remains visibly inside the box with its toe facing left. The left wrist view now shows the hammer handle between the fingers, still on the tabletop; a secure grasp is not established. The toothbrush remains outside. The toy car's location and orientation are obscured in the current views, so its placement cannot be verified. Switching to the hammer is a valid task stage; no lost grasp, failed placement, orientation violation or sustained stall is established.",
+            "completed_claims": [
+              {
+                "text": "The shoe is resting inside the box with its front/toe facing left.",
+                "evidence_steps": [
+                  336,
+                  448
+                ]
+              }
+            ],
+            "uncertain_or_invalidated": [
+              "The toy car's final placement and left-facing orientation remain unverified.",
+              "The hammer's secure grasp is not verified; the hammer and toothbrush remain outside the box."
+            ]
+          },
+          "effect": {
+            "changed": false,
+            "stop": false,
+            "age_steps": 0,
+            "shadow_only": false
+          },
+          "native_evaluator_information_supplied": false
+        },
+        {
+          "step": 560,
+          "reasons": [
+            "periodic_semantic_check_at_native_boundary"
+          ],
+          "decision": {
+            "episode": "38d3ef033d3d4ec2bb16791428b75a2d",
+            "based_on_step": 560,
+            "based_on_stamp": "7448b2e747f16ff3f11b7ca48e55b5eefb89003237f6289eeede93cc4eef41b8",
+            "expected_epoch": 0,
+            "operation": "continue",
+            "subtask": "",
+            "assessment": "progressing",
+            "evidence": "Compared with step 448, the hammer handle is now raised between the left fingers near the box rather than lying on the tabletop. This supports ongoing manipulation, but does not verify release or final left-facing placement. The shoe remains visible inside the box, partially occluded. The toothbrush remains on the table, and the toy car's placement is not discernible. No observed lost grasp, failed placement, orientation violation or sustained stall warrants correction.",
+            "completed_claims": [
+              {
+                "text": "The shoe is resting inside the box with its front/toe facing left.",
+                "evidence_steps": [
+                  336,
+                  448
+                ]
+              }
+            ],
+            "uncertain_or_invalidated": [
+              "The toy car's final placement and left-facing orientation remain unverified.",
+              "The hammer is being manipulated near the box; its final placement and left-facing orientation are unverified. The earlier claim that it remains on the tabletop is no longer supported.",
+              "The toothbrush remains outside the box."
+            ]
+          },
+          "effect": {
+            "changed": false,
+            "stop": false,
+            "age_steps": 0,
+            "shadow_only": false
+          },
+          "native_evaluator_information_supplied": false
+        },
+        {
+          "step": 672,
+          "reasons": [
+            "periodic_semantic_check_at_native_boundary"
+          ],
+          "decision": {
+            "episode": "38d3ef033d3d4ec2bb16791428b75a2d",
+            "based_on_step": 672,
+            "based_on_stamp": "1d8ea857a292417dd20cd5c539a96b6c7e215637cbcac1b853644f77757efdfc",
+            "expected_epoch": 0,
+            "operation": "continue",
+            "subtask": "",
+            "assessment": "progressing",
+            "evidence": "At step 672 the left wrist view shows the toothbrush on the tabletop between the open fingers, rather than the hammer seen at step 560. This is a valid transition to another remaining object, not evidence of failure. The shoe remains visible inside the box. The hammer is no longer visible at the gripper, but its settled placement and orientation are obscured; the toy car is likewise not clearly identifiable. No observed lost grasp, repeated failed placement, orientation violation or sustained stall warrants correction.",
+            "completed_claims": [
+              {
+                "text": "The shoe is resting inside the box with its front/toe facing left.",
+                "evidence_steps": [
+                  336,
+                  448
+                ]
+              }
+            ],
+            "uncertain_or_invalidated": [
+              "The toy car's final placement and left-facing orientation remain unverified.",
+              "The hammer is no longer visibly being held; its final placement and left-facing orientation remain unverified.",
+              "The toothbrush remains on the tabletop between the left fingers; a secure grasp is not established."
+            ]
+          },
+          "effect": {
+            "changed": false,
+            "stop": false,
+            "age_steps": 0,
+            "shadow_only": false
+          },
+          "native_evaluator_information_supplied": false
+        },
+        {
+          "step": 784,
+          "reasons": [
+            "periodic_semantic_check_at_native_boundary"
+          ],
+          "decision": {
+            "episode": "38d3ef033d3d4ec2bb16791428b75a2d",
+            "based_on_step": 784,
+            "based_on_stamp": "02f94d816bb7411162e9a02212c77bd2606c9f29bcb39a56f915f1eb1a207330",
+            "expected_epoch": 0,
+            "operation": "continue",
+            "subtask": "",
+            "assessment": "progressing",
+            "evidence": "Compared with step 672, the left gripper has moved from the toothbrush's tabletop location to near the box. The toothbrush is no longer clearly visible on the table, but the gripper and box occlude its possible placement; neither release nor final orientation is verified. The shoe remains visible inside the box. The other objects' final positions and orientations are not clearly discernible. No observed lost grasp, incorrect placement, repeated placement failure or sustained stall warrants correction.",
+            "completed_claims": [
+              {
+                "text": "The shoe is resting inside the box with its front/toe facing left.",
+                "evidence_steps": [
+                  336,
+                  448
+                ]
+              }
+            ],
+            "uncertain_or_invalidated": [
+              "The toy car's final placement and left-facing orientation remain unverified.",
+              "The hammer's final placement and left-facing orientation remain unverified.",
+              "The earlier observation that the toothbrush remains on the tabletop is no longer established; its current location, release and final left-facing orientation are unverified."
+            ]
+          },
+          "effect": {
+            "changed": false,
+            "stop": false,
+            "age_steps": 0,
+            "shadow_only": false
+          },
+          "native_evaluator_information_supplied": false
+        },
+        {
+          "step": 896,
+          "reasons": [
+            "periodic_semantic_check_at_native_boundary"
+          ],
+          "decision": {
+            "episode": "38d3ef033d3d4ec2bb16791428b75a2d",
+            "based_on_step": 896,
+            "based_on_stamp": "fec0c04f343c7ba8941d1104dbf35b73a891213f94277a5006f6988e49c4922b",
+            "expected_epoch": 0,
+            "operation": "continue",
+            "subtask": "",
+            "assessment": "uncertain",
+            "evidence": "Both grippers are now withdrawn from the box and visibly empty. The shoe remains inside with its toe facing left; other contents are partly hidden by the shoe and box walls. No loose objects are clearly visible on the exposed tabletop, but this does not establish all objects' placement or front-facing orientations. Compared with step 784 the left arm has retracted; no observed lost grasp, incorrect placement or sustained stall supports a correction. Overall completion remains unverified.",
+            "completed_claims": [
+              {
+                "text": "The shoe is resting inside the box with its front/toe facing left.",
+                "evidence_steps": [
+                  336,
+                  448,
+                  896
+                ]
+              }
+            ],
+            "uncertain_or_invalidated": [
+              "The toy car's final placement and left-facing orientation remain unverified.",
+              "The hammer's final placement and left-facing orientation remain unverified.",
+              "The toothbrush's final placement and left-facing orientation remain unverified; empty withdrawn grippers alone do not establish a successful release into the box."
+            ]
+          },
+          "effect": {
+            "changed": false,
+            "stop": false,
+            "age_steps": 0,
+            "shadow_only": false
+          },
+          "native_evaluator_information_supplied": false
+        }
+      ]
+    },
+    {
+      "case_id": "put_bottles_into_dustbin__standard__g0__l0",
+      "task": "put_bottles_into_dustbin",
+      "journal": {
+        "events": 797,
+        "head_sha256": "05f1b3b6661e2593e2aca16f680e85a5e88f9f03ece15a7c95aaa49f7dd4dd43"
+      },
+      "native_actions": 700,
+      "proposals": 44,
+      "prefix_open_at_end": false,
+      "completed_native_result": true,
+      "result_status": "native_completed",
+      "success": false,
+      "native_score": 0.4,
+      "decisions": 7,
+      "correction_changes": 0,
+      "feedback_clears": 0,
+      "decisions_evidence": [
+        {
+          "step": 0,
+          "reasons": [
+            "initial_semantic_goal"
+          ],
+          "decision": {
+            "episode": "5626914ce0b84b3ba153140835b04808",
+            "based_on_step": 0,
+            "based_on_stamp": "85d2bcd8c446f0f6030eb3a2e376b8ce728ffa406621a507d36b57b3ac716b98",
+            "expected_epoch": 0,
+            "operation": "continue",
+            "subtask": "",
+            "assessment": "not_started",
+            "evidence": "Initial RGB shows four bottles on the tabletop and the dustbin at the left. No bottle is visibly held or disposed of, and no task violation is observed. Preserve the original task without correction.",
+            "completed_claims": [],
+            "uncertain_or_invalidated": []
+          },
+          "effect": {
+            "changed": false,
+            "stop": false,
+            "age_steps": 0,
+            "shadow_only": false
+          },
+          "native_evaluator_information_supplied": false
+        },
+        {
+          "step": 112,
+          "reasons": [
+            "periodic_semantic_check_at_native_boundary"
+          ],
+          "decision": {
+            "episode": "5626914ce0b84b3ba153140835b04808",
+            "based_on_step": 112,
+            "based_on_stamp": "c13856cd0ea1fbf6ff12881e264b8177c269aec971a2b1836ccf9a7edad00ad1",
+            "expected_epoch": 0,
+            "operation": "continue",
+            "subtask": "",
+            "assessment": "progressing",
+            "evidence": "At step 112 the right gripper is positioned around the yellow bottle, which appears raised near the center of the table; the left gripper is open nearby. The white bottle remains visible at the back right. No observed wrong-object action, lost grasp, failed placement or sustained stall warrants correction. The pink bottle is no longer visible, but its disposal is not verified by these views.",
+            "completed_claims": [],
+            "uncertain_or_invalidated": [
+              "Disposal of the pink bottle is unverified; absence from the tabletop view alone does not establish placement in the dustbin.",
+              "The pale green bottle's location is obscured and its disposal is unverified."
+            ]
+          },
+          "effect": {
+            "changed": false,
+            "stop": false,
+            "age_steps": 0,
+            "shadow_only": false
+          },
+          "native_evaluator_information_supplied": false
+        },
+        {
+          "step": 224,
+          "reasons": [
+            "periodic_semantic_check_at_native_boundary"
+          ],
+          "decision": {
+            "episode": "5626914ce0b84b3ba153140835b04808",
+            "based_on_step": 224,
+            "based_on_stamp": "a69a852bf75b61f6cdf3171dc6d54acca75c7de8563076df54d2d47d3d80a474",
+            "expected_epoch": 0,
+            "operation": "continue",
+            "subtask": "",
+            "assessment": "progressing",
+            "evidence": "At step 224 the right gripper is positioned around the white bottle near the table's right side; secure grasp is not established by the image alone. A pale green bottle is visibly lying on the tabletop nearby. The yellow bottle visible at step 112 is now out of view, but disposal is unverified. No observed lost grasp, repeated failed placement, wrong-object action or sustained stall warrants correction.",
+            "completed_claims": [],
+            "uncertain_or_invalidated": [
+              "Disposal of the pink bottle remains unverified.",
+              "The pale green bottle is visible on the tabletop at step 224, so its disposal is not complete; its previously obscured location is now resolved.",
+              "Disposal of the yellow bottle is unverified; absence from the current tabletop view is insufficient evidence.",
+              "Secure grasp and disposal of the white bottle are unverified."
+            ]
+          },
+          "effect": {
+            "changed": false,
+            "stop": false,
+            "age_steps": 0,
+            "shadow_only": false
+          },
+          "native_evaluator_information_supplied": false
+        },
+        {
+          "step": 336,
+          "reasons": [
+            "periodic_semantic_check_at_native_boundary"
+          ],
+          "decision": {
+            "episode": "5626914ce0b84b3ba153140835b04808",
+            "based_on_step": 336,
+            "based_on_stamp": "1f06031f13180a55a8dd4fa1ece9ed3e46572a03544616b90b9ec7161377f2f3",
+            "expected_epoch": 0,
+            "operation": "continue",
+            "subtask": "",
+            "assessment": "progressing",
+            "evidence": "At step 336 the right gripper is positioned over the pale green bottle, still lying on the tabletop; the wrist view shows its body between the fingers, but does not establish a secure grasp. At step 224 the gripper was instead near the white bottle. This change is consistent with another valid pickup stage, not a sustained stall. No observed lost grasp, wrong-object action or repeated failed placement warrants correction. The white bottle is no longer visible, but disposal is not verified.",
+            "completed_claims": [],
+            "uncertain_or_invalidated": [
+              "Disposal of the pink and yellow bottles remains unverified.",
+              "The pale green bottle remains on the tabletop at step 336; secure grasp and disposal are unverified.",
+              "The white bottle is no longer visible at step 336, but its disposal remains unverified."
+            ]
+          },
+          "effect": {
+            "changed": false,
+            "stop": false,
+            "age_steps": 0,
+            "shadow_only": false
+          },
+          "native_evaluator_information_supplied": false
+        },
+        {
+          "step": 448,
+          "reasons": [
+            "periodic_semantic_check_at_native_boundary"
+          ],
+          "decision": {
+            "episode": "5626914ce0b84b3ba153140835b04808",
+            "based_on_step": 448,
+            "based_on_stamp": "5b2cbe2f4c15484898a0c36dfdafdaa2a13c2dc33ae25a66be18db3b7b419b32",
+            "expected_epoch": 0,
+            "operation": "continue",
+            "subtask": "",
+            "assessment": "progressing",
+            "evidence": "At step 448 the pale green bottle appears lifted in the left gripper near the dustbin, whereas at step 336 it lay on the tabletop under the right gripper. The right gripper is now open nearby. This is consistent with pickup and handover progress; no lost grasp, failed placement or sustained stall is observed. The bottle has not visibly been released into the bin. A white bottle is visible at the far right, so its previously unverified disappearance does not establish disposal.",
+            "completed_claims": [],
+            "uncertain_or_invalidated": [
+              "Disposal of the pink and yellow bottles remains unverified.",
+              "The pale green bottle appears lifted near the dustbin at step 448; disposal remains unverified.",
+              "The white bottle is visible at the far right at step 448; its disposal is not established."
+            ]
+          },
+          "effect": {
+            "changed": false,
+            "stop": false,
+            "age_steps": 0,
+            "shadow_only": false
+          },
+          "native_evaluator_information_supplied": false
+        },
+        {
+          "step": 560,
+          "reasons": [
+            "periodic_semantic_check_at_native_boundary"
+          ],
+          "decision": {
+            "episode": "5626914ce0b84b3ba153140835b04808",
+            "based_on_step": 560,
+            "based_on_stamp": "958ddd90c866fd09dab803281884378d314706497a7d9211229b2d4d72d9f85b",
+            "expected_epoch": 0,
+            "operation": "continue",
+            "subtask": "",
+            "assessment": "progressing",
+            "evidence": "At step 560 the left gripper appears empty beside the dustbin and the pale green bottle seen lifted at step 448 is no longer visible; its release into the bin is not established. The right gripper is now beside the white bottle at the table's far right, consistent with a further pickup stage, though secure grasp is unverified. No observed lost grasp, repeated failed placement or clear sustained stall warrants correction.",
+            "completed_claims": [],
+            "uncertain_or_invalidated": [
+              "Disposal of the pink and yellow bottles remains unverified.",
+              "The pale green bottle is no longer visible at step 560; its disposal remains unverified.",
+              "The white bottle remains visible beside the right gripper at step 560; secure grasp and disposal are not established."
+            ]
+          },
+          "effect": {
+            "changed": false,
+            "stop": false,
+            "age_steps": 0,
+            "shadow_only": false
+          },
+          "native_evaluator_information_supplied": false
+        },
+        {
+          "step": 672,
+          "reasons": [
+            "periodic_semantic_check_at_native_boundary"
+          ],
+          "decision": {
+            "episode": "5626914ce0b84b3ba153140835b04808",
+            "based_on_step": 672,
+            "based_on_stamp": "43c8f51873791e0fab122c448a0733d3035b9687b0382788ef49225fdf467f86",
+            "expected_epoch": 0,
+            "operation": "continue",
+            "subtask": "",
+            "assessment": "uncertain",
+            "evidence": "At step 672 no bottles are visible on the tabletop or in either gripper, and both arms have returned to similar resting positions. The white bottle visible beside the right gripper at step 560 is now out of view. These observations do not verify release into the dustbin or overall completion. No observed task violation, lost grasp, repeated failed placement or sustained stall warrants correction.",
+            "completed_claims": [],
+            "uncertain_or_invalidated": [
+              "Disposal of the pink and yellow bottles remains unverified.",
+              "Disposal of the pale green bottle remains unverified.",
+              "The white bottle is no longer visible at step 672; its disposal remains unverified.",
+              "An empty visible tabletop and empty grippers do not establish overall task completion."
+            ]
+          },
+          "effect": {
+            "changed": false,
+            "stop": false,
+            "age_steps": 0,
+            "shadow_only": false
+          },
+          "native_evaluator_information_supplied": false
+        }
+      ]
+    }
+  ],
+  "native_actions": 7901,
+  "completed_native_results": 6,
+  "known_successes": 3,
+  "missing_native_scores": 4,
+  "correction_changes": 6,
+  "feedback_clears": 0
+}

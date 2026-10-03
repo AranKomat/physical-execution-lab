@@ -1,0 +1,61 @@
+{
+  "automatic_retry": false,
+  "cases": [
+    "arrange_largest_number__standard__g0__l0",
+    "build_tower__standard__g0__l0",
+    "classify_objects__standard__g0__l0",
+    "classify_objects_by_language__standard__g0__l0",
+    "fold_clothes__standard__g0__l0",
+    "imitate_sorting_sequence__standard__g0__l0",
+    "make_kong__standard__g0__l0",
+    "organize_table__standard__g0__l0",
+    "pack_objects_into_box__standard__g0__l0",
+    "put_bottles_into_dustbin__standard__g0__l0"
+  ],
+  "comparison_plan_sha256": "7561c71c5f8c8e9eb98028c3b08f9234091da079eaa44b08a43f4e8c608f7731",
+  "distinct_tasks": 10,
+  "error": "KeyboardInterrupt: ",
+  "jax_memory_fraction": null,
+  "method": "semantic",
+  "motor_contract": {
+    "execute": 16,
+    "mode": "g05_source_fused_sampling",
+    "name": "g05_robodojo_fm",
+    "policy_name": "G05",
+    "provider": "configs/local/g05-fused-b10-bound-20261003/provider.json",
+    "python": ".venv-g05-fla/bin/python",
+    "returned": 16,
+    "underlying_horizon": 32
+  },
+  "native_equivalence_admission_pending": true,
+  "paid_calls": 0,
+  "policy": "g05",
+  "policy_gpu": 1,
+  "policy_runtimes": 1,
+  "simulator_gpu_affinity": [
+    0,
+    1,
+    0
+  ],
+  "simulator_libstdcxx": {
+    "path": "/root/miniconda3/envs/RoboDojo/lib/libstdc++.so.6.0.36",
+    "sha256": "10f0d3c46c070acd4abea2ccf2500ff0ec77e9b90154b82ea2720dba05510cb9"
+  },
+  "simulator_processes": 3,
+  "source_freeze_sha256": "b7f2cd0fa98a50c4a56dd9aa836250e087ddc53e868ce824840d25a28ea1030f",
+  "source_hashes": {
+    "scripts/semantic/run_distinct_task_group.py": "956573d378ad6b92f40a98539a7aa7c7012ceb96ab12606dcb73ad14faabbc8a",
+    "scripts/semantic/run_full_panel_baseline.py": "deff2d540dc7cc560b3e4674b85f8686e3d63e77d3c0a56444cec40de6ff03f5",
+    "scripts/semantic/serve_pi05_batch.py": "cc8132ea6fa5b8fa3e741df1be9ec7a3a0dd23059f91cc3615ac9c403ba22296",
+    "semantic_lab/g05_batch.py": "26e37585a22962e025a9c08368d8b78ffca02c99f9363425fc760bd7d8ae4730",
+    "semantic_lab/motor_contract.py": "9eb7fab57e40076ed40526beaaffece871e5d2149ba2658aa3c19b759ac21f94",
+    "semantic_lab/native_execution.py": "16bb15a3917bc7ae5215f839314bfac4477d05f0ae6296198d6c53a2284eb0ec",
+    "semantic_lab/native_io.py": "c8ee14dcb9785b4c5e3e6714a32d579d51d5e56e32bb33c323144104b45e8872",
+    "semantic_lab/pi05_batch.py": "485b78333eecc46c30a05e8092c8c4bf6e704889d7cd28d53272aa457ac27104",
+    "semantic_lab/policy.py": "ded1c24ae804e3a6d8ea6db88ad600bcf76e746b28333ce3ba475f1baee54a5a",
+    "semantic_lab/task_rows.py": "48f7692fb5116fbad655922ed09e32dbc811fc520d792140dbaaf334971ba11d"
+  },
+  "status": "error_stop_no_retry",
+  "tier_policy": "flex_preferred_same_model_standard_capacity_fallback",
+  "wall_including_startup_s": 2172.8127304189984
+}

@@ -1,0 +1,17 @@
+{
+  "charged_with_all_holds_usd": "87.586511244300",
+  "no_failed_request_retry": true,
+  "no_hold_release": true,
+  "remaining_usd": "7.413488755700",
+  "retained_unresolved": [
+    {
+      "amount_usd": "0.0724710",
+      "id": "g05-full-panel-mistake-coaching003-73"
+    }
+  ],
+  "shared_cap_usd": "95",
+  "shared_reservations": 5652,
+  "trial_reservations": 74,
+  "trial_settled_cost_usd": "0.41987675",
+  "trial_settlements": 73
+}

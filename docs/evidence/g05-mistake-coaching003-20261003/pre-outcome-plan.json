@@ -1,0 +1,153 @@
+{
+  "cadence": "source H32 underlying, returned/executed16; review target100 at next H16 boundary",
+  "configs": {
+    "original_only": "59e74416cde025d179c8ab73a94ad7a651deaf919a35e4cc1048ac280c2d9c52",
+    "semantic": "1798b902c7b91a11feab23db65df7eceadb64e90b5c4bc1fcb1eed2f67fc8944"
+  },
+  "independent_per_env_rng": false,
+  "manifest_sha256": "ece23adee28fcf427e25bba45563645cea0d444a04f91f0e36fecbd2f8c501bd",
+  "motor_identity": {
+    "action_space": "x5_joint14",
+    "adapter_config_sha256": "5ecf8ff1ed3e5d31e9fc624467439e41b6b55a0b461cb240ebfc573e4fee270c",
+    "benchmark_training": "RoboDojo task/embodiment post-trained",
+    "checkpoint_sha256": "035cae5e4b8f128f400e9c812e48b1f35a6ec9962bd737c945bf14a249ed3603",
+    "execute_steps": 16,
+    "name": "g05_robodojo_fm",
+    "native_hz": 25.0,
+    "prediction_horizon": 32,
+    "preprocessing_id": "g05_qwen35_fm_bf16_fla051_clip_frequency30_native25_seed0",
+    "revision": "408b99d959a7b2207f5f785528fefcc019d7b131",
+    "stateful": true
+  },
+  "native_reasoning": false,
+  "no_added_bbox_or_target_crop": true,
+  "provider_sha256": "1b56d508ec6a2a46cdd72ee37266b9abe204550637116ed76221cb1ae84523d9",
+  "rng": "source seed0 fixed B10 fused stream; inference-only padding as episodes leave",
+  "schema": "semantic.g05_screen.v1",
+  "scope": "opened ten-task screen; not untouched-task generalization or official SR",
+  "sha256": "7561c71c5f8c8e9eb98028c3b08f9234091da079eaa44b08a43f4e8c608f7731",
+  "singleton_numerical_parity": false,
+  "slots": [
+    {
+      "approach": "original_only",
+      "case_id": "arrange_largest_number__standard__g0__l0",
+      "condition": "g05_full_ten_original_only001",
+      "status": "missing"
+    },
+    {
+      "approach": "original_only",
+      "case_id": "build_tower__standard__g0__l0",
+      "condition": "g05_full_ten_original_only001",
+      "status": "missing"
+    },
+    {
+      "approach": "original_only",
+      "case_id": "classify_objects__standard__g0__l0",
+      "condition": "g05_full_ten_original_only001",
+      "status": "missing"
+    },
+    {
+      "approach": "original_only",
+      "case_id": "classify_objects_by_language__standard__g0__l0",
+      "condition": "g05_full_ten_original_only001",
+      "status": "missing"
+    },
+    {
+      "approach": "original_only",
+      "case_id": "fold_clothes__standard__g0__l0",
+      "condition": "g05_full_ten_original_only001",
+      "status": "missing"
+    },
+    {
+      "approach": "original_only",
+      "case_id": "imitate_sorting_sequence__standard__g0__l0",
+      "condition": "g05_full_ten_original_only001",
+      "status": "missing"
+    },
+    {
+      "approach": "original_only",
+      "case_id": "make_kong__standard__g0__l0",
+      "condition": "g05_full_ten_original_only001",
+      "status": "missing"
+    },
+    {
+      "approach": "original_only",
+      "case_id": "organize_table__standard__g0__l0",
+      "condition": "g05_full_ten_original_only001",
+      "status": "missing"
+    },
+    {
+      "approach": "original_only",
+      "case_id": "pack_objects_into_box__standard__g0__l0",
+      "condition": "g05_full_ten_original_only001",
+      "status": "missing"
+    },
+    {
+      "approach": "original_only",
+      "case_id": "put_bottles_into_dustbin__standard__g0__l0",
+      "condition": "g05_full_ten_original_only001",
+      "status": "missing"
+    },
+    {
+      "approach": "semantic",
+      "case_id": "arrange_largest_number__standard__g0__l0",
+      "condition": "g05_full_ten_mistake_only_coaching001",
+      "status": "missing"
+    },
+    {
+      "approach": "semantic",
+      "case_id": "build_tower__standard__g0__l0",
+      "condition": "g05_full_ten_mistake_only_coaching001",
+      "status": "missing"
+    },
+    {
+      "approach": "semantic",
+      "case_id": "classify_objects__standard__g0__l0",
+      "condition": "g05_full_ten_mistake_only_coaching001",
+      "status": "missing"
+    },
+    {
+      "approach": "semantic",
+      "case_id": "classify_objects_by_language__standard__g0__l0",
+      "condition": "g05_full_ten_mistake_only_coaching001",
+      "status": "missing"
+    },
+    {
+      "approach": "semantic",
+      "case_id": "fold_clothes__standard__g0__l0",
+      "condition": "g05_full_ten_mistake_only_coaching001",
+      "status": "missing"
+    },
+    {
+      "approach": "semantic",
+      "case_id": "imitate_sorting_sequence__standard__g0__l0",
+      "condition": "g05_full_ten_mistake_only_coaching001",
+      "status": "missing"
+    },
+    {
+      "approach": "semantic",
+      "case_id": "make_kong__standard__g0__l0",
+      "condition": "g05_full_ten_mistake_only_coaching001",
+      "status": "missing"
+    },
+    {
+      "approach": "semantic",
+      "case_id": "organize_table__standard__g0__l0",
+      "condition": "g05_full_ten_mistake_only_coaching001",
+      "status": "missing"
+    },
+    {
+      "approach": "semantic",
+      "case_id": "pack_objects_into_box__standard__g0__l0",
+      "condition": "g05_full_ten_mistake_only_coaching001",
+      "status": "missing"
+    },
+    {
+      "approach": "semantic",
+      "case_id": "put_bottles_into_dustbin__standard__g0__l0",
+      "condition": "g05_full_ten_mistake_only_coaching001",
+      "status": "missing"
+    }
+  ],
+  "tier_policy": "flex_preferred_same_model_standard_capacity_fallback"
+}

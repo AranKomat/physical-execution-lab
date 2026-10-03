@@ -8,9 +8,15 @@ now requested a separate G0.5 original-only versus sparse GPT-6 subtask screen;
 this does not replace or merge the pi0.5 results. G0.5/Intern weights are on the
 GPU host, not downloaded to the Mac.
 
-Next bounded condition: original task plus temporary observed-error coaching,
-not routine subtask assignment or preventive feedback. Interface and CPU
-no-error parity/correction-clear tests pass; native experiment remains pending.
+Original task plus temporary observed-error coaching003 ran all ten tasks but
+was censored by SSH/relay loss aligned with Mac lid-closure sleep. Six native
+scores: three successes, three failures; four unknown outcomes. 7,901 actions
+and six correction changes pass retained-trace integrity; no correction clears
+or gained successes were observed. This is not a completed 3/10 comparison.
+Full evidence is locally hash-verified, independent audit matches remotely,
+all ten camera sheets reviewed, GPUs idle. 73 settled Flex calls/$0.41987675
+plus one retained $0.072471 hold. No scored replay, model swap or preventive
+feedback. Interface/CPU tests pass; complete coaching comparison remains open.
 Track its active checklist in
 [mistake-only coaching](semantic/G05_MISTAKE_ONLY_COACHING_20261003.md).
 

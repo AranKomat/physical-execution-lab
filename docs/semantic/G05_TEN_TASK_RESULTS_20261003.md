@@ -167,8 +167,12 @@ temporal evidence and the checkpoint's conditioning distribution remain factors.
 
 The owner proposed letting G0.5 perform its own task and supplying feedback only
 when a visible mistake occurs. This is a useful separate condition, not another
-name for continuous subtask-only steering. It has not been prepared, frozen or
-launched. Keep the original instruction; add a short temporary corrective note
+name for continuous subtask-only steering. It is now prepared/frozen and launched
+under a separate [active checklist](G05_MISTAKE_ONLY_COACHING_20261003.md).
+Coaching003 was transport-censored: six scores (three successes/three failures),
+four unknowns, six correction changes and no observed completed correction.
+Full backup/partial trace audit/visual review are retained; there is no completed
+full-ten coaching comparison. Keep the original instruction; add a short temporary corrective note
 only for an original-task violation, lost grasp, repeated failed placement or
 clear stall. Do not call another valid stage a mistake merely because GPT
 preferred a different stage order. Avoid unnecessary arm/trajectory prescriptions.

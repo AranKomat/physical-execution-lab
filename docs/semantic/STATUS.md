@@ -2,13 +2,25 @@
 
 ## Live Evidence Update: 2026-10-03
 
-Active continuation: G0.5 original-only versus subtask-only/recovery, all ten
-distinct tasks concurrently through a shared source-fused B10 service. Source
-exposed/executed16 is retained (underlying32); actual token-boundary retention
-is recorded. Both conditions were frozen before outcomes. Baseline002 is
-executing; setup001 stopped before policy actions because the retained
-ancillary path alias was absent. No hierarchy result is claimed yet. See
-[the condition/paper checklist](G05_PAPER_AND_COMPARISON_20261003.md).
+G0.5's all-ten original-only baseline002 completed at5/10 successes, mean
+score0.62; subtask-only/recovery001 completed at3/10, mean0.38. All ten scores
+and native prompt/prefix/ACK integrity are present in each. No reliable hierarchy
+benefit is established. Setup baseline001 remains an infrastructure failure,
+not ten motor failures. See [the completed results](G05_TEN_TASK_RESULTS_20261003.md).
+
+Original-task-preserving observed-error coaching003 ran
+all ten distinct tasks concurrently through the same source-fused B10 service.
+Fresh freeze/reset admission passed, but Mac clamshell sleep/SSH loss censored
+the run. Six native scores: three successes, three failures; four unknown. All
+7,901 retained actions pass source/prompt/ACK audit, with six correction changes,
+no feedback clears and no observed gained success. This is not a full comparison.
+Full backup is locally hash-verified and the independent local audit matches.
+73 settled Flex calls/$0.41987675 plus one retained$0.072471 hold. No scored retry.
+Source exposed/executed16 is retained (underlying32). Coaching001 lost its SSH
+tunnel before actions/paid calls;002 was rejected before remote launch by the
+orphaned tunnel listener. Both are retained, and only the owned listener was
+retired. Current GPUs/owned workers idle. Track
+[the coaching checklist](G05_MISTAKE_ONLY_COACHING_20261003.md).
 
 The build-package status below is historical. Native synchronous pi0.5
 cadence/prompt no-interference and actual tokenizer/context/ACK qualification
@@ -32,7 +44,8 @@ checklist or the external handoff still describes it as pending.
 ## Implemented and CPU-tested
 
 - Additive `semantic_lab/` runner and `run_semantic.py` CLI.
-- Three policy-prompt modes: exact original string, task plus subtask, subtask only.
+- Original, task-plus-subtask and subtask-only modes; opt-in task-plus-correction
+  retains the original and allows clearing a visibly completed temporary note.
 - Motor-only, semantic shadow and semantic hierarchy conditions; optional language-only recovery.
 - Sparse semantic reviews at **drained natural motor-prefix boundaries**. No `shorten` or numeric GPT correction in the new schema.
 - Frozen-policy cadence, actual control ACKs, explicit prefix accounting, and interruption/history-loss distinctions.

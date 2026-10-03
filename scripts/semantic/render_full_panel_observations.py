@@ -19,10 +19,16 @@ small = ImageFont.truetype(font_path, 15) if font_path else ImageFont.load_defau
 index = []
 for group in sorted(root.glob('group[0-9]')):
     episodes = {}
-    for p in sorted(group.glob('episodes/*/controller/result.json')):
+    for p in sorted(group.glob('episodes/*/controller/run.json')):
         idx = int(p.parents[1].name)
-        result = json.loads(p.read_text())
         events = [json.loads(s) for s in (p.parent / 'events.jsonl').read_text().splitlines()]
+        result_path = p.with_name('result.json')
+        if result_path.exists():
+            result = json.loads(result_path.read_text())
+        else:
+            metadata = json.loads(p.read_text())
+            result = dict(task=metadata['case']['task'], status='missing_result_interrupted',
+                native_steps=max((e['data']['step'] for e in events if e['event'] == 'control_ack'), default=0))
         proposals = [e['data'] for e in events if e['event'] == 'policy_proposal']
         episodes[idx] = dict(result=result, proposals=proposals, frames={}, controller=p.parent)
     for path in sorted(group.glob('request-*.npz')):
@@ -59,7 +65,7 @@ for group in sorted(root.glob('group[0-9]')):
         sheet = Image.new('RGB', (1440, 55 + len(epochs) * 340), 'white')
         draw = ImageDraw.Draw(sheet)
         source_label = 'initial actor view; zero actions' if initial_only else 'retained policy inputs'
-        draw.text((8, 8), task + ' | ' + source_label + '; not continuous video', font=font, fill='black')
+        draw.text((8, 8), task + ' | ' + episode['result']['status'] + ' | ' + source_label + '; not continuous video', font=font, fill='black')
         for n, epoch in enumerate(epochs):
             # Keep frames from the next goal out of the current goal's row.
             next_start = epochs[n+1]['start'] if n+1 < len(epochs) else None
