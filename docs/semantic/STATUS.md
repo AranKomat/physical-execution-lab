@@ -2,6 +2,19 @@
 
 ## Live Evidence Update: 2026-10-03
 
+Owner-requested fresh coaching006 completed after an OpenRouter credit top-up:
+5/10 successes, mean0.605 versus baseline5/10,0.620. All ten native scores,
+8,238 actions, three correction changes, no feedback clears or rescued successes.
+Native integrity/local backup/independent audit and all-ten visual review passed.
+GPT-6.1 Sol/medium served61 successful Flex calls then17 authorized same-model
+Standard calls after a capacity rejection. Cost$0.57825750 plus retained$0.0701385
+hold. Both GPUs/owned workers idle; no model weights downloaded locally.
+Setup004 failed before actions/paid reservations on a missing reference path.
+Scored005 ran4,158 actions, then account HTTP402 stopped paid inference: folding
+and Kong succeeded without feedback; eight native scores are unknown. Audit and
+local hash-verified backup passed.005 is not2/10 SR. All charges/holds remain.
+See [the fresh-run plan and receipts](G05_COACHING_FRESH_RUN_20261003.md).
+
 G0.5's all-ten original-only baseline002 completed at5/10 successes, mean
 score0.62; subtask-only/recovery001 completed at3/10, mean0.38. All ten scores
 and native prompt/prefix/ACK integrity are present in each. No reliable hierarchy
@@ -19,7 +32,7 @@ Full backup is locally hash-verified and the independent local audit matches.
 Source exposed/executed16 is retained (underlying32). Coaching001 lost its SSH
 tunnel before actions/paid calls;002 was rejected before remote launch by the
 orphaned tunnel listener. Both are retained, and only the owned listener was
-retired. Current GPUs/owned workers idle. Track
+retired. GPUs/owned workers were idle after003 and completed006 cleanup. Track
 [the coaching checklist](G05_MISTAKE_ONLY_COACHING_20261003.md).
 
 The build-package status below is historical. Native synchronous pi0.5

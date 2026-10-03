@@ -1,0 +1,418 @@
+{
+  "integrity_passed": true,
+  "benchmark_qualified": false,
+  "prompt_mode": "task_plus_correction",
+  "policy": "g05",
+  "returned_horizon": 16,
+  "executed_prefix": 16,
+  "semantic_recovery_enabled": true,
+  "mistake_only_coaching": true,
+  "scope": "all-ten admission, prompt boundary, prefix cadence, source predictions and native ACK integrity",
+  "raw_parent_report_sha256": "2f0fff5166840f7c0919e3bdc977356f82f1369148bac55e8b5886c7aa643cb9",
+  "rows": [
+    {
+      "case_id": "arrange_largest_number__standard__g0__l0",
+      "status": "native_completed",
+      "termination": "native_terminal",
+      "native_steps": 1050,
+      "native_score": 0.05,
+      "success": false,
+      "error": null,
+      "journal_checks": {
+        "journal": {
+          "events": 1194,
+          "head_sha256": "3fcfc44e1ca15efd8768f47b2861a2357c64eefc4b311bcae6b46fa6f13518f8"
+        },
+        "actual_control_acks": 1050,
+        "policy_proposals": 66,
+        "semantic_epochs_seen_by_motor": [
+          0,
+          1
+        ],
+        "distinct_effective_prompts": 2,
+        "prefix_cadence_verified": true,
+        "complete_native_result": true,
+        "evidence_kind": "native_unqualified",
+        "robot_competence_claim": false
+      },
+      "planner_requests": 10,
+      "motor_predictions_checked": 66,
+      "issued_recovery_decisions": 1,
+      "accepted_recovery_decisions": 1,
+      "rejected_recovery_decisions": 0,
+      "rejected_recovery_evidence": [],
+      "semantic_recovery_decisions": 1,
+      "semantic_recovery_goal_changes": 1,
+      "recovery_evidence": [
+        {
+          "step": 448,
+          "subtask": "Resolve the stalled handling of 2: grasp it and place it in the third pad position from the left.",
+          "changed": true,
+          "evidence": "Sustained stall around 2: reviews at 224 and 336 showed it on the tabletop without a verified grasp; at 448 it remains on the tabletop beneath the open right fingers. The current and step-336 views show essentially unchanged digit locations, with 0 and 7 still on the table and 8 at the left end of the pad. No additional placement is visible across these reviews. This supports a stalled pickup, not a claim of a lost grasp or incorrect placement."
+        }
+      ],
+      "feedback_clear_decisions": 0,
+      "actual_model_request_prompts_verified": true,
+      "source_predictions_and_native_acks_equal": true
+    },
+    {
+      "case_id": "build_tower__standard__g0__l0",
+      "status": "native_completed",
+      "termination": "native_terminal",
+      "native_steps": 725,
+      "native_score": 1.0,
+      "success": true,
+      "error": null,
+      "journal_checks": {
+        "journal": {
+          "events": 826,
+          "head_sha256": "06a4e69a770311a77dab443c685c4bb1078ad6126eca83c15e809ac9dfbca972"
+        },
+        "actual_control_acks": 725,
+        "policy_proposals": 46,
+        "semantic_epochs_seen_by_motor": [
+          0
+        ],
+        "distinct_effective_prompts": 1,
+        "prefix_cadence_verified": true,
+        "complete_native_result": true,
+        "evidence_kind": "native_unqualified",
+        "robot_competence_claim": false
+      },
+      "planner_requests": 7,
+      "motor_predictions_checked": 46,
+      "issued_recovery_decisions": 0,
+      "accepted_recovery_decisions": 0,
+      "rejected_recovery_decisions": 0,
+      "rejected_recovery_evidence": [],
+      "semantic_recovery_decisions": 0,
+      "semantic_recovery_goal_changes": 0,
+      "recovery_evidence": [],
+      "feedback_clear_decisions": 0,
+      "actual_model_request_prompts_verified": true,
+      "source_predictions_and_native_acks_equal": true
+    },
+    {
+      "case_id": "classify_objects_by_language__standard__g0__l0",
+      "status": "native_completed",
+      "termination": "native_terminal",
+      "native_steps": 1100,
+      "native_score": 0.0,
+      "success": false,
+      "error": null,
+      "journal_checks": {
+        "journal": {
+          "events": 1250,
+          "head_sha256": "c04a50bafff42884f55563e1f17666a50ab311a7fd2233ade55c2a00b71c5b3f"
+        },
+        "actual_control_acks": 1100,
+        "policy_proposals": 69,
+        "semantic_epochs_seen_by_motor": [
+          0,
+          1
+        ],
+        "distinct_effective_prompts": 2,
+        "prefix_cadence_verified": true,
+        "complete_native_result": true,
+        "evidence_kind": "native_unqualified",
+        "robot_competence_claim": false
+      },
+      "planner_requests": 10,
+      "motor_predictions_checked": 69,
+      "issued_recovery_decisions": 1,
+      "accepted_recovery_decisions": 1,
+      "rejected_recovery_decisions": 0,
+      "rejected_recovery_evidence": [],
+      "semantic_recovery_decisions": 1,
+      "semantic_recovery_goal_changes": 1,
+      "recovery_evidence": [
+        {
+          "step": 336,
+          "subtask": "Move the wooden toy from the middle basket into the right basket.",
+          "changed": true,
+          "evidence": "At step 224 the left wrist view showed a wooden animal toy held over the middle blue basket. At step 336 its pale wooden head is visible inside that basket, while the left gripper is empty and away from it. This is an observed wrong-basket placement: wooden toys belong in the right red basket. The yellow car remains visible in the left basket; the green car and another wooden toy remain on the tabletop."
+        }
+      ],
+      "feedback_clear_decisions": 0,
+      "actual_model_request_prompts_verified": true,
+      "source_predictions_and_native_acks_equal": true
+    },
+    {
+      "case_id": "fold_clothes__standard__g0__l0",
+      "status": "native_completed",
+      "termination": "native_terminal",
+      "native_steps": 297,
+      "native_score": 1.0,
+      "success": true,
+      "error": null,
+      "journal_checks": {
+        "journal": {
+          "events": 340,
+          "head_sha256": "a983e5754c90d94243fa357d059f258b398a892befe68b53261c90eabc20cb29"
+        },
+        "actual_control_acks": 297,
+        "policy_proposals": 19,
+        "semantic_epochs_seen_by_motor": [
+          0
+        ],
+        "distinct_effective_prompts": 1,
+        "prefix_cadence_verified": true,
+        "complete_native_result": true,
+        "evidence_kind": "native_unqualified",
+        "robot_competence_claim": false
+      },
+      "planner_requests": 3,
+      "motor_predictions_checked": 19,
+      "issued_recovery_decisions": 0,
+      "accepted_recovery_decisions": 0,
+      "rejected_recovery_decisions": 0,
+      "rejected_recovery_evidence": [],
+      "semantic_recovery_decisions": 0,
+      "semantic_recovery_goal_changes": 0,
+      "recovery_evidence": [],
+      "feedback_clear_decisions": 0,
+      "actual_model_request_prompts_verified": true,
+      "source_predictions_and_native_acks_equal": true
+    },
+    {
+      "case_id": "imitate_sorting_sequence__standard__g0__l0",
+      "status": "native_completed",
+      "termination": "native_terminal",
+      "native_steps": 855,
+      "native_score": 0.0,
+      "success": false,
+      "error": null,
+      "journal_checks": {
+        "journal": {
+          "events": 973,
+          "head_sha256": "4292fa83d2a0298fba9bbecd11c9b085712f796e988caa3b0628d803062b25d7"
+        },
+        "actual_control_acks": 855,
+        "policy_proposals": 54,
+        "semantic_epochs_seen_by_motor": [
+          0
+        ],
+        "distinct_effective_prompts": 1,
+        "prefix_cadence_verified": true,
+        "complete_native_result": true,
+        "evidence_kind": "native_unqualified",
+        "robot_competence_claim": false
+      },
+      "planner_requests": 8,
+      "motor_predictions_checked": 54,
+      "issued_recovery_decisions": 0,
+      "accepted_recovery_decisions": 0,
+      "rejected_recovery_decisions": 0,
+      "rejected_recovery_evidence": [],
+      "semantic_recovery_decisions": 0,
+      "semantic_recovery_goal_changes": 0,
+      "recovery_evidence": [],
+      "feedback_clear_decisions": 0,
+      "actual_model_request_prompts_verified": true,
+      "source_predictions_and_native_acks_equal": true
+    },
+    {
+      "case_id": "make_kong__standard__g0__l0",
+      "status": "native_completed",
+      "termination": "native_terminal",
+      "native_steps": 403,
+      "native_score": 1.0,
+      "success": true,
+      "error": null,
+      "journal_checks": {
+        "journal": {
+          "events": 461,
+          "head_sha256": "13d19cef838c1d532cba690012aaf826cab9f2f44d57de2b4aeb425a39f55f74"
+        },
+        "actual_control_acks": 403,
+        "policy_proposals": 26,
+        "semantic_epochs_seen_by_motor": [
+          0
+        ],
+        "distinct_effective_prompts": 1,
+        "prefix_cadence_verified": true,
+        "complete_native_result": true,
+        "evidence_kind": "native_unqualified",
+        "robot_competence_claim": false
+      },
+      "planner_requests": 4,
+      "motor_predictions_checked": 26,
+      "issued_recovery_decisions": 0,
+      "accepted_recovery_decisions": 0,
+      "rejected_recovery_decisions": 0,
+      "rejected_recovery_evidence": [],
+      "semantic_recovery_decisions": 0,
+      "semantic_recovery_goal_changes": 0,
+      "recovery_evidence": [],
+      "feedback_clear_decisions": 0,
+      "actual_model_request_prompts_verified": true,
+      "source_predictions_and_native_acks_equal": true
+    },
+    {
+      "case_id": "classify_objects__standard__g0__l0",
+      "status": "native_completed",
+      "termination": "native_terminal",
+      "native_steps": 831,
+      "native_score": 1.0,
+      "success": true,
+      "error": null,
+      "journal_checks": {
+        "journal": {
+          "events": 945,
+          "head_sha256": "3ff5dfdfdfa7e870b01672c101de29703796929b1d5d52a9763b7a61a724c234"
+        },
+        "actual_control_acks": 831,
+        "policy_proposals": 52,
+        "semantic_epochs_seen_by_motor": [
+          0
+        ],
+        "distinct_effective_prompts": 1,
+        "prefix_cadence_verified": true,
+        "complete_native_result": true,
+        "evidence_kind": "native_unqualified",
+        "robot_competence_claim": false
+      },
+      "planner_requests": 8,
+      "motor_predictions_checked": 52,
+      "issued_recovery_decisions": 0,
+      "accepted_recovery_decisions": 0,
+      "rejected_recovery_decisions": 0,
+      "rejected_recovery_evidence": [],
+      "semantic_recovery_decisions": 0,
+      "semantic_recovery_goal_changes": 0,
+      "recovery_evidence": [],
+      "feedback_clear_decisions": 0,
+      "actual_model_request_prompts_verified": true,
+      "source_predictions_and_native_acks_equal": true
+    },
+    {
+      "case_id": "organize_table__standard__g0__l0",
+      "status": "native_completed",
+      "termination": "native_terminal",
+      "native_steps": 1000,
+      "native_score": 0.75,
+      "success": false,
+      "error": null,
+      "journal_checks": {
+        "journal": {
+          "events": 1137,
+          "head_sha256": "6a9b1c32c6744b5169f0dbde56c48085bcbb542f8eaac8915e6ecc48f2457c1e"
+        },
+        "actual_control_acks": 1000,
+        "policy_proposals": 63,
+        "semantic_epochs_seen_by_motor": [
+          0,
+          1
+        ],
+        "distinct_effective_prompts": 2,
+        "prefix_cadence_verified": true,
+        "complete_native_result": true,
+        "evidence_kind": "native_unqualified",
+        "robot_competence_claim": false
+      },
+      "planner_requests": 9,
+      "motor_predictions_checked": 63,
+      "issued_recovery_decisions": 1,
+      "accepted_recovery_decisions": 1,
+      "rejected_recovery_decisions": 0,
+      "rejected_recovery_evidence": [],
+      "semantic_recovery_decisions": 1,
+      "semantic_recovery_goal_changes": 1,
+      "recovery_evidence": [
+        {
+          "step": 224,
+          "subtask": "Place the fallen green figurine upright on its stand.",
+          "changed": true,
+          "evidence": "At step 112 the green figurine was between the left gripper fingers. At step 224 it is no longer held and lies tipped on the desk beside the small white stand, with its orange base facing sideways rather than resting upright on the stand. The left wrist now shows the alarm clock near the drawer. This is an observed failed figurine placement, not an error from choosing another task stage."
+        }
+      ],
+      "feedback_clear_decisions": 0,
+      "actual_model_request_prompts_verified": true,
+      "source_predictions_and_native_acks_equal": true
+    },
+    {
+      "case_id": "pack_objects_into_box__standard__g0__l0",
+      "status": "native_completed",
+      "termination": "native_terminal",
+      "native_steps": 1300,
+      "native_score": 0.25,
+      "success": false,
+      "error": null,
+      "journal_checks": {
+        "journal": {
+          "events": 1478,
+          "head_sha256": "5883de23d571dcd07e974d00b3c56e861b9a781fb488334d16fe299dffd65f3b"
+        },
+        "actual_control_acks": 1300,
+        "policy_proposals": 82,
+        "semantic_epochs_seen_by_motor": [
+          0
+        ],
+        "distinct_effective_prompts": 1,
+        "prefix_cadence_verified": true,
+        "complete_native_result": true,
+        "evidence_kind": "native_unqualified",
+        "robot_competence_claim": false
+      },
+      "planner_requests": 12,
+      "motor_predictions_checked": 82,
+      "issued_recovery_decisions": 0,
+      "accepted_recovery_decisions": 0,
+      "rejected_recovery_decisions": 0,
+      "rejected_recovery_evidence": [],
+      "semantic_recovery_decisions": 0,
+      "semantic_recovery_goal_changes": 0,
+      "recovery_evidence": [],
+      "feedback_clear_decisions": 0,
+      "actual_model_request_prompts_verified": true,
+      "source_predictions_and_native_acks_equal": true
+    },
+    {
+      "case_id": "put_bottles_into_dustbin__standard__g0__l0",
+      "status": "native_completed",
+      "termination": "native_terminal",
+      "native_steps": 677,
+      "native_score": 1.0,
+      "success": true,
+      "error": null,
+      "journal_checks": {
+        "journal": {
+          "events": 772,
+          "head_sha256": "590b9f9b1234b51c6da1c6dbc75a8ba2d56823a36288337edd3f444763be2a97"
+        },
+        "actual_control_acks": 677,
+        "policy_proposals": 43,
+        "semantic_epochs_seen_by_motor": [
+          0
+        ],
+        "distinct_effective_prompts": 1,
+        "prefix_cadence_verified": true,
+        "complete_native_result": true,
+        "evidence_kind": "native_unqualified",
+        "robot_competence_claim": false
+      },
+      "planner_requests": 7,
+      "motor_predictions_checked": 43,
+      "issued_recovery_decisions": 0,
+      "accepted_recovery_decisions": 0,
+      "rejected_recovery_decisions": 0,
+      "rejected_recovery_evidence": [],
+      "semantic_recovery_decisions": 0,
+      "semantic_recovery_goal_changes": 0,
+      "recovery_evidence": [],
+      "feedback_clear_decisions": 0,
+      "actual_model_request_prompts_verified": true,
+      "source_predictions_and_native_acks_equal": true
+    }
+  ],
+  "native_actions": 8238,
+  "semantic_calls": 78,
+  "native_terminal_cases": 10,
+  "episodes_with_motor_prompt_evidence": 10,
+  "issued_recovery_decisions": 3,
+  "accepted_recovery_decisions": 3,
+  "rejected_recovery_decisions": 0,
+  "accepted_recovery_goal_changes": 3,
+  "successes": 5,
+  "missing_native_scores": 0
+}

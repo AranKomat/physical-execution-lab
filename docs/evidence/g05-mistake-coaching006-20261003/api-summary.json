@@ -1,0 +1,27 @@
+{
+  "attempts": 79,
+  "cost_usd": "0.57825750",
+  "no_automatic_retry": false,
+  "generic_retry_enabled": false,
+  "authorized_retry_exception": "same_model_standard_after_explicit_flex_capacity",
+  "requested_model": "openai/gpt-6.1-sol",
+  "provider": {
+    "only": [
+      "openai"
+    ],
+    "allow_fallbacks": false,
+    "require_parameters": true,
+    "max_price": {
+      "prompt": 3,
+      "completion": 12
+    }
+  },
+  "service_tier": "default",
+  "allow_standard_fallback": true,
+  "standard_active": true,
+  "flex_capacity_holds": {
+    "g05-full-panel-mistake-coaching006-61": "0.0701385"
+  },
+  "charged_with_local_holds_usd": "0.64839600",
+  "tool_name": "semantic_goal"
+}

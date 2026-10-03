@@ -2,6 +2,19 @@
 
 ## Current V5 Status (2026-10-03)
 
+Fresh coaching006 completed after the owner's API credit top-up:5/10 successes,
+mean0.605 versus baseline5/10,0.620. All ten native scores,8,238 audited actions,
+three correction changes, zero feedback clears/no observed correction completion.
+All five uncoached baseline successes retained; no failed task rescued. Complete
+local hash-verified backup, independent audit and ten-task visual review passed.
+GPT-6.1 Sol/medium:61 successful Flex calls then17 authorized Standard calls,
+$0.57825750 settled plus retained$0.0701385 capacity hold. GPUs idle. Setup004
+made no actions/reservations; credit-blocked005 retained4,158 actions and two
+uncoached successes, eight unknown native scores. Audit/local backup passed;
+no valid2/10 SR or full-ten mean. Existing and new holds remain fully charged.
+No observed coaching gain; this is an opened panel, not official SR/untouched
+Phase E. See [the fresh-run record](semantic/G05_COACHING_FRESH_RUN_20261003.md).
+
 Semantic language supervision is the active priority; the V4 table below is
 historical. Pi0.5 remains the motor for the completed approach screen. The owner
 now requested a separate G0.5 original-only versus sparse GPT-6 subtask screen;

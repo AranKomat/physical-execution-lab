@@ -163,16 +163,27 @@ condition, not a proof that all language is ignored, G0.5 cannot manipulate, or
 every mistake originates in the motor. Planner staging, grounding, incomplete
 temporal evidence and the checkpoint's conditioning distribution remain factors.
 
-## Proposed Next Condition: Mistake-Only Coaching
+## Completed Mistake-Only Coaching
 
 The owner proposed letting G0.5 perform its own task and supplying feedback only
 when a visible mistake occurs. This is a useful separate condition, not another
-name for continuous subtask-only steering. It is now prepared/frozen and launched
-under a separate [active checklist](G05_MISTAKE_ONLY_COACHING_20261003.md).
-Coaching003 was transport-censored: six scores (three successes/three failures),
-four unknowns, six correction changes and no observed completed correction.
-Full backup/partial trace audit/visual review are retained; there is no completed
-full-ten coaching comparison. Keep the original instruction; add a short temporary corrective note
+name for continuous subtask-only steering. Fresh006 completed all ten native
+episodes:5/10 successes, mean0.605 versus baseline5/10,0.620. All five baseline
+successes were retained without coaching; no failed task was rescued and no
+task score improved. Three correction goal changes, no feedback clears or
+verified completed correction. Native prompt/token/prefix/ACK audit and local
+hash-verified backup/independent audit passed. All ten retained-input task sheets
+were inspected.61 successful GPT-6.1 Sol/medium/Flex calls plus17 authorized
+same-model Standard calls after capacity rejection cost$0.57825750, with the
+$0.0701385 capacity hold retained. Opened single-attempt screen, not official SR,
+untouched-task generalization or a causal language test.
+
+Coaching003 remains transport-censored (six scores/four unknown), and005 remains
+credit-censored (two scores/eight unknown); do not merge either into006's result.
+See [the completed fresh-run report](G05_COACHING_FRESH_RUN_20261003.md) and
+[the implementation checklist](G05_MISTAKE_ONLY_COACHING_20261003.md).
+
+The tested condition keeps the original instruction and adds a short temporary corrective note
 only for an original-task violation, lost grasp, repeated failed placement or
 clear stall. Do not call another valid stage a mistake merely because GPT
 preferred a different stage order. Avoid unnecessary arm/trajectory prescriptions.
@@ -259,7 +270,7 @@ uses Python3.10.18 versus the earlier3.10.19; package versions were retained.
 - [x] Complete and audit the subtask/recovery candidate; retain stops/errors.
 - [x] Back up candidate evidence and inspect all actual goal epochs.
 - [x] Report paired task scores, coverage/bounds, latency, calls/cost and failures.
-- [x] Prioritize an independently frozen mistake-only coaching test before any
-  target-grounding/native-reasoning expansion; no new cohort launched yet.
+- [x] Complete, audit, back up and inspect independently frozen mistake-only
+  coaching006; preserve the earlier censored attempts and their holds separately.
 - [ ] Untouched tasks, replication, second backend, causal matched-state
   steering and asynchronous execution remain unfinished.

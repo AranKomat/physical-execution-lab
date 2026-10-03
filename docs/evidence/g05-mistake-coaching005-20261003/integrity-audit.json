@@ -1,0 +1,402 @@
+{
+  "integrity_passed": true,
+  "benchmark_qualified": false,
+  "prompt_mode": "task_plus_correction",
+  "policy": "g05",
+  "returned_horizon": 16,
+  "executed_prefix": 16,
+  "semantic_recovery_enabled": true,
+  "mistake_only_coaching": true,
+  "scope": "all-ten admission, prompt boundary, prefix cadence, source predictions and native ACK integrity",
+  "raw_parent_report_sha256": "1608d71ebb85e3e79abef4287ed8f8458b3fc0e7368389c23ee593bf6a2ab8ec",
+  "rows": [
+    {
+      "case_id": "arrange_largest_number__standard__g0__l0",
+      "status": "infrastructure_or_contract_error",
+      "termination": "TransportUncertain",
+      "native_steps": 448,
+      "native_score": null,
+      "success": false,
+      "error": "model request failed: HTTPStatusError; inspect archive; no automatic retry",
+      "journal_checks": {
+        "journal": {
+          "events": 511,
+          "head_sha256": "d6abc307339314e856b09fcd0b118e2d26c4d62e6f196e7012835179300ec117"
+        },
+        "actual_control_acks": 448,
+        "policy_proposals": 28,
+        "semantic_epochs_seen_by_motor": [
+          0
+        ],
+        "distinct_effective_prompts": 1,
+        "prefix_cadence_verified": true,
+        "complete_native_result": false,
+        "evidence_kind": "native_unqualified",
+        "robot_competence_claim": false
+      },
+      "planner_requests": 5,
+      "motor_predictions_checked": 28,
+      "issued_recovery_decisions": 0,
+      "accepted_recovery_decisions": 0,
+      "rejected_recovery_decisions": 0,
+      "rejected_recovery_evidence": [],
+      "semantic_recovery_decisions": 0,
+      "semantic_recovery_goal_changes": 0,
+      "recovery_evidence": [],
+      "feedback_clear_decisions": 0,
+      "actual_model_request_prompts_verified": true,
+      "source_predictions_and_native_acks_equal": true
+    },
+    {
+      "case_id": "build_tower__standard__g0__l0",
+      "status": "infrastructure_or_contract_error",
+      "termination": "TransportUncertain",
+      "native_steps": 448,
+      "native_score": null,
+      "success": false,
+      "error": "model request failed: HTTPStatusError; inspect archive; no automatic retry",
+      "journal_checks": {
+        "journal": {
+          "events": 511,
+          "head_sha256": "e4fc8c68c3c6098bc96f601fc4d00edaff7bb044062088f1c0251f925bb043d5"
+        },
+        "actual_control_acks": 448,
+        "policy_proposals": 28,
+        "semantic_epochs_seen_by_motor": [
+          0
+        ],
+        "distinct_effective_prompts": 1,
+        "prefix_cadence_verified": true,
+        "complete_native_result": false,
+        "evidence_kind": "native_unqualified",
+        "robot_competence_claim": false
+      },
+      "planner_requests": 5,
+      "motor_predictions_checked": 28,
+      "issued_recovery_decisions": 0,
+      "accepted_recovery_decisions": 0,
+      "rejected_recovery_decisions": 0,
+      "rejected_recovery_evidence": [],
+      "semantic_recovery_decisions": 0,
+      "semantic_recovery_goal_changes": 0,
+      "recovery_evidence": [],
+      "feedback_clear_decisions": 0,
+      "actual_model_request_prompts_verified": true,
+      "source_predictions_and_native_acks_equal": true
+    },
+    {
+      "case_id": "classify_objects_by_language__standard__g0__l0",
+      "status": "infrastructure_or_contract_error",
+      "termination": "TransportUncertain",
+      "native_steps": 448,
+      "native_score": null,
+      "success": false,
+      "error": "model request failed: HTTPStatusError; inspect archive; no automatic retry",
+      "journal_checks": {
+        "journal": {
+          "events": 511,
+          "head_sha256": "926b4d39db01cc4ba2038cd4a7b4c0eca0600e9e47c595970b9f3107e170af5c"
+        },
+        "actual_control_acks": 448,
+        "policy_proposals": 28,
+        "semantic_epochs_seen_by_motor": [
+          0,
+          1
+        ],
+        "distinct_effective_prompts": 2,
+        "prefix_cadence_verified": true,
+        "complete_native_result": false,
+        "evidence_kind": "native_unqualified",
+        "robot_competence_claim": false
+      },
+      "planner_requests": 5,
+      "motor_predictions_checked": 28,
+      "issued_recovery_decisions": 1,
+      "accepted_recovery_decisions": 1,
+      "rejected_recovery_decisions": 0,
+      "rejected_recovery_evidence": [],
+      "semantic_recovery_decisions": 1,
+      "semantic_recovery_goal_changes": 1,
+      "recovery_evidence": [
+        {
+          "step": 224,
+          "subtask": "Move the watch from the left basket into the middle basket.",
+          "changed": true,
+          "evidence": "At step 224 the overhead RGB shows a black/gray watch inside the left white basket beside the yellow car, violating the required watch-to-middle-basket relation. The other watch and green car remain on the table. A wooden toy is visible between the left gripper fingers near the middle basket; it is not visibly released, so no wrong placement of that toy is claimed."
+        }
+      ],
+      "feedback_clear_decisions": 0,
+      "actual_model_request_prompts_verified": true,
+      "source_predictions_and_native_acks_equal": true
+    },
+    {
+      "case_id": "fold_clothes__standard__g0__l0",
+      "status": "native_completed",
+      "termination": "native_terminal",
+      "native_steps": 298,
+      "native_score": 1.0,
+      "success": true,
+      "error": null,
+      "journal_checks": {
+        "journal": {
+          "events": 341,
+          "head_sha256": "ab5fab25a19bb2d527583cdbc956db129c01b82729c0b4996b58131e9b5cdce6"
+        },
+        "actual_control_acks": 298,
+        "policy_proposals": 19,
+        "semantic_epochs_seen_by_motor": [
+          0
+        ],
+        "distinct_effective_prompts": 1,
+        "prefix_cadence_verified": true,
+        "complete_native_result": true,
+        "evidence_kind": "native_unqualified",
+        "robot_competence_claim": false
+      },
+      "planner_requests": 3,
+      "motor_predictions_checked": 19,
+      "issued_recovery_decisions": 0,
+      "accepted_recovery_decisions": 0,
+      "rejected_recovery_decisions": 0,
+      "rejected_recovery_evidence": [],
+      "semantic_recovery_decisions": 0,
+      "semantic_recovery_goal_changes": 0,
+      "recovery_evidence": [],
+      "feedback_clear_decisions": 0,
+      "actual_model_request_prompts_verified": true,
+      "source_predictions_and_native_acks_equal": true
+    },
+    {
+      "case_id": "imitate_sorting_sequence__standard__g0__l0",
+      "status": "infrastructure_or_contract_error",
+      "termination": "TransportUncertain",
+      "native_steps": 448,
+      "native_score": null,
+      "success": false,
+      "error": "model request failed: HTTPStatusError; inspect archive; no automatic retry",
+      "journal_checks": {
+        "journal": {
+          "events": 511,
+          "head_sha256": "5bf4dbb1eda3619fc03cbdef4c4e6ad0a0a7bbae3dcd2b9b4003bc9e0c0ad0af"
+        },
+        "actual_control_acks": 448,
+        "policy_proposals": 28,
+        "semantic_epochs_seen_by_motor": [
+          0
+        ],
+        "distinct_effective_prompts": 1,
+        "prefix_cadence_verified": true,
+        "complete_native_result": false,
+        "evidence_kind": "native_unqualified",
+        "robot_competence_claim": false
+      },
+      "planner_requests": 5,
+      "motor_predictions_checked": 28,
+      "issued_recovery_decisions": 0,
+      "accepted_recovery_decisions": 0,
+      "rejected_recovery_decisions": 0,
+      "rejected_recovery_evidence": [],
+      "semantic_recovery_decisions": 0,
+      "semantic_recovery_goal_changes": 0,
+      "recovery_evidence": [],
+      "feedback_clear_decisions": 0,
+      "actual_model_request_prompts_verified": true,
+      "source_predictions_and_native_acks_equal": true
+    },
+    {
+      "case_id": "make_kong__standard__g0__l0",
+      "status": "native_completed",
+      "termination": "native_terminal",
+      "native_steps": 388,
+      "native_score": 1.0,
+      "success": true,
+      "error": null,
+      "journal_checks": {
+        "journal": {
+          "events": 444,
+          "head_sha256": "a13ec404b0e0e5acf31d30f48cb928ba7cb0f9baa88d645aef30894b788da955"
+        },
+        "actual_control_acks": 388,
+        "policy_proposals": 25,
+        "semantic_epochs_seen_by_motor": [
+          0
+        ],
+        "distinct_effective_prompts": 1,
+        "prefix_cadence_verified": true,
+        "complete_native_result": true,
+        "evidence_kind": "native_unqualified",
+        "robot_competence_claim": false
+      },
+      "planner_requests": 4,
+      "motor_predictions_checked": 25,
+      "issued_recovery_decisions": 0,
+      "accepted_recovery_decisions": 0,
+      "rejected_recovery_decisions": 0,
+      "rejected_recovery_evidence": [],
+      "semantic_recovery_decisions": 0,
+      "semantic_recovery_goal_changes": 0,
+      "recovery_evidence": [],
+      "feedback_clear_decisions": 0,
+      "actual_model_request_prompts_verified": true,
+      "source_predictions_and_native_acks_equal": true
+    },
+    {
+      "case_id": "classify_objects__standard__g0__l0",
+      "status": "infrastructure_or_contract_error",
+      "termination": "TransportUncertain",
+      "native_steps": 448,
+      "native_score": null,
+      "success": false,
+      "error": "model request failed: HTTPStatusError; inspect archive; no automatic retry",
+      "journal_checks": {
+        "journal": {
+          "events": 511,
+          "head_sha256": "4cb5234dd8d5d059655830259172fb87aa8ea7638501e36748e5c9dbeca30511"
+        },
+        "actual_control_acks": 448,
+        "policy_proposals": 28,
+        "semantic_epochs_seen_by_motor": [
+          0
+        ],
+        "distinct_effective_prompts": 1,
+        "prefix_cadence_verified": true,
+        "complete_native_result": false,
+        "evidence_kind": "native_unqualified",
+        "robot_competence_claim": false
+      },
+      "planner_requests": 5,
+      "motor_predictions_checked": 28,
+      "issued_recovery_decisions": 0,
+      "accepted_recovery_decisions": 0,
+      "rejected_recovery_decisions": 0,
+      "rejected_recovery_evidence": [],
+      "semantic_recovery_decisions": 0,
+      "semantic_recovery_goal_changes": 0,
+      "recovery_evidence": [],
+      "feedback_clear_decisions": 0,
+      "actual_model_request_prompts_verified": true,
+      "source_predictions_and_native_acks_equal": true
+    },
+    {
+      "case_id": "organize_table__standard__g0__l0",
+      "status": "infrastructure_or_contract_error",
+      "termination": "TransportUncertain",
+      "native_steps": 448,
+      "native_score": null,
+      "success": false,
+      "error": "model request failed: HTTPStatusError; inspect archive; no automatic retry",
+      "journal_checks": {
+        "journal": {
+          "events": 511,
+          "head_sha256": "8470a1c8da82c68e381cd505de84a6358ac30b2b8923ed82a019ec82f837f715"
+        },
+        "actual_control_acks": 448,
+        "policy_proposals": 28,
+        "semantic_epochs_seen_by_motor": [
+          0
+        ],
+        "distinct_effective_prompts": 1,
+        "prefix_cadence_verified": true,
+        "complete_native_result": false,
+        "evidence_kind": "native_unqualified",
+        "robot_competence_claim": false
+      },
+      "planner_requests": 5,
+      "motor_predictions_checked": 28,
+      "issued_recovery_decisions": 0,
+      "accepted_recovery_decisions": 0,
+      "rejected_recovery_decisions": 0,
+      "rejected_recovery_evidence": [],
+      "semantic_recovery_decisions": 0,
+      "semantic_recovery_goal_changes": 0,
+      "recovery_evidence": [],
+      "feedback_clear_decisions": 0,
+      "actual_model_request_prompts_verified": true,
+      "source_predictions_and_native_acks_equal": true
+    },
+    {
+      "case_id": "pack_objects_into_box__standard__g0__l0",
+      "status": "infrastructure_or_contract_error",
+      "termination": "TransportUncertain",
+      "native_steps": 448,
+      "native_score": null,
+      "success": false,
+      "error": "model request failed: HTTPStatusError; inspect archive; no automatic retry",
+      "journal_checks": {
+        "journal": {
+          "events": 511,
+          "head_sha256": "8853ed6e5ac31de38e3ace9b204f0ea583c522ba9d3a7bfa8d8abda765e20542"
+        },
+        "actual_control_acks": 448,
+        "policy_proposals": 28,
+        "semantic_epochs_seen_by_motor": [
+          0
+        ],
+        "distinct_effective_prompts": 1,
+        "prefix_cadence_verified": true,
+        "complete_native_result": false,
+        "evidence_kind": "native_unqualified",
+        "robot_competence_claim": false
+      },
+      "planner_requests": 5,
+      "motor_predictions_checked": 28,
+      "issued_recovery_decisions": 0,
+      "accepted_recovery_decisions": 0,
+      "rejected_recovery_decisions": 0,
+      "rejected_recovery_evidence": [],
+      "semantic_recovery_decisions": 0,
+      "semantic_recovery_goal_changes": 0,
+      "recovery_evidence": [],
+      "feedback_clear_decisions": 0,
+      "actual_model_request_prompts_verified": true,
+      "source_predictions_and_native_acks_equal": true
+    },
+    {
+      "case_id": "put_bottles_into_dustbin__standard__g0__l0",
+      "status": "infrastructure_or_contract_error",
+      "termination": "TransportUncertain",
+      "native_steps": 336,
+      "native_score": null,
+      "success": false,
+      "error": "model request failed: HTTPStatusError; inspect archive; no automatic retry",
+      "journal_checks": {
+        "journal": {
+          "events": 384,
+          "head_sha256": "492369976f9448b668dd8e4e54bee8e7cfe700acc3ac1977ab34b416defacad1"
+        },
+        "actual_control_acks": 336,
+        "policy_proposals": 21,
+        "semantic_epochs_seen_by_motor": [
+          0
+        ],
+        "distinct_effective_prompts": 1,
+        "prefix_cadence_verified": true,
+        "complete_native_result": false,
+        "evidence_kind": "native_unqualified",
+        "robot_competence_claim": false
+      },
+      "planner_requests": 4,
+      "motor_predictions_checked": 21,
+      "issued_recovery_decisions": 0,
+      "accepted_recovery_decisions": 0,
+      "rejected_recovery_decisions": 0,
+      "rejected_recovery_evidence": [],
+      "semantic_recovery_decisions": 0,
+      "semantic_recovery_goal_changes": 0,
+      "recovery_evidence": [],
+      "feedback_clear_decisions": 0,
+      "actual_model_request_prompts_verified": true,
+      "source_predictions_and_native_acks_equal": true
+    }
+  ],
+  "native_actions": 4158,
+  "semantic_calls": 46,
+  "native_terminal_cases": 2,
+  "episodes_with_motor_prompt_evidence": 10,
+  "issued_recovery_decisions": 1,
+  "accepted_recovery_decisions": 1,
+  "rejected_recovery_decisions": 0,
+  "accepted_recovery_goal_changes": 1,
+  "successes": 2,
+  "missing_native_scores": 8
+}

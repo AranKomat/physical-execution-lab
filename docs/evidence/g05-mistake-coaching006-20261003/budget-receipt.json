@@ -1,0 +1,22 @@
+{
+  "scope": "authoritative local reservation ledger; all historical holds retained",
+  "run": "g05-full-panel-mistake-coaching006",
+  "requested_model": "openai/gpt-6.1-sol",
+  "reasoning_effort": "medium",
+  "reservations": 79,
+  "settlements": 78,
+  "successful_flex_calls": 61,
+  "successful_standard_calls": 17,
+  "settled_cost_usd": "0.57825750",
+  "holds": {
+    "g05-full-panel-mistake-coaching006-61": "0.0701385"
+  },
+  "charged_including_holds_usd": "0.64839600",
+  "shared_reservations_after_run": 5771,
+  "shared_charged_including_holds_usd": "88.789483994300",
+  "shared_ceiling_usd": "95",
+  "shared_remaining_usd": "6.210516005700",
+  "cohort_cap_usd": "3",
+  "fallback": "same model Standard after explicit no-output Flex capacity rejection",
+  "failed_request_or_scored_episode_replayed": false
+}

@@ -1,0 +1,23 @@
+{
+  "scope": "retained authoritative local ledger; no credentials or provider user identifier",
+  "run": "g05-full-panel-mistake-coaching005",
+  "reservations": 40,
+  "settlements": 38,
+  "settled_cost_usd": "0.37541525",
+  "holds": {
+    "g05-full-panel-mistake-coaching005-2": "0.0435855",
+    "g05-full-panel-mistake-coaching005-39": "0.1355760"
+  },
+  "charged_including_holds_usd": "0.55457675",
+  "shared_reservations_after_run": 5692,
+  "shared_charged_including_holds_usd": "88.141087994300",
+  "shared_ceiling_usd": "95",
+  "shared_remaining_usd": "6.858912005700",
+  "failure_http_status": 402,
+  "failure_reason": "in_flight_budget_exhausted",
+  "account_balance_checked": true,
+  "account_balance_before_top_up_usd": "-0.024174696",
+  "owner_replenished_credits_before_fresh006": true,
+  "same_episode_or_failed_request_retried": false,
+  "api_summary_attempts_is_stale_after_failed40th_reservation": true
+}

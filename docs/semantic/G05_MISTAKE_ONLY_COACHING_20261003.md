@@ -29,6 +29,15 @@ hidden state or evaluator scores are supplied to the actor.
 
 ## Checklist
 
+The owner requested fresh runs after003. Setup004 stopped before actions/calls;
+scored005 stopped at account-credit HTTP402 with two native successes/eight
+unknown scores. It is backed up/audited, not2/10 SR. After the owner topped up,
+fresh006 completed under the unchanged condition:5/10 successes, mean0.605,
+all ten native scores,8,238 audited actions. All five baseline-successful tasks
+retained without coaching; three correction changes did not rescue a failure.
+Full local backup/independent audit and visual review passed. Track
+[its separate pre-outcome plan and receipts](G05_COACHING_FRESH_RUN_20261003.md).
+
 - [x] Implement explicit correction prompt mode and observed-failure/clear gates.
 - [x] Preserve legacy planner schema and default state behavior.
 - [x] CPU verification:477 passed, including no-error action-stream parity and
@@ -40,7 +49,8 @@ hidden state or evaluator scores are supplied to the actor.
   and new source freeze before outcomes. Preserve all historical freezes.
 - [x] Launch all ten distinct tasks concurrently; scored003 was transport-censored,
   not restarted or replayed.
-- [ ] Complete the full-ten coaching comparison; four native scores are missing.
+- [x] Complete the full-ten coaching comparison in fresh006; preserve003's four
+  missing scores and005's eight unknown scores as separate censored attempts.
 - [x] Audit retained model prompts, decision gates, prediction prefixes and ACKs;
   partial-trace integrity is not proof of a completed comparison.
 - [x] Hash-verify a complete local evidence backup and independently rerun audit.
