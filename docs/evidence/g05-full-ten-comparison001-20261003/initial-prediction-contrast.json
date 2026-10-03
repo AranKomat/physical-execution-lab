@@ -1,0 +1,95 @@
+{
+  "scope": "retained inputs/predictions only; not causal language intervention",
+  "rows": [
+    {
+      "group": "group0",
+      "env_idx": 0,
+      "prompt_changed": true,
+      "images_equal": false,
+      "state_max_error": 0.0,
+      "prediction_equal": false,
+      "action_max_error": 0.14003834128379822
+    },
+    {
+      "group": "group0",
+      "env_idx": 1,
+      "prompt_changed": true,
+      "images_equal": false,
+      "state_max_error": 0.0,
+      "prediction_equal": false,
+      "action_max_error": 0.01675574481487274
+    },
+    {
+      "group": "group0",
+      "env_idx": 2,
+      "prompt_changed": true,
+      "images_equal": false,
+      "state_max_error": 0.0,
+      "prediction_equal": false,
+      "action_max_error": 0.04539710283279419
+    },
+    {
+      "group": "group0",
+      "env_idx": 3,
+      "prompt_changed": true,
+      "images_equal": false,
+      "state_max_error": 0.0,
+      "prediction_equal": false,
+      "action_max_error": 0.03125494718551636
+    },
+    {
+      "group": "group1",
+      "env_idx": 0,
+      "prompt_changed": false,
+      "images_equal": false,
+      "state_max_error": 0.0,
+      "prediction_equal": false,
+      "action_max_error": 0.0013644193531945348
+    },
+    {
+      "group": "group1",
+      "env_idx": 1,
+      "prompt_changed": true,
+      "images_equal": false,
+      "state_max_error": 0.0,
+      "prediction_equal": false,
+      "action_max_error": 0.0010624541901051998
+    },
+    {
+      "group": "group2",
+      "env_idx": 0,
+      "prompt_changed": true,
+      "images_equal": false,
+      "state_max_error": 0.0,
+      "prediction_equal": false,
+      "action_max_error": 0.05378192663192749
+    },
+    {
+      "group": "group2",
+      "env_idx": 1,
+      "prompt_changed": true,
+      "images_equal": false,
+      "state_max_error": 0.0,
+      "prediction_equal": false,
+      "action_max_error": 0.06874215602874756
+    },
+    {
+      "group": "group2",
+      "env_idx": 2,
+      "prompt_changed": true,
+      "images_equal": false,
+      "state_max_error": 0.0,
+      "prediction_equal": false,
+      "action_max_error": 0.0830996111035347
+    },
+    {
+      "group": "group2",
+      "env_idx": 3,
+      "prompt_changed": true,
+      "images_equal": false,
+      "state_max_error": 0.0,
+      "prediction_equal": false,
+      "action_max_error": 0.06674150377511978
+    }
+  ]
+}

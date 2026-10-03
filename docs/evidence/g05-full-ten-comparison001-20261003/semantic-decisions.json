@@ -1,0 +1,2825 @@
+{
+  "rows": [
+    {
+      "case_id": "arrange_largest_number__standard__g0__l0",
+      "decisions": [
+        {
+          "decision": {
+            "assessment": "not_started",
+            "based_on_stamp": "720b002037985b889868ee7e592c69240a0590840d6108a593b0a8ed27f83c0e",
+            "based_on_step": 0,
+            "completed_claims": [],
+            "episode": "2bb9f2021eec485f91cccb941740d8f5",
+            "evidence": "Step 0 shows blue digits 0, 7, 8, and 2 on the table and four empty circular pads in a horizontal row. The largest ordering is 8720; the 8 is on the left side near the left gripper.",
+            "expected_epoch": 0,
+            "operation": "set_subtask",
+            "subtask": "Place the blue 8 on the leftmost circular pad using the left arm.",
+            "uncertain_or_invalidated": []
+          },
+          "effect": {
+            "age_steps": 0,
+            "changed": true,
+            "shadow_only": false,
+            "stop": false
+          },
+          "native_evaluator_information_supplied": false,
+          "reasons": [
+            "initial_semantic_goal"
+          ],
+          "step": 0
+        },
+        {
+          "decision": {
+            "assessment": "complete",
+            "based_on_stamp": "e4d8abb6471f130eb556da075971bff77e6e91acd1cbe319aa338b4904002408",
+            "based_on_step": 112,
+            "completed_claims": [
+              {
+                "evidence_steps": [
+                  112
+                ],
+                "text": "The blue 8 is on the leftmost circular pad, near its upper edge."
+              }
+            ],
+            "episode": "2bb9f2021eec485f91cccb941740d8f5",
+            "evidence": "At step 112, the high camera shows the blue 8 resting at the upper edge of the leftmost circular pad, separate from the left gripper. The other three pads are empty. The left wrist view shows the blue 7 still on the table between the gripper fingers.",
+            "expected_epoch": 1,
+            "operation": "set_subtask",
+            "subtask": "Place the blue 7 on the second circular pad from the left using the left arm.",
+            "uncertain_or_invalidated": []
+          },
+          "effect": {
+            "age_steps": 0,
+            "changed": true,
+            "shadow_only": false,
+            "stop": false
+          },
+          "native_evaluator_information_supplied": false,
+          "reasons": [
+            "periodic_semantic_check_at_native_boundary"
+          ],
+          "step": 112
+        },
+        {
+          "decision": {
+            "assessment": "complete",
+            "based_on_stamp": "8d378228d4a0542e8f3d766f37ca0421394ce3dd6573cd87ffff341800727099",
+            "based_on_step": 224,
+            "completed_claims": [
+              {
+                "evidence_steps": [
+                  112,
+                  224
+                ],
+                "text": "The blue 8 is on the leftmost circular pad, near its upper edge."
+              },
+              {
+                "evidence_steps": [
+                  224
+                ],
+                "text": "The blue 7 is on the second circular pad from the left."
+              }
+            ],
+            "episode": "2bb9f2021eec485f91cccb941740d8f5",
+            "evidence": "At step 224, the high camera shows the blue 7 resting on the second circular pad, separate from the left gripper. The blue 8 remains on the leftmost pad. The third and fourth pads are empty. The blue 2 is beside the right gripper on the table and visible between its fingers in the right wrist view; holding it is not verified.",
+            "expected_epoch": 2,
+            "operation": "set_subtask",
+            "subtask": "Place the blue 2 on the third circular pad from the left using the right arm.",
+            "uncertain_or_invalidated": []
+          },
+          "effect": {
+            "age_steps": 0,
+            "changed": true,
+            "shadow_only": false,
+            "stop": false
+          },
+          "native_evaluator_information_supplied": false,
+          "reasons": [
+            "periodic_semantic_check_at_native_boundary"
+          ],
+          "step": 224
+        },
+        {
+          "decision": {
+            "assessment": "uncertain",
+            "based_on_stamp": "74c83a53d35d87e9b899ec4d565e8069f6619e5fbe20de322d10055c439897ce",
+            "based_on_step": 336,
+            "completed_claims": [
+              {
+                "evidence_steps": [
+                  112,
+                  224
+                ],
+                "text": "The blue 8 is on the leftmost circular pad, near its upper edge."
+              },
+              {
+                "evidence_steps": [
+                  224
+                ],
+                "text": "The blue 7 is on the second circular pad from the left."
+              }
+            ],
+            "episode": "2bb9f2021eec485f91cccb941740d8f5",
+            "evidence": "At step 336, the high camera shows the blue 2 still on the table to the right of the pads; the third and fourth pads are empty. The right gripper is separate from the 2, so grasping or placement is not verified. The left wrist shows the blue 0 between the fingers, but holding it is not established. The left arm obscures the previously placed 8 and 7.",
+            "expected_epoch": 3,
+            "operation": "continue",
+            "subtask": "",
+            "uncertain_or_invalidated": [
+              "The current positions of the previously placed 8 and 7 are obscured at step 336.",
+              "No placement of the blue 2 on the third pad is verified at step 336."
+            ]
+          },
+          "effect": {
+            "age_steps": 0,
+            "changed": false,
+            "shadow_only": false,
+            "stop": false
+          },
+          "native_evaluator_information_supplied": false,
+          "reasons": [
+            "periodic_semantic_check_at_native_boundary"
+          ],
+          "step": 336
+        },
+        {
+          "decision": {
+            "assessment": "progressing",
+            "based_on_stamp": "99e1ab03668ee8522fdf87802ce92ea3fbbe4c91d4f30d7399fa950bdd978bcd",
+            "based_on_step": 448,
+            "completed_claims": [
+              {
+                "evidence_steps": [
+                  112,
+                  224,
+                  448
+                ],
+                "text": "The blue 8 is on the leftmost circular pad, near its upper edge."
+              },
+              {
+                "evidence_steps": [
+                  224,
+                  448
+                ],
+                "text": "The blue 7 is on the second circular pad from the left."
+              }
+            ],
+            "episode": "2bb9f2021eec485f91cccb941740d8f5",
+            "evidence": "At step 448, the blue 2 is visible between the right gripper fingers above the upper edge of the third circular pad, rather than at its previous table location. The right wrist view confirms the digit at the pad, but release and resting placement are not verified. The high view shows the 8 and 7 on the first two pads, the fourth pad empty, and the 0 on the table in front of the pads.",
+            "expected_epoch": 3,
+            "operation": "continue",
+            "subtask": "",
+            "uncertain_or_invalidated": [
+              "Placement and release of the blue 2 on the third pad remain unverified at step 448."
+            ]
+          },
+          "effect": {
+            "age_steps": 0,
+            "changed": false,
+            "shadow_only": false,
+            "stop": false
+          },
+          "native_evaluator_information_supplied": false,
+          "reasons": [
+            "periodic_semantic_check_at_native_boundary"
+          ],
+          "step": 448
+        },
+        {
+          "decision": {
+            "assessment": "failed",
+            "based_on_stamp": "a693914f1c4298b1db7f620e780d5a86c2d41b8c7382d94192b510703e27b30a",
+            "based_on_step": 560,
+            "completed_claims": [
+              {
+                "evidence_steps": [
+                  112,
+                  224,
+                  448,
+                  560
+                ],
+                "text": "The blue 8 is on the leftmost circular pad, near its upper edge."
+              },
+              {
+                "evidence_steps": [
+                  224,
+                  448,
+                  560
+                ],
+                "text": "The blue 7 is on the second circular pad from the left."
+              },
+              {
+                "evidence_steps": [
+                  560
+                ],
+                "text": "The blue 0 is on the fourth circular pad from the left."
+              }
+            ],
+            "episode": "2bb9f2021eec485f91cccb941740d8f5",
+            "evidence": "At step 560, both the high and right wrist views show the blue 2 resting on the table behind the third pad, which is empty, and separate from the right gripper. The attempted placement did not leave the 2 on its pad. The 8 and 7 remain on the first two pads, and the 0 is now resting on the fourth pad.",
+            "expected_epoch": 3,
+            "operation": "recover",
+            "subtask": "Place the blue 2 from the table behind the third circular pad onto the center of that pad using the right arm.",
+            "uncertain_or_invalidated": [
+              "The blue 2 was not successfully placed on the third pad; at step 560 it rests on the table behind the empty pad."
+            ]
+          },
+          "effect": {
+            "age_steps": 0,
+            "changed": true,
+            "shadow_only": false,
+            "stop": false
+          },
+          "native_evaluator_information_supplied": false,
+          "reasons": [
+            "periodic_semantic_check_at_native_boundary"
+          ],
+          "step": 560
+        },
+        {
+          "decision": {
+            "assessment": "uncertain",
+            "based_on_stamp": "294d341a15c89d156f73efed515a33ef1b0a50e1da4c8bb3ea7a5bffc39b89fa",
+            "based_on_step": 672,
+            "completed_claims": [
+              {
+                "evidence_steps": [
+                  112,
+                  224,
+                  448,
+                  560,
+                  672
+                ],
+                "text": "The blue 8 is on the leftmost circular pad, near its upper edge."
+              },
+              {
+                "evidence_steps": [
+                  224,
+                  448,
+                  560,
+                  672
+                ],
+                "text": "The blue 7 is on the second circular pad from the left."
+              },
+              {
+                "evidence_steps": [
+                  560,
+                  672
+                ],
+                "text": "The blue 0 is on the fourth circular pad from the left."
+              }
+            ],
+            "episode": "2bb9f2021eec485f91cccb941740d8f5",
+            "evidence": "At step 672, the high view shows the blue 2 still on the table behind the empty third pad, separate from both grippers. No grasp or placement is verified since step 560. The blue 8, 7, and 0 remain on the first, second, and fourth pads respectively. Replanning to establish a grasp before placement.",
+            "expected_epoch": 4,
+            "operation": "set_subtask",
+            "subtask": "Grasp the blue 2 on the table behind the third circular pad from the left using the right arm.",
+            "uncertain_or_invalidated": [
+              "At step 672, the blue 2 remains off the third pad; no grasp or placement is verified."
+            ]
+          },
+          "effect": {
+            "age_steps": 0,
+            "changed": true,
+            "shadow_only": false,
+            "stop": false
+          },
+          "native_evaluator_information_supplied": false,
+          "reasons": [
+            "periodic_semantic_check_at_native_boundary"
+          ],
+          "step": 672
+        },
+        {
+          "decision": {
+            "assessment": "uncertain",
+            "based_on_stamp": "fff244a3f94f3529f60cad193f97b37210bcdc4af2c884b8527a93b04044f64b",
+            "based_on_step": 784,
+            "completed_claims": [
+              {
+                "evidence_steps": [
+                  112,
+                  224,
+                  448,
+                  560,
+                  672,
+                  784
+                ],
+                "text": "The blue 8 is on the leftmost circular pad, near its upper edge."
+              },
+              {
+                "evidence_steps": [
+                  224,
+                  448,
+                  560,
+                  672,
+                  784
+                ],
+                "text": "The blue 7 is on the second circular pad from the left."
+              },
+              {
+                "evidence_steps": [
+                  560,
+                  672,
+                  784
+                ],
+                "text": "The blue 0 is on the fourth circular pad from the left."
+              }
+            ],
+            "episode": "2bb9f2021eec485f91cccb941740d8f5",
+            "evidence": "At step 784, the blue 2 remains on the table behind the empty third circular pad, visibly separate from both grippers. The scene appears unchanged from step 672; no grasp is verified. The blue 8, 7, and 0 remain on the first, second, and fourth pads respectively. Retaining the grasp goal because its required state transition has not been observed.",
+            "expected_epoch": 5,
+            "operation": "continue",
+            "subtask": "",
+            "uncertain_or_invalidated": [
+              "At step 784, the blue 2 remains off the third pad; no grasp or placement is verified."
+            ]
+          },
+          "effect": {
+            "age_steps": 0,
+            "changed": false,
+            "shadow_only": false,
+            "stop": false
+          },
+          "native_evaluator_information_supplied": false,
+          "reasons": [
+            "periodic_semantic_check_at_native_boundary"
+          ],
+          "step": 784
+        },
+        {
+          "decision": {
+            "assessment": "uncertain",
+            "based_on_stamp": "b61edb98f2b44761f7c990b334160dc8f5569e978eaacc85309780de09b85d7b",
+            "based_on_step": 896,
+            "completed_claims": [
+              {
+                "evidence_steps": [
+                  112,
+                  224,
+                  448,
+                  560,
+                  672,
+                  784,
+                  896
+                ],
+                "text": "The blue 8 is on the leftmost circular pad, near its upper edge."
+              },
+              {
+                "evidence_steps": [
+                  224,
+                  448,
+                  560,
+                  672,
+                  784,
+                  896
+                ],
+                "text": "The blue 7 is on the second circular pad from the left."
+              },
+              {
+                "evidence_steps": [
+                  560,
+                  672,
+                  784,
+                  896
+                ],
+                "text": "The blue 0 is on the fourth circular pad from the left."
+              }
+            ],
+            "episode": "2bb9f2021eec485f91cccb941740d8f5",
+            "evidence": "At step 896, the high view shows the blue 2 still resting on the table behind the empty third pad, separate from both grippers. The scene appears unchanged from step 784; no grasp is verified. The 8, 7, and 0 remain on the first, second, and fourth pads. Replanning to the observable placement goal after the grasp goal has shown no verified progress since step 672.",
+            "expected_epoch": 5,
+            "operation": "set_subtask",
+            "subtask": "Put the blue 2 on the third circular pad from the left using the right arm.",
+            "uncertain_or_invalidated": [
+              "At step 896, the blue 2 remains off the third pad; no grasp or placement is verified."
+            ]
+          },
+          "effect": {
+            "age_steps": 0,
+            "changed": true,
+            "shadow_only": false,
+            "stop": false
+          },
+          "native_evaluator_information_supplied": false,
+          "reasons": [
+            "periodic_semantic_check_at_native_boundary"
+          ],
+          "step": 896
+        },
+        {
+          "decision": {
+            "assessment": "uncertain",
+            "based_on_stamp": "66ec0d420e96a93b437f1fb6d7656daae6ae0d0b32164c2ccfbe746dc7397803",
+            "based_on_step": 1008,
+            "completed_claims": [
+              {
+                "evidence_steps": [
+                  112,
+                  224,
+                  448,
+                  560,
+                  672,
+                  784,
+                  896,
+                  1008
+                ],
+                "text": "The blue 8 is on the leftmost circular pad, near its upper edge."
+              },
+              {
+                "evidence_steps": [
+                  224,
+                  448,
+                  560,
+                  672,
+                  784,
+                  896,
+                  1008
+                ],
+                "text": "The blue 7 is on the second circular pad from the left."
+              },
+              {
+                "evidence_steps": [
+                  560,
+                  672,
+                  784,
+                  896,
+                  1008
+                ],
+                "text": "The blue 0 is on the fourth circular pad from the left."
+              }
+            ],
+            "episode": "2bb9f2021eec485f91cccb941740d8f5",
+            "evidence": "At step 1008, the high view shows the blue 2 still on the table behind the empty third circular pad, separate from both grippers. The visible arrangement is unchanged from step 896; no grasp or placement is verified. The 8, 7, and 0 remain on the first, second, and fourth pads respectively. Retaining the placement goal.",
+            "expected_epoch": 6,
+            "operation": "continue",
+            "subtask": "",
+            "uncertain_or_invalidated": [
+              "At step 1008, the blue 2 remains off the third pad; no grasp or placement is verified."
+            ]
+          },
+          "effect": {
+            "age_steps": 0,
+            "changed": false,
+            "shadow_only": false,
+            "stop": false
+          },
+          "native_evaluator_information_supplied": false,
+          "reasons": [
+            "periodic_semantic_check_at_native_boundary"
+          ],
+          "step": 1008
+        }
+      ],
+      "task": "arrange_largest_number"
+    },
+    {
+      "case_id": "build_tower__standard__g0__l0",
+      "decisions": [
+        {
+          "decision": {
+            "assessment": "not_started",
+            "based_on_stamp": "03e57173b2e67deec2840d585c2addf5abee495a8550ec203619879298b3f194",
+            "based_on_step": 0,
+            "completed_claims": [],
+            "episode": "49cf6114f09345a8abb3af3ed8e496f6",
+            "evidence": "At step 0, the overhead RGB shows four white blocks and two flat wooden boards on the table. One white block lies immediately left of the long board. Neither gripper visibly holds an object.",
+            "expected_epoch": 0,
+            "operation": "set_subtask",
+            "subtask": "Grasp the white wooden block immediately to the left of the long wooden board with the left gripper.",
+            "uncertain_or_invalidated": []
+          },
+          "effect": {
+            "age_steps": 0,
+            "changed": true,
+            "shadow_only": false,
+            "stop": false
+          },
+          "native_evaluator_information_supplied": false,
+          "reasons": [
+            "initial_semantic_goal"
+          ],
+          "step": 0
+        },
+        {
+          "decision": {
+            "assessment": "uncertain",
+            "based_on_stamp": "458674f5a2dba154e99e1af6501f7a4a3300169f80fb0db89006175b1946890a",
+            "based_on_step": 112,
+            "completed_claims": [],
+            "episode": "49cf6114f09345a8abb3af3ed8e496f6",
+            "evidence": "At step 112, the white block immediately left of the long board remains on the tabletop; a completed left-arm grasp is not visible. The right wrist RGB shows a white block between the open fingers, and the overhead view places that gripper over the right-side blocks. Neither view confirms a held block.",
+            "expected_epoch": 1,
+            "operation": "set_subtask",
+            "subtask": "Grasp the white wooden block beneath the right gripper with the right gripper.",
+            "uncertain_or_invalidated": [
+              "Completion of the previous left-gripper grasp is unverified at step 112."
+            ]
+          },
+          "effect": {
+            "age_steps": 0,
+            "changed": true,
+            "shadow_only": false,
+            "stop": false
+          },
+          "native_evaluator_information_supplied": false,
+          "reasons": [
+            "periodic_semantic_check_at_native_boundary"
+          ],
+          "step": 112
+        },
+        {
+          "decision": {
+            "assessment": "uncertain",
+            "based_on_stamp": "3b77139ca0674c78dde9a261a8533147d1817149d416c7789330f3c800c24c0c",
+            "based_on_step": 224,
+            "completed_claims": [],
+            "episode": "49cf6114f09345a8abb3af3ed8e496f6",
+            "evidence": "At step 224, the overhead view shows both grippers flanking the ends of the long wooden board. Both wrist views show the board between the fingers, with white blocks outside the fingers. No white block is visibly held, and a secure board grasp is not yet confirmed.",
+            "expected_epoch": 2,
+            "operation": "set_subtask",
+            "subtask": "Grasp the long wooden board with both grippers.",
+            "uncertain_or_invalidated": [
+              "Completion of the previous left-gripper block grasp remains unverified.",
+              "Completion of the right-gripper white-block grasp is unverified at step 224."
+            ]
+          },
+          "effect": {
+            "age_steps": 0,
+            "changed": true,
+            "shadow_only": false,
+            "stop": false
+          },
+          "native_evaluator_information_supplied": false,
+          "reasons": [
+            "periodic_semantic_check_at_native_boundary"
+          ],
+          "step": 224
+        },
+        {
+          "decision": {
+            "assessment": "uncertain",
+            "based_on_stamp": "bdb6ba5c4616342b0e101e4349e3f6525add69cf48063eb047f92effc55c430a",
+            "based_on_step": 336,
+            "completed_claims": [],
+            "episode": "49cf6114f09345a8abb3af3ed8e496f6",
+            "evidence": "At step 336, the left wrist view shows a white block between the fingers, but does not confirm a secure grasp. The overhead view shows the long board behind the left gripper; the right gripper is away from that board and its wrist view shows an empty gap. A completed two-gripper board grasp is not verified.",
+            "expected_epoch": 3,
+            "operation": "set_subtask",
+            "subtask": "Grasp the white wooden block between the left gripper's fingers with the left gripper.",
+            "uncertain_or_invalidated": [
+              "Completion of the previous left-gripper block grasp remains unverified.",
+              "Completion of the right-gripper white-block grasp is unverified at step 224.",
+              "Completion of the two-gripper long-board grasp is unverified at step 336."
+            ]
+          },
+          "effect": {
+            "age_steps": 0,
+            "changed": true,
+            "shadow_only": false,
+            "stop": false
+          },
+          "native_evaluator_information_supplied": false,
+          "reasons": [
+            "periodic_semantic_check_at_native_boundary"
+          ],
+          "step": 336
+        },
+        {
+          "decision": {
+            "assessment": "uncertain",
+            "based_on_stamp": "03a41750b7d3c040f553e04f597d184f6e98b761dc1997b063de91dd1b68cdb9",
+            "based_on_step": 448,
+            "completed_claims": [],
+            "episode": "49cf6114f09345a8abb3af3ed8e496f6",
+            "evidence": "At step 448, the left wrist view shows an empty gap between the fingers, so the requested white-block grasp is not confirmed. The overhead view shows a separate flat wooden board at the front of the table, clear of the grippers. A white block is visible on the rear board in both the overhead and right wrist views.",
+            "expected_epoch": 4,
+            "operation": "set_subtask",
+            "subtask": "Grasp the flat wooden board lying at the front of the table with both grippers.",
+            "uncertain_or_invalidated": [
+              "Completion of the left-gripper white-block grasp is unverified at step 448.",
+              "Completion of the right-gripper white-block grasp is unverified at step 224.",
+              "Completion of the two-gripper long-board grasp is unverified at step 336."
+            ]
+          },
+          "effect": {
+            "age_steps": 0,
+            "changed": true,
+            "shadow_only": false,
+            "stop": false
+          },
+          "native_evaluator_information_supplied": false,
+          "reasons": [
+            "periodic_semantic_check_at_native_boundary"
+          ],
+          "step": 448
+        },
+        {
+          "decision": {
+            "assessment": "uncertain",
+            "based_on_stamp": "08b1e0bdcb6b4ff08b2643f6d123c6849b5e64653d9e01f04d9fd9aff187ec90",
+            "based_on_step": 560,
+            "completed_claims": [
+              {
+                "evidence_steps": [
+                  560
+                ],
+                "text": "The central structure has an upper wooden board resting across visible white blocks."
+              }
+            ],
+            "episode": "49cf6114f09345a8abb3af3ed8e496f6",
+            "evidence": "At step 560, the overhead view shows an upper wooden board spanning visible white blocks in the central structure; the separate front board seen at step 448 is no longer there. Neither gripper visibly holds that board, so the requested two-gripper grasp is not verified. A loose tan wooden block remains beside the right gripper and is clearly visible between its open fingers in the right wrist view.",
+            "expected_epoch": 5,
+            "operation": "set_subtask",
+            "subtask": "Grasp the loose wooden block on the right side of the table with the right gripper.",
+            "uncertain_or_invalidated": [
+              "Completion of the two-gripper front-board grasp is unverified at step 560.",
+              "Completion of the left-gripper white-block grasp is unverified at step 448.",
+              "Completion of the right-gripper white-block grasp is unverified at step 224.",
+              "Completion of the two-gripper long-board grasp is unverified at step 336."
+            ]
+          },
+          "effect": {
+            "age_steps": 0,
+            "changed": true,
+            "shadow_only": false,
+            "stop": false
+          },
+          "native_evaluator_information_supplied": false,
+          "reasons": [
+            "periodic_semantic_check_at_native_boundary"
+          ],
+          "step": 560
+        },
+        {
+          "decision": {
+            "assessment": "uncertain",
+            "based_on_stamp": "fa6f12b93ab58d756c568685f963551d112795435df759ab802b09f57fc3137f",
+            "based_on_step": 672,
+            "completed_claims": [
+              {
+                "evidence_steps": [
+                  560,
+                  672
+                ],
+                "text": "The central structure has an upper wooden board resting across visible white blocks."
+              },
+              {
+                "evidence_steps": [
+                  672
+                ],
+                "text": "A tan wooden block rests on the upper board of the central structure."
+              }
+            ],
+            "episode": "49cf6114f09345a8abb3af3ed8e496f6",
+            "evidence": "At step 672, the right wrist view shows an empty finger gap, so completion of the requested right-gripper grasp is unverified. The overhead view shows a tan block resting on the upper board, unlike step 560. The left wrist view shows a green block closely bracketed by the fingers; a secure grasp is not independently confirmed. The upper board remains visibly supported by white blocks.",
+            "expected_epoch": 6,
+            "operation": "set_subtask",
+            "subtask": "Place the green block between the left gripper's fingers on the upper wooden board of the central structure.",
+            "uncertain_or_invalidated": [
+              "Completion of the right-gripper loose wooden-block grasp is unverified at step 672.",
+              "A secure left-gripper grasp of the green block is not independently confirmed.",
+              "Completion of the two-gripper front-board grasp is unverified at step 560.",
+              "Completion of the left-gripper white-block grasp is unverified at step 448.",
+              "Completion of the right-gripper white-block grasp is unverified at step 224.",
+              "Completion of the two-gripper long-board grasp is unverified at step 336."
+            ]
+          },
+          "effect": {
+            "age_steps": 0,
+            "changed": true,
+            "shadow_only": false,
+            "stop": false
+          },
+          "native_evaluator_information_supplied": false,
+          "reasons": [
+            "periodic_semantic_check_at_native_boundary"
+          ],
+          "step": 672
+        }
+      ],
+      "task": "build_tower"
+    },
+    {
+      "case_id": "classify_objects_by_language__standard__g0__l0",
+      "decisions": [
+        {
+          "decision": {
+            "assessment": "not_started",
+            "based_on_stamp": "5ee2712b0399fa61dc780977d61c8c6e4c76c8fa133fb143694641d85987ece3",
+            "based_on_step": 0,
+            "completed_claims": [],
+            "episode": "00afeedfbd254efbbbce844217e950d1",
+            "evidence": "At step 0, the yellow car is on the tabletop in front of the left white basket. Three baskets are visible: white on the left, blue in the middle, and red on the right. No object placement has yet been observed.",
+            "expected_epoch": 0,
+            "operation": "set_subtask",
+            "subtask": "Put the yellow car into the left white basket.",
+            "uncertain_or_invalidated": []
+          },
+          "effect": {
+            "age_steps": 0,
+            "changed": true,
+            "shadow_only": false,
+            "stop": false
+          },
+          "native_evaluator_information_supplied": false,
+          "reasons": [
+            "initial_semantic_goal"
+          ],
+          "step": 0
+        },
+        {
+          "decision": {
+            "assessment": "uncertain",
+            "based_on_stamp": "d5a3d79fec4869efc3f4f30351abc08d96e6db2ca54a300369bdb720a46cc668",
+            "based_on_step": 112,
+            "completed_claims": [],
+            "episode": "00afeedfbd254efbbbce844217e950d1",
+            "evidence": "At step 112, the yellow car remains on the tabletop in front of the left white basket. The left wrist view shows it beside a wooden toy and between the gripper fingers, but does not establish a grasp or lift. Placement in the basket is not observed; robot motion alone does not certify object progress.",
+            "expected_epoch": 1,
+            "operation": "continue",
+            "subtask": "",
+            "uncertain_or_invalidated": [
+              "A secure grasp of the yellow car and its placement in the left basket are not verified at step 112."
+            ]
+          },
+          "effect": {
+            "age_steps": 0,
+            "changed": false,
+            "shadow_only": false,
+            "stop": false
+          },
+          "native_evaluator_information_supplied": false,
+          "reasons": [
+            "periodic_semantic_check_at_native_boundary"
+          ],
+          "step": 112
+        },
+        {
+          "decision": {
+            "assessment": "uncertain",
+            "based_on_stamp": "cf48036b93ecab5d5f81784ac601cde57e362df4f8d92d3570f738c309c5ba54",
+            "based_on_step": 224,
+            "completed_claims": [],
+            "episode": "00afeedfbd254efbbbce844217e950d1",
+            "evidence": "At step 224, the left wrist view clearly shows a black watch on the tabletop between the gripper fingers, beside a wooden lion toy. The middle blue basket is visible. The yellow car is no longer visible on the exposed tabletop, but the arm obscures much of the left white basket, so its placement cannot be verified. Replan to the visible watch without claiming completion of the car placement.",
+            "expected_epoch": 1,
+            "operation": "set_subtask",
+            "subtask": "Put the black watch into the middle blue basket.",
+            "uncertain_or_invalidated": [
+              "The yellow car's placement in the left basket is unverified at step 224.",
+              "The black watch is visible between the fingers, but a secure grasp is not established."
+            ]
+          },
+          "effect": {
+            "age_steps": 0,
+            "changed": true,
+            "shadow_only": false,
+            "stop": false
+          },
+          "native_evaluator_information_supplied": false,
+          "reasons": [
+            "periodic_semantic_check_at_native_boundary"
+          ],
+          "step": 224
+        },
+        {
+          "decision": {
+            "assessment": "uncertain",
+            "based_on_stamp": "6ece216b78042df05b733794f63100ce937a493afb01b1357f75e53b94d28789",
+            "based_on_step": 336,
+            "completed_claims": [
+              {
+                "evidence_steps": [
+                  336
+                ],
+                "text": "The yellow car is in the left white basket."
+              }
+            ],
+            "episode": "00afeedfbd254efbbbce844217e950d1",
+            "evidence": "At step 336, the left wrist image shows the yellow car inside the left white basket and a wooden lion toy inside the middle blue basket. The black watch's location and placement are not clearly visible, so the watch subtask cannot be certified complete. Replan to correct the clearly observed wooden toy placement. A second lion toy remains on the tabletop in front of the red basket.",
+            "expected_epoch": 2,
+            "operation": "set_subtask",
+            "subtask": "Move the wooden lion toy from the middle blue basket into the right red basket.",
+            "uncertain_or_invalidated": [
+              "The black watch's placement in the middle blue basket remains unverified at step 336.",
+              "The wooden lion toy in the middle blue basket is not in its required right basket."
+            ]
+          },
+          "effect": {
+            "age_steps": 0,
+            "changed": true,
+            "shadow_only": false,
+            "stop": false
+          },
+          "native_evaluator_information_supplied": false,
+          "reasons": [
+            "periodic_semantic_check_at_native_boundary"
+          ],
+          "step": 336
+        },
+        {
+          "decision": {
+            "assessment": "uncertain",
+            "based_on_stamp": "c478ed77ac58680d8c95e600dadf30e1147ba4e25f3691ff2f059cb70e84177b",
+            "based_on_step": 448,
+            "completed_claims": [
+              {
+                "evidence_steps": [
+                  336,
+                  448
+                ],
+                "text": "The yellow car is in the left white basket."
+              }
+            ],
+            "episode": "00afeedfbd254efbbbce844217e950d1",
+            "evidence": "At step 448, the green car is clearly visible on the tabletop in the right wrist image, beside the gripper; a grasp is not established. The wooden toy remains visible in the middle blue basket, so its transfer to the right red basket is not verified. Replan to sort the clearly visible green car. The yellow car remains visible inside the left white basket.",
+            "expected_epoch": 3,
+            "operation": "set_subtask",
+            "subtask": "Put the green car into the left white basket.",
+            "uncertain_or_invalidated": [
+              "The wooden toy's transfer from the middle blue basket to the right red basket is not verified at step 448; a toy remains visible in the blue basket.",
+              "The black watch's placement in the middle blue basket remains unverified.",
+              "The green car is visible beside the right gripper, but a secure grasp is not established."
+            ]
+          },
+          "effect": {
+            "age_steps": 0,
+            "changed": true,
+            "shadow_only": false,
+            "stop": false
+          },
+          "native_evaluator_information_supplied": false,
+          "reasons": [
+            "periodic_semantic_check_at_native_boundary"
+          ],
+          "step": 448
+        },
+        {
+          "decision": {
+            "assessment": "uncertain",
+            "based_on_stamp": "7ebef8babe369785c676459732bfc7e81ca064edf2043f25d23d7b7764b8032f",
+            "based_on_step": 560,
+            "completed_claims": [
+              {
+                "evidence_steps": [
+                  336,
+                  448,
+                  560
+                ],
+                "text": "The yellow car is in the left white basket."
+              }
+            ],
+            "episode": "00afeedfbd254efbbbce844217e950d1",
+            "evidence": "At step 560, the green car is still on the tabletop beneath the right gripper, clearly visible between the open fingers in the right wrist image. Neither a secure grasp nor placement in the left basket is observed. Retain the current car-placement goal. The yellow car remains visible inside the left white basket; wooden toys remain visible in the middle blue basket.",
+            "expected_epoch": 4,
+            "operation": "continue",
+            "subtask": "",
+            "uncertain_or_invalidated": [
+              "The green car remains on the tabletop at step 560; its grasp and placement in the left basket are unverified.",
+              "The wooden toy transfer to the right red basket remains unverified; wooden toys are visible in the middle blue basket at step 560.",
+              "The black watch's placement in the middle blue basket remains unverified."
+            ]
+          },
+          "effect": {
+            "age_steps": 0,
+            "changed": false,
+            "shadow_only": false,
+            "stop": false
+          },
+          "native_evaluator_information_supplied": false,
+          "reasons": [
+            "periodic_semantic_check_at_native_boundary"
+          ],
+          "step": 560
+        },
+        {
+          "decision": {
+            "assessment": "uncertain",
+            "based_on_stamp": "5b13f80e8879d8a2daebf9abb6be24af0f9e260097b6c8088a4ca332b38f8cea",
+            "based_on_step": 672,
+            "completed_claims": [
+              {
+                "evidence_steps": [
+                  336,
+                  448,
+                  560,
+                  672
+                ],
+                "text": "The yellow car is in the left white basket."
+              }
+            ],
+            "episode": "00afeedfbd254efbbbce844217e950d1",
+            "evidence": "At step 672, the green car remains on the tabletop in front of the baskets, clearly visible between the open right gripper fingers in the right wrist view. No secure grasp or placement in the left basket is established. Replan to the observable prerequisite of grasping the car. The yellow car is visible inside the left white basket, and wooden toys remain visible in the middle blue basket.",
+            "expected_epoch": 4,
+            "operation": "set_subtask",
+            "subtask": "Grasp the green car on the tabletop with the right gripper.",
+            "uncertain_or_invalidated": [
+              "The green car remains on the tabletop at step 672; its grasp and placement in the left basket are unverified.",
+              "The wooden toy transfer to the right red basket remains unverified; wooden toys are visible in the middle blue basket at step 672.",
+              "The black watch's placement in the middle blue basket remains unverified."
+            ]
+          },
+          "effect": {
+            "age_steps": 0,
+            "changed": true,
+            "shadow_only": false,
+            "stop": false
+          },
+          "native_evaluator_information_supplied": false,
+          "reasons": [
+            "periodic_semantic_check_at_native_boundary"
+          ],
+          "step": 672
+        },
+        {
+          "decision": {
+            "assessment": "uncertain",
+            "based_on_stamp": "cfc5b92aba64a268cb19cad7ba95bfd9aba65cc3b1a9097c2f35fb634b8052de",
+            "based_on_step": 784,
+            "completed_claims": [
+              {
+                "evidence_steps": [
+                  336,
+                  448,
+                  560,
+                  672,
+                  784
+                ],
+                "text": "The yellow car is in the left white basket."
+              }
+            ],
+            "episode": "00afeedfbd254efbbbce844217e950d1",
+            "evidence": "At step 784, the right wrist image shows the green car resting in the middle blue basket, rather than on the tabletop or securely held by the open right gripper. Replan to correct its observed location. The yellow car remains visible in the left white basket. Wooden toys remain visible in the blue basket, and a watch-shaped loop remains on the tabletop in front of it.",
+            "expected_epoch": 5,
+            "operation": "set_subtask",
+            "subtask": "Move the green car from the middle blue basket into the left white basket.",
+            "uncertain_or_invalidated": [
+              "The prior claim that the green car remains on the tabletop is superseded: at step 784 it is visible in the middle blue basket; a secure grasp and correct placement remain unverified.",
+              "Wooden toy transfer to the right red basket remains unverified; wooden toys are visible in the middle blue basket at step 784.",
+              "Watch placement in the middle blue basket remains unverified; a watch-shaped loop is visible on the tabletop at step 784."
+            ]
+          },
+          "effect": {
+            "age_steps": 0,
+            "changed": true,
+            "shadow_only": false,
+            "stop": false
+          },
+          "native_evaluator_information_supplied": false,
+          "reasons": [
+            "periodic_semantic_check_at_native_boundary"
+          ],
+          "step": 784
+        },
+        {
+          "decision": {
+            "assessment": "uncertain",
+            "based_on_stamp": "6fa74c2fd1d40a67cf7c6100945d00a615781926fa71912c3d22558ac823f937",
+            "based_on_step": 896,
+            "completed_claims": [
+              {
+                "evidence_steps": [
+                  336,
+                  448,
+                  560,
+                  672,
+                  784,
+                  896
+                ],
+                "text": "The yellow car is in the left white basket."
+              }
+            ],
+            "episode": "00afeedfbd254efbbbce844217e950d1",
+            "evidence": "At step 896, the green car remains visible in the middle blue basket in both the high and right wrist views. Neither gripper is holding it, and transfer to the left basket is not verified. Replan to the grasp prerequisite. The yellow car remains in the left white basket. Wooden toys remain in the middle blue basket; a watch-shaped loop is now visible in the right red basket rather than on the tabletop.",
+            "expected_epoch": 6,
+            "operation": "set_subtask",
+            "subtask": "Grasp the green car in the middle blue basket with the right gripper.",
+            "uncertain_or_invalidated": [
+              "Green car placement in the left basket remains unverified; it is still in the middle blue basket at step 896.",
+              "Wooden toy transfer to the right basket remains unverified; wooden toys are visible in the middle blue basket at step 896.",
+              "The watch-shaped loop previously on the tabletop is now visible in the right red basket at step 896; correct watch placement in the middle basket remains unverified."
+            ]
+          },
+          "effect": {
+            "age_steps": 0,
+            "changed": true,
+            "shadow_only": false,
+            "stop": false
+          },
+          "native_evaluator_information_supplied": false,
+          "reasons": [
+            "periodic_semantic_check_at_native_boundary"
+          ],
+          "step": 896
+        },
+        {
+          "decision": {
+            "assessment": "uncertain",
+            "based_on_stamp": "304be87eb51de611ab5637f53bb57626c98bfb82464dae4af163cc4d8153054b",
+            "based_on_step": 1008,
+            "completed_claims": [
+              {
+                "evidence_steps": [
+                  336,
+                  448,
+                  560,
+                  672,
+                  784,
+                  896,
+                  1008
+                ],
+                "text": "The yellow car is in the left white basket."
+              }
+            ],
+            "episode": "00afeedfbd254efbbbce844217e950d1",
+            "evidence": "At step 1008, the green car remains in the middle blue basket, visible in the high and right wrist views. Both grippers are away from the car; no grasp is observed. The scene is visibly unchanged from step 896, so progress on the current grasp goal is unverified. The yellow car remains in the left white basket, wooden toys remain in the middle blue basket, and the watch-shaped loop remains visible in the right red basket.",
+            "expected_epoch": 7,
+            "operation": "continue",
+            "subtask": "",
+            "uncertain_or_invalidated": [
+              "Green car grasp and placement in the left basket remain unverified; it is visible in the middle blue basket at step 1008.",
+              "Wooden toy transfer to the right basket remains unverified; wooden toys are visible in the middle blue basket at step 1008.",
+              "Correct watch placement remains unverified; a watch-shaped loop is visible in the right red basket at step 1008."
+            ]
+          },
+          "effect": {
+            "age_steps": 0,
+            "changed": false,
+            "shadow_only": false,
+            "stop": false
+          },
+          "native_evaluator_information_supplied": false,
+          "reasons": [
+            "periodic_semantic_check_at_native_boundary"
+          ],
+          "step": 1008
+        }
+      ],
+      "task": "classify_objects_by_language"
+    },
+    {
+      "case_id": "fold_clothes__standard__g0__l0",
+      "decisions": [
+        {
+          "decision": {
+            "assessment": "not_started",
+            "based_on_stamp": "39f2b12106f244d249f4014d3692515466a1f47d2671695c12d3b3abebdd5c7e",
+            "based_on_step": 0,
+            "completed_claims": [],
+            "episode": "e1dd9da774264963961f21df330441db",
+            "evidence": "At step 0, the pink long-sleeved shirt lies on the table with both sleeves extended outward. The left sleeve extends toward the left arm; no fold or grasp is yet observed.",
+            "expected_epoch": 0,
+            "operation": "set_subtask",
+            "subtask": "Fold the pink shirt's left sleeve inward onto the torso using the left arm.",
+            "uncertain_or_invalidated": []
+          },
+          "effect": {
+            "age_steps": 0,
+            "changed": true,
+            "shadow_only": false,
+            "stop": false
+          },
+          "native_evaluator_information_supplied": false,
+          "reasons": [
+            "initial_semantic_goal"
+          ],
+          "step": 0
+        },
+        {
+          "decision": {
+            "assessment": "complete",
+            "based_on_stamp": "4f6b37a3cafbdeb878394ab3f4e477bd13d5ca0f6571527120e3f66d3caa4d50",
+            "based_on_step": 112,
+            "completed_claims": [
+              {
+                "evidence_steps": [
+                  0,
+                  112
+                ],
+                "text": "The pink shirt's left sleeve is folded inward onto the torso."
+              }
+            ],
+            "episode": "e1dd9da774264963961f21df330441db",
+            "evidence": "At step 112, the high camera shows the previously extended left sleeve folded inward over the upper torso, corroborated by overlapping sleeve fabric in the left-wrist view. The right sleeve remains extended on the table in the high and right-wrist views.",
+            "expected_epoch": 1,
+            "operation": "set_subtask",
+            "subtask": "Fold the pink shirt's right sleeve inward onto the torso using the right arm.",
+            "uncertain_or_invalidated": []
+          },
+          "effect": {
+            "age_steps": 0,
+            "changed": true,
+            "shadow_only": false,
+            "stop": false
+          },
+          "native_evaluator_information_supplied": false,
+          "reasons": [
+            "periodic_semantic_check_at_native_boundary"
+          ],
+          "step": 112
+        },
+        {
+          "decision": {
+            "assessment": "complete",
+            "based_on_stamp": "6d304f77f5393430b89a5cb52389c07cc06f1a7531fc743b798f0c0dcbe8a2a2",
+            "based_on_step": 224,
+            "completed_claims": [
+              {
+                "evidence_steps": [
+                  0,
+                  112,
+                  224
+                ],
+                "text": "The pink shirt's left sleeve is folded inward onto the torso."
+              },
+              {
+                "evidence_steps": [
+                  112,
+                  224
+                ],
+                "text": "The pink shirt's right sleeve is folded inward onto the torso."
+              }
+            ],
+            "episode": "e1dd9da774264963961f21df330441db",
+            "evidence": "At step 224, the high view shows overlapping sleeve fabric on the upper torso, with the right sleeve no longer extended to the right as at step 112. The lower torso remains spread on the table, and both wrist views show its bottom edge still unfolded.",
+            "expected_epoch": 2,
+            "operation": "set_subtask",
+            "subtask": "Fold the bottom half of the pink shirt upward over the upper half using both arms.",
+            "uncertain_or_invalidated": []
+          },
+          "effect": {
+            "age_steps": 0,
+            "changed": true,
+            "shadow_only": false,
+            "stop": false
+          },
+          "native_evaluator_information_supplied": false,
+          "reasons": [
+            "periodic_semantic_check_at_native_boundary"
+          ],
+          "step": 224
+        }
+      ],
+      "task": "fold_clothes"
+    },
+    {
+      "case_id": "imitate_sorting_sequence__standard__g0__l0",
+      "decisions": [
+        {
+          "decision": {
+            "assessment": "uncertain",
+            "based_on_stamp": "cbbc1d83a9224d63cc23dfc2c022a0eb188f369ed3c53449267c8711121f11f7",
+            "based_on_step": 0,
+            "completed_claims": [],
+            "episode": "8d1bbd1b41e04ba1b1a91c645d1cfbc4",
+            "evidence": "Step 0 shows two empty white baskets and objects on the table. No observed placement sequence or episode memory establishes which object should be placed first; retain the current goal while awaiting sequence evidence.",
+            "expected_epoch": 0,
+            "operation": "continue",
+            "subtask": "",
+            "uncertain_or_invalidated": [
+              "The required object placement order is not established by the single observation at step 0."
+            ]
+          },
+          "effect": {
+            "age_steps": 0,
+            "changed": false,
+            "shadow_only": false,
+            "stop": false
+          },
+          "native_evaluator_information_supplied": false,
+          "reasons": [
+            "initial_semantic_goal"
+          ],
+          "step": 0
+        },
+        {
+          "decision": {
+            "assessment": "uncertain",
+            "based_on_stamp": "0f3bd710c9767e37dd1f431964836f657f143395dd00e98be3601e941885b7e2",
+            "based_on_step": 112,
+            "completed_claims": [
+              {
+                "evidence_steps": [
+                  0,
+                  112
+                ],
+                "text": "A remote control is visible in the rear demonstration basket, which was empty at step 0; this is the first placement evidenced by the available observations."
+              }
+            ],
+            "episode": "8d1bbd1b41e04ba1b1a91c645d1cfbc4",
+            "evidence": "At step 0 the rear basket was empty and a remote control lay beside it. At step 112 a remote control is visible inside that basket, while the overhead demonstrator gripper is near the green watch on the table. The foreground basket remains empty. Retain the observation goal: the demonstration appears ongoing, and no second placement or full sequence is established.",
+            "expected_epoch": 0,
+            "operation": "continue",
+            "subtask": "",
+            "uncertain_or_invalidated": [
+              "The complete required placement sequence is not yet established.",
+              "The demonstrator's proximity to the green watch does not establish a grasp or its placement order."
+            ]
+          },
+          "effect": {
+            "age_steps": 0,
+            "changed": false,
+            "shadow_only": false,
+            "stop": false
+          },
+          "native_evaluator_information_supplied": false,
+          "reasons": [
+            "periodic_semantic_check_at_native_boundary"
+          ],
+          "step": 112
+        },
+        {
+          "decision": {
+            "assessment": "uncertain",
+            "based_on_stamp": "235fdf962b36d9cbb342e7143c8bb2204cc20bd6429bb4cb77b489810d748748",
+            "based_on_step": 224,
+            "completed_claims": [
+              {
+                "evidence_steps": [
+                  0,
+                  112
+                ],
+                "text": "The remote control was the first evidenced placement into the rear demonstration basket."
+              },
+              {
+                "evidence_steps": [
+                  112,
+                  224
+                ],
+                "text": "The green watch is now inside the rear demonstration basket alongside the remote control, establishing it as the next observed addition."
+              }
+            ],
+            "episode": "8d1bbd1b41e04ba1b1a91c645d1cfbc4",
+            "evidence": "At step 224 the rear demonstration basket contains the remote control and a green watch; at step 112 it contained only the remote while the demonstration watch remained on the table. The demonstrator is now over the rear basket with a black object beneath its gripper, but release is not established. The foreground basket remains empty. Continue observing because the demonstration is ongoing and the complete sequence is unknown.",
+            "expected_epoch": 0,
+            "operation": "continue",
+            "subtask": "",
+            "uncertain_or_invalidated": [
+              "The complete required placement sequence is not yet established.",
+              "The black object beneath the demonstrator gripper is not yet confirmed released into the basket."
+            ]
+          },
+          "effect": {
+            "age_steps": 0,
+            "changed": false,
+            "shadow_only": false,
+            "stop": false
+          },
+          "native_evaluator_information_supplied": false,
+          "reasons": [
+            "periodic_semantic_check_at_native_boundary"
+          ],
+          "step": 224
+        },
+        {
+          "decision": {
+            "assessment": "uncertain",
+            "based_on_stamp": "dbbfd7475f011caf312f2e628f919ef6fd50ef07c4c40c623b84f810d541d501",
+            "based_on_step": 336,
+            "completed_claims": [
+              {
+                "evidence_steps": [
+                  0,
+                  112
+                ],
+                "text": "The remote control was the first evidenced placement into the rear demonstration basket."
+              },
+              {
+                "evidence_steps": [
+                  112,
+                  224
+                ],
+                "text": "The green watch was the next observed addition to the rear demonstration basket."
+              },
+              {
+                "evidence_steps": [
+                  336
+                ],
+                "text": "The black rectangular object and cream-colored toy figure are now visible inside the rear demonstration basket."
+              }
+            ],
+            "episode": "8d1bbd1b41e04ba1b1a91c645d1cfbc4",
+            "evidence": "At step 336 the rear basket contains the remote, green watch, black rectangular object and a cream-colored toy figure. The demonstrator gripper is open above them. At step 224 the black object was beneath the demonstrator gripper over the basket and the figure was still on the table. These observations support further demonstration additions, but do not directly resolve their release order. The yellow toy vehicle remains outside the rear basket, and the foreground basket remains empty; continue observing the sequence.",
+            "expected_epoch": 0,
+            "operation": "continue",
+            "subtask": "",
+            "uncertain_or_invalidated": [
+              "The complete required placement sequence is not yet established.",
+              "The black object's release is no longer pending confirmation of basket presence, but its precise release order relative to the toy figure was not directly observed."
+            ]
+          },
+          "effect": {
+            "age_steps": 0,
+            "changed": false,
+            "shadow_only": false,
+            "stop": false
+          },
+          "native_evaluator_information_supplied": false,
+          "reasons": [
+            "periodic_semantic_check_at_native_boundary"
+          ],
+          "step": 336
+        },
+        {
+          "decision": {
+            "assessment": "uncertain",
+            "based_on_stamp": "0c1746b39be76eed7f2f1eaffb6f9d4531ddb11678c8ef1ce6233c68edb92a67",
+            "based_on_step": 448,
+            "completed_claims": [
+              {
+                "evidence_steps": [
+                  0,
+                  112
+                ],
+                "text": "The remote control was the first evidenced placement into the rear demonstration basket."
+              },
+              {
+                "evidence_steps": [
+                  112,
+                  224
+                ],
+                "text": "The green watch was the next observed addition to the rear demonstration basket."
+              },
+              {
+                "evidence_steps": [
+                  336,
+                  448
+                ],
+                "text": "The black rectangular object and cream-colored toy figure were visible inside the rear demonstration basket before the yellow toy vehicle was added."
+              },
+              {
+                "evidence_steps": [
+                  336,
+                  448
+                ],
+                "text": "The yellow toy vehicle is now inside the rear demonstration basket."
+              }
+            ],
+            "episode": "8d1bbd1b41e04ba1b1a91c645d1cfbc4",
+            "evidence": "At step 448 the yellow toy vehicle is now visible inside the rear demonstration basket, whereas it was outside at step 336. The demonstrator gripper is open above the basket. The foreground basket remains empty and the corresponding remote lies on the table. The first demonstrated object is established by steps 0 and 112, so its placement can begin despite the unresolved order of the two middle objects.",
+            "expected_epoch": 0,
+            "operation": "set_subtask",
+            "subtask": "Place the remote control lying on the table into the empty foreground basket.",
+            "uncertain_or_invalidated": [
+              "The precise demonstrated release order of the black rectangular object and cream-colored toy figure remains unresolved.",
+              "No placement into the foreground basket has yet been observed."
+            ]
+          },
+          "effect": {
+            "age_steps": 0,
+            "changed": true,
+            "shadow_only": false,
+            "stop": false
+          },
+          "native_evaluator_information_supplied": false,
+          "reasons": [
+            "periodic_semantic_check_at_native_boundary"
+          ],
+          "step": 448
+        },
+        {
+          "decision": {
+            "assessment": "uncertain",
+            "based_on_stamp": "d5ef50a3d9aad10eef3c8f6eafbdfd8f42b0669876dc5685d6cd3f07ad12f7a6",
+            "based_on_step": 560,
+            "completed_claims": [
+              {
+                "evidence_steps": [
+                  0,
+                  112
+                ],
+                "text": "The remote control was the first evidenced placement into the rear demonstration basket."
+              },
+              {
+                "evidence_steps": [
+                  112,
+                  224
+                ],
+                "text": "The green watch was the next observed addition to the rear demonstration basket."
+              },
+              {
+                "evidence_steps": [
+                  336,
+                  448
+                ],
+                "text": "The black rectangular object and cream-colored toy figure were visible inside the rear demonstration basket before the yellow toy vehicle was added."
+              },
+              {
+                "evidence_steps": [
+                  448,
+                  560
+                ],
+                "text": "The yellow toy vehicle is inside the rear demonstration basket."
+              }
+            ],
+            "episode": "8d1bbd1b41e04ba1b1a91c645d1cfbc4",
+            "evidence": "At step 560 the remote control remains on the table and the foreground basket is visibly empty. The left gripper is above the area near the toy figure and yellow vehicle, not visibly holding the remote. No remote grasp or basket placement is established. Retain the current remote-placement goal; these observations do not establish a failed attempt.",
+            "expected_epoch": 1,
+            "operation": "continue",
+            "subtask": "",
+            "uncertain_or_invalidated": [
+              "The precise demonstrated release order of the black rectangular object and cream-colored toy figure remains unresolved.",
+              "No placement into the foreground basket has yet been observed at step 560."
+            ]
+          },
+          "effect": {
+            "age_steps": 0,
+            "changed": false,
+            "shadow_only": false,
+            "stop": false
+          },
+          "native_evaluator_information_supplied": false,
+          "reasons": [
+            "periodic_semantic_check_at_native_boundary"
+          ],
+          "step": 560
+        }
+      ],
+      "task": "imitate_sorting_sequence"
+    },
+    {
+      "case_id": "make_kong__standard__g0__l0",
+      "decisions": [
+        {
+          "decision": {
+            "assessment": "not_started",
+            "based_on_stamp": "5da11edb696b6b20dbc5b7e7fd8a1eecf27d48b0a733842a75883e8913dffe8b",
+            "based_on_step": 0,
+            "completed_claims": [],
+            "episode": "4b99398d4d0f4cc0bd6170d51cee4631",
+            "evidence": "At step 0, the player's face-up row and the opponent's green-backed row are visible. No isolated opponent discard is visible in the central table area.",
+            "expected_epoch": 0,
+            "operation": "set_subtask",
+            "subtask": "Wait for the opponent to discard a tile onto the table before touching any tiles.",
+            "uncertain_or_invalidated": []
+          },
+          "effect": {
+            "age_steps": 0,
+            "changed": true,
+            "shadow_only": false,
+            "stop": false
+          },
+          "native_evaluator_information_supplied": false,
+          "reasons": [
+            "initial_semantic_goal"
+          ],
+          "step": 0
+        },
+        {
+          "decision": {
+            "assessment": "complete",
+            "based_on_stamp": "c6376d1b67ae1b05b69ede6e66ae8aee0c5e3f535394323250e83e8b981c147b",
+            "based_on_step": 112,
+            "completed_claims": [
+              {
+                "evidence_steps": [
+                  0,
+                  112
+                ],
+                "text": "The opponent has discarded a face-up tile onto the table."
+              }
+            ],
+            "episode": "4b99398d4d0f4cc0bd6170d51cee4631",
+            "evidence": "At step 112, the opponent's formerly continuous green-backed row has a gap, and a face-up tile is visible in front of it. The left-wrist view shows a separate face-up two-circle tile near the player's row. No grasp is verified.",
+            "expected_epoch": 1,
+            "operation": "set_subtask",
+            "subtask": "Grasp the opponent's face-up two-circle discard from the central table area with the left gripper.",
+            "uncertain_or_invalidated": []
+          },
+          "effect": {
+            "age_steps": 0,
+            "changed": true,
+            "shadow_only": false,
+            "stop": false
+          },
+          "native_evaluator_information_supplied": false,
+          "reasons": [
+            "periodic_semantic_check_at_native_boundary"
+          ],
+          "step": 112
+        },
+        {
+          "decision": {
+            "assessment": "uncertain",
+            "based_on_stamp": "e2c2286835a90c96eb4e973072d93754e563805c3b5332b4177092ff6b955ce3",
+            "based_on_step": 224,
+            "completed_claims": [
+              {
+                "evidence_steps": [
+                  0,
+                  112
+                ],
+                "text": "The opponent has discarded a face-up tile onto the table."
+              }
+            ],
+            "episode": "4b99398d4d0f4cc0bd6170d51cee4631",
+            "evidence": "At step 224, face-up two-circle tiles remain on the tabletop, including one in front of the opponent's row and two beside the player's row. The left gripper appears empty in the high and left-wrist views; no secure grasp of the discard is visible. Tile rearrangement alone does not verify the requested grasp or a declared kong.",
+            "expected_epoch": 2,
+            "operation": "continue",
+            "subtask": "",
+            "uncertain_or_invalidated": [
+              "Grasping the opponent's discard with the left gripper is not verified at step 224.",
+              "A completed four-tile kong is not verified."
+            ]
+          },
+          "effect": {
+            "age_steps": 0,
+            "changed": false,
+            "shadow_only": false,
+            "stop": false
+          },
+          "native_evaluator_information_supplied": false,
+          "reasons": [
+            "periodic_semantic_check_at_native_boundary"
+          ],
+          "step": 224
+        },
+        {
+          "decision": {
+            "assessment": "uncertain",
+            "based_on_stamp": "3401d0e667bb93ef6d572fd0213c31347d3ea45aa3615b95e2585431af099449",
+            "based_on_step": 336,
+            "completed_claims": [
+              {
+                "evidence_steps": [
+                  0,
+                  112
+                ],
+                "text": "The opponent has discarded a face-up tile onto the table."
+              }
+            ],
+            "episode": "4b99398d4d0f4cc0bd6170d51cee4631",
+            "evidence": "At step 336, the left-wrist view shows a green-backed tile between or against the gripper fingers, but its face and secure retention are not visible. The high view still shows a face-up two-circle tile in front of the opponent's row; additional two-circle tiles are visible in the right-wrist view. Occlusion prevents identifying the tile at the left gripper as the opponent's discard. Neither the requested grasp nor a four-tile kong is verified.",
+            "expected_epoch": 2,
+            "operation": "continue",
+            "subtask": "",
+            "uncertain_or_invalidated": [
+              "Grasping the opponent's discard with the left gripper remains unverified at step 336.",
+              "The identity and secure retention of the green-backed tile at the left gripper are uncertain.",
+              "A completed four-tile kong is not verified."
+            ]
+          },
+          "effect": {
+            "age_steps": 0,
+            "changed": false,
+            "shadow_only": false,
+            "stop": false
+          },
+          "native_evaluator_information_supplied": false,
+          "reasons": [
+            "periodic_semantic_check_at_native_boundary"
+          ],
+          "step": 336
+        }
+      ],
+      "task": "make_kong"
+    },
+    {
+      "case_id": "classify_objects__standard__g0__l0",
+      "decisions": [
+        {
+          "decision": {
+            "assessment": "not_started",
+            "based_on_stamp": "edc436b6ee5dba1aad9b073cc6276bf04a9e3c71ba7f037aa7bb75e8e87f0d03",
+            "based_on_step": 0,
+            "completed_claims": [],
+            "episode": "778a619684cc4cecbf3a8888551b8581",
+            "evidence": "At step 0, three empty baskets are visible: white on the left, blue in the middle, and red on the right. The left-wrist view shows a blue-clothed toy lying directly in front of the white basket. No object is visibly held or sorted.",
+            "expected_epoch": 0,
+            "operation": "set_subtask",
+            "subtask": "Put the blue-clothed toy lying directly in front of the white basket into the white basket.",
+            "uncertain_or_invalidated": []
+          },
+          "effect": {
+            "age_steps": 0,
+            "changed": true,
+            "shadow_only": false,
+            "stop": false
+          },
+          "native_evaluator_information_supplied": false,
+          "reasons": [
+            "initial_semantic_goal"
+          ],
+          "step": 0
+        },
+        {
+          "decision": {
+            "assessment": "uncertain",
+            "based_on_stamp": "745a9545c3c92ed5ecb2882238059721be0bb94157155c4ee3b0cd0a51eba623",
+            "based_on_step": 112,
+            "completed_claims": [],
+            "episode": "778a619684cc4cecbf3a8888551b8581",
+            "evidence": "At step 112, the targeted blue-clothed toy remains visible on the tabletop directly in front of the white basket, with the left gripper nearby. The wrist view does not establish a grasp, and placement in the basket is not observed. Robot motion alone does not verify object progress.",
+            "expected_epoch": 1,
+            "operation": "continue",
+            "subtask": "",
+            "uncertain_or_invalidated": []
+          },
+          "effect": {
+            "age_steps": 0,
+            "changed": false,
+            "shadow_only": false,
+            "stop": false
+          },
+          "native_evaluator_information_supplied": false,
+          "reasons": [
+            "periodic_semantic_check_at_native_boundary"
+          ],
+          "step": 112
+        },
+        {
+          "decision": {
+            "assessment": "complete",
+            "based_on_stamp": "36897818b29aac4d93eeccb5875b774177f9b3b7acebc31621ae7cc7c3972cef",
+            "based_on_step": 224,
+            "completed_claims": [
+              {
+                "evidence_steps": [
+                  112,
+                  224
+                ],
+                "text": "The blue-clothed toy previously lying directly in front of the white basket is now in the white basket."
+              }
+            ],
+            "episode": "778a619684cc4cecbf3a8888551b8581",
+            "evidence": "At step 224, the left-wrist view shows two blue-clothed toys inside the white basket, and the toy previously on the tabletop directly in front of it at step 112 is no longer there. The right-wrist view shows another blue-clothed toy between the right gripper fingers; the high view shows the right arm raised above the table. Its placement in a basket is not yet observed.",
+            "expected_epoch": 1,
+            "operation": "set_subtask",
+            "subtask": "Put the blue-clothed toy between the right gripper fingers into the white basket.",
+            "uncertain_or_invalidated": []
+          },
+          "effect": {
+            "age_steps": 0,
+            "changed": true,
+            "shadow_only": false,
+            "stop": false
+          },
+          "native_evaluator_information_supplied": false,
+          "reasons": [
+            "periodic_semantic_check_at_native_boundary"
+          ],
+          "step": 224
+        },
+        {
+          "decision": {
+            "assessment": "uncertain",
+            "based_on_stamp": "6ebe3edd8630d3ae0ed12b42febf4f59479021ccff0089aa457eaf57d83fb6bb",
+            "based_on_step": 336,
+            "completed_claims": [
+              {
+                "evidence_steps": [
+                  112,
+                  224
+                ],
+                "text": "The blue-clothed toy previously lying directly in front of the white basket is now in the white basket."
+              }
+            ],
+            "episode": "778a619684cc4cecbf3a8888551b8581",
+            "evidence": "At step 336, the high view shows the left gripper over the white basket, and the left-wrist view shows a blue-clothed toy between its fingers. The right-wrist view shows no toy between the right fingers. The previously targeted toy cannot be reliably tracked, and its release into the basket is not verified; the visible toy at the left gripper provides the next placement target.",
+            "expected_epoch": 2,
+            "operation": "set_subtask",
+            "subtask": "Put the blue-clothed toy between the left gripper fingers into the white basket.",
+            "uncertain_or_invalidated": [
+              "Placement of the toy seen between the right gripper fingers at step 224 is not independently verified at step 336."
+            ]
+          },
+          "effect": {
+            "age_steps": 0,
+            "changed": true,
+            "shadow_only": false,
+            "stop": false
+          },
+          "native_evaluator_information_supplied": false,
+          "reasons": [
+            "periodic_semantic_check_at_native_boundary"
+          ],
+          "step": 336
+        },
+        {
+          "decision": {
+            "assessment": "complete",
+            "based_on_stamp": "7b5d94a855c05318d1878cf419f479284a68aab6477f3da919f7e80d6cb8c706",
+            "based_on_step": 448,
+            "completed_claims": [
+              {
+                "evidence_steps": [
+                  112,
+                  224
+                ],
+                "text": "The blue-clothed toy previously lying directly in front of the white basket is now in the white basket."
+              },
+              {
+                "evidence_steps": [
+                  336,
+                  448
+                ],
+                "text": "The blue-clothed toy seen between the left gripper fingers at step 336 has been placed in the white basket."
+              }
+            ],
+            "episode": "778a619684cc4cecbf3a8888551b8581",
+            "evidence": "At step 448, the left-wrist view shows three blue-clothed toys resting inside the white basket and no toy between the withdrawn left fingers. This supports placement of the toy seen between those fingers over the basket at step 336. The right-wrist view shows a black wristwatch on the tabletop between the open fingers. The blue basket is visibly empty and provides a separate receptacle for watches.",
+            "expected_epoch": 3,
+            "operation": "set_subtask",
+            "subtask": "Put the black wristwatch on the tabletop in front of the right gripper into the blue basket.",
+            "uncertain_or_invalidated": [
+              "Placement of the individual toy seen between the right gripper fingers at step 224 remains unverified by individual tracking."
+            ]
+          },
+          "effect": {
+            "age_steps": 0,
+            "changed": true,
+            "shadow_only": false,
+            "stop": false
+          },
+          "native_evaluator_information_supplied": false,
+          "reasons": [
+            "periodic_semantic_check_at_native_boundary"
+          ],
+          "step": 448
+        },
+        {
+          "decision": {
+            "assessment": "failed",
+            "based_on_stamp": "2b8737ca99f8e005545d46b58a2cc7d5e5766e095e28f26a14de6e30c8ca95cb",
+            "based_on_step": 560,
+            "completed_claims": [
+              {
+                "evidence_steps": [
+                  112,
+                  224
+                ],
+                "text": "The blue-clothed toy previously lying directly in front of the white basket is now in the white basket."
+              },
+              {
+                "evidence_steps": [
+                  336,
+                  448
+                ],
+                "text": "The blue-clothed toy seen between the left gripper fingers at step 336 has been placed in the white basket."
+              }
+            ],
+            "episode": "778a619684cc4cecbf3a8888551b8581",
+            "evidence": "At step 448, the targeted black wristwatch was on the tabletop in the right-wrist view. At step 560, the left-wrist view clearly shows that black wristwatch resting among the toys inside the white basket, while the blue basket remains empty. The requested placement into the blue basket therefore failed; the watch is in the wrong receptacle.",
+            "expected_epoch": 4,
+            "operation": "recover",
+            "subtask": "Put the black wristwatch currently inside the white basket into the blue basket.",
+            "uncertain_or_invalidated": [
+              "Placement of the individual toy seen between the right gripper fingers at step 224 remains unverified by individual tracking.",
+              "The black wristwatch has not been placed in the blue basket; at step 560 it is inside the white basket."
+            ]
+          },
+          "effect": {
+            "age_steps": 0,
+            "changed": true,
+            "shadow_only": false,
+            "stop": false
+          },
+          "native_evaluator_information_supplied": false,
+          "reasons": [
+            "periodic_semantic_check_at_native_boundary"
+          ],
+          "step": 560
+        },
+        {
+          "decision": {
+            "assessment": "uncertain",
+            "based_on_stamp": "b3b78a871aa303b62314636d73f73bb59e9f8a24b765e6a98bec7bb6898e10ba",
+            "based_on_step": 672,
+            "completed_claims": [
+              {
+                "evidence_steps": [
+                  112,
+                  224
+                ],
+                "text": "The blue-clothed toy previously lying directly in front of the white basket is now in the white basket."
+              },
+              {
+                "evidence_steps": [
+                  336,
+                  448
+                ],
+                "text": "The blue-clothed toy seen between the left gripper fingers at step 336 has been placed in the white basket."
+              }
+            ],
+            "episode": "778a619684cc4cecbf3a8888551b8581",
+            "evidence": "At step 672, the left-wrist view shows a partially obscured black object among the toys in the white basket, consistent with the wristwatch observed there at step 560. The blue basket has no visibly placed watch. Neither wrist view shows a grasped watch; arm movement does not establish transfer progress. The current placement goal is not verified complete.",
+            "expected_epoch": 5,
+            "operation": "continue",
+            "subtask": "",
+            "uncertain_or_invalidated": [
+              "Placement of the individual toy seen between the right gripper fingers at step 224 remains unverified by individual tracking.",
+              "The black wristwatch was inside the white basket at step 560; transfer to the blue basket remains unverified at step 672."
+            ]
+          },
+          "effect": {
+            "age_steps": 0,
+            "changed": false,
+            "shadow_only": false,
+            "stop": false
+          },
+          "native_evaluator_information_supplied": false,
+          "reasons": [
+            "periodic_semantic_check_at_native_boundary"
+          ],
+          "step": 672
+        },
+        {
+          "decision": {
+            "assessment": "uncertain",
+            "based_on_stamp": "6279033c271f27378db17218b0c6bad5f65d66483a675ef5de81b26340796dd7",
+            "based_on_step": 784,
+            "completed_claims": [
+              {
+                "evidence_steps": [
+                  112,
+                  224
+                ],
+                "text": "The blue-clothed toy previously lying directly in front of the white basket is now in the white basket."
+              },
+              {
+                "evidence_steps": [
+                  336,
+                  448
+                ],
+                "text": "The blue-clothed toy seen between the left gripper fingers at step 336 has been placed in the white basket."
+              }
+            ],
+            "episode": "778a619684cc4cecbf3a8888551b8581",
+            "evidence": "At step 784, the left-wrist view still shows a partially obscured black object among the toys in the white basket, consistent with the wristwatch identified at step 560 and seen at step 672. No black wristwatch is visibly placed in the blue basket, and neither wrist view shows it held. Transfer remains unverified. Replanning to the observable prerequisite of grasping the watch rather than claiming transfer progress.",
+            "expected_epoch": 5,
+            "operation": "set_subtask",
+            "subtask": "Grasp the black wristwatch among the toys inside the white basket.",
+            "uncertain_or_invalidated": [
+              "Placement of the individual toy seen between the right gripper fingers at step 224 remains unverified by individual tracking.",
+              "The black wristwatch was inside the white basket at step 560; its transfer to the blue basket remains unverified at step 784."
+            ]
+          },
+          "effect": {
+            "age_steps": 0,
+            "changed": true,
+            "shadow_only": false,
+            "stop": false
+          },
+          "native_evaluator_information_supplied": false,
+          "reasons": [
+            "periodic_semantic_check_at_native_boundary"
+          ],
+          "step": 784
+        },
+        {
+          "decision": {
+            "assessment": "uncertain",
+            "based_on_stamp": "19ef41122bcff8359b3357e36dbc63bcfc5f2a849ac4e4bc23576ca50a1e3896",
+            "based_on_step": 896,
+            "completed_claims": [
+              {
+                "evidence_steps": [
+                  112,
+                  224
+                ],
+                "text": "The blue-clothed toy previously lying directly in front of the white basket is now in the white basket."
+              },
+              {
+                "evidence_steps": [
+                  336,
+                  448
+                ],
+                "text": "The blue-clothed toy seen between the left gripper fingers at step 336 has been placed in the white basket."
+              }
+            ],
+            "episode": "778a619684cc4cecbf3a8888551b8581",
+            "evidence": "At step 896, the left-wrist image shows a partially obscured black object still among the toys in the white basket, consistent with the wristwatch previously identified there. Both grippers are away from the baskets and no watch is visibly held. Grasp completion is unverified; retain the current grasp goal. The yellow-and-black object visible on the tabletop at step 784 is now visible in the red basket, but that does not establish progress on the watch grasp.",
+            "expected_epoch": 6,
+            "operation": "continue",
+            "subtask": "",
+            "uncertain_or_invalidated": [
+              "Placement of the individual toy seen between the right gripper fingers at step 224 remains unverified by individual tracking.",
+              "The black wristwatch was inside the white basket at step 560; its grasp and transfer to the blue basket remain unverified at step 896."
+            ]
+          },
+          "effect": {
+            "age_steps": 0,
+            "changed": false,
+            "shadow_only": false,
+            "stop": false
+          },
+          "native_evaluator_information_supplied": false,
+          "reasons": [
+            "periodic_semantic_check_at_native_boundary"
+          ],
+          "step": 896
+        },
+        {
+          "decision": {
+            "assessment": "uncertain",
+            "based_on_stamp": "92bca898eb6bad62b732883af0f81a512e60177dc33f841d2a50354e108d58fe",
+            "based_on_step": 1008,
+            "completed_claims": [
+              {
+                "evidence_steps": [
+                  112,
+                  224
+                ],
+                "text": "The blue-clothed toy previously lying directly in front of the white basket is now in the white basket."
+              },
+              {
+                "evidence_steps": [
+                  336,
+                  448
+                ],
+                "text": "The blue-clothed toy seen between the left gripper fingers at step 336 has been placed in the white basket."
+              }
+            ],
+            "episode": "778a619684cc4cecbf3a8888551b8581",
+            "evidence": "At step 1008, the left-wrist image shows a partially obscured black object among the toys in the white basket, consistent with the watch previously identified there. The scene is essentially unchanged from step 896. Both grippers remain away from the basket and neither visibly holds the watch. Grasp completion and transfer are unverified; retain the current grasp goal.",
+            "expected_epoch": 6,
+            "operation": "continue",
+            "subtask": "",
+            "uncertain_or_invalidated": [
+              "Placement of the individual toy seen between the right gripper fingers at step 224 remains unverified by individual tracking.",
+              "The black wristwatch was inside the white basket at step 560; its grasp and transfer to the blue basket remain unverified at step 1008."
+            ]
+          },
+          "effect": {
+            "age_steps": 0,
+            "changed": false,
+            "shadow_only": false,
+            "stop": false
+          },
+          "native_evaluator_information_supplied": false,
+          "reasons": [
+            "periodic_semantic_check_at_native_boundary"
+          ],
+          "step": 1008
+        }
+      ],
+      "task": "classify_objects"
+    },
+    {
+      "case_id": "organize_table__standard__g0__l0",
+      "decisions": [
+        {
+          "decision": {
+            "assessment": "not_started",
+            "based_on_stamp": "52fbe44c16fc0bb868f6774ecfd198f65a20d11753785149e81cb9d3370f5f17",
+            "based_on_step": 0,
+            "completed_claims": [],
+            "episode": "4b05b630bcda481d874fe6d769b20d62",
+            "evidence": "At step 0, the high and right-wrist views show the mouse on the desktop immediately to the left of the black mouse pad. Neither gripper is holding it.",
+            "expected_epoch": 0,
+            "operation": "set_subtask",
+            "subtask": "Place the mouse on the black mouse pad using the right arm.",
+            "uncertain_or_invalidated": []
+          },
+          "effect": {
+            "age_steps": 0,
+            "changed": true,
+            "shadow_only": false,
+            "stop": false
+          },
+          "native_evaluator_information_supplied": false,
+          "reasons": [
+            "initial_semantic_goal"
+          ],
+          "step": 0
+        },
+        {
+          "decision": {
+            "assessment": "uncertain",
+            "based_on_stamp": "dd5573ad03025f874a0377238328964cf47f2d5aa8d5cf22e96c4534375761bb",
+            "based_on_step": 112,
+            "completed_claims": [],
+            "episode": "4b05b630bcda481d874fe6d769b20d62",
+            "evidence": "At step 112, the high and right-wrist views show the mouse still on the desktop immediately left of the black mouse pad, as at step 0. Placement is not complete, and no mouse grasp is visible. The left arm is near the figurine, but this does not establish progress on the mouse goal.",
+            "expected_epoch": 1,
+            "operation": "continue",
+            "subtask": "",
+            "uncertain_or_invalidated": [
+              "Mouse grasp and movement onto the mouse pad are not verified at step 112."
+            ]
+          },
+          "effect": {
+            "age_steps": 0,
+            "changed": false,
+            "shadow_only": false,
+            "stop": false
+          },
+          "native_evaluator_information_supplied": false,
+          "reasons": [
+            "periodic_semantic_check_at_native_boundary"
+          ],
+          "step": 112
+        },
+        {
+          "decision": {
+            "assessment": "progressing",
+            "based_on_stamp": "0229a532a915c3a0d25f699d7334174d388437657688e27b6bc1909c8410c2e3",
+            "based_on_step": 224,
+            "completed_claims": [],
+            "episode": "4b05b630bcda481d874fe6d769b20d62",
+            "evidence": "At step 224, the right-wrist view shows the mouse straddling the left edge of the black mouse pad, with much of it still outside the pad. This is closer to the pad than its desktop position at step 112, but complete placement and a current grasp are not verified.",
+            "expected_epoch": 1,
+            "operation": "continue",
+            "subtask": "",
+            "uncertain_or_invalidated": [
+              "Complete mouse placement on the pad is not verified at step 224; the mouse still extends beyond the pad's left edge.",
+              "A current mouse grasp is not visible at step 224."
+            ]
+          },
+          "effect": {
+            "age_steps": 0,
+            "changed": false,
+            "shadow_only": false,
+            "stop": false
+          },
+          "native_evaluator_information_supplied": false,
+          "reasons": [
+            "periodic_semantic_check_at_native_boundary"
+          ],
+          "step": 224
+        },
+        {
+          "decision": {
+            "assessment": "uncertain",
+            "based_on_stamp": "d4095c080d9fdd1c695f56c22de4c3a549de45c7df8fbf1eccb3b6625a965a4f",
+            "based_on_step": 336,
+            "completed_claims": [],
+            "episode": "4b05b630bcda481d874fe6d769b20d62",
+            "evidence": "At step 336, the high and right-wrist views show the mouse still straddling the black mouse pad's left edge, with a substantial portion outside the pad. Full placement is not verified, and no current mouse grasp is visible. Compared with step 224, there is no clear additional placement progress.",
+            "expected_epoch": 1,
+            "operation": "continue",
+            "subtask": "",
+            "uncertain_or_invalidated": [
+              "Complete mouse placement remains unverified at step 336; the mouse extends beyond the pad's left edge.",
+              "A current mouse grasp is not visible at step 336."
+            ]
+          },
+          "effect": {
+            "age_steps": 0,
+            "changed": false,
+            "shadow_only": false,
+            "stop": false
+          },
+          "native_evaluator_information_supplied": false,
+          "reasons": [
+            "periodic_semantic_check_at_native_boundary"
+          ],
+          "step": 336
+        },
+        {
+          "decision": {
+            "assessment": "uncertain",
+            "based_on_stamp": "588179264ea6efd79964fd9739dcb74fdab58b1a94bc658d1267c9cb4445cac8",
+            "based_on_step": 448,
+            "completed_claims": [],
+            "episode": "4b05b630bcda481d874fe6d769b20d62",
+            "evidence": "At step 448, the high and right-wrist views show the mouse still straddling the pad's left edge, with a substantial portion on the desktop. Its position appears unchanged from step 336, and no current mouse grasp is visible. Replan to make the desired placement relation explicit; completion remains unverified.",
+            "expected_epoch": 1,
+            "operation": "set_subtask",
+            "subtask": "Place the mouse fully inside the edges of the black mouse pad using the right arm.",
+            "uncertain_or_invalidated": [
+              "Full mouse placement on the pad remains unverified at step 448.",
+              "A current mouse grasp is not visible at step 448."
+            ]
+          },
+          "effect": {
+            "age_steps": 0,
+            "changed": true,
+            "shadow_only": false,
+            "stop": false
+          },
+          "native_evaluator_information_supplied": false,
+          "reasons": [
+            "periodic_semantic_check_at_native_boundary"
+          ],
+          "step": 448
+        },
+        {
+          "decision": {
+            "assessment": "uncertain",
+            "based_on_stamp": "fba6367e3c43f26e408a463f61c2bc3ffcfb7e14d9c340f6e06a7b9e2e4e96d6",
+            "based_on_step": 560,
+            "completed_claims": [],
+            "episode": "4b05b630bcda481d874fe6d769b20d62",
+            "evidence": "At step 560, the high and right-wrist views show the blue mouse still straddling the pad's left edge, appearing unchanged from step 448. The right gripper is beside it, but a grasp is not visible. Full placement remains unverified; replan to establish a mouse grasp first.",
+            "expected_epoch": 2,
+            "operation": "set_subtask",
+            "subtask": "Grasp the blue mouse beside the black mouse pad with the right arm.",
+            "uncertain_or_invalidated": [
+              "Full mouse placement on the pad remains unverified at step 560.",
+              "A current mouse grasp is not visible at step 560."
+            ]
+          },
+          "effect": {
+            "age_steps": 0,
+            "changed": true,
+            "shadow_only": false,
+            "stop": false
+          },
+          "native_evaluator_information_supplied": false,
+          "reasons": [
+            "periodic_semantic_check_at_native_boundary"
+          ],
+          "step": 560
+        },
+        {
+          "decision": {
+            "assessment": "uncertain",
+            "based_on_stamp": "4a9fdf3b3c62418db452c5bae1ee8f0fff8f09bbd171fb63fd3674df0685d8fc",
+            "based_on_step": 672,
+            "completed_claims": [],
+            "episode": "4b05b630bcda481d874fe6d769b20d62",
+            "evidence": "At step 672, the high and right-wrist views show the blue mouse still straddling the pad's left edge, with no visible grasp and no clear change from step 560. Replan to move the mouse onto the pad without requiring a grasp; neither grasp completion nor full placement is verified.",
+            "expected_epoch": 3,
+            "operation": "set_subtask",
+            "subtask": "Push the blue mouse fully onto the black mouse pad with the right arm.",
+            "uncertain_or_invalidated": [
+              "A current mouse grasp is not verified at step 672.",
+              "Full mouse placement on the pad remains unverified at step 672."
+            ]
+          },
+          "effect": {
+            "age_steps": 0,
+            "changed": true,
+            "shadow_only": false,
+            "stop": false
+          },
+          "native_evaluator_information_supplied": false,
+          "reasons": [
+            "periodic_semantic_check_at_native_boundary"
+          ],
+          "step": 672
+        },
+        {
+          "decision": {
+            "assessment": "uncertain",
+            "based_on_stamp": "dd3de331ec9fbf763c81105e0bff99e23e099cddea6a7279dc1e34399571a0cc",
+            "based_on_step": 784,
+            "completed_claims": [],
+            "episode": "4b05b630bcda481d874fe6d769b20d62",
+            "evidence": "At step 784, the high view shows the blue mouse still straddling the black pad's left edge, with no clear placement change from step 672. The right wrist view is partly occluded and does not verify a grasp or successful push. Retain the current placement goal; arm proximity alone is not evidence of object progress.",
+            "expected_epoch": 4,
+            "operation": "continue",
+            "subtask": "",
+            "uncertain_or_invalidated": [
+              "Full mouse placement on the pad remains unverified at step 784.",
+              "A current mouse grasp or successful push is not verified at step 784."
+            ]
+          },
+          "effect": {
+            "age_steps": 0,
+            "changed": false,
+            "shadow_only": false,
+            "stop": false
+          },
+          "native_evaluator_information_supplied": false,
+          "reasons": [
+            "periodic_semantic_check_at_native_boundary"
+          ],
+          "step": 784
+        },
+        {
+          "decision": {
+            "assessment": "uncertain",
+            "based_on_stamp": "a8039f2af8f9aaaee7212015bf8a365a117d8ddb90cd9abb3f5352cd24648b7b",
+            "based_on_step": 896,
+            "completed_claims": [],
+            "episode": "4b05b630bcda481d874fe6d769b20d62",
+            "evidence": "At step 896, the blue mouse still overlaps the black pad's left edge, with no clear placement change from step 784. Both wrist views now show the keyboard, and the high view shows it below the empty outlined frame. Mouse placement remains unverified; replan to the observable keyboard-to-frame transition rather than claim mouse progress.",
+            "expected_epoch": 4,
+            "operation": "set_subtask",
+            "subtask": "Push the keyboard into the outlined frame on the desktop.",
+            "uncertain_or_invalidated": [
+              "Full mouse placement on the pad remains unverified at step 896.",
+              "A successful mouse push or current mouse grasp is not verified at step 896."
+            ]
+          },
+          "effect": {
+            "age_steps": 0,
+            "changed": true,
+            "shadow_only": false,
+            "stop": false
+          },
+          "native_evaluator_information_supplied": false,
+          "reasons": [
+            "periodic_semantic_check_at_native_boundary"
+          ],
+          "step": 896
+        }
+      ],
+      "task": "organize_table"
+    },
+    {
+      "case_id": "pack_objects_into_box__standard__g0__l0",
+      "decisions": [
+        {
+          "decision": {
+            "assessment": "not_started",
+            "based_on_stamp": "ba1d5ad5b210da641df020ce3ae763fe99a4cff71f64ccd8f6e0f1a019be1882",
+            "based_on_step": 0,
+            "completed_claims": [],
+            "episode": "be9724e803b94b6cbc1273013bbc6494",
+            "evidence": "At step 0, the white sneaker is visible on the table near the right gripper, outside the open box. No object is visibly held.",
+            "expected_epoch": 0,
+            "operation": "set_subtask",
+            "subtask": "Grasp the white sneaker on the right side of the table with the right arm.",
+            "uncertain_or_invalidated": []
+          },
+          "effect": {
+            "age_steps": 0,
+            "changed": true,
+            "shadow_only": false,
+            "stop": false
+          },
+          "native_evaluator_information_supplied": false,
+          "reasons": [
+            "initial_semantic_goal"
+          ],
+          "step": 0
+        },
+        {
+          "decision": {
+            "assessment": "uncertain",
+            "based_on_stamp": "e9b646fdda31be1867d239e9e3304c4c4db763c738c18446d5b966d973ea4ce5",
+            "based_on_step": 112,
+            "completed_claims": [],
+            "episode": "be9724e803b94b6cbc1273013bbc6494",
+            "evidence": "At step 112, the white sneaker remains on the tabletop outside the box in both the high and right-wrist views. The right gripper is near it, but no secure grasp or lift is visible. The execution receipt certifies motion only, not object contact. Retain the grasp goal.",
+            "expected_epoch": 1,
+            "operation": "continue",
+            "subtask": "",
+            "uncertain_or_invalidated": [
+              "Grasping the sneaker has not been verified at step 112."
+            ]
+          },
+          "effect": {
+            "age_steps": 0,
+            "changed": false,
+            "shadow_only": false,
+            "stop": false
+          },
+          "native_evaluator_information_supplied": false,
+          "reasons": [
+            "periodic_semantic_check_at_native_boundary"
+          ],
+          "step": 112
+        },
+        {
+          "decision": {
+            "assessment": "complete",
+            "based_on_stamp": "cdf404e43b0387d4e58799202ce52077eab765eae69986fe2a26f37615ca5d14",
+            "based_on_step": 224,
+            "completed_claims": [
+              {
+                "evidence_steps": [
+                  224
+                ],
+                "text": "The right arm has grasped and lifted the white sneaker."
+              }
+            ],
+            "episode": "be9724e803b94b6cbc1273013bbc6494",
+            "evidence": "At step 224, the high view shows the white sneaker lifted off the tabletop in the right gripper beside the open box; the right-wrist view shows the sneaker between the gripper fingers. This supports a grasp, but not placement or the required final orientation.",
+            "expected_epoch": 1,
+            "operation": "set_subtask",
+            "subtask": "Place the white sneaker held by the right arm into the open box with its toe facing left.",
+            "uncertain_or_invalidated": [
+              "The sneaker is not yet visibly placed in the box with its toe facing left."
+            ]
+          },
+          "effect": {
+            "age_steps": 0,
+            "changed": true,
+            "shadow_only": false,
+            "stop": false
+          },
+          "native_evaluator_information_supplied": false,
+          "reasons": [
+            "periodic_semantic_check_at_native_boundary"
+          ],
+          "step": 224
+        },
+        {
+          "decision": {
+            "assessment": "failed",
+            "based_on_stamp": "ca5be5176c92bc22b06cf8e1d7b57c8b4e050a3b1f4a71d5f7eb5032d889885d",
+            "based_on_step": 336,
+            "completed_claims": [],
+            "episode": "be9724e803b94b6cbc1273013bbc6494",
+            "evidence": "At step 336, the high view shows the sneaker back on the tabletop to the right of the box, and the right-wrist view shows separated gripper fingers beside it rather than a held sneaker. The box remains empty in the left-wrist view. The placement goal failed because the previously lifted sneaker is no longer held and remains outside the box.",
+            "expected_epoch": 2,
+            "operation": "recover",
+            "subtask": "Grasp the white sneaker on the right side of the table with the right arm.",
+            "uncertain_or_invalidated": [
+              "The grasp and lift observed at step 224 no longer describe the current state: at step 336 the sneaker is on the table outside the box.",
+              "Placement of the sneaker in the box with its toe facing left has not been achieved."
+            ]
+          },
+          "effect": {
+            "age_steps": 0,
+            "changed": true,
+            "shadow_only": false,
+            "stop": false
+          },
+          "native_evaluator_information_supplied": false,
+          "reasons": [
+            "periodic_semantic_check_at_native_boundary"
+          ],
+          "step": 336
+        },
+        {
+          "decision": {
+            "assessment": "uncertain",
+            "based_on_stamp": "f67d76e07e0bed491b4f673f6a1724ebeb836f970a1324c88a18684f41d5580a",
+            "based_on_step": 448,
+            "completed_claims": [],
+            "episode": "be9724e803b94b6cbc1273013bbc6494",
+            "evidence": "At step 448, the high view shows the sneaker still on the tabletop to the right of the open box. The right gripper is nearby, but the wrist view centers on the small white car and does not verify contact with or lifting of the sneaker. No secure sneaker grasp is visible; retain the current grasp goal.",
+            "expected_epoch": 3,
+            "operation": "continue",
+            "subtask": "",
+            "uncertain_or_invalidated": [
+              "The right arm's grasp of the sneaker remains unverified at step 448.",
+              "The grasp and lift at step 224 no longer describe the current state; the sneaker remains outside the box at step 448.",
+              "Placement of the sneaker in the box with its toe facing left has not been achieved."
+            ]
+          },
+          "effect": {
+            "age_steps": 0,
+            "changed": false,
+            "shadow_only": false,
+            "stop": false
+          },
+          "native_evaluator_information_supplied": false,
+          "reasons": [
+            "periodic_semantic_check_at_native_boundary"
+          ],
+          "step": 448
+        },
+        {
+          "decision": {
+            "assessment": "uncertain",
+            "based_on_stamp": "050dfc581e023f0392b9f0da14967268aca771e71670e55690912bc75277ce43",
+            "based_on_step": 560,
+            "completed_claims": [],
+            "episode": "be9724e803b94b6cbc1273013bbc6494",
+            "evidence": "At step 560, the right-wrist view shows the sneaker between the visible gripper fingers, but does not establish a secure grasp. The high view still shows the sneaker at tabletop level to the right of the empty open box, with no clear lift. Retain the grasp goal; proximity and gripper commands do not certify holding.",
+            "expected_epoch": 3,
+            "operation": "continue",
+            "subtask": "",
+            "uncertain_or_invalidated": [
+              "A secure right-arm grasp of the sneaker remains unverified at step 560.",
+              "The grasp and lift observed at step 224 do not establish the current state.",
+              "Placement of the sneaker in the box with its toe facing left has not been achieved."
+            ]
+          },
+          "effect": {
+            "age_steps": 0,
+            "changed": false,
+            "shadow_only": false,
+            "stop": false
+          },
+          "native_evaluator_information_supplied": false,
+          "reasons": [
+            "periodic_semantic_check_at_native_boundary"
+          ],
+          "step": 560
+        },
+        {
+          "decision": {
+            "assessment": "uncertain",
+            "based_on_stamp": "11e26f9c846485ae8890ed0420c856b3cedf1fa4b71a18ebb864859c985a5646",
+            "based_on_step": 672,
+            "completed_claims": [],
+            "episode": "be9724e803b94b6cbc1273013bbc6494",
+            "evidence": "At step 672, the high view shows the white sneaker on the tabletop to the right of the open, visibly empty box. The right-wrist view shows the sneaker beside the gripper, but no secure enclosure or lift is evident. The current grasp goal remains unverified; retain it.",
+            "expected_epoch": 3,
+            "operation": "continue",
+            "subtask": "",
+            "uncertain_or_invalidated": [
+              "A secure right-arm grasp of the sneaker remains unverified at step 672.",
+              "The grasp and lift observed at step 224 do not establish the current state.",
+              "The sneaker remains outside the box at step 672; placement with its toe facing left has not been achieved."
+            ]
+          },
+          "effect": {
+            "age_steps": 0,
+            "changed": false,
+            "shadow_only": false,
+            "stop": false
+          },
+          "native_evaluator_information_supplied": false,
+          "reasons": [
+            "periodic_semantic_check_at_native_boundary"
+          ],
+          "step": 672
+        },
+        {
+          "decision": {
+            "assessment": "uncertain",
+            "based_on_stamp": "a064a27a64edbacbc79c18309c68dc5314d76599f333525d20756923d869e330",
+            "based_on_step": 784,
+            "completed_claims": [],
+            "episode": "be9724e803b94b6cbc1273013bbc6494",
+            "evidence": "At step 784, the high view shows the white sneaker still on the tabletop to the right of the box. The right-wrist view shows separated fingers around the scene, with the sneaker resting on the table rather than visibly lifted or securely enclosed. A successful right-arm grasp remains unverified; retain the current grasp goal.",
+            "expected_epoch": 3,
+            "operation": "continue",
+            "subtask": "",
+            "uncertain_or_invalidated": [
+              "A secure right-arm grasp of the sneaker remains unverified at step 784.",
+              "The sneaker remains outside the box at step 784; placement with its front facing left has not been achieved.",
+              "The grasp and lift previously reported at step 224 do not establish the current state."
+            ]
+          },
+          "effect": {
+            "age_steps": 0,
+            "changed": false,
+            "shadow_only": false,
+            "stop": false
+          },
+          "native_evaluator_information_supplied": false,
+          "reasons": [
+            "periodic_semantic_check_at_native_boundary"
+          ],
+          "step": 784
+        },
+        {
+          "decision": {
+            "assessment": "uncertain",
+            "based_on_stamp": "0348f533db50492dfb6cf36c2aca45b2dd4f5f20b1ed5a49076ba257d33a3c48",
+            "based_on_step": 896,
+            "completed_claims": [],
+            "episode": "be9724e803b94b6cbc1273013bbc6494",
+            "evidence": "At step 896, the high view shows the white sneaker resting on the tabletop to the right of the open box. The right-wrist view shows separated gripper fingers with the sneaker between them in the image, but no secure contact or lift is evident. Retain the grasp goal; right-arm motion and opening commands do not establish a grasp.",
+            "expected_epoch": 3,
+            "operation": "continue",
+            "subtask": "",
+            "uncertain_or_invalidated": [
+              "A secure right-arm grasp of the sneaker remains unverified at step 896.",
+              "The sneaker remains outside the box at step 896; placement with its front facing left has not been achieved.",
+              "The grasp and lift previously reported at step 224 do not establish the current state."
+            ]
+          },
+          "effect": {
+            "age_steps": 0,
+            "changed": false,
+            "shadow_only": false,
+            "stop": false
+          },
+          "native_evaluator_information_supplied": false,
+          "reasons": [
+            "periodic_semantic_check_at_native_boundary"
+          ],
+          "step": 896
+        },
+        {
+          "decision": {
+            "assessment": "uncertain",
+            "based_on_stamp": "770c938272a3f3acb36774c2a234a72c84645f567437b361c82a6bfcbe927590",
+            "based_on_step": 1008,
+            "completed_claims": [],
+            "episode": "be9724e803b94b6cbc1273013bbc6494",
+            "evidence": "At step 1008, the high view shows the white sneaker resting on the tabletop to the right of the open box. The right-wrist view shows separated fingers beside the sneaker, without a visible secure grasp or lift. The box appears empty. Retain the current grasp goal; arm movement does not establish object acquisition.",
+            "expected_epoch": 3,
+            "operation": "continue",
+            "subtask": "",
+            "uncertain_or_invalidated": [
+              "A secure right-arm grasp of the sneaker remains unverified at step 1008.",
+              "The sneaker remains outside the box at step 1008; placement with its front facing left has not been achieved.",
+              "The grasp and lift previously reported at step 224 do not establish the current state."
+            ]
+          },
+          "effect": {
+            "age_steps": 0,
+            "changed": false,
+            "shadow_only": false,
+            "stop": false
+          },
+          "native_evaluator_information_supplied": false,
+          "reasons": [
+            "periodic_semantic_check_at_native_boundary"
+          ],
+          "step": 1008
+        },
+        {
+          "decision": {
+            "assessment": "uncertain",
+            "based_on_stamp": "9d3f743d753558cc1e88cb00b5a79906d5549a2a5364e9bd6ae23112d5c0329d",
+            "based_on_step": 1120,
+            "completed_claims": [],
+            "episode": "be9724e803b94b6cbc1273013bbc6494",
+            "evidence": "At step 1120, the high view shows the white sneaker resting on the tabletop to the right of the open box. The right-wrist view shows separated fingers beside the sneaker without visible secure enclosure or lift. The box appears empty. Retain the grasp goal; no object acquisition is established.",
+            "expected_epoch": 3,
+            "operation": "continue",
+            "subtask": "",
+            "uncertain_or_invalidated": [
+              "A secure right-arm grasp of the sneaker remains unverified at step 1120.",
+              "The sneaker remains outside the box at step 1120; placement with its front facing left has not been achieved.",
+              "The grasp and lift previously reported at step 224 do not establish the current state."
+            ]
+          },
+          "effect": {
+            "age_steps": 0,
+            "changed": false,
+            "shadow_only": false,
+            "stop": false
+          },
+          "native_evaluator_information_supplied": false,
+          "reasons": [
+            "periodic_semantic_check_at_native_boundary"
+          ],
+          "step": 1120
+        },
+        {
+          "decision": {
+            "assessment": "uncertain",
+            "based_on_stamp": "c4af8542f04466a41cedde611512ec6a574e46f6beffe18af398f2719b494f65",
+            "based_on_step": 1232,
+            "completed_claims": [],
+            "episode": "be9724e803b94b6cbc1273013bbc6494",
+            "evidence": "At step 1232, the high view shows the white sneaker still resting on the tabletop to the right of the open box. The right-wrist view shows separated fingers beside the sneaker, without visible secure enclosure or lift. Its position appears unchanged from step 1120. Retain the current grasp goal; right-arm acquisition is not established.",
+            "expected_epoch": 3,
+            "operation": "continue",
+            "subtask": "",
+            "uncertain_or_invalidated": [
+              "A secure right-arm grasp of the sneaker remains unverified at step 1232.",
+              "The sneaker remains outside the box at step 1232; placement with its front facing left has not been achieved.",
+              "The grasp and lift previously reported at step 224 do not establish the current state."
+            ]
+          },
+          "effect": {
+            "age_steps": 0,
+            "changed": false,
+            "shadow_only": false,
+            "stop": false
+          },
+          "native_evaluator_information_supplied": false,
+          "reasons": [
+            "periodic_semantic_check_at_native_boundary"
+          ],
+          "step": 1232
+        }
+      ],
+      "task": "pack_objects_into_box"
+    },
+    {
+      "case_id": "put_bottles_into_dustbin__standard__g0__l0",
+      "decisions": [
+        {
+          "decision": {
+            "assessment": "not_started",
+            "based_on_stamp": "8478a51da3b38090b0085a287ae5402ddcbf87adf4eff6e4c576de259618a117",
+            "based_on_step": 0,
+            "completed_claims": [],
+            "episode": "3120d6abfdf84912aab5782e761b3c41",
+            "evidence": "At step 0, the pink bottle stands on the left side of the tabletop near the left gripper and beside the open dustbin. No bottle is visibly held.",
+            "expected_epoch": 0,
+            "operation": "set_subtask",
+            "subtask": "Pick up the upright pink bottle with the left hand.",
+            "uncertain_or_invalidated": []
+          },
+          "effect": {
+            "age_steps": 0,
+            "changed": true,
+            "shadow_only": false,
+            "stop": false
+          },
+          "native_evaluator_information_supplied": false,
+          "reasons": [
+            "initial_semantic_goal"
+          ],
+          "step": 0
+        },
+        {
+          "decision": {
+            "assessment": "uncertain",
+            "based_on_stamp": "08aba32e6307bf678253348506644abecdd464566403ce2cae34a22ebfd3730d",
+            "based_on_step": 112,
+            "completed_claims": [],
+            "episode": "3120d6abfdf84912aab5782e761b3c41",
+            "evidence": "At step 112, the left gripper is adjacent to the pink bottle's upper portion. The bottle is tilted compared with step 0, but its base appears near the tabletop; neither a secure grasp nor a lift clear of the table is established by these views.",
+            "expected_epoch": 1,
+            "operation": "continue",
+            "subtask": "",
+            "uncertain_or_invalidated": [
+              "Picking up the pink bottle is not yet verified at step 112."
+            ]
+          },
+          "effect": {
+            "age_steps": 0,
+            "changed": false,
+            "shadow_only": false,
+            "stop": false
+          },
+          "native_evaluator_information_supplied": false,
+          "reasons": [
+            "periodic_semantic_check_at_native_boundary"
+          ],
+          "step": 112
+        },
+        {
+          "decision": {
+            "assessment": "complete",
+            "based_on_stamp": "a8ca4ae0f032b9f854e86f04d203e2166e7783d0ab0dd910773f21e7c0d50383",
+            "based_on_step": 224,
+            "completed_claims": [
+              {
+                "evidence_steps": [
+                  224
+                ],
+                "text": "The left hand has picked up the pink bottle clear of the tabletop."
+              }
+            ],
+            "episode": "3120d6abfdf84912aab5782e761b3c41",
+            "evidence": "At step 224, the high camera shows the pink bottle upright in the left gripper, with its base lifted clear of the tabletop beside the open dustbin on the left. This resolves the uncertain pickup at step 112. The other three bottles remain on the table.",
+            "expected_epoch": 1,
+            "operation": "set_subtask",
+            "subtask": "Put the pink bottle into the open dustbin with the left hand.",
+            "uncertain_or_invalidated": []
+          },
+          "effect": {
+            "age_steps": 0,
+            "changed": true,
+            "shadow_only": false,
+            "stop": false
+          },
+          "native_evaluator_information_supplied": false,
+          "reasons": [
+            "periodic_semantic_check_at_native_boundary"
+          ],
+          "step": 224
+        },
+        {
+          "decision": {
+            "assessment": "complete",
+            "based_on_stamp": "54e85f5be4ea659c8685a6d619f74147b3e42b31de057a97f04b24fe110b680f",
+            "based_on_step": 336,
+            "completed_claims": [
+              {
+                "evidence_steps": [
+                  224
+                ],
+                "text": "The left hand picked up the pink bottle clear of the tabletop."
+              },
+              {
+                "evidence_steps": [
+                  224,
+                  336
+                ],
+                "text": "The pink bottle has been released into the open dustbin."
+              }
+            ],
+            "episode": "3120d6abfdf84912aab5782e761b3c41",
+            "evidence": "At step 336, a pink portion is visible inside the dustbin near its right inner edge, and the left hand is away from the bin beside the upright yellow bottle. The pink bottle is no longer in the left hand. The yellow bottle remains at the tabletop; the wrist view does not establish a lifted grasp.",
+            "expected_epoch": 2,
+            "operation": "set_subtask",
+            "subtask": "Pick up the upright yellow bottle with the left hand.",
+            "uncertain_or_invalidated": [
+              "A grasp or lift of the yellow bottle is not yet verified at step 336."
+            ]
+          },
+          "effect": {
+            "age_steps": 0,
+            "changed": true,
+            "shadow_only": false,
+            "stop": false
+          },
+          "native_evaluator_information_supplied": false,
+          "reasons": [
+            "periodic_semantic_check_at_native_boundary"
+          ],
+          "step": 336
+        },
+        {
+          "decision": {
+            "assessment": "uncertain",
+            "based_on_stamp": "9838c862cf1e1e801fdc8a534132e6f7d69415d31a104a013e8268a01211be32",
+            "based_on_step": 448,
+            "completed_claims": [
+              {
+                "evidence_steps": [
+                  224
+                ],
+                "text": "The left hand picked up the pink bottle clear of the tabletop."
+              },
+              {
+                "evidence_steps": [
+                  224,
+                  336
+                ],
+                "text": "The pink bottle has been released into the open dustbin."
+              }
+            ],
+            "episode": "3120d6abfdf84912aab5782e761b3c41",
+            "evidence": "At step 448, the left gripper is visibly empty beside the open dustbin, and the yellow bottle is no longer visible on the tabletop. Its pickup and disposal cannot be verified. The upright white bottle is between the right gripper fingers, but these views do not establish that its base is lifted clear of the table.",
+            "expected_epoch": 3,
+            "operation": "set_subtask",
+            "subtask": "Pick up the upright white bottle with the right hand.",
+            "uncertain_or_invalidated": [
+              "The yellow bottle's pickup and disposal remain unverified at step 448; it is not visible in the current views.",
+              "A lifted grasp of the white bottle is not yet verified at step 448."
+            ]
+          },
+          "effect": {
+            "age_steps": 0,
+            "changed": true,
+            "shadow_only": false,
+            "stop": false
+          },
+          "native_evaluator_information_supplied": false,
+          "reasons": [
+            "periodic_semantic_check_at_native_boundary"
+          ],
+          "step": 448
+        },
+        {
+          "decision": {
+            "assessment": "failed",
+            "based_on_stamp": "be33df8368693612ab0ca0dd071ed80c9578a8b6731c0346e5cd0a30ba73d26e",
+            "based_on_step": 560,
+            "completed_claims": [
+              {
+                "evidence_steps": [
+                  224
+                ],
+                "text": "The left hand picked up the pink bottle clear of the tabletop."
+              },
+              {
+                "evidence_steps": [
+                  224,
+                  336
+                ],
+                "text": "The pink bottle has been released into the open dustbin."
+              }
+            ],
+            "episode": "3120d6abfdf84912aab5782e761b3c41",
+            "evidence": "At step 560, the white bottle is lying on its side on the tabletop, separate from the right hand. The right gripper is instead beside the pale green-labeled bottle on the right. The attempted pickup of the upright white bottle has not retained it; recovery targets its observed lying position.",
+            "expected_epoch": 4,
+            "operation": "recover",
+            "subtask": "Pick up the white bottle lying on the tabletop with the right hand.",
+            "uncertain_or_invalidated": [
+              "The yellow bottle's pickup and disposal remain unverified.",
+              "The white bottle is not held at step 560; any inferred successful pickup is invalidated.",
+              "A grasp or lift of the green-labeled bottle is not established at step 560."
+            ]
+          },
+          "effect": {
+            "age_steps": 0,
+            "changed": true,
+            "shadow_only": false,
+            "stop": false
+          },
+          "native_evaluator_information_supplied": false,
+          "reasons": [
+            "periodic_semantic_check_at_native_boundary"
+          ],
+          "step": 560
+        },
+        {
+          "decision": {
+            "assessment": "uncertain",
+            "based_on_stamp": "45174ee50fd883006d5d825ff039d38134dab6769e4b57a0eca4264aadcf8e6c",
+            "based_on_step": 672,
+            "completed_claims": [
+              {
+                "evidence_steps": [
+                  224
+                ],
+                "text": "The left hand picked up the pink bottle clear of the tabletop."
+              },
+              {
+                "evidence_steps": [
+                  224,
+                  336
+                ],
+                "text": "The pink bottle has been released into the open dustbin."
+              }
+            ],
+            "episode": "3120d6abfdf84912aab5782e761b3c41",
+            "evidence": "At step 672, the white bottle remains lying on the tabletop, separate from the hands. The green-labeled bottle is now upright between the two grippers, with its label visible in both wrist views. These views do not establish a secure single-hand grasp or completed handover; the next goal targets the bottle currently between the hands.",
+            "expected_epoch": 5,
+            "operation": "set_subtask",
+            "subtask": "Secure the green-labeled bottle in the left hand.",
+            "uncertain_or_invalidated": [
+              "The yellow bottle's pickup and disposal remain unverified.",
+              "The white bottle remains on the tabletop and is not held at step 672.",
+              "A secure grasp or completed handover of the green-labeled bottle is not established at step 672."
+            ]
+          },
+          "effect": {
+            "age_steps": 0,
+            "changed": true,
+            "shadow_only": false,
+            "stop": false
+          },
+          "native_evaluator_information_supplied": false,
+          "reasons": [
+            "periodic_semantic_check_at_native_boundary"
+          ],
+          "step": 672
+        }
+      ],
+      "task": "put_bottles_into_dustbin"
+    }
+  ],
+  "scope": "retained GPT claims and accepted effects; not independent verification"
+}

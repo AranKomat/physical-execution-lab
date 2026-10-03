@@ -1,0 +1,448 @@
+{
+  "integrity_passed": true,
+  "benchmark_qualified": false,
+  "prompt_mode": "subtask_only",
+  "policy": "g05",
+  "returned_horizon": 16,
+  "executed_prefix": 16,
+  "semantic_recovery_enabled": true,
+  "scope": "all-ten admission, prompt boundary, prefix cadence, source predictions and native ACK integrity",
+  "raw_parent_report_sha256": "f6535001613dfe1c72656239d19a8f6ce3d60d8286da5e8960233d3c126b756a",
+  "rows": [
+    {
+      "case_id": "arrange_largest_number__standard__g0__l0",
+      "status": "native_completed",
+      "termination": "native_terminal",
+      "native_steps": 1050,
+      "native_score": 0.15,
+      "success": false,
+      "error": null,
+      "journal_checks": {
+        "journal": {
+          "events": 1194,
+          "head_sha256": "bd7b12a7e4ff57c2d12f45a300ea4af7e56ef9722e4e159e1b55f72e9a9070d2"
+        },
+        "actual_control_acks": 1050,
+        "policy_proposals": 66,
+        "semantic_epochs_seen_by_motor": [
+          1,
+          2,
+          3,
+          4,
+          5,
+          6
+        ],
+        "distinct_effective_prompts": 6,
+        "prefix_cadence_verified": true,
+        "complete_native_result": true,
+        "evidence_kind": "native_unqualified",
+        "robot_competence_claim": false
+      },
+      "planner_requests": 10,
+      "motor_predictions_checked": 66,
+      "issued_recovery_decisions": 1,
+      "accepted_recovery_decisions": 1,
+      "rejected_recovery_decisions": 0,
+      "rejected_recovery_evidence": [],
+      "semantic_recovery_decisions": 1,
+      "semantic_recovery_goal_changes": 1,
+      "recovery_evidence": [
+        {
+          "step": 560,
+          "subtask": "Place the blue 2 from the table behind the third circular pad onto the center of that pad using the right arm.",
+          "changed": true,
+          "evidence": "At step 560, both the high and right wrist views show the blue 2 resting on the table behind the third pad, which is empty, and separate from the right gripper. The attempted placement did not leave the 2 on its pad. The 8 and 7 remain on the first two pads, and the 0 is now resting on the fourth pad."
+        }
+      ],
+      "actual_model_request_prompts_verified": true,
+      "source_predictions_and_native_acks_equal": true
+    },
+    {
+      "case_id": "build_tower__standard__g0__l0",
+      "status": "native_completed",
+      "termination": "native_terminal",
+      "native_steps": 748,
+      "native_score": 1.0,
+      "success": true,
+      "error": null,
+      "journal_checks": {
+        "journal": {
+          "events": 851,
+          "head_sha256": "4b1f4622e1f030c02529ee02af38c88b1f34bf2927ab9e9610387b01a34069b2"
+        },
+        "actual_control_acks": 748,
+        "policy_proposals": 47,
+        "semantic_epochs_seen_by_motor": [
+          1,
+          2,
+          3,
+          4,
+          5,
+          6,
+          7
+        ],
+        "distinct_effective_prompts": 7,
+        "prefix_cadence_verified": true,
+        "complete_native_result": true,
+        "evidence_kind": "native_unqualified",
+        "robot_competence_claim": false
+      },
+      "planner_requests": 7,
+      "motor_predictions_checked": 47,
+      "issued_recovery_decisions": 0,
+      "accepted_recovery_decisions": 0,
+      "rejected_recovery_decisions": 0,
+      "rejected_recovery_evidence": [],
+      "semantic_recovery_decisions": 0,
+      "semantic_recovery_goal_changes": 0,
+      "recovery_evidence": [],
+      "actual_model_request_prompts_verified": true,
+      "source_predictions_and_native_acks_equal": true
+    },
+    {
+      "case_id": "classify_objects_by_language__standard__g0__l0",
+      "status": "native_completed",
+      "termination": "native_terminal",
+      "native_steps": 1100,
+      "native_score": 0.0,
+      "success": false,
+      "error": null,
+      "journal_checks": {
+        "journal": {
+          "events": 1250,
+          "head_sha256": "6d0e4f44f5b37297ed1d8c8880943538dda607fe47f2fda0ac94b32614a48407"
+        },
+        "actual_control_acks": 1100,
+        "policy_proposals": 69,
+        "semantic_epochs_seen_by_motor": [
+          1,
+          2,
+          3,
+          4,
+          5,
+          6,
+          7
+        ],
+        "distinct_effective_prompts": 7,
+        "prefix_cadence_verified": true,
+        "complete_native_result": true,
+        "evidence_kind": "native_unqualified",
+        "robot_competence_claim": false
+      },
+      "planner_requests": 10,
+      "motor_predictions_checked": 69,
+      "issued_recovery_decisions": 0,
+      "accepted_recovery_decisions": 0,
+      "rejected_recovery_decisions": 0,
+      "rejected_recovery_evidence": [],
+      "semantic_recovery_decisions": 0,
+      "semantic_recovery_goal_changes": 0,
+      "recovery_evidence": [],
+      "actual_model_request_prompts_verified": true,
+      "source_predictions_and_native_acks_equal": true
+    },
+    {
+      "case_id": "fold_clothes__standard__g0__l0",
+      "status": "native_completed",
+      "termination": "native_terminal",
+      "native_steps": 305,
+      "native_score": 1.0,
+      "success": true,
+      "error": null,
+      "journal_checks": {
+        "journal": {
+          "events": 350,
+          "head_sha256": "de80f24b20fcd50c2345580c9a8a8c6b14aa24b8af3dc9053f3e80a8dc616180"
+        },
+        "actual_control_acks": 305,
+        "policy_proposals": 20,
+        "semantic_epochs_seen_by_motor": [
+          1,
+          2,
+          3
+        ],
+        "distinct_effective_prompts": 3,
+        "prefix_cadence_verified": true,
+        "complete_native_result": true,
+        "evidence_kind": "native_unqualified",
+        "robot_competence_claim": false
+      },
+      "planner_requests": 3,
+      "motor_predictions_checked": 20,
+      "issued_recovery_decisions": 0,
+      "accepted_recovery_decisions": 0,
+      "rejected_recovery_decisions": 0,
+      "rejected_recovery_evidence": [],
+      "semantic_recovery_decisions": 0,
+      "semantic_recovery_goal_changes": 0,
+      "recovery_evidence": [],
+      "actual_model_request_prompts_verified": true,
+      "source_predictions_and_native_acks_equal": true
+    },
+    {
+      "case_id": "imitate_sorting_sequence__standard__g0__l0",
+      "status": "native_completed",
+      "termination": "native_terminal",
+      "native_steps": 620,
+      "native_score": 0.0,
+      "success": false,
+      "error": null,
+      "journal_checks": {
+        "journal": {
+          "events": 706,
+          "head_sha256": "a56ebb765cb60595a88a3396e69b3b4130caf54b05704b72eaeeb412e3240bec"
+        },
+        "actual_control_acks": 620,
+        "policy_proposals": 39,
+        "semantic_epochs_seen_by_motor": [
+          0,
+          1
+        ],
+        "distinct_effective_prompts": 2,
+        "prefix_cadence_verified": true,
+        "complete_native_result": true,
+        "evidence_kind": "native_unqualified",
+        "robot_competence_claim": false
+      },
+      "planner_requests": 6,
+      "motor_predictions_checked": 39,
+      "issued_recovery_decisions": 0,
+      "accepted_recovery_decisions": 0,
+      "rejected_recovery_decisions": 0,
+      "rejected_recovery_evidence": [],
+      "semantic_recovery_decisions": 0,
+      "semantic_recovery_goal_changes": 0,
+      "recovery_evidence": [],
+      "actual_model_request_prompts_verified": true,
+      "source_predictions_and_native_acks_equal": true
+    },
+    {
+      "case_id": "make_kong__standard__g0__l0",
+      "status": "native_completed",
+      "termination": "native_terminal",
+      "native_steps": 392,
+      "native_score": 1.0,
+      "success": true,
+      "error": null,
+      "journal_checks": {
+        "journal": {
+          "events": 448,
+          "head_sha256": "c8d2fefaa7b05d7c9ad04effd33f588f23a3041eb17e65e579695ef69a173460"
+        },
+        "actual_control_acks": 392,
+        "policy_proposals": 25,
+        "semantic_epochs_seen_by_motor": [
+          1,
+          2
+        ],
+        "distinct_effective_prompts": 2,
+        "prefix_cadence_verified": true,
+        "complete_native_result": true,
+        "evidence_kind": "native_unqualified",
+        "robot_competence_claim": false
+      },
+      "planner_requests": 4,
+      "motor_predictions_checked": 25,
+      "issued_recovery_decisions": 0,
+      "accepted_recovery_decisions": 0,
+      "rejected_recovery_decisions": 0,
+      "rejected_recovery_evidence": [],
+      "semantic_recovery_decisions": 0,
+      "semantic_recovery_goal_changes": 0,
+      "recovery_evidence": [],
+      "actual_model_request_prompts_verified": true,
+      "source_predictions_and_native_acks_equal": true
+    },
+    {
+      "case_id": "classify_objects__standard__g0__l0",
+      "status": "native_completed",
+      "termination": "native_terminal",
+      "native_steps": 1100,
+      "native_score": 0.15,
+      "success": false,
+      "error": null,
+      "journal_checks": {
+        "journal": {
+          "events": 1250,
+          "head_sha256": "af11dca3cb0eed102c24c9d8d4f470101458dd4499a8b8c32f7dc71bc12bcf5e"
+        },
+        "actual_control_acks": 1100,
+        "policy_proposals": 69,
+        "semantic_epochs_seen_by_motor": [
+          1,
+          2,
+          3,
+          4,
+          5,
+          6
+        ],
+        "distinct_effective_prompts": 6,
+        "prefix_cadence_verified": true,
+        "complete_native_result": true,
+        "evidence_kind": "native_unqualified",
+        "robot_competence_claim": false
+      },
+      "planner_requests": 10,
+      "motor_predictions_checked": 69,
+      "issued_recovery_decisions": 1,
+      "accepted_recovery_decisions": 1,
+      "rejected_recovery_decisions": 0,
+      "rejected_recovery_evidence": [],
+      "semantic_recovery_decisions": 1,
+      "semantic_recovery_goal_changes": 1,
+      "recovery_evidence": [
+        {
+          "step": 560,
+          "subtask": "Put the black wristwatch currently inside the white basket into the blue basket.",
+          "changed": true,
+          "evidence": "At step 448, the targeted black wristwatch was on the tabletop in the right-wrist view. At step 560, the left-wrist view clearly shows that black wristwatch resting among the toys inside the white basket, while the blue basket remains empty. The requested placement into the blue basket therefore failed; the watch is in the wrong receptacle."
+        }
+      ],
+      "actual_model_request_prompts_verified": true,
+      "source_predictions_and_native_acks_equal": true
+    },
+    {
+      "case_id": "organize_table__standard__g0__l0",
+      "status": "native_completed",
+      "termination": "native_terminal",
+      "native_steps": 1000,
+      "native_score": 0.25,
+      "success": false,
+      "error": null,
+      "journal_checks": {
+        "journal": {
+          "events": 1137,
+          "head_sha256": "8e27b5526c80f419e6bbb67e51b2eac8df996b494980bdb5b61eadc6d87f70c6"
+        },
+        "actual_control_acks": 1000,
+        "policy_proposals": 63,
+        "semantic_epochs_seen_by_motor": [
+          1,
+          2,
+          3,
+          4,
+          5
+        ],
+        "distinct_effective_prompts": 5,
+        "prefix_cadence_verified": true,
+        "complete_native_result": true,
+        "evidence_kind": "native_unqualified",
+        "robot_competence_claim": false
+      },
+      "planner_requests": 9,
+      "motor_predictions_checked": 63,
+      "issued_recovery_decisions": 0,
+      "accepted_recovery_decisions": 0,
+      "rejected_recovery_decisions": 0,
+      "rejected_recovery_evidence": [],
+      "semantic_recovery_decisions": 0,
+      "semantic_recovery_goal_changes": 0,
+      "recovery_evidence": [],
+      "actual_model_request_prompts_verified": true,
+      "source_predictions_and_native_acks_equal": true
+    },
+    {
+      "case_id": "pack_objects_into_box__standard__g0__l0",
+      "status": "native_completed",
+      "termination": "native_terminal",
+      "native_steps": 1300,
+      "native_score": 0.0,
+      "success": false,
+      "error": null,
+      "journal_checks": {
+        "journal": {
+          "events": 1478,
+          "head_sha256": "570ae35296ca071219851674a88f8bf8e942a9f4434f1dbde35e1c0b35b72e27"
+        },
+        "actual_control_acks": 1300,
+        "policy_proposals": 82,
+        "semantic_epochs_seen_by_motor": [
+          1,
+          2,
+          3
+        ],
+        "distinct_effective_prompts": 2,
+        "prefix_cadence_verified": true,
+        "complete_native_result": true,
+        "evidence_kind": "native_unqualified",
+        "robot_competence_claim": false
+      },
+      "planner_requests": 12,
+      "motor_predictions_checked": 82,
+      "issued_recovery_decisions": 1,
+      "accepted_recovery_decisions": 1,
+      "rejected_recovery_decisions": 0,
+      "rejected_recovery_evidence": [],
+      "semantic_recovery_decisions": 1,
+      "semantic_recovery_goal_changes": 1,
+      "recovery_evidence": [
+        {
+          "step": 336,
+          "subtask": "Grasp the white sneaker on the right side of the table with the right arm.",
+          "changed": true,
+          "evidence": "At step 336, the high view shows the sneaker back on the tabletop to the right of the box, and the right-wrist view shows separated gripper fingers beside it rather than a held sneaker. The box remains empty in the left-wrist view. The placement goal failed because the previously lifted sneaker is no longer held and remains outside the box."
+        }
+      ],
+      "actual_model_request_prompts_verified": true,
+      "source_predictions_and_native_acks_equal": true
+    },
+    {
+      "case_id": "put_bottles_into_dustbin__standard__g0__l0",
+      "status": "native_completed",
+      "termination": "native_terminal",
+      "native_steps": 700,
+      "native_score": 0.25,
+      "success": false,
+      "error": null,
+      "journal_checks": {
+        "journal": {
+          "events": 797,
+          "head_sha256": "d73f9e913366e15221b0cd4e76c019d050b06b547f689483b99e17b04e36e916"
+        },
+        "actual_control_acks": 700,
+        "policy_proposals": 44,
+        "semantic_epochs_seen_by_motor": [
+          1,
+          2,
+          3,
+          4,
+          5,
+          6
+        ],
+        "distinct_effective_prompts": 6,
+        "prefix_cadence_verified": true,
+        "complete_native_result": true,
+        "evidence_kind": "native_unqualified",
+        "robot_competence_claim": false
+      },
+      "planner_requests": 7,
+      "motor_predictions_checked": 44,
+      "issued_recovery_decisions": 1,
+      "accepted_recovery_decisions": 1,
+      "rejected_recovery_decisions": 0,
+      "rejected_recovery_evidence": [],
+      "semantic_recovery_decisions": 1,
+      "semantic_recovery_goal_changes": 1,
+      "recovery_evidence": [
+        {
+          "step": 560,
+          "subtask": "Pick up the white bottle lying on the tabletop with the right hand.",
+          "changed": true,
+          "evidence": "At step 560, the white bottle is lying on its side on the tabletop, separate from the right hand. The right gripper is instead beside the pale green-labeled bottle on the right. The attempted pickup of the upright white bottle has not retained it; recovery targets its observed lying position."
+        }
+      ],
+      "actual_model_request_prompts_verified": true,
+      "source_predictions_and_native_acks_equal": true
+    }
+  ],
+  "native_actions": 8315,
+  "semantic_calls": 78,
+  "native_terminal_cases": 10,
+  "episodes_with_motor_prompt_evidence": 10,
+  "issued_recovery_decisions": 4,
+  "accepted_recovery_decisions": 4,
+  "rejected_recovery_decisions": 0,
+  "accepted_recovery_goal_changes": 4,
+  "successes": 3,
+  "missing_native_scores": 0
+}

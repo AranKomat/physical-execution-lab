@@ -86,12 +86,13 @@ this single-screen comparison can prove necessary.
 - [x] Clarify recover/failed versus ordinary uncertain replanning; keep gates intact.
 - [x] Freeze original-only and subtask-only/recovery conditions before outcomes.
 - [x] Complete/audit original-only across ten distinct tasks concurrently.
-- [ ] Independently verify the complete local original-only backup.
-- [ ] Complete/audit/back up the separate semantic candidate under existing budgets.
-- [ ] Review actual goal epochs and physical behavior; report scores with coverage,
+- [x] Independently verify the complete local original-only backup.
+- [x] Complete/audit the separate semantic candidate under existing budgets.
+- [x] Independently verify the complete local candidate backup.
+- [x] Review actual goal epochs and physical behavior; report scores with coverage,
   censoring, latency, GPT calls/cost and all negative outcomes.
-- [ ] Decide whether a target-grounding or native-reasoning condition is justified
-  by failures and the actual released interface, rather than a prompt sweep.
+- [x] Defer grounding/native-reasoning expansion; prioritize the owner's proposed
+  mistake-only coaching comparison. It is not frozen or launched yet.
 
 Fused sampling uses one source seed0 RNG stream, not independent per-environment
 streams or demonstrated singleton numerical parity. Inference-only padding
@@ -118,10 +119,19 @@ Successes: tower, folding, Kong, classification and bottles. Failures: number
 arrangement0.15, language classification0, imitation0.05, table0.75, packing0.25.
 These are one attempt/layout per opened task, not official RoboDojo SR.
 
-Subtask-only/recovery001 is running with GPT-6.1 Sol/medium, Flex preferred
+Subtask-only/recovery001 completed with GPT-6.1 Sol/medium, Flex preferred
 and the approved same-model Standard capacity fallback; $3 local/$95 shared
 reservation caps remain. The original pre-outcome freeze is retained. Adding
 only the offline semantic audit/renderer required a fresh source snapshot
 `7c4f42c2344fca33f8ed5be4166e5c570b972a6dd909d2803b2f173f08d3f468`;
 the frozen comparison conditions and baseline-admission core are unchanged.
-Do not report candidate performance until it reaches an authoritative outcome.
+Candidate:3/10 successes, mean score0.38, all ten native terminal scores,
+8,315 actions and78 settled Flex calls/$0.47742675 in1488.71 seconds. No
+planner stops, contract errors, tier fallback or new holds. Four accepted
+recoveries changed goals but did not produce a recovered task success. The
+integrity audit passed; the complete local candidate backup is hash-verified,
+the independent local audit is identical, and all ten goal sheets were reviewed.
+The complete baseline archive hash matches remotely/locally, and independent
+local replay of the integrity audit matches the remote audit exactly. All ten
+baseline camera sheets were inspected. See
+[the detailed results/provenance](G05_TEN_TASK_RESULTS_20261003.md).

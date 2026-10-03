@@ -11,8 +11,12 @@ GPU host, not downloaded to the Mac.
 Fresh G0.5 original-only baseline002 completed: 5/10 successes, mean native
 score 0.62, all ten native terminal scores, 8,182 actions, zero paid calls,
 790.30 seconds including startup. Shared source-fused B10 inference and
-prompt/prefix/ACK integrity passed. The separately frozen subtask-only/recovery
-condition is running, not yet a result. See
+prompt/prefix/ACK integrity passed. Separately frozen subtask-only/recovery001
+completed:3/10 successes, mean score0.38, all ten native terminal scores,
+8,315 actions,78 Flex calls/$0.47742675 and1488.71 seconds. No planner stops,
+contract rejections or new holds; four accepted recoveries did not produce task
+success. Native integrity passed. This opened screen does not show a semantic
+gain from a stronger standalone motor. See
 [the G0.5 paper review and checklist](semantic/G05_PAPER_AND_COMPARISON_20261003.md).
 
 All-ten distinct-task shared inference now runs, one method at a time. Retained

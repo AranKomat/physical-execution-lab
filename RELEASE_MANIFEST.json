@@ -768,7 +768,7 @@
     "tests/test_runner.py": "1367ffdeaa9b9c598979e6af98b5c3f9fee3f0bee3256524ad491f3ea14944e9",
     "upstream.lock.json": "553a969210291a8d72a6ae9d0dcd0b49d696e3377125ba400079762a67390a9e",
     "docs/NATIVE_PILOT_20261002.md": "3c481089ade9c7ca93bd0fe1775230966ad8a691d5c805d1751c16edb18acb10",
-    "docs/EXPERIMENT_PROGRESS.md": "3c2b9ef58c7ebea5b00f46668a1b7370342812a606701b1a1e8220ea4d8a5f4e",
+    "docs/EXPERIMENT_PROGRESS.md": "4acbdad2058ff17362f1be8742bbc2c750ba5b6191370a39a9b1c1cc404bb208",
     "scripts/multibench/prepare_g05_bundle.py": "d976e0a3c611ab8ab660e0c735695d30ab68f310e16ce8510a52d5a593a7e332",
     "docs/evidence/g05-native-002/evaluation_outcome.json": "c9c9756f6697ae64e36d0617ba0ed4d1a36d81c2e2853ab8a7c96d57d43f6024",
     "docs/evidence/g05-native-002/fk_validation.json": "d78c3f14caf685676a9fc9e3c82c74377eb5d4e111afe64d0d7142abb1ba6fe4",
@@ -1455,12 +1455,18 @@
     "docs/evidence/pi05-full-panel-semantic-recovery001-20261003/remote-audit.json": "7902c847179266deb30bc591e52a19e686b1b6a4cd8b601fbf396089cd77d5b9",
     "docs/evidence/pi05-full-panel-semantic-recovery001-20261003/semantic.json": "e63a65d09a1e7280cf95eecfccea24f212536e60b36a9c1c6f40e910f003ff29",
     "docs/evidence/pi05-full-panel-semantic-recovery001-20261003/visual-index.json": "04ae9bd4b08a5e59574efaefda241ee4e3da8af94cedc610f7a591b1dd61b1d6",
-    "docs/semantic/G05_PAPER_AND_COMPARISON_20261003.md": "0ad638a3eb204cd1fca021706619efbd39231be4afa732e3a178954698456d5b",
+    "docs/semantic/G05_PAPER_AND_COMPARISON_20261003.md": "25e204ffbfa806ff1bbf7592907c733a24b9ce4042aa25c7cefc40d01a831457",
     "scripts/semantic/audit_full_panel_semantic.py": "a1ab21f81e9e152c0c64a18d1b921d89b0b805fbf07937d6bf963c168881d66f",
     "scripts/semantic/prepare_g05_comparison.py": "9fed8f10aae60bbd8f6f8608da2dd6c9e713a95564585c703875a651bf4cd38d",
     "semantic_lab/g05_batch.py": "26e37585a22962e025a9c08368d8b78ffca02c99f9363425fc760bd7d8ae4730",
     "semantic_lab/motor_contract.py": "9eb7fab57e40076ed40526beaaffece871e5d2149ba2658aa3c19b759ac21f94",
     "tests/semantic/test_g05_batch.py": "30ae91584087eb74d6f8a595d8e7622634d05b3481386515d25d5139945dec35",
-    "scripts/semantic/render_full_panel_observations.py": "521c28d7dd47a738b67b2988c06362a517cfeb8e61abfe1a295de86e00f47da1"
+    "scripts/semantic/render_full_panel_observations.py": "521c28d7dd47a738b67b2988c06362a517cfeb8e61abfe1a295de86e00f47da1",
+    "docs/semantic/G05_TEN_TASK_RESULTS_20261003.md": "7d794f4d83f2827eeb9c513ccc0d8cbc2ae771d78a9db775f8cf9ffebe141779",
+    "docs/evidence/g05-full-ten-comparison001-20261003/api-summary.json": "aff2b33c8d52410cca6d3ed61015817c801edf404d84bd66e3d63ab58edec25e",
+    "docs/evidence/g05-full-ten-comparison001-20261003/baseline-integrity.json": "097884cf19f48f573091cced5c28880332236b62a220bcac123e2a50fb9d1124",
+    "docs/evidence/g05-full-ten-comparison001-20261003/initial-prediction-contrast.json": "9ae8c478063c14d0be78938a208d5eef5f1ff95b9ee7b0a6f53fc22c3b1fe44d",
+    "docs/evidence/g05-full-ten-comparison001-20261003/semantic-decisions.json": "8dc05cc544ff5280c1fdc0b8135740bf48c0ad8f1cbc1d3f51d224f19245d72a",
+    "docs/evidence/g05-full-ten-comparison001-20261003/semantic-integrity.json": "3c43ff128f3e7ef6ae8c3a3e2cb0a26650b41c0df8df7e0f0216cd3cd44e86ec"
   }
 }
