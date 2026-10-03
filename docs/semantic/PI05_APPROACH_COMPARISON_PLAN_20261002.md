@@ -472,8 +472,13 @@ completion. No new paid requests or simulator actions were issued for this work.
 - [x] New Romania endpoint: port 53786 on 92.180.27.84, two 24 GB RTX 4090s.
   Pinned source revisions and the exact released pi0.5 checkpoint are restored.
   Model weights remain on the GPU host, not the Mac.
-- [x] New-host CPU suite: 449 passed before the budget-option change.
-- [ ] Complete pinned simulator asset transfer and verify retained layout bindings.
+- [x] CPU suite: 451 passed after the budget-option change; all 1,380 release
+  file hashes passed.
+- [x] Complete pinned simulator asset transfer and verify retained layout bindings.
+  Scoped transfer checks passed for 2,941 native source/config files and 87
+  retained controller evidence files. The baseline integrity audit was regenerated
+  from its archived 8,497 action records. This is not new physical qualification;
+  live reset and installed-runtime behavior remain to be checked during startup.
 - [ ] Freeze updated source and run the fresh full-ten numeric condition.
 - [ ] Run the fresh full-ten semantic condition, separately from numeric.
 
