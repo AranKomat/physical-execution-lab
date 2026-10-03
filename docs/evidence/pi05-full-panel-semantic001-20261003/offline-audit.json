@@ -1,0 +1,312 @@
+{
+  "integrity_passed": true,
+  "benchmark_qualified": false,
+  "scope": "all-ten admission, prompt boundary, prefix cadence, source predictions and native ACK integrity",
+  "raw_parent_report_sha256": "ff21332446e4a96424aa2b2d67d2bee29ea32d8b061ac2be081e3f118820e617",
+  "rows": [
+    {
+      "case_id": "arrange_largest_number__standard__g0__l0",
+      "status": "planner_stop_incomplete",
+      "termination": "semantic_abstention_not_native_success",
+      "native_steps": 840,
+      "native_score": null,
+      "success": false,
+      "error": null,
+      "journal_checks": {
+        "journal": {
+          "events": 963,
+          "head_sha256": "af0310f27dbd23ecb3bac9addc781f7df86f9030e29c199a469208fd7f2fceaf"
+        },
+        "actual_control_acks": 840,
+        "policy_proposals": 56,
+        "semantic_epochs_seen_by_motor": [
+          1,
+          2
+        ],
+        "distinct_effective_prompts": 2,
+        "prefix_cadence_verified": true,
+        "complete_native_result": false,
+        "evidence_kind": "native_unqualified",
+        "robot_competence_claim": false
+      },
+      "planner_requests": 9,
+      "actual_model_request_prompts_verified": true,
+      "source_predictions_and_native_acks_equal": true
+    },
+    {
+      "case_id": "build_tower__standard__g0__l0",
+      "status": "planner_stop_incomplete",
+      "termination": "semantic_abstention_not_native_success",
+      "native_steps": 630,
+      "native_score": null,
+      "success": false,
+      "error": null,
+      "journal_checks": {
+        "journal": {
+          "events": 723,
+          "head_sha256": "208c6aa02ca6f505951391aa4485d367e125c538d0e98d8bdec54f88db417a45"
+        },
+        "actual_control_acks": 630,
+        "policy_proposals": 42,
+        "semantic_epochs_seen_by_motor": [
+          1,
+          2,
+          3
+        ],
+        "distinct_effective_prompts": 3,
+        "prefix_cadence_verified": true,
+        "complete_native_result": false,
+        "evidence_kind": "native_unqualified",
+        "robot_competence_claim": false
+      },
+      "planner_requests": 7,
+      "actual_model_request_prompts_verified": true,
+      "source_predictions_and_native_acks_equal": true
+    },
+    {
+      "case_id": "classify_objects_by_language__standard__g0__l0",
+      "status": "native_completed",
+      "termination": "native_terminal",
+      "native_steps": 1100,
+      "native_score": 0.0,
+      "success": false,
+      "error": null,
+      "journal_checks": {
+        "journal": {
+          "events": 1261,
+          "head_sha256": "e1efdeb6289b384d098000023ac801790f77ab4190c539a8a189dac244fea781"
+        },
+        "actual_control_acks": 1100,
+        "policy_proposals": 74,
+        "semantic_epochs_seen_by_motor": [
+          1,
+          2
+        ],
+        "distinct_effective_prompts": 2,
+        "prefix_cadence_verified": true,
+        "complete_native_result": true,
+        "evidence_kind": "native_unqualified",
+        "robot_competence_claim": false
+      },
+      "planner_requests": 11,
+      "actual_model_request_prompts_verified": true,
+      "source_predictions_and_native_acks_equal": true
+    },
+    {
+      "case_id": "fold_clothes__standard__g0__l0",
+      "status": "native_completed",
+      "termination": "native_terminal",
+      "native_steps": 298,
+      "native_score": 1.0,
+      "success": true,
+      "error": null,
+      "journal_checks": {
+        "journal": {
+          "events": 343,
+          "head_sha256": "b2735445d617bd9fd8ac8c0baf8d0bf6c649240f953d3f5f50ad2972066b767a"
+        },
+        "actual_control_acks": 298,
+        "policy_proposals": 20,
+        "semantic_epochs_seen_by_motor": [
+          1,
+          2,
+          3
+        ],
+        "distinct_effective_prompts": 3,
+        "prefix_cadence_verified": true,
+        "complete_native_result": true,
+        "evidence_kind": "native_unqualified",
+        "robot_competence_claim": false
+      },
+      "planner_requests": 3,
+      "actual_model_request_prompts_verified": true,
+      "source_predictions_and_native_acks_equal": true
+    },
+    {
+      "case_id": "imitate_sorting_sequence__standard__g0__l0",
+      "status": "native_completed",
+      "termination": "native_terminal",
+      "native_steps": 622,
+      "native_score": 0.0,
+      "success": false,
+      "error": null,
+      "journal_checks": {
+        "journal": {
+          "events": 714,
+          "head_sha256": "86e13552ebb2adb877f7eb76fc56e29ea54ca1a0152ceea9f09512e8545299e5"
+        },
+        "actual_control_acks": 622,
+        "policy_proposals": 42,
+        "semantic_epochs_seen_by_motor": [
+          0,
+          1
+        ],
+        "distinct_effective_prompts": 2,
+        "prefix_cadence_verified": true,
+        "complete_native_result": true,
+        "evidence_kind": "native_unqualified",
+        "robot_competence_claim": false
+      },
+      "planner_requests": 6,
+      "actual_model_request_prompts_verified": true,
+      "source_predictions_and_native_acks_equal": true
+    },
+    {
+      "case_id": "make_kong__standard__g0__l0",
+      "status": "native_completed",
+      "termination": "native_terminal",
+      "native_steps": 600,
+      "native_score": 0.0,
+      "success": false,
+      "error": null,
+      "journal_checks": {
+        "journal": {
+          "events": 688,
+          "head_sha256": "d66d60c17255fd40a4fbaba8643ee52b95167442e5b6005996f85ea468369f1b"
+        },
+        "actual_control_acks": 600,
+        "policy_proposals": 40,
+        "semantic_epochs_seen_by_motor": [
+          1,
+          2
+        ],
+        "distinct_effective_prompts": 2,
+        "prefix_cadence_verified": true,
+        "complete_native_result": true,
+        "evidence_kind": "native_unqualified",
+        "robot_competence_claim": false
+      },
+      "planner_requests": 6,
+      "actual_model_request_prompts_verified": true,
+      "source_predictions_and_native_acks_equal": true
+    },
+    {
+      "case_id": "classify_objects__standard__g0__l0",
+      "status": "native_completed",
+      "termination": "native_terminal",
+      "native_steps": 714,
+      "native_score": 1.0,
+      "success": true,
+      "error": null,
+      "journal_checks": {
+        "journal": {
+          "events": 819,
+          "head_sha256": "f9e5125a3f4f6ce7aed46d11eee8bec9c7b45871d7a7b193c51a674c4a16149d"
+        },
+        "actual_control_acks": 714,
+        "policy_proposals": 48,
+        "semantic_epochs_seen_by_motor": [
+          1,
+          2,
+          3,
+          4,
+          5,
+          6
+        ],
+        "distinct_effective_prompts": 6,
+        "prefix_cadence_verified": true,
+        "complete_native_result": true,
+        "evidence_kind": "native_unqualified",
+        "robot_competence_claim": false
+      },
+      "planner_requests": 7,
+      "actual_model_request_prompts_verified": true,
+      "source_predictions_and_native_acks_equal": true
+    },
+    {
+      "case_id": "organize_table__standard__g0__l0",
+      "status": "native_completed",
+      "termination": "native_terminal",
+      "native_steps": 1000,
+      "native_score": 0.5,
+      "success": false,
+      "error": null,
+      "journal_checks": {
+        "journal": {
+          "events": 1146,
+          "head_sha256": "2487247f0c72c3483d98f44d197e108d6c1520088e43e2487fcf24516e9e6386"
+        },
+        "actual_control_acks": 1000,
+        "policy_proposals": 67,
+        "semantic_epochs_seen_by_motor": [
+          1,
+          2,
+          3
+        ],
+        "distinct_effective_prompts": 3,
+        "prefix_cadence_verified": true,
+        "complete_native_result": true,
+        "evidence_kind": "native_unqualified",
+        "robot_competence_claim": false
+      },
+      "planner_requests": 10,
+      "actual_model_request_prompts_verified": true,
+      "source_predictions_and_native_acks_equal": true
+    },
+    {
+      "case_id": "pack_objects_into_box__standard__g0__l0",
+      "status": "native_completed",
+      "termination": "native_terminal",
+      "native_steps": 1300,
+      "native_score": 0.25,
+      "success": false,
+      "error": null,
+      "journal_checks": {
+        "journal": {
+          "events": 1489,
+          "head_sha256": "8885522a62b71235ea8118ce5fa740e77c602f914ff4a6c912d652ce125a8e70"
+        },
+        "actual_control_acks": 1300,
+        "policy_proposals": 87,
+        "semantic_epochs_seen_by_motor": [
+          1,
+          2,
+          3,
+          4,
+          5
+        ],
+        "distinct_effective_prompts": 5,
+        "prefix_cadence_verified": true,
+        "complete_native_result": true,
+        "evidence_kind": "native_unqualified",
+        "robot_competence_claim": false
+      },
+      "planner_requests": 13,
+      "actual_model_request_prompts_verified": true,
+      "source_predictions_and_native_acks_equal": true
+    },
+    {
+      "case_id": "put_bottles_into_dustbin__standard__g0__l0",
+      "status": "planner_stop_incomplete",
+      "termination": "semantic_abstention_not_native_success",
+      "native_steps": 105,
+      "native_score": null,
+      "success": false,
+      "error": null,
+      "journal_checks": {
+        "journal": {
+          "events": 123,
+          "head_sha256": "72d1ff7b4595ebd5c1fb2c4904f0cc3848f35099bd9ba4870c0ca6d4052e5693"
+        },
+        "actual_control_acks": 105,
+        "policy_proposals": 7,
+        "semantic_epochs_seen_by_motor": [
+          1
+        ],
+        "distinct_effective_prompts": 1,
+        "prefix_cadence_verified": true,
+        "complete_native_result": false,
+        "evidence_kind": "native_unqualified",
+        "robot_competence_claim": false
+      },
+      "planner_requests": 2,
+      "actual_model_request_prompts_verified": true,
+      "source_predictions_and_native_acks_equal": true
+    }
+  ],
+  "native_actions": 7209,
+  "semantic_calls": 74,
+  "native_terminal_cases": 7,
+  "successes": 2,
+  "missing_native_scores": 3
+}

@@ -516,13 +516,18 @@ completion. No new paid requests or simulator actions were issued for this work.
   failures and 5 model-directed early stops. Native score coverage is 5/10;
   full-panel scored comparison remains incomplete. See
   `../evidence/pi05-full-panel-numeric005-20261003/REPORT.md`.
-- [ ] Run the fresh full-ten semantic condition, separately from numeric.
+- [x] Run the fresh full-ten semantic condition, separately from numeric.
+  Semantic001 finished: two successes, five native failures, three planner
+  abstentions; native score coverage 7/10. All 7,209 action/prefix/prompt-retention
+  checks passed. Cost $0.44593025, 74 settled Flex calls, no new holds.
+  See `../evidence/pi05-full-panel-semantic001-20261003/REPORT.md`.
 
-`pi05-full-panel-semantic001` is live on the same post-reboot host with one
-shared pi0.5 runtime and all ten distinct tasks. All-ten reset admission passed
-and physical actions have begun. No final semantic outcomes are available yet;
-do not mark this checklist item complete or restart solely on an observation
-timeout. Executable source/configuration stays frozen throughout the episode.
+`pi05-full-panel-semantic001` finished on the same post-reboot host with one
+shared pi0.5 runtime and all ten distinct tasks. All-ten reset admission passed.
+All three abstention explanations cite recovery being disabled; the bottle stop
+was uncertainty about placement, not established failure. A fresh recovery-enabled
+condition is next after the same-host original-only control. Preserve this trial;
+it cannot be retroactively changed into a recovery-enabled or native-only run.
 
 - [x] Download the complete numeric005 evidence archive and match its remote
   SHA-256; extract and independently re-audit all ten streams and 6,390 ACKs.
