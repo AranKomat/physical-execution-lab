@@ -21,18 +21,46 @@ path, rather than spending on a faithful high-frequency numeric reproduction.
 The fidelity review remains necessary to interpret numeric005, but its proposed
 reference-style control is deferred, not the next mandatory paid experiment.
 
-- [ ] Finish semantic001 and audit prompt routing, normal motor cadence and all
+- [x] Finish semantic001 and audit prompt routing, normal motor cadence and all
   ten outcomes before changing its condition.
-- [ ] Inspect failures separately as wrong semantic goal, weak motor response,
+- [x] Inspect failures separately as wrong semantic goal, weak motor response,
   planner abstention, or infrastructure/contract error. A routed prompt does not
   prove subtask obedience, and a visual judgment is not hidden physical truth.
 - [ ] Select a fresh semantic condition from retained evidence, emphasizing
   coherent subtasks, meaningful completion checks and evidence-triggered
   replanning without motor-prefix interruption. Do not tune during semantic001.
-- [ ] Keep a matched same-host original-only full-ten control; retain baseline003.
+- [x] Keep a matched same-host original-only full-ten control; retain baseline003.
 - [ ] Defer reference-style numeric reproduction and further numeric cadence
   sweeps. Numeric corrections are a possible later narrowly scoped fallback,
   not the central architecture. No published gain is imported as our result.
+
+### All-Ten Visual Review And Same-Host Control (2026-10-03)
+
+Baseline004 completed with 2/10 native successes, mean score 0.345, 8,631
+actions and zero API calls. Semantic001 also has two successes; classification
+improves from 0.4 to 1, packing from 0.10 to 0.25, folding remains successful,
+and bottles becomes an early planner abstention. Do not present the old-host
+baseline003's 3/10 as a clean matched contrast. One attempt per task remains
+insufficient for a reliable hierarchy benefit.
+
+The owner-requested visual check is complete across all ten actual semantic
+trajectories. Folding/pink-bottle pickup and parts of packing/classification
+align with goals. Language sorting has a clear wrong-basket placement; imitation
+handles a different rectangular device; tower/table continue other overall-task
+operations while narrow goals remain active. Planner goals can be stale, and
+hidden placement is not automatically physical failure. Prompt routing/tokenizer
+retention and native cadence audits pass; obedience is a separate behavioral
+question. See
+`../evidence/pi05-semantic-visual-audit001-20261003/REPORT.md`.
+
+- [x] Review all-ten prompt epochs with retained RGB and closer ambiguous sequences.
+- [x] Publish same-host descriptive contrast without importing historical controls.
+- [ ] Run a bounded matched-state original/task-plus-subtask/subtask-only response
+  check with visible physical effects; prediction differences alone do not qualify.
+- [ ] Run semantic recovery separately if selected. Its single-toggle freeze is
+  prepared but unrun; it does not by itself fix exclusive motor steerability.
+
+No new episode, training or paid call was launched for the visual review.
 
 ### Owner Scheduling Correction
 

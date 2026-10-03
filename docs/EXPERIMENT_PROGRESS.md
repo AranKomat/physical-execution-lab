@@ -13,12 +13,20 @@ original-only baseline003: 3/10 successes, mean native score 0.44. Numeric005:
 Semantic001: 2 successes, 5 native failures, 3 planner stops (score coverage 7/10),
 7,209 actions, 74 settled Flex calls / $0.44593025. Prompt retention, native
 prefix cadence and physical ACK integrity passed on all ten semantic streams.
-Neither hybrid has demonstrated improvement; direct002 remains censored/invalid,
+Neither hybrid has demonstrated reliable improvement; direct002 remains censored/invalid,
 not physical 0/10. One attempt per task is not a benchmark SR estimate.
 
 Full semantic evidence is locally backed up, archive hash-matched and independently
-audited. Current same-host original-only baseline004 is live and zero-API. A
-separately named full-ten recovery condition is prepared/frozen, changing only
+audited. Same-host original-only baseline004 is complete: 2/10 successes, mean
+native score 0.345, 8,631 actions and zero API calls. Relative to this control,
+semantic gains classification, improves packing's partial score and abandons
+bottles; success counts are equal, not a clean 2-versus-3 comparison.
+The all-ten visual review finds mixed subtask alignment, clear object/destination
+mismatches, continued overall-task routines and stale planner goals. No new
+robot experiment was launched for this review. See
+[the visual audit](evidence/pi05-semantic-visual-audit001-20261003/REPORT.md) and
+[same-host baseline](evidence/pi05-full-panel-baseline004-20261003/REPORT.md).
+A separately named full-ten recovery condition is prepared/frozen, changing only
 `allow_semantic_recovery` to true; it has not run. Numeric reproduction is deferred
 at the owner's direction. See
 [the active checklist](semantic/PI05_APPROACH_COMPARISON_PLAN_20261002.md),

@@ -57,11 +57,22 @@ of visual judgments, task improvement or official benchmark qualification.
 
 ## Interpretation
 
-There is no demonstrated gain: prior original-only baseline003 achieved three
-successes, numeric005 three, and this semantic condition two. Both semantic
-successes were also baseline successes; the bottle baseline success was lost
-through early abstention. Different installed host binaries and one attempt per
-task preclude a strong causal ranking.
+There is no demonstrated reliable gain. The fresh same-host original-only
+baseline004 achieved two successes and mean native score 0.345; this semantic
+condition also achieved two successes. Semantic gains classification (native
+score 1 versus 0.4), retains folding, and loses bottles through early abstention.
+Packing improves descriptively from 0.10 to 0.25. Baseline003's three successes
+and mean 0.44 remain historical old-host evidence, not a clean matched contrast.
+Single attempts, numerical/runtime variation and different rollout RNG-stream
+consumption preclude a strong causal ranking even for the same-host pair.
+
+All ten semantic task trajectories have now been visually inspected against
+their actual prompt epochs. See
+[the visual review](../pi05-semantic-visual-audit001-20261003/REPORT.md) for
+per-task findings and images. Visible compliance is mixed: several correct
+object/action sequences, clear destination/object mismatches, and continued
+overall-task behavior under a narrow current subtask. This is not proof of
+language causality or evidence that every failure is instruction rejection.
 
 All three final abstention decisions explicitly cite recovery being disabled:
 
@@ -103,11 +114,11 @@ and both GPUs reported zero allocated MiB after the run.
 
 ## Next Work
 
-1. Complete a separately named original-only full-ten repeat on this host;
-   preserve baseline003 rather than replacing its evidence.
-2. Inspect retained current-episode goal/progress evidence and prepare a fresh
-   recovery-enabled semantic condition. Preserve native cadence, sensor/evaluator
-   separation, explicit stopping semantics and the same full-ten roster.
+1. Same-host baseline004 is complete; preserve baseline003 as historical evidence.
+2. All-ten visual review is complete. A recovery-enabled condition is prepared
+   but unrun; it isolates the recovery toggle, not motor steerability. Next
+   distinguish prompt-format responsiveness using matched states and short
+   observed rollouts before attributing this screen to deficient subtask training.
 3. Distinguish wrong goal selection, weak motor response, mistaken observation
    judgments and premature abstention. Do not tune during an active frozen run.
 4. Numeric reference reproduction is deferred at the owner's direction; keep
