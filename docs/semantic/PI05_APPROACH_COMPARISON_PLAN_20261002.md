@@ -26,7 +26,7 @@ reference-style control is deferred, not the next mandatory paid experiment.
 - [x] Inspect failures separately as wrong semantic goal, weak motor response,
   planner abstention, or infrastructure/contract error. A routed prompt does not
   prove subtask obedience, and a visual judgment is not hidden physical truth.
-- [ ] Select a fresh semantic condition from retained evidence, emphasizing
+- [x] Select a fresh semantic condition from retained evidence, emphasizing
   coherent subtasks, meaningful completion checks and evidence-triggered
   replanning without motor-prefix interruption. Do not tune during semantic001.
 - [x] Keep a matched same-host original-only full-ten control; retain baseline003.
@@ -57,10 +57,14 @@ question. See
 - [x] Publish same-host descriptive contrast without importing historical controls.
 - [ ] Run a bounded matched-state original/task-plus-subtask/subtask-only response
   check with visible physical effects; prediction differences alone do not qualify.
-- [ ] Run semantic recovery separately if selected. Its single-toggle freeze is
-  prepared but unrun; it does not by itself fix exclusive motor steerability.
+- [ ] Complete and audit the separately frozen full-ten recovery-only run,
+  currently active as `pi05-full-panel-semantic-recovery001`. It does not by
+  itself fix exclusive motor steerability; issued and accepted recoveries differ.
 
 No new episode, training or paid call was launched for the visual review.
+The consolidated observational answer across both semantic formats is
+`PI05_INSTRUCTION_FOLLOWING_REVIEW_20261003.md`. The separately launched recovery
+condition retains the frozen source/config, all ten tasks and $3 cohort cap.
 
 ### Prompt-Format Continuation
 

@@ -1,5 +1,20 @@
 # V5 Matched Language Hierarchy
 
+## Latest Full-Roster Evidence: 2026-10-03
+
+The five-case development phases A-D below have completed at their stated
+scope. Subsequent full-ten fused-runtime screens are documented in
+`PI05_APPROACH_COMPARISON_PLAN_20261002.md`: same-host original-only 2 successes,
+task-plus-subtask 2 successes/3 planner stops, subtask-only 1 success/4 planner
+stops. Missing native scores remain missing, not physical failures. All-ten
+visual reviews find mixed nonexclusive following; prompt delivery passes but
+language causality is unestablished. The full-ten recovery-only condition is
+currently running. Phase E remains unrun as an untouched/second-backend comparison;
+the now-open ten-task screen cannot be relabeled untouched evaluation.
+
+The original historical checklist below is not a current run queue. Use the
+active comparison checklist and per-cohort evidence before scheduling work.
+
 ## Frozen Design
 
 ## Current Comparison Priority

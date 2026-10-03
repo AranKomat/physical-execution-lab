@@ -58,3 +58,32 @@ hierarchy benefit or reliable loss from this pair.
 
 See the [all-ten visual review](../pi05-semantic-visual-audit001-20261003/REPORT.md)
 for instruction-following evidence and remaining uncertainty.
+
+## Retained Visual Contrast
+
+All ten original-only contact sheets were subsequently rendered and inspected
+for the instruction-following comparison. The head and both wrist pixels are
+real retained actor inputs, sampled at native H15 motor boundaries; derived
+MP4s are not continuous physics recordings. The epoch renderer already
+published with the subtask-only report was reused without modifying control or
+making paid calls. `visual-index.json` lists the actual source steps; MP4s stay
+local in `runs/pi05-baseline004-visual-audit001/`.
+
+| Task | Contact Sheet |
+|---|---|
+| Number arrangement | [View](arrange_largest_number.jpg) |
+| Tower | [View](build_tower.jpg) |
+| Language classification | [View](classify_objects_by_language.jpg) |
+| Folding | [View](fold_clothes.jpg) |
+| Imitation | [View](imitate_sorting_sequence.jpg) |
+| Kong | [View](make_kong.jpg) |
+| Classification | [View](classify_objects.jpg) |
+| Table organization | [View](organize_table.jpg) |
+| Packing | [View](pack_objects_into_box.jpg) |
+| Bottles | [View](put_bottles_into_dustbin.jpg) |
+
+Classification's retained end view has a doll in red and pens in blue, unlike
+the correct category placement in both semantic formats. Baseline packing also
+starts with the shoe; the subtask-only car-request/shoe-action mismatch is
+consistent with an existing routine continuing despite the changed prompt.
+These contrasts are descriptive, not identical-state causal experiments.

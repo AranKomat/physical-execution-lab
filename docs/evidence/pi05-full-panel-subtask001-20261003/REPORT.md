@@ -134,7 +134,10 @@ it changes `allow_semantic_recovery` to true, retaining task-plus-subtask and
 the same ten-task roster. It is the next meaningful check of premature stopping
 and useful semantic replanning, not a proven fix for motor steerability.
 
-Multiple preselected layouts, semantic shadow, reliable language causality,
-generalization and second-motor/backend hierarchy comparisons remain unfinished.
+Multiple preselected layouts, reliable language causality, generalization and
+second-motor/backend hierarchy comparisons remain unfinished. The earlier
+synchronous stateless pi0.5 shadow cadence/prompt qualification passed on the
+scoped development case; a fresh full-ten fused-runtime shadow was not run.
+Do not describe that earlier qualification as unfinished or as bitwise parity.
 This negative full-roster result is substantive experiment progress, not
 completion of the V5 objective.

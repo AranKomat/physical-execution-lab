@@ -1,5 +1,23 @@
 # Semantic hierarchy v0.5 — implementation status
 
+## Live Evidence Update: 2026-10-03
+
+The build-package status below is historical. Native synchronous pi0.5
+cadence/prompt no-interference and actual tokenizer/context/ACK qualification
+passed on the scoped development setup; bitwise trajectory parity and language
+obedience were not established. Earlier five-case hierarchy and recovery panels
+completed, followed by full-ten same-host original-only, task-plus-subtask and
+subtask-only screens using shared fused-vmap inference. All-ten visual reviews
+find mixed, nonexclusive subtask following, not a reliable hierarchy gain.
+The separately frozen full-ten recovery-only run is currently active.
+
+Read [the all-ten instruction review](PI05_INSTRUCTION_FOLLOWING_REVIEW_20261003.md)
+and [the active comparison checklist](PI05_APPROACH_COMPARISON_PLAN_20261002.md).
+Reliable causal steering, layout replication, untouched-task generalization,
+second-motor/backend hierarchy and asynchronous physical execution remain open.
+Do not repeat the old scoped shadow merely because this package's original
+checklist or the external handoff still describes it as pending.
+
 ## Implemented and CPU-tested
 
 - Additive `semantic_lab/` runner and `run_semantic.py` CLI.
