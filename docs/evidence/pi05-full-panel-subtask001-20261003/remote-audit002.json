@@ -1,0 +1,315 @@
+{
+  "integrity_passed": true,
+  "benchmark_qualified": false,
+  "prompt_mode": "subtask_only",
+  "scope": "all-ten admission, prompt boundary, prefix cadence, source predictions and native ACK integrity",
+  "raw_parent_report_sha256": "79c8951ed7ae1460897c574a3a64d68a5521d61c239a7fffe7506f9d906bf857",
+  "rows": [
+    {
+      "case_id": "arrange_largest_number__standard__g0__l0",
+      "status": "planner_stop_incomplete",
+      "termination": "semantic_abstention_not_native_success",
+      "native_steps": 630,
+      "native_score": null,
+      "success": false,
+      "error": null,
+      "journal_checks": {
+        "journal": {
+          "events": 723,
+          "head_sha256": "a57659a73f2164a87c656c46b21191b3a254272c63ee54f420a2850880d7f3d4"
+        },
+        "actual_control_acks": 630,
+        "policy_proposals": 42,
+        "semantic_epochs_seen_by_motor": [
+          1,
+          2,
+          3
+        ],
+        "distinct_effective_prompts": 3,
+        "prefix_cadence_verified": true,
+        "complete_native_result": false,
+        "evidence_kind": "native_unqualified",
+        "robot_competence_claim": false
+      },
+      "planner_requests": 7,
+      "motor_predictions_checked": 42,
+      "actual_model_request_prompts_verified": true,
+      "source_predictions_and_native_acks_equal": true
+    },
+    {
+      "case_id": "build_tower__standard__g0__l0",
+      "status": "native_completed",
+      "termination": "native_terminal",
+      "native_steps": 1050,
+      "native_score": 0.1,
+      "success": false,
+      "error": null,
+      "journal_checks": {
+        "journal": {
+          "events": 1202,
+          "head_sha256": "5c173aadbe91a9145b56556d00cb7c5376409807ad59a9b24375e89f0e3896d2"
+        },
+        "actual_control_acks": 1050,
+        "policy_proposals": 70,
+        "semantic_epochs_seen_by_motor": [
+          1,
+          2,
+          3
+        ],
+        "distinct_effective_prompts": 3,
+        "prefix_cadence_verified": true,
+        "complete_native_result": true,
+        "evidence_kind": "native_unqualified",
+        "robot_competence_claim": false
+      },
+      "planner_requests": 10,
+      "motor_predictions_checked": 70,
+      "actual_model_request_prompts_verified": true,
+      "source_predictions_and_native_acks_equal": true
+    },
+    {
+      "case_id": "classify_objects_by_language__standard__g0__l0",
+      "status": "native_completed",
+      "termination": "native_terminal",
+      "native_steps": 1100,
+      "native_score": 0.0,
+      "success": false,
+      "error": null,
+      "journal_checks": {
+        "journal": {
+          "events": 1261,
+          "head_sha256": "0dba286c9bebec9dfc417ec00450df9cf4104519224edac9c29f1271c5c562a5"
+        },
+        "actual_control_acks": 1100,
+        "policy_proposals": 74,
+        "semantic_epochs_seen_by_motor": [
+          1,
+          2
+        ],
+        "distinct_effective_prompts": 2,
+        "prefix_cadence_verified": true,
+        "complete_native_result": true,
+        "evidence_kind": "native_unqualified",
+        "robot_competence_claim": false
+      },
+      "planner_requests": 11,
+      "motor_predictions_checked": 74,
+      "actual_model_request_prompts_verified": true,
+      "source_predictions_and_native_acks_equal": true
+    },
+    {
+      "case_id": "fold_clothes__standard__g0__l0",
+      "status": "native_completed",
+      "termination": "native_terminal",
+      "native_steps": 500,
+      "native_score": 0.0,
+      "success": false,
+      "error": null,
+      "journal_checks": {
+        "journal": {
+          "events": 575,
+          "head_sha256": "c1a24c6609dcf761de1d16fbbb23b34b4b43ed124fafa505e66f8d87f2411c5d"
+        },
+        "actual_control_acks": 500,
+        "policy_proposals": 34,
+        "semantic_epochs_seen_by_motor": [
+          1,
+          2
+        ],
+        "distinct_effective_prompts": 2,
+        "prefix_cadence_verified": true,
+        "complete_native_result": true,
+        "evidence_kind": "native_unqualified",
+        "robot_competence_claim": false
+      },
+      "planner_requests": 5,
+      "motor_predictions_checked": 34,
+      "actual_model_request_prompts_verified": true,
+      "source_predictions_and_native_acks_equal": true
+    },
+    {
+      "case_id": "imitate_sorting_sequence__standard__g0__l0",
+      "status": "planner_stop_incomplete",
+      "termination": "semantic_abstention_not_native_success",
+      "native_steps": 0,
+      "native_score": null,
+      "success": false,
+      "error": null,
+      "journal_checks": {
+        "journal": {
+          "events": 3,
+          "head_sha256": "5b2096060c7bd3335fe65a3cd468cf59641430bb31450f08026b5ed4c583654c"
+        },
+        "actual_control_acks": 0,
+        "policy_proposals": 0,
+        "semantic_epochs_seen_by_motor": [],
+        "distinct_effective_prompts": 0,
+        "prefix_cadence_verified": true,
+        "complete_native_result": false,
+        "evidence_kind": "native_unqualified",
+        "robot_competence_claim": false
+      },
+      "planner_requests": 1,
+      "motor_predictions_checked": 0,
+      "actual_model_request_prompts_verified": false,
+      "source_predictions_and_native_acks_equal": true
+    },
+    {
+      "case_id": "make_kong__standard__g0__l0",
+      "status": "native_completed",
+      "termination": "native_terminal",
+      "native_steps": 600,
+      "native_score": 0.0,
+      "success": false,
+      "error": null,
+      "journal_checks": {
+        "journal": {
+          "events": 688,
+          "head_sha256": "328996b276f5c6ce6208655e252c56462186b710bf3bafc082bce2b134dfadee"
+        },
+        "actual_control_acks": 600,
+        "policy_proposals": 40,
+        "semantic_epochs_seen_by_motor": [
+          1,
+          2
+        ],
+        "distinct_effective_prompts": 2,
+        "prefix_cadence_verified": true,
+        "complete_native_result": true,
+        "evidence_kind": "native_unqualified",
+        "robot_competence_claim": false
+      },
+      "planner_requests": 6,
+      "motor_predictions_checked": 40,
+      "actual_model_request_prompts_verified": true,
+      "source_predictions_and_native_acks_equal": true
+    },
+    {
+      "case_id": "classify_objects__standard__g0__l0",
+      "status": "native_completed",
+      "termination": "native_terminal",
+      "native_steps": 727,
+      "native_score": 1.0,
+      "success": true,
+      "error": null,
+      "journal_checks": {
+        "journal": {
+          "events": 834,
+          "head_sha256": "43c95914ebaca9ad2e33472823ee4848959f40970cfc98c59e0ca831d2cb8d04"
+        },
+        "actual_control_acks": 727,
+        "policy_proposals": 49,
+        "semantic_epochs_seen_by_motor": [
+          1,
+          2,
+          3,
+          4
+        ],
+        "distinct_effective_prompts": 4,
+        "prefix_cadence_verified": true,
+        "complete_native_result": true,
+        "evidence_kind": "native_unqualified",
+        "robot_competence_claim": false
+      },
+      "planner_requests": 7,
+      "motor_predictions_checked": 49,
+      "actual_model_request_prompts_verified": true,
+      "source_predictions_and_native_acks_equal": true
+    },
+    {
+      "case_id": "organize_table__standard__g0__l0",
+      "status": "native_completed",
+      "termination": "native_terminal",
+      "native_steps": 1000,
+      "native_score": 0.75,
+      "success": false,
+      "error": null,
+      "journal_checks": {
+        "journal": {
+          "events": 1146,
+          "head_sha256": "cdb0eddc8f121c8c0a56c1665f6fc1edae979253c1bbd6b6f69f344256e012de"
+        },
+        "actual_control_acks": 1000,
+        "policy_proposals": 67,
+        "semantic_epochs_seen_by_motor": [
+          1,
+          2,
+          3
+        ],
+        "distinct_effective_prompts": 3,
+        "prefix_cadence_verified": true,
+        "complete_native_result": true,
+        "evidence_kind": "native_unqualified",
+        "robot_competence_claim": false
+      },
+      "planner_requests": 10,
+      "motor_predictions_checked": 67,
+      "actual_model_request_prompts_verified": true,
+      "source_predictions_and_native_acks_equal": true
+    },
+    {
+      "case_id": "pack_objects_into_box__standard__g0__l0",
+      "status": "planner_stop_incomplete",
+      "termination": "semantic_abstention_not_native_success",
+      "native_steps": 210,
+      "native_score": null,
+      "success": false,
+      "error": null,
+      "journal_checks": {
+        "journal": {
+          "events": 243,
+          "head_sha256": "71ceef37c072b75ea41e5302e627c1f43d57561a1e2714ddc90e3cc939346076"
+        },
+        "actual_control_acks": 210,
+        "policy_proposals": 14,
+        "semantic_epochs_seen_by_motor": [
+          1
+        ],
+        "distinct_effective_prompts": 1,
+        "prefix_cadence_verified": true,
+        "complete_native_result": false,
+        "evidence_kind": "native_unqualified",
+        "robot_competence_claim": false
+      },
+      "planner_requests": 3,
+      "motor_predictions_checked": 14,
+      "actual_model_request_prompts_verified": true,
+      "source_predictions_and_native_acks_equal": true
+    },
+    {
+      "case_id": "put_bottles_into_dustbin__standard__g0__l0",
+      "status": "planner_stop_incomplete",
+      "termination": "semantic_abstention_not_native_success",
+      "native_steps": 105,
+      "native_score": null,
+      "success": false,
+      "error": null,
+      "journal_checks": {
+        "journal": {
+          "events": 123,
+          "head_sha256": "25de621094d8e3bb1523676e1e36d4583b54d0e8121dd3f8083e80deb097e8fd"
+        },
+        "actual_control_acks": 105,
+        "policy_proposals": 7,
+        "semantic_epochs_seen_by_motor": [
+          1
+        ],
+        "distinct_effective_prompts": 1,
+        "prefix_cadence_verified": true,
+        "complete_native_result": false,
+        "evidence_kind": "native_unqualified",
+        "robot_competence_claim": false
+      },
+      "planner_requests": 2,
+      "motor_predictions_checked": 7,
+      "actual_model_request_prompts_verified": true,
+      "source_predictions_and_native_acks_equal": true
+    }
+  ],
+  "native_actions": 5922,
+  "semantic_calls": 62,
+  "native_terminal_cases": 6,
+  "episodes_with_motor_prompt_evidence": 9,
+  "successes": 1,
+  "missing_native_scores": 4
+}

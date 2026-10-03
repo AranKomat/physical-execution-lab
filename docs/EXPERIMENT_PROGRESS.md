@@ -26,6 +26,14 @@ mismatches, continued overall-task routines and stale planner goals. No new
 robot experiment was launched for this review. See
 [the visual audit](evidence/pi05-semantic-visual-audit001-20261003/REPORT.md) and
 [same-host baseline](evidence/pi05-full-panel-baseline004-20261003/REPORT.md).
+The full-ten subtask-only ablation is now complete and locally preserved:
+1 native success, 5 native failures, 4 planner abstentions, 5,922 actions,
+62 settled Flex calls/$0.36038075. Classification succeeds again and table
+partial score reaches 0.75, but folding loses success; packing still selects
+the shoe despite a car-only instruction. All ten visual sheets were reviewed;
+motor prompt evidence exists for nine tasks because imitation stops at reset.
+Keep task-plus-subtask as the working format, not subtask-only. See
+[the format-ablation report](evidence/pi05-full-panel-subtask001-20261003/REPORT.md).
 A separately named full-ten recovery condition is prepared/frozen, changing only
 `allow_semantic_recovery` to true; it has not run. Numeric reproduction is deferred
 at the owner's direction. See

@@ -62,6 +62,39 @@ question. See
 
 No new episode, training or paid call was launched for the visual review.
 
+### Prompt-Format Continuation
+
+- [x] Prepare and freeze the full-ten subtask-only condition with exactly one
+  behavioral config change (`prompt_mode`); recovery stays disabled. Freeze:
+  `da84e38f13000335dd30da9b410b87cbfa84413bc20be0ea4d22963de4585444`.
+- [x] Pass retained native transfer and all-ten live reset admission on this host.
+- [x] Complete `pi05-full-panel-subtask001`, audit its actual prompts/prefixes,
+  preserve the evidence and visually inspect outcomes. One native success,
+  five native failures, four planner abstentions; score coverage 6/10.
+- [x] Compare its native outcomes, planner abstentions and response to active
+  goals against baseline004 and semantic001. Configuration matching does not
+  make planner decisions or rollout observations identical across conditions.
+
+This continuation is a full-roster practical format ablation, not the separate
+matched-state causal diagnostic above. It uses Sol6.1/medium/Flex, the authorized
+same-model capacity fallback, the $3 cohort cap and $95 shared ceiling. No new
+recovery or motor intervention is enabled. Initial imitation abstention at step
+0 and subsequent stops are retained, not silently retried or scored as physical
+failures. Recovery-only preparation remains unrun until separately selected.
+
+The finished subtask-only cohort used 5,922 actions, 397 motor predictions,
+21 prompt changes, 62 settled Flex calls/$0.36038075 and 19.15 minutes including
+startup, with no new hold or API/controller error. Independent local/remote
+audits match; full raw archive hashes match. All ten sheets were inspected,
+with imitation correctly excluded from motor-following claims because it
+stopped before any prediction. Classification succeeds again, table partial
+score improves to 0.75, but folding loses its success and packing explicitly
+handles a shoe under a car-only instruction. No reliable overall improvement
+or exclusive goal control is established. Keep task-plus-subtask as the working
+format; prioritize the prepared recovery-only ablation rather than more minor
+format sweeps. See
+`../evidence/pi05-full-panel-subtask001-20261003/REPORT.md`.
+
 ### Owner Scheduling Correction
 
 The owner requires method-major execution over the entire fixed task set:

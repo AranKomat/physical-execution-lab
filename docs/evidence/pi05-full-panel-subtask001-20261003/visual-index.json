@@ -1,0 +1,760 @@
+[
+  {
+    "task": "arrange_largest_number",
+    "group": "group0",
+    "env_idx": 0,
+    "native_result": "planner_stop_incomplete",
+    "epochs": [
+      {
+        "epoch": 1,
+        "start": 0,
+        "subtask": "Place the blue number 8 on the leftmost circular pad using the left arm.",
+        "inspected_sheet_steps": [
+          0,
+          45,
+          105
+        ]
+      },
+      {
+        "epoch": 2,
+        "start": 105,
+        "subtask": "Place the blue number 7 on the second circular pad from the left using the left arm.",
+        "inspected_sheet_steps": [
+          105,
+          150,
+          210
+        ]
+      },
+      {
+        "epoch": 3,
+        "start": 210,
+        "subtask": "Place the blue number 2 on the third circular pad from the left using the right arm.",
+        "inspected_sheet_steps": [
+          210,
+          255,
+          615
+        ]
+      }
+    ],
+    "sheet": "runs/pi05-subtask001-visual-audit001/arrange_largest_number.jpg",
+    "video": "runs/pi05-subtask001-visual-audit001/arrange_largest_number.mp4",
+    "sampled_steps": [
+      0,
+      15,
+      30,
+      45,
+      60,
+      75,
+      90,
+      105,
+      120,
+      135,
+      150,
+      165,
+      180,
+      195,
+      210,
+      225,
+      240,
+      255,
+      270,
+      285,
+      300,
+      315,
+      330,
+      345,
+      360,
+      375,
+      390,
+      405,
+      420,
+      435,
+      450,
+      465,
+      480,
+      495,
+      510,
+      525,
+      540,
+      555,
+      570,
+      585,
+      600,
+      615
+    ],
+    "sampling": "one retained policy input per native H15 prefix; no interpolation",
+    "final_native_steps": 630
+  },
+  {
+    "task": "build_tower",
+    "group": "group0",
+    "env_idx": 1,
+    "native_result": "native_completed",
+    "epochs": [
+      {
+        "epoch": 1,
+        "start": 0,
+        "subtask": "Grasp the front-left white wooden block with the left arm.",
+        "inspected_sheet_steps": [
+          0,
+          45,
+          315
+        ]
+      },
+      {
+        "epoch": 2,
+        "start": 315,
+        "subtask": "Place the white wooden block held by the left arm onto the center of the long wooden board.",
+        "inspected_sheet_steps": [
+          315,
+          360,
+          525
+        ]
+      },
+      {
+        "epoch": 3,
+        "start": 525,
+        "subtask": "Grasp the loose wooden board lying diagonally on the table in front of the partially built tower.",
+        "inspected_sheet_steps": [
+          525,
+          570,
+          1035
+        ]
+      }
+    ],
+    "sheet": "runs/pi05-subtask001-visual-audit001/build_tower.jpg",
+    "video": "runs/pi05-subtask001-visual-audit001/build_tower.mp4",
+    "sampled_steps": [
+      0,
+      15,
+      30,
+      45,
+      60,
+      75,
+      90,
+      105,
+      120,
+      135,
+      150,
+      165,
+      180,
+      195,
+      210,
+      225,
+      240,
+      255,
+      270,
+      285,
+      300,
+      315,
+      330,
+      345,
+      360,
+      375,
+      390,
+      405,
+      420,
+      435,
+      450,
+      465,
+      480,
+      495,
+      510,
+      525,
+      540,
+      555,
+      570,
+      585,
+      600,
+      615,
+      630,
+      645,
+      660,
+      675,
+      690,
+      705,
+      720,
+      735,
+      750,
+      765,
+      780,
+      795,
+      810,
+      825,
+      840,
+      855,
+      870,
+      885,
+      900,
+      915,
+      930,
+      945,
+      960,
+      975,
+      990,
+      1005,
+      1020,
+      1035
+    ],
+    "sampling": "one retained policy input per native H15 prefix; no interpolation",
+    "final_native_steps": 1050
+  },
+  {
+    "task": "classify_objects_by_language",
+    "group": "group0",
+    "env_idx": 2,
+    "native_result": "native_completed",
+    "epochs": [
+      {
+        "epoch": 1,
+        "start": 0,
+        "subtask": "Put the yellow car into the left white basket.",
+        "inspected_sheet_steps": [
+          0,
+          45,
+          420
+        ]
+      },
+      {
+        "epoch": 2,
+        "start": 420,
+        "subtask": "Put the green car into the left white basket.",
+        "inspected_sheet_steps": [
+          420,
+          465,
+          1095
+        ]
+      }
+    ],
+    "sheet": "runs/pi05-subtask001-visual-audit001/classify_objects_by_language.jpg",
+    "video": "runs/pi05-subtask001-visual-audit001/classify_objects_by_language.mp4",
+    "sampled_steps": [
+      0,
+      15,
+      30,
+      45,
+      60,
+      75,
+      90,
+      105,
+      120,
+      135,
+      150,
+      165,
+      180,
+      195,
+      210,
+      225,
+      240,
+      255,
+      270,
+      285,
+      300,
+      315,
+      330,
+      345,
+      360,
+      375,
+      390,
+      405,
+      420,
+      435,
+      450,
+      465,
+      480,
+      495,
+      510,
+      525,
+      540,
+      555,
+      570,
+      585,
+      600,
+      615,
+      630,
+      645,
+      660,
+      675,
+      690,
+      705,
+      720,
+      735,
+      750,
+      765,
+      780,
+      795,
+      810,
+      825,
+      840,
+      855,
+      870,
+      885,
+      900,
+      915,
+      930,
+      945,
+      960,
+      975,
+      990,
+      1005,
+      1020,
+      1035,
+      1050,
+      1065,
+      1080,
+      1095
+    ],
+    "sampling": "one retained policy input per native H15 prefix; no interpolation",
+    "final_native_steps": 1100
+  },
+  {
+    "task": "fold_clothes",
+    "group": "group0",
+    "env_idx": 3,
+    "native_result": "native_completed",
+    "epochs": [
+      {
+        "epoch": 1,
+        "start": 0,
+        "subtask": "Fold the pink shirt's sleeve on the left side of the table inward over the shirt's torso using the left arm.",
+        "inspected_sheet_steps": [
+          0,
+          45,
+          315
+        ]
+      },
+      {
+        "epoch": 2,
+        "start": 315,
+        "subtask": "Fold the pink shirt's sleeve on the right side of the table inward over the shirt's torso using the right arm.",
+        "inspected_sheet_steps": [
+          315,
+          360,
+          495
+        ]
+      }
+    ],
+    "sheet": "runs/pi05-subtask001-visual-audit001/fold_clothes.jpg",
+    "video": "runs/pi05-subtask001-visual-audit001/fold_clothes.mp4",
+    "sampled_steps": [
+      0,
+      15,
+      30,
+      45,
+      60,
+      75,
+      90,
+      105,
+      120,
+      135,
+      150,
+      165,
+      180,
+      195,
+      210,
+      225,
+      240,
+      255,
+      270,
+      285,
+      300,
+      315,
+      330,
+      345,
+      360,
+      375,
+      390,
+      405,
+      420,
+      435,
+      450,
+      465,
+      480,
+      495
+    ],
+    "sampling": "one retained policy input per native H15 prefix; no interpolation",
+    "final_native_steps": 500
+  },
+  {
+    "task": "imitate_sorting_sequence",
+    "group": "group1",
+    "env_idx": 0,
+    "native_result": "planner_stop_incomplete",
+    "epochs": [
+      {
+        "epoch": 0,
+        "start": 0,
+        "subtask": "[No active subtask; planner stopped before motor prediction]",
+        "inspected_sheet_steps": [
+          0,
+          0,
+          0
+        ]
+      }
+    ],
+    "sheet": "runs/pi05-subtask001-visual-audit001/imitate_sorting_sequence.jpg",
+    "video": "runs/pi05-subtask001-visual-audit001/imitate_sorting_sequence.mp4",
+    "sampled_steps": [
+      0
+    ],
+    "sampling": "initial actor sensor snapshot only; zero motor actions",
+    "final_native_steps": 0
+  },
+  {
+    "task": "make_kong",
+    "group": "group1",
+    "env_idx": 1,
+    "native_result": "native_completed",
+    "epochs": [
+      {
+        "epoch": 1,
+        "start": 0,
+        "subtask": "Wait for the opponent to discard a tile onto the table.",
+        "inspected_sheet_steps": [
+          0,
+          45,
+          105
+        ]
+      },
+      {
+        "epoch": 2,
+        "start": 105,
+        "subtask": "Grasp the opponent's face-up two-dot discarded tile with the left gripper.",
+        "inspected_sheet_steps": [
+          105,
+          150,
+          585
+        ]
+      }
+    ],
+    "sheet": "runs/pi05-subtask001-visual-audit001/make_kong.jpg",
+    "video": "runs/pi05-subtask001-visual-audit001/make_kong.mp4",
+    "sampled_steps": [
+      0,
+      15,
+      30,
+      45,
+      60,
+      75,
+      90,
+      105,
+      120,
+      135,
+      150,
+      165,
+      180,
+      195,
+      210,
+      225,
+      240,
+      255,
+      270,
+      285,
+      300,
+      315,
+      330,
+      345,
+      360,
+      375,
+      390,
+      405,
+      420,
+      435,
+      450,
+      465,
+      480,
+      495,
+      510,
+      525,
+      540,
+      555,
+      570,
+      585
+    ],
+    "sampling": "one retained policy input per native H15 prefix; no interpolation",
+    "final_native_steps": 600
+  },
+  {
+    "task": "classify_objects",
+    "group": "group2",
+    "env_idx": 0,
+    "native_result": "native_completed",
+    "epochs": [
+      {
+        "epoch": 1,
+        "start": 0,
+        "subtask": "Put the leftmost blue-clothed doll into the white basket using the left arm.",
+        "inspected_sheet_steps": [
+          0,
+          45,
+          210
+        ]
+      },
+      {
+        "epoch": 2,
+        "start": 210,
+        "subtask": "Put the blue-clothed doll beside the red basket into the white basket using the right arm.",
+        "inspected_sheet_steps": [
+          210,
+          255,
+          420
+        ]
+      },
+      {
+        "epoch": 3,
+        "start": 420,
+        "subtask": "Put the black wristband in front of the blue basket into the blue basket using the right arm.",
+        "inspected_sheet_steps": [
+          420,
+          465,
+          630
+        ]
+      },
+      {
+        "epoch": 4,
+        "start": 630,
+        "subtask": "Put the black-and-gold pen in front of the red basket into the red basket using the right arm.",
+        "inspected_sheet_steps": [
+          630,
+          675,
+          720
+        ]
+      }
+    ],
+    "sheet": "runs/pi05-subtask001-visual-audit001/classify_objects.jpg",
+    "video": "runs/pi05-subtask001-visual-audit001/classify_objects.mp4",
+    "sampled_steps": [
+      0,
+      15,
+      30,
+      45,
+      60,
+      75,
+      90,
+      105,
+      120,
+      135,
+      150,
+      165,
+      180,
+      195,
+      210,
+      225,
+      240,
+      255,
+      270,
+      285,
+      300,
+      315,
+      330,
+      345,
+      360,
+      375,
+      390,
+      405,
+      420,
+      435,
+      450,
+      465,
+      480,
+      495,
+      510,
+      525,
+      540,
+      555,
+      570,
+      585,
+      600,
+      615,
+      630,
+      645,
+      660,
+      675,
+      690,
+      705,
+      720
+    ],
+    "sampling": "one retained policy input per native H15 prefix; no interpolation",
+    "final_native_steps": 727
+  },
+  {
+    "task": "organize_table",
+    "group": "group2",
+    "env_idx": 1,
+    "native_result": "native_completed",
+    "epochs": [
+      {
+        "epoch": 1,
+        "start": 0,
+        "subtask": "Place the mouse on the black mouse pad using the right arm.",
+        "inspected_sheet_steps": [
+          0,
+          45,
+          315
+        ]
+      },
+      {
+        "epoch": 2,
+        "start": 315,
+        "subtask": "Push the keyboard into the rectangular frame on the desk.",
+        "inspected_sheet_steps": [
+          315,
+          360,
+          630
+        ]
+      },
+      {
+        "epoch": 3,
+        "start": 630,
+        "subtask": "Put the figurine on the stand.",
+        "inspected_sheet_steps": [
+          630,
+          675,
+          990
+        ]
+      }
+    ],
+    "sheet": "runs/pi05-subtask001-visual-audit001/organize_table.jpg",
+    "video": "runs/pi05-subtask001-visual-audit001/organize_table.mp4",
+    "sampled_steps": [
+      0,
+      15,
+      30,
+      45,
+      60,
+      75,
+      90,
+      105,
+      120,
+      135,
+      150,
+      165,
+      180,
+      195,
+      210,
+      225,
+      240,
+      255,
+      270,
+      285,
+      300,
+      315,
+      330,
+      345,
+      360,
+      375,
+      390,
+      405,
+      420,
+      435,
+      450,
+      465,
+      480,
+      495,
+      510,
+      525,
+      540,
+      555,
+      570,
+      585,
+      600,
+      615,
+      630,
+      645,
+      660,
+      675,
+      690,
+      705,
+      720,
+      735,
+      750,
+      765,
+      780,
+      795,
+      810,
+      825,
+      840,
+      855,
+      870,
+      885,
+      900,
+      915,
+      930,
+      945,
+      960,
+      975,
+      990
+    ],
+    "sampling": "one retained policy input per native H15 prefix; no interpolation",
+    "final_native_steps": 1000
+  },
+  {
+    "task": "pack_objects_into_box",
+    "group": "group2",
+    "env_idx": 2,
+    "native_result": "planner_stop_incomplete",
+    "epochs": [
+      {
+        "epoch": 1,
+        "start": 0,
+        "subtask": "Grasp the silver toy car to the right of the box with the right gripper.",
+        "inspected_sheet_steps": [
+          0,
+          45,
+          195
+        ]
+      }
+    ],
+    "sheet": "runs/pi05-subtask001-visual-audit001/pack_objects_into_box.jpg",
+    "video": "runs/pi05-subtask001-visual-audit001/pack_objects_into_box.mp4",
+    "sampled_steps": [
+      0,
+      15,
+      30,
+      45,
+      60,
+      75,
+      90,
+      105,
+      120,
+      135,
+      150,
+      165,
+      180,
+      195
+    ],
+    "sampling": "one retained policy input per native H15 prefix; no interpolation",
+    "final_native_steps": 210
+  },
+  {
+    "task": "put_bottles_into_dustbin",
+    "group": "group2",
+    "env_idx": 3,
+    "native_result": "planner_stop_incomplete",
+    "epochs": [
+      {
+        "epoch": 1,
+        "start": 0,
+        "subtask": "Pick up the upright pink bottle on the left side of the table with the left hand.",
+        "inspected_sheet_steps": [
+          0,
+          45,
+          90
+        ]
+      }
+    ],
+    "sheet": "runs/pi05-subtask001-visual-audit001/put_bottles_into_dustbin.jpg",
+    "video": "runs/pi05-subtask001-visual-audit001/put_bottles_into_dustbin.mp4",
+    "sampled_steps": [
+      0,
+      15,
+      30,
+      45,
+      60,
+      75,
+      90
+    ],
+    "sampling": "one retained policy input per native H15 prefix; no interpolation",
+    "final_native_steps": 105
+  }
+]
