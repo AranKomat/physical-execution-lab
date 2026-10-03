@@ -56,6 +56,16 @@ architecture; do not interpret their sum as a pure physics or kernel profile.
 Shared inference used partial batches as tasks/interventions diverged. Simulation
 pauses during actor inference; this does not demonstrate real-time control.
 
+## Independent Local Backup
+
+The complete evidence archive was downloaded to the Mac without model weights:
+`runs/pi05-full-panel-numeric005-evidence.tar`. Its SHA-256 matches the GPU-host
+archive: `5c841dbdbb4c68b26cd98ae564a5126a01b7097acf8671df096bf35ed106d3d3`.
+The extracted run passed a fresh local `audit_full_panel_control.py` audit,
+covering all ten case streams and all 6,390 physical action/ACK pairs.
+Local audit receipt: `runs/pi05-full-panel-numeric005-local-archive-audit.json`.
+The earlier interrupted recursive transfer is not the backup of record.
+
 ## Interpretation And Next Work
 
 The earlier original-only baseline had three successes and complete native scores

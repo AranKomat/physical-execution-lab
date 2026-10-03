@@ -486,6 +486,17 @@ completion. No new paid requests or simulator actions were issued for this work.
   `../evidence/pi05-full-panel-numeric005-20261003/REPORT.md`.
 - [ ] Run the fresh full-ten semantic condition, separately from numeric.
 
+`pi05-full-panel-semantic001` is live on the same post-reboot host with one
+shared pi0.5 runtime and all ten distinct tasks. All-ten reset admission passed
+and physical actions have begun. No final semantic outcomes are available yet;
+do not mark this checklist item complete or restart solely on an observation
+timeout. Executable source/configuration stays frozen throughout the episode.
+
+- [x] Download the complete numeric005 evidence archive and match its remote
+  SHA-256; extract and independently re-audit all ten streams and 6,390 ACKs.
+  See the numeric005 report's Independent Local Backup section. No model weights
+  were downloaded to the Mac.
+
 The new host has a 372 GiB root disk. Simulator dependencies outside the frozen
 OpenPI environment were resolved during installation; exact transitive runtime
 equivalence to the old host is not claimed. Prior numeric002 remains an
