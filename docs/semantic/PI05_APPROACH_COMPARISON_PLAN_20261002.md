@@ -2,6 +2,18 @@
 
 ## Scope And Status
 
+### Fidelity Correction (2026-10-03)
+
+The owner requested clarification against the published GPT-as-Policy gain.
+Numeric005 is an adapted sparse condition, not its reference hybrid: released
+code reviews every proposal, supports trajectory edits as well as EEF targets,
+uses a persistent Astra/xhigh tool agent, and forbids model-directed early stops
+on benchmark cases. Our five accepted stops and sparse cadence are material
+differences. Read `GPT_AS_POLICY_FIDELITY_REVIEW_20261003.md` for pinned evidence
+and the added reference-style control checklist. Finish semantic001 unchanged,
+then obtain a same-host baseline and prepare that control before further sparse
+tuning. Preserve all ten distinct tasks concurrently and the existing budgets.
+
 ### Owner Scheduling Correction
 
 The owner requires method-major execution over the entire fixed task set:
